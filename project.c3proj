@@ -1,0 +1,960 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 27602,
+	"name": "Witness",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Shape3D",
+			"name": "3D shape",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "shadowlight",
+			"name": "Shadow light",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Turret",
+			"name": "Turret",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "shadowcaster",
+			"name": "Shadow caster",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "grayscale",
+			"name": "Grayscale",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "vignette",
+			"name": "Vignette",
+			"author": "Brad Larson",
+			"version": "r276.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "bmm21df34rr",
+	"objectTypes": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"Audio",
+					"Keyboard",
+					"Mouse",
+					"Browser",
+					"AJAX",
+					"JSON",
+					"debug"
+				],
+				"subfolders": [],
+				"name": "system"
+			},
+			{
+				"items": [
+					"house_wood",
+					"wooden_floor",
+					"car",
+					"house_door",
+					"house_concrete",
+					"metal_door",
+					"window"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"grass",
+							"road",
+							"sand",
+							"concrete"
+						],
+						"subfolders": [],
+						"name": "textures"
+					}
+				],
+				"name": "building"
+			},
+			{
+				"items": [
+					"Player",
+					"enemy_runner",
+					"Player_dead",
+					"enemy_gunner"
+				],
+				"subfolders": [],
+				"name": "characters"
+			},
+			{
+				"items": [
+					"Light",
+					"ShadowLight",
+					"flashlight",
+					"color_light"
+				],
+				"subfolders": [],
+				"name": "light"
+			},
+			{
+				"items": [
+					"cursor"
+				],
+				"subfolders": [],
+				"name": "misc"
+			},
+			{
+				"items": [
+					"bullet"
+				],
+				"subfolders": [],
+				"name": "projectile"
+			},
+			{
+				"items": [
+					"fx_bullet_explosion",
+					"decal_blood",
+					"fx_torch_fire",
+					"fx_muzzle"
+				],
+				"subfolders": [],
+				"name": "fx"
+			},
+			{
+				"items": [
+					"light_stick"
+				],
+				"subfolders": [],
+				"name": "items"
+			},
+			{
+				"items": [
+					"menuBG",
+					"Text",
+					"logo",
+					"Hint"
+				],
+				"subfolders": [],
+				"name": "menu"
+			},
+			{
+				"items": [
+					"alert",
+					"trigger",
+					"solid",
+					"camera",
+					"dialog_trigger",
+					"enemy_line"
+				],
+				"subfolders": [],
+				"name": "triggers"
+			},
+			{
+				"items": [
+					"torch",
+					"tree",
+					"crate",
+					"campfire",
+					"debris",
+					"lumber",
+					"decal_steps",
+					"props1",
+					"table"
+				],
+				"subfolders": [],
+				"name": "furniture"
+			},
+			{
+				"items": [
+					"dialog",
+					"dialogic_logs"
+				],
+				"subfolders": [],
+				"name": "dialogic"
+			},
+			{
+				"items": [
+					"weapon"
+				],
+				"subfolders": [],
+				"name": "data"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"building",
+					"enemies",
+					"FX",
+					"lights"
+				],
+				"subfolders": [],
+				"name": "Families"
+			}
+		]
+	},
+	"layouts": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"resource",
+					"Logo",
+					"Dialogic"
+				],
+				"subfolders": [],
+				"name": "sub"
+			},
+			{
+				"items": [
+					"Menu"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"forest1",
+							"training"
+						],
+						"subfolders": [],
+						"name": "levels"
+					}
+				],
+				"name": "main"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"#Game",
+			"#Menu",
+			"#Logo",
+			"#Dialogic"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "walk grass run.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 129642504041232
+						},
+						{
+							"name": "walk grass.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 171643854027103
+						},
+						{
+							"name": "walk stone.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 873147076564933
+						},
+						{
+							"name": "walk stone run.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 589405696979581
+						},
+						{
+							"name": "walk_wood.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 405896563616375
+						},
+						{
+							"name": "walk wood run 4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 111962997747745
+						},
+						{
+							"name": "walk dirt run.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 662929334915057
+						},
+						{
+							"name": "walk dirt.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 352262227642236
+						}
+					],
+					"subfolders": [],
+					"name": "steps"
+				},
+				{
+					"items": [
+						{
+							"name": "cloth.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 483185941319109
+						},
+						{
+							"name": "draw gun 2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 547656466932521
+						}
+					],
+					"subfolders": [],
+					"name": "player"
+				},
+				{
+					"items": [
+						{
+							"name": "break.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 940218950137323
+						},
+						{
+							"name": "switch.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 347739235659163
+						},
+						{
+							"name": "fire.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 500236237139563
+						}
+					],
+					"subfolders": [],
+					"name": "items"
+				},
+				{
+					"items": [
+						{
+							"name": "man death.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 948805630697548
+						},
+						{
+							"name": "man scream 2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 223507915661474
+						},
+						{
+							"name": "man scream 3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 776768152827058
+						},
+						{
+							"name": "man scream.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 567814364106740
+						},
+						{
+							"name": "man grunt 2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 508645053623984
+						},
+						{
+							"name": "man grunt.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 364802155011696
+						},
+						{
+							"name": "man scream 4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 299366750420466
+						},
+						{
+							"name": "man death 2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 489212137251600
+						},
+						{
+							"name": "man impressed 2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 224438121973336
+						},
+						{
+							"name": "man impressed.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 140070328972329
+						},
+						{
+							"name": "man scared 2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 905422180421084
+						},
+						{
+							"name": "man scared.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 228274220642891
+						}
+					],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "man cry 2.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 219680839718745
+								},
+								{
+									"name": "man cry.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 171806567206091
+								},
+								{
+									"name": "man heavy breathe.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 391498186511364
+								},
+								{
+									"name": "man laugh.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 916390255884467
+								},
+								{
+									"name": "man sigh.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 660017793016326
+								},
+								{
+									"name": "man sniff.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 354016962702312
+								},
+								{
+									"name": "men whisper.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 978531772456332
+								}
+							],
+							"subfolders": [],
+							"name": "wip"
+						}
+					],
+					"name": "enemy"
+				},
+				{
+					"items": [
+						{
+							"name": "switch-cc0.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 594607875787333
+						},
+						{
+							"name": "boom.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 406583531416191
+						},
+						{
+							"name": "tap.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 850867495289983
+						},
+						{
+							"name": "ui-click-8.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 549415795542516
+						}
+					],
+					"subfolders": [],
+					"name": "interface"
+				},
+				{
+					"items": [
+						{
+							"name": "leaves rustle.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 362902669030321
+						},
+						{
+							"name": "car engine.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 303037139838167
+						}
+					],
+					"subfolders": [],
+					"name": "environment"
+				},
+				{
+					"items": [],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "9mm - fire.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 611049643008257
+								},
+								{
+									"name": "9mm - reload -1.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 672706303455155
+								},
+								{
+									"name": "9mm - reload 2.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 599339580549645
+								},
+								{
+									"name": "9mm - empty.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 419337840047001
+								},
+								{
+									"name": "drop.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 320964271837881
+								}
+							],
+							"subfolders": [],
+							"name": "9mm"
+						},
+						{
+							"items": [
+								{
+									"name": "ak-1.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 512787524386011
+								},
+								{
+									"name": "ak-2.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 505102199886119
+								},
+								{
+									"name": "tank shot.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 968585310018674
+								},
+								{
+									"name": "ak reload 1.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 978338379821033
+								},
+								{
+									"name": "ak reload 2.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 570546985840569
+								},
+								{
+									"name": "ak reload start.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 479659144360901
+								}
+							],
+							"subfolders": [],
+							"name": "ak47"
+						},
+						{
+							"items": [
+								{
+									"name": "bullet impact flash.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 225221024640496
+								},
+								{
+									"name": "bullet impact hard 2.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 901900464024144
+								},
+								{
+									"name": "bullet impact hard.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 163506510221642
+								},
+								{
+									"name": "bullet impact soft 2.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 823673078144106
+								},
+								{
+									"name": "bullet impact soft.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 406397124387960
+								},
+								{
+									"name": "bullet whiz.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 627939519495260
+								},
+								{
+									"name": "bullet ricochet.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 291959781864570
+								},
+								{
+									"name": "bullet shell drop.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 669009632496844
+								}
+							],
+							"subfolders": [],
+							"name": "bullet"
+						},
+						{
+							"items": [
+								{
+									"name": "shotgun.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 519703481847566
+								},
+								{
+									"name": "shotgun chamber.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 318929359873136
+								},
+								{
+									"name": "shotgun bullet inject.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 242127038197223
+								},
+								{
+									"name": "shotgun 3.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 102365241033283
+								}
+							],
+							"subfolders": [],
+							"name": "shotgun"
+						}
+					],
+					"name": "weapon"
+				},
+				{
+					"items": [
+						{
+							"name": "gore blood 1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 195915384123684
+						}
+					],
+					"subfolders": [],
+					"name": "gore"
+				}
+			]
+		},
+		"music": {
+			"items": [
+				{
+					"name": "The Darkest Day.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 321265032473897
+				},
+				{
+					"name": "Forest ambient.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 335110034344435
+				},
+				{
+					"name": "Witness.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 692016823371835
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "pixel.ttf",
+					"type": "application/font-sfnt",
+					"sid": 179183042006321
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 309281086752871,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "russian.json",
+							"type": "application/json",
+							"sid": 633567098931315
+						}
+					],
+					"subfolders": [],
+					"name": "dialogs"
+				}
+			]
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"Shake"
+				],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "0.1.3.5",
+		"author": "Loregret",
+		"authorEmail": "Loregrets@yahoo.com",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": true,
+		"useLoaderLayout": false,
+		"fullscreenMode": "scale-outer",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "portrait",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "off",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress-logo",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "file"
+	},
+	"viewportWidth": 640,
+	"viewportHeight": 480,
+	"firstLayout": "forest1"
+}

@@ -1,0 +1,971 @@
+{
+	"name": "#Menu",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "current_layer",
+			"type": "string",
+			"initialValue": "Menu",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 667074784612276
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 332982964358612
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "Text",
+					"sid": 343724296897068,
+					"parameters": {
+						"opacity": "80"
+					}
+				},
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 921856632234827,
+					"parameters": {
+						"x": "500",
+						"y": "1000"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 843378499800012
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 296199687771583,
+					"parameters": {
+						"audio-file": "boom",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"gameover\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 235690576791111,
+					"parameters": {
+						"seconds": "0.25"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 983691018225580,
+					"parameters": {
+						"audio-file": "The Darkest Day",
+						"loop": "not-looping",
+						"volume": "-10",
+						"tag-optional": "\"music_menu\""
+					}
+				},
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 523715306614803,
+					"parameters": {
+						"cursor-style": "normal"
+					}
+				}
+			],
+			"sid": 598555955856444
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 459400680382245
+				}
+			],
+			"actions": [
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 504429146751945,
+					"parameters": {
+						"x": "lerp(scrollx,menuBG.x + random(-3,3),dt*2)",
+						"y": "lerp(scrolly,menuBG.Y + random(-2,2) ,dt*2)"
+					}
+				}
+			],
+			"sid": 719623615077308
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 318760076804601,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Text"
+					}
+				},
+				{
+					"id": "compare-text",
+					"objectClass": "Text",
+					"sid": 338718315790525,
+					"parameters": {
+						"text-to-compare": "\"Свидетель\"",
+						"case-sensitivity": "ignore-case"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-on-layer",
+					"objectClass": "Text",
+					"sid": 468978686059191,
+					"parameters": {
+						"layer": "current_layer"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 769405467936053,
+					"parameters": {
+						"audio-file": "switch-cc0",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 544404002805827,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 236838764693926,
+							"parameters": {
+								"variable": "current_layer",
+								"comparison": 0,
+								"value": "\"Menu\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 713053461875488,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-text",
+									"objectClass": "Text",
+									"sid": 729015771961547,
+									"parameters": {
+										"text-to-compare": "\"играть\"",
+										"case-sensitivity": "ignore-case"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 994102063414286,
+									"parameters": {
+										"tag": "\"music_menu\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 707891481821943,
+									"parameters": {
+										"seconds": "0.15"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 913332088138588,
+									"parameters": {
+										"layout": "forest1"
+									}
+								}
+							],
+							"sid": 244156287141287
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 988059977999440
+								},
+								{
+									"id": "compare-text",
+									"objectClass": "Text",
+									"sid": 268058971569780,
+									"parameters": {
+										"text-to-compare": "\"выход\"",
+										"case-sensitivity": "ignore-case"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 747224264818579,
+									"parameters": {
+										"tag": "\"music_menu\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 290012092926834,
+									"parameters": {
+										"seconds": "0.15"
+									}
+								},
+								{
+									"id": "close",
+									"objectClass": "Browser",
+									"sid": 871916966321461
+								}
+							],
+							"sid": 659646089533131
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 779790805108069
+								},
+								{
+									"id": "compare-text",
+									"objectClass": "Text",
+									"sid": 257136257225937,
+									"parameters": {
+										"text-to-compare": "\"Настройки\"",
+										"case-sensitivity": "ignore-case"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 303830218215346,
+									"parameters": {
+										"seconds": "0.15"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 991919165504944,
+									"parameters": {
+										"layer": "\"Menu\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 240424687891076,
+									"parameters": {
+										"layer": "\"Settings\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 677717683119410,
+									"parameters": {
+										"variable": "current_layer",
+										"value": "\"Settings\""
+									}
+								}
+							],
+							"sid": 165262822160418
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 400773096779836
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 817303094843785,
+							"parameters": {
+								"variable": "current_layer",
+								"comparison": 0,
+								"value": "\"Settings\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 183134759488994,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-text",
+									"objectClass": "Text",
+									"sid": 190254813532266,
+									"parameters": {
+										"text-to-compare": "\"Назад\"",
+										"case-sensitivity": "ignore-case"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 880668062633960,
+									"parameters": {
+										"seconds": "0.15"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 302808340693574,
+									"parameters": {
+										"variable": "current_layer",
+										"value": "\"Menu\""
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 542082889843106,
+									"parameters": {
+										"layer": "\"Settings\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 723549146601001,
+									"parameters": {
+										"layer": "\"Menu\"",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 859559229207041
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 333622572262493
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text",
+									"sid": 121178664561051,
+									"parameters": {
+										"instance-variable": "param",
+										"comparison": 0,
+										"value": "\"zoom\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 362244642246956,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 930016443188013,
+											"parameters": {
+												"variable": "settings_cam_zoom_auto"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 255042550416650,
+											"parameters": {
+												"variable": "settings_cam_zoom_auto",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "Text",
+											"sid": 868308838560524,
+											"parameters": {
+												"text": "\"Отдаление камеры: Ручная\""
+											}
+										}
+									],
+									"sid": 255592840427914
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 895909032169689
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 228933426358586,
+											"parameters": {
+												"variable": "settings_cam_zoom_auto",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "Text",
+											"sid": 871079415021691,
+											"parameters": {
+												"text": "\"Отдаление камеры: Авто\""
+											}
+										}
+									],
+									"sid": 563775432916213
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 317278741354603
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text",
+									"sid": 368844191515249,
+									"parameters": {
+										"instance-variable": "param",
+										"comparison": 0,
+										"value": "\"diff\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 555460627947165,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 764303643955848,
+											"parameters": {
+												"variable": "difficulty",
+												"comparison": 0,
+												"value": "\"hard\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Text",
+											"sid": 594169087830524,
+											"parameters": {
+												"text": "\"Сложность: Экстрим\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 261978387987601,
+											"parameters": {
+												"variable": "difficulty",
+												"value": "\"extreme\""
+											}
+										}
+									],
+									"sid": 234008884715499
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 347418816218592
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 836754546579222,
+											"parameters": {
+												"variable": "difficulty",
+												"comparison": 0,
+												"value": "\"extreme\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Text",
+											"sid": 832536061720947,
+											"parameters": {
+												"text": "\"Сложность: Сложно\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 420407260190263,
+											"parameters": {
+												"variable": "difficulty",
+												"value": "\"hard\""
+											}
+										}
+									],
+									"sid": 906644692606555
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 536706685259694
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text",
+									"sid": 726041845457134,
+									"parameters": {
+										"instance-variable": "param",
+										"comparison": 0,
+										"value": "\"cam_speed\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 367783595359906,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 404868100439156,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 949815547249391,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 269644334404028
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 521081183293992
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 533753159660183,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 333961284075631,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 849279196001917
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 788233159489339
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 419560024828247,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 799260164644330,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"value": "4"
+											}
+										}
+									],
+									"sid": 295522020591072
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 627413926293200
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 770217803185785,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"comparison": 0,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 420128409945665,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"value": "5"
+											}
+										}
+									],
+									"sid": 774048320042784
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 654183024376194
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 175513654952617,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"comparison": 0,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 939496774185911,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"value": "6"
+											}
+										}
+									],
+									"sid": 777838510723288
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 454910656042155
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 403222619070545,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"comparison": 0,
+												"value": "6"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 844189023664016,
+											"parameters": {
+												"variable": "settings_cam_speed_modificator",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 112231322684740
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Text",
+											"sid": 805005343993408,
+											"parameters": {
+												"text": "\"Скорость камеры: \" & settings_cam_speed_modificator"
+											}
+										}
+									],
+									"sid": 362664296760830
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 523307604579968,
+					"parameters": {
+						"object": "Text"
+					}
+				},
+				{
+					"id": "is-on-layer",
+					"objectClass": "Text",
+					"sid": 868723305139387,
+					"parameters": {
+						"layer": "current_layer"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 519937450374015,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "Text",
+							"sid": 686949540164687,
+							"parameters": {
+								"which": "nearest",
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "Text",
+							"sid": 602259038284637,
+							"parameters": {
+								"text-to-compare": "\"Свидетель\"",
+								"case-sensitivity": "ignore-case"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 523246174325583,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 398979030169800,
+									"parameters": {
+										"object": "Text"
+									}
+								},
+								{
+									"id": "compare-text",
+									"objectClass": "Text",
+									"sid": 797742245326170,
+									"parameters": {
+										"text-to-compare": "\"Свидетель\"",
+										"case-sensitivity": "ignore-case"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Text",
+									"sid": 816877720978398,
+									"parameters": {
+										"opacity": "80"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "Text",
+									"sid": 284776668043689,
+									"parameters": {
+										"z": "0"
+									}
+								}
+							],
+							"sid": 962891099217736
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Text",
+									"sid": 582898677247514,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "Text",
+									"sid": 482764993221226,
+									"parameters": {
+										"z": "1"
+									}
+								}
+							],
+							"sid": 116988193172019
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 194321028141477
+				},
+				{
+					"id": "on-any-click",
+					"objectClass": "Mouse",
+					"sid": 112866406349523
+				},
+				{
+					"id": "on-mouse-wheel",
+					"objectClass": "Mouse",
+					"sid": 599931256273818,
+					"parameters": {
+						"direction": "up"
+					}
+				},
+				{
+					"id": "on-mouse-wheel",
+					"objectClass": "Mouse",
+					"sid": 167965691185552,
+					"parameters": {
+						"direction": "down"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 687285167991685,
+					"parameters": {
+						"mode": "stretch-scale-outer",
+						"navigation-ui": "hide"
+					}
+				}
+			],
+			"sid": 872926605160037,
+			"isOrBlock": true
+		}
+	],
+	"sid": 772844762173010
+}

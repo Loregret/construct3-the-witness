@@ -1,0 +1,45 @@
+{
+	"name": "#Logo",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 256739430003355
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "logo",
+					"sid": 403117517531662,
+					"disabled": true,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 390546315563468,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 966948212624306,
+					"parameters": {
+						"layout": "Menu"
+					}
+				}
+			],
+			"sid": 767629916410291
+		}
+	],
+	"sid": 172323648141383
+}

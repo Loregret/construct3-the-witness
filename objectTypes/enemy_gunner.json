@@ -1,0 +1,55 @@
+{
+	"name": "enemy_gunner",
+	"plugin-id": "Sprite",
+	"sid": 384772049590512,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 766376133183927
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "grayscale",
+			"name": "Grayscale"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 42,
+						"height": 35,
+						"originX": 0.47619047619047616,
+						"originY": 0.45714285714285713,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3884611,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9047619047619048,
+								"y": 0.5714285714285714
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 369098531295387,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
