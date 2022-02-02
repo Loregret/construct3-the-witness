@@ -6991,241 +6991,6 @@
 						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "Enemy - turret",
-							"description": "",
-							"isActiveOnStart": false,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-created",
-											"objectClass": "enemy_gunner",
-											"sid": 583585534258525
-										}
-									],
-									"actions": [
-										{
-											"id": "add-object-to-target",
-											"objectClass": "enemy_gunner",
-											"sid": 911685110162462,
-											"behaviorType": "Turret",
-											"parameters": {
-												"target": "Player"
-											}
-										}
-									],
-									"sid": 983516800779050
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-shoot",
-											"objectClass": "enemy_gunner",
-											"sid": 253453984320319,
-											"behaviorType": "Turret"
-										}
-									],
-									"actions": [
-										{
-											"id": "spawn-another-object",
-											"objectClass": "enemy_gunner",
-											"sid": 670600256862508,
-											"parameters": {
-												"object": "bullet",
-												"layer": "\"bullets\"",
-												"image-point": "1",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "play-at-object",
-											"objectClass": "Audio",
-											"sid": 753555834900488,
-											"parameters": {
-												"audio-file": "9mm - fire",
-												"loop": "not-looping",
-												"volume": "0",
-												"object": "enemy_gunner",
-												"inner-angle": "360",
-												"outer-angle": "360",
-												"outer-gain": "0",
-												"tag-optional": "\"gunshot\"&enemy_gunner.UID"
-											}
-										},
-										{
-											"id": "set-rate-of-fire",
-											"objectClass": "enemy_gunner",
-											"sid": 405588703414597,
-											"behaviorType": "Turret",
-											"parameters": {
-												"rate-of-fire": "random(0.6,1.4)"
-											}
-										}
-									],
-									"sid": 153195716844811,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [],
-											"sid": 926617028758393,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "create-object",
-															"objectClass": "System",
-															"sid": 859199042994625,
-															"parameters": {
-																"object-to-create": "fx_muzzle",
-																"layer": "\"enemy\"",
-																"x": "enemy_gunner.ImagePointX(1)",
-																"y": "enemy_gunner.ImagePointY(1)",
-																"create-hierarchy": false
-															}
-														},
-														{
-															"id": "set-angle",
-															"objectClass": "fx_muzzle",
-															"sid": 907077865295460,
-															"parameters": {
-																"angle": "enemy_gunner.Angle"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "fx_muzzle",
-															"sid": 492869225697551,
-															"parameters": {
-																"width": "32",
-																"height": "32"
-															}
-														},
-														{
-															"id": "set-opacity",
-															"objectClass": "fx_muzzle",
-															"sid": 324914012877628,
-															"parameters": {
-																"opacity": "80"
-															}
-														},
-														{
-															"id": "pin-to-object-properties",
-															"objectClass": "fx_muzzle",
-															"sid": 703705054383072,
-															"behaviorType": "Pin",
-															"parameters": {
-																"pin-to": "enemy_gunner",
-																"x": true,
-																"y": true,
-																"angle": true,
-																"width-type": "no",
-																"height-type": "no",
-																"z": false
-															}
-														}
-													],
-													"sid": 903878980677560,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [],
-															"actions": [
-																{
-																	"id": "create-object",
-																	"objectClass": "System",
-																	"sid": 596944201442449,
-																	"parameters": {
-																		"object-to-create": "Light",
-																		"layer": "\"light\"",
-																		"x": "fx_muzzle.ImagePointX(1)",
-																		"y": "fx_muzzle.ImagePointY(1)",
-																		"create-hierarchy": false
-																	}
-																},
-																{
-																	"id": "pin-to-object-properties",
-																	"objectClass": "Light",
-																	"sid": 886183906453084,
-																	"behaviorType": "Pin",
-																	"parameters": {
-																		"pin-to": "enemy_gunner",
-																		"x": true,
-																		"y": true,
-																		"angle": true,
-																		"width-type": "no",
-																		"height-type": "no",
-																		"z": false
-																	}
-																},
-																{
-																	"id": "set-opacity",
-																	"objectClass": "Light",
-																	"sid": 952198235951716,
-																	"parameters": {
-																		"opacity": "0"
-																	}
-																},
-																{
-																	"id": "set-scale",
-																	"objectClass": "Light",
-																	"sid": 228225697315499,
-																	"parameters": {
-																		"scale": "0"
-																	}
-																},
-																{
-																	"id": "tween-one-property",
-																	"objectClass": "Light",
-																	"sid": 862307090446763,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"\"",
-																		"property": "offsetOpacity",
-																		"end-value": "100",
-																		"time": "0.1",
-																		"ease": "default",
-																		"destroy-on-complete": "no",
-																		"loop": "no",
-																		"ping-pong": "yes"
-																	}
-																},
-																{
-																	"id": "tween-two-properties",
-																	"objectClass": "Light",
-																	"sid": 275281681825278,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"\"",
-																		"property": "size",
-																		"end-x": "125",
-																		"end-y": "125",
-																		"time": "0.1",
-																		"ease": "default",
-																		"destroy-on-complete": "yes",
-																		"loop": "no",
-																		"ping-pong": "yes"
-																	}
-																}
-															],
-															"sid": 260431287793806
-														}
-													]
-												}
-											]
-										}
-									]
-								}
-							],
-							"sid": 544068407530439
-						},
-						{
-							"eventType": "group",
-							"disabled": false,
 							"title": "Enemy - timers",
 							"description": "",
 							"isActiveOnStart": true,
@@ -9019,10 +8784,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "enemy_runner",
-													"sid": 752891523882672,
+													"sid": 746482609838987,
 													"parameters": {
 														"instance-variable": "hp",
-														"value": "choose(1,2,3)"
+														"value": "choose(1,2)"
 													}
 												},
 												{
@@ -9067,6 +8832,241 @@
 								}
 							],
 							"sid": 424198100157512
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Enemy - turret",
+							"description": "",
+							"isActiveOnStart": false,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "enemy_gunner",
+											"sid": 190684467641333
+										}
+									],
+									"actions": [
+										{
+											"id": "add-object-to-target",
+											"objectClass": "enemy_gunner",
+											"sid": 865474047672450,
+											"behaviorType": "Turret",
+											"parameters": {
+												"target": "Player"
+											}
+										}
+									],
+									"sid": 401800305164694
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-shoot",
+											"objectClass": "enemy_gunner",
+											"sid": 759613993970882,
+											"behaviorType": "Turret"
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "enemy_gunner",
+											"sid": 569315231401769,
+											"parameters": {
+												"object": "bullet",
+												"layer": "\"bullets\"",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "play-at-object",
+											"objectClass": "Audio",
+											"sid": 450805450204711,
+											"parameters": {
+												"audio-file": "9mm - fire",
+												"loop": "not-looping",
+												"volume": "0",
+												"object": "enemy_gunner",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"gunshot\"&enemy_gunner.UID"
+											}
+										},
+										{
+											"id": "set-rate-of-fire",
+											"objectClass": "enemy_gunner",
+											"sid": 805040655821684,
+											"behaviorType": "Turret",
+											"parameters": {
+												"rate-of-fire": "random(0.6,1.4)"
+											}
+										}
+									],
+									"sid": 349908548397163,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 948125748436802,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 238903335648980,
+															"parameters": {
+																"object-to-create": "fx_muzzle",
+																"layer": "\"enemy\"",
+																"x": "enemy_gunner.ImagePointX(1)",
+																"y": "enemy_gunner.ImagePointY(1)",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "fx_muzzle",
+															"sid": 854748315747053,
+															"parameters": {
+																"angle": "enemy_gunner.Angle"
+															}
+														},
+														{
+															"id": "set-size",
+															"objectClass": "fx_muzzle",
+															"sid": 432758012738665,
+															"parameters": {
+																"width": "32",
+																"height": "32"
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "fx_muzzle",
+															"sid": 262628070094708,
+															"parameters": {
+																"opacity": "80"
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "fx_muzzle",
+															"sid": 279989696249383,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "enemy_gunner",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														}
+													],
+													"sid": 958815761247024,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 666497751675893,
+																	"parameters": {
+																		"object-to-create": "Light",
+																		"layer": "\"light\"",
+																		"x": "fx_muzzle.ImagePointX(1)",
+																		"y": "fx_muzzle.ImagePointY(1)",
+																		"create-hierarchy": false
+																	}
+																},
+																{
+																	"id": "pin-to-object-properties",
+																	"objectClass": "Light",
+																	"sid": 461474470309421,
+																	"behaviorType": "Pin",
+																	"parameters": {
+																		"pin-to": "enemy_gunner",
+																		"x": true,
+																		"y": true,
+																		"angle": true,
+																		"width-type": "no",
+																		"height-type": "no",
+																		"z": false
+																	}
+																},
+																{
+																	"id": "set-opacity",
+																	"objectClass": "Light",
+																	"sid": 788927829525721,
+																	"parameters": {
+																		"opacity": "0"
+																	}
+																},
+																{
+																	"id": "set-scale",
+																	"objectClass": "Light",
+																	"sid": 546263344035218,
+																	"parameters": {
+																		"scale": "0"
+																	}
+																},
+																{
+																	"id": "tween-one-property",
+																	"objectClass": "Light",
+																	"sid": 111982037982180,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "offsetOpacity",
+																		"end-value": "100",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "yes"
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "Light",
+																	"sid": 118119132081953,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "size",
+																		"end-x": "125",
+																		"end-y": "125",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "yes",
+																		"loop": "no",
+																		"ping-pong": "yes"
+																	}
+																}
+															],
+															"sid": 277911901143084
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 116452363238501
 						}
 					],
 					"sid": 783553055406059
