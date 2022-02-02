@@ -8586,6 +8586,102 @@
 											"children": [
 												{
 													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "subtract-from-instvar",
+															"objectClass": "enemy_runner",
+															"sid": 726197653023640,
+															"parameters": {
+																"instance-variable": "hp",
+																"value": "1"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "enemy_runner",
+															"sid": 688430819581981,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"speed": "0"
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "bullet",
+															"sid": 420852399333695
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 617317927045262,
+															"parameters": {
+																"object-to-create": "decal_blood",
+																"layer": "\"floors\"",
+																"x": "enemy_runner.X  ",
+																"y": "enemy_runner.Y",
+																"create-hierarchy": false
+															}
+														}
+													],
+													"sid": 722929991726483
+												},
+												{
+													"eventType": "comment",
+													"text": "audio"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 336077362548203,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "play-at-object-by-name",
+																	"objectClass": "Audio",
+																	"sid": 350567333189090,
+																	"parameters": {
+																		"folder": "sounds",
+																		"audio-file-name": "choose(\"\",\"man scream 2\",\"man scream 3\",\"man scream 4\",\"man grunt\")",
+																		"loop": "not-looping",
+																		"volume": "-10",
+																		"object": "enemy_runner",
+																		"inner-angle": "360",
+																		"outer-angle": "0",
+																		"outer-gain": "0",
+																		"tag-optional": "\"enemy_death\"&enemy_runner.UID"
+																	}
+																},
+																{
+																	"id": "play-at-object",
+																	"objectClass": "Audio",
+																	"sid": 113339739360156,
+																	"parameters": {
+																		"audio-file": "bullet impact flash",
+																		"loop": "not-looping",
+																		"volume": "random(-10,0)",
+																		"object": "enemy_runner",
+																		"inner-angle": "360",
+																		"outer-angle": "360",
+																		"outer-gain": "0",
+																		"tag-optional": "\"bullet - impact\""
+																	}
+																}
+															],
+															"sid": 792195429127039
+														}
+													]
+												},
+												{
+													"eventType": "comment",
+													"text": "alert"
+												},
+												{
+													"eventType": "block",
 													"conditions": [
 														{
 															"id": "compare-instance-variable",
@@ -8598,103 +8694,42 @@
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 165216045621498,
+													"children": [
 														{
-															"id": "create-object",
-															"objectClass": "System",
-															"sid": 869300430684366,
-															"parameters": {
-																"object-to-create": "alert",
-																"layer": "\"triggers\"",
-																"x": "Player.X",
-																"y": "Player.Y",
-																"create-hierarchy": false
-															}
-														},
-														{
-															"id": "set-instvar-value",
-															"objectClass": "alert",
-															"sid": 494034451964898,
-															"parameters": {
-																"instance-variable": "parentUID",
-																"value": "enemy_runner.UID"
-															}
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 170551608739032,
+																	"parameters": {
+																		"object-to-create": "alert",
+																		"layer": "\"triggers\"",
+																		"x": "Player.X",
+																		"y": "Player.Y",
+																		"create-hierarchy": false
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "alert",
+																	"sid": 461799607196399,
+																	"parameters": {
+																		"instance-variable": "parentUID",
+																		"value": "enemy_runner.UID"
+																	}
+																}
+															],
+															"sid": 230626197741059
 														}
-													],
-													"sid": 165216045621498
+													]
 												},
 												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "destroy",
-															"objectClass": "bullet",
-															"sid": 109225573386201
-														},
-														{
-															"id": "subtract-from-instvar",
-															"objectClass": "enemy_runner",
-															"sid": 979424870058367,
-															"parameters": {
-																"instance-variable": "hp",
-																"value": "1"
-															}
-														},
-														{
-															"id": "set-speed",
-															"objectClass": "enemy_runner",
-															"sid": 556748783539747,
-															"behaviorType": "Bullet",
-															"parameters": {
-																"speed": "0"
-															}
-														},
-														{
-															"id": "create-object",
-															"objectClass": "System",
-															"sid": 919749237124188,
-															"parameters": {
-																"object-to-create": "decal_blood",
-																"layer": "\"floors\"",
-																"x": "enemy_runner.X  ",
-																"y": "enemy_runner.Y",
-																"create-hierarchy": false
-															}
-														},
-														{
-															"id": "play-at-object-by-name",
-															"objectClass": "Audio",
-															"sid": 340668552396834,
-															"parameters": {
-																"folder": "sounds",
-																"audio-file-name": "choose(\"\",\"man scream 2\",\"man scream 3\",\"man scream 4\",\"man grunt\")",
-																"loop": "not-looping",
-																"volume": "-10",
-																"object": "enemy_runner",
-																"inner-angle": "360",
-																"outer-angle": "0",
-																"outer-gain": "0",
-																"tag-optional": "\"enemy_death\"&enemy_runner.UID"
-															}
-														},
-														{
-															"id": "play-at-object",
-															"objectClass": "Audio",
-															"sid": 356270636772778,
-															"parameters": {
-																"audio-file": "bullet impact flash",
-																"loop": "not-looping",
-																"volume": "random(-10,0)",
-																"object": "enemy_runner",
-																"inner-angle": "360",
-																"outer-angle": "360",
-																"outer-gain": "0",
-																"tag-optional": "\"bullet - impact\""
-															}
-														}
-													],
-													"sid": 241229541908537
+													"eventType": "comment",
+													"text": "death"
 												},
 												{
 													"eventType": "block",
