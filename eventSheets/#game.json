@@ -5255,6 +5255,80 @@
 						{
 							"eventType": "group",
 							"disabled": false,
+							"title": "Enemy - dialog",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "enemy_runner",
+											"sid": 658992860622158
+										}
+									],
+									"actions": [],
+									"sid": 255985410361916,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "enemy_runner",
+													"sid": 935146332543748,
+													"parameters": {
+														"object": "char_dialog",
+														"layer": "\"enemy_dialog\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-text",
+													"objectClass": "char_dialog",
+													"sid": 897679585627492,
+													"parameters": {
+														"text": "\"\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "char_dialog",
+													"sid": 721291162728872,
+													"parameters": {
+														"instance-variable": "parent_uid",
+														"value": "enemy_runner.UID"
+													}
+												},
+												{
+													"id": "pin-to-object-properties",
+													"objectClass": "char_dialog",
+													"sid": 428893116796825,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "enemy_runner",
+														"x": true,
+														"y": true,
+														"angle": false,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												}
+											],
+											"sid": 743268031432574
+										}
+									]
+								}
+							],
+							"sid": 490988331847361
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
 							"title": "Enemy - MAIN",
 							"description": "",
 							"isActiveOnStart": true,
