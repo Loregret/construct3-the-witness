@@ -9,6 +9,7 @@
 			"sid": 677380283190012,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,
@@ -39,12 +40,12 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Text",
+					"type": "logo_text",
 					"properties": {
 						"text": "Loregret",
 						"enable-bbcode": true,
 						"font": "pixel",
-						"size": 56,
+						"size": 36,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -64,12 +65,18 @@
 					"instanceVariables": {
 						"param": ""
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
-						"x": 2,
-						"y": 250,
-						"width": 637.3333333333334,
-						"height": 110.0533401489258,
+						"x": 93.04484915180082,
+						"y": 237.11237583417878,
+						"width": 462.8061359353639,
+						"height": 79.91636156031053,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -101,19 +108,19 @@
 						}
 					},
 					"world": {
-						"x": 320,
-						"y": 195,
-						"width": 128.0166861828718,
-						"height": 128.0166861828718,
+						"x": 321.2322788519208,
+						"y": 196.2630513251633,
+						"width": 90,
+						"height": 90,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
 							1,
 							1,
-							1
+							0.5
 						],
-						"angle": 0,
+						"angle": 5.216435377837213,
 						"zElevation": 1
 					}
 				}
@@ -121,6 +128,7 @@
 			"sid": 836907272081993,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,

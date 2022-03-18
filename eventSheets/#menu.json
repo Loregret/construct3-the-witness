@@ -23,7 +23,7 @@
 			"actions": [
 				{
 					"id": "set-opacity",
-					"objectClass": "Text",
+					"objectClass": "logo_text",
 					"sid": 343724296897068,
 					"parameters": {
 						"opacity": "80"
@@ -116,12 +116,12 @@
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
-						"object-clicked": "Text"
+						"object-clicked": "logo_text"
 					}
 				},
 				{
 					"id": "compare-text",
-					"objectClass": "Text",
+					"objectClass": "logo_text",
 					"sid": 338718315790525,
 					"parameters": {
 						"text-to-compare": "\"Свидетель\"",
@@ -131,7 +131,7 @@
 				},
 				{
 					"id": "is-on-layer",
-					"objectClass": "Text",
+					"objectClass": "logo_text",
 					"sid": 468978686059191,
 					"parameters": {
 						"layer": "current_layer"
@@ -175,7 +175,7 @@
 							"conditions": [
 								{
 									"id": "compare-text",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 729015771961547,
 									"parameters": {
 										"text-to-compare": "\"играть\"",
@@ -221,7 +221,7 @@
 								},
 								{
 									"id": "compare-text",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 268058971569780,
 									"parameters": {
 										"text-to-compare": "\"выход\"",
@@ -264,7 +264,7 @@
 								},
 								{
 									"id": "compare-text",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 257136257225937,
 									"parameters": {
 										"text-to-compare": "\"Настройки\"",
@@ -340,7 +340,7 @@
 							"conditions": [
 								{
 									"id": "compare-text",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 190254813532266,
 									"parameters": {
 										"text-to-compare": "\"Назад\"",
@@ -397,7 +397,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 121178664561051,
 									"parameters": {
 										"instance-variable": "param",
@@ -433,7 +433,7 @@
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Text",
+											"objectClass": "logo_text",
 											"sid": 868308838560524,
 											"parameters": {
 												"text": "\"Отдаление камеры: Ручная\""
@@ -463,7 +463,7 @@
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Text",
+											"objectClass": "logo_text",
 											"sid": 871079415021691,
 											"parameters": {
 												"text": "\"Отдаление камеры: Авто\""
@@ -484,7 +484,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 368844191515249,
 									"parameters": {
 										"instance-variable": "param",
@@ -513,7 +513,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "Text",
+											"objectClass": "logo_text",
 											"sid": 594169087830524,
 											"parameters": {
 												"text": "\"Сложность: Экстрим\""
@@ -553,7 +553,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "Text",
+											"objectClass": "logo_text",
 											"sid": 832536061720947,
 											"parameters": {
 												"text": "\"Сложность: Сложно\""
@@ -583,7 +583,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 726041845457134,
 									"parameters": {
 										"instance-variable": "param",
@@ -788,7 +788,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "Text",
+											"objectClass": "logo_text",
 											"sid": 805005343993408,
 											"parameters": {
 												"text": "\"Скорость камеры: \" & settings_cam_speed_modificator"
@@ -811,12 +811,12 @@
 					"objectClass": "Mouse",
 					"sid": 523307604579968,
 					"parameters": {
-						"object": "Text"
+						"object": "logo_text"
 					}
 				},
 				{
 					"id": "is-on-layer",
-					"objectClass": "Text",
+					"objectClass": "logo_text",
 					"sid": 868723305139387,
 					"parameters": {
 						"layer": "current_layer"
@@ -831,7 +831,7 @@
 					"conditions": [
 						{
 							"id": "pick-nearestfurthest",
-							"objectClass": "Text",
+							"objectClass": "logo_text",
 							"sid": 686949540164687,
 							"parameters": {
 								"which": "nearest",
@@ -841,7 +841,7 @@
 						},
 						{
 							"id": "compare-text",
-							"objectClass": "Text",
+							"objectClass": "logo_text",
 							"sid": 602259038284637,
 							"parameters": {
 								"text-to-compare": "\"Свидетель\"",
@@ -861,12 +861,12 @@
 									"objectClass": "System",
 									"sid": 398979030169800,
 									"parameters": {
-										"object": "Text"
+										"object": "logo_text"
 									}
 								},
 								{
 									"id": "compare-text",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 797742245326170,
 									"parameters": {
 										"text-to-compare": "\"Свидетель\"",
@@ -878,7 +878,7 @@
 							"actions": [
 								{
 									"id": "set-opacity",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 816877720978398,
 									"parameters": {
 										"opacity": "80"
@@ -886,7 +886,7 @@
 								},
 								{
 									"id": "set-z-elevation",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 284776668043689,
 									"parameters": {
 										"z": "0"
@@ -901,7 +901,7 @@
 							"actions": [
 								{
 									"id": "set-opacity",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 582898677247514,
 									"parameters": {
 										"opacity": "100"
@@ -909,7 +909,7 @@
 								},
 								{
 									"id": "set-z-elevation",
-									"objectClass": "Text",
+									"objectClass": "logo_text",
 									"sid": 482764993221226,
 									"parameters": {
 										"z": "1"

@@ -15,18 +15,90 @@
 					"id": "set-size",
 					"objectClass": "logo",
 					"sid": 403117517531662,
-					"disabled": true,
 					"parameters": {
 						"width": "0",
 						"height": "0"
 					}
 				},
 				{
+					"id": "set-opacity",
+					"objectClass": "logo_text",
+					"sid": 890311917634400,
+					"parameters": {
+						"opacity": "0"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "logo",
+					"sid": 765799953269787,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "90",
+						"end-y": "90",
+						"time": "0.25",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "logo",
+					"sid": 649217353322391,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetAngle",
+						"end-value": "0",
+						"time": "0.2",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "logo",
+					"sid": 745403872867268,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.156",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "logo_text",
+					"sid": 755470076344517,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.26",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 390546315563468,
+					"sid": 602886828209745,
 					"parameters": {
-						"seconds": "1.0"
+						"seconds": "1.25"
 					}
 				},
 				{
