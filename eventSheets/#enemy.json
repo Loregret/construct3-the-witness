@@ -1,0 +1,3947 @@
+{
+	"name": "#Enemy",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "[h1] Enemy ☠️ [/h1]",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - MAIN",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 137181030165764,
+									"parameters": {
+										"object": "enemy_runner"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "enemy_runner",
+									"sid": 191001832189402,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 1,
+										"value": "\"dead\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 645806452741877,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "[h2] Sub Action[/h2]"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 428273977661252,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "tree overlapping"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 263977805586076,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "enemy_runner",
+															"sid": 496937615902862,
+															"parameters": {
+																"object": "tree"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "enemy_runner",
+															"sid": 493996686201762,
+															"parameters": {
+																"instance-variable": "state",
+																"comparison": 1,
+																"value": "\"dead\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 170403608944828,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 582170459164700,
+																	"parameters": {
+																		"tag": "\"leaves\"&enemy_runner.UID"
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "play-at-object",
+																	"objectClass": "Audio",
+																	"sid": 399662712647156,
+																	"parameters": {
+																		"audio-file": "leaves rustle",
+																		"loop": "not-looping",
+																		"volume": "-8",
+																		"object": "enemy_runner",
+																		"inner-angle": "360",
+																		"outer-angle": "360",
+																		"outer-gain": "0",
+																		"tag-optional": "\"leaves\"&enemy_runner.UID"
+																	}
+																}
+															],
+															"sid": 244471972256902
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 447278623430736
+														},
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 564306320958801,
+															"parameters": {
+																"tag": "\"leaves\"&enemy_runner.UID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "stop",
+															"objectClass": "Audio",
+															"sid": 786498822787749,
+															"parameters": {
+																"tag": "\"leaves\"&enemy_runner.UID"
+															}
+														}
+													],
+													"sid": 696886837070821
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "enemy colliding auto control"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 765703957845723,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "enemy_runner",
+															"sid": 688818161052589,
+															"parameters": {
+																"object": "enemies"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 128422362805796,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "enemies",
+																	"sid": 486701782360078,
+																	"parameters": {
+																		"animation": "\"dead\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "enemies",
+																	"sid": 795602766968297,
+																	"parameters": {
+																		"animation": "\"dead_gore\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "move-at-angle",
+																	"objectClass": "enemy_runner",
+																	"sid": 552447447002649,
+																	"parameters": {
+																		"angle": "angle(enemies.X,enemies.Y,Self.X,Self.Y)",
+																		"distance": "random(1,20)"
+																	}
+																}
+															],
+															"sid": 136867703772600
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "steps"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 503603233547849,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-speed",
+															"objectClass": "enemy_runner",
+															"sid": 962787539518994,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"comparison": 4,
+																"speed": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"type": "comment",
+															"text": "steps on"
+														}
+													],
+													"sid": 103822162756331,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-overlapping-another-object",
+																	"objectClass": "enemy_runner",
+																	"sid": 419416335316028,
+																	"parameters": {
+																		"object": "wooden_floor"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 239653643035957,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-tag-playing",
+																			"objectClass": "Audio",
+																			"sid": 898714205286562,
+																			"parameters": {
+																				"tag": "\"enemy_step_wood\"&enemy_runner.UID"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "enemy_stop_steps",
+																			"sid": 508085008777037,
+																			"parameters": [
+																				"enemy_runner.UID"
+																			]
+																		},
+																		{
+																			"id": "play-at-object",
+																			"objectClass": "Audio",
+																			"sid": 650548061487487,
+																			"parameters": {
+																				"audio-file": "walk wood run 4",
+																				"loop": "looping",
+																				"volume": "0",
+																				"object": "enemy_runner",
+																				"inner-angle": "360",
+																				"outer-angle": "360",
+																				"outer-gain": "360",
+																				"tag-optional": "\"enemy_step_wood\"&enemy_runner.UID"
+																			}
+																		}
+																	],
+																	"sid": 501529086509668
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 170643065149501
+																},
+																{
+																	"id": "is-overlapping-another-object",
+																	"objectClass": "enemy_runner",
+																	"sid": 937826343023321,
+																	"parameters": {
+																		"object": "road"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 206735434377487,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-tag-playing",
+																			"objectClass": "Audio",
+																			"sid": 592801138697764,
+																			"parameters": {
+																				"tag": "\"enemy_step_stone\"&enemy_runner.UID"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "enemy_stop_steps",
+																			"sid": 573131636294968,
+																			"parameters": [
+																				"enemy_runner.UID"
+																			]
+																		},
+																		{
+																			"id": "play-at-object",
+																			"objectClass": "Audio",
+																			"sid": 589662277210430,
+																			"parameters": {
+																				"audio-file": "walk stone run",
+																				"loop": "looping",
+																				"volume": "0",
+																				"object": "enemy_runner",
+																				"inner-angle": "360",
+																				"outer-angle": "360",
+																				"outer-gain": "360",
+																				"tag-optional": "\"enemy_step_stone\"&enemy_runner.UID"
+																			}
+																		}
+																	],
+																	"sid": 893874201991697
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 970703572067519
+																},
+																{
+																	"id": "is-overlapping-another-object",
+																	"objectClass": "enemy_runner",
+																	"sid": 261305541525394,
+																	"parameters": {
+																		"object": "grass"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 342287740214342,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-tag-playing",
+																			"objectClass": "Audio",
+																			"sid": 846922818558313,
+																			"parameters": {
+																				"tag": "\"enemy_step_grass\"&enemy_runner.UID"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "enemy_stop_steps",
+																			"sid": 244739801893063,
+																			"parameters": [
+																				"enemy_runner.UID"
+																			]
+																		},
+																		{
+																			"id": "play-at-object",
+																			"objectClass": "Audio",
+																			"sid": 607385560686828,
+																			"parameters": {
+																				"audio-file": "walk grass run",
+																				"loop": "looping",
+																				"volume": "0",
+																				"object": "enemy_runner",
+																				"inner-angle": "360",
+																				"outer-angle": "360",
+																				"outer-gain": "360",
+																				"tag-optional": "\"enemy_step_grass\"&enemy_runner.UID"
+																			}
+																		}
+																	],
+																	"sid": 381211591261787
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 848697472306614
+														}
+													],
+													"actions": [
+														{
+															"type": "comment",
+															"text": "steps off"
+														}
+													],
+													"sid": 860731031260673,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-moving-along-path",
+																	"objectClass": "enemy_runner",
+																	"sid": 110620183362212,
+																	"behaviorType": "Pathfinding"
+																}
+															],
+															"actions": [],
+															"sid": 290188243908889,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-overlapping-another-object",
+																			"objectClass": "enemy_runner",
+																			"sid": 366577005662858,
+																			"parameters": {
+																				"object": "wooden_floor"
+																			}
+																		}
+																	],
+																	"actions": [],
+																	"sid": 221749030965256,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-tag-playing",
+																					"objectClass": "Audio",
+																					"sid": 717327986690590,
+																					"parameters": {
+																						"tag": "\"step_wood\""
+																					},
+																					"isInverted": true
+																				}
+																			],
+																			"actions": [
+																				{
+																					"callFunction": "player_stop_steps",
+																					"sid": 512580870383697
+																				},
+																				{
+																					"id": "play-at-object",
+																					"objectClass": "Audio",
+																					"sid": 457162901474239,
+																					"parameters": {
+																						"audio-file": "walk_wood",
+																						"loop": "looping",
+																						"volume": "0",
+																						"object": "enemy_runner",
+																						"inner-angle": "360",
+																						"outer-angle": "360",
+																						"outer-gain": "360",
+																						"tag-optional": "\"step_wood\""
+																					}
+																				}
+																			],
+																			"sid": 768814597956933
+																		}
+																	]
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 298979334027594
+																		},
+																		{
+																			"id": "is-overlapping-another-object",
+																			"objectClass": "enemy_runner",
+																			"sid": 919363094073134,
+																			"parameters": {
+																				"object": "grass"
+																			}
+																		}
+																	],
+																	"actions": [],
+																	"sid": 804081754851323,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-tag-playing",
+																					"objectClass": "Audio",
+																					"sid": 439868056478167,
+																					"parameters": {
+																						"tag": "\"step_grass\""
+																					},
+																					"isInverted": true
+																				}
+																			],
+																			"actions": [
+																				{
+																					"callFunction": "player_stop_steps",
+																					"sid": 803264189771624
+																				},
+																				{
+																					"id": "play-at-object",
+																					"objectClass": "Audio",
+																					"sid": 546852468711836,
+																					"parameters": {
+																						"audio-file": "walk grass",
+																						"loop": "looping",
+																						"volume": "0",
+																						"object": "enemy_runner",
+																						"inner-angle": "360",
+																						"outer-angle": "360",
+																						"outer-gain": "360",
+																						"tag-optional": "\"step_grass\""
+																					}
+																				}
+																			],
+																			"sid": 764649472997556
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 164622879628678
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "enemy_stop_steps",
+																	"sid": 162423551299416,
+																	"parameters": [
+																		"enemy_runner.UID"
+																	]
+																}
+															],
+															"sid": 785344236016787
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "[h2] Main Action[/h1]"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 820340060195688,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 727651122871682,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 0,
+														"value": "\"idle\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 860632094403847,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "misc"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 222714830032263,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "enemy_runner",
+																	"sid": 235389481512212,
+																	"parameters": {
+																		"animation": "\"idle\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation",
+																	"objectClass": "enemy_runner",
+																	"sid": 696462042249501,
+																	"parameters": {
+																		"animation": "\"idle\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "set-speed",
+																	"objectClass": "enemy_runner",
+																	"sid": 459109673108950,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"speed": "0"
+																	}
+																}
+															],
+															"sid": 855811108124077
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"callFunction": "enemy_clear_attack_line",
+																	"sid": 321260955559868,
+																	"parameters": [
+																		"enemy_runner.UID"
+																	]
+																}
+															],
+															"sid": 433397342096715
+														}
+													]
+												},
+												{
+													"eventType": "comment",
+													"text": "main"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 188051733933670,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 489570957452550,
+																	"parameters": {
+																		"first-value": "Functions.enemy_check_player_visibility(enemy_runner.UID)",
+																		"comparison": 0,
+																		"second-value": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "enemy_runner",
+																	"sid": 243139578556753,
+																	"parameters": {
+																		"instance-variable": "state",
+																		"value": "\"attack\""
+																	}
+																}
+															],
+															"sid": 220189413737251
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 327902924581355
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "alert",
+																	"sid": 240556134406121,
+																	"parameters": {
+																		"instance-variable": "parentUID",
+																		"comparison": 0,
+																		"value": "enemy_runner.UID"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "enemy_runner",
+																	"sid": 317167474369181,
+																	"parameters": {
+																		"instance-variable": "state",
+																		"value": "\"alert\""
+																	}
+																}
+															],
+															"sid": 202478859347080
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 971580770045782
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 300024415927642,
+																	"parameters": {
+																		"first-value": "distance(enemy_runner.X,enemy_runner.Y, enemy_runner.orig_X, enemy_runner.orig_Y)",
+																		"comparison": 4,
+																		"second-value": "50"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "enemy_runner",
+																	"sid": 390872603439195,
+																	"parameters": {
+																		"instance-variable": "state",
+																		"value": "\"comeback\""
+																	}
+																}
+															],
+															"sid": 701540705682066
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 554827750560319
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 389867822835434,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 0,
+														"value": "\"attack\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 673409864659088,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "misc"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 377369368207449,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-enabled",
+																	"objectClass": "enemy_runner",
+																	"sid": 955272119601912,
+																	"behaviorType": "Pathfinding"
+																}
+															],
+															"actions": [
+																{
+																	"id": "stop",
+																	"objectClass": "enemy_runner",
+																	"sid": 787268587150849,
+																	"behaviorType": "Pathfinding"
+																},
+																{
+																	"id": "set-enabled",
+																	"objectClass": "enemy_runner",
+																	"sid": 793736152913615,
+																	"behaviorType": "Pathfinding",
+																	"parameters": {
+																		"set": "disabled"
+																	}
+																}
+															],
+															"sid": 767311721756075
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "enemy_runner",
+																	"sid": 304573491557173,
+																	"parameters": {
+																		"animation": "\"run\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation",
+																	"objectClass": "enemy_runner",
+																	"sid": 140433298924311,
+																	"parameters": {
+																		"animation": "\"run\"",
+																		"from": "beginning"
+																	}
+																}
+															],
+															"sid": 277279891680960
+														}
+													]
+												},
+												{
+													"eventType": "comment",
+													"text": "main"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 211906631435302,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 950536169828757,
+																	"parameters": {
+																		"first-value": "Functions.enemy_check_player_visibility(enemy_runner.UID)",
+																		"comparison": 0,
+																		"second-value": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "enemy_clear_alerts",
+																	"sid": 865704940646917,
+																	"parameters": [
+																		"enemy_runner.UID"
+																	]
+																}
+															],
+															"sid": 822613622194174,
+															"children": [
+																{
+																	"eventType": "comment",
+																	"text": "scream!"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 814129856144962,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-tag-playing",
+																					"objectClass": "Audio",
+																					"sid": 216604625775185,
+																					"parameters": {
+																						"tag": "\"enemy_scream\"&enemy_runner.UID"
+																					},
+																					"isInverted": true
+																				},
+																				{
+																					"id": "trigger-once-while-true",
+																					"objectClass": "System",
+																					"sid": 552699025447519
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "play-at-object-by-name",
+																					"objectClass": "Audio",
+																					"sid": 846154321489750,
+																					"parameters": {
+																						"folder": "sounds",
+																						"audio-file-name": "choose(\"man scream\", \"man scream 2\",\"man scream 3\",\"\")",
+																						"loop": "not-looping",
+																						"volume": "random(-5,0)",
+																						"object": "enemy_runner",
+																						"inner-angle": "360",
+																						"outer-angle": "360",
+																						"outer-gain": "0",
+																						"tag-optional": "\"enemy_scream\" & enemy_runner.UID"
+																					}
+																				},
+																				{
+																					"callFunction": "create_audio_trigger",
+																					"sid": 461959369183479,
+																					"parameters": [
+																						"enemy_runner.X",
+																						"enemy_runner.Y",
+																						"4",
+																						"1"
+																					]
+																				}
+																			],
+																			"sid": 734631881738947
+																		}
+																	]
+																},
+																{
+																	"eventType": "comment",
+																	"text": "bullet or Pathfind -- for chasing player"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 642552260984882,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "enemy_line",
+																					"sid": 677937577678146,
+																					"parameters": {
+																						"instance-variable": "parentUID",
+																						"comparison": 0,
+																						"value": "enemy_runner.UID"
+																					}
+																				}
+																			],
+																			"actions": [],
+																			"sid": 392852956648633,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "is-overlapping-another-object",
+																							"objectClass": "enemy_line",
+																							"sid": 880914239773439,
+																							"parameters": {
+																								"object": "building"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "find-path",
+																							"objectClass": "enemy_runner",
+																							"sid": 147855211414941,
+																							"behaviorType": "Pathfinding",
+																							"parameters": {
+																								"x": "Player.X",
+																								"y": "Player.Y"
+																							}
+																						}
+																					],
+																					"sid": 395764498332960,
+																					"isOrBlock": true
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "else",
+																							"objectClass": "System",
+																							"sid": 692388949844441
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-angle-toward-position",
+																							"objectClass": "enemy_runner",
+																							"sid": 415008933828430,
+																							"parameters": {
+																								"x": "Player.X",
+																								"y": "Player.Y"
+																							}
+																						}
+																					],
+																					"sid": 635381962538590
+																				}
+																			]
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 413247770855736
+																				}
+																			],
+																			"actions": [],
+																			"sid": 772901413288302,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [],
+																					"actions": [
+																						{
+																							"id": "create-object",
+																							"objectClass": "System",
+																							"sid": 311948392048119,
+																							"parameters": {
+																								"object-to-create": "enemy_line",
+																								"layer": "\"triggers\"",
+																								"x": "enemy_runner.X",
+																								"y": "enemy_runner.Y",
+																								"create-hierarchy": false
+																							}
+																						},
+																						{
+																							"id": "pin-to-object-properties",
+																							"objectClass": "enemy_line",
+																							"sid": 794710683212051,
+																							"behaviorType": "Pin",
+																							"parameters": {
+																								"pin-to": "enemy_runner",
+																								"x": true,
+																								"y": true,
+																								"angle": false,
+																								"width-type": "no",
+																								"height-type": "no",
+																								"z": false
+																							}
+																						},
+																						{
+																							"id": "set-instvar-value",
+																							"objectClass": "enemy_line",
+																							"sid": 116266663496835,
+																							"parameters": {
+																								"instance-variable": "parentUID",
+																								"value": "enemy_runner.UID"
+																							}
+																						}
+																					],
+																					"sid": 945449578856466
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"eventType": "comment",
+																	"text": "animation"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 369423490515325,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-animation-playing",
+																					"objectClass": "enemy_runner",
+																					"sid": 801044318938685,
+																					"parameters": {
+																						"animation": "\"run\""
+																					},
+																					"isInverted": true
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-animation",
+																					"objectClass": "enemy_runner",
+																					"sid": 981522895883792,
+																					"parameters": {
+																						"animation": "\"run\"",
+																						"from": "beginning"
+																					}
+																				}
+																			],
+																			"sid": 372079570189577
+																		}
+																	]
+																},
+																{
+																	"eventType": "comment",
+																	"text": "tree"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 176559090380227,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-overlapping-another-object",
+																					"objectClass": "enemy_runner",
+																					"sid": 558444230287602,
+																					"parameters": {
+																						"object": "tree"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-speed",
+																					"objectClass": "enemy_runner",
+																					"sid": 825004413368152,
+																					"behaviorType": "Bullet",
+																					"parameters": {
+																						"speed": "280"
+																					}
+																				}
+																			],
+																			"sid": 979158935411064
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 817495650962395
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-speed",
+																					"objectClass": "enemy_runner",
+																					"sid": 733273405362598,
+																					"behaviorType": "Bullet",
+																					"parameters": {
+																						"speed": "300"
+																					}
+																				}
+																			],
+																			"sid": 429642924272643
+																		}
+																	]
+																},
+																{
+																	"eventType": "comment",
+																	"text": "player attack"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 540864077284338,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "on-collision-with-another-object",
+																					"objectClass": "enemy_runner",
+																					"sid": 513433381193807,
+																					"parameters": {
+																						"object": "Player"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "spawn-another-object",
+																					"objectClass": "Player",
+																					"sid": 981359522442086,
+																					"parameters": {
+																						"object": "decal_blood",
+																						"layer": "\"floors\"",
+																						"image-point": "0",
+																						"create-hierarchy": false
+																					}
+																				},
+																				{
+																					"id": "move-to-top",
+																					"objectClass": "decal_blood",
+																					"sid": 677001998738052
+																				},
+																				{
+																					"callFunction": "player_death",
+																					"sid": 876133749084389
+																				}
+																			],
+																			"sid": 282633616576210
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 247870349942650
+																}
+															],
+															"actions": [],
+															"sid": 584309077594068,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "create-object",
+																			"objectClass": "System",
+																			"sid": 196491592611206,
+																			"parameters": {
+																				"object-to-create": "alert",
+																				"layer": "\"triggers\"",
+																				"x": "Player.X",
+																				"y": "Player.Y",
+																				"create-hierarchy": false
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "alert",
+																			"sid": 304352454000102,
+																			"parameters": {
+																				"instance-variable": "parentUID",
+																				"value": "enemy_runner.UID"
+																			}
+																		}
+																	],
+																	"sid": 583736666341940
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-animation-playing",
+																			"objectClass": "enemy_runner",
+																			"sid": 462661080638924,
+																			"parameters": {
+																				"animation": "\"idle\""
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "enemy_runner",
+																			"sid": 269616532709144,
+																			"parameters": {
+																				"instance-variable": "state",
+																				"value": "\"idle\""
+																			}
+																		}
+																	],
+																	"sid": 164585944559611
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 567697075071408
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 988713996093318,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 0,
+														"value": "\"alert\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 746033676143462,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "misc"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 183918666350902,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-enabled",
+																	"objectClass": "enemy_runner",
+																	"sid": 537530962866112,
+																	"behaviorType": "Pathfinding",
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-enabled",
+																	"objectClass": "enemy_runner",
+																	"sid": 821902627933785,
+																	"behaviorType": "Pathfinding",
+																	"parameters": {
+																		"set": "enabled"
+																	}
+																}
+															],
+															"sid": 794836283551828
+														}
+													]
+												},
+												{
+													"eventType": "comment",
+													"text": "main"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 782771900239413,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 139026779220948,
+																	"parameters": {
+																		"first-value": "Functions.enemy_check_player_visibility(enemy_runner.UID)",
+																		"comparison": 0,
+																		"second-value": "1"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 803234185104898,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "enemy_runner",
+																			"sid": 892656682901517,
+																			"parameters": {
+																				"instance-variable": "state",
+																				"value": "\"attack\""
+																			}
+																		}
+																	],
+																	"sid": 942374035196110
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 477033450678356
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "alert",
+																	"sid": 422519745356537,
+																	"parameters": {
+																		"instance-variable": "parentUID",
+																		"comparison": 0,
+																		"value": "enemy_runner.UID"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 743314556728822,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-nth-instance",
+																			"objectClass": "System",
+																			"sid": 634910505970659,
+																			"parameters": {
+																				"object": "alert",
+																				"instance": "0"
+																			}
+																		},
+																		{
+																			"id": "is-calculating-path",
+																			"objectClass": "enemy_runner",
+																			"sid": 759928598015192,
+																			"behaviorType": "Pathfinding",
+																			"isInverted": true
+																		},
+																		{
+																			"id": "is-moving-along-path",
+																			"objectClass": "enemy_runner",
+																			"sid": 575777882897790,
+																			"behaviorType": "Pathfinding",
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "find-path",
+																			"objectClass": "enemy_runner",
+																			"sid": 216008147195172,
+																			"behaviorType": "Pathfinding",
+																			"parameters": {
+																				"x": "alert.X",
+																				"y": "alert.Y"
+																			}
+																		}
+																	],
+																	"sid": 320534290505258
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 113834956629022
+																},
+																{
+																	"id": "is-timer-running",
+																	"objectClass": "enemy_runner",
+																	"sid": 393828763876575,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"tag": "\"alert\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [],
+															"sid": 573265482142604,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "enemy_runner",
+																			"sid": 624665680746177,
+																			"parameters": {
+																				"instance-variable": "state",
+																				"value": "\"idle\""
+																			}
+																		}
+																	],
+																	"sid": 595173803250413
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 443689581702960
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 857985109472810,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 0,
+														"value": "\"comeback\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 917002789160522,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "misc"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 570518444822210,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-enabled",
+																	"objectClass": "enemy_runner",
+																	"sid": 551920571473085,
+																	"behaviorType": "Pathfinding",
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-enabled",
+																	"objectClass": "enemy_runner",
+																	"sid": 502414184206858,
+																	"behaviorType": "Pathfinding",
+																	"parameters": {
+																		"set": "enabled"
+																	}
+																}
+															],
+															"sid": 149778038880547
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"callFunction": "enemy_clear_attack_line",
+																	"sid": 400288799887064,
+																	"parameters": [
+																		"enemy_runner.UID"
+																	]
+																}
+															],
+															"sid": 350943291773151
+														}
+													]
+												},
+												{
+													"eventType": "comment",
+													"text": "main"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 865254747748324,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 506372706911171,
+																	"parameters": {
+																		"first-value": "Functions.enemy_check_player_visibility(enemy_runner.UID)",
+																		"comparison": 0,
+																		"second-value": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "enemy_runner",
+																	"sid": 681877844643757,
+																	"parameters": {
+																		"instance-variable": "state",
+																		"value": "\"attack\""
+																	}
+																}
+															],
+															"sid": 501777498719601
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 907550268822772
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "alert",
+																	"sid": 611814630890854,
+																	"parameters": {
+																		"instance-variable": "parentUID",
+																		"comparison": 0,
+																		"value": "enemy_runner.UID"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "enemy_runner",
+																	"sid": 710104316173580,
+																	"parameters": {
+																		"instance-variable": "state",
+																		"value": "\"alert\""
+																	}
+																}
+															],
+															"sid": 809265014205329
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 398476775050732
+																}
+															],
+															"actions": [],
+															"sid": 833337723220340,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-calculating-path",
+																			"objectClass": "enemy_runner",
+																			"sid": 864705041440210,
+																			"behaviorType": "Pathfinding",
+																			"isInverted": true
+																		},
+																		{
+																			"id": "is-moving-along-path",
+																			"objectClass": "enemy_runner",
+																			"sid": 911228901841173,
+																			"behaviorType": "Pathfinding",
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "find-path",
+																			"objectClass": "enemy_runner",
+																			"sid": 654232634035494,
+																			"behaviorType": "Pathfinding",
+																			"parameters": {
+																				"x": "Self.orig_X",
+																				"y": "Self.orig_Y"
+																			}
+																		}
+																	],
+																	"sid": 862814940302331
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 140886100183607,
+					"text-color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"background-color": [
+						0.32941176470588235,
+						0.3137254901960784,
+						0.2901960784313726,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - dialog",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "enemy_runner",
+									"sid": 239078390836130
+								}
+							],
+							"actions": [],
+							"sid": 619226764792445,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "enemy_runner",
+											"sid": 823165253089006,
+											"parameters": {
+												"object": "char_dialog",
+												"layer": "\"enemy_dialog\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "char_dialog",
+											"sid": 353919892256813,
+											"parameters": {
+												"text": "\"\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "char_dialog",
+											"sid": 695511688565557,
+											"parameters": {
+												"instance-variable": "parent_uid",
+												"value": "enemy_runner.UID"
+											}
+										},
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "char_dialog",
+											"sid": 937506579522062,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "enemy_runner",
+												"x": true,
+												"y": true,
+												"angle": false,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										}
+									],
+									"sid": 835596757102128
+								}
+							]
+						}
+					],
+					"sid": 734097959810844
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - timers",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "enemy_runner",
+									"sid": 287420517527200,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"flashlight_alert\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "enemy_runner",
+									"sid": 382998607800837,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 1,
+										"value": "\"dead\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 937366932463484,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 801244005014106,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 1,
+												"value": "\"attack\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 512315948338243,
+											"parameters": {
+												"object-to-create": "alert",
+												"layer": "\"triggers\"",
+												"x": "flashlight.X",
+												"y": "flashlight.Y",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "alert",
+											"sid": 208104885955432,
+											"parameters": {
+												"instance-variable": "parentUID",
+												"value": "enemy_runner.UID"
+											}
+										}
+									],
+									"sid": 705861746880742,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 580630375094313,
+													"parameters": {
+														"tag": "\"enemy_voice\"&enemy_runner.UID"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 501879671048871,
+													"parameters": {
+														"tag": "\"enemy_scream\"&enemy_runner.UID"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 277140700822474,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "choose(\"man impressed\",\"man impressed 2\", \"man scared\", \"man scared 2\", \"man sigh\")",
+														"loop": "not-looping",
+														"volume": "random(-26,-15)",
+														"object": "enemy_runner",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"enemy_voice\"&enemy_runner.UID"
+													}
+												}
+											],
+											"sid": 197330064247665
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "enemy_runner",
+									"sid": 657678699035427,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"alert\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "enemy_runner",
+									"sid": 401715597040154,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"alert\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 122124510967657,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "alert",
+											"sid": 974428802684103,
+											"parameters": {
+												"instance-variable": "parentUID",
+												"comparison": 0,
+												"value": "enemy_runner.UID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 500391954940079
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 876845986442744
+										},
+										{
+											"id": "has-los-to-object",
+											"objectClass": "enemy_runner",
+											"sid": 270635536504517,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"object": "Player",
+												"image-point": "0"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemy_runner",
+											"sid": 718703873874304,
+											"parameters": {
+												"instance-variable": "state",
+												"value": "\"idle\""
+											}
+										}
+									],
+									"sid": 178568223484896
+								}
+							]
+						}
+					],
+					"sid": 154076189910759
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - pathfinding",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-failed-to-find-path",
+									"objectClass": "enemy_runner",
+									"sid": 365256859768758,
+									"behaviorType": "Pathfinding"
+								}
+							],
+							"actions": [],
+							"sid": 124838439043389,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 980715613228797,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 0,
+												"value": "\"alert\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 429589926802967,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "alert",
+													"sid": 312023958871814,
+													"parameters": {
+														"instance-variable": "parentUID",
+														"comparison": 0,
+														"value": "enemy_runner.UID"
+													}
+												},
+												{
+													"id": "pick-nth-instance",
+													"objectClass": "System",
+													"sid": 120468063955292,
+													"parameters": {
+														"object": "alert",
+														"instance": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "alert",
+													"sid": 937867490807484,
+													"parameters": {
+														"angle": "random(0,360)",
+														"distance": "random(5,100)"
+													}
+												}
+											],
+											"sid": 515583511891999
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-arrived",
+									"objectClass": "enemy_runner",
+									"sid": 836092107881412,
+									"behaviorType": "Pathfinding"
+								}
+							],
+							"actions": [],
+							"sid": 813118546600749,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 387806733789315,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 0,
+												"value": "\"alert\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 449651062587469,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "alert",
+													"sid": 400355932613436,
+													"parameters": {
+														"instance-variable": "parentUID",
+														"comparison": 0,
+														"value": "enemy_runner.UID"
+													}
+												},
+												{
+													"id": "pick-nth-instance",
+													"objectClass": "System",
+													"sid": 757445823555431,
+													"parameters": {
+														"object": "alert",
+														"instance": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "alert",
+													"sid": 575042918342543
+												}
+											],
+											"sid": 508425137266786
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "enemy_runner",
+													"sid": 640250456551547,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "random(2,8)",
+														"type": "once",
+														"tag": "\"alert\""
+													}
+												}
+											],
+											"sid": 256429255859975
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 478528300784364
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 210081959475203,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 0,
+												"value": "\"comeback\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemy_runner",
+											"sid": 454173981876418,
+											"parameters": {
+												"instance-variable": "state",
+												"value": "\"idle\""
+											}
+										}
+									],
+									"sid": 614489685302236
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-path-found",
+									"objectClass": "enemy_runner",
+									"sid": 667504994608946,
+									"behaviorType": "Pathfinding"
+								}
+							],
+							"actions": [],
+							"sid": 860917061550626,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "move-along-path",
+											"objectClass": "enemy_runner",
+											"sid": 949318834444511,
+											"behaviorType": "Pathfinding"
+										}
+									],
+									"sid": 898124638494312
+								}
+							]
+						}
+					],
+					"sid": 303376013320643
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "enemy_clear_attack_line",
+							"functionDescription": "",
+							"functionCategory": "#enemy",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "UID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 313556666924772
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 563964111284212,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_line",
+											"sid": 473641512212764,
+											"parameters": {
+												"instance-variable": "parentUID",
+												"comparison": 0,
+												"value": "UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "enemy_line",
+											"sid": 667836695664506
+										}
+									],
+									"sid": 227981402834748
+								}
+							]
+						},
+						{
+							"functionName": "enemy_check_player_visibility",
+							"functionDescription": "",
+							"functionCategory": "#enemy",
+							"functionReturnType": "number",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "UID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 634669923153952
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 792724090818873,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemy_runner",
+											"sid": 733300286398084,
+											"parameters": {
+												"unique-id": "UID"
+											}
+										},
+										{
+											"id": "has-los-to-object",
+											"objectClass": "enemy_runner",
+											"sid": 333811092913897,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"object": "Player",
+												"image-point": "0"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 376818367015194,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 1,
+												"value": "\"dead\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 143553829355761,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "enemy_runner",
+													"sid": 934553592222316,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"flashlight_alert\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 511726773876580,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 367835678008262,
+															"parameters": {
+																"first-value": "distance(enemy_runner.X,enemy_runner.Y, Player.X,Player.y)",
+																"comparison": 3,
+																"second-value": "700"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 234626817612373,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 449874043556497
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 631881032867769
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Player",
+															"sid": 684821235543491,
+															"parameters": {
+																"instance-variable": "visibility_lvl",
+																"comparison": 4,
+																"value": "35"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 236312570962247,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 484386685477817
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 912646964078479,
+													"parameters": {
+														"variable": "player_visibility_check"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 529674992691669,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 175281861383548,
+															"parameters": {
+																"first-value": "distance(enemy_runner.X,enemy_runner.Y, Player.X,Player.y)",
+																"comparison": 3,
+																"second-value": "145"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 743704642547405,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 326852938464680,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 969385230408569
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 831478526673908
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Player",
+															"sid": 772328390258318,
+															"parameters": {
+																"instance-variable": "visibility_lvl",
+																"comparison": 5,
+																"value": "15"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 559089505059378,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 631167982791659
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 586006975179239
+												}
+											],
+											"actions": [],
+											"sid": 263863702279507,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 407786916371653,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 216637259893761
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 168540049564262
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 425466318497522,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 455000275611677
+								}
+							]
+						},
+						{
+							"functionName": "enemy_clear_alerts",
+							"functionDescription": "",
+							"functionCategory": "#enemy",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "UID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 484488432779700
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 728638837059683,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "alert",
+											"sid": 469546678572553,
+											"parameters": {
+												"instance-variable": "parentUID",
+												"comparison": 0,
+												"value": "UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "alert",
+											"sid": 193679940622310
+										}
+									],
+									"sid": 245564861647131
+								}
+							]
+						},
+						{
+							"functionName": "enemy_death",
+							"functionDescription": "",
+							"functionCategory": "#enemy",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "UID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 725644162689318
+								},
+								{
+									"name": "Gore",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 351644597461798
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 183832744634014,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemy_runner",
+											"sid": 835083864961109,
+											"parameters": {
+												"unique-id": "UID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 745969714000535,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 132416490894479,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "choose(\"\",\"man death\", \"man death 2\")",
+														"loop": "not-looping",
+														"volume": "0",
+														"object": "enemy_runner",
+														"inner-angle": "360",
+														"outer-angle": "0",
+														"outer-gain": "0",
+														"tag-optional": "\"enemy_death\"&enemy_runner.UID"
+													}
+												},
+												{
+													"id": "fade-volume",
+													"objectClass": "Audio",
+													"sid": 787302021378273,
+													"parameters": {
+														"tag": "\"enemy_death\"&enemy_runner.UID",
+														"db": "-100",
+														"duration": "random(0.5,1)",
+														"ending": "stop"
+													}
+												}
+											],
+											"sid": 564762686473076
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "enemy_runner",
+													"sid": 521324819558448,
+													"parameters": {
+														"instance-variable": "state",
+														"value": "\"dead\""
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "enemy_runner",
+													"sid": 825225561973667,
+													"parameters": {
+														"animation": "\"dead\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "enemy_runner",
+													"sid": 596566789906301,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "enemy_runner",
+													"sid": 649896234506008,
+													"behaviorType": "Pathfinding",
+													"parameters": {
+														"set": "disabled"
+													}
+												},
+												{
+													"id": "set-range",
+													"objectClass": "enemy_runner",
+													"sid": 903489930367868,
+													"behaviorType": "LineOfSight",
+													"parameters": {
+														"range": "0"
+													}
+												},
+												{
+													"id": "move-to-layer",
+													"objectClass": "enemy_runner",
+													"sid": 888452379186822,
+													"parameters": {
+														"layer": "\"floors\""
+													}
+												}
+											],
+											"sid": 841665494932859
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 268728232946021,
+													"parameters": {
+														"variable": "Gore"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle",
+													"objectClass": "enemy_runner",
+													"sid": 531495897332537,
+													"parameters": {
+														"angle": "Self.Angle + random(30,-30)"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "enemy_runner",
+													"sid": 892247819558779,
+													"parameters": {
+														"animation": "\"dead_gore\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "enemy_runner",
+													"sid": 116123950422768,
+													"parameters": {
+														"frame-number": "random(0,Self.AnimationFrameCount + 1)"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 130818115231621,
+													"parameters": {
+														"audio-file": "gore blood 1",
+														"loop": "not-looping",
+														"volume": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 854119880893369,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 794939148191793,
+															"parameters": {
+																"object-to-create": "decal_blood",
+																"layer": "\"floors\"",
+																"x": "enemy_runner.X  + random(-5,5)",
+																"y": "enemy_runner.Y + random(-15,15)",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 684910210028734,
+															"parameters": {
+																"object-to-create": "decal_blood",
+																"layer": "\"floors\"",
+																"x": "enemy_runner.X  + random(-15,15)",
+																"y": "enemy_runner.Y + random(-5,5)",
+																"create-hierarchy": false
+															}
+														}
+													],
+													"sid": 856623294610136
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "move-to-top",
+													"objectClass": "enemy_runner",
+													"sid": 723948078044380
+												},
+												{
+													"callFunction": "enemy_stop_steps",
+													"sid": 233675104418167,
+													"parameters": [
+														"enemy_runner.UID"
+													]
+												},
+												{
+													"callFunction": "enemy_stop_voice",
+													"sid": 273089140192723,
+													"parameters": [
+														"enemy_runner.UID"
+													]
+												}
+											],
+											"sid": 471482755697585
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_line",
+													"sid": 738351469502318,
+													"parameters": {
+														"instance-variable": "parentUID",
+														"comparison": 0,
+														"value": "UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "enemy_line",
+													"sid": 328510014599073
+												}
+											],
+											"sid": 928787846824169
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "alert",
+													"sid": 355277234126933,
+													"parameters": {
+														"instance-variable": "parentUID",
+														"comparison": 0,
+														"value": "enemy_runner.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "alert",
+													"sid": 534821023035779
+												}
+											],
+											"sid": 624538460661468
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "enemy_stop_voice",
+							"functionDescription": "",
+							"functionCategory": "#enemy",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "uid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 569252568123411
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 934588685458539,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemy_runner",
+											"sid": 112698466829299,
+											"parameters": {
+												"unique-id": "uid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 570640275064381,
+											"parameters": {
+												"tag": "\"enemy_scream\"&uid"
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 125135751046375,
+											"parameters": {
+												"tag": "\"enemy_voice\"&uid"
+											}
+										}
+									],
+									"sid": 132287763394916
+								}
+							]
+						},
+						{
+							"functionName": "enemy_stop_steps",
+							"functionDescription": "",
+							"functionCategory": "#enemy",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "uid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 592897193582428
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 379635096421950,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemy_runner",
+											"sid": 625220955046382,
+											"parameters": {
+												"unique-id": "uid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 125951376751909,
+											"parameters": {
+												"tag": "\"leaves\"&enemy_runner.UID"
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 272346202302474,
+											"parameters": {
+												"tag": "\"enemy_step_wood\"&uid"
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 971715729729643,
+											"parameters": {
+												"tag": "\"enemy_step_grass\"&uid"
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 887178133255940,
+											"parameters": {
+												"tag": "\"enemy_step_stone\"&uid"
+											}
+										}
+									],
+									"sid": 417783507942134
+								}
+							]
+						}
+					],
+					"sid": 616360760716630
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - vision",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 262682253150066,
+									"parameters": {
+										"object": "enemy_line"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 691218438865802,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-angle-toward-position",
+											"objectClass": "enemy_line",
+											"sid": 552567085987083,
+											"parameters": {
+												"x": "Player.X",
+												"y": "Player.Y"
+											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "enemy_line",
+											"sid": 810896393092777,
+											"parameters": {
+												"width": "distance(Self.X,Self.Y, Player.X, Player.Y)"
+											}
+										}
+									],
+									"sid": 384656728973435
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "flashlight",
+									"sid": 774578611871682,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "enemy_runner",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "flashlight",
+									"sid": 564801722055482,
+									"parameters": {
+										"instance-variable": "pinUID",
+										"comparison": 0,
+										"value": "Player.UID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 198008246540520,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 382054145942163,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 1,
+												"value": "\"dead\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 683348213223119,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 1,
+												"value": "\"attack\""
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "flashlight",
+											"sid": 571692171970011
+										}
+									],
+									"actions": [],
+									"sid": 378458603588733,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 810483378236451,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 0,
+														"value": "\"comeback\""
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 240311091767549,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 0,
+														"value": "\"alert\""
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 605675866918999,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 0,
+														"value": "\"idle\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 793844637933731,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 767040613102886,
+															"parameters": {
+																"interval-seconds": "1.25"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "start-timer",
+															"objectClass": "enemy_runner",
+															"sid": 112216477965541,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "random(0.3,1)",
+																"type": "once",
+																"tag": "\"flashlight_alert\""
+															}
+														}
+													],
+													"sid": 233441240207364
+												}
+											],
+											"isOrBlock": true
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 867788402389111
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - alerts",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "enemy_runner",
+									"sid": 430846318321583,
+									"parameters": {
+										"object": "trigger"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "enemy_runner",
+									"sid": 973810831257269,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 1,
+										"value": "\"dead\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 325801224710796,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 493759903393659,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 1,
+												"value": "\"attack\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 810582627265910,
+											"parameters": {
+												"object-to-create": "alert",
+												"layer": "\"triggers\"",
+												"x": "trigger.X + random(-150,150)",
+												"y": "trigger.Y + random(-150,150)",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "alert",
+											"sid": 187382361751193,
+											"parameters": {
+												"instance-variable": "parentUID",
+												"value": "enemy_runner.UID"
+											}
+										}
+									],
+									"sid": 308738775447752,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 334807794677383,
+													"parameters": {
+														"tag": "\"enemy_voice\"&enemy_runner.UID"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 535580684721071,
+													"parameters": {
+														"tag": "\"enemy_scream\"&enemy_runner.UID"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 801430990870515,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "choose(\"man impressed\",\"man impressed 2\", \"man scared\", \"man scared 2\", \"man sigh\", \"man laugh\",\"man cry\", \"man cry 2\", \"man whisper\", \"man heavy breathe\")",
+														"loop": "not-looping",
+														"volume": "random(-26,-15)",
+														"object": "enemy_runner",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"enemy_voice\"&enemy_runner.UID"
+													}
+												}
+											],
+											"sid": 392217448908231
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "alert",
+									"sid": 670097410634321,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"destroy\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "alert",
+									"sid": 996615324183662
+								}
+							],
+							"sid": 476799406197995
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "alert",
+									"sid": 644891833283796
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "alert",
+									"sid": 515773335660080,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "clamp(distance(enemy_runner.X, enemy_runner.Y, alert.X, alert.y), 45, 1000)",
+										"type": "once",
+										"tag": "\"destroy\""
+									}
+								}
+							],
+							"sid": 147102845465978
+						}
+					],
+					"sid": 238051945769065
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - misc",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "bullet",
+									"sid": 391400661544201,
+									"parameters": {
+										"object": "enemy_runner"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 992782761199573,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy_runner",
+											"sid": 976079960875617,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 1,
+												"value": "\"dead\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 238632893617794,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "enemy_runner",
+													"sid": 970533816990865,
+													"parameters": {
+														"instance-variable": "hp",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "enemy_runner",
+													"sid": 875420699570057,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "0"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "bullet",
+													"sid": 325052672006925
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 166297381115452,
+													"parameters": {
+														"object-to-create": "decal_blood",
+														"layer": "\"floors\"",
+														"x": "enemy_runner.X  ",
+														"y": "enemy_runner.Y",
+														"create-hierarchy": false
+													}
+												}
+											],
+											"sid": 895746539273493
+										},
+										{
+											"eventType": "comment",
+											"text": "audio"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 225411838664236,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "play-at-object-by-name",
+															"objectClass": "Audio",
+															"sid": 717023751612694,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "choose(\"\",\"man scream 2\",\"man scream 3\",\"man scream 4\",\"man grunt\")",
+																"loop": "not-looping",
+																"volume": "-10",
+																"object": "enemy_runner",
+																"inner-angle": "360",
+																"outer-angle": "0",
+																"outer-gain": "0",
+																"tag-optional": "\"enemy_death\"&enemy_runner.UID"
+															}
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 667234357878338,
+															"parameters": {
+																"audio-file": "bullet impact flash",
+																"loop": "not-looping",
+																"volume": "random(-10,0)",
+																"object": "enemy_runner",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "0",
+																"tag-optional": "\"bullet - impact\""
+															}
+														}
+													],
+													"sid": 144377246963680
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "alert"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 184659365315325,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 1,
+														"value": "\"attack\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 717602912132587,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 138867077503679,
+															"parameters": {
+																"object-to-create": "alert",
+																"layer": "\"triggers\"",
+																"x": "Player.X",
+																"y": "Player.Y",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "alert",
+															"sid": 330067856829766,
+															"parameters": {
+																"instance-variable": "parentUID",
+																"value": "enemy_runner.UID"
+															}
+														}
+													],
+													"sid": 896159743634267
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "death"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "enemy_runner",
+													"sid": 257113632156377,
+													"parameters": {
+														"instance-variable": "hp",
+														"comparison": 3,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 497075425126730,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-width",
+															"objectClass": "bullet",
+															"sid": 574299498258619,
+															"parameters": {
+																"comparison": 4,
+																"width": "11"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "enemy_death",
+															"sid": 499333981035974,
+															"parameters": [
+																"enemy_runner.UID",
+																false
+															]
+														}
+													],
+													"sid": 262753926255220
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 906538596846233
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "enemy_death",
+															"sid": 189895838324574,
+															"parameters": [
+																"enemy_runner.UID",
+																true
+															]
+														}
+													],
+													"sid": 377755792193993
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "enemy_runner",
+									"sid": 965880731308847
+								}
+							],
+							"actions": [],
+							"sid": 694017921387901,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemy_runner",
+											"sid": 476535467687634,
+											"parameters": {
+												"instance-variable": "hp",
+												"value": "choose(1,2)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemy_runner",
+											"sid": 525943860088601,
+											"parameters": {
+												"instance-variable": "orig_X",
+												"value": "Self.X"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemy_runner",
+											"sid": 796776388238826,
+											"parameters": {
+												"instance-variable": "orig_Y",
+												"value": "Self.Y"
+											}
+										},
+										{
+											"id": "add-obstacle",
+											"objectClass": "enemy_runner",
+											"sid": 306112160865823,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"obstacle": "tree"
+											}
+										},
+										{
+											"id": "move-to-layer",
+											"objectClass": "enemy_runner",
+											"sid": 229114833112665,
+											"parameters": {
+												"layer": "\"enemy\""
+											}
+										}
+									],
+									"sid": 343377755188241
+								}
+							]
+						}
+					],
+					"sid": 401416542205071
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy - turret",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "enemy_gunner",
+									"sid": 247470638067341
+								}
+							],
+							"actions": [
+								{
+									"id": "add-object-to-target",
+									"objectClass": "enemy_gunner",
+									"sid": 954282757191671,
+									"behaviorType": "Turret",
+									"parameters": {
+										"target": "Player"
+									}
+								}
+							],
+							"sid": 259431283760311
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-shoot",
+									"objectClass": "enemy_gunner",
+									"sid": 302335740369282,
+									"behaviorType": "Turret"
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "enemy_gunner",
+									"sid": 672425791338595,
+									"parameters": {
+										"object": "bullet",
+										"layer": "\"bullets\"",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "play-at-object",
+									"objectClass": "Audio",
+									"sid": 432413050524225,
+									"parameters": {
+										"audio-file": "9mm - fire",
+										"loop": "not-looping",
+										"volume": "0",
+										"object": "enemy_gunner",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"gunshot\"&enemy_gunner.UID"
+									}
+								},
+								{
+									"id": "set-rate-of-fire",
+									"objectClass": "enemy_gunner",
+									"sid": 626017301441104,
+									"behaviorType": "Turret",
+									"parameters": {
+										"rate-of-fire": "random(0.6,1.4)"
+									}
+								}
+							],
+							"sid": 715875560333293,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 673088514749611,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 410364536134651,
+													"parameters": {
+														"object-to-create": "fx_muzzle",
+														"layer": "\"enemy\"",
+														"x": "enemy_gunner.ImagePointX(1)",
+														"y": "enemy_gunner.ImagePointY(1)",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "fx_muzzle",
+													"sid": 497330650725127,
+													"parameters": {
+														"angle": "enemy_gunner.Angle"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "fx_muzzle",
+													"sid": 566136317716568,
+													"parameters": {
+														"width": "32",
+														"height": "32"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "fx_muzzle",
+													"sid": 693710742763430,
+													"parameters": {
+														"opacity": "80"
+													}
+												},
+												{
+													"id": "pin-to-object-properties",
+													"objectClass": "fx_muzzle",
+													"sid": 856796960881096,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "enemy_gunner",
+														"x": true,
+														"y": true,
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												}
+											],
+											"sid": 895254734646767,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 569325579591198,
+															"parameters": {
+																"object-to-create": "Light",
+																"layer": "\"light\"",
+																"x": "fx_muzzle.ImagePointX(1)",
+																"y": "fx_muzzle.ImagePointY(1)",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "Light",
+															"sid": 326445988511796,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "enemy_gunner",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Light",
+															"sid": 143074562669308,
+															"parameters": {
+																"opacity": "0"
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "Light",
+															"sid": 281166942567916,
+															"parameters": {
+																"scale": "0"
+															}
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "Light",
+															"sid": 817402344557873,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "100",
+																"time": "0.1",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "yes"
+															}
+														},
+														{
+															"id": "tween-two-properties",
+															"objectClass": "Light",
+															"sid": 755471980260823,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "size",
+																"end-x": "125",
+																"end-y": "125",
+																"time": "0.1",
+																"ease": "default",
+																"destroy-on-complete": "yes",
+																"loop": "no",
+																"ping-pong": "yes"
+															}
+														}
+													],
+													"sid": 767609611206400
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 938874547088595
+				}
+			],
+			"sid": 598339292072374
+		}
+	],
+	"sid": 835774610273675
+}

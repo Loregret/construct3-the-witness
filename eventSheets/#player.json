@@ -1,0 +1,2975 @@
+{
+	"name": "#Player",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "[h1] Player 👨‍💼 [/h1]",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Player - timers",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "Player",
+									"sid": 518292135647506,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"reload\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 743919973584129,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 729637571271720,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"pistol\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 945559439406663,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 230891630799447,
+													"parameters": {
+														"audio-file": "drop",
+														"loop": "not-looping",
+														"volume": "-5",
+														"tag-optional": "\"reload\""
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "Player",
+													"sid": 824552233633736,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "1.0",
+														"type": "once",
+														"tag": "\"reload_finish\""
+													}
+												}
+											],
+											"sid": 360568472465126
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 368058413133440
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 977665682596308,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"ak\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 266906254652640,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "Player",
+													"sid": 469930618200877,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "1.45",
+														"type": "once",
+														"tag": "\"reload_finish\""
+													}
+												}
+											],
+											"sid": 648738760869741
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 984178048517754
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 945501522488753,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"shotgun\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 755429933330107,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 634744625244843,
+													"parameters": {
+														"audio-file": "shotgun bullet inject",
+														"loop": "not-looping",
+														"volume": "-5",
+														"tag-optional": "\"reload\""
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "Player",
+													"sid": 647518230128019,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "0.725",
+														"type": "once",
+														"tag": "\"reload_finish\""
+													}
+												}
+											],
+											"sid": 944640656334370
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "Player",
+									"sid": 188014185186161,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"reload_finish\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 818355165520386,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 753861003977584,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"pistol\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 497820818810813,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 139505997963599,
+													"parameters": {
+														"audio-file": "9mm - reload 2",
+														"loop": "not-looping",
+														"volume": "0",
+														"tag-optional": "\"reload\""
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 372949757473983,
+													"parameters": {
+														"animation": "\"pistol\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-key",
+													"objectClass": "weapon",
+													"sid": 923515128678754,
+													"parameters": {
+														"key": "\"pistol_ammo\"",
+														"value": "weapon.Get(\"pistol_max_ammo\")"
+													}
+												}
+											],
+											"sid": 766165959044775
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 865546200077844
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 425781658167312,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"ak\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 161214259662504,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 716110944750199,
+													"parameters": {
+														"audio-file": "ak reload 2",
+														"loop": "not-looping",
+														"volume": "-12",
+														"tag-optional": "\"reload\""
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 195094451286554,
+													"parameters": {
+														"animation": "\"ak\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-key",
+													"objectClass": "weapon",
+													"sid": 848667490561067,
+													"parameters": {
+														"key": "\"ak_ammo\"",
+														"value": "weapon.Get(\"ak_max_ammo\")"
+													}
+												}
+											],
+											"sid": 578574449188514
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 267097016125137
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 817137548312323,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"shotgun\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 233902348804405,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 410628504860634,
+													"parameters": {
+														"audio-file": "shotgun chamber",
+														"loop": "not-looping",
+														"volume": "-5",
+														"tag-optional": "\"reload\""
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 886419441244998,
+													"parameters": {
+														"animation": "\"shotgun\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-key",
+													"objectClass": "weapon",
+													"sid": 903505851028977,
+													"parameters": {
+														"key": "\"shotgun_ammo\"",
+														"value": "weapon.Get(\"shotgun_max_ammo\")"
+													}
+												}
+											],
+											"sid": 484937041831854
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 819258937267079
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Player - functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "player_update_visibility",
+							"functionDescription": "",
+							"functionCategory": "#player",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 903216256867862,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 855676038878742,
+											"parameters": {
+												"instance-variable": "visibility_lvl",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 192369096745230
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 938105075731463,
+											"parameters": {
+												"object": "flashlight"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "flashlight",
+											"sid": 451564282571491,
+											"parameters": {
+												"object": "Player"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "flashlight",
+											"sid": 805603761614008
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "Player",
+											"sid": 468259362583469,
+											"parameters": {
+												"instance-variable": "visibility_lvl",
+												"value": "flashlight.Opacity"
+											}
+										}
+									],
+									"sid": 559267699040750
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 207286782614106,
+											"parameters": {
+												"object": "Light"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Light",
+											"sid": 435206583828040,
+											"parameters": {
+												"object": "Player"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 966438992295460,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 131853384328903,
+													"parameters": {
+														"first-value": "distance(Player.X,Player.Y,Light.X,Light.y)",
+														"comparison": 4,
+														"second-value": "Light.Width"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-instvar",
+													"objectClass": "Player",
+													"sid": 716445252819665,
+													"parameters": {
+														"instance-variable": "visibility_lvl",
+														"value": "Light.Opacity  * 0.5"
+													}
+												}
+											],
+											"sid": 223692560870218
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 261162411096461
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-instvar",
+													"objectClass": "Player",
+													"sid": 260656765482544,
+													"parameters": {
+														"instance-variable": "visibility_lvl",
+														"value": "Light.Opacity"
+													}
+												}
+											],
+											"sid": 740169535916803
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "Player",
+											"sid": 806279669528565,
+											"parameters": {
+												"instance-variable": "visibility_lvl",
+												"value": "5"
+											}
+										}
+									],
+									"sid": 850066955242597
+								}
+							]
+						},
+						{
+							"functionName": "player_reload_interrupt",
+							"functionDescription": "",
+							"functionCategory": "#player",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 737605368030866,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "animation"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 727948115696995,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 955280037732060,
+													"parameters": {
+														"animation": "\"pistol_reload\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 159269194908012,
+													"parameters": {
+														"animation": "\"pistol\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 308511937259714
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 300769105955371,
+													"parameters": {
+														"animation": "\"ak_reload\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 777977643502623,
+													"parameters": {
+														"animation": "\"ak\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 794685205402691
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "timers"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 661437831561455,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "Player",
+													"sid": 967768483668755,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"reload\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "stop-timer",
+													"objectClass": "Player",
+													"sid": 222114759169087,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"reload\""
+													}
+												}
+											],
+											"sid": 498868576751796
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "Player",
+													"sid": 361361559320315,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"reload_finish\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "stop-timer",
+													"objectClass": "Player",
+													"sid": 144193568880164,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"reload_finish\""
+													}
+												}
+											],
+											"sid": 510781598946394
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "audio"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 591871402248215,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 229893453311175,
+													"parameters": {
+														"tag": "\"reload\""
+													}
+												}
+											],
+											"sid": 154690332875623
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "player_death",
+							"functionDescription": "",
+							"functionCategory": "#player",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 599887815129453,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "audio"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 381402526467790,
+											"parameters": {
+												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "flashlight",
+											"sid": 584262916992668
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 575960347077672,
+											"parameters": {
+												"audio-file": "bullet impact flash",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"gameover\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 200696308897643,
+											"parameters": {
+												"audio-file": "man grunt 2",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"gameover\""
+											}
+										}
+									],
+									"sid": 431329316766566
+								},
+								{
+									"eventType": "comment",
+									"text": "player"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 395532301075861,
+											"parameters": {
+												"object": "decal_blood",
+												"layer": "\"floor\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 463022110211927,
+											"parameters": {
+												"object-to-create": "Player_dead",
+												"layer": "\"floors\"",
+												"x": "Player.X",
+												"y": "Player.Y",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_dead",
+											"sid": 879126386677760,
+											"parameters": {
+												"angle": "Player.Angle"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Player",
+											"sid": 487529958152643
+										}
+									],
+									"sid": 336181980651262
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 936044955238478,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "exit"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 401005035435444,
+													"parameters": {
+														"seconds": "1.0"
+													}
+												},
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 653559391205124,
+													"parameters": {
+														"layout": "Menu"
+													}
+												}
+											],
+											"sid": 417315670817751
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 101498783513189
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Player - behaviour",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "visibility"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 180648320511154,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 681658885124254,
+											"parameters": {
+												"variable": "player_visibility_check"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 968593523880913,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 248167222633390,
+													"parameters": {
+														"interval-seconds": "dt"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "player_update_visibility",
+													"sid": 249904386526944
+												}
+											],
+											"sid": 627584219216326
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 903140920923453
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Player - angle",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 369606880204685
+								}
+							],
+							"actions": [],
+							"sid": 970199865054567,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 463730296304295,
+											"parameters": {
+												"animation": "\"run\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "Player",
+											"sid": 206293863397191,
+											"parameters": {
+												"angle": "Player.8Direction.MovingAngle"
+											}
+										}
+									],
+									"sid": 780677421007078
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 411796937197312
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 174138866451632,
+											"parameters": {
+												"first-value": "distance(Player.X,Player.Y,Mouse.X,Mouse.Y)",
+												"comparison": 4,
+												"second-value": "8"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-toward-position",
+											"objectClass": "Player",
+											"sid": 749783576001884,
+											"parameters": {
+												"x": "Mouse.X",
+												"y": "Mouse.Y"
+											}
+										}
+									],
+									"sid": 392635259761171
+								}
+							]
+						}
+					],
+					"sid": 267269802598638
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Player - animation",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "tree - audio"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 150123846954912,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Player",
+											"sid": 355850428524251,
+											"parameters": {
+												"object": "tree"
+											}
+										},
+										{
+											"id": "is-moving",
+											"objectClass": "Player",
+											"sid": 736962216773959,
+											"behaviorType": "8Direction"
+										}
+									],
+									"actions": [],
+									"sid": 537821495423799,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 270480912097931,
+													"parameters": {
+														"tag": "\"leaves\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 957515332754838,
+													"parameters": {
+														"audio-file": "leaves rustle",
+														"loop": "not-looping",
+														"volume": "-10",
+														"object": "Player",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"leaves\""
+													}
+												}
+											],
+											"sid": 726449870729104
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 580210795082470,
+													"parameters": {
+														"interval-seconds": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "create_audio_trigger",
+													"sid": 768373878183575,
+													"parameters": [
+														"Player.X",
+														"Player.Y",
+														"3.45",
+														"0.5"
+													]
+												}
+											],
+											"sid": 655246677185860
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 172857337685290
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 453730966737062,
+											"parameters": {
+												"tag": "\"leaves\""
+											}
+										}
+									],
+									"sid": 485598435545965
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "!! оптимизировать"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "Player",
+									"sid": 286231173248610,
+									"behaviorType": "8Direction"
+								}
+							],
+							"actions": [],
+							"sid": 978177015004629,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 261518555206437,
+											"parameters": {
+												"animation": "\"idle\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 372572201594431,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 762785126346424,
+													"parameters": {
+														"animation": "\"walk\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 772495344843621
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 405384927730937
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 589682761464846,
+											"parameters": {
+												"animation": "\"walk\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 651548354421323,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 455257777971327,
+													"parameters": {
+														"key": 16
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 430562510986584,
+													"parameters": {
+														"animation": "\"run\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"callFunction": "player_stop_steps",
+													"sid": 522161849030231
+												}
+											],
+											"sid": 416095812132765
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 961907417963309
+												}
+											],
+											"actions": [],
+											"sid": 236049941092077,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 684806544145813,
+															"parameters": {
+																"object": "tree"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 173000411596835,
+															"parameters": {
+																"speed": "4"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 670659364452505,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "min(Self.8Direction.Speed, 60)"
+															}
+														}
+													],
+													"sid": 732457318355151,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 593277788426739,
+																	"parameters": {
+																		"interval-seconds": "0.7"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 105362299720743,
+																	"parameters": [
+																		false
+																	]
+																}
+															],
+															"sid": 460550901146668
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 576566313174388
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 602826234880067,
+															"parameters": {
+																"speed": "6"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 172319601230330,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "125"
+															}
+														}
+													],
+													"sid": 263349858026335,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 379487700368565,
+																	"parameters": {
+																		"interval-seconds": "0.5"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 846527333487940,
+																	"parameters": [
+																		false
+																	]
+																}
+															],
+															"sid": 826890751796356
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 183336874667237
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 110345057156278,
+											"parameters": {
+												"animation": "\"run\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 937188986045337,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 889738699676749,
+													"parameters": {
+														"key": 16
+													}
+												}
+											],
+											"actions": [],
+											"sid": 922550428233692,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 674624060274806,
+															"parameters": {
+																"object": "tree"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 976832957715533,
+															"parameters": {
+																"speed": "8"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 854334014033510,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "400"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 714689658091552,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "200"
+															}
+														}
+													],
+													"sid": 568863092863418,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 274424058780594,
+																	"parameters": {
+																		"interval-seconds": "0.4"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 626540365666918,
+																	"parameters": [
+																		false
+																	]
+																}
+															],
+															"sid": 145632172386940
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 705547255661474
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 765039693551952,
+															"parameters": {
+																"speed": "10"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 706412127480369,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "400"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 282702913273249,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "345"
+															}
+														}
+													],
+													"sid": 983055901559796,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 628609538760255,
+																	"parameters": {
+																		"interval-seconds": "0.3"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 534475894163093,
+																	"parameters": [
+																		true
+																	]
+																}
+															],
+															"sid": 619607408663491
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 538743824130878
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "player_stop_steps",
+													"sid": 885849538520380
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 239266170254576,
+													"parameters": {
+														"animation": "\"walk\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 616081816047396
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 491611371445422
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 812702982149021,
+											"parameters": {
+												"animation": "\"pistol\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 397963920854135,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 798834879118830,
+													"parameters": {
+														"key": 16
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "player_stop_steps",
+													"sid": 583604716457459
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 671997742675615,
+													"parameters": {
+														"animation": "\"run\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 846120691482097
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 859580123955285
+												}
+											],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player",
+													"sid": 336009782375926,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"max-speed": "125"
+													}
+												}
+											],
+											"sid": 604681034256143,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 974923128953968,
+															"parameters": {
+																"interval-seconds": "0.5"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_check_step_sound",
+															"sid": 573945694250600,
+															"parameters": [
+																false
+															]
+														}
+													],
+													"sid": 490724134677514
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 726787800789451
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 163174814986078,
+											"parameters": {
+												"animation": "\"ak\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 501686891079619,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 602688785076594,
+													"parameters": {
+														"key": 16
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "player_stop_steps",
+													"sid": 737670856861405,
+													"disabled": true
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 839241947361326,
+													"disabled": true,
+													"parameters": {
+														"animation": "\"run\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 668484095066606
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 992989176108789
+												}
+											],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player",
+													"sid": 326436734820109,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"max-speed": "95"
+													}
+												}
+											],
+											"sid": 511159277030103,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 921951127115373,
+															"parameters": {
+																"interval-seconds": "0.5"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_check_step_sound",
+															"sid": 739438988295476,
+															"parameters": [
+																false
+															]
+														}
+													],
+													"sid": 376054903473175
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 330135495915316
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 857568816965223,
+											"parameters": {
+												"animation": "\"ak_reload\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 221978520195798,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player",
+													"sid": 177817377066716,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"max-speed": "45"
+													}
+												}
+											],
+											"sid": 294056390131677,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 529869904381277,
+															"parameters": {
+																"interval-seconds": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_check_step_sound",
+															"sid": 528206367696908,
+															"parameters": [
+																false
+															]
+														}
+													],
+													"sid": 293309023639313
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 334147180447155
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 422610520510258,
+											"parameters": {
+												"animation": "\"shotgun\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 673138943308289,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 610233579559446,
+													"parameters": {
+														"key": 16
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "player_stop_steps",
+													"sid": 741305662627224,
+													"disabled": true
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 712874363533480,
+													"disabled": true,
+													"parameters": {
+														"animation": "\"run\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 355318764478125
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 727881857580837
+												}
+											],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player",
+													"sid": 510673722145366,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"max-speed": "115"
+													}
+												}
+											],
+											"sid": 286778025257950,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 230525078342061,
+															"parameters": {
+																"interval-seconds": "0.5"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_check_step_sound",
+															"sid": 641777875974769,
+															"parameters": [
+																false
+															]
+														}
+													],
+													"sid": 554143217210459
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 325237147029703
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 449502298818054,
+											"parameters": {
+												"animation": "\"shotgun_reload\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 585305952726567,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player",
+													"sid": 724815302917710,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"max-speed": "90"
+													}
+												}
+											],
+											"sid": 370356522215165,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 348721298182553,
+															"parameters": {
+																"interval-seconds": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_check_step_sound",
+															"sid": 253091175079681,
+															"parameters": [
+																false
+															]
+														}
+													],
+													"sid": 544287304017679
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 678099374486699
+								}
+							],
+							"actions": [],
+							"sid": 265472962435699,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "player_stop_steps",
+											"sid": 528987918780182
+										}
+									],
+									"sid": 595268601706547
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 870694085624075,
+											"parameters": {
+												"animation": "\"walk\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 847418163179436,
+											"parameters": {
+												"animation": "\"run\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 773671176653169,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 865960124819204,
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 702457698095346
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Player - steps",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "player_stop_steps",
+							"functionDescription": "",
+							"functionCategory": "#audio",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 570995127177513,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 924312332550381,
+											"parameters": {
+												"tag": "\"step_grass\""
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 654257268602159,
+											"parameters": {
+												"tag": "\"step_wood\""
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 971725041812872,
+											"parameters": {
+												"tag": "\"step_stone\""
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 879994438548092,
+											"parameters": {
+												"tag": "\"step_sand\""
+											}
+										}
+									],
+									"sid": 115214766759088
+								}
+							]
+						},
+						{
+							"functionName": "player_check_step_sound",
+							"functionDescription": "",
+							"functionCategory": "#audio",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "is_running",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 336986415660802
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 850274003653168,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 467679266119184,
+											"parameters": {
+												"variable": "is_running"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 912116692012741,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 291931491731392,
+													"parameters": {
+														"object": "wooden_floor"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 375280516639716,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 700506237316944,
+															"parameters": {
+																"interval-seconds": "0.3"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 601235074066075,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"8",
+																"1"
+															]
+														}
+													],
+													"sid": 171428429726080
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 371194443318393,
+															"parameters": {
+																"tag": "\"step_wood\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 158827003230497
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 864115446645338,
+															"parameters": {
+																"audio-file": "walk wood run 4",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_wood\""
+															}
+														}
+													],
+													"sid": 485329422908898
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 459003821489159
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 248381680335913,
+													"parameters": {
+														"object": "road"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 321442974892534,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 573976869577437,
+															"parameters": {
+																"interval-seconds": "0.3"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 401439068266297,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"8",
+																"1"
+															]
+														}
+													],
+													"sid": 937511714120432
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 332220639973548,
+															"parameters": {
+																"tag": "\"step_stone\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 404451195623661
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 746634035055667,
+															"parameters": {
+																"audio-file": "walk stone run",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_stone\""
+															}
+														}
+													],
+													"sid": 744436319421596
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 456000001741928
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 522342967970033,
+													"parameters": {
+														"object": "concrete"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 304724035907927,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 537487201255112,
+															"parameters": {
+																"interval-seconds": "0.3"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 419354240881557,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"8",
+																"1"
+															]
+														}
+													],
+													"sid": 218709671640703
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 330018520831776,
+															"parameters": {
+																"tag": "\"step_stone\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 588993670733346
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 706067186905053,
+															"parameters": {
+																"audio-file": "walk stone run",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_stone\""
+															}
+														}
+													],
+													"sid": 538038389011543
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 109027815839015
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 278363255886953,
+													"parameters": {
+														"object": "grass"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 407181256906033,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 103984924786017,
+															"parameters": {
+																"interval-seconds": "0.3"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 686137364799685,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"8",
+																"1"
+															]
+														}
+													],
+													"sid": 284664520522217
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 766368258614739,
+															"parameters": {
+																"tag": "\"step_grass\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 125061078207158
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 390005462782415,
+															"parameters": {
+																"audio-file": "walk grass run",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_grass\""
+															}
+														}
+													],
+													"sid": 143764212448718
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 702771341173331
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 277406116422729,
+													"parameters": {
+														"object": "sand"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 415615607215071,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 135518953323144,
+															"parameters": {
+																"interval-seconds": "0.3"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 875781412797587,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"8",
+																"1"
+															]
+														}
+													],
+													"sid": 823738213046626
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 906403323901657,
+															"parameters": {
+																"tag": "\"step_sand\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 123817772547919
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 283791133910613,
+															"parameters": {
+																"audio-file": "walk dirt run",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_sand\""
+															}
+														}
+													],
+													"sid": 874727856112095
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 866862955550596
+										}
+									],
+									"actions": [],
+									"sid": 605960681341944,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 877696101446006,
+													"parameters": {
+														"object": "wooden_floor"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 513116683108166,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 933371220231537,
+															"parameters": {
+																"interval-seconds": "0.4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 879643491408603,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"5",
+																"1"
+															]
+														}
+													],
+													"sid": 355248918805632
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 427540881702618,
+															"parameters": {
+																"tag": "\"step_wood\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 411930880333207
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 464238915307258,
+															"parameters": {
+																"audio-file": "walk_wood",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_wood\""
+															}
+														}
+													],
+													"sid": 385302184328276
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 213881811513305
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 660367452513691,
+													"parameters": {
+														"object": "road"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 555028596971719,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 242284207790923,
+															"parameters": {
+																"interval-seconds": "0.4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 158902899637089,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"5",
+																"1"
+															]
+														}
+													],
+													"sid": 641749686367081
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 263878858446107,
+															"parameters": {
+																"tag": "\"step_stone\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 181224575871651
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 368240396248127,
+															"parameters": {
+																"audio-file": "walk stone",
+																"loop": "looping",
+																"volume": "-5",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_stone\""
+															}
+														}
+													],
+													"sid": 893815831711968
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 317563758864620
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 214996638495668,
+													"parameters": {
+														"object": "concrete"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 650703989587194,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 802630273236366,
+															"parameters": {
+																"interval-seconds": "0.4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 283890401329249,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"5",
+																"1"
+															]
+														}
+													],
+													"sid": 524558741642015
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 686037685571591,
+															"parameters": {
+																"tag": "\"step_stone\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 172853609443081
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 845341623129373,
+															"parameters": {
+																"audio-file": "walk stone",
+																"loop": "looping",
+																"volume": "-5",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_stone\""
+															}
+														}
+													],
+													"sid": 362077700140448
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 109280286049154
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 293189268398107,
+													"parameters": {
+														"object": "grass"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 954654245725979,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 985606784175273,
+															"parameters": {
+																"interval-seconds": "0.4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 957090628280763,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"5",
+																"1"
+															]
+														}
+													],
+													"sid": 503346739548964
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 790126077838077,
+															"parameters": {
+																"tag": "\"step_grass\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 887397844316141
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 330699801750981,
+															"parameters": {
+																"audio-file": "walk grass",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_grass\""
+															}
+														}
+													],
+													"sid": 646091896790603
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 834330322788378
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 454760461779771,
+													"parameters": {
+														"object": "sand"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 987187119290755,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 283456376572567,
+															"parameters": {
+																"interval-seconds": "0.4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 434417346267320,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"5",
+																"1"
+															]
+														}
+													],
+													"sid": 555672299238134
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 759303887829155,
+															"parameters": {
+																"tag": "\"step_sand\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 108991080665742
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 863853039262658,
+															"parameters": {
+																"audio-file": "walk dirt",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_sand\""
+															}
+														}
+													],
+													"sid": 354926541143154
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 448735895102974
+				}
+			],
+			"sid": 321622848304693
+		}
+	],
+	"sid": 658495754148219
+}
