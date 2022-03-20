@@ -1537,6 +1537,45 @@
 															]
 														}
 													]
+												},
+												{
+													"eventType": "comment",
+													"text": "dialog"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 503628394156265,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "char_dialog",
+																	"sid": 309587459558995,
+																	"parameters": {
+																		"instance-variable": "parent_uid",
+																		"comparison": 0,
+																		"value": "enemy_runner.UID"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "typewriter-text",
+																	"objectClass": "char_dialog",
+																	"sid": 996522826313755,
+																	"parameters": {
+																		"text": "\"Я что-то слышал...\"",
+																		"duration": "0.2"
+																	}
+																}
+															],
+															"sid": 709873979324907
+														}
+													]
 												}
 											]
 										},
@@ -1753,7 +1792,7 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Enemy - dialog",
+					"title": "Enemy - dialog lines",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -1774,22 +1813,38 @@
 									"conditions": [],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "enemy_runner",
-											"sid": 823165253089006,
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 379171879614077,
 											"parameters": {
-												"object": "char_dialog",
+												"object-to-create": "char_dialog",
 												"layer": "\"enemy_dialog\"",
-												"image-point": "0",
+												"x": "enemy_runner.X",
+												"y": "enemy_runner.BBoxTop - 15",
 												"create-hierarchy": false
 											}
 										},
 										{
-											"id": "set-text",
+											"id": "set-angle",
 											"objectClass": "char_dialog",
-											"sid": 353919892256813,
+											"sid": 300916823388129,
 											"parameters": {
-												"text": "\"\""
+												"angle": "0"
+											}
+										},
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "char_dialog",
+											"sid": 228441055566910,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "enemy_runner",
+												"x": true,
+												"y": true,
+												"angle": false,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
 											}
 										},
 										{
@@ -1802,18 +1857,11 @@
 											}
 										},
 										{
-											"id": "pin-to-object-properties",
+											"id": "set-text",
 											"objectClass": "char_dialog",
-											"sid": 937506579522062,
-											"behaviorType": "Pin",
+											"sid": 167194595539679,
 											"parameters": {
-												"pin-to": "enemy_runner",
-												"x": true,
-												"y": true,
-												"angle": false,
-												"width-type": "no",
-												"height-type": "no",
-												"z": false
+												"text": "\"\""
 											}
 										}
 									],

@@ -307,41 +307,7 @@
 		{
 			"name": "enemy",
 			"overriden": 0,
-			"subLayers": [
-				{
-					"name": "enemy_dialog",
-					"overriden": 0,
-					"subLayers": [],
-					"instances": [],
-					"sid": 295959351294029,
-					"effectTypes": [],
-					"isInitiallyVisible": true,
-					"isInitiallyInteractive": true,
-					"color": [
-						1,
-						1,
-						1,
-						1
-					],
-					"backgroundColor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"isTransparent": true,
-					"parallaxX": 1,
-					"parallaxY": 1,
-					"scaleRate": 1,
-					"forceOwnTexture": false,
-					"renderingMode": "3d",
-					"drawOrder": "z-order",
-					"useRenderCells": false,
-					"blendMode": "normal",
-					"zElevation": 0,
-					"global": false
-				}
-			],
+			"subLayers": [],
 			"instances": [
 				{
 					"type": "enemy_gunner",
@@ -452,8 +418,8 @@
 						"y": 5011,
 						"width": 68.4,
 						"height": 53.1,
-						"originX": 0.39473684210526316,
-						"originY": 0.5084745762711864,
+						"originX": 0.42105263157894735,
+						"originY": 0.4576271186440678,
 						"color": [
 							0.796078431372549,
 							0.8901960784313725,
@@ -523,8 +489,8 @@
 						"y": 4466,
 						"width": 37.800000000000004,
 						"height": 53.1,
-						"originX": 0.75,
-						"originY": 0.5,
+						"originX": 0.7619047619047619,
+						"originY": 0.4576271186440678,
 						"color": [
 							0.796078431372549,
 							0.8901960784313725,
@@ -2271,6 +2237,39 @@
 			"scaleRate": 1,
 			"forceOwnTexture": true,
 			"renderingMode": "2d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "enemy_dialog",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 295959351294029,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
