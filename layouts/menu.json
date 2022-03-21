@@ -394,8 +394,8 @@
 						}
 					},
 					"world": {
-						"x": 77,
-						"y": 239.39664164716686,
+						"x": 64,
+						"y": 215,
 						"width": 302,
 						"height": 38.193486621998034,
 						"originX": 0,
@@ -494,8 +494,8 @@
 						}
 					},
 					"world": {
-						"x": 77,
-						"y": 341.1159626798614,
+						"x": 64,
+						"y": 344,
 						"width": 302,
 						"height": 38.193486621998034,
 						"originX": 0,
@@ -544,8 +544,58 @@
 						}
 					},
 					"world": {
-						"x": 77,
-						"y": 290.74694467746997,
+						"x": 64,
+						"y": 301,
+						"width": 302,
+						"height": 38.193486621998034,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "logo_text",
+					"properties": {
+						"text": "Счетчик FPS: выкл",
+						"enable-bbcode": true,
+						"font": "pixel",
+						"size": 22,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.1411764705882353,
+							0.1411764705882353,
+							0.1411764705882353,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 349,
+					"instanceVariables": {
+						"param": "fps"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 64,
+						"y": 258,
 						"width": 302,
 						"height": 38.193486621998034,
 						"originX": 0,
@@ -587,6 +637,39 @@
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 2,
+			"global": false
+		},
+		{
+			"name": "fps",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 922131363486006,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 0,
+			"forceOwnTexture": false,
+			"renderingMode": "2d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
 			"global": false
 		}
 	],

@@ -2,6 +2,10 @@
 	"name": "#Menu",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "#Debug"
+		},
+		{
 			"eventType": "variable",
 			"name": "current_layer",
 			"type": "string",
@@ -514,9 +518,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "logo_text",
-											"sid": 594169087830524,
+											"sid": 698770742013050,
 											"parameters": {
-												"text": "\"Сложность: Экстрим\""
+												"text": "\"Сложность: Экстрим ☠\""
 											}
 										},
 										{
@@ -796,6 +800,93 @@
 										}
 									],
 									"sid": 362664296760830
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 262225166519067
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "logo_text",
+									"sid": 609117188878768,
+									"parameters": {
+										"instance-variable": "param",
+										"comparison": 0,
+										"value": "\"fps\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 484343748825240,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 155603888366351,
+											"parameters": {
+												"variable": "settings_fps"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 483658850027245,
+											"parameters": {
+												"text": "\"Счетчик FPS: выкл\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 630371471483327,
+											"parameters": {
+												"variable": "settings_fps",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 129110403401900
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 764675775795759
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 185152397490765,
+											"parameters": {
+												"text": "\"Счетчик FPS: вкл\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 218216342630467,
+											"parameters": {
+												"variable": "settings_fps",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 303884271886499
 								}
 							]
 						}

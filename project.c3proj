@@ -233,9 +233,7 @@
 	],
 	"uniqueId": "bmm21df34rr",
 	"objectTypes": {
-		"items": [
-			"Sprite"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -297,7 +295,8 @@
 			{
 				"items": [
 					"cursor",
-					"weapon_icon"
+					"weapon_icon",
+					"empty_magaizine"
 				],
 				"subfolders": [],
 				"name": "misc"
@@ -377,6 +376,13 @@
 				],
 				"subfolders": [],
 				"name": "data"
+			},
+			{
+				"items": [
+					"debug_fps"
+				],
+				"subfolders": [],
+				"name": "debug"
 			}
 		]
 	},
@@ -434,7 +440,8 @@
 			"#Logo",
 			"#Dialogic",
 			"#Enemy",
-			"#Player"
+			"#Player",
+			"#Debug"
 		],
 		"subfolders": []
 	},

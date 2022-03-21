@@ -81,6 +81,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "settings_fps",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 307423741571898
+		},
+		{
+			"eventType": "variable",
 			"name": "settings_effects_on",
 			"type": "boolean",
 			"initialValue": "true",
@@ -120,6 +130,10 @@
 		{
 			"eventType": "include",
 			"includeSheet": "#Enemy"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "#Debug"
 		},
 		{
 			"eventType": "group",
