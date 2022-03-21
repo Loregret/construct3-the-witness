@@ -20,6 +20,16 @@
 				},
 				{
 					"eventType": "variable",
+					"name": "curScene",
+					"type": "string",
+					"initialValue": "scene1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 291215067269949
+				},
+				{
+					"eventType": "variable",
 					"name": "curDialogName",
 					"type": "string",
 					"initialValue": "",
@@ -271,7 +281,7 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Dialogic - minor functions",
+					"title": "Dialogic - major functions",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -285,7 +295,7 @@
 							"eventType": "function-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 611649759477248,
+							"sid": 166019072495420,
 							"children": [
 								{
 									"eventType": "block",
@@ -293,14 +303,14 @@
 										{
 											"id": "for-each",
 											"objectClass": "JSON",
-											"sid": 664167739577217,
+											"sid": 504867260375784,
 											"parameters": {
-												"path": "\"scene.\""
+												"path": "curScene&\".\""
 											}
 										}
 									],
 									"actions": [],
-									"sid": 806737055123188,
+									"sid": 741874147448420,
 									"children": [
 										{
 											"eventType": "block",
@@ -308,16 +318,16 @@
 												{
 													"id": "compare-value",
 													"objectClass": "JSON",
-													"sid": 174217623965081,
+													"sid": 918208070568704,
 													"parameters": {
-														"path": "\"scene.\"&JSON.CurrentKey&\".id\"",
+														"path": "curScene&\".\"&JSON.CurrentKey&\".id\"",
 														"cmp": 0,
 														"value": "curDialogName"
 													}
 												}
 											],
 											"actions": [],
-											"sid": 203823719913896,
+											"sid": 954597398327287,
 											"children": [
 												{
 													"eventType": "block",
@@ -325,16 +335,16 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 777906839917402,
+															"sid": 909986987659897,
 															"parameters": {
-																"first-value": "JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\")",
+																"first-value": "JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\")",
 																"comparison": 1,
 																"second-value": "\"\""
 															}
 														}
 													],
 													"actions": [],
-													"sid": 125495412279798,
+													"sid": 951134305635359,
 													"children": [
 														{
 															"eventType": "block",
@@ -342,37 +352,37 @@
 																{
 																	"id": "has-key",
 																	"objectClass": "JSON",
-																	"sid": 754634315200724,
+																	"sid": 409763974391765,
 																	"parameters": {
-																		"path": "\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\""
+																		"path": "curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\""
 																	}
 																}
 															],
 															"actions": [
 																{
 																	"callFunction": "dialogic_start",
-																	"sid": 529553685667261
+																	"sid": 759542423090007
 																},
 																{
 																	"id": "typewriter-text",
 																	"objectClass": "dialog",
-																	"sid": 955003462576648,
+																	"sid": 157065653183807,
 																	"parameters": {
-																		"text": "\"[color=lightgray]\" & JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\") & \"[/color]: \" \n\n\n&  \n\nFunctions.dialogic_bb_code_filter(JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
-																		"duration": "JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\")"
+																		"text": "\"[color=lightgray]\" & JSON.Get( curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\") & \"[/color]: \" \n\n\n&  \n\nFunctions.dialogic_bb_code_filter(JSON.Get( curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
+																		"duration": "JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\")"
 																	}
 																},
 																{
 																	"id": "add-key",
 																	"objectClass": "dialogic_logs",
-																	"sid": 872765205439911,
+																	"sid": 547363471096505,
 																	"parameters": {
 																		"key": "curDialogName",
 																		"value": "str(curLineNum)"
 																	}
 																}
 															],
-															"sid": 891433912221475
+															"sid": 242360658458366
 														},
 														{
 															"eventType": "block",
@@ -380,34 +390,34 @@
 																{
 																	"id": "else",
 																	"objectClass": "System",
-																	"sid": 997719770046962
+																	"sid": 569689659496940
 																}
 															],
 															"actions": [
 																{
 																	"callFunction": "dialogic_start",
-																	"sid": 248719018737299
+																	"sid": 284153147914523
 																},
 																{
 																	"id": "typewriter-text",
 																	"objectClass": "dialog",
-																	"sid": 926999697432211,
+																	"sid": 382261379575593,
 																	"parameters": {
-																		"text": "\"[color=lightgray]\" & JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\") & \"[/color]: \" \n\n\n&  \n\nFunctions.dialogic_bb_code_filter(JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
+																		"text": "\"[color=lightgray]\" & JSON.Get(curScene&\".\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\") & \"[/color]: \" \n\n\n&  \n\nFunctions.dialogic_bb_code_filter(JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
 																		"duration": "default_typing_speed"
 																	}
 																},
 																{
 																	"id": "add-key",
 																	"objectClass": "dialogic_logs",
-																	"sid": 967674367261511,
+																	"sid": 788157932990842,
 																	"parameters": {
 																		"key": "curDialogName",
 																		"value": "str(curLineNum)"
 																	}
 																}
 															],
-															"sid": 945295254357033
+															"sid": 755924422462695
 														}
 													]
 												},
@@ -417,11 +427,11 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 203077874860226
+															"sid": 524542135160027
 														}
 													],
 													"actions": [],
-													"sid": 964338412142775,
+													"sid": 540547235755194,
 													"children": [
 														{
 															"eventType": "block",
@@ -429,37 +439,37 @@
 																{
 																	"id": "has-key",
 																	"objectClass": "JSON",
-																	"sid": 788673444396958,
+																	"sid": 871840193179919,
 																	"parameters": {
-																		"path": "\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\""
+																		"path": "curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\""
 																	}
 																}
 															],
 															"actions": [
 																{
 																	"callFunction": "dialogic_start",
-																	"sid": 626699950905047
+																	"sid": 685584381698458
 																},
 																{
 																	"id": "typewriter-text",
 																	"objectClass": "dialog",
-																	"sid": 719979158950292,
+																	"sid": 653086679027816,
 																	"parameters": {
-																		"text": "Functions.dialogic_bb_code_filter(JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
-																		"duration": "JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\")"
+																		"text": "Functions.dialogic_bb_code_filter(JSON.Get( curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
+																		"duration": "JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\")"
 																	}
 																},
 																{
 																	"id": "add-key",
 																	"objectClass": "dialogic_logs",
-																	"sid": 775050514470118,
+																	"sid": 170469912801003,
 																	"parameters": {
 																		"key": "curDialogName",
 																		"value": "str(curLineNum)"
 																	}
 																}
 															],
-															"sid": 883917342579848
+															"sid": 294624792402237
 														},
 														{
 															"eventType": "block",
@@ -467,34 +477,34 @@
 																{
 																	"id": "else",
 																	"objectClass": "System",
-																	"sid": 873369780938289
+																	"sid": 210519256552386
 																}
 															],
 															"actions": [
 																{
 																	"callFunction": "dialogic_start",
-																	"sid": 130520031903269
+																	"sid": 779501926050555
 																},
 																{
 																	"id": "typewriter-text",
 																	"objectClass": "dialog",
-																	"sid": 495490453295248,
+																	"sid": 293168702334433,
 																	"parameters": {
-																		"text": "Functions.dialogic_bb_code_filter(JSON.Get(\"scene.\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
+																		"text": "Functions.dialogic_bb_code_filter(JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
 																		"duration": "default_typing_speed"
 																	}
 																},
 																{
 																	"id": "add-key",
 																	"objectClass": "dialogic_logs",
-																	"sid": 344149030562232,
+																	"sid": 255283615071322,
 																	"parameters": {
 																		"key": "curDialogName",
 																		"value": "str(curLineNum)"
 																	}
 																}
 															],
-															"sid": 737635625158880
+															"sid": 756584824872828
 														}
 													]
 												}
@@ -503,7 +513,17 @@
 									]
 								}
 							]
-						},
+						}
+					],
+					"sid": 961127020465926
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Dialogic - minor functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
 							"functionName": "dialogic_line_count",
 							"functionDescription": "",
@@ -548,9 +568,9 @@
 										{
 											"id": "for-each",
 											"objectClass": "JSON",
-											"sid": 433810214465507,
+											"sid": 196716637081003,
 											"parameters": {
-												"path": "\"scene.\""
+												"path": "curScene&\".\""
 											}
 										}
 									],
@@ -563,9 +583,9 @@
 												{
 													"id": "compare-value",
 													"objectClass": "JSON",
-													"sid": 308136117403545,
+													"sid": 116462757739497,
 													"parameters": {
-														"path": "\"scene.\"&JSON.CurrentKey&\".id\"",
+														"path": "curScene&\".\" &JSON.CurrentKey&\".id\"",
 														"cmp": 0,
 														"value": "curDialogName"
 													}
@@ -575,10 +595,10 @@
 												{
 													"id": "set-eventvar-value",
 													"objectClass": "System",
-													"sid": 673772994907572,
+													"sid": 583309529474407,
 													"parameters": {
 														"variable": "counter",
-														"value": "JSON.ArraySize(\"scene.\"&JSON.CurrentKey&\".dialogs\")"
+														"value": "JSON.ArraySize( curScene&\".\" &JSON.CurrentKey&\".dialogs\")"
 													}
 												}
 											],
