@@ -825,7 +825,18 @@
 	],
 	"sid": 350970916993537,
 	"nonworld-instances": [],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "noise",
+			"name": "Noise",
+			"instance": {
+				"parameters": {
+					"intensity": 0.2,
+					"color": 0.6
+				}
+			}
+		}
+	],
 	"width": 640,
 	"height": 480,
 	"unboundedScrolling": true,

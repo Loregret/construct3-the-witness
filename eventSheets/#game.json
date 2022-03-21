@@ -5870,9 +5870,18 @@
 												{
 													"id": "set-width",
 													"objectClass": "flashlight",
-													"sid": 231179509278971,
+													"sid": 539398859106743,
+													"disabled": true,
 													"parameters": {
-														"width": "clamp(distance(Self.X,Self.Y,Mouse.X,Mouse.Y), 200, 800)"
+														"width": "clamp(distance(Self.X,Self.Y,Mouse.X,Mouse.Y), 350, 950)"
+													}
+												},
+												{
+													"id": "set-width",
+													"objectClass": "flashlight",
+													"sid": 547526708085443,
+													"parameters": {
+														"width": "clamp(distance(Self.X,Self.Y,Mouse.X,Mouse.Y), 172, 950)"
 													}
 												},
 												{
@@ -5893,7 +5902,183 @@
 													}
 												}
 											],
-											"sid": 256831574663449
+											"sid": 256831574663449,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 804187427457391,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-width",
+																	"objectClass": "flashlight",
+																	"sid": 606506437355707,
+																	"parameters": {
+																		"comparison": 2,
+																		"width": "160"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "flashlight",
+																	"sid": 632783171652182,
+																	"parameters": {
+																		"frame-number": "5"
+																	}
+																}
+															],
+															"sid": 711026400687564
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 837505169397298
+																},
+																{
+																	"id": "compare-width",
+																	"objectClass": "flashlight",
+																	"sid": 931516244801127,
+																	"parameters": {
+																		"comparison": 2,
+																		"width": "185"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "flashlight",
+																	"sid": 871138576517164,
+																	"parameters": {
+																		"frame-number": "4"
+																	}
+																}
+															],
+															"sid": 680765774935654
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 282729502897310
+																},
+																{
+																	"id": "compare-width",
+																	"objectClass": "flashlight",
+																	"sid": 595165356330831,
+																	"parameters": {
+																		"comparison": 2,
+																		"width": "200"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "flashlight",
+																	"sid": 197878775293006,
+																	"parameters": {
+																		"frame-number": "3"
+																	}
+																}
+															],
+															"sid": 198740501706483
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 945097470424969
+																},
+																{
+																	"id": "compare-width",
+																	"objectClass": "flashlight",
+																	"sid": 512864334985672,
+																	"parameters": {
+																		"comparison": 2,
+																		"width": "280"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "flashlight",
+																	"sid": 772078976461426,
+																	"parameters": {
+																		"frame-number": "2"
+																	}
+																}
+															],
+															"sid": 186407359512499
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 119718078079375
+																},
+																{
+																	"id": "compare-width",
+																	"objectClass": "flashlight",
+																	"sid": 950079140906525,
+																	"parameters": {
+																		"comparison": 2,
+																		"width": "300"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "flashlight",
+																	"sid": 431342334917694,
+																	"parameters": {
+																		"frame-number": "1"
+																	}
+																}
+															],
+															"sid": 761921876404403
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 226360187819164
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "flashlight",
+																	"sid": 840511461773311,
+																	"parameters": {
+																		"frame-number": "0"
+																	}
+																}
+															],
+															"sid": 604448234147557
+														}
+													]
+												}
+											]
 										}
 									]
 								}
