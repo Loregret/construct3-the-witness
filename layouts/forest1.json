@@ -10305,6 +10305,156 @@
 			"overriden": 0,
 			"subLayers": [
 				{
+					"name": "weapon_icon",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "weapon_icon",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 249,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 32,
+								"y": 448,
+								"width": 48,
+								"height": 48,
+								"originX": 0.5076923076923077,
+								"originY": 0.5076923076923077,
+								"color": [
+									1,
+									1,
+									1,
+									0.6
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "weapon_icon",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 299,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 96,
+								"y": 448,
+								"width": 48,
+								"height": 48,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.6
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "weapon_icon",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 2,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 346,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 160,
+								"y": 448,
+								"width": 48,
+								"height": 48,
+								"originX": 0.5076923076923077,
+								"originY": 0.5076923076923077,
+								"color": [
+									1,
+									1,
+									1,
+									0.6
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "weapon_icon",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 3,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 347,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 224,
+								"y": 448,
+								"width": 48,
+								"height": 48,
+								"originX": 0.5076923076923077,
+								"originY": 0.5076923076923077,
+								"color": [
+									1,
+									1,
+									1,
+									0.6
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						}
+					],
+					"sid": 482162614170594,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						1,
+						1,
+						1,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
 					"name": "Dialogic",
 					"overriden": 1,
 					"subLayers": [],
@@ -10404,124 +10554,7 @@
 					"global": false
 				}
 			],
-			"instances": [
-				{
-					"type": "weapon_icon",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 249,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 32,
-						"y": 448,
-						"width": 48,
-						"height": 48,
-						"originX": 0.5076923076923077,
-						"originY": 0.5076923076923077,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "weapon_icon",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 299,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 96,
-						"y": 448,
-						"width": 48,
-						"height": 48,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "weapon_icon",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 2,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 346,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 160,
-						"y": 448,
-						"width": 48,
-						"height": 48,
-						"originX": 0.5076923076923077,
-						"originY": 0.5076923076923077,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "weapon_icon",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 3,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 347,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 224,
-						"y": 448,
-						"width": 48,
-						"height": 48,
-						"originX": 0.5076923076923077,
-						"originY": 0.5076923076923077,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 467855368544261,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

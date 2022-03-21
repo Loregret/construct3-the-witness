@@ -53,6 +53,25 @@
 											"conditions": [],
 											"actions": [
 												{
+													"id": "spawn-another-object",
+													"objectClass": "Player",
+													"sid": 612169021950941,
+													"parameters": {
+														"object": "Sprite",
+														"layer": "\"items\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "Sprite",
+													"sid": 773071707811316,
+													"parameters": {
+														"angle": "random(360)"
+													}
+												},
+												{
 													"id": "play",
 													"objectClass": "Audio",
 													"sid": 230891630799447,
