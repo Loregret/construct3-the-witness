@@ -111,6 +111,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "settings_low_graphics",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 526905407436177
+		},
+		{
+			"eventType": "variable",
 			"name": "settings_cam_speed_modificator",
 			"type": "number",
 			"initialValue": "2",
@@ -538,6 +548,17 @@
 															"disabled": true,
 															"parameters": {
 																"audio-file": "Witness",
+																"loop": "not-looping",
+																"volume": "-15",
+																"tag-optional": "\"music\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 550946916373795,
+															"parameters": {
+																"audio-file": "Follow-me-nowhere",
 																"loop": "not-looping",
 																"volume": "-15",
 																"tag-optional": "\"music\""
