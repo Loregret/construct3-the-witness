@@ -130,6 +130,16 @@
 			"sid": 331964863705918
 		},
 		{
+			"eventType": "variable",
+			"name": "settings_dialog_typewriter_effect",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 194126107122936
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "#Dialogic"
 		},
@@ -552,17 +562,6 @@
 																"volume": "-15",
 																"tag-optional": "\"music\""
 															}
-														},
-														{
-															"id": "play",
-															"objectClass": "Audio",
-															"sid": 550946916373795,
-															"parameters": {
-																"audio-file": "Follow-me-nowhere",
-																"loop": "not-looping",
-																"volume": "-15",
-																"tag-optional": "\"music\""
-															}
 														}
 													],
 													"sid": 376772964379862
@@ -598,10 +597,11 @@
 														},
 														{
 															"callFunction": "dialogic_play_dialog",
-															"sid": 512126878493010,
+															"sid": 927178501442357,
 															"parameters": [
-																"0",
-																"\"start\""
+																"\"forest1\"",
+																"\"start\"",
+																"0"
 															]
 														},
 														{
@@ -2422,10 +2422,11 @@
 											"actions": [
 												{
 													"callFunction": "dialogic_play_dialog",
-													"sid": 974043911369586,
+													"sid": 980601600009623,
 													"parameters": [
-														"dialog_trigger.LineNum",
-														"dialog_trigger.DialogName"
+														"dialog_trigger.SceneNum",
+														"dialog_trigger.DialogName",
+														"dialog_trigger.LineNum"
 													]
 												},
 												{
@@ -6424,10 +6425,11 @@
 															"actions": [
 																{
 																	"callFunction": "dialogic_play_dialog",
-																	"sid": 929508886848202,
+																	"sid": 873585697396033,
 																	"parameters": [
-																		"0",
-																		"dialog_trigger.DialogName"
+																		"dialog_trigger.SceneNum",
+																		"dialog_trigger.DialogName",
+																		"0"
 																	]
 																}
 															],

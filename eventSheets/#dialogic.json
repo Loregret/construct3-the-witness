@@ -9,6 +9,16 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "current:",
+					"background-color": [
+						0.6352941176470588,
+						0.9019607843137255,
+						0.8235294117647058,
+						1
+					]
+				},
+				{
 					"eventType": "variable",
 					"name": "curLineNum",
 					"type": "number",
@@ -22,9 +32,9 @@
 					"eventType": "variable",
 					"name": "curScene",
 					"type": "string",
-					"initialValue": "scene1",
+					"initialValue": "",
 					"comment": "",
-					"isStatic": false,
+					"isStatic": true,
 					"isConstant": false,
 					"sid": 291215067269949
 				},
@@ -37,6 +47,46 @@
 					"isStatic": true,
 					"isConstant": false,
 					"sid": 560051914739488
+				},
+				{
+					"eventType": "comment",
+					"text": "custom:",
+					"background-color": [
+						0.6352941176470588,
+						0.9019607843137255,
+						0.8235294117647058,
+						1
+					]
+				},
+				{
+					"eventType": "variable",
+					"name": "custom_wait_after_type",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 970597943610032
+				},
+				{
+					"eventType": "variable",
+					"name": "custom_typing_speed",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 369366175090307
+				},
+				{
+					"eventType": "comment",
+					"text": "default:",
+					"background-color": [
+						0.6352941176470588,
+						0.9019607843137255,
+						0.8235294117647058,
+						1
+					]
 				},
 				{
 					"eventType": "variable",
@@ -127,6 +177,14 @@
 									"id": "is-running-typewriter-text",
 									"objectClass": "dialog",
 									"sid": 453621518613516
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 446250355154422,
+									"parameters": {
+										"variable": "settings_dialog_typewriter_effect"
+									}
 								}
 							],
 							"actions": [],
@@ -138,7 +196,7 @@
 										{
 											"id": "every-x-seconds",
 											"objectClass": "System",
-											"sid": 395735368450469,
+											"sid": 492908809478699,
 											"parameters": {
 												"interval-seconds": "choose(0.06,0.05)"
 											}
@@ -148,7 +206,7 @@
 										{
 											"id": "play",
 											"objectClass": "Audio",
-											"sid": 282522584856280,
+											"sid": 423417162093830,
 											"parameters": {
 												"audio-file": "tap",
 												"loop": "not-looping",
@@ -157,7 +215,7 @@
 											}
 										}
 									],
-									"sid": 540434063001068
+									"sid": 136401895545455
 								}
 							]
 						},
@@ -210,7 +268,7 @@
 											}
 										},
 										{
-											"callFunction": "dialogic_show_cur_line",
+											"callFunction": "dialogic_lines_iterate",
 											"sid": 975776103105816
 										}
 									],
@@ -257,7 +315,18 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 854777910103419,
+											"parameters": {
+												"variable": "custom_wait_after_type",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
 									"actions": [
 										{
 											"id": "start-timer",
@@ -272,6 +341,39 @@
 										}
 									],
 									"sid": 989300560542031
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 613564946862341
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "dialog",
+											"sid": 467148180262469,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "custom_wait_after_type",
+												"type": "once",
+												"tag": "\"line_over\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 361523530274872,
+											"parameters": {
+												"variable": "custom_wait_after_type",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 296979301644767
 								}
 							]
 						}
@@ -286,7 +388,380 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"functionName": "dialogic_show_cur_line",
+							"functionName": "dialogic_cur_line_type",
+							"functionDescription": "",
+							"functionCategory": "#dialogic",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "JSON_key",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 521026425216581
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 152855246647791,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "is_char_speaking",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": true,
+									"isConstant": false,
+									"sid": 769766737596529
+								},
+								{
+									"eventType": "comment",
+									"text": "start"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 285787605670915,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "dialogic_start",
+													"sid": 651346268259508
+												}
+											],
+											"sid": 323506603120942
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "is_char"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 455064350752669,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 726439325838553,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".char\")",
+														"comparison": 0,
+														"second-value": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 870062679583921,
+													"parameters": {
+														"variable": "is_char_speaking",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 703050091402057
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 802923848989420
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 127198349326472,
+													"parameters": {
+														"variable": "is_char_speaking",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 449085456043280
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "speed"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 133060039629399,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "JSON",
+													"sid": 876016317862203,
+													"parameters": {
+														"path": "curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".speed\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 806016202861167,
+													"parameters": {
+														"variable": "custom_typing_speed",
+														"value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".speed\")"
+													}
+												}
+											],
+											"sid": 758621493824992
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 972415283688178
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 691094763387420,
+													"parameters": {
+														"variable": "custom_typing_speed",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 260377004497985
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "wait"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 669042223627016,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 530966847837238,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".wait\")",
+														"comparison": 1,
+														"second-value": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 518865603102711,
+													"parameters": {
+														"variable": "custom_wait_after_type",
+														"value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".wait\")"
+													}
+												}
+											],
+											"sid": 306697256567651
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 536143630420121
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 796402837392823,
+													"parameters": {
+														"variable": "custom_wait_after_type",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 907810166454842
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "typewriter launch"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 713932621157630,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 518820465414639,
+													"parameters": {
+														"variable": "settings_dialog_typewriter_effect"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "[h3] Setting - no typewriter effect"
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 231088609991906,
+													"parameters": {
+														"variable": "custom_wait_after_type",
+														"value": "2.5"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 155892514743723,
+													"parameters": {
+														"variable": "custom_typing_speed",
+														"value": "0.0001"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 483365807988297,
+													"parameters": {
+														"audio-file": "switch2",
+														"loop": "not-looping",
+														"volume": "0",
+														"tag-optional": "\"ui\""
+													}
+												}
+											],
+											"sid": 199899838266849
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 493819710295634,
+													"parameters": {
+														"variable": "is_char_speaking"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "typewriter-text",
+													"objectClass": "dialog",
+													"sid": 885710843280329,
+													"parameters": {
+														"text": "\"[color=lightgray]\" & JSON.Get( curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".char\") & \"[/color]: \" \n\n\n&  \n\nFunctions.dialogic_bb_code_filter(JSON.Get( curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".line\"))",
+														"duration": "custom_typing_speed=0? default_typing_speed:custom_typing_speed"
+													}
+												}
+											],
+											"sid": 235535506843925
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 409620916432336
+												}
+											],
+											"actions": [
+												{
+													"id": "typewriter-text",
+													"objectClass": "dialog",
+													"sid": 414437267388756,
+													"parameters": {
+														"text": "Functions.dialogic_bb_code_filter(JSON.Get( curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".line\"))",
+														"duration": "custom_typing_speed=0? default_typing_speed:custom_typing_speed"
+													}
+												}
+											],
+											"sid": 702942187227271
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "logs"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 621809390095065,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "add-key",
+													"objectClass": "dialogic_logs",
+													"sid": 668140021011972,
+													"parameters": {
+														"key": "curDialogName",
+														"value": "str(curLineNum)"
+													}
+												}
+											],
+											"sid": 609219940011870
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "dialogic_lines_iterate",
 							"functionDescription": "",
 							"functionCategory": "#dialogic",
 							"functionReturnType": "none",
@@ -307,215 +782,349 @@
 											"parameters": {
 												"path": "curScene&\".\""
 											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "JSON",
+											"sid": 212469209897824,
+											"parameters": {
+												"path": "curScene&\".\"&JSON.CurrentKey&\".id\"",
+												"cmp": 0,
+												"value": "curDialogName"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "dialogic_cur_line_type",
+											"sid": 464471087890479,
+											"parameters": [
+												"JSON.CurrentKey"
+											]
+										}
+									],
+									"sid": 741874147448420
+								}
+							]
+						}
+					],
+					"sid": 961127020465926,
+					"background-color": [
+						0.6313725490196078,
+						0.7686274509803922,
+						0.9254901960784314,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Dialogic - functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "dialogic_is_dialog_playing",
+							"functionDescription": "",
+							"functionCategory": "#dialogic",
+							"functionReturnType": "number",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "DialogName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 631887006142557
+								},
+								{
+									"name": "CheckLine",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 213509091704291
+								},
+								{
+									"name": "LineNum",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 759315967913760
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 613263188506434,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 915667845546988,
+											"parameters": {
+												"variable": "CheckLine"
+											}
 										}
 									],
 									"actions": [],
-									"sid": 741874147448420,
+									"sid": 737498039850041,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-value",
-													"objectClass": "JSON",
-													"sid": 918208070568704,
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 662922038875961,
 													"parameters": {
-														"path": "curScene&\".\"&JSON.CurrentKey&\".id\"",
-														"cmp": 0,
-														"value": "curDialogName"
+														"first-value": "DialogName",
+														"comparison": 0,
+														"second-value": "curDialogName"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 369004115130433,
+													"parameters": {
+														"first-value": "LineNum",
+														"comparison": 0,
+														"second-value": "curLineNum"
 													}
 												}
 											],
-											"actions": [],
-											"sid": 954597398327287,
-											"children": [
+											"actions": [
 												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-two-values",
-															"objectClass": "System",
-															"sid": 909986987659897,
-															"parameters": {
-																"first-value": "JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\")",
-																"comparison": 1,
-																"second-value": "\"\""
-															}
-														}
-													],
-													"actions": [],
-													"sid": 951134305635359,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "has-key",
-																	"objectClass": "JSON",
-																	"sid": 409763974391765,
-																	"parameters": {
-																		"path": "curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\""
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "dialogic_start",
-																	"sid": 759542423090007
-																},
-																{
-																	"id": "typewriter-text",
-																	"objectClass": "dialog",
-																	"sid": 157065653183807,
-																	"parameters": {
-																		"text": "\"[color=lightgray]\" & JSON.Get( curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\") & \"[/color]: \" \n\n\n&  \n\nFunctions.dialogic_bb_code_filter(JSON.Get( curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
-																		"duration": "JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\")"
-																	}
-																},
-																{
-																	"id": "add-key",
-																	"objectClass": "dialogic_logs",
-																	"sid": 547363471096505,
-																	"parameters": {
-																		"key": "curDialogName",
-																		"value": "str(curLineNum)"
-																	}
-																}
-															],
-															"sid": 242360658458366
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 569689659496940
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "dialogic_start",
-																	"sid": 284153147914523
-																},
-																{
-																	"id": "typewriter-text",
-																	"objectClass": "dialog",
-																	"sid": 382261379575593,
-																	"parameters": {
-																		"text": "\"[color=lightgray]\" & JSON.Get(curScene&\".\"& JSON.CurrentKey & \".dialogs.\" & curLineNum & \".char\") & \"[/color]: \" \n\n\n&  \n\nFunctions.dialogic_bb_code_filter(JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
-																		"duration": "default_typing_speed"
-																	}
-																},
-																{
-																	"id": "add-key",
-																	"objectClass": "dialogic_logs",
-																	"sid": 788157932990842,
-																	"parameters": {
-																		"key": "curDialogName",
-																		"value": "str(curLineNum)"
-																	}
-																}
-															],
-															"sid": 755924422462695
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 524542135160027
-														}
-													],
-													"actions": [],
-													"sid": 540547235755194,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "has-key",
-																	"objectClass": "JSON",
-																	"sid": 871840193179919,
-																	"parameters": {
-																		"path": "curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\""
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "dialogic_start",
-																	"sid": 685584381698458
-																},
-																{
-																	"id": "typewriter-text",
-																	"objectClass": "dialog",
-																	"sid": 653086679027816,
-																	"parameters": {
-																		"text": "Functions.dialogic_bb_code_filter(JSON.Get( curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
-																		"duration": "JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".speed\")"
-																	}
-																},
-																{
-																	"id": "add-key",
-																	"objectClass": "dialogic_logs",
-																	"sid": 170469912801003,
-																	"parameters": {
-																		"key": "curDialogName",
-																		"value": "str(curLineNum)"
-																	}
-																}
-															],
-															"sid": 294624792402237
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 210519256552386
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "dialogic_start",
-																	"sid": 779501926050555
-																},
-																{
-																	"id": "typewriter-text",
-																	"objectClass": "dialog",
-																	"sid": 293168702334433,
-																	"parameters": {
-																		"text": "Functions.dialogic_bb_code_filter(JSON.Get(curScene&\".\" & JSON.CurrentKey & \".dialogs.\" & curLineNum & \".line\"))",
-																		"duration": "default_typing_speed"
-																	}
-																},
-																{
-																	"id": "add-key",
-																	"objectClass": "dialogic_logs",
-																	"sid": 255283615071322,
-																	"parameters": {
-																		"key": "curDialogName",
-																		"value": "str(curLineNum)"
-																	}
-																}
-															],
-															"sid": 756584824872828
-														}
-													]
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 855580726057098,
+													"parameters": {
+														"value": "1"
+													}
 												}
-											]
+											],
+											"sid": 181628909133104
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 441411549697515
+												}
+											],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 834851292143735,
+													"parameters": {
+														"value": "0"
+													}
+												}
+											],
+											"sid": 120785676818981
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 879286597924990
+										}
+									],
+									"actions": [],
+									"sid": 830649464823042,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 195294635224568,
+													"parameters": {
+														"first-value": "DialogName",
+														"comparison": 0,
+														"second-value": "curDialogName"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 172700352401498,
+													"parameters": {
+														"value": "1"
+													}
+												}
+											],
+											"sid": 548826634517730
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 522297423950523
+												}
+											],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 592947992863914,
+													"parameters": {
+														"value": "0"
+													}
+												}
+											],
+											"sid": 240766400549332
 										}
 									]
 								}
 							]
+						},
+						{
+							"functionName": "dialogic_bb_code_filter",
+							"functionDescription": "",
+							"functionCategory": "#dialogic",
+							"functionReturnType": "string",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "Line",
+									"type": "string",
+									"initialValue": "",
+									"comment": "String line for filtering",
+									"sid": 587293305766546
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 437570085302328,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 112412048294958,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"<\",\"[\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 872863603868869,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\">\",\"]\")"
+											}
+										},
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 749771953388418,
+											"parameters": {
+												"value": "Line"
+											}
+										}
+									],
+									"sid": 922647786939847
+								}
+							]
+						},
+						{
+							"functionName": "dialogic_play_dialog",
+							"functionDescription": "",
+							"functionCategory": "#dialogic",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "SceneNum",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 460929948273346
+								},
+								{
+									"name": "DialogName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 224583007558170
+								},
+								{
+									"name": "LineNum",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 259259520859377
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 725178853996885,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 272010377835593,
+											"parameters": {
+												"variable": "curDialogName",
+												"value": "DialogName"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 714443310378353,
+											"parameters": {
+												"variable": "curLineNum",
+												"value": "LineNum"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 162178384156223,
+											"parameters": {
+												"variable": "curScene",
+												"value": "SceneNum"
+											}
+										},
+										{
+											"callFunction": "dialogic_lines_iterate",
+											"sid": 512508168395933
+										}
+									],
+									"sid": 542935933539147
+								}
+							]
 						}
 					],
-					"sid": 961127020465926
+					"sid": 600491469671253
 				},
 				{
 					"eventType": "group",
@@ -712,300 +1321,6 @@
 						}
 					],
 					"sid": 536758757717392
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Dialogic - functions",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"functionName": "dialogic_is_dialog_playing",
-							"functionDescription": "",
-							"functionCategory": "#dialogic",
-							"functionReturnType": "number",
-							"functionIsAsync": false,
-							"functionParameters": [
-								{
-									"name": "DialogName",
-									"type": "string",
-									"initialValue": "",
-									"comment": "",
-									"sid": 631887006142557
-								},
-								{
-									"name": "checkLine",
-									"type": "boolean",
-									"initialValue": "false",
-									"comment": "",
-									"sid": 213509091704291
-								},
-								{
-									"name": "LineNum",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"sid": 759315967913760
-								}
-							],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 601088956845877,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 862841699003976,
-											"parameters": {
-												"variable": "checkLine"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 218878778455468,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 423520403893839,
-													"parameters": {
-														"first-value": "DialogName",
-														"comparison": 0,
-														"second-value": "curDialogName"
-													}
-												},
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 382645779585228,
-													"parameters": {
-														"first-value": "LineNum",
-														"comparison": 0,
-														"second-value": "curLineNum"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-function-return-value",
-													"objectClass": "Functions",
-													"sid": 905803864430884,
-													"parameters": {
-														"value": "1"
-													}
-												}
-											],
-											"sid": 286171719793887
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 988631120608060
-												}
-											],
-											"actions": [
-												{
-													"id": "set-function-return-value",
-													"objectClass": "Functions",
-													"sid": 685762023666529,
-													"parameters": {
-														"value": "0"
-													}
-												}
-											],
-											"sid": 906737065457165
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 764892577362261
-										}
-									],
-									"actions": [],
-									"sid": 280816901305797,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 715396099651996,
-													"parameters": {
-														"first-value": "DialogName",
-														"comparison": 0,
-														"second-value": "curDialogName"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-function-return-value",
-													"objectClass": "Functions",
-													"sid": 484611978235296,
-													"parameters": {
-														"value": "1"
-													}
-												}
-											],
-											"sid": 473181775899809
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 569294825546480
-												}
-											],
-											"actions": [
-												{
-													"id": "set-function-return-value",
-													"objectClass": "Functions",
-													"sid": 430963740856746,
-													"parameters": {
-														"value": "0"
-													}
-												}
-											],
-											"sid": 254343266242825
-										}
-									]
-								}
-							]
-						},
-						{
-							"functionName": "dialogic_bb_code_filter",
-							"functionDescription": "",
-							"functionCategory": "#dialogic",
-							"functionReturnType": "string",
-							"functionIsAsync": false,
-							"functionParameters": [
-								{
-									"name": "Line",
-									"type": "string",
-									"initialValue": "",
-									"comment": "String line for filtering",
-									"sid": 587293305766546
-								}
-							],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 450198244416277,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 904734677730321,
-											"parameters": {
-												"variable": "Line",
-												"value": "replace(Line,\"<\",\"[\")"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 559370378097477,
-											"parameters": {
-												"variable": "Line",
-												"value": "replace(Line,\">\",\"]\")"
-											}
-										},
-										{
-											"id": "set-function-return-value",
-											"objectClass": "Functions",
-											"sid": 549628848123230,
-											"parameters": {
-												"value": "Line"
-											}
-										}
-									],
-									"sid": 136947313761930
-								}
-							]
-						},
-						{
-							"functionName": "dialogic_play_dialog",
-							"functionDescription": "",
-							"functionCategory": "#dialogic",
-							"functionReturnType": "none",
-							"functionIsAsync": false,
-							"functionParameters": [
-								{
-									"name": "LineNum",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"sid": 259259520859377
-								},
-								{
-									"name": "DialogName",
-									"type": "string",
-									"initialValue": "",
-									"comment": "",
-									"sid": 224583007558170
-								}
-							],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 972262735177930,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 301023150362961,
-											"parameters": {
-												"variable": "curDialogName",
-												"value": "DialogName"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 909142383430993,
-											"parameters": {
-												"variable": "curLineNum",
-												"value": "LineNum"
-											}
-										},
-										{
-											"callFunction": "dialogic_show_cur_line",
-											"sid": 282576909249934
-										}
-									],
-									"sid": 172248426157193
-								}
-							]
-						}
-					],
-					"sid": 749436105093876
 				}
 			],
 			"sid": 212994609179990

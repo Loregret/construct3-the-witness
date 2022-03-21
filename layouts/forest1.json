@@ -9498,7 +9498,7 @@
 							},
 							"uid": 238,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "corpse_surprise1",
 								"LineNum": 0,
 								"active": true,
@@ -9534,7 +9534,7 @@
 							},
 							"uid": 290,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "stone_wonder1",
 								"LineNum": 0,
 								"active": true,
@@ -9570,7 +9570,7 @@
 							},
 							"uid": 269,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "stone_wonder1",
 								"LineNum": 0,
 								"active": true,
@@ -9606,7 +9606,7 @@
 							},
 							"uid": 281,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "stone_wonder1",
 								"LineNum": 0,
 								"active": true,
@@ -9642,7 +9642,7 @@
 							},
 							"uid": 282,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "stone_wonder1",
 								"LineNum": 0,
 								"active": true,
@@ -9678,7 +9678,7 @@
 							},
 							"uid": 284,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "campfire1",
 								"LineNum": 0,
 								"active": true,
@@ -9714,7 +9714,7 @@
 							},
 							"uid": 285,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "many_corpse1",
 								"LineNum": 0,
 								"active": true,
@@ -9750,7 +9750,7 @@
 							},
 							"uid": 287,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "closed",
 								"LineNum": 0,
 								"active": true,
@@ -9786,7 +9786,7 @@
 							},
 							"uid": 292,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "torch1",
 								"LineNum": 0,
 								"active": true,
@@ -9822,7 +9822,7 @@
 							},
 							"uid": 293,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "torch1",
 								"LineNum": 0,
 								"active": true,
@@ -9858,7 +9858,7 @@
 							},
 							"uid": 294,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "torch1",
 								"LineNum": 0,
 								"active": true,
@@ -9894,7 +9894,7 @@
 							},
 							"uid": 295,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "empty_box",
 								"LineNum": 0,
 								"active": true,
@@ -9930,7 +9930,7 @@
 							},
 							"uid": 296,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "empty_box",
 								"LineNum": 0,
 								"active": true,
@@ -9966,7 +9966,7 @@
 							},
 							"uid": 297,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "empty_box",
 								"LineNum": 0,
 								"active": true,
@@ -10002,7 +10002,7 @@
 							},
 							"uid": 298,
 							"instanceVariables": {
-								"SceneNum": 0,
+								"SceneNum": "forest1",
 								"DialogName": "torch1",
 								"LineNum": 0,
 								"active": true,
@@ -10024,6 +10024,42 @@
 									0.55
 								],
 								"angle": 0.7587586927748491,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "dialog_trigger",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 351,
+							"instanceVariables": {
+								"SceneNum": "forest1",
+								"DialogName": "dead_chicken",
+								"LineNum": 0,
+								"active": true,
+								"repeatable": true,
+								"auto_start": false
+							},
+							"behaviors": {},
+							"world": {
+								"x": 7846.346265807505,
+								"y": 6777.999824005282,
+								"width": 167.78961984817008,
+								"height": 127.4509980607416,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.55
+								],
+								"angle": 5.728405397928738,
 								"zElevation": 0
 							}
 						}
@@ -10528,17 +10564,17 @@
 						{
 							"type": "debug_fps",
 							"properties": {
-								"text": "60",
+								"text": "...",
 								"enable-bbcode": true,
 								"font": "pixel",
-								"size": 13,
+								"size": 10,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
 								"color": [
-									0.9294117647058824,
-									0.9294117647058824,
-									0.9294117647058824,
+									0.050980392156862744,
+									0.611764705882353,
+									0.00784313725490196,
 									1
 								],
 								"horizontal-alignment": "center",
