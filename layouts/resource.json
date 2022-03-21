@@ -774,21 +774,32 @@
 					"type": "Sprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "ak",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 348,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 25,
+								"fade-out-time": 12,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
 					"world": {
 						"x": 58.49300587863645,
 						"y": 136.15259327482485,
-						"width": 10.336812586667506,
-						"height": 16.538900138668012,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 12.8,
+						"height": 19.200000000000003,
+						"originX": 0.53125,
+						"originY": 0.5416666666666666,
 						"color": [
 							1,
 							1,
