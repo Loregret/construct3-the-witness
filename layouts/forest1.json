@@ -9316,6 +9316,120 @@
 						"zElevation": 0,
 						"blendMode": "destination-out"
 					}
+				},
+				{
+					"type": "Light",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 363,
+					"instanceVariables": {
+						"pinUID": -1
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "opacity",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 25,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 7905,
+						"y": 6113,
+						"width": 362,
+						"height": 348,
+						"originX": 0.512,
+						"originY": 0.486,
+						"color": [
+							1,
+							1,
+							1,
+							0.15
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
+				},
+				{
+					"type": "Light",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 364,
+					"instanceVariables": {
+						"pinUID": -1
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "opacity",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 25,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 7915.343119095138,
+						"y": 6107.33517485428,
+						"width": 140.66287262440892,
+						"height": 125.25755752996156,
+						"originX": 0.512,
+						"originY": 0.486,
+						"color": [
+							1,
+							1,
+							1,
+							0.05
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
 				}
 			],
 			"sid": 269992716060103,
@@ -9375,8 +9489,8 @@
 							},
 							"behaviors": {},
 							"world": {
-								"x": 6906.74089274182,
-								"y": 8186.9422616760385,
+								"x": 7907,
+								"y": 6115,
 								"width": 142.18207510521685,
 								"height": 155.65765530791424,
 								"originX": 0.5,
@@ -9964,6 +10078,42 @@
 									0.55
 								],
 								"angle": 0.22855230505992752,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "dialog_trigger",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 360,
+							"instanceVariables": {
+								"SceneNum": "forest1",
+								"DialogName": "tip1",
+								"LineNum": 0,
+								"active": true,
+								"repeatable": false,
+								"auto_start": true
+							},
+							"behaviors": {},
+							"world": {
+								"x": 7542.263075226513,
+								"y": 7352.196868543898,
+								"width": 3567.2097924555565,
+								"height": 170.98764541515527,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.25
+								],
+								"angle": 0.13346743099705183,
 								"zElevation": 0
 							}
 						}

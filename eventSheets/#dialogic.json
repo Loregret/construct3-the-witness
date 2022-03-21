@@ -60,6 +60,16 @@
 				},
 				{
 					"eventType": "variable",
+					"name": "next_line_no_sound",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 197817378793961
+				},
+				{
+					"eventType": "variable",
 					"name": "custom_wait_after_type",
 					"type": "number",
 					"initialValue": "0",
@@ -110,7 +120,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "                                                        [h2] Задачи: [/h2]\n[item] Флаг: Важные диалоги чтобы перекрывать минорные в случаи необходимости.\n[item] Триггер на остановку диалога, если отойти на определенное расстояние.\n[item] Флаг: Проверка на опасность - не сражается ли герой в данный момент.\n[item] Параметры скорости воспроизведения диалога и времени ожидания после полного появления строки."
+					"text": "                                                        [h2] Задачи: [/h2]\n[item] Флаг: Важные диалоги чтобы перекрывать минорные в случаи необходимости.\n[item] Триггер на остановку диалога, если отойти на определенное расстояние.\n[item] Флаг: Проверка на опасность - не сражается ли герой в данный момент."
 				},
 				{
 					"eventType": "block",
@@ -185,6 +195,15 @@
 									"parameters": {
 										"variable": "settings_dialog_typewriter_effect"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 988768145075953,
+									"parameters": {
+										"variable": "next_line_no_sound"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -310,7 +329,16 @@
 									"sid": 369264053347531
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 380259493410358,
+									"parameters": {
+										"tag": "\"line-finished\""
+									}
+								}
+							],
 							"sid": 602847685966323,
 							"children": [
 								{
@@ -434,6 +462,15 @@
 												{
 													"callFunction": "dialogic_start",
 													"sid": 651346268259508
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 769788269019575,
+													"parameters": {
+														"variable": "next_line_no_sound",
+														"value": "false"
+													}
 												}
 											],
 											"sid": 323506603120942
@@ -462,6 +499,16 @@
 														"comparison": 0,
 														"second-value": "\"\""
 													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 998165422374736,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".char\")",
+														"comparison": 0,
+														"second-value": "0"
+													}
 												}
 											],
 											"actions": [
@@ -475,7 +522,8 @@
 													}
 												}
 											],
-											"sid": 703050091402057
+											"sid": 703050091402057,
+											"isOrBlock": true
 										},
 										{
 											"eventType": "block",
@@ -623,6 +671,133 @@
 								},
 								{
 									"eventType": "comment",
+									"text": "audio"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 939448478677783,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "sound"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 928826302777722,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".sound\")",
+														"comparison": 1,
+														"second-value": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 168573424798288,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".sound\")",
+														"loop": "not-looping",
+														"volume": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 465365754652153
+										},
+										{
+											"eventType": "comment",
+											"text": "end-sound"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 333304001378619,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".end-sound\")",
+														"comparison": 1,
+														"second-value": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait-for-signal",
+													"objectClass": "System",
+													"sid": 570066278374620,
+													"parameters": {
+														"tag": "\"line-finished\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 793182788477211,
+													"parameters": {
+														"seconds": "0.3"
+													}
+												},
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 140687306024678,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".end-sound\")",
+														"loop": "not-looping",
+														"volume": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 163470032429444
+										},
+										{
+											"eventType": "comment",
+											"text": "no-sound"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 944165530380841,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".no-sound\")",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 359908567423666,
+													"parameters": {
+														"variable": "next_line_no_sound",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 464341223625547
+										}
+									]
+								},
+								{
+									"eventType": "comment",
 									"text": "typewriter launch"
 								},
 								{
@@ -662,6 +837,16 @@
 																"variable": "settings_dialog_typewriter_effect"
 															},
 															"isInverted": true
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 466636469247387,
+															"parameters": {
+																"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".typewriter\")",
+																"comparison": 0,
+																"second-value": "\"none\""
+															}
 														}
 													],
 													"actions": [
@@ -682,20 +867,45 @@
 																"variable": "custom_typing_speed",
 																"value": "0.0001"
 															}
-														},
-														{
-															"id": "play",
-															"objectClass": "Audio",
-															"sid": 708918824017514,
-															"parameters": {
-																"audio-file": "switch2",
-																"loop": "not-looping",
-																"volume": "random(-7,0)",
-																"tag-optional": "\"ui\""
-															}
 														}
 													],
-													"sid": 843241055529226
+													"sid": 843241055529226,
+													"children": [
+														{
+															"eventType": "comment",
+															"text": "no-sound tag"
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 397667813953081,
+																	"parameters": {
+																		"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".no-sound\")",
+																		"comparison": 0,
+																		"second-value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 944334934346506,
+																	"parameters": {
+																		"audio-file": "switch2",
+																		"loop": "not-looping",
+																		"volume": "random(-7,0)",
+																		"tag-optional": "\"ui\""
+																	}
+																}
+															],
+															"sid": 368173975736537
+														}
+													],
+													"isOrBlock": true
 												}
 											]
 										},

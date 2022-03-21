@@ -4,37 +4,41 @@
 			"id": "template",
 			"dialogs": [
 				{
-					"char": "CHAR",
+					"char": "CHAR",				
 					"line": "LINE1",
 					"speed": 0.5,
-					"wait": 1					
-				},
-				{
-					"char": "CHAR",
-					"line": "LINE2",
-					"speed": 0.5,
-					"wait": 1					
+					"wait": 1,
+					"no-sound": true,
+					"sound": "soundname",
+					"end-sound": "soundname",
+					"typewriter": "none"					
 				}
 			]
-		},	
+		},
 		{
 			"id": "start",
 			"dialogs": [
 				{
-					"char": "",
 					"line": "Как же холодно...",
-					"wait": 1,
+					"wait": 1.3,
 					"speed": 0.6
-
 				},
 				{
-					"char": "",
-					"line": "Думаю, мне нужно идти прямо по дороге."
-				},
+					"line": "Думаю, мне нужно идти прямо по дороге.",
+					"wait": 1.5
+				}
+			]
+		},
+		{
+			"id": "tip1",
+			"dialogs": [
 				{
 					"char": "Подсказка",
-					"line": "<i>F - включить фонарик.</i>",
-					"speed": 0.5
+					"line": "<color=lightgreen><i>F - включить фонарик.</i></color>",
+					"wait": 2.5,
+					"no-sound": true,
+					"sound": "notification1",
+					"typewriter": "none"
 				}
 			]
 		},
@@ -42,11 +46,10 @@
 			"id": "flashlight_no_battery",
 			"dialogs": [
 				{
-					"char": "",
+
 					"line": "Черт. У батареи кончился заряд."
 				},
 				{
-					"char": "",
 					"line": "Мне нужна новая <color=blue>батарейка</blue>."
 				}
 			]
@@ -55,12 +58,10 @@
 			"id": "corpse_surprise1",
 			"dialogs": [
 				{
-					"char": "",
 					"line": "Тут <color=red>мертвец</color>."
 				},
 				{
-					"char": "",
-					"line": "Тело еще не начало портиться."
+					"line": "Не ясно, что его убило"
 				}
 			]
 		},
@@ -68,11 +69,9 @@
 			"id": "stone_wonder1",
 			"dialogs": [
 				{
-					"char": "",
 					"line": "Причудливая конструкция в виде каменной пирамиды."
 				},
 				{
-					"char": "",
 					"line": "Кто построил это посреди леса?"
 				}
 			]
@@ -81,12 +80,16 @@
 			"id": "many_corpse1",
 			"dialogs": [
 				{
-					"char": "",
 					"line": "Несколько <color=red>мертвых</color> тел."
 				},
 				{
-					"char": "",
-					"line": "Они погибли совсем недавно."
+					"line": "На телах не видно следов насилия.",
+					"wait": 1.4
+				},
+				{
+					"line": "Отчего они умерли?",
+					"speed": 0.4,
+					"wait": 1.4					
 				}
 			]
 		},
@@ -94,24 +97,22 @@
 			"id": "campfire1",
 			"dialogs": [
 				{
-					"char": "",
 					"line": "Тут осталось горстка тлеющих углей...",
 					"wait": 0.6
 				},
 				{
-					"char": "",
-					"line": "Этого недостаточно, чтобы согреться...",
+					"line": "Этим не согреешься...",
 					"wait": 0.9
-				}				
+				}
 			]
 		},
 		{
 			"id": "closed",
 			"dialogs": [
 				{
-					"char": "",
 					"line": "Заперто.",
-					"speed": 0.35
+					"speed": 0.35,
+					"sound": "door-blocked"
 				}
 			]
 		},
@@ -119,18 +120,17 @@
 			"id": "dead_chickens",
 			"dialogs": [
 				{
-					"char": "",
 					"line": "Дохлые курицы в коробке...",
 					"speed": 0.7
 				}
 			]
-		},		
+		},
 		{
 			"id": "torch1",
 			"dialogs": [
 				{
-					"char": "",
-					"line": "Брошенный факел."
+					"line": "Брошенный факел.",
+					"speed": 0.3
 				}
 			]
 		},
@@ -138,7 +138,6 @@
 			"id": "empty_box",
 			"dialogs": [
 				{
-					"char": "",
 					"line": "Пустые коробки из дерева."
 				}
 			]
