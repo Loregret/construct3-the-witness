@@ -9,7 +9,7 @@
 			"eventType": "variable",
 			"name": "current_layer",
 			"type": "string",
-			"initialValue": "Menu",
+			"initialValue": "menu",
 			"comment": "",
 			"isStatic": true,
 			"isConstant": false,
@@ -96,6 +96,275 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "menu_settings_update_buttons",
+					"functionDescription": "",
+					"functionCategory": "#menu",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 832146352538541,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-layer",
+									"objectClass": "logo_text",
+									"sid": 375162723771593,
+									"parameters": {
+										"layer": "\"settings\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 948051778426331,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 719044809059183,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"zoom\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 571416228460336,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 686509962783022,
+													"parameters": {
+														"variable": "settings_cam_zoom_auto"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 801437103988227,
+													"parameters": {
+														"text": "\"Отдаление камеры: Авто\""
+													}
+												}
+											],
+											"sid": 687317859842684
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 269566187823395
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 714629179242310,
+													"parameters": {
+														"text": "\"Отдаление камеры: Ручная\""
+													}
+												}
+											],
+											"sid": 555937992675786
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 948348292577603,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"diff\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 951557920185179,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 234007157109414,
+													"parameters": {
+														"variable": "difficulty",
+														"comparison": 0,
+														"value": "\"hard\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 771724575888031,
+													"parameters": {
+														"text": "\"Сложность: Сложно\""
+													}
+												}
+											],
+											"sid": 146478038129901
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 451259423125895
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 905391811070101,
+													"parameters": {
+														"variable": "difficulty",
+														"comparison": 0,
+														"value": "\"extreme\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 624157585493470,
+													"parameters": {
+														"text": "\"Сложность: Экстрим☠\""
+													}
+												}
+											],
+											"sid": 827114254063600
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 995623722048722,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"cam_speed\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 140717940309447,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 644871679159958,
+													"parameters": {
+														"text": "\"Скорость камеры: \" & settings_cam_speed_modificator"
+													}
+												}
+											],
+											"sid": 893158574798006
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 852041900284332,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"fps\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 400861681669263,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 451118385866816,
+													"parameters": {
+														"variable": "settings_fps"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 871691774468041,
+													"parameters": {
+														"text": "\"Счетчик FPS: вкл\""
+													}
+												}
+											],
+											"sid": 655050451914533
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 989527675422238
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 199520792472284,
+													"parameters": {
+														"text": "\"Счетчик FPS: выкл\""
+													}
+												}
+											],
+											"sid": 340105025872853
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
 					"functionName": "menu_button_settings_action",
 					"functionDescription": "",
 					"functionCategory": "#menu",
@@ -119,559 +388,523 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
+									"id": "pick-by-unique-id",
 									"objectClass": "logo_text",
-									"sid": 251479987462085,
+									"sid": 118239778768101,
 									"parameters": {
-										"instance-variable": "param",
-										"comparison": 0,
-										"value": "\"back\""
+										"unique-id": "logo_text_uid"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 621407377502810,
+							"sid": 919073616884104,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 130066534597087,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"back\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 370069767139624,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 567278181053349,
+													"parameters": {
+														"tag": "\"switch2\""
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 877607918850317,
+													"parameters": {
+														"audio-file": "switch1",
+														"loop": "not-looping",
+														"volume": "0",
+														"tag-optional": "\"switch1\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 988083229233189,
+													"parameters": {
+														"seconds": "0.15"
+													}
+												},
+												{
+													"callFunction": "menu_activate_button_layer",
+													"sid": 952927971950315,
+													"parameters": [
+														"\"menu\""
+													]
+												}
+											],
+											"sid": 433125296235541
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 976854885575501
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 134322055844186,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"zoom\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 724750820328300,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 319794761193296,
+													"parameters": {
+														"variable": "settings_cam_zoom_auto"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 594158909547716,
+													"parameters": {
+														"variable": "settings_cam_zoom_auto",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 162815649276224
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 996600034700063
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 952961861083877,
+													"parameters": {
+														"variable": "settings_cam_zoom_auto",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 789430295496466
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 877009219893639
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 691957922436807,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"diff\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 538978393169897,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 847991621943170,
+													"parameters": {
+														"variable": "difficulty",
+														"comparison": 0,
+														"value": "\"hard\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 513211131797400,
+													"parameters": {
+														"variable": "difficulty",
+														"value": "\"extreme\""
+													}
+												}
+											],
+											"sid": 704526860946324
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 267300430629486
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 107148800298209,
+													"parameters": {
+														"variable": "difficulty",
+														"comparison": 0,
+														"value": "\"extreme\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 123359969197532,
+													"parameters": {
+														"variable": "difficulty",
+														"value": "\"hard\""
+													}
+												}
+											],
+											"sid": 292305198925436
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 390776561115535
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 930649885484038,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"cam_speed\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 762048429902979,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 545829869980253,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 468476492053967,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"value": "2"
+													}
+												}
+											],
+											"sid": 582428219844486
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 496374402671315
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 989350199706272,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 942459843003095,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"value": "3"
+													}
+												}
+											],
+											"sid": 283993038442274
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 548842415719036
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 572593916747956,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 378378403571997,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"value": "4"
+													}
+												}
+											],
+											"sid": 925253403874239
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 809567859383567
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 129938390081051,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"comparison": 0,
+														"value": "4"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 292453871971836,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"value": "5"
+													}
+												}
+											],
+											"sid": 134479800469080
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 794915110712644
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 725720516178759,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"comparison": 0,
+														"value": "5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 771188783583916,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"value": "6"
+													}
+												}
+											],
+											"sid": 467374919912907
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 542700480620807
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 843859996528328,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"comparison": 0,
+														"value": "6"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 449864623894593,
+													"parameters": {
+														"variable": "settings_cam_speed_modificator",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 940574387638899
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 788724632969265
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 929756956851116,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"fps\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 626489685549126,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 318670018490559,
+													"parameters": {
+														"variable": "settings_fps"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 857127796314227,
+													"parameters": {
+														"variable": "settings_fps",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 279116256925273
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 974472262849459
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 563780073276786,
+													"parameters": {
+														"variable": "settings_fps",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 130992075365130
+										}
+									]
+								},
 								{
 									"eventType": "block",
 									"conditions": [],
 									"actions": [
 										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 191079202019024,
-											"parameters": {
-												"seconds": "0.15"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 568099687842724,
-											"parameters": {
-												"variable": "current_layer",
-												"value": "\"Menu\""
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 555421202629876,
-											"parameters": {
-												"layer": "\"Settings\"",
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 551794415042986,
-											"parameters": {
-												"layer": "\"Menu\"",
-												"visibility": "visible"
-											}
+											"callFunction": "menu_settings_update_buttons",
+											"sid": 843454342506011
 										}
 									],
-									"sid": 610057854644025
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 640683432163768
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "logo_text",
-									"sid": 438612551042991,
-									"parameters": {
-										"instance-variable": "param",
-										"comparison": 0,
-										"value": "\"zoom\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 846619412951199,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 899124140809518,
-											"parameters": {
-												"variable": "settings_cam_zoom_auto"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 501018393821625,
-											"parameters": {
-												"variable": "settings_cam_zoom_auto",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "logo_text",
-											"sid": 970101206650405,
-											"parameters": {
-												"text": "\"Отдаление камеры: Ручная\""
-											}
-										}
-									],
-									"sid": 629635297335259
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 214596361847155
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 706446284152438,
-											"parameters": {
-												"variable": "settings_cam_zoom_auto",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "logo_text",
-											"sid": 306202780599425,
-											"parameters": {
-												"text": "\"Отдаление камеры: Авто\""
-											}
-										}
-									],
-									"sid": 953848905658734
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 997290781281192
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "logo_text",
-									"sid": 513764453629345,
-									"parameters": {
-										"instance-variable": "param",
-										"comparison": 0,
-										"value": "\"diff\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 733062699801006,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 913768934409921,
-											"parameters": {
-												"variable": "difficulty",
-												"comparison": 0,
-												"value": "\"hard\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "logo_text",
-											"sid": 723771844688144,
-											"parameters": {
-												"text": "\"Сложность: Экстрим ☠\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 839703898072394,
-											"parameters": {
-												"variable": "difficulty",
-												"value": "\"extreme\""
-											}
-										}
-									],
-									"sid": 982353643809491
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 604197547317967
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 548941045490368,
-											"parameters": {
-												"variable": "difficulty",
-												"comparison": 0,
-												"value": "\"extreme\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "logo_text",
-											"sid": 218441872371937,
-											"parameters": {
-												"text": "\"Сложность: Сложно\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 617837497994600,
-											"parameters": {
-												"variable": "difficulty",
-												"value": "\"hard\""
-											}
-										}
-									],
-									"sid": 988723118238733
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 660449272880105
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "logo_text",
-									"sid": 382970871708687,
-									"parameters": {
-										"instance-variable": "param",
-										"comparison": 0,
-										"value": "\"cam_speed\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 627566453611265,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 239986031962365,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"comparison": 0,
-												"value": "1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 382534573672329,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"value": "2"
-											}
-										}
-									],
-									"sid": 287450963758179
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 658073077833414
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 497965015920637,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"comparison": 0,
-												"value": "2"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 852219608845897,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"value": "3"
-											}
-										}
-									],
-									"sid": 955836727039997
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 423331356610053
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 281672054670670,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"comparison": 0,
-												"value": "3"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 189472686426980,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"value": "4"
-											}
-										}
-									],
-									"sid": 890731642196392
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 515407146626876
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 447060801038815,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"comparison": 0,
-												"value": "4"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 109633799689108,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"value": "5"
-											}
-										}
-									],
-									"sid": 757953157357668
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 935777945830473
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 554751537445962,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"comparison": 0,
-												"value": "5"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 606315493924439,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"value": "6"
-											}
-										}
-									],
-									"sid": 638249052427510
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 215444108234171
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 477954546556481,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"comparison": 0,
-												"value": "6"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 875464735216083,
-											"parameters": {
-												"variable": "settings_cam_speed_modificator",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 284302572665310
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "logo_text",
-											"sid": 640398753990667,
-											"parameters": {
-												"text": "\"Скорость камеры: \" & settings_cam_speed_modificator"
-											}
-										}
-									],
-									"sid": 231985591348251
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 772345525453461
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "logo_text",
-									"sid": 604522036281057,
-									"parameters": {
-										"instance-variable": "param",
-										"comparison": 0,
-										"value": "\"fps\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 108870923653329,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 950229731137370,
-											"parameters": {
-												"variable": "settings_fps"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "logo_text",
-											"sid": 195770430305286,
-											"parameters": {
-												"text": "\"Счетчик FPS: выкл\""
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 137471151610076,
-											"parameters": {
-												"variable": "settings_fps",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 229610311394515
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 294893275536087
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "logo_text",
-											"sid": 720714080282558,
-											"parameters": {
-												"text": "\"Счетчик FPS: вкл\""
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 339626421538586,
-											"parameters": {
-												"variable": "settings_fps",
-												"value": "true"
-											}
-										}
-									],
-									"sid": 944677199481570
+									"sid": 708950073011786
 								}
 							]
 						}
@@ -703,7 +936,16 @@
 						}
 					],
 					"eventType": "function-block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "logo_text",
+							"sid": 882277161184678,
+							"parameters": {
+								"unique-id": "logo_text_uid"
+							}
+						}
+					],
 					"actions": [],
 					"sid": 473150344798174,
 					"children": [
@@ -844,31 +1086,15 @@
 											}
 										},
 										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 896328847923048,
-											"parameters": {
-												"layer": "\"Menu\"",
-												"visibility": "invisible"
-											}
+											"callFunction": "menu_activate_button_layer",
+											"sid": 695631602964250,
+											"parameters": [
+												"\"settings\""
+											]
 										},
 										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 143932301137229,
-											"parameters": {
-												"layer": "\"Settings\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 665201082288743,
-											"parameters": {
-												"variable": "current_layer",
-												"value": "\"Settings\""
-											}
+											"callFunction": "menu_settings_update_buttons",
+											"sid": 851804868416785
 										}
 									],
 									"sid": 930330689945498
@@ -920,11 +1146,11 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 847449946196143,
+											"sid": 856254489977583,
 											"parameters": {
 												"variable": "current_layer",
 												"comparison": 0,
-												"value": "\"Menu\""
+												"value": "\"menu\""
 											}
 										}
 									],
@@ -935,6 +1161,17 @@
 											"parameters": [
 												"logo_text_uid"
 											]
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 267273843125640,
+											"parameters": {
+												"audio-file": "switch1",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"switch1\""
+											}
 										}
 									],
 									"sid": 567145690844301
@@ -945,11 +1182,11 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 934193141023131,
+											"sid": 592933807803534,
 											"parameters": {
 												"variable": "current_layer",
 												"comparison": 0,
-												"value": "\"Settings\""
+												"value": "\"settings\""
 											}
 										}
 									],
@@ -960,6 +1197,17 @@
 											"parameters": [
 												"logo_text_uid"
 											]
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 983469204347407,
+											"parameters": {
+												"audio-file": "switch2",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"switch2\""
+											}
 										}
 									],
 									"sid": 317985454774508
@@ -995,17 +1243,6 @@
 									"parameters": [
 										"logo_text.UID"
 									]
-								},
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 375118993394737,
-									"parameters": {
-										"audio-file": "switch-cc0",
-										"loop": "not-looping",
-										"volume": "0",
-										"tag-optional": "\"\""
-									}
 								}
 							],
 							"sid": 707787297648424
@@ -1230,6 +1467,118 @@
 				}
 			],
 			"sid": 425144783136964
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu - Layers",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Menu - Layers - main",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "menu_activate_button_layer",
+							"functionDescription": "",
+							"functionCategory": "#menu",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "layer_name",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 770074465407156
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 775518144164053,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "menu_hide_all_button_layers",
+											"sid": 631535552537814
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 787556705372164,
+											"parameters": {
+												"layer": "layer_name",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 886113212791598,
+											"parameters": {
+												"variable": "current_layer",
+												"value": "layer_name"
+											}
+										}
+									],
+									"sid": 866205951356149
+								}
+							]
+						}
+					],
+					"sid": 246673100476133
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Menu - Layers - sub",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "menu_hide_all_button_layers",
+							"functionDescription": "",
+							"functionCategory": "#menu",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 209431430641410,
+									"parameters": {
+										"layer": "\"menu\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 733836561188033,
+									"parameters": {
+										"layer": "\"settings\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 662236839673232
+						}
+					],
+					"sid": 984268412181836
+				}
+			],
+			"sid": 621598551102135
 		}
 	],
 	"sid": 772844762173010
