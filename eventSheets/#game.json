@@ -5077,190 +5077,293 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "comment",
+							"text": "light stick"
+						},
+						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-created",
-									"objectClass": "light_stick",
-									"sid": 781846872267224
-								}
-							],
+							"conditions": [],
 							"actions": [],
-							"sid": 623104642100585,
+							"sid": 607377237281267,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "light"
-								},
-								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "light_stick",
+											"sid": 717374239217212
+										}
+									],
 									"actions": [],
-									"sid": 870511992161481,
+									"sid": 355586406830279,
 									"children": [
+										{
+											"eventType": "comment",
+											"text": "light"
+										},
 										{
 											"eventType": "block",
 											"conditions": [],
-											"actions": [
+											"actions": [],
+											"sid": 583770642238583,
+											"children": [
 												{
-													"id": "spawn-another-object",
-													"objectClass": "light_stick",
-													"sid": 552575617329835,
-													"parameters": {
-														"object": "Light",
-														"layer": "\"light\"",
-														"image-point": "0",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "Light",
-													"sid": 465823582225428,
-													"parameters": {
-														"opacity": "70"
-													}
-												},
-												{
-													"id": "set-scale",
-													"objectClass": "Light",
-													"sid": 458566971621202,
-													"parameters": {
-														"scale": "0.4"
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "Light",
-													"sid": 506522207100600,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "light_stick",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "light_stick",
+															"sid": 704534586383846,
+															"parameters": {
+																"object": "Light",
+																"layer": "\"light\"",
+																"image-point": "0",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Light",
+															"sid": 921826581250512,
+															"parameters": {
+																"opacity": "70"
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "Light",
+															"sid": 476955061394106,
+															"parameters": {
+																"scale": "0.4"
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "Light",
+															"sid": 707733351039289,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "light_stick",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														}
+													],
+													"sid": 260711481718634
 												}
-											],
-											"sid": 760549995703682
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "color light"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 324515096068656,
-									"children": [
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "color light"
+										},
 										{
 											"eventType": "block",
 											"conditions": [],
-											"actions": [
+											"actions": [],
+											"sid": 795052355545862,
+											"children": [
 												{
-													"id": "spawn-another-object",
-													"objectClass": "light_stick",
-													"sid": 440502612630486,
-													"parameters": {
-														"object": "color_light",
-														"layer": "\"items\"",
-														"image-point": "0",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-blend-mode",
-													"objectClass": "color_light",
-													"sid": 901441651842904,
-													"parameters": {
-														"blend-mode": "normal"
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "color_light",
-													"sid": 341429136835704,
-													"parameters": {
-														"opacity": "15"
-													}
-												},
-												{
-													"id": "set-scale",
-													"objectClass": "color_light",
-													"sid": 506098282935621,
-													"parameters": {
-														"scale": "0.2"
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "color_light",
-													"sid": 636149909783331,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "light_stick",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
-												},
-												{
-													"id": "set-default-color",
-													"objectClass": "color_light",
-													"sid": 407466548513286,
-													"parameters": {
-														"color": "rgbEx(0, 255, 0)"
-													}
-												},
-												{
-													"id": "set-active",
-													"objectClass": "color_light",
-													"sid": 655943646728334,
-													"behaviorType": "Sine",
-													"parameters": {
-														"state": "active"
-													}
-												},
-												{
-													"id": "set-period",
-													"objectClass": "color_light",
-													"sid": 803608680486980,
-													"behaviorType": "Sine",
-													"parameters": {
-														"period": "8"
-													}
-												},
-												{
-													"id": "set-movement",
-													"objectClass": "color_light",
-													"sid": 225949850817066,
-													"behaviorType": "Sine",
-													"parameters": {
-														"movement": "opacity"
-													}
-												},
-												{
-													"id": "set-magnitude",
-													"objectClass": "color_light",
-													"sid": 342404232789083,
-													"behaviorType": "Sine",
-													"parameters": {
-														"magnitude": "3"
-													}
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "light_stick",
+															"sid": 972982281555626,
+															"parameters": {
+																"object": "color_light",
+																"layer": "\"items\"",
+																"image-point": "0",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-blend-mode",
+															"objectClass": "color_light",
+															"sid": 618985114000954,
+															"parameters": {
+																"blend-mode": "normal"
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "color_light",
+															"sid": 546768417457300,
+															"parameters": {
+																"opacity": "15"
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "color_light",
+															"sid": 495111149546991,
+															"parameters": {
+																"scale": "0.2"
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "color_light",
+															"sid": 998426840478438,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "light_stick",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "color_light",
+															"sid": 609132576309351,
+															"parameters": {
+																"color": "rgbEx(0, 255, 0)"
+															}
+														},
+														{
+															"id": "set-active",
+															"objectClass": "color_light",
+															"sid": 262686051934350,
+															"behaviorType": "Sine",
+															"parameters": {
+																"state": "active"
+															}
+														},
+														{
+															"id": "set-period",
+															"objectClass": "color_light",
+															"sid": 851579763941735,
+															"behaviorType": "Sine",
+															"parameters": {
+																"period": "8"
+															}
+														},
+														{
+															"id": "set-movement",
+															"objectClass": "color_light",
+															"sid": 121934090216897,
+															"behaviorType": "Sine",
+															"parameters": {
+																"movement": "opacity"
+															}
+														},
+														{
+															"id": "set-magnitude",
+															"objectClass": "color_light",
+															"sid": 356201846528091,
+															"behaviorType": "Sine",
+															"parameters": {
+																"magnitude": "3"
+															}
+														}
+													],
+													"sid": 557240962558403
 												}
-											],
-											"sid": 425990434420699
+											]
 										}
 									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "empty magazine"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 622571950300297,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "empty_magaizine",
+											"sid": 102353989479916,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-wait-time",
+											"objectClass": "empty_magaizine",
+											"sid": 141346121149707,
+											"behaviorType": "Fade",
+											"parameters": {
+												"wait-time": "0"
+											}
+										},
+										{
+											"id": "set-fade-out-time",
+											"objectClass": "empty_magaizine",
+											"sid": 640742405616299,
+											"behaviorType": "Fade",
+											"parameters": {
+												"fade-out-time": "5"
+											}
+										},
+										{
+											"id": "restart-fade",
+											"objectClass": "empty_magaizine",
+											"sid": 998148135706071,
+											"behaviorType": "Fade"
+										}
+									],
+									"sid": 980890338954773
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "empty_magaizine",
+											"sid": 950367648212005
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 338429231308552,
+											"parameters": {
+												"first-value": "empty_magaizine.Count",
+												"comparison": 5,
+												"second-value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-wait-time",
+											"objectClass": "empty_magaizine",
+											"sid": 633624110646170,
+											"behaviorType": "Fade",
+											"parameters": {
+												"wait-time": "8"
+											}
+										},
+										{
+											"id": "set-fade-out-time",
+											"objectClass": "empty_magaizine",
+											"sid": 632041694246293,
+											"behaviorType": "Fade",
+											"parameters": {
+												"fade-out-time": "5"
+											}
+										}
+									],
+									"sid": 140880371515877
 								}
 							]
 						}
