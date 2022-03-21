@@ -359,6 +359,184 @@
 											"sid": 340105025872853
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 642573398762402,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"typewriter\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 846462472274639,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 341141875479495,
+													"parameters": {
+														"variable": "settings_dialog_typewriter_effect"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 432971262350215,
+													"parameters": {
+														"text": "\"Аним. печатн. машинки: вкл\""
+													}
+												}
+											],
+											"sid": 575255041199257
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 564736782940705
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 161330560222871,
+													"parameters": {
+														"text": "\"Аним. печатн. машинки: выкл\""
+													}
+												}
+											],
+											"sid": 556770738415342
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 706859359107399,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"graphics\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 469281058621514,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 733988890829565,
+													"parameters": {
+														"variable": "settings_low_graphics"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 808449362719059,
+													"parameters": {
+														"text": "\"Графика: низкая\""
+													}
+												}
+											],
+											"sid": 537027665699743,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-fullscreen-scaling",
+															"objectClass": "System",
+															"sid": 839965697926948,
+															"parameters": {
+																"fullscreen-scaling": "low-quality"
+															}
+														},
+														{
+															"id": "set-pixel-rounding",
+															"objectClass": "System",
+															"sid": 608818362356455,
+															"parameters": {
+																"mode": "enabled"
+															}
+														}
+													],
+													"sid": 970193628949167
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 895753307127577
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 595346895598305,
+													"parameters": {
+														"text": "\"Графика: нормальная\""
+													}
+												}
+											],
+											"sid": 316727927880271,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-fullscreen-scaling",
+															"objectClass": "System",
+															"sid": 551298130641796,
+															"parameters": {
+																"fullscreen-scaling": "high-quality"
+															}
+														},
+														{
+															"id": "set-pixel-rounding",
+															"objectClass": "System",
+															"sid": 264985173422691,
+															"parameters": {
+																"mode": "disabled"
+															}
+														}
+													],
+													"sid": 725748522344258
+												}
+											]
+										}
+									]
 								}
 							]
 						}
@@ -884,6 +1062,116 @@
 												}
 											],
 											"sid": 130992075365130
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 532018721190693
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 222765822187232,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"typewriter\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 156663015942732,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 309209789059414,
+													"parameters": {
+														"variable": "settings_dialog_typewriter_effect"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 891958615583898,
+													"parameters": {
+														"variable": "settings_dialog_typewriter_effect",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 171608472353314
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 733308028861985
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 195164542538493,
+													"parameters": {
+														"variable": "settings_dialog_typewriter_effect",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 928877410520902
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 598286571840767
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 996192045158547,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"graphics\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 582396495744830,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "toggle-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 353530860136802,
+													"parameters": {
+														"variable": "settings_low_graphics"
+													}
+												}
+											],
+											"sid": 659030594555886
 										}
 									]
 								},

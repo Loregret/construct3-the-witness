@@ -127,7 +127,7 @@
 					},
 					"world": {
 						"x": 19,
-						"y": 144,
+						"y": 138.05256164457182,
 						"width": 423.33333333333337,
 						"height": 96.0533401489258,
 						"originX": 0,
@@ -363,60 +363,10 @@
 				{
 					"type": "logo_text",
 					"properties": {
-						"text": "Отдаление камеры: Авто",
-						"enable-bbcode": true,
-						"font": "pixel",
-						"size": 22,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.1411764705882353,
-							0.1411764705882353,
-							0.1411764705882353,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 210,
-					"instanceVariables": {
-						"param": "zoom"
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 83.21191335004733,
-						"y": 215,
-						"width": 302,
-						"height": 38.193486621998034,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "logo_text",
-					"properties": {
 						"text": "Назад",
 						"enable-bbcode": true,
 						"font": "pixel",
-						"size": 45,
+						"size": 48,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -427,7 +377,7 @@
 							1
 						],
 						"horizontal-alignment": "center",
-						"vertical-alignment": "top",
+						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
 						"origin": "top-left"
@@ -444,10 +394,260 @@
 						}
 					},
 					"world": {
-						"x": -62.788086649952675,
-						"y": 410.4816426795617,
-						"width": 592.9916569480679,
-						"height": 80.29333750406903,
+						"x": 148.22409874112134,
+						"y": 427.6267378261742,
+						"width": 169.18479336483034,
+						"height": 55.24071502624216,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "logo_text",
+					"properties": {
+						"text": "Отдаление камеры: Авто",
+						"enable-bbcode": true,
+						"font": "pixel",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 352,
+					"instanceVariables": {
+						"param": "zoom"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 128,
+						"y": 385,
+						"width": 212.22343682236442,
+						"height": 38.193486621998034,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "logo_text",
+					"properties": {
+						"text": "Аним. печатн. машинки: вкл",
+						"enable-bbcode": true,
+						"font": "pixel",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 353,
+					"instanceVariables": {
+						"param": "typewriter"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 96,
+						"y": 280,
+						"width": 256,
+						"height": 38.193486621998034,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "logo_text",
+					"properties": {
+						"text": "Скорость камеры: 2",
+						"enable-bbcode": true,
+						"font": "pixel",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 354,
+					"instanceVariables": {
+						"param": "cam_speed"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 128,
+						"y": 350,
+						"width": 212.22343682236442,
+						"height": 38.193486621998034,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "logo_text",
+					"properties": {
+						"text": "Счетчик FPS: выкл",
+						"enable-bbcode": true,
+						"font": "pixel",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 355,
+					"instanceVariables": {
+						"param": "fps"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 128,
+						"y": 315,
+						"width": 212.22343682236442,
+						"height": 38.193486621998034,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "logo_text",
+					"properties": {
+						"text": "Графика: нормально",
+						"enable-bbcode": true,
+						"font": "pixel",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 210,
+					"instanceVariables": {
+						"param": "graphics"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 96,
+						"y": 210,
+						"width": 270.3670201401164,
+						"height": 38.193486621998034,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -466,14 +666,14 @@
 						"text": "Сложность: Сложно",
 						"enable-bbcode": true,
 						"font": "pixel",
-						"size": 22,
+						"size": 16,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
 						"color": [
-							0.1411764705882353,
-							0.1411764705882353,
-							0.1411764705882353,
+							0,
+							0,
+							0,
 							1
 						],
 						"horizontal-alignment": "center",
@@ -494,109 +694,9 @@
 						}
 					},
 					"world": {
-						"x": 83.21191335004733,
-						"y": 344,
-						"width": 302,
-						"height": 38.193486621998034,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "logo_text",
-					"properties": {
-						"text": "Скорость камеры: 2",
-						"enable-bbcode": true,
-						"font": "pixel",
-						"size": 22,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.1411764705882353,
-							0.1411764705882353,
-							0.1411764705882353,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 242,
-					"instanceVariables": {
-						"param": "cam_speed"
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 83.21191335004733,
-						"y": 301,
-						"width": 302,
-						"height": 38.193486621998034,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "logo_text",
-					"properties": {
-						"text": "Счетчик FPS: выкл",
-						"enable-bbcode": true,
-						"font": "pixel",
-						"size": 22,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.1411764705882353,
-							0.1411764705882353,
-							0.1411764705882353,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 349,
-					"instanceVariables": {
-						"param": "fps"
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 83.21191335004733,
-						"y": 258,
-						"width": 302,
+						"x": 128,
+						"y": 245,
+						"width": 212.22343682236442,
 						"height": 38.193486621998034,
 						"originX": 0,
 						"originY": 0,

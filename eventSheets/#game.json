@@ -133,7 +133,7 @@
 			"eventType": "variable",
 			"name": "settings_dialog_typewriter_effect",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -558,6 +558,17 @@
 															"disabled": true,
 															"parameters": {
 																"audio-file": "Witness",
+																"loop": "not-looping",
+																"volume": "-15",
+																"tag-optional": "\"music\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 748526922062552,
+															"parameters": {
+																"audio-file": "Eternity Clock",
 																"loop": "not-looping",
 																"volume": "-15",
 																"tag-optional": "\"music\""
