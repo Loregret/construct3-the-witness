@@ -1,0 +1,207 @@
+{
+	"name": "#Debug",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Debug",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "FPS ⊠",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 177056823486053,
+									"parameters": {
+										"variable": "settings_fps"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 419304026391462,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-visible",
+											"objectClass": "debug_fps",
+											"sid": 699696835110699,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "debug_fps",
+											"sid": 823603852458400,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 196301060503050
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 579129150178911
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "debug_fps",
+											"sid": 329220964250196,
+											"parameters": {
+												"text": "\"FPS: \" & fps"
+											}
+										}
+									],
+									"sid": 862068275764502,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 302591950817485,
+													"parameters": {
+														"first-value": "fps",
+														"comparison": 5,
+														"second-value": "54"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-font-color",
+													"objectClass": "debug_fps",
+													"sid": 727880192971981,
+													"parameters": {
+														"color": "rgbEx(0, 255, 0)"
+													}
+												}
+											],
+											"sid": 986413390605868
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 291177574984618
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 735249454739380,
+													"parameters": {
+														"first-value": "fps",
+														"comparison": 5,
+														"second-value": "30"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-font-color",
+													"objectClass": "debug_fps",
+													"sid": 427249823132869,
+													"parameters": {
+														"color": "rgbEx(255, 255, 0)"
+													}
+												}
+											],
+											"sid": 880028433674900
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 898947945047482
+												}
+											],
+											"actions": [
+												{
+													"id": "set-font-color",
+													"objectClass": "debug_fps",
+													"sid": 865806743610556,
+													"parameters": {
+														"color": "rgbEx(255, 0, 0)"
+													}
+												}
+											],
+											"sid": 944076968561004
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 593155416893471
+								}
+							],
+							"actions": [],
+							"sid": 920359069526639,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-visible",
+											"objectClass": "debug_fps",
+											"sid": 466526487754941
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "debug_fps",
+											"sid": 166759736605143,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 204256523127210
+								}
+							]
+						}
+					],
+					"sid": 191056524810628,
+					"background-color": [
+						0.7450980392156863,
+						0.8509803921568627,
+						0.9764705882352941,
+						1
+					]
+				}
+			],
+			"sid": 997927958297856
+		}
+	],
+	"sid": 225367330786125
+}

@@ -1,0 +1,78 @@
+{
+	"name": "empty_magaizine",
+	"plugin-id": "Sprite",
+	"sid": 163532679651207,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 868607942606578
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 15,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5967057,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 373531589631682,
+				"name": "pistol",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 24,
+						"originX": 0.53125,
+						"originY": 0.5416666666666666,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3952210,
+						"collisionPoly": {
+							"points": [
+								0.0625,
+								0.041666666666666664,
+								1,
+								0.041666666666666664,
+								1,
+								1,
+								0.0625,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 520217014856213,
+				"name": "ak",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
