@@ -1259,6 +1259,17 @@
 											}
 										},
 										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 558243647398240,
+											"parameters": {
+												"audio-file": "switches---selector-turning-off-clack by matching-sound-effects Artlist",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"switch1\""
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 312350259519988,
@@ -1441,20 +1452,40 @@
 											"parameters": [
 												"logo_text_uid"
 											]
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 267273843125640,
-											"parameters": {
-												"audio-file": "switch1",
-												"loop": "not-looping",
-												"volume": "0",
-												"tag-optional": "\"switch1\""
-											}
 										}
 									],
-									"sid": 567145690844301
+									"sid": 567145690844301,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "logo_text",
+													"sid": 913056816358006,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 1,
+														"value": "\"play\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 192103299788704,
+													"parameters": {
+														"audio-file": "switch1",
+														"loop": "not-looping",
+														"volume": "0",
+														"tag-optional": "\"switch1\""
+													}
+												}
+											],
+											"sid": 402730911638682
+										}
+									]
 								},
 								{
 									"eventType": "block",

@@ -215,9 +215,9 @@
 										{
 											"id": "every-x-seconds",
 											"objectClass": "System",
-											"sid": 492908809478699,
+											"sid": 766551162375767,
 											"parameters": {
-												"interval-seconds": "choose(0.06,0.05)"
+												"interval-seconds": "choose(0.05,0.1)"
 											}
 										}
 									],
@@ -225,7 +225,7 @@
 										{
 											"id": "play",
 											"objectClass": "Audio",
-											"sid": 423417162093830,
+											"sid": 297627808438577,
 											"parameters": {
 												"audio-file": "tap",
 												"loop": "not-looping",
@@ -234,7 +234,91 @@
 											}
 										}
 									],
-									"sid": 136401895545455
+									"sid": 855180167965648,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 658042175615962,
+											"parameters": {
+												"interval-seconds": "0.08"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 407554307344233,
+											"parameters": {
+												"audio-file": "soft-switch",
+												"loop": "not-looping",
+												"volume": "random(-10,-20)",
+												"tag-optional": "\"type\""
+											}
+										}
+									],
+									"sid": 277402047830615
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 612877967823753,
+											"parameters": {
+												"interval-seconds": "0.08"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 497211493570020,
+											"parameters": {
+												"audio-file": "switch2",
+												"loop": "not-looping",
+												"volume": "random(-10,-20)",
+												"tag-optional": "\"type\""
+											}
+										}
+									],
+									"sid": 290362284179347,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 979062711715004,
+											"parameters": {
+												"interval-seconds": "0.08"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 590869032591621,
+											"parameters": {
+												"audio-file": "switches---selector-turning-off-clack by matching-sound-effects Artlist",
+												"loop": "not-looping",
+												"volume": "random(-10,-20)",
+												"tag-optional": "\"type\""
+											}
+										}
+									],
+									"sid": 940556813388533,
+									"disabled": true
 								}
 							]
 						},
