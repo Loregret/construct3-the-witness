@@ -2562,7 +2562,7 @@
 							0.2196078431372549,
 							0.2196078431372549,
 							0.2196078431372549,
-							0.45
+							0.35
 						],
 						"angle": 5.595978111312483,
 						"zElevation": 0
@@ -2692,6 +2692,147 @@
 							0.25
 						],
 						"angle": 4.037340926883142,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "decal_blood",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 298,
+					"instanceVariables": {
+						"is_decor": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0.15,
+								"wait-time": 120,
+								"fade-out-time": 5,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 8531.336984648306,
+						"y": 6356.409870615462,
+						"width": 13.908595884046733,
+						"height": 27.29110723823005,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.2196078431372549,
+							0.2196078431372549,
+							0.2196078431372549,
+							0.25
+						],
+						"angle": 1.847419816689038,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "decal_blood",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 478,
+					"instanceVariables": {
+						"is_decor": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0.15,
+								"wait-time": 120,
+								"fade-out-time": 5,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 8607,
+						"y": 6587,
+						"width": 158.74797226919924,
+						"height": 33.00499086827364,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.2196078431372549,
+							0.2196078431372549,
+							0.2196078431372549,
+							0.7
+						],
+						"angle": 4.8416112888205385,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "decal_blood",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 637,
+					"instanceVariables": {
+						"is_decor": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0.15,
+								"wait-time": 120,
+								"fade-out-time": 5,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 8420.556404582183,
+						"y": 6889.8793082737,
+						"width": 105.95937674292,
+						"height": 50.33279903088713,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.3137254901960784,
+							0.08627450980392157,
+							0.08627450980392157,
+							0.8
+						],
+						"angle": 5.936934937328494,
 						"zElevation": 0
 					}
 				}
@@ -10944,42 +11085,6 @@
 									0.55
 								],
 								"angle": 1.210312898365384,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "dialog_trigger",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 298,
-							"instanceVariables": {
-								"SceneNum": "forest1",
-								"DialogName": "torch1",
-								"LineNum": 0,
-								"active": true,
-								"repeatable": true,
-								"auto_start": false
-							},
-							"behaviors": {},
-							"world": {
-								"x": 8637.529296875,
-								"y": 6344.46826171875,
-								"width": 53.04219062616016,
-								"height": 53.69095272405475,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									0.55
-								],
-								"angle": 0.7587586927748491,
 								"zElevation": 0
 							}
 						},
