@@ -1177,6 +1177,42 @@
 								},
 								{
 									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 109186976843406
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 336467656173398,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"typewriter_sound\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 277850377710607,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 168695128727226
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 164095773589884
+										}
+									]
+								},
+								{
+									"eventType": "block",
 									"conditions": [],
 									"actions": [
 										{
@@ -1263,7 +1299,7 @@
 											"objectClass": "Audio",
 											"sid": 558243647398240,
 											"parameters": {
-												"audio-file": "switches---selector-turning-off-clack by matching-sound-effects Artlist",
+												"audio-file": "switch-selector",
 												"loop": "not-looping",
 												"volume": "0",
 												"tag-optional": "\"switch1\""
@@ -1569,6 +1605,16 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "selected_logo_text_uid",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 563789445528408
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1577,14 +1623,6 @@
 									"sid": 707620224510212,
 									"parameters": {
 										"object": "logo_text"
-									}
-								},
-								{
-									"id": "is-on-layer",
-									"objectClass": "logo_text",
-									"sid": 238753676271270,
-									"parameters": {
-										"layer": "current_layer"
 									}
 								}
 							],
@@ -1595,9 +1633,27 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "is-on-layer",
+											"objectClass": "logo_text",
+											"sid": 395295094010380,
+											"parameters": {
+												"layer": "current_layer"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 336441033976479,
+											"parameters": {
+												"variable": "selected_logo_text_uid",
+												"comparison": 1,
+												"value": "logo_text.UID"
+											}
+										},
+										{
 											"id": "pick-nearestfurthest",
 											"objectClass": "logo_text",
-											"sid": 351369242197405,
+											"sid": 249451885679700,
 											"parameters": {
 												"which": "nearest",
 												"x": "Mouse.X",
@@ -1605,14 +1661,9 @@
 											}
 										},
 										{
-											"id": "compare-text",
-											"objectClass": "logo_text",
-											"sid": 100667015091834,
-											"parameters": {
-												"text-to-compare": "\"Свидетель\"",
-												"case-sensitivity": "ignore-case"
-											},
-											"isInverted": true
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 667450148211065
 										}
 									],
 									"actions": [],
@@ -1679,13 +1730,64 @@
 													"parameters": {
 														"z": "1"
 													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 611128752950667,
+													"parameters": {
+														"variable": "selected_logo_text_uid",
+														"value": "logo_text.UID"
+													}
 												}
 											],
-											"sid": 364687314131947
+											"sid": 364687314131947,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 769892346734875,
+															"parameters": {
+																"audio-file": "soft-switch",
+																"loop": "not-looping",
+																"volume": "-32",
+																"tag-optional": "\"selector\""
+															}
+														}
+													],
+													"sid": 714024547184884
+												}
+											]
 										}
 									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 969795601891630
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 208833334397813,
+									"parameters": {
+										"variable": "selected_logo_text_uid",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 814504300043993
 						}
 					],
 					"sid": 575744637039116

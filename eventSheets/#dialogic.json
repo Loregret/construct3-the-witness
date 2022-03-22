@@ -262,7 +262,8 @@
 											}
 										}
 									],
-									"sid": 277402047830615
+									"sid": 277402047830615,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -310,15 +311,14 @@
 											"objectClass": "Audio",
 											"sid": 590869032591621,
 											"parameters": {
-												"audio-file": "switches---selector-turning-off-clack by matching-sound-effects Artlist",
+												"audio-file": "switch-selector",
 												"loop": "not-looping",
 												"volume": "random(-10,-20)",
 												"tag-optional": "\"type\""
 											}
 										}
 									],
-									"sid": 940556813388533,
-									"disabled": true
+									"sid": 940556813388533
 								}
 							]
 						},
@@ -977,9 +977,9 @@
 																{
 																	"id": "play",
 																	"objectClass": "Audio",
-																	"sid": 944334934346506,
+																	"sid": 917028072894483,
 																	"parameters": {
-																		"audio-file": "switch2",
+																		"audio-file": "soft-switch",
 																		"loop": "not-looping",
 																		"volume": "random(-7,0)",
 																		"tag-optional": "\"ui\""
