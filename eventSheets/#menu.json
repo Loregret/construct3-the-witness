@@ -537,6 +537,77 @@
 											]
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 424690577906172,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"fullscreen\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 755045047137299,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 129164368112700,
+													"parameters": {
+														"variable": "settings_fullscreen",
+														"comparison": 0,
+														"value": "\"scale_outer\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 280808171190974,
+													"parameters": {
+														"text": "\"Полный экран: [color=red]вкл\""
+													}
+												}
+											],
+											"sid": 209342422292506
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 936373050163450,
+													"parameters": {
+														"variable": "settings_fullscreen",
+														"comparison": 0,
+														"value": "\"no\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "logo_text",
+													"sid": 644431854833844,
+													"parameters": {
+														"text": "\"Полный экран: [color=red]выкл\""
+													}
+												}
+											],
+											"sid": 836770120612695
+										}
+									]
 								}
 							]
 						}
@@ -1213,6 +1284,89 @@
 								},
 								{
 									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 702956471624307
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 639009372993089,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"fullscreen\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 735532714807010,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 510633705888834,
+													"parameters": {
+														"variable": "settings_fullscreen",
+														"comparison": 0,
+														"value": "\"scale_outer\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 666335282007408,
+													"parameters": {
+														"variable": "settings_fullscreen",
+														"value": "\"no\""
+													}
+												}
+											],
+											"sid": 257095398309094
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 580173703486188
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 471295234767378,
+													"parameters": {
+														"variable": "settings_fullscreen",
+														"comparison": 0,
+														"value": "\"no\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 714387670793205,
+													"parameters": {
+														"variable": "settings_fullscreen",
+														"value": "\"scale_outer\""
+													}
+												}
+											],
+											"sid": 504151127755831
+										}
+									]
+								},
+								{
+									"eventType": "block",
 									"conditions": [],
 									"actions": [
 										{
@@ -1864,18 +2018,37 @@
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 472136717428464,
+					"children": [
 						{
-							"id": "request-fullscreen",
-							"objectClass": "Browser",
-							"sid": 214012735162426,
-							"parameters": {
-								"mode": "stretch-scale-outer",
-								"navigation-ui": "hide"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 399617910274969,
+									"parameters": {
+										"variable": "settings_fullscreen",
+										"comparison": 0,
+										"value": "\"scale_outer\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 566321775167734,
+									"parameters": {
+										"mode": "stretch-scale-outer",
+										"navigation-ui": "hide"
+									}
+								}
+							],
+							"sid": 445866044837272
 						}
 					],
-					"sid": 472136717428464,
 					"isOrBlock": true
 				}
 			],

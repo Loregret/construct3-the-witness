@@ -663,7 +663,7 @@
 				{
 					"type": "logo_text",
 					"properties": {
-						"text": "Сложность: Сложно",
+						"text": "Полный экран: вкл",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -684,7 +684,7 @@
 					},
 					"uid": 229,
 					"instanceVariables": {
-						"param": "diff"
+						"param": "fullscreen"
 					},
 					"behaviors": {
 						"Tween": {
@@ -713,7 +713,7 @@
 				{
 					"type": "logo_text",
 					"properties": {
-						"text": "---",
+						"text": "Сложность: Сложно",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -726,7 +726,7 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "center",
+						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -734,7 +734,7 @@
 					},
 					"uid": 349,
 					"instanceVariables": {
-						"param": ""
+						"param": "diff"
 					},
 					"behaviors": {
 						"Tween": {

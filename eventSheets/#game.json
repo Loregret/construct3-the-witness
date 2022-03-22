@@ -131,6 +131,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "settings_fullscreen",
+			"type": "string",
+			"initialValue": "scale_outer",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 258146376707930
+		},
+		{
+			"eventType": "variable",
 			"name": "settings_dialog_typewriter_effect",
 			"type": "boolean",
 			"initialValue": "true",
@@ -291,7 +301,7 @@
 										{
 											"id": "set-cursor-style",
 											"objectClass": "Mouse",
-											"sid": 322144602947175,
+											"sid": 259791846238475,
 											"parameters": {
 												"cursor-style": "none"
 											}
@@ -707,6 +717,1679 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Control 🕹️",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Control - mouse 🖱️",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "cursor"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 143629638053524,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "mouse_sensivity",
+									"type": "number",
+									"initialValue": "100",
+									"comment": "",
+									"isStatic": true,
+									"isConstant": false,
+									"sid": 662624612410529
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 602846668904100
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "cursor",
+											"sid": 741195511262249,
+											"parameters": {
+												"x": "Mouse.X(\"cursor\")",
+												"y": "Mouse.Y(\"cursor\")"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "cursor",
+											"sid": 158841447819614,
+											"disabled": true,
+											"parameters": {
+												"x": "lerp(Self.X, Mouse.X(\"cursor\"), mouse_sensivity * dt)",
+												"y": "lerp(Self.Y, Mouse.Y(\"cursor\"), mouse_sensivity * dt)"
+											}
+										}
+									],
+									"sid": 406127305668820
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "one time shoot"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 197759446182312,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-click",
+											"objectClass": "Mouse",
+											"sid": 934208402445533,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 637015182389780,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 156278390488197,
+													"parameters": {
+														"animation": "\"pistol\""
+													}
+												},
+												{
+													"id": "is-timer-running",
+													"objectClass": "Player",
+													"sid": 255208372582584,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"pistol\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 697485741009102,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 798789614795482,
+															"parameters": {
+																"key": "\"pistol_ammo\"",
+																"comparison": 4,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_shoot",
+															"sid": 763913623452990,
+															"parameters": [
+																"\"pistol\""
+															]
+														}
+													],
+													"sid": 305576428284980
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 729992881589400
+														}
+													],
+													"actions": [],
+													"sid": 531020374010508,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 974458311023034,
+																	"parameters": {
+																		"tag": "\"reload\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 907203971197720,
+																	"parameters": {
+																		"audio-file": "9mm - empty",
+																		"loop": "not-looping",
+																		"volume": "0",
+																		"tag-optional": "\"pistol - empty\""
+																	}
+																}
+															],
+															"sid": 834375882710806
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 811703794662649
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 687652587849069,
+													"parameters": {
+														"animation": "\"shotgun\""
+													}
+												},
+												{
+													"id": "is-timer-running",
+													"objectClass": "Player",
+													"sid": 898966544342702,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"shotgun\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 292391621301440,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 863141050445642,
+															"parameters": {
+																"key": "\"shotgun_ammo\"",
+																"comparison": 4,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_shoot",
+															"sid": 556848485341920,
+															"parameters": [
+																"\"shotgun\""
+															]
+														}
+													],
+													"sid": 227112832930742
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 963570442003411
+														}
+													],
+													"actions": [],
+													"sid": 505559344234906,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 463279438058690,
+																	"parameters": {
+																		"tag": "\"reload\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 993012438451910,
+																	"parameters": {
+																		"audio-file": "9mm - empty",
+																		"loop": "not-looping",
+																		"volume": "0",
+																		"tag-optional": "\"pistol - empty\""
+																	}
+																}
+															],
+															"sid": 163816727587146
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "auto shoot"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 477101937511404,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "mouse-button-is-down",
+											"objectClass": "Mouse",
+											"sid": 805872882592000,
+											"parameters": {
+												"mouse-button": "left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 742098886747047,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 194136204987273,
+													"parameters": {
+														"animation": "\"ak\""
+													}
+												},
+												{
+													"id": "is-timer-running",
+													"objectClass": "Player",
+													"sid": 680182227720680,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"ak\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 361283002037881,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 175763001021780,
+															"parameters": {
+																"key": "\"ak_ammo\"",
+																"comparison": 4,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_shoot",
+															"sid": 855664097351341,
+															"parameters": [
+																"\"ak\""
+															]
+														}
+													],
+													"sid": 391514839594233
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 380017193195298
+														}
+													],
+													"actions": [],
+													"sid": 200128471307665,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 159108131867128,
+																	"parameters": {
+																		"tag": "\"reload\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 947737019675036,
+																	"parameters": {
+																		"interval-seconds": "1.0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 433601642330012,
+																	"parameters": {
+																		"audio-file": "9mm - empty",
+																		"loop": "not-looping",
+																		"volume": "0",
+																		"tag-optional": "\"pistol - empty\""
+																	}
+																}
+															],
+															"sid": 502716295263071
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 957955805045602
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Control - keyboard",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "движение"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 425215400985772,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 523915091215388,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "Player",
+											"sid": 117954075740837,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "up"
+											}
+										}
+									],
+									"sid": 146153771566624
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 240060866802250,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "Player",
+											"sid": 768019248640093,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "left"
+											}
+										}
+									],
+									"sid": 467489139116017
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 235604743331195,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "Player",
+											"sid": 265928093805518,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "down"
+											}
+										}
+									],
+									"sid": 406144297533297
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 159873677475658,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "Player",
+											"sid": 155111216778542,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "right"
+											}
+										}
+									],
+									"sid": 749397795469743
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "смена оружия"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 199050344550114,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 206255403384801,
+											"parameters": {
+												"key": 49
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 294578397437300,
+											"parameters": {
+												"animation": "\"idle\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 844188091851691,
+											"parameters": {
+												"animation": "\"walk\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 170222724550781,
+											"parameters": {
+												"animation": "\"run\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 262247336660717,
+											"parameters": {
+												"animation": "\"pistol_reload\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "player_reload_interrupt",
+											"sid": 272484391612619
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 607959757743145,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 612791300432417,
+											"parameters": {
+												"audio-file": "cloth",
+												"loop": "not-looping",
+												"volume": "-10",
+												"tag-optional": "\"player_undraw\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 530600522347526,
+											"parameters": {
+												"variable": "curWeapon",
+												"value": "\"\""
+											}
+										}
+									],
+									"sid": 423059219871257
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 907559328294902,
+											"parameters": {
+												"key": 50
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 413337467030132,
+											"parameters": {
+												"animation": "\"pistol\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 360014657694106,
+											"parameters": {
+												"animation": "\"run\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 806395718890645,
+											"parameters": {
+												"animation": "\"pistol_reload\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "player_reload_interrupt",
+											"sid": 269303807538538
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 369881798985563,
+											"parameters": {
+												"animation": "\"pistol\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 845788327103262,
+											"parameters": {
+												"audio-file": "cloth",
+												"loop": "not-looping",
+												"volume": "-10",
+												"tag-optional": "\"player_draw\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 933013150970906,
+											"parameters": {
+												"audio-file": "draw gun 2",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"player_undraw\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 627216473061577,
+											"parameters": {
+												"variable": "curWeapon",
+												"value": "\"pistol\""
+											}
+										}
+									],
+									"sid": 613763951356207
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 605658236968948,
+											"parameters": {
+												"key": 51
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 896023896274102,
+											"parameters": {
+												"animation": "\"ak_reload\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 469133980115967,
+											"parameters": {
+												"animation": "\"ak\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 117834494166606,
+											"parameters": {
+												"animation": "\"run\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 510638282073274,
+											"parameters": {
+												"animation": "\"pistol_reload\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "player_reload_interrupt",
+											"sid": 791983860384669
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 231013175317744,
+											"parameters": {
+												"animation": "\"ak\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 388196240170681,
+											"parameters": {
+												"audio-file": "cloth",
+												"loop": "not-looping",
+												"volume": "-10",
+												"tag-optional": "\"player_draw\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 833538136210895,
+											"parameters": {
+												"audio-file": "draw gun 2",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"player_undraw\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 220437191540809,
+											"parameters": {
+												"variable": "curWeapon",
+												"value": "\"ak\""
+											}
+										}
+									],
+									"sid": 612955674155815
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 695177712893047,
+											"parameters": {
+												"key": 52
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 292215811514753,
+											"parameters": {
+												"animation": "\"ak_reload\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 397072469281386,
+											"parameters": {
+												"animation": "\"shotgun_reload\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 163283242769606,
+											"parameters": {
+												"animation": "\"pistol_reload\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 574012003416179,
+											"parameters": {
+												"animation": "\"ak\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 332604621488900,
+											"parameters": {
+												"animation": "\"shotgun\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 135358907785999,
+											"parameters": {
+												"animation": "\"run\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "player_reload_interrupt",
+											"sid": 965315592947854
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 396465349644168,
+											"parameters": {
+												"animation": "\"shotgun\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 615936763182581,
+											"parameters": {
+												"audio-file": "cloth",
+												"loop": "not-looping",
+												"volume": "-10",
+												"tag-optional": "\"player_draw\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 370986893666187,
+											"parameters": {
+												"audio-file": "draw gun 2",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"player_undraw\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 165408609242064,
+											"parameters": {
+												"variable": "curWeapon",
+												"value": "\"shotgun\""
+											}
+										}
+									],
+									"sid": 270517623635083
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "перезарядка"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 166721154402055,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "main"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 474111655073093,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 892769915719453,
+													"parameters": {
+														"key": 82
+													}
+												}
+											],
+											"actions": [],
+											"sid": 221333093239499,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 739650340666199,
+															"parameters": {
+																"animation": "\"run\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 702209847360480,
+															"parameters": {
+																"animation": "\"pistol_reload\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 397656992539281,
+															"parameters": {
+																"animation": "\"ak_reload\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 949751451337407,
+															"parameters": {
+																"animation": "\"shotgun_reload\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [],
+													"sid": 469051172958439,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 269858762507406,
+																	"parameters": {
+																		"variable": "curWeapon",
+																		"comparison": 0,
+																		"value": "\"pistol\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "create_audio_trigger",
+																	"sid": 967364332554357,
+																	"parameters": [
+																		"Player.ImagePointX(1)",
+																		"Player.ImagePointY(1)",
+																		"1.45",
+																		"1"
+																	]
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "Player",
+																	"sid": 664028656047350,
+																	"parameters": {
+																		"animation": "\"pistol_reload\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 994957206721841,
+																	"parameters": {
+																		"audio-file": "9mm - reload -1",
+																		"loop": "not-looping",
+																		"volume": "0",
+																		"tag-optional": "\"reload\""
+																	}
+																},
+																{
+																	"id": "start-timer",
+																	"objectClass": "Player",
+																	"sid": 857562429449067,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"duration": "1.8",
+																		"type": "once",
+																		"tag": "\"reload\""
+																	}
+																}
+															],
+															"sid": 475136369606417
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 548294015445132
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 247969232855489,
+																	"parameters": {
+																		"variable": "curWeapon",
+																		"comparison": 0,
+																		"value": "\"ak\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "create_audio_trigger",
+																	"sid": 281276092765116,
+																	"parameters": [
+																		"Player.ImagePointX(1)",
+																		"Player.ImagePointY(1)",
+																		"2.45",
+																		"1"
+																	]
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "Player",
+																	"sid": 809343450129728,
+																	"parameters": {
+																		"animation": "\"ak_reload\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 574716795692204,
+																	"parameters": {
+																		"audio-file": "ak reload start",
+																		"loop": "not-looping",
+																		"volume": "-12",
+																		"tag-optional": "\"reload\""
+																	}
+																},
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 938397649170444,
+																	"parameters": {
+																		"audio-file": "ak reload 1",
+																		"loop": "not-looping",
+																		"volume": "-12",
+																		"tag-optional": "\"reload\""
+																	}
+																},
+																{
+																	"id": "start-timer",
+																	"objectClass": "Player",
+																	"sid": 610342811594915,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"duration": "1.8",
+																		"type": "once",
+																		"tag": "\"reload\""
+																	}
+																}
+															],
+															"sid": 651964178026902
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 267980656686292
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 981324152782844,
+																	"parameters": {
+																		"variable": "curWeapon",
+																		"comparison": 0,
+																		"value": "\"shotgun\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 395149002377314,
+																	"parameters": {
+																		"audio-file": "shotgun bullet inject",
+																		"loop": "not-looping",
+																		"volume": "-5",
+																		"tag-optional": "\"reload\""
+																	}
+																},
+																{
+																	"callFunction": "create_audio_trigger",
+																	"sid": 579539261634765,
+																	"parameters": [
+																		"Player.ImagePointX(1)",
+																		"Player.ImagePointY(1)",
+																		"2.45",
+																		"1"
+																	]
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "Player",
+																	"sid": 561995302507496,
+																	"parameters": {
+																		"animation": "\"shotgun_reload\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "start-timer",
+																	"objectClass": "Player",
+																	"sid": 653405121061895,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"duration": "0.6",
+																		"type": "once",
+																		"tag": "\"reload\""
+																	}
+																}
+															],
+															"sid": 651985083059811
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "misc"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 228939359360260,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "interruption"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 641145458694678,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "on-click",
+															"objectClass": "Mouse",
+															"sid": 475469741640030,
+															"parameters": {
+																"mouse-button": "left",
+																"click-type": "clicked"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 189873727319154,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "Player",
+																	"sid": 605983834356278,
+																	"parameters": {
+																		"animation": "\"pistol_reload\""
+																	}
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "Player",
+																	"sid": 925771326197560,
+																	"parameters": {
+																		"animation": "\"ak_reload\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_reload_interrupt",
+																	"sid": 918818223041897
+																}
+															],
+															"sid": 701926539467440,
+															"isOrBlock": true
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 640117504597955,
+															"parameters": {
+																"variable": "curWeapon",
+																"comparison": 0,
+																"value": "\"pistol\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 637720671195752,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "on-key-pressed",
+																	"objectClass": "Keyboard",
+																	"sid": 508609808429976,
+																	"parameters": {
+																		"key": 16
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_reload_interrupt",
+																	"sid": 396420422839668
+																}
+															],
+															"sid": 997078141829269
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 352745409585044
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 240713271135255,
+															"parameters": {
+																"variable": "curWeapon",
+																"comparison": 0,
+																"value": "\"ak\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 807267554559564,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "on-key-pressed",
+																	"objectClass": "Keyboard",
+																	"sid": 584244645720616,
+																	"parameters": {
+																		"key": 16
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_reload_interrupt",
+																	"sid": 366666696545831
+																}
+															],
+															"sid": 856223796795433
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "предметы"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 262153453434282,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "фонарик"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 248885293241052,
+											"parameters": {
+												"key": 70
+											}
+										}
+									],
+									"actions": [],
+									"sid": 334462176585870,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "flashlight_turn",
+													"sid": 455710122530136
+												}
+											],
+											"sid": 297477315821939
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "хим лампа"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 826693232435695,
+											"parameters": {
+												"key": 81
+											}
+										}
+									],
+									"actions": [],
+									"sid": 171289252643941,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 768462001186380,
+													"parameters": {
+														"variable": "stick_lights",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 320799944844388,
+													"parameters": {
+														"variable": "stick_lights",
+														"value": "1"
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player",
+													"sid": 702215780535586,
+													"parameters": {
+														"object": "light_stick",
+														"layer": "\"items\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "light_stick",
+													"sid": 681433944607038,
+													"parameters": {
+														"angle": "random(0,360)"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 868208591595919,
+													"parameters": {
+														"audio-file": "break",
+														"loop": "not-looping",
+														"volume": "-5",
+														"tag-optional": "\"stick\""
+													}
+												}
+											],
+											"sid": 899948939342900
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "menu"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 120449260028424,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-released",
+											"objectClass": "Keyboard",
+											"sid": 203052664467248,
+											"parameters": {
+												"key": 27
+											}
+										}
+									],
+									"actions": [],
+									"sid": 506118907614573,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 153763070445762,
+													"parameters": {
+														"tag": "\"music\""
+													}
+												},
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 874244827754291,
+													"parameters": {
+														"layout": "Menu"
+													}
+												}
+											],
+											"sid": 645357849789898
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "изучить"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 885469639854092,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 793492515887159,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "dialog_trigger"
+											}
+										},
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 875602097083669,
+											"parameters": {
+												"key": 69
+											}
+										}
+									],
+									"actions": [],
+									"sid": 886052424940267,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 368718179514235,
+													"parameters": {
+														"object": "dialog_trigger"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "dialog_trigger",
+													"sid": 253429528589859,
+													"parameters": {
+														"instance-variable": "active"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "dialog_trigger",
+													"sid": 282143898629977,
+													"parameters": {
+														"instance-variable": "auto_start"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "dialogic_play_dialog",
+													"sid": 648989354254638,
+													"parameters": [
+														"dialog_trigger.SceneNum",
+														"dialog_trigger.DialogName",
+														"dialog_trigger.LineNum"
+													]
+												},
+												{
+													"callFunction": "triggers_destroy_hint",
+													"sid": 485710881634856,
+													"parameters": [
+														"dialog_trigger.UID"
+													]
+												}
+											],
+											"sid": 520904746718551,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "dialog_trigger",
+															"sid": 669038476147156,
+															"parameters": {
+																"instance-variable": "repeatable"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "dialog_trigger",
+															"sid": 310629252292525,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 480265577604627
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 108363543795255
+				}
+			],
+			"sid": 950465325165377
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Camera 📷",
 			"description": "",
 			"isActiveOnStart": true,
@@ -1065,10 +2748,10 @@
 														{
 															"id": "scroll-to-position",
 															"objectClass": "System",
-															"sid": 751998523951940,
+															"sid": 865762614957511,
 															"parameters": {
-																"x": "lerp(scrollx,camera.X - clamp(camera.X - Mouse.X, -min_camera_distance, min_camera_distance), dt * settings_cam_speed_modificator)",
-																"y": "lerp(scrolly,camera.Y - clamp(camera.Y - Mouse.Y, -min_camera_distance, min_camera_distance), dt * settings_cam_speed_modificator)"
+																"x": "lerp(scrollx,camera.X - clamp(camera.X - cursor.X, -min_camera_distance, min_camera_distance), dt * settings_cam_speed_modificator)",
+																"y": "lerp(scrolly,camera.Y - clamp(camera.Y - cursor.Y, -min_camera_distance, min_camera_distance), dt * settings_cam_speed_modificator)"
 															}
 														}
 													],
@@ -1243,1648 +2926,6 @@
 				}
 			],
 			"sid": 437356509290823
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Control 🕹️",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Control - keyboard",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "движение"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 823075542065755,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 640153265510775,
-											"parameters": {
-												"key": 87
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 368392675264412,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "up"
-											}
-										}
-									],
-									"sid": 921104852251632
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 203390238123616,
-											"parameters": {
-												"key": 65
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 994334017783811,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "left"
-											}
-										}
-									],
-									"sid": 576026146122744
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 225502808046865,
-											"parameters": {
-												"key": 83
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 688525117411963,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "down"
-											}
-										}
-									],
-									"sid": 294887578549941
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 290254500342710,
-											"parameters": {
-												"key": 68
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 906305308094545,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "right"
-											}
-										}
-									],
-									"sid": 211008396905418
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "смена оружия"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 773489875943516,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 898339787756280,
-											"parameters": {
-												"key": 49
-											}
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 323447249034627,
-											"parameters": {
-												"animation": "\"idle\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 366038806059821,
-											"parameters": {
-												"animation": "\"walk\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 408044608535704,
-											"parameters": {
-												"animation": "\"run\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 567908603883421,
-											"parameters": {
-												"animation": "\"pistol_reload\""
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "player_reload_interrupt",
-											"sid": 336315295612925
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 733610991092015,
-											"parameters": {
-												"animation": "\"idle\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 692589062260027,
-											"parameters": {
-												"audio-file": "cloth",
-												"loop": "not-looping",
-												"volume": "-10",
-												"tag-optional": "\"player_undraw\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 183888819243982,
-											"parameters": {
-												"variable": "curWeapon",
-												"value": "\"\""
-											}
-										}
-									],
-									"sid": 758200100367338
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 986094157872224,
-											"parameters": {
-												"key": 50
-											}
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 695502260079680,
-											"parameters": {
-												"animation": "\"pistol\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 830753132120851,
-											"parameters": {
-												"animation": "\"run\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 244067795638772,
-											"parameters": {
-												"animation": "\"pistol_reload\""
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "player_reload_interrupt",
-											"sid": 212743609266374
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 165899983592561,
-											"parameters": {
-												"animation": "\"pistol\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 306062218010670,
-											"parameters": {
-												"audio-file": "cloth",
-												"loop": "not-looping",
-												"volume": "-10",
-												"tag-optional": "\"player_draw\""
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 522186720067391,
-											"parameters": {
-												"audio-file": "draw gun 2",
-												"loop": "not-looping",
-												"volume": "0",
-												"tag-optional": "\"player_undraw\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 799335688817874,
-											"parameters": {
-												"variable": "curWeapon",
-												"value": "\"pistol\""
-											}
-										}
-									],
-									"sid": 366238623617447
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 312939673773018,
-											"parameters": {
-												"key": 51
-											}
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 546738016578763,
-											"parameters": {
-												"animation": "\"ak_reload\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 843258718525365,
-											"parameters": {
-												"animation": "\"ak\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 864550904359322,
-											"parameters": {
-												"animation": "\"run\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 360433764107193,
-											"parameters": {
-												"animation": "\"pistol_reload\""
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "player_reload_interrupt",
-											"sid": 277272433792905
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 396362931642607,
-											"parameters": {
-												"animation": "\"ak\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 400639967300207,
-											"parameters": {
-												"audio-file": "cloth",
-												"loop": "not-looping",
-												"volume": "-10",
-												"tag-optional": "\"player_draw\""
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 641054716089685,
-											"parameters": {
-												"audio-file": "draw gun 2",
-												"loop": "not-looping",
-												"volume": "0",
-												"tag-optional": "\"player_undraw\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 719878768695867,
-											"parameters": {
-												"variable": "curWeapon",
-												"value": "\"ak\""
-											}
-										}
-									],
-									"sid": 906824865840150
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 809535089976838,
-											"parameters": {
-												"key": 52
-											}
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 236190023231694,
-											"parameters": {
-												"animation": "\"ak_reload\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 245449663333441,
-											"parameters": {
-												"animation": "\"shotgun_reload\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 905664097452521,
-											"parameters": {
-												"animation": "\"pistol_reload\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 803933111613903,
-											"parameters": {
-												"animation": "\"ak\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 681843432281766,
-											"parameters": {
-												"animation": "\"shotgun\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player",
-											"sid": 826271123452348,
-											"parameters": {
-												"animation": "\"run\""
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "player_reload_interrupt",
-											"sid": 353197823426395
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 541053360417594,
-											"parameters": {
-												"animation": "\"shotgun\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 741752583278397,
-											"parameters": {
-												"audio-file": "cloth",
-												"loop": "not-looping",
-												"volume": "-10",
-												"tag-optional": "\"player_draw\""
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 439442534595279,
-											"parameters": {
-												"audio-file": "draw gun 2",
-												"loop": "not-looping",
-												"volume": "0",
-												"tag-optional": "\"player_undraw\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 803355867179290,
-											"parameters": {
-												"variable": "curWeapon",
-												"value": "\"shotgun\""
-											}
-										}
-									],
-									"sid": 638768757873924
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "перезарядка"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 347234933255487,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "main"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 723693510635211,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-key-pressed",
-													"objectClass": "Keyboard",
-													"sid": 940355913401472,
-													"parameters": {
-														"key": 82
-													}
-												}
-											],
-											"actions": [],
-											"sid": 988032282339173,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-animation-playing",
-															"objectClass": "Player",
-															"sid": 912889284894511,
-															"parameters": {
-																"animation": "\"run\""
-															},
-															"isInverted": true
-														},
-														{
-															"id": "is-animation-playing",
-															"objectClass": "Player",
-															"sid": 289819131536611,
-															"parameters": {
-																"animation": "\"pistol_reload\""
-															},
-															"isInverted": true
-														},
-														{
-															"id": "is-animation-playing",
-															"objectClass": "Player",
-															"sid": 567894543137864,
-															"parameters": {
-																"animation": "\"ak_reload\""
-															},
-															"isInverted": true
-														},
-														{
-															"id": "is-animation-playing",
-															"objectClass": "Player",
-															"sid": 102210546177327,
-															"parameters": {
-																"animation": "\"shotgun_reload\""
-															},
-															"isInverted": true
-														}
-													],
-													"actions": [],
-													"sid": 865462083123672,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "compare-eventvar",
-																	"objectClass": "System",
-																	"sid": 610770924563567,
-																	"parameters": {
-																		"variable": "curWeapon",
-																		"comparison": 0,
-																		"value": "\"pistol\""
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "create_audio_trigger",
-																	"sid": 779889736910984,
-																	"parameters": [
-																		"Player.ImagePointX(1)",
-																		"Player.ImagePointY(1)",
-																		"1.45",
-																		"1"
-																	]
-																},
-																{
-																	"id": "set-animation",
-																	"objectClass": "Player",
-																	"sid": 704246940787920,
-																	"parameters": {
-																		"animation": "\"pistol_reload\"",
-																		"from": "beginning"
-																	}
-																},
-																{
-																	"id": "play",
-																	"objectClass": "Audio",
-																	"sid": 542067600857409,
-																	"parameters": {
-																		"audio-file": "9mm - reload -1",
-																		"loop": "not-looping",
-																		"volume": "0",
-																		"tag-optional": "\"reload\""
-																	}
-																},
-																{
-																	"id": "start-timer",
-																	"objectClass": "Player",
-																	"sid": 210085726329935,
-																	"behaviorType": "Timer",
-																	"parameters": {
-																		"duration": "1.8",
-																		"type": "once",
-																		"tag": "\"reload\""
-																	}
-																}
-															],
-															"sid": 205591094528726
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 848850720780277
-																},
-																{
-																	"id": "compare-eventvar",
-																	"objectClass": "System",
-																	"sid": 213149173024986,
-																	"parameters": {
-																		"variable": "curWeapon",
-																		"comparison": 0,
-																		"value": "\"ak\""
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "create_audio_trigger",
-																	"sid": 810178711256950,
-																	"parameters": [
-																		"Player.ImagePointX(1)",
-																		"Player.ImagePointY(1)",
-																		"2.45",
-																		"1"
-																	]
-																},
-																{
-																	"id": "set-animation",
-																	"objectClass": "Player",
-																	"sid": 715641462097707,
-																	"parameters": {
-																		"animation": "\"ak_reload\"",
-																		"from": "beginning"
-																	}
-																},
-																{
-																	"id": "play",
-																	"objectClass": "Audio",
-																	"sid": 873228491988621,
-																	"parameters": {
-																		"audio-file": "ak reload start",
-																		"loop": "not-looping",
-																		"volume": "-12",
-																		"tag-optional": "\"reload\""
-																	}
-																},
-																{
-																	"id": "play",
-																	"objectClass": "Audio",
-																	"sid": 632983270534996,
-																	"parameters": {
-																		"audio-file": "ak reload 1",
-																		"loop": "not-looping",
-																		"volume": "-12",
-																		"tag-optional": "\"reload\""
-																	}
-																},
-																{
-																	"id": "start-timer",
-																	"objectClass": "Player",
-																	"sid": 355353420789995,
-																	"behaviorType": "Timer",
-																	"parameters": {
-																		"duration": "1.8",
-																		"type": "once",
-																		"tag": "\"reload\""
-																	}
-																}
-															],
-															"sid": 481721412147641
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 991980121755558
-																},
-																{
-																	"id": "compare-eventvar",
-																	"objectClass": "System",
-																	"sid": 599574882268744,
-																	"parameters": {
-																		"variable": "curWeapon",
-																		"comparison": 0,
-																		"value": "\"shotgun\""
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "play",
-																	"objectClass": "Audio",
-																	"sid": 719056136970493,
-																	"parameters": {
-																		"audio-file": "shotgun bullet inject",
-																		"loop": "not-looping",
-																		"volume": "-5",
-																		"tag-optional": "\"reload\""
-																	}
-																},
-																{
-																	"callFunction": "create_audio_trigger",
-																	"sid": 720787837062365,
-																	"parameters": [
-																		"Player.ImagePointX(1)",
-																		"Player.ImagePointY(1)",
-																		"2.45",
-																		"1"
-																	]
-																},
-																{
-																	"id": "set-animation",
-																	"objectClass": "Player",
-																	"sid": 631137348281596,
-																	"parameters": {
-																		"animation": "\"shotgun_reload\"",
-																		"from": "beginning"
-																	}
-																},
-																{
-																	"id": "start-timer",
-																	"objectClass": "Player",
-																	"sid": 702281572394132,
-																	"behaviorType": "Timer",
-																	"parameters": {
-																		"duration": "0.6",
-																		"type": "once",
-																		"tag": "\"reload\""
-																	}
-																}
-															],
-															"sid": 602920594274373
-														}
-													]
-												}
-											]
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "misc"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 282748552367287,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "interruption"
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [],
-											"sid": 589924200542556,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "on-click",
-															"objectClass": "Mouse",
-															"sid": 486613769652224,
-															"parameters": {
-																"mouse-button": "left",
-																"click-type": "clicked"
-															}
-														}
-													],
-													"actions": [],
-													"sid": 242694761158122,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-animation-playing",
-																	"objectClass": "Player",
-																	"sid": 813500116975237,
-																	"parameters": {
-																		"animation": "\"pistol_reload\""
-																	}
-																},
-																{
-																	"id": "is-animation-playing",
-																	"objectClass": "Player",
-																	"sid": 754951166312081,
-																	"parameters": {
-																		"animation": "\"ak_reload\""
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "player_reload_interrupt",
-																	"sid": 208854275892304
-																}
-															],
-															"sid": 481079364717633,
-															"isOrBlock": true
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 576033666233145,
-															"parameters": {
-																"variable": "curWeapon",
-																"comparison": 0,
-																"value": "\"pistol\""
-															}
-														}
-													],
-													"actions": [],
-													"sid": 199067443654367,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "on-key-pressed",
-																	"objectClass": "Keyboard",
-																	"sid": 431603659379228,
-																	"parameters": {
-																		"key": 16
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "player_reload_interrupt",
-																	"sid": 968050368854607
-																}
-															],
-															"sid": 805911731034674
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 980199878535342
-														},
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 355207944250639,
-															"parameters": {
-																"variable": "curWeapon",
-																"comparison": 0,
-																"value": "\"ak\""
-															}
-														}
-													],
-													"actions": [],
-													"sid": 484601431033165,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "on-key-pressed",
-																	"objectClass": "Keyboard",
-																	"sid": 892664436498331,
-																	"parameters": {
-																		"key": 16
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "player_reload_interrupt",
-																	"sid": 818999271850650
-																}
-															],
-															"sid": 328756173105224
-														}
-													]
-												}
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "предметы"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 197004014269289,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "фонарик"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 683575358066159,
-											"parameters": {
-												"key": 70
-											}
-										}
-									],
-									"actions": [],
-									"sid": 767617888240662,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"callFunction": "flashlight_turn",
-													"sid": 327732986424213
-												}
-											],
-											"sid": 578236708310113
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "хим лампа"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 359272600276091,
-											"parameters": {
-												"key": 81
-											}
-										}
-									],
-									"actions": [],
-									"sid": 450559723960414,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 653906165421964,
-													"parameters": {
-														"variable": "stick_lights",
-														"comparison": 4,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "subtract-from-eventvar",
-													"objectClass": "System",
-													"sid": 985347504545112,
-													"parameters": {
-														"variable": "stick_lights",
-														"value": "1"
-													}
-												},
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 939744589323264,
-													"parameters": {
-														"object": "light_stick",
-														"layer": "\"items\"",
-														"image-point": "0",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "light_stick",
-													"sid": 304433314810631,
-													"parameters": {
-														"angle": "random(0,360)"
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 216817372406858,
-													"parameters": {
-														"audio-file": "break",
-														"loop": "not-looping",
-														"volume": "-5",
-														"tag-optional": "\"stick\""
-													}
-												}
-											],
-											"sid": 773042379454652
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "menu"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 197068194151005,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-released",
-											"objectClass": "Keyboard",
-											"sid": 397415263897456,
-											"parameters": {
-												"key": 27
-											}
-										}
-									],
-									"actions": [],
-									"sid": 133972213471381,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "stop",
-													"objectClass": "Audio",
-													"sid": 518280183861448,
-													"parameters": {
-														"tag": "\"music\""
-													}
-												},
-												{
-													"id": "go-to-layout",
-													"objectClass": "System",
-													"sid": 787058890366191,
-													"parameters": {
-														"layout": "Menu"
-													}
-												}
-											],
-											"sid": 557952795734965
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "изучить"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 344670370088693,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 841934664328582,
-											"parameters": {
-												"key": 69
-											}
-										}
-									],
-									"actions": [],
-									"sid": 712079427200818,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-overlapping-another-object",
-													"objectClass": "Player",
-													"sid": 726489598705607,
-													"parameters": {
-														"object": "dialog_trigger"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "dialog_trigger",
-													"sid": 465692447468239,
-													"parameters": {
-														"instance-variable": "active"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "dialog_trigger",
-													"sid": 332470953423791,
-													"parameters": {
-														"instance-variable": "auto_start"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "dialogic_play_dialog",
-													"sid": 980601600009623,
-													"parameters": [
-														"dialog_trigger.SceneNum",
-														"dialog_trigger.DialogName",
-														"dialog_trigger.LineNum"
-													]
-												},
-												{
-													"callFunction": "triggers_destroy_hint",
-													"sid": 958544696515806,
-													"parameters": [
-														"dialog_trigger.UID"
-													]
-												}
-											],
-											"sid": 926425545957347,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
-															"sid": 191436323942323,
-															"parameters": {
-																"instance-variable": "repeatable"
-															},
-															"isInverted": true
-														}
-													],
-													"actions": [
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "dialog_trigger",
-															"sid": 454851189287804,
-															"parameters": {
-																"instance-variable": "active",
-																"value": "false"
-															}
-														}
-													],
-													"sid": 524652613485003
-												}
-											]
-										}
-									]
-								}
-							]
-						}
-					],
-					"sid": 324244044140608
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Control - mouse 🖱️",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "cursor"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 916499329012114,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-tick",
-											"objectClass": "System",
-											"sid": 568764274219007
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position",
-											"objectClass": "cursor",
-											"sid": 625917400026862,
-											"parameters": {
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										}
-									],
-									"sid": 193487564181992
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "one time shoot"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 345917317720191,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-click",
-											"objectClass": "Mouse",
-											"sid": 181741783569899,
-											"parameters": {
-												"mouse-button": "left",
-												"click-type": "clicked"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 972655986268445,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 160403764202103,
-													"parameters": {
-														"animation": "\"pistol\""
-													}
-												},
-												{
-													"id": "is-timer-running",
-													"objectClass": "Player",
-													"sid": 781007428571465,
-													"behaviorType": "Timer",
-													"parameters": {
-														"tag": "\"pistol\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 140916567632494,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-value",
-															"objectClass": "weapon",
-															"sid": 775610032990102,
-															"parameters": {
-																"key": "\"pistol_ammo\"",
-																"comparison": 4,
-																"value": "0"
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "weapon_shoot",
-															"sid": 511434228505097,
-															"parameters": [
-																"\"pistol\""
-															]
-														}
-													],
-													"sid": 935395983741192
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 438526837362393
-														}
-													],
-													"actions": [],
-													"sid": 616593172441832,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-tag-playing",
-																	"objectClass": "Audio",
-																	"sid": 341067061802928,
-																	"parameters": {
-																		"tag": "\"reload\""
-																	},
-																	"isInverted": true
-																}
-															],
-															"actions": [
-																{
-																	"id": "play",
-																	"objectClass": "Audio",
-																	"sid": 610834233026170,
-																	"parameters": {
-																		"audio-file": "9mm - empty",
-																		"loop": "not-looping",
-																		"volume": "0",
-																		"tag-optional": "\"pistol - empty\""
-																	}
-																}
-															],
-															"sid": 142283114797281
-														}
-													]
-												}
-											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 806424336804752
-												},
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 128875472886275,
-													"parameters": {
-														"animation": "\"shotgun\""
-													}
-												},
-												{
-													"id": "is-timer-running",
-													"objectClass": "Player",
-													"sid": 639129516159573,
-													"behaviorType": "Timer",
-													"parameters": {
-														"tag": "\"shotgun\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 646395164136222,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-value",
-															"objectClass": "weapon",
-															"sid": 181258629760944,
-															"parameters": {
-																"key": "\"shotgun_ammo\"",
-																"comparison": 4,
-																"value": "0"
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "weapon_shoot",
-															"sid": 992504836626756,
-															"parameters": [
-																"\"shotgun\""
-															]
-														}
-													],
-													"sid": 493746253088626
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 948068627026646
-														}
-													],
-													"actions": [],
-													"sid": 866073574134209,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-tag-playing",
-																	"objectClass": "Audio",
-																	"sid": 200120759489776,
-																	"parameters": {
-																		"tag": "\"reload\""
-																	},
-																	"isInverted": true
-																}
-															],
-															"actions": [
-																{
-																	"id": "play",
-																	"objectClass": "Audio",
-																	"sid": 492790084440679,
-																	"parameters": {
-																		"audio-file": "9mm - empty",
-																		"loop": "not-looping",
-																		"volume": "0",
-																		"tag-optional": "\"pistol - empty\""
-																	}
-																}
-															],
-															"sid": 377531644011183
-														}
-													]
-												}
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "auto shoot"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 707879652881678,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "mouse-button-is-down",
-											"objectClass": "Mouse",
-											"sid": 725119832329792,
-											"parameters": {
-												"mouse-button": "left"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 835338855068951,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 818559838966630,
-													"parameters": {
-														"animation": "\"ak\""
-													}
-												},
-												{
-													"id": "is-timer-running",
-													"objectClass": "Player",
-													"sid": 224338751646287,
-													"behaviorType": "Timer",
-													"parameters": {
-														"tag": "\"ak\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 104013728478021,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-value",
-															"objectClass": "weapon",
-															"sid": 343583277741889,
-															"parameters": {
-																"key": "\"ak_ammo\"",
-																"comparison": 4,
-																"value": "0"
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "weapon_shoot",
-															"sid": 528430412986585,
-															"parameters": [
-																"\"ak\""
-															]
-														}
-													],
-													"sid": 261504683171120
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 809661151133848
-														}
-													],
-													"actions": [],
-													"sid": 394282148924476,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-tag-playing",
-																	"objectClass": "Audio",
-																	"sid": 759510808124131,
-																	"parameters": {
-																		"tag": "\"reload\""
-																	},
-																	"isInverted": true
-																},
-																{
-																	"id": "every-x-seconds",
-																	"objectClass": "System",
-																	"sid": 867085567802114,
-																	"parameters": {
-																		"interval-seconds": "1.0"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "play",
-																	"objectClass": "Audio",
-																	"sid": 386687014269863,
-																	"parameters": {
-																		"audio-file": "9mm - empty",
-																		"loop": "not-looping",
-																		"volume": "0",
-																		"tag-optional": "\"pistol - empty\""
-																	}
-																}
-															],
-															"sid": 104382249293029
-														}
-													]
-												}
-											]
-										}
-									]
-								}
-							]
-						}
-					],
-					"sid": 220396687299829
-				}
-			],
-			"sid": 362963622030770
 		},
 		{
 			"eventType": "group",
