@@ -567,11 +567,23 @@
 															"id": "play",
 															"objectClass": "Audio",
 															"sid": 901776638415985,
+															"disabled": true,
 															"parameters": {
 																"audio-file": "Eternity Clock",
 																"loop": "not-looping",
 																"volume": "-26",
 																"tag-optional": "\"music\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 505301217029867,
+															"parameters": {
+																"audio-file": "horror-in-your-eyes by g-yerro Artlist",
+																"loop": "looping",
+																"volume": "-23",
+																"tag-optional": "\"ambience\""
 															}
 														}
 													],
@@ -6111,6 +6123,15 @@
 									"id": "on-created",
 									"objectClass": "decal_blood",
 									"sid": 806470030365102
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "decal_blood",
+									"sid": 319644745743044,
+									"parameters": {
+										"instance-variable": "is_decor"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -6181,6 +6202,15 @@
 									"parameters": {
 										"tags": "\"appear\""
 									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "decal_blood",
+									"sid": 721101709369419,
+									"parameters": {
+										"instance-variable": "is_decor"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
