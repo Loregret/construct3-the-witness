@@ -319,6 +319,64 @@
 										}
 									],
 									"sid": 940556813388533
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 187266650205716,
+											"parameters": {
+												"interval-seconds": "0.05"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 701284407101125,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "choose(\"soft-switch\", \"switch-selector\")",
+												"loop": "not-looping",
+												"volume": "random(-10,-20)",
+												"tag-optional": "\"writer\""
+											}
+										}
+									],
+									"sid": 100511576538003,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 112562979747833,
+											"parameters": {
+												"interval-seconds": "0.05"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 116622656984025,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "choose(\"soft-switch\", \"switch-selector\",\"switch4\")",
+												"loop": "not-looping",
+												"volume": "random(-10,-20)",
+												"tag-optional": "\"writer\""
+											}
+										}
+									],
+									"sid": 316180426780313,
+									"disabled": true
 								}
 							]
 						},
