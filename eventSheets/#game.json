@@ -141,6 +141,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "settings_cursor_show",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "*Нет в настройках",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 339878758508631
+		},
+		{
+			"eventType": "variable",
 			"name": "settings_dialog_typewriter_effect",
 			"type": "boolean",
 			"initialValue": "true",
@@ -164,6 +174,10 @@
 		{
 			"eventType": "include",
 			"includeSheet": "#Debug"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "#Cursor"
 		},
 		{
 			"eventType": "group",
@@ -281,45 +295,6 @@
 										}
 									],
 									"sid": 827240593385479
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "cursor"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 356322940382043,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-cursor-style",
-											"objectClass": "Mouse",
-											"sid": 259791846238475,
-											"parameters": {
-												"cursor-style": "none"
-											}
-										},
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 908491856939934,
-											"parameters": {
-												"object-to-create": "cursor",
-												"layer": "\"cursor\"",
-												"x": "Mouse.X",
-												"y": "Mouse.Y",
-												"create-hierarchy": false
-											}
-										}
-									],
-									"sid": 858560279507357
 								}
 							]
 						},
@@ -729,60 +704,6 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
-						{
-							"eventType": "comment",
-							"text": "cursor"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 143629638053524,
-							"children": [
-								{
-									"eventType": "variable",
-									"name": "mouse_sensivity",
-									"type": "number",
-									"initialValue": "100",
-									"comment": "",
-									"isStatic": true,
-									"isConstant": false,
-									"sid": 662624612410529
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-tick",
-											"objectClass": "System",
-											"sid": 602846668904100
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position",
-											"objectClass": "cursor",
-											"sid": 741195511262249,
-											"parameters": {
-												"x": "Mouse.X(\"cursor\")",
-												"y": "Mouse.Y(\"cursor\")"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "cursor",
-											"sid": 158841447819614,
-											"disabled": true,
-											"parameters": {
-												"x": "lerp(Self.X, Mouse.X(\"cursor\"), mouse_sensivity * dt)",
-												"y": "lerp(Self.Y, Mouse.Y(\"cursor\"), mouse_sensivity * dt)"
-											}
-										}
-									],
-									"sid": 406127305668820
-								}
-							]
-						},
 						{
 							"eventType": "comment",
 							"text": "one time shoot"
