@@ -3437,35 +3437,6 @@
 					}
 				},
 				{
-					"type": "torch",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 165,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 8003,
-						"y": 5769,
-						"width": 46.93180723619591,
-						"height": 41.065331331671416,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 2.0927494689797985,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "fx_torch_fire",
 					"properties": {
 						"initially-visible": true,
@@ -3495,6 +3466,35 @@
 					}
 				},
 				{
+					"type": "torch",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 165,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 8003,
+						"y": 5769,
+						"width": 46.93180723619591,
+						"height": 41.065331331671416,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.0927494689797985,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "props1",
 					"properties": {
 						"initially-visible": true,
@@ -3516,10 +3516,10 @@
 					"world": {
 						"x": 8059,
 						"y": 5824,
-						"width": 235,
-						"height": 226,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 231,
+						"height": 225,
+						"originX": 0.49567099567099565,
+						"originY": 0.49333333333333335,
 						"color": [
 							1,
 							1,
@@ -10600,7 +10600,7 @@
 								"LineNum": 0,
 								"active": true,
 								"repeatable": false,
-								"auto_start": true
+								"auto_start": false
 							},
 							"behaviors": {},
 							"world": {
