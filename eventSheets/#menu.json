@@ -1329,7 +1329,27 @@
 													}
 												}
 											],
-											"sid": 257095398309094
+											"sid": 257095398309094,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-fullscreen",
+															"objectClass": "Browser",
+															"sid": 518829831204805
+														}
+													],
+													"actions": [
+														{
+															"id": "cancel-fullscreen",
+															"objectClass": "Browser",
+															"sid": 615445320735010
+														}
+													],
+													"sid": 102441924785376
+												}
+											]
 										},
 										{
 											"eventType": "block",
@@ -1361,7 +1381,32 @@
 													}
 												}
 											],
-											"sid": 504151127755831
+											"sid": 504151127755831,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-fullscreen",
+															"objectClass": "Browser",
+															"sid": 431605078790460,
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "request-fullscreen",
+															"objectClass": "Browser",
+															"sid": 619116340729764,
+															"parameters": {
+																"mode": "stretch-scale-outer",
+																"navigation-ui": "hide"
+															}
+														}
+													],
+													"sid": 851689592591376
+												}
+											]
 										}
 									]
 								},
