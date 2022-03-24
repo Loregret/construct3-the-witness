@@ -2701,26 +2701,6 @@
 											"sid": 181372029116312,
 											"children": [
 												{
-													"eventType": "variable",
-													"name": "posX",
-													"type": "number",
-													"initialValue": "0",
-													"comment": "",
-													"isStatic": false,
-													"isConstant": false,
-													"sid": 151195944838287
-												},
-												{
-													"eventType": "variable",
-													"name": "posY",
-													"type": "number",
-													"initialValue": "0",
-													"comment": "",
-													"isStatic": false,
-													"isConstant": false,
-													"sid": 907358370655511
-												},
-												{
 													"eventType": "block",
 													"conditions": [
 														{
@@ -2732,18 +2712,26 @@
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 267742973572750,
+													"children": [
 														{
-															"id": "scroll-to-position",
-															"objectClass": "System",
-															"sid": 828379140188353,
-															"parameters": {
-																"x": "lerp(scrollx,camera.X,dt * 10)",
-																"y": "lerp(scrolly,camera.Y,dt * 10)"
-															}
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "scroll-to-position",
+																	"objectClass": "System",
+																	"sid": 917114442052669,
+																	"parameters": {
+																		"x": "lerp(scrollx,camera.X,dt * 10)",
+																		"y": "lerp(scrolly,camera.Y,dt * 10)"
+																	}
+																}
+															],
+															"sid": 928530221160764
 														}
-													],
-													"sid": 267742973572750
+													]
 												},
 												{
 													"eventType": "block",
@@ -2764,36 +2752,64 @@
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 870151801074747,
+													"children": [
 														{
-															"id": "set-eventvar-value",
-															"objectClass": "System",
-															"sid": 421948359839074,
-															"parameters": {
-																"variable": "posX",
-																"value": "camera.X - clamp(camera.X - cursor.X, -min_camera_distance, min_camera_distance)"
-															}
+															"eventType": "variable",
+															"name": "posX",
+															"type": "number",
+															"initialValue": "0",
+															"comment": "",
+															"isStatic": false,
+															"isConstant": false,
+															"sid": 448796020765190
 														},
 														{
-															"id": "set-eventvar-value",
-															"objectClass": "System",
-															"sid": 480539034250251,
-															"parameters": {
-																"variable": "posY",
-																"value": "camera.Y - clamp(camera.Y - cursor.Y, -min_camera_distance, min_camera_distance)"
-															}
+															"eventType": "variable",
+															"name": "posY",
+															"type": "number",
+															"initialValue": "0",
+															"comment": "",
+															"isStatic": false,
+															"isConstant": false,
+															"sid": 998840930300533
 														},
 														{
-															"id": "scroll-to-position",
-															"objectClass": "System",
-															"sid": 825127497000080,
-															"parameters": {
-																"x": "lerp(scrollx, posX, dt * settings_cam_speed_modificator)",
-																"y": "lerp(scrolly, posY, dt * settings_cam_speed_modificator)"
-															}
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 274256172333629,
+																	"parameters": {
+																		"variable": "posX",
+																		"value": "camera.X - clamp(camera.X - Mouse.X, -min_camera_distance, min_camera_distance)"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 998099592255747,
+																	"parameters": {
+																		"variable": "posY",
+																		"value": "camera.Y - clamp(camera.Y - Mouse.Y, -min_camera_distance, min_camera_distance)"
+																	}
+																},
+																{
+																	"id": "scroll-to-position",
+																	"objectClass": "System",
+																	"sid": 975086618617925,
+																	"parameters": {
+																		"x": "lerp(scrollx, posX, dt * settings_cam_speed_modificator)",
+																		"y": "lerp(scrolly, posY, dt * settings_cam_speed_modificator)"
+																	}
+																}
+															],
+															"sid": 305137201793556
 														}
-													],
-													"sid": 870151801074747
+													]
 												}
 											]
 										},
