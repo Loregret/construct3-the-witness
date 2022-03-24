@@ -5610,6 +5610,16 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "default_flashlight_opacity",
+							"type": "number",
+							"initialValue": "66",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 307197591314339
+						},
+						{
 							"eventType": "comment",
 							"text": "functions"
 						},
@@ -5931,9 +5941,9 @@
 														{
 															"id": "set-opacity",
 															"objectClass": "flashlight",
-															"sid": 625846069415094,
+															"sid": 668208783416786,
 															"parameters": {
-																"opacity": "lerp(Self.Opacity, clamp(60-Self.Width/16,15,50),  dt * 15)"
+																"opacity": "lerp(Self.Opacity, clamp(default_flashlight_opacity-Self.Width/16,15,50),  dt * 15)"
 															}
 														}
 													],
@@ -6059,15 +6069,6 @@
 												{
 													"id": "set-width",
 													"objectClass": "flashlight",
-													"sid": 539398859106743,
-													"disabled": true,
-													"parameters": {
-														"width": "clamp(distance(Self.X,Self.Y,Mouse.X,Mouse.Y), 350, 950)"
-													}
-												},
-												{
-													"id": "set-width",
-													"objectClass": "flashlight",
 													"sid": 547526708085443,
 													"parameters": {
 														"width": "clamp(distance(Self.X,Self.Y,Mouse.X,Mouse.Y), 172, 950)"
@@ -6093,6 +6094,10 @@
 											],
 											"sid": 256831574663449,
 											"children": [
+												{
+													"eventType": "comment",
+													"text": "animation frame"
+												},
 												{
 													"eventType": "block",
 													"conditions": [],
