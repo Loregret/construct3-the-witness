@@ -405,12 +405,14 @@
 		]
 	},
 	"layouts": {
-		"items": [],
+		"items": [
+			"cutscene"
+		],
 		"subfolders": [
 			{
 				"items": [
 					"resource",
-					"Logo",
+					"logo",
 					"Dialogic"
 				],
 				"subfolders": [],
@@ -418,7 +420,7 @@
 			},
 			{
 				"items": [
-					"Menu"
+					"menu"
 				],
 				"subfolders": [
 					{
@@ -443,7 +445,8 @@
 			"#Dialogic",
 			"#Enemy",
 			"#Player",
-			"#Debug"
+			"#Debug",
+			"#Cutscene"
 		],
 		"subfolders": []
 	},
@@ -1046,5 +1049,5 @@
 	},
 	"viewportWidth": 640,
 	"viewportHeight": 480,
-	"firstLayout": "Logo"
+	"firstLayout": "logo"
 }
