@@ -103,7 +103,7 @@
 			"eventType": "variable",
 			"name": "settings_cam_zoom_auto",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -805,7 +805,17 @@
 											}
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "request-fullscreen",
+											"objectClass": "Browser",
+											"sid": 304865391709913,
+											"parameters": {
+												"mode": "stretch-scale-outer",
+												"navigation-ui": "hide"
+											}
+										}
+									],
 									"sid": 637015182389780,
 									"children": [
 										{
@@ -2412,6 +2422,36 @@
 							"sid": 553064724838088
 						},
 						{
+							"eventType": "variable",
+							"name": "default_zoom",
+							"type": "number",
+							"initialValue": "1.15",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": true,
+							"sid": 397766836166102
+						},
+						{
+							"eventType": "variable",
+							"name": "max_zoom",
+							"type": "number",
+							"initialValue": "1.25",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": true,
+							"sid": 155387748553895
+						},
+						{
+							"eventType": "variable",
+							"name": "min_zoom",
+							"type": "number",
+							"initialValue": "0.75",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": true,
+							"sid": 767345384478508
+						},
+						{
 							"eventType": "comment",
 							"text": "camera zoom"
 						},
@@ -2491,19 +2531,73 @@
 											"sid": 298336870035872,
 											"children": [
 												{
+													"eventType": "variable",
+													"name": "ScaleAmount",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 257499213796063
+												},
+												{
+													"eventType": "variable",
+													"name": "DistanceAmount",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 613851489764691
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 943326037580290,
+															"parameters": {
+																"variable": "DistanceAmount",
+																"value": "(distance(Player.X,Player.Y,Mouse.X,Mouse.y)/1000) "
+															}
+														}
+													],
+													"sid": 823730350946624,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 988872181733589,
+																	"parameters": {
+																		"variable": "ScaleAmount",
+																		"value": "clamp(default_zoom - DistanceAmount, min_zoom, max_zoom)"
+																	}
+																}
+															],
+															"sid": 776862228986720
+														}
+													]
+												},
+												{
 													"eventType": "block",
 													"conditions": [],
 													"actions": [
 														{
 															"id": "set-layout-scale",
 															"objectClass": "System",
-															"sid": 553965219016620,
+															"sid": 754664373289896,
 															"parameters": {
-																"scale": "lerp(  LayoutScale, clamp(  1.15-(distance(Player.X,Player.Y,Mouse.X,Mouse.y)/1000)  ,0.6,1.25), dt*5  )"
+																"scale": "lerp(LayoutScale, ScaleAmount, dt * settings_cam_speed_modificator)"
 															}
 														}
 													],
-													"sid": 823730350946624
+													"sid": 984736002235052
 												}
 											]
 										}
