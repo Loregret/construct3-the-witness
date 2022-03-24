@@ -1,0 +1,45 @@
+{
+	"name": "#Cutscene",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "#Dialogic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 430858313673979
+				}
+			],
+			"actions": [
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 352388221837365
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 941430326381536,
+					"parameters": {
+						"seconds": "1.85"
+					}
+				},
+				{
+					"callFunction": "dialogic_play_dialog",
+					"sid": 609189761999740,
+					"parameters": [
+						"\"intro1\"",
+						"\"cut1\"",
+						"0"
+					]
+				}
+			],
+			"sid": 579385878280228
+		}
+	],
+	"sid": 843317000540230
+}
