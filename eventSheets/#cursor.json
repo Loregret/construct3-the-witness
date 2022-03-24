@@ -33,6 +33,18 @@
 						"y": "Mouse.Y",
 						"create-hierarchy": false
 					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 242289425157963,
+					"parameters": {
+						"object-to-create": "SpriteFont2",
+						"layer": "\"cursor\"",
+						"x": "Mouse.X",
+						"y": "Mouse.Y",
+						"create-hierarchy": false
+					}
 				}
 			],
 			"sid": 858560279507357
@@ -89,6 +101,15 @@
 							"parameters": {
 								"x": "lerp(Self.X, Mouse.X(\"cursor\"), mouse_sensivity * dt)",
 								"y": "lerp(Self.Y, Mouse.Y(\"cursor\"), mouse_sensivity * dt)"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "SpriteFont2",
+							"sid": 254940484894729,
+							"parameters": {
+								"x": "cursor.X",
+								"y": "cursor.Y + 20"
 							}
 						}
 					],

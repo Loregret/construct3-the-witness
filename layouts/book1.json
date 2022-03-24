@@ -2,10 +2,135 @@
 	"name": "book1",
 	"layers": [
 		{
+			"name": "background",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "TiledBackground",
+					"properties": {
+						"initially-visible": true,
+						"origin": "center",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 649,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 209,
+						"y": 323,
+						"width": 2244.780390353712,
+						"height": 1316.0939126288845,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 809213577169357,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "2d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "cutscene",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
+				{
+					"type": "Sprite2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 651,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 316.3870330907225,
+						"y": 185.88184062400947,
+						"width": 504.0305593571402,
+						"height": 380.61876215821167,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							0.25
+						],
+						"angle": 6.262013602506853,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 650,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 318,
+						"y": 189,
+						"width": 493.45680561218575,
+						"height": 370.33261332164784,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 6.262013602506853,
+						"zElevation": 0
+					}
+				},
 				{
 					"type": "Sprite2",
 					"properties": {
@@ -299,7 +424,7 @@
 				{
 					"type": "dialog2",
 					"properties": {
-						"text": "Малый [color=darkblue]индустриальный город[/color]. Основной продукцией являются рыбные консервы и полезные ископаемые.\n\nКогда [color=brown]коммунизм[/color] окончательно ушел из страны и производство прекратило работу.\nБлагосостояние местных жителей стало стремительно падать. Вскоре разруха и хаос заполнили весь город.\n\nПосле череды [color=darkgreen]междусобных войн[/color] между чиновниками, генералами и преступниками, в городе воцарило шаткий мир, готовый расколоться от малейшего давления.\n\nЛюди разделились на воинственные группы. Каждую группу возглавляет свой [color=brown]лидер[/color], готовый пролить кровь невинных для захвата власти. И похоже, что скоро им предстоит такая возможность.",
+						"text": "Малый [color=darkblue]индустриальный город[/color]. Основной продукцией являются рыбные консервы и полезные ископаемые.\n\nКогда [color=brown]коммунизм[/color] окончательно ушел из страны и производство прекратило работу.\nБлагосостояние местных жителей стало стремительно падать. Вскоре разруха и хаос заполнили весь город.\n\nНепрекращающиеся [color=darkgreen]междусобные войны[/color] между чиновниками, генералами и организованной преступностью привели к разделению города на противоборуствующие регионы.\n\nКаждый предводитель группировки готов пройтись по чужим людским жизням и пролить немало людской крови, дабы оказаться у власти над городом.",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 10,
@@ -359,12 +484,103 @@
 				0.0196078431372549,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "light",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Light",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 652,
+					"instanceVariables": {
+						"pinUID": -1
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "opacity",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 25,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 316,
+						"y": 156.562,
+						"width": 954.999560246177,
+						"height": 703.999560246177,
+						"originX": 0.512,
+						"originY": 0.486,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
+				}
+			],
+			"sid": 831989981442388,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				0.8
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 1,
+			"forceOwnTexture": true,
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -444,7 +660,7 @@
 			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",

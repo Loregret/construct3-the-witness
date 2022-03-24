@@ -705,6 +705,130 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 449393954900999,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 112325223396441,
+											"parameters": {
+												"object": "dialog_trigger"
+											}
+										},
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 885481227187081,
+											"parameters": {
+												"interval-seconds": "dt"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "SpriteFont2",
+											"sid": 778573965990864,
+											"parameters": {
+												"text": "dialog_trigger.DialogName"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "SpriteFont2",
+											"sid": 477202669614472,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 410752735508005,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 918792923494656,
+													"parameters": {
+														"object": "dialog_trigger"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-default-color",
+													"objectClass": "SpriteFont2",
+													"sid": 333336353885087,
+													"parameters": {
+														"color": "rgbEx(100,100, 100)"
+													}
+												}
+											],
+											"sid": 532730985765479
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 977836510828532
+												}
+											],
+											"actions": [
+												{
+													"id": "set-default-color",
+													"objectClass": "SpriteFont2",
+													"sid": 695465065014671,
+													"parameters": {
+														"color": "rgbEx(20,20, 20)"
+													}
+												}
+											],
+											"sid": 207812230395867
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 584369205529062
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "SpriteFont2",
+											"sid": 812196136371547,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "SpriteFont2",
+											"sid": 672799231433564,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 442737609603868
+								}
+							]
+						},
+						{
 							"eventType": "comment",
 							"text": "one time shoot"
 						},
