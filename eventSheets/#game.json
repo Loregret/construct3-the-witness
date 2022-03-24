@@ -103,7 +103,7 @@
 			"eventType": "variable",
 			"name": "settings_cam_zoom_auto",
 			"type": "boolean",
-			"initialValue": "true",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -2701,6 +2701,26 @@
 											"sid": 181372029116312,
 											"children": [
 												{
+													"eventType": "variable",
+													"name": "posX",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 151195944838287
+												},
+												{
+													"eventType": "variable",
+													"name": "posY",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 907358370655511
+												},
+												{
 													"eventType": "block",
 													"conditions": [
 														{
@@ -2746,12 +2766,30 @@
 													],
 													"actions": [
 														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 421948359839074,
+															"parameters": {
+																"variable": "posX",
+																"value": "camera.X - clamp(camera.X - cursor.X, -min_camera_distance, min_camera_distance)"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 480539034250251,
+															"parameters": {
+																"variable": "posY",
+																"value": "camera.Y - clamp(camera.Y - cursor.Y, -min_camera_distance, min_camera_distance)"
+															}
+														},
+														{
 															"id": "scroll-to-position",
 															"objectClass": "System",
-															"sid": 865762614957511,
+															"sid": 825127497000080,
 															"parameters": {
-																"x": "lerp(scrollx,camera.X - clamp(camera.X - cursor.X, -min_camera_distance, min_camera_distance), dt * settings_cam_speed_modificator)",
-																"y": "lerp(scrolly,camera.Y - clamp(camera.Y - cursor.Y, -min_camera_distance, min_camera_distance), dt * settings_cam_speed_modificator)"
+																"x": "lerp(scrollx, posX, dt * settings_cam_speed_modificator)",
+																"y": "lerp(scrolly, posY, dt * settings_cam_speed_modificator)"
 															}
 														}
 													],
