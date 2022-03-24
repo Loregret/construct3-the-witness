@@ -11180,10 +11180,10 @@
 							},
 							"behaviors": {},
 							"world": {
-								"x": 7542.263075226513,
-								"y": 7352.196868543898,
+								"x": 7524,
+								"y": 7377,
 								"width": 3567.2097924555565,
-								"height": 170.98764541515527,
+								"height": 85.33941724079202,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -11193,6 +11193,42 @@
 									0.25
 								],
 								"angle": 0.13346743099705183,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "dialog_trigger",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 638,
+							"instanceVariables": {
+								"SceneNum": "forest1",
+								"DialogName": "food1",
+								"LineNum": 0,
+								"active": true,
+								"repeatable": true,
+								"auto_start": false
+							},
+							"behaviors": {},
+							"world": {
+								"x": 8084,
+								"y": 5828,
+								"width": 197.3593311608313,
+								"height": 159.65299109982647,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.55
+								],
+								"angle": 1.6190928837181144,
 								"zElevation": 0
 							}
 						}
