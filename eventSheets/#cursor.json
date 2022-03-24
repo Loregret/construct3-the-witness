@@ -1,0 +1,101 @@
+{
+	"name": "#Cursor",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 471318149865734,
+					"parameters": {
+						"variable": "settings_cursor_show"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 259791846238475,
+					"parameters": {
+						"cursor-style": "none"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 908491856939934,
+					"parameters": {
+						"object-to-create": "cursor",
+						"layer": "\"cursor\"",
+						"x": "Mouse.X",
+						"y": "Mouse.Y",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 858560279507357
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 704331073116074,
+					"parameters": {
+						"variable": "settings_cursor_show"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 577915490904921,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "mouse_sensivity",
+					"type": "number",
+					"initialValue": "100",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 548322289426509
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 132863101742580
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 299931193817269,
+							"parameters": {
+								"x": "Mouse.X(\"cursor\")",
+								"y": "Mouse.Y(\"cursor\")"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 603232438142389,
+							"disabled": true,
+							"parameters": {
+								"x": "lerp(Self.X, Mouse.X(\"cursor\"), mouse_sensivity * dt)",
+								"y": "lerp(Self.Y, Mouse.Y(\"cursor\"), mouse_sensivity * dt)"
+							}
+						}
+					],
+					"sid": 556972623995625
+				}
+			]
+		}
+	],
+	"sid": 400007139696275
+}
