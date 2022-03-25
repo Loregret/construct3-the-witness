@@ -242,8 +242,7 @@
 	"uniqueId": "bmm21df34rr",
 	"objectTypes": {
 		"items": [
-			"SpriteFont2",
-			"dialog3"
+			"SpriteFont2"
 		],
 		"subfolders": [
 			{
@@ -398,14 +397,21 @@
 			},
 			{
 				"items": [
-					"Sprite",
 					"Sprite2",
-					"Sprite3",
-					"Sprite4",
-					"dialog2",
-					"TiledBackground"
+					"TiledBackground",
+					"dialog3"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"photo_title",
+							"photo_img",
+							"photo"
+						],
+						"subfolders": [],
+						"name": "photo"
+					}
+				],
 				"name": "cutscene"
 			}
 		]
@@ -414,9 +420,9 @@
 	"containers": [
 		{
 			"members": [
-				"dialog2",
-				"Sprite",
-				"Sprite3"
+				"photo_title",
+				"photo_img",
+				"photo"
 			],
 			"selectMode": "normal"
 		}
