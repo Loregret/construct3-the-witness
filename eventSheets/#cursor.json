@@ -2,120 +2,347 @@
 	"name": "#Cursor",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 471318149865734,
-					"parameters": {
-						"variable": "settings_cursor_show"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-cursor-style",
-					"objectClass": "Mouse",
-					"sid": 259791846238475,
-					"parameters": {
-						"cursor-style": "none"
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 908491856939934,
-					"parameters": {
-						"object-to-create": "cursor",
-						"layer": "\"cursor\"",
-						"x": "Mouse.X",
-						"y": "Mouse.Y",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 242289425157963,
-					"parameters": {
-						"object-to-create": "SpriteFont2",
-						"layer": "\"cursor\"",
-						"x": "Mouse.X",
-						"y": "Mouse.Y",
-						"create-hierarchy": false
-					}
-				}
-			],
-			"sid": 858560279507357
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 704331073116074,
-					"parameters": {
-						"variable": "settings_cursor_show"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 577915490904921,
+			"eventType": "group",
+			"disabled": false,
+			"title": "cursor - start",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "variable",
-					"name": "mouse_sensivity",
-					"type": "number",
-					"initialValue": "100",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 548322289426509
-				},
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 579395561514846
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 570232647348054,
+							"parameters": {
+								"cursor-style": "none"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 112427808755603,
+							"parameters": {
+								"object-to-create": "cursor",
+								"layer": "\"cursor\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 630612027764701,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "cursor_create_dialogname_sprfont",
+									"sid": 201227899749812
+								}
+							],
+							"sid": 714859650932520
+						}
+					]
+				}
+			],
+			"sid": 774697485129511
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "cursor - main",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 132863101742580
+							"sid": 734810384102137
 						}
 					],
+					"actions": [],
+					"sid": 199625397984638,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "mouse_sensivity",
+							"type": "number",
+							"initialValue": "100",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 648425701185269
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 193229285716867,
+									"parameters": {
+										"x": "lerp(Self.X, Mouse.X(\"cursor\"), mouse_sensivity * dt)",
+										"y": "lerp(Self.Y, Mouse.Y(\"cursor\"), mouse_sensivity * dt)"
+									}
+								}
+							],
+							"sid": 494502482262981,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 489925824028510,
+									"parameters": {
+										"variable": "settings_cursor_show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 910962800416100,
+									"parameters": {
+										"x": "Mouse.X(\"cursor\")",
+										"y": "Mouse.Y(\"cursor\")"
+									}
+								}
+							],
+							"sid": 477133211385536,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "dialog mouse over trigger"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 750905172673383,
+											"parameters": {
+												"variable": "settings_cursor_show_dialog_name"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "SpriteFont2",
+											"sid": 998870351328096,
+											"parameters": {
+												"x": "cursor.X",
+												"y": "cursor.Y + 20"
+											}
+										}
+									],
+									"sid": 449393954900999,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "cursor-is-over-object",
+													"objectClass": "Mouse",
+													"sid": 112325223396441,
+													"parameters": {
+														"object": "dialog_trigger"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 151690234047230,
+													"parameters": {
+														"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 885481227187081,
+													"parameters": {
+														"interval-seconds": "dt"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "dialog_trigger",
+													"sid": 617746693804610,
+													"parameters": {
+														"instance-variable": "auto_start"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "dialog_trigger",
+													"sid": 657841319354946,
+													"parameters": {
+														"instance-variable": "active"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "SpriteFont2",
+													"sid": 778573965990864,
+													"parameters": {
+														"text": "dialog_trigger.DialogName"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "SpriteFont2",
+													"sid": 477202669614472,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 410752735508005,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 918792923494656,
+															"parameters": {
+																"object": "dialog_trigger"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-default-color",
+															"objectClass": "SpriteFont2",
+															"sid": 333336353885087,
+															"parameters": {
+																"color": "rgbEx(100,100, 100)"
+															}
+														}
+													],
+													"sid": 532730985765479
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 977836510828532
+														}
+													],
+													"actions": [
+														{
+															"id": "set-default-color",
+															"objectClass": "SpriteFont2",
+															"sid": 695465065014671,
+															"parameters": {
+																"color": "rgbEx(20,20, 20)"
+															}
+														}
+													],
+													"sid": 207812230395867
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 584369205529062
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "SpriteFont2",
+													"sid": 812196136371547,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-text",
+													"objectClass": "SpriteFont2",
+													"sid": 672799231433564,
+													"parameters": {
+														"text": "\"\""
+													}
+												}
+											],
+											"sid": 442737609603868
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 371988161534689
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "cursor - functions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "cursor_create_dialogname_sprfont",
+					"functionDescription": "",
+					"functionCategory": "#cursor",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
 					"actions": [
 						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 299931193817269,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 188338528256847,
 							"parameters": {
-								"x": "Mouse.X(\"cursor\")",
-								"y": "Mouse.Y(\"cursor\")"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 603232438142389,
-							"disabled": true,
-							"parameters": {
-								"x": "lerp(Self.X, Mouse.X(\"cursor\"), mouse_sensivity * dt)",
-								"y": "lerp(Self.Y, Mouse.Y(\"cursor\"), mouse_sensivity * dt)"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "SpriteFont2",
-							"sid": 254940484894729,
-							"parameters": {
-								"x": "cursor.X",
-								"y": "cursor.Y + 20"
+								"object-to-create": "SpriteFont2",
+								"layer": "\"cursor\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y",
+								"create-hierarchy": false
 							}
 						}
 					],
-					"sid": 556972623995625
+					"sid": 742383012945809
 				}
-			]
+			],
+			"sid": 752550322888207
 		}
 	],
 	"sid": 400007139696275
