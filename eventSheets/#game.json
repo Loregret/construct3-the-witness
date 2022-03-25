@@ -547,6 +547,7 @@
 															"id": "play",
 															"objectClass": "Audio",
 															"sid": 480776706134089,
+															"disabled": true,
 															"parameters": {
 																"audio-file": "Forest ambient",
 																"loop": "looping",
@@ -628,7 +629,8 @@
 															}
 														}
 													],
-													"sid": 212328201833172
+													"sid": 212328201833172,
+													"disabled": true
 												}
 											]
 										}
@@ -745,17 +747,7 @@
 											}
 										}
 									],
-									"actions": [
-										{
-											"id": "request-fullscreen",
-											"objectClass": "Browser",
-											"sid": 304865391709913,
-											"parameters": {
-												"mode": "stretch-scale-outer",
-												"navigation-ui": "hide"
-											}
-										}
-									],
+									"actions": [],
 									"sid": 637015182389780,
 									"children": [
 										{
@@ -2293,7 +2285,7 @@
 													"callFunction": "dialogic_play_dialog",
 													"sid": 648989354254638,
 													"parameters": [
-														"dialog_trigger.SceneNum",
+														"dialog_trigger.SceneName",
 														"dialog_trigger.DialogName",
 														"dialog_trigger.LineNum"
 													]
@@ -6785,7 +6777,7 @@
 																	"callFunction": "dialogic_play_dialog",
 																	"sid": 954719302491350,
 																	"parameters": [
-																		"dialog_trigger.SceneNum",
+																		"dialog_trigger.SceneName",
 																		"dialog_trigger.DialogName",
 																		"0"
 																	]

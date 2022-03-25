@@ -9,6 +9,69 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 112499445660832
+						},
+						{
+							"id": "on-any-click",
+							"objectClass": "Mouse",
+							"sid": 371781322207694
+						},
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 656362306879316,
+							"parameters": {
+								"direction": "up"
+							}
+						},
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 353292156944957,
+							"parameters": {
+								"direction": "down"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 819047390794592,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 459957893793757,
+									"parameters": {
+										"variable": "settings_fullscreen",
+										"comparison": 0,
+										"value": "\"scale_outer\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 338294774433255,
+									"parameters": {
+										"mode": "stretch-scale-outer",
+										"navigation-ui": "hide"
+									}
+								}
+							],
+							"sid": 514269523774733
+						}
+					],
+					"isOrBlock": true
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "FPS ⊠",

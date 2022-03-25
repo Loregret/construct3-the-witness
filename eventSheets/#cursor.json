@@ -148,10 +148,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "SpriteFont2",
-											"sid": 998870351328096,
+											"sid": 190566140556758,
 											"parameters": {
 												"x": "cursor.X",
-												"y": "cursor.Y + 20"
+												"y": "cursor.Y + 16"
 											}
 										}
 									],
@@ -169,6 +169,14 @@
 													}
 												},
 												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 809428052202736,
+													"parameters": {
+														"interval-seconds": "dt"
+													}
+												},
+												{
 													"id": "compare-two-values",
 													"objectClass": "System",
 													"sid": 151690234047230,
@@ -176,14 +184,6 @@
 														"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
 														"comparison": 0,
 														"second-value": "0"
-													}
-												},
-												{
-													"id": "every-x-seconds",
-													"objectClass": "System",
-													"sid": 885481227187081,
-													"parameters": {
-														"interval-seconds": "dt"
 													}
 												},
 												{
@@ -204,70 +204,183 @@
 													}
 												}
 											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "SpriteFont2",
-													"sid": 778573965990864,
-													"parameters": {
-														"text": "dialog_trigger.DialogName"
-													}
-												},
-												{
-													"id": "set-visible",
-													"objectClass": "SpriteFont2",
-													"sid": 477202669614472,
-													"parameters": {
-														"visibility": "visible"
-													}
-												}
-											],
+											"actions": [],
 											"sid": 410752735508005,
 											"children": [
 												{
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "is-overlapping-another-object",
-															"objectClass": "Player",
-															"sid": 918792923494656,
-															"parameters": {
-																"object": "dialog_trigger"
-															}
-														}
-													],
-													"actions": [
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 635479555957690
+														},
 														{
-															"id": "set-default-color",
+															"id": "compare-text",
 															"objectClass": "SpriteFont2",
-															"sid": 333336353885087,
+															"sid": 729853926988103,
 															"parameters": {
-																"color": "rgbEx(100,100, 100)"
+																"text-to-compare": "\"\"",
+																"case-sensitivity": "ignore-case"
 															}
 														}
 													],
-													"sid": 532730985765479
+													"actions": [],
+													"sid": 480709463573160,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for-each",
+																	"objectClass": "JSON",
+																	"sid": 781073277581321,
+																	"parameters": {
+																		"path": "dialog_trigger.SceneName&\".\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 636659771929123,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-value",
+																			"objectClass": "JSON",
+																			"sid": 357289779077885,
+																			"parameters": {
+																				"path": "dialog_trigger.SceneName&\".\"&JSON.CurrentKey&\".id\"",
+																				"cmp": 0,
+																				"value": "dialog_trigger.DialogName"
+																			}
+																		}
+																	],
+																	"actions": [],
+																	"sid": 432951971427659,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-value",
+																					"objectClass": "JSON",
+																					"sid": 616348744335063,
+																					"parameters": {
+																						"path": "dialog_trigger.SceneName&\".\"&JSON.CurrentKey&\".name\"",
+																						"cmp": 1,
+																						"value": "0"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-text",
+																					"objectClass": "SpriteFont2",
+																					"sid": 545424436207951,
+																					"parameters": {
+																						"text": "JSON.Get(dialog_trigger.SceneName&\".\"& JSON.CurrentKey &\".name\")"
+																					}
+																				},
+																				{
+																					"id": "set-visible",
+																					"objectClass": "SpriteFont2",
+																					"sid": 861826232498898,
+																					"parameters": {
+																						"visibility": "visible"
+																					}
+																				}
+																			],
+																			"sid": 153554567077885
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 638893068637757
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-text",
+																					"objectClass": "SpriteFont2",
+																					"sid": 550854044152088,
+																					"parameters": {
+																						"text": "\"*Изучить*\""
+																					}
+																				},
+																				{
+																					"id": "set-visible",
+																					"objectClass": "SpriteFont2",
+																					"sid": 790646786681971,
+																					"parameters": {
+																						"visibility": "visible"
+																					}
+																				}
+																			],
+																			"sid": 396909865492133
+																		}
+																	]
+																}
+															]
+														}
+													]
 												},
 												{
 													"eventType": "block",
-													"conditions": [
+													"conditions": [],
+													"actions": [],
+													"sid": 534605812961213,
+													"children": [
 														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 977836510828532
-														}
-													],
-													"actions": [
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-overlapping-another-object",
+																	"objectClass": "Player",
+																	"sid": 328692119253295,
+																	"parameters": {
+																		"object": "dialog_trigger"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-default-color",
+																	"objectClass": "SpriteFont2",
+																	"sid": 506697192604923,
+																	"parameters": {
+																		"color": "rgbEx(93, 93, 93)"
+																	}
+																}
+															],
+															"sid": 832940116164388
+														},
 														{
-															"id": "set-default-color",
-															"objectClass": "SpriteFont2",
-															"sid": 695465065014671,
-															"parameters": {
-																"color": "rgbEx(20,20, 20)"
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 151178166185660
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-default-color",
+																	"objectClass": "SpriteFont2",
+																	"sid": 344386062717201,
+																	"parameters": {
+																		"color": "rgbEx(36, 36, 36)"
+																	}
+																}
+															],
+															"sid": 210985187723331
 														}
-													],
-													"sid": 207812230395867
+													]
 												}
 											]
 										},
@@ -295,6 +408,14 @@
 													"sid": 672799231433564,
 													"parameters": {
 														"text": "\"\""
+													}
+												},
+												{
+													"id": "set-width",
+													"objectClass": "SpriteFont2",
+													"sid": 409794949782724,
+													"parameters": {
+														"width": "250"
 													}
 												}
 											],
