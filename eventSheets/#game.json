@@ -1089,6 +1089,68 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"functionName": "weapon_change_to_another",
+							"functionDescription": "",
+							"functionCategory": "#weapon",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "weapon_name",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 325981118386083
+								},
+								{
+									"name": "animation",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 615377527369668
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 257625779587571,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "player_reload_interrupt",
+											"sid": 766123821621099
+										},
+										{
+											"callFunction": "cursor_clear_hint",
+											"sid": 183076146994821
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 436698939689869,
+											"parameters": {
+												"animation": "animation",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 114109891412574,
+											"parameters": {
+												"variable": "curWeapon",
+												"value": "weapon_name"
+											}
+										}
+									],
+									"sid": 987970248054933
+								}
+							]
+						},
+						{
 							"eventType": "comment",
 							"text": "движение"
 						},
@@ -1260,19 +1322,6 @@
 									],
 									"actions": [
 										{
-											"callFunction": "player_reload_interrupt",
-											"sid": 272484391612619
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 607959757743145,
-											"parameters": {
-												"animation": "\"idle\"",
-												"from": "beginning"
-											}
-										},
-										{
 											"id": "play",
 											"objectClass": "Audio",
 											"sid": 612791300432417,
@@ -1284,13 +1333,12 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 530600522347526,
-											"parameters": {
-												"variable": "curWeapon",
-												"value": "\"\""
-											}
+											"callFunction": "weapon_change_to_another",
+											"sid": 320726826740008,
+											"parameters": [
+												"\"\"",
+												"\"idle\""
+											]
 										}
 									],
 									"sid": 423059219871257
@@ -1336,17 +1384,12 @@
 									],
 									"actions": [
 										{
-											"callFunction": "player_reload_interrupt",
-											"sid": 269303807538538
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 369881798985563,
-											"parameters": {
-												"animation": "\"pistol\"",
-												"from": "beginning"
-											}
+											"callFunction": "weapon_change_to_another",
+											"sid": 146493151678207,
+											"parameters": [
+												"\"pistol\"",
+												"\"pistol\""
+											]
 										},
 										{
 											"id": "play",
@@ -1368,15 +1411,6 @@
 												"loop": "not-looping",
 												"volume": "0",
 												"tag-optional": "\"player_undraw\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 627216473061577,
-											"parameters": {
-												"variable": "curWeapon",
-												"value": "\"pistol\""
 											}
 										}
 									],
@@ -1432,17 +1466,12 @@
 									],
 									"actions": [
 										{
-											"callFunction": "player_reload_interrupt",
-											"sid": 791983860384669
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 231013175317744,
-											"parameters": {
-												"animation": "\"ak\"",
-												"from": "beginning"
-											}
+											"callFunction": "weapon_change_to_another",
+											"sid": 874901198572164,
+											"parameters": [
+												"\"ak\"",
+												"\"ak\""
+											]
 										},
 										{
 											"id": "play",
@@ -1464,15 +1493,6 @@
 												"loop": "not-looping",
 												"volume": "0",
 												"tag-optional": "\"player_undraw\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 220437191540809,
-											"parameters": {
-												"variable": "curWeapon",
-												"value": "\"ak\""
 											}
 										}
 									],
@@ -1546,17 +1566,12 @@
 									],
 									"actions": [
 										{
-											"callFunction": "player_reload_interrupt",
-											"sid": 965315592947854
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 396465349644168,
-											"parameters": {
-												"animation": "\"shotgun\"",
-												"from": "beginning"
-											}
+											"callFunction": "weapon_change_to_another",
+											"sid": 269858771741096,
+											"parameters": [
+												"\"shotgun\"",
+												"\"shotgun\""
+											]
 										},
 										{
 											"id": "play",
@@ -1578,15 +1593,6 @@
 												"loop": "not-looping",
 												"volume": "0",
 												"tag-optional": "\"player_undraw\""
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 165408609242064,
-											"parameters": {
-												"variable": "curWeapon",
-												"value": "\"shotgun\""
 											}
 										}
 									],

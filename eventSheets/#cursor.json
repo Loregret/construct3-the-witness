@@ -142,6 +142,24 @@
 											"parameters": {
 												"variable": "settings_cursor_show_dialog_name"
 											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 125825890390120,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 389507934671941,
+											"parameters": {
+												"interval-seconds": "dt"
+											}
 										}
 									],
 									"actions": [
@@ -166,14 +184,6 @@
 													"sid": 112325223396441,
 													"parameters": {
 														"object": "dialog_trigger"
-													}
-												},
-												{
-													"id": "every-x-seconds",
-													"objectClass": "System",
-													"sid": 809428052202736,
-													"parameters": {
-														"interval-seconds": "dt"
 													}
 												},
 												{
@@ -330,6 +340,10 @@
 													]
 												},
 												{
+													"eventType": "comment",
+													"text": "color"
+												},
+												{
 													"eventType": "block",
 													"conditions": [],
 													"actions": [],
@@ -391,32 +405,17 @@
 													"id": "else",
 													"objectClass": "System",
 													"sid": 584369205529062
+												},
+												{
+													"id": "is-visible",
+													"objectClass": "SpriteFont2",
+													"sid": 131288320546023
 												}
 											],
 											"actions": [
 												{
-													"id": "set-visible",
-													"objectClass": "SpriteFont2",
-													"sid": 812196136371547,
-													"parameters": {
-														"visibility": "invisible"
-													}
-												},
-												{
-													"id": "set-text",
-													"objectClass": "SpriteFont2",
-													"sid": 672799231433564,
-													"parameters": {
-														"text": "\"\""
-													}
-												},
-												{
-													"id": "set-width",
-													"objectClass": "SpriteFont2",
-													"sid": 409794949782724,
-													"parameters": {
-														"width": "250"
-													}
+													"callFunction": "cursor_clear_hint",
+													"sid": 428784495728740
 												}
 											],
 											"sid": 442737609603868
@@ -437,6 +436,43 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"functionName": "cursor_clear_hint",
+					"functionDescription": "",
+					"functionCategory": "#cursor",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "SpriteFont2",
+							"sid": 386468997623036,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont2",
+							"sid": 813740693989481,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "SpriteFont2",
+							"sid": 363405240692253,
+							"parameters": {
+								"width": "250"
+							}
+						}
+					],
+					"sid": 930763428763747
+				},
 				{
 					"functionName": "cursor_create_dialogname_sprfont",
 					"functionDescription": "",
