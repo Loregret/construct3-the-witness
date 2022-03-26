@@ -138,6 +138,220 @@
 							"sid": 477133211385536,
 							"children": [
 								{
+									"functionName": "cursor_get_hint_from_trigger",
+									"functionDescription": "",
+									"functionCategory": "#cursor",
+									"functionReturnType": "none",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "UID",
+											"type": "number",
+											"initialValue": "-1",
+											"comment": "",
+											"sid": 976824402596632
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 474920938436734,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "dialog_trigger",
+													"sid": 249449358867481,
+													"parameters": {
+														"unique-id": "UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 835214038469244,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 614762087154642
+														},
+														{
+															"id": "compare-text",
+															"objectClass": "cursorhint",
+															"sid": 429435070715667,
+															"parameters": {
+																"text-to-compare": "\"\"",
+																"case-sensitivity": "ignore-case"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 893589581326296,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for-each",
+																	"objectClass": "JSON",
+																	"sid": 735135657564201,
+																	"parameters": {
+																		"path": "dialog_trigger.SceneName&\".\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 890548120132595,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-value",
+																			"objectClass": "JSON",
+																			"sid": 839878717525576,
+																			"parameters": {
+																				"path": "dialog_trigger.SceneName&\".\"&JSON.CurrentKey&\".id\"",
+																				"cmp": 0,
+																				"value": "dialog_trigger.DialogName"
+																			}
+																		}
+																	],
+																	"actions": [],
+																	"sid": 133271538197240,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-value",
+																					"objectClass": "JSON",
+																					"sid": 458406824494204,
+																					"parameters": {
+																						"path": "dialog_trigger.SceneName&\".\"&JSON.CurrentKey&\".name\"",
+																						"cmp": 1,
+																						"value": "0"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-text",
+																					"objectClass": "cursorhint",
+																					"sid": 171188301534116,
+																					"parameters": {
+																						"text": "JSON.Get(dialog_trigger.SceneName&\".\"& JSON.CurrentKey &\".name\")"
+																					}
+																				},
+																				{
+																					"id": "set-visible",
+																					"objectClass": "cursorhint",
+																					"sid": 478220943668270,
+																					"parameters": {
+																						"visibility": "visible"
+																					}
+																				}
+																			],
+																			"sid": 582881091804742
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 112579744927571
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-text",
+																					"objectClass": "cursorhint",
+																					"sid": 736726189748618,
+																					"parameters": {
+																						"text": "\"*Изучить*\""
+																					}
+																				},
+																				{
+																					"id": "set-visible",
+																					"objectClass": "cursorhint",
+																					"sid": 714994492118480,
+																					"parameters": {
+																						"visibility": "visible"
+																					}
+																				}
+																			],
+																			"sid": 656235596477838
+																		}
+																	]
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 443153245161707,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-overlapping-another-object",
+																	"objectClass": "Player",
+																	"sid": 371505486442260,
+																	"parameters": {
+																		"object": "dialog_trigger"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-default-color",
+																	"objectClass": "cursorhint",
+																	"sid": 131862962414589,
+																	"parameters": {
+																		"color": "rgbEx(93, 93, 93)"
+																	}
+																}
+															],
+															"sid": 468884388998003
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 885656156661039
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-default-color",
+																	"objectClass": "cursorhint",
+																	"sid": 565582512986214,
+																	"parameters": {
+																		"color": "rgbEx(36, 36, 36)"
+																	}
+																}
+															],
+															"sid": 522362933534843
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
 									"eventType": "comment",
 									"text": "dialog mouse over trigger"
 								},
@@ -221,16 +435,6 @@
 													"parameters": {
 														"instance-variable": "active"
 													}
-												},
-												{
-													"id": "has-los-to-object",
-													"objectClass": "Player",
-													"sid": 481721511573513,
-													"behaviorType": "LineOfSight",
-													"parameters": {
-														"object": "dialog_trigger",
-														"image-point": "0"
-													}
 												}
 											],
 											"actions": [],
@@ -240,180 +444,92 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 635479555957690
-														},
-														{
-															"id": "compare-text",
-															"objectClass": "cursorhint",
-															"sid": 729853926988103,
+															"id": "has-los-to-object",
+															"objectClass": "Player",
+															"sid": 679000307371279,
+															"behaviorType": "LineOfSight",
 															"parameters": {
-																"text-to-compare": "\"\"",
-																"case-sensitivity": "ignore-case"
+																"object": "dialog_trigger",
+																"image-point": "0"
 															}
 														}
 													],
 													"actions": [],
-													"sid": 480709463573160,
+													"sid": 210319117614274,
 													"children": [
 														{
 															"eventType": "block",
-															"conditions": [
+															"conditions": [],
+															"actions": [
 																{
-																	"id": "for-each",
-																	"objectClass": "JSON",
-																	"sid": 781073277581321,
-																	"parameters": {
-																		"path": "dialog_trigger.SceneName&\".\""
-																	}
-																}
-															],
-															"actions": [],
-															"sid": 636659771929123,
-															"children": [
-																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "compare-value",
-																			"objectClass": "JSON",
-																			"sid": 357289779077885,
-																			"parameters": {
-																				"path": "dialog_trigger.SceneName&\".\"&JSON.CurrentKey&\".id\"",
-																				"cmp": 0,
-																				"value": "dialog_trigger.DialogName"
-																			}
-																		}
-																	],
-																	"actions": [],
-																	"sid": 432951971427659,
-																	"children": [
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "compare-value",
-																					"objectClass": "JSON",
-																					"sid": 616348744335063,
-																					"parameters": {
-																						"path": "dialog_trigger.SceneName&\".\"&JSON.CurrentKey&\".name\"",
-																						"cmp": 1,
-																						"value": "0"
-																					}
-																				}
-																			],
-																			"actions": [
-																				{
-																					"id": "set-text",
-																					"objectClass": "cursorhint",
-																					"sid": 545424436207951,
-																					"parameters": {
-																						"text": "JSON.Get(dialog_trigger.SceneName&\".\"& JSON.CurrentKey &\".name\")"
-																					}
-																				},
-																				{
-																					"id": "set-visible",
-																					"objectClass": "cursorhint",
-																					"sid": 861826232498898,
-																					"parameters": {
-																						"visibility": "visible"
-																					}
-																				}
-																			],
-																			"sid": 153554567077885
-																		},
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "else",
-																					"objectClass": "System",
-																					"sid": 638893068637757
-																				}
-																			],
-																			"actions": [
-																				{
-																					"id": "set-text",
-																					"objectClass": "cursorhint",
-																					"sid": 550854044152088,
-																					"parameters": {
-																						"text": "\"*Изучить*\""
-																					}
-																				},
-																				{
-																					"id": "set-visible",
-																					"objectClass": "cursorhint",
-																					"sid": 790646786681971,
-																					"parameters": {
-																						"visibility": "visible"
-																					}
-																				}
-																			],
-																			"sid": 396909865492133
-																		}
+																	"callFunction": "cursor_get_hint_from_trigger",
+																	"sid": 225859138876892,
+																	"parameters": [
+																		"dialog_trigger.UID"
 																	]
 																}
-															]
+															],
+															"sid": 342561543057156
 														}
 													]
-												},
-												{
-													"eventType": "comment",
-													"text": "color"
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 524834914916403
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "dialog_trigger",
+															"sid": 560170994498830,
+															"parameters": {
+																"instance-variable": "is_visible_trough_walls"
+															}
+														}
+													],
 													"actions": [],
-													"sid": 534605812961213,
+													"sid": 598340408275653,
 													"children": [
 														{
 															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-overlapping-another-object",
-																	"objectClass": "Player",
-																	"sid": 328692119253295,
-																	"parameters": {
-																		"object": "dialog_trigger"
-																	}
-																}
-															],
+															"conditions": [],
 															"actions": [
 																{
-																	"id": "set-default-color",
-																	"objectClass": "cursorhint",
-																	"sid": 506697192604923,
-																	"parameters": {
-																		"color": "rgbEx(93, 93, 93)"
-																	}
+																	"callFunction": "cursor_get_hint_from_trigger",
+																	"sid": 852880511518899,
+																	"parameters": [
+																		"dialog_trigger.UID"
+																	]
 																}
 															],
-															"sid": 832940116164388
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 151178166185660
-																}
-															],
-															"actions": [
-																{
-																	"id": "set-default-color",
-																	"objectClass": "cursorhint",
-																	"sid": 344386062717201,
-																	"parameters": {
-																		"color": "rgbEx(36, 36, 36)"
-																	}
-																}
-															],
-															"sid": 210985187723331
+															"sid": 353953625725121
 														}
 													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 874750814587777
+														},
+														{
+															"id": "is-visible",
+															"objectClass": "cursorhint",
+															"sid": 987969442877610
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "cursor_clear_hint",
+															"sid": 629740530545861
+														}
+													],
+													"sid": 305293728599131
 												}
 											]
 										},
