@@ -43,7 +43,16 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 303680774716229,
+									"parameters": {
+										"variable": "settings_cursor_show_dialog_name"
+									}
+								}
+							],
 							"actions": [
 								{
 									"callFunction": "cursor_create_dialogname_sprfont",
@@ -493,6 +502,14 @@
 								"x": "Mouse.X",
 								"y": "Mouse.Y",
 								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont2",
+							"sid": 671883394710477,
+							"parameters": {
+								"text": "\"\""
 							}
 						}
 					],
