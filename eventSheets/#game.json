@@ -3825,6 +3825,52 @@
 												}
 											],
 											"sid": 120739518204020
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player",
+													"sid": 586473791844551,
+													"parameters": {
+														"object": "gilza",
+														"layer": "\"items\"",
+														"image-point": "1",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "gilza",
+													"sid": 140789153035543,
+													"parameters": {
+														"angle": "Player.Angle + 90"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "gilza",
+													"sid": 785038679355285,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "800"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "gilza",
+													"sid": 182130422703771,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "random(0.015,  0.03)",
+														"type": "once",
+														"tag": "\"bullet\""
+													}
+												}
+											],
+											"sid": 523500660071422
 										}
 									]
 								},
@@ -4186,6 +4232,52 @@
 												}
 											],
 											"sid": 596758143308455
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player",
+													"sid": 619502058247739,
+													"parameters": {
+														"object": "gilza",
+														"layer": "\"items\"",
+														"image-point": "1",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "gilza",
+													"sid": 381475149650826,
+													"parameters": {
+														"angle": "Player.Angle + 90"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "gilza",
+													"sid": 277596071085744,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "random(650,800)"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "gilza",
+													"sid": 208044840635780,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "random(0.01,  0.04)",
+														"type": "once",
+														"tag": "\"bullet\""
+													}
+												}
+											],
+											"sid": 207072694534933
 										}
 									]
 								},
@@ -4640,6 +4732,60 @@
 												}
 											],
 											"sid": 427327196813312
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player",
+													"sid": 847639784253716,
+													"parameters": {
+														"object": "gilza",
+														"layer": "\"items\"",
+														"image-point": "1",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "gilza",
+													"sid": 179456632788303,
+													"parameters": {
+														"angle": "Player.Angle + 90"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "gilza",
+													"sid": 835967170441319,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "random(650,800)"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "gilza",
+													"sid": 662422153161895,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "random(0.01,  0.04)",
+														"type": "once",
+														"tag": "\"shell\""
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "gilza",
+													"sid": 832844837471216,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 452449628893021
 										}
 									]
 								},
@@ -4802,6 +4948,82 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "gilza",
+							"sid": 769104545203595,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"shell\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "gilza",
+							"sid": 627555905665797,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "gilza",
+							"sid": 425650705117707,
+							"parameters": {
+								"angle": "Self.Angle + random(-45,45)"
+							}
+						}
+					],
+					"sid": 356823947660078
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "gilza",
+							"sid": 746610522824378,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"bullet\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "gilza",
+							"sid": 452383188238638,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "gilza",
+							"sid": 868974925253097,
+							"parameters": {
+								"scale": "random(0.5,0.6)"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "gilza",
+							"sid": 415903208260086,
+							"parameters": {
+								"angle": "Self.Angle + random(-45,45)"
+							}
+						}
+					],
+					"sid": 995056897031207
 				}
 			],
 			"sid": 570918614215341
