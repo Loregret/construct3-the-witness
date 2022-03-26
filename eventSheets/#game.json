@@ -5154,16 +5154,17 @@
 											],
 											"actions": [
 												{
-													"id": "play-at-object",
+													"id": "play-at-object-by-name",
 													"objectClass": "Audio",
-													"sid": 152862214431509,
+													"sid": 808984955437059,
 													"parameters": {
-														"audio-file": "shell falling 1",
+														"folder": "sounds",
+														"audio-file-name": "choose(\"shell falling small\", \"shell falling small 2\", \"shell falling small 3\")",
 														"loop": "not-looping",
-														"volume": "random(-8,0)",
+														"volume": "random(-36,-15)",
 														"object": "gilza",
 														"inner-angle": "360",
-														"outer-angle": "360",
+														"outer-angle": "0",
 														"outer-gain": "0",
 														"tag-optional": "\"shell\""
 													}
