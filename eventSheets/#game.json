@@ -2957,10 +2957,6 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "recoil substract"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -4999,119 +4995,143 @@
 							]
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-timer",
-									"objectClass": "gilza",
-									"sid": 202001961077296,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"shell\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "gilza",
-									"sid": 626110631136455,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "gilza",
-									"sid": 281373284187647,
-									"parameters": {
-										"angle": "Self.Angle + random(-45,45)"
-									}
-								}
-							],
-							"sid": 883443408160063
+							"eventType": "comment",
+							"text": "timers"
 						},
 						{
 							"eventType": "block",
-							"conditions": [
+							"conditions": [],
+							"actions": [],
+							"sid": 622201520963197,
+							"children": [
 								{
-									"id": "on-timer",
-									"objectClass": "gilza",
-									"sid": 997024777319405,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"bullet\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "gilza",
-									"sid": 331582552310987,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"state": "disabled"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "gilza",
+											"sid": 387888780844919,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"shell\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "gilza",
+											"sid": 215380895456056,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "gilza",
+											"sid": 292636732503560,
+											"parameters": {
+												"angle": "Self.Angle + random(-45,45)"
+											}
+										}
+									],
+									"sid": 850880247929641
 								},
 								{
-									"id": "set-scale",
-									"objectClass": "gilza",
-									"sid": 933418558148543,
-									"parameters": {
-										"scale": "random(0.5,0.6)"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "gilza",
-									"sid": 824955789946240,
-									"parameters": {
-										"angle": "Self.Angle + random(-45,45)"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "gilza",
+											"sid": 909650839681491,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"bullet\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "gilza",
+											"sid": 253411885850292,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "gilza",
+											"sid": 312356122404147,
+											"parameters": {
+												"scale": "random(0.5,0.6)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "gilza",
+											"sid": 613665168873749,
+											"parameters": {
+												"angle": "Self.Angle + random(-45,45)"
+											}
+										}
+									],
+									"sid": 295981941892992
 								}
-							],
-							"sid": 400137655671069
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "graphics optimization"
 						},
 						{
 							"eventType": "block",
-							"conditions": [
+							"conditions": [],
+							"actions": [],
+							"sid": 895443308147192,
+							"children": [
 								{
-									"id": "on-created",
-									"objectClass": "gilza",
-									"sid": 615077418330938
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 891927310827143,
-									"parameters": {
-										"variable": "settings_low_graphics"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "gilza",
+											"sid": 499466372703779
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 149219932716325,
+											"parameters": {
+												"variable": "settings_low_graphics"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-fade-out-time",
+											"objectClass": "gilza",
+											"sid": 196453325751163,
+											"behaviorType": "Fade",
+											"parameters": {
+												"fade-out-time": "5"
+											}
+										},
+										{
+											"id": "set-wait-time",
+											"objectClass": "gilza",
+											"sid": 637691638793599,
+											"behaviorType": "Fade",
+											"parameters": {
+												"wait-time": "22"
+											}
+										}
+									],
+									"sid": 647318534248314
 								}
-							],
-							"actions": [
-								{
-									"id": "set-fade-out-time",
-									"objectClass": "gilza",
-									"sid": 568884841251880,
-									"behaviorType": "Fade",
-									"parameters": {
-										"fade-out-time": "5"
-									}
-								},
-								{
-									"id": "set-wait-time",
-									"objectClass": "gilza",
-									"sid": 868824563637844,
-									"behaviorType": "Fade",
-									"parameters": {
-										"wait-time": "22"
-									}
-								}
-							],
-							"sid": 738113442389387
+							]
 						}
 					],
 					"sid": 585007690670740
