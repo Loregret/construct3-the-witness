@@ -7422,6 +7422,178 @@
 							"isActiveOnStart": true,
 							"children": [
 								{
+									"functionName": "trigger_dialog_is_available",
+									"functionDescription": "",
+									"functionCategory": "#triggers",
+									"functionReturnType": "number",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "trigger_UID",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 594909759314325
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 126383722085087,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "dialog_trigger",
+													"sid": 199062268744191,
+													"parameters": {
+														"unique-id": "trigger_UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 322826226540109,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 539808887839673,
+															"parameters": {
+																"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "dialog_trigger",
+															"sid": 356637192816161,
+															"parameters": {
+																"instance-variable": "auto_start"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "dialog_trigger",
+															"sid": 746695308552402,
+															"parameters": {
+																"instance-variable": "active"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 196396756909409,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "has-los-to-object",
+																	"objectClass": "Player",
+																	"sid": 911262819045691,
+																	"behaviorType": "LineOfSight",
+																	"parameters": {
+																		"object": "dialog_trigger",
+																		"image-point": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 957318891598847,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 861542141951948
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 663739721595163
+																},
+																{
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "dialog_trigger",
+																	"sid": 396430945626654,
+																	"parameters": {
+																		"instance-variable": "is_visible_trough_walls"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 376605762270303,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 501382682505622
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 303598137405071
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 316794773019002,
+																	"parameters": {
+																		"value": "0"
+																	}
+																}
+															],
+															"sid": 985955319403775
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 678989766533806
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 708201833908003,
+															"parameters": {
+																"value": "0"
+															}
+														}
+													],
+													"sid": 668159555366072
+												}
+											]
+										}
+									]
+								},
+								{
 									"functionName": "triggers_create_hint",
 									"functionDescription": "",
 									"functionCategory": "#triggers",

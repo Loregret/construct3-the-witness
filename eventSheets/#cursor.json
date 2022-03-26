@@ -404,36 +404,17 @@
 												{
 													"id": "cursor-is-over-object",
 													"objectClass": "Mouse",
-													"sid": 112325223396441,
+													"sid": 825011245431723,
 													"parameters": {
 														"object": "dialog_trigger"
 													}
 												},
 												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 151690234047230,
-													"parameters": {
-														"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
-														"comparison": 0,
-														"second-value": "0"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
+													"id": "pick-topbottom",
 													"objectClass": "dialog_trigger",
-													"sid": 617746693804610,
+													"sid": 368206976931259,
 													"parameters": {
-														"instance-variable": "auto_start"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "dialog_trigger",
-													"sid": 657841319354946,
-													"parameters": {
-														"instance-variable": "active"
+														"which": "top"
 													}
 												}
 											],
@@ -444,70 +425,26 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "has-los-to-object",
-															"objectClass": "Player",
-															"sid": 679000307371279,
-															"behaviorType": "LineOfSight",
-															"parameters": {
-																"object": "dialog_trigger",
-																"image-point": "0"
-															}
-														}
-													],
-													"actions": [],
-													"sid": 210319117614274,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [],
-															"actions": [
-																{
-																	"callFunction": "cursor_get_hint_from_trigger",
-																	"sid": 225859138876892,
-																	"parameters": [
-																		"dialog_trigger.UID"
-																	]
-																}
-															],
-															"sid": 342561543057156
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
+															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 524834914916403
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
-															"sid": 560170994498830,
+															"sid": 343630899820547,
 															"parameters": {
-																"instance-variable": "is_visible_trough_walls"
+																"first-value": "Functions.trigger_dialog_is_available(dialog_trigger.UID)",
+																"comparison": 0,
+																"second-value": "1"
 															}
 														}
 													],
-													"actions": [],
-													"sid": 598340408275653,
-													"children": [
+													"actions": [
 														{
-															"eventType": "block",
-															"conditions": [],
-															"actions": [
-																{
-																	"callFunction": "cursor_get_hint_from_trigger",
-																	"sid": 852880511518899,
-																	"parameters": [
-																		"dialog_trigger.UID"
-																	]
-																}
-															],
-															"sid": 353953625725121
+															"callFunction": "cursor_get_hint_from_trigger",
+															"sid": 442641768339994,
+															"parameters": [
+																"dialog_trigger.UID"
+															]
 														}
-													]
+													],
+													"sid": 685532086862842
 												},
 												{
 													"eventType": "block",
