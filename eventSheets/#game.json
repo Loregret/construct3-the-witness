@@ -140,6 +140,16 @@
 			"sid": 194126107122936
 		},
 		{
+			"eventType": "variable",
+			"name": "settings_show_gun_shells",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 701468230704896
+		},
+		{
 			"eventType": "comment",
 			"text": ">> курсор"
 		},
@@ -2940,22 +2950,23 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "recoil substract"
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 141774760823154,
+					"eventType": "group",
+					"disabled": false,
+					"title": "Weapon - recoil",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "recoil substract"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 635704051843058,
+									"sid": 654184537747910,
 									"parameters": {
 										"variable": "weapon_recoil",
 										"comparison": 4,
@@ -2965,7 +2976,7 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 804316261134004,
+									"sid": 894671981068458,
 									"parameters": {
 										"interval-seconds": "dt * 2"
 									}
@@ -2975,7 +2986,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 769741491549423,
+									"sid": 337220527723503,
 									"parameters": {
 										"variable": "weapon_recoil",
 										"value": "weapon_recoil-1"
@@ -2984,349 +2995,190 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 770992473426770,
+									"sid": 841853511731427,
 									"parameters": {
 										"variable": "weapon_recoil",
 										"value": "clamp(weapon_recoil, 0, 35)"
 									}
 								}
 							],
-							"sid": 837223910521601
-						}
-					]
-				},
-				{
-					"functionName": "weapon_change_to_another",
-					"functionDescription": "",
-					"functionCategory": "#weapon",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "weapon_name",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 325981118386083
-						},
-						{
-							"name": "animation",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 615377527369668
+							"sid": 424393294788245
 						}
 					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 366833831209922,
+					"sid": 971107629648014
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Weapon - main",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "block",
+							"functionName": "weapon_change_to_another",
+							"functionDescription": "",
+							"functionCategory": "#weapon",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "weapon_name",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 325981118386083
+								},
+								{
+									"name": "animation",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 615377527369668
+								}
+							],
+							"eventType": "function-block",
 							"conditions": [],
-							"actions": [
-								{
-									"callFunction": "player_reload_interrupt",
-									"sid": 541104602219933
-								},
-								{
-									"callFunction": "cursor_clear_hint",
-									"sid": 721554924230307
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Player",
-									"sid": 989053410110630,
-									"parameters": {
-										"animation": "animation",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 646374320768116,
-									"parameters": {
-										"variable": "curWeapon",
-										"value": "weapon_name"
-									}
-								}
-							],
-							"sid": 918674202043229
-						}
-					]
-				},
-				{
-					"functionName": "weapon_bullet_recoil",
-					"functionDescription": "",
-					"functionCategory": "#weapon",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "bulletUID",
-							"type": "number",
-							"initialValue": "-1",
-							"comment": "",
-							"sid": 431342626200113
-						},
-						{
-							"name": "weapon",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 487369663037320
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 113578803156203,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "bullet",
-									"sid": 998893404202490,
-									"parameters": {
-										"unique-id": "bulletUID"
-									}
-								}
-							],
 							"actions": [],
-							"sid": 965044673185630,
+							"sid": 776324185780549,
 							"children": [
-								{
-									"eventType": "comment",
-									"text": "movement"
-								},
 								{
 									"eventType": "block",
 									"conditions": [],
-									"actions": [],
-									"sid": 206801743011709,
-									"children": [
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-moving",
-													"objectClass": "Player",
-													"sid": 115944865979254,
-													"behaviorType": "8Direction"
-												},
-												{
-													"id": "compare-speed",
-													"objectClass": "Player",
-													"sid": 494490015338759,
-													"behaviorType": "8Direction",
-													"parameters": {
-														"comparison": 4,
-														"speed": "4"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "add-to-eventvar",
-													"objectClass": "System",
-													"sid": 357552809609336,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"value": "10"
-													}
-												}
-											],
-											"sid": 201945179601099
+											"callFunction": "player_reload_interrupt",
+											"sid": 608770659049406
+										},
+										{
+											"callFunction": "cursor_clear_hint",
+											"sid": 388594881694379
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 439576458348777,
+											"parameters": {
+												"animation": "animation",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 695204259578138,
+											"parameters": {
+												"variable": "curWeapon",
+												"value": "weapon_name"
+											}
 										}
-									]
+									],
+									"sid": 595431617891746
+								}
+							]
+						},
+						{
+							"functionName": "weapon_bullet_recoil",
+							"functionDescription": "",
+							"functionCategory": "#weapon",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "bulletUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 431342626200113
 								},
+								{
+									"name": "weapon",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 487369663037320
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 566355816322600,
+							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 110225808230188,
+											"id": "pick-by-unique-id",
+											"objectClass": "bullet",
+											"sid": 868682228183365,
 											"parameters": {
-												"variable": "weapon",
-												"comparison": 0,
-												"value": "\"pistol\""
+												"unique-id": "bulletUID"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 761115590250179,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 366653038257725,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"comparison": 0,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "camera_shake",
-													"sid": 772493404516259,
-													"parameters": [
-														"0.25",
-														"200"
-													]
-												}
-											],
-											"sid": 473673364391593
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 598575139245117
-												},
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 224400619487786,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"comparison": 3,
-														"value": "10"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-angle",
-													"objectClass": "bullet",
-													"sid": 108107512066188,
-													"parameters": {
-														"angle": "Self.Angle + random(-7,7)"
-													}
-												},
-												{
-													"callFunction": "camera_shake",
-													"sid": 603215416183968,
-													"parameters": [
-														"0.25",
-														"325"
-													]
-												}
-											],
-											"sid": 852197800591904
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 533230930761327
-												},
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 713051886235798,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"comparison": 3,
-														"value": "25"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-angle",
-													"objectClass": "bullet",
-													"sid": 400688741883952,
-													"parameters": {
-														"angle": "Self.Angle + random(-12,12)"
-													}
-												},
-												{
-													"callFunction": "camera_shake",
-													"sid": 637758899055353,
-													"parameters": [
-														"0.25",
-														"380"
-													]
-												}
-											],
-											"sid": 366424758502231
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 270784024689602
-												}
-											],
-											"actions": [
-												{
-													"id": "set-angle",
-													"objectClass": "bullet",
-													"sid": 562004944419174,
-													"parameters": {
-														"angle": "Self.Angle + random(-16,16)"
-													}
-												},
-												{
-													"callFunction": "camera_shake",
-													"sid": 552734765337755,
-													"parameters": [
-														"0.35",
-														"400"
-													]
-												}
-											],
-											"sid": 270069414947936
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 372928584946853
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 289134328100536,
-											"parameters": {
-												"variable": "weapon",
-												"comparison": 0,
-												"value": "\"ak\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 594213823012997,
+									"sid": 510000405199623,
 									"children": [
 										{
 											"eventType": "comment",
-											"text": "recoil"
+											"text": "movement"
 										},
 										{
 											"eventType": "block",
 											"conditions": [],
 											"actions": [],
-											"sid": 171368399810171,
+											"sid": 822421922227641,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-moving",
+															"objectClass": "Player",
+															"sid": 988331964351516,
+															"behaviorType": "8Direction"
+														},
+														{
+															"id": "compare-speed",
+															"objectClass": "Player",
+															"sid": 633610374181003,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"comparison": 4,
+																"speed": "4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 931496173204660,
+															"parameters": {
+																"variable": "weapon_recoil",
+																"value": "10"
+															}
+														}
+													],
+													"sid": 664349479010553
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 256325181137846,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"pistol\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 369948617827420,
 											"children": [
 												{
 													"eventType": "block",
@@ -3334,7 +3186,7 @@
 														{
 															"id": "compare-eventvar",
 															"objectClass": "System",
-															"sid": 200376404483880,
+															"sid": 740408084529213,
 															"parameters": {
 																"variable": "weapon_recoil",
 																"comparison": 0,
@@ -3345,14 +3197,14 @@
 													"actions": [
 														{
 															"callFunction": "camera_shake",
-															"sid": 331491336148835,
+															"sid": 226346667977969,
 															"parameters": [
 																"0.25",
-																"400"
+																"200"
 															]
 														}
 													],
-													"sid": 742209397641448
+													"sid": 205717737556170
 												},
 												{
 													"eventType": "block",
@@ -3360,16 +3212,16 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 952241965016643
+															"sid": 175421033242319
 														},
 														{
 															"id": "compare-eventvar",
 															"objectClass": "System",
-															"sid": 762291526162120,
+															"sid": 520101391270812,
 															"parameters": {
 																"variable": "weapon_recoil",
 																"comparison": 3,
-																"value": "5"
+																"value": "10"
 															}
 														}
 													],
@@ -3377,21 +3229,21 @@
 														{
 															"id": "set-angle",
 															"objectClass": "bullet",
-															"sid": 755467375208215,
+															"sid": 970999124620490,
 															"parameters": {
 																"angle": "Self.Angle + random(-7,7)"
 															}
 														},
 														{
 															"callFunction": "camera_shake",
-															"sid": 701205775384485,
+															"sid": 658704495118832,
 															"parameters": [
 																"0.25",
-																"435"
+																"325"
 															]
 														}
 													],
-													"sid": 101066617570502
+													"sid": 678899809044739
 												},
 												{
 													"eventType": "block",
@@ -3399,51 +3251,12 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 771470259489993
+															"sid": 416032562933027
 														},
 														{
 															"id": "compare-eventvar",
 															"objectClass": "System",
-															"sid": 558114998690980,
-															"parameters": {
-																"variable": "weapon_recoil",
-																"comparison": 3,
-																"value": "15"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-angle",
-															"objectClass": "bullet",
-															"sid": 348396376129046,
-															"parameters": {
-																"angle": "Self.Angle + random(-12,12)"
-															}
-														},
-														{
-															"callFunction": "camera_shake",
-															"sid": 866818117764980,
-															"parameters": [
-																"0.25",
-																"500"
-															]
-														}
-													],
-													"sid": 578562084353703
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 392227679172493
-														},
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 160926466957191,
+															"sid": 251877007872445,
 															"parameters": {
 																"variable": "weapon_recoil",
 																"comparison": 3,
@@ -3455,21 +3268,21 @@
 														{
 															"id": "set-angle",
 															"objectClass": "bullet",
-															"sid": 712660294449768,
+															"sid": 641488527029097,
 															"parameters": {
-																"angle": "Self.Angle + random(-16,16)"
+																"angle": "Self.Angle + random(-12,12)"
 															}
 														},
 														{
 															"callFunction": "camera_shake",
-															"sid": 250415332264961,
+															"sid": 732525910266334,
 															"parameters": [
-																"0.35",
-																"950"
+																"0.25",
+																"380"
 															]
 														}
 													],
-													"sid": 481284734817205
+													"sid": 553731925534568
 												},
 												{
 													"eventType": "block",
@@ -3477,28 +3290,716 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 203880518764310
+															"sid": 835357743121022
 														}
 													],
 													"actions": [
 														{
 															"id": "set-angle",
 															"objectClass": "bullet",
-															"sid": 578872502190446,
+															"sid": 180005289827770,
 															"parameters": {
-																"angle": "Self.Angle + random(-25,25)"
+																"angle": "Self.Angle + random(-16,16)"
 															}
 														},
 														{
 															"callFunction": "camera_shake",
-															"sid": 977883684195140,
+															"sid": 993324868430290,
 															"parameters": [
 																"0.35",
+																"400"
+															]
+														}
+													],
+													"sid": 653688865476433
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 479099229543105
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 913577589687326,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"ak\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 897037815138618,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "recoil"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 550171240347844,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 945137252302390,
+																	"parameters": {
+																		"variable": "weapon_recoil",
+																		"comparison": 0,
+																		"value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "camera_shake",
+																	"sid": 663575378481183,
+																	"parameters": [
+																		"0.25",
+																		"400"
+																	]
+																}
+															],
+															"sid": 574812770795432
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 498651694386668
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 171244577505754,
+																	"parameters": {
+																		"variable": "weapon_recoil",
+																		"comparison": 3,
+																		"value": "5"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-angle",
+																	"objectClass": "bullet",
+																	"sid": 968156334154049,
+																	"parameters": {
+																		"angle": "Self.Angle + random(-7,7)"
+																	}
+																},
+																{
+																	"callFunction": "camera_shake",
+																	"sid": 786738959276236,
+																	"parameters": [
+																		"0.25",
+																		"435"
+																	]
+																}
+															],
+															"sid": 128526435942480
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 399038245880877
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 931210605037457,
+																	"parameters": {
+																		"variable": "weapon_recoil",
+																		"comparison": 3,
+																		"value": "15"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-angle",
+																	"objectClass": "bullet",
+																	"sid": 117748064595941,
+																	"parameters": {
+																		"angle": "Self.Angle + random(-12,12)"
+																	}
+																},
+																{
+																	"callFunction": "camera_shake",
+																	"sid": 420846334336550,
+																	"parameters": [
+																		"0.25",
+																		"500"
+																	]
+																}
+															],
+															"sid": 266653525231581
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 133527470075035
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 550821466187674,
+																	"parameters": {
+																		"variable": "weapon_recoil",
+																		"comparison": 3,
+																		"value": "25"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-angle",
+																	"objectClass": "bullet",
+																	"sid": 722653209557274,
+																	"parameters": {
+																		"angle": "Self.Angle + random(-16,16)"
+																	}
+																},
+																{
+																	"callFunction": "camera_shake",
+																	"sid": 949458685729823,
+																	"parameters": [
+																		"0.35",
+																		"950"
+																	]
+																}
+															],
+															"sid": 993133683847648
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 333946101266064
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-angle",
+																	"objectClass": "bullet",
+																	"sid": 230703566701213,
+																	"parameters": {
+																		"angle": "Self.Angle + random(-25,25)"
+																	}
+																},
+																{
+																	"callFunction": "camera_shake",
+																	"sid": 422316457842114,
+																	"parameters": [
+																		"0.35",
+																		"1000"
+																	]
+																}
+															],
+															"sid": 852667030770604
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 798777644210344
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 778816623910835,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"shotgun\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 951166955315503,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 780755002235635,
+															"parameters": {
+																"variable": "weapon_recoil",
+																"comparison": 0,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "camera_shake",
+															"sid": 329347794792830,
+															"parameters": [
+																"0.3",
+																"550"
+															]
+														}
+													],
+													"sid": 209711773526161
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 276081822443785
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 357673220660545,
+															"parameters": {
+																"variable": "weapon_recoil",
+																"comparison": 3,
+																"value": "10"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-angle",
+															"objectClass": "bullet",
+															"sid": 391388404732015,
+															"parameters": {
+																"angle": "Self.Angle + random(-7,7)"
+															}
+														},
+														{
+															"callFunction": "camera_shake",
+															"sid": 567801264313503,
+															"parameters": [
+																"0.35",
+																"750"
+															]
+														}
+													],
+													"sid": 407245119331919
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 126980972014461
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 484522066187352,
+															"parameters": {
+																"variable": "weapon_recoil",
+																"comparison": 3,
+																"value": "25"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-angle",
+															"objectClass": "bullet",
+															"sid": 488079875238463,
+															"parameters": {
+																"angle": "Self.Angle + random(-12,12)"
+															}
+														},
+														{
+															"callFunction": "camera_shake",
+															"sid": 856643649454257,
+															"parameters": [
+																"0.3",
+																"800"
+															]
+														}
+													],
+													"sid": 881753610862251
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 830967391856147
+														}
+													],
+													"actions": [
+														{
+															"id": "set-angle",
+															"objectClass": "bullet",
+															"sid": 790424511495213,
+															"parameters": {
+																"angle": "Self.Angle + random(-16,16)"
+															}
+														},
+														{
+															"callFunction": "camera_shake",
+															"sid": 770197939447967,
+															"parameters": [
+																"0.3",
 																"1000"
 															]
 														}
 													],
-													"sid": 583200260321626
+													"sid": 966891585000835
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "weapon_shoot",
+							"functionDescription": "",
+							"functionCategory": "#weapon",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "weapon",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 921101813164530
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 874960158733211,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 860437082812151,
+											"parameters": {
+												"variable": "weapon",
+												"comparison": 0,
+												"value": "\"pistol\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 488475112533551,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "main"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 720955875081431,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 566491213992947,
+															"parameters": {
+																"key": "\"pistol_ammo\"",
+																"value": "max(weapon.get(\"pistol_ammo\") - 1, 0)"
+															}
+														},
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 239261918254210,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"11",
+																"2"
+															]
+														},
+														{
+															"id": "start-timer",
+															"objectClass": "Player",
+															"sid": 633553560462047,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "0.35",
+																"type": "once",
+																"tag": "\"pistol\""
+															}
+														}
+													],
+													"sid": 880017060977666
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "audio"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 883611154211634,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 279192468193313,
+															"parameters": {
+																"audio-file": "9mm - fire",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"\""
+															}
+														}
+													],
+													"sid": 821671982110650
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "bullet"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 933977439916924,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 365193794759224,
+															"parameters": {
+																"object": "bullet",
+																"layer": "\"bullets\"",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-angle-toward-position",
+															"objectClass": "bullet",
+															"sid": 915665674451605,
+															"parameters": {
+																"x": "Mouse.X",
+																"y": "Mouse.Y"
+															}
+														},
+														{
+															"callFunction": "weapon_bullet_recoil",
+															"sid": 409094119121650,
+															"parameters": [
+																"bullet.UID",
+																"weapon"
+															]
+														}
+													],
+													"sid": 957480627427420
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "light muzzle"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 977160002102910,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 961004151940324,
+															"parameters": {
+																"object-to-create": "fx_muzzle",
+																"layer": "\"player\"",
+																"x": "Player.ImagePointX(1)",
+																"y": "Player.ImagePointY(1)",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "fx_muzzle",
+															"sid": 883875204479236,
+															"parameters": {
+																"angle": "Player.Angle"
+															}
+														},
+														{
+															"id": "set-size",
+															"objectClass": "fx_muzzle",
+															"sid": 978017743319236,
+															"parameters": {
+																"width": "32",
+																"height": "32"
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "fx_muzzle",
+															"sid": 974168726698850,
+															"parameters": {
+																"opacity": "80"
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "fx_muzzle",
+															"sid": 996522473665183,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "Player",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														}
+													],
+													"sid": 690672785261687,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 791277962955710,
+																	"parameters": {
+																		"object-to-create": "Light",
+																		"layer": "\"light\"",
+																		"x": "fx_muzzle.ImagePointX(1)",
+																		"y": "fx_muzzle.ImagePointY(1)",
+																		"create-hierarchy": false
+																	}
+																},
+																{
+																	"id": "pin-to-object-properties",
+																	"objectClass": "Light",
+																	"sid": 743158922856139,
+																	"behaviorType": "Pin",
+																	"parameters": {
+																		"pin-to": "Player",
+																		"x": true,
+																		"y": true,
+																		"angle": true,
+																		"width-type": "no",
+																		"height-type": "no",
+																		"z": false
+																	}
+																},
+																{
+																	"id": "set-opacity",
+																	"objectClass": "Light",
+																	"sid": 361086092284618,
+																	"parameters": {
+																		"opacity": "0"
+																	}
+																},
+																{
+																	"id": "set-scale",
+																	"objectClass": "Light",
+																	"sid": 255589413138887,
+																	"parameters": {
+																		"scale": "0"
+																	}
+																},
+																{
+																	"id": "tween-one-property",
+																	"objectClass": "Light",
+																	"sid": 903528852324392,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "offsetOpacity",
+																		"end-value": "100",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "yes"
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "Light",
+																	"sid": 427365735254623,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "size",
+																		"end-x": "125",
+																		"end-y": "125",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "yes",
+																		"loop": "no",
+																		"ping-pong": "yes"
+																	}
+																}
+															],
+															"sid": 766274332912405
+														}
+													]
 												}
 											]
 										}
@@ -3510,12 +4011,387 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 385488919794379
+											"sid": 235231304725265
 										},
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 984951347440878,
+											"sid": 614625694128848,
+											"parameters": {
+												"variable": "weapon",
+												"comparison": 0,
+												"value": "\"ak\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 708733875977775,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "main"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 268628174067275,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 286196771003652,
+															"parameters": {
+																"key": "\"ak_ammo\"",
+																"value": "max(weapon.get(\"ak_ammo\") - 1, 0)"
+															}
+														},
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 207034461653191,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"15",
+																"0.5"
+															]
+														},
+														{
+															"id": "start-timer",
+															"objectClass": "Player",
+															"sid": 474456000161190,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "random(0.08,0.1)",
+																"type": "once",
+																"tag": "\"ak\""
+															}
+														}
+													],
+													"sid": 543134724061411
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "audio"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 984419962249540,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 929619230780598,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "choose(\"ak-1\",\"ak-2\")",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 859530240146926,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"tank shot\"",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"\""
+															}
+														}
+													],
+													"sid": 269611455737131
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 373032234755623,
+															"parameters": {
+																"first-value": "random(100)",
+																"comparison": 2,
+																"second-value": "30"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play-at-object-by-name",
+															"objectClass": "Audio",
+															"sid": 794855929159512,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"bullet shell drop\"",
+																"loop": "not-looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "0",
+																"tag-optional": "\"bullet_shell\""
+															}
+														}
+													],
+													"sid": 876521218849968
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "bullet"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 808410217899421,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 686376353331951,
+															"parameters": {
+																"object": "bullet",
+																"layer": "\"bullets\"",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bullet",
+															"sid": 382175528498621,
+															"parameters": {
+																"angle": "Player.Angle"
+															}
+														},
+														{
+															"callFunction": "weapon_bullet_recoil",
+															"sid": 957366973701432,
+															"parameters": [
+																"bullet.UID",
+																"weapon"
+															]
+														},
+														{
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 507756113893298,
+															"parameters": {
+																"variable": "weapon_recoil",
+																"value": "10"
+															}
+														}
+													],
+													"sid": 878887227838893
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "weapon_create_shell",
+															"sid": 610012836625845,
+															"parameters": [
+																"0"
+															]
+														}
+													],
+													"sid": 370309040887425
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "light muzzle"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 128760999644029,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 148438585648169,
+															"parameters": {
+																"object-to-create": "fx_muzzle",
+																"layer": "\"player\"",
+																"x": "Player.ImagePointX(1)",
+																"y": "Player.ImagePointY(1)",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "fx_muzzle",
+															"sid": 247929290690147,
+															"parameters": {
+																"angle": "Player.Angle"
+															}
+														},
+														{
+															"id": "set-size",
+															"objectClass": "fx_muzzle",
+															"sid": 310673961876387,
+															"parameters": {
+																"width": "32",
+																"height": "32"
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "fx_muzzle",
+															"sid": 212135985624213,
+															"parameters": {
+																"opacity": "80"
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "fx_muzzle",
+															"sid": 385035745962796,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "Player",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														}
+													],
+													"sid": 343494030899865,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 238556400559317,
+																	"parameters": {
+																		"object-to-create": "Light",
+																		"layer": "\"light\"",
+																		"x": "fx_muzzle.ImagePointX(1)",
+																		"y": "fx_muzzle.ImagePointY(1)",
+																		"create-hierarchy": false
+																	}
+																},
+																{
+																	"id": "pin-to-object-properties",
+																	"objectClass": "Light",
+																	"sid": 998536370114994,
+																	"behaviorType": "Pin",
+																	"parameters": {
+																		"pin-to": "Player",
+																		"x": true,
+																		"y": true,
+																		"angle": true,
+																		"width-type": "no",
+																		"height-type": "no",
+																		"z": false
+																	}
+																},
+																{
+																	"id": "set-opacity",
+																	"objectClass": "Light",
+																	"sid": 406586919095347,
+																	"parameters": {
+																		"opacity": "0"
+																	}
+																},
+																{
+																	"id": "set-scale",
+																	"objectClass": "Light",
+																	"sid": 156535422193613,
+																	"parameters": {
+																		"scale": "0"
+																	}
+																},
+																{
+																	"id": "tween-one-property",
+																	"objectClass": "Light",
+																	"sid": 375409801411148,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "offsetOpacity",
+																		"end-value": "100",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "yes"
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "Light",
+																	"sid": 928908250866054,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "size",
+																		"end-x": "125",
+																		"end-y": "125",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "yes",
+																		"loop": "no",
+																		"ping-pong": "yes"
+																	}
+																}
+															],
+															"sid": 399193496084387
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 172169387752133
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 167001645600740,
 											"parameters": {
 												"variable": "weapon",
 												"comparison": 0,
@@ -3524,511 +4400,601 @@
 										}
 									],
 									"actions": [],
-									"sid": 136265447985261,
+									"sid": 306089157848988,
 									"children": [
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 421958880468101,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"comparison": 0,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "camera_shake",
-													"sid": 800880556734084,
-													"parameters": [
-														"0.3",
-														"550"
-													]
-												}
-											],
-											"sid": 308265047620842
+											"eventType": "comment",
+											"text": "main"
 										},
 										{
 											"eventType": "block",
-											"conditions": [
+											"conditions": [],
+											"actions": [],
+											"sid": 245521193834511,
+											"children": [
 												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 428908845183159
-												},
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 519425738611279,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"comparison": 3,
-														"value": "10"
-													}
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 342530653058651,
+															"parameters": {
+																"key": "\"shotgun_ammo\"",
+																"value": "max(weapon.get(\"shotgun_ammo\") - 1, 0)"
+															}
+														},
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 912562127940937,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"13",
+																"2"
+															]
+														},
+														{
+															"id": "start-timer",
+															"objectClass": "Player",
+															"sid": 101838956609580,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "0.125",
+																"type": "once",
+																"tag": "\"shotgun\""
+															}
+														}
+													],
+													"sid": 172622225098023
 												}
-											],
-											"actions": [
-												{
-													"id": "set-angle",
-													"objectClass": "bullet",
-													"sid": 990943562728947,
-													"parameters": {
-														"angle": "Self.Angle + random(-7,7)"
-													}
-												},
-												{
-													"callFunction": "camera_shake",
-													"sid": 539636060202770,
-													"parameters": [
-														"0.35",
-														"750"
-													]
-												}
-											],
-											"sid": 699474515003241
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "audio"
 										},
 										{
 											"eventType": "block",
-											"conditions": [
+											"conditions": [],
+											"actions": [],
+											"sid": 197139104415059,
+											"children": [
 												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 252933677217341
-												},
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 699104357178718,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"comparison": 3,
-														"value": "25"
-													}
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 250156539386316,
+															"parameters": {
+																"audio-file": "shotgun 3",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"shotgun\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 350609954352996,
+															"parameters": {
+																"audio-file": "shotgun",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"shotgun\""
+															}
+														}
+													],
+													"sid": 621264231122788
 												}
-											],
-											"actions": [
-												{
-													"id": "set-angle",
-													"objectClass": "bullet",
-													"sid": 574292713266917,
-													"parameters": {
-														"angle": "Self.Angle + random(-12,12)"
-													}
-												},
-												{
-													"callFunction": "camera_shake",
-													"sid": 351473162239127,
-													"parameters": [
-														"0.3",
-														"800"
-													]
-												}
-											],
-											"sid": 111034900342413
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "bullet"
 										},
 										{
 											"eventType": "block",
-											"conditions": [
+											"conditions": [],
+											"actions": [],
+											"sid": 702307512880849,
+											"children": [
 												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 312544750994984
-												}
-											],
-											"actions": [
-												{
-													"id": "set-angle",
-													"objectClass": "bullet",
-													"sid": 568377626417875,
-													"parameters": {
-														"angle": "Self.Angle + random(-16,16)"
-													}
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 642315575675983,
+															"parameters": {
+																"object": "bullet",
+																"layer": "\"bullets\"",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-distance-travelled",
+															"objectClass": "bullet",
+															"sid": 669879045515959,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"distance": "1300"
+															}
+														},
+														{
+															"id": "set-angle-toward-position",
+															"objectClass": "bullet",
+															"sid": 934302588736798,
+															"parameters": {
+																"x": "Mouse.X",
+																"y": "Mouse.Y\n"
+															}
+														},
+														{
+															"id": "set-width",
+															"objectClass": "bullet",
+															"sid": 754141007340499,
+															"parameters": {
+																"width": "8"
+															}
+														},
+														{
+															"callFunction": "weapon_bullet_recoil",
+															"sid": 226289532270980,
+															"parameters": [
+																"bullet.UID",
+																"weapon"
+															]
+														}
+													],
+													"sid": 227145592386080
 												},
 												{
-													"callFunction": "camera_shake",
-													"sid": 878256482014819,
-													"parameters": [
-														"0.3",
-														"1000"
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 820458558777301,
+															"parameters": {
+																"object": "bullet",
+																"layer": "\"bullets\"",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-distance-travelled",
+															"objectClass": "bullet",
+															"sid": 269317414573387,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"distance": "1300"
+															}
+														},
+														{
+															"id": "set-angle-toward-position",
+															"objectClass": "bullet",
+															"sid": 891848975834932,
+															"parameters": {
+																"x": "Mouse.X - 30",
+																"y": "Mouse.Y - 30\n"
+															}
+														},
+														{
+															"id": "set-width",
+															"objectClass": "bullet",
+															"sid": 652849595992420,
+															"parameters": {
+																"width": "8"
+															}
+														},
+														{
+															"callFunction": "weapon_bullet_recoil",
+															"sid": 662209050098244,
+															"parameters": [
+																"bullet.UID",
+																"weapon"
+															]
+														}
+													],
+													"sid": 191807719890674
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 506671517499662,
+															"parameters": {
+																"object": "bullet",
+																"layer": "\"bullets\"",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-distance-travelled",
+															"objectClass": "bullet",
+															"sid": 641436898768920,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"distance": "1300"
+															}
+														},
+														{
+															"id": "set-angle-toward-position",
+															"objectClass": "bullet",
+															"sid": 739389481979154,
+															"parameters": {
+																"x": "Mouse.X + 30",
+																"y": "Mouse.Y + 30\n"
+															}
+														},
+														{
+															"id": "set-width",
+															"objectClass": "bullet",
+															"sid": 422575994042276,
+															"parameters": {
+																"width": "8"
+															}
+														},
+														{
+															"callFunction": "weapon_bullet_recoil",
+															"sid": 596052732259950,
+															"parameters": [
+																"bullet.UID",
+																"weapon"
+															]
+														}
+													],
+													"sid": 669581004386467
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 558054858237871,
+															"parameters": {
+																"variable": "weapon_recoil",
+																"value": "35"
+															}
+														}
+													],
+													"sid": 687252858496983
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 185100477319307
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "light muzzle"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 257914855158044,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 451241628793708,
+															"parameters": {
+																"object-to-create": "fx_muzzle",
+																"layer": "\"player\"",
+																"x": "Player.ImagePointX(1)",
+																"y": "Player.ImagePointY(1)",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "fx_muzzle",
+															"sid": 173534133500613,
+															"parameters": {
+																"angle": "Player.Angle"
+															}
+														},
+														{
+															"id": "set-size",
+															"objectClass": "fx_muzzle",
+															"sid": 757347220689902,
+															"parameters": {
+																"width": "90",
+																"height": "90"
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "fx_muzzle",
+															"sid": 109456527581002,
+															"parameters": {
+																"opacity": "80"
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "fx_muzzle",
+															"sid": 508237426091702,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "Player",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														}
+													],
+													"sid": 705787537128131,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 193981906211447,
+																	"parameters": {
+																		"object-to-create": "Light",
+																		"layer": "\"light\"",
+																		"x": "fx_muzzle.ImagePointX(1)",
+																		"y": "fx_muzzle.ImagePointY(1)",
+																		"create-hierarchy": false
+																	}
+																},
+																{
+																	"id": "pin-to-object-properties",
+																	"objectClass": "Light",
+																	"sid": 879392733991341,
+																	"behaviorType": "Pin",
+																	"parameters": {
+																		"pin-to": "Player",
+																		"x": true,
+																		"y": true,
+																		"angle": true,
+																		"width-type": "no",
+																		"height-type": "no",
+																		"z": false
+																	}
+																},
+																{
+																	"id": "set-opacity",
+																	"objectClass": "Light",
+																	"sid": 274656385199468,
+																	"parameters": {
+																		"opacity": "0"
+																	}
+																},
+																{
+																	"id": "set-scale",
+																	"objectClass": "Light",
+																	"sid": 636447854731713,
+																	"parameters": {
+																		"scale": "0"
+																	}
+																},
+																{
+																	"id": "tween-one-property",
+																	"objectClass": "Light",
+																	"sid": 384373321257521,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "offsetOpacity",
+																		"end-value": "100",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "yes"
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "Light",
+																	"sid": 972275437583200,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "size",
+																		"end-x": "125",
+																		"end-y": "125",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "yes",
+																		"loop": "no",
+																		"ping-pong": "yes"
+																	}
+																}
+															],
+															"sid": 711482810655683
+														}
 													]
 												}
-											],
-											"sid": 247395973287810
+											]
 										}
 									]
 								}
 							]
 						}
-					]
+					],
+					"sid": 980201750296682
 				},
 				{
-					"functionName": "weapon_shoot",
-					"functionDescription": "",
-					"functionCategory": "#weapon",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "weapon",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 921101813164530
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 820468726463312,
+					"eventType": "group",
+					"disabled": false,
+					"title": "Weapon - shells",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "block",
+							"functionName": "weapon_create_shell",
+							"functionDescription": "",
+							"functionCategory": "#weapon",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "anim_frame",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 753245667830078
+								}
+							],
+							"eventType": "function-block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 182453621816327,
+									"sid": 292999270781327,
 									"parameters": {
-										"variable": "weapon",
-										"comparison": 0,
-										"value": "\"pistol\""
+										"variable": "settings_show_gun_shells"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 809802105634862,
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 584955939731195,
+									"parameters": {
+										"object": "gilza",
+										"layer": "\"items\"",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 601219315927108,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "main"
-								},
-								{
 									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 561964706652139,
-									"children": [
+									"conditions": [
 										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-key",
-													"objectClass": "weapon",
-													"sid": 888355990038157,
-													"parameters": {
-														"key": "\"pistol_ammo\"",
-														"value": "max(weapon.get(\"pistol_ammo\") - 1, 0)"
-													}
-												},
-												{
-													"callFunction": "create_audio_trigger",
-													"sid": 658464412417440,
-													"parameters": [
-														"Player.ImagePointX(1)",
-														"Player.ImagePointY(1)",
-														"11",
-														"2"
-													]
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "Player",
-													"sid": 176070067392325,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "0.35",
-														"type": "once",
-														"tag": "\"pistol\""
-													}
-												}
-											],
-											"sid": 282547746008154
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 100883903494242,
+											"parameters": {
+												"first-value": "anim_frame",
+												"comparison": 0,
+												"second-value": "0"
+											}
 										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "audio"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 785433260366938,
-									"children": [
+									],
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 370138411626683,
-													"parameters": {
-														"audio-file": "9mm - fire",
-														"loop": "not-looping",
-														"volume": "0",
-														"tag-optional": "\"\""
-													}
-												}
-											],
-											"sid": 921592718583134
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "bullet"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 417657802100067,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 951715337644821,
-													"parameters": {
-														"object": "bullet",
-														"layer": "\"bullets\"",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle-toward-position",
-													"objectClass": "bullet",
-													"sid": 423851170754314,
-													"parameters": {
-														"x": "Mouse.X",
-														"y": "Mouse.Y"
-													}
-												},
-												{
-													"callFunction": "weapon_bullet_recoil",
-													"sid": 818443856947399,
-													"parameters": [
-														"bullet.UID",
-														"weapon"
-													]
-												}
-											],
-											"sid": 120739518204020
+											"id": "set-angle",
+											"objectClass": "gilza",
+											"sid": 746474455461591,
+											"parameters": {
+												"angle": "Player.Angle + 90"
+											}
 										},
 										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 586473791844551,
-													"parameters": {
-														"object": "gilza",
-														"layer": "\"items\"",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "gilza",
-													"sid": 140789153035543,
-													"parameters": {
-														"angle": "Player.Angle + 90"
-													}
-												},
-												{
-													"id": "set-speed",
-													"objectClass": "gilza",
-													"sid": 785038679355285,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"speed": "800"
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "gilza",
-													"sid": 182130422703771,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "random(0.015,  0.03)",
-														"type": "once",
-														"tag": "\"bullet\""
-													}
-												}
-											],
-											"sid": 523500660071422
+											"id": "set-animation-frame",
+											"objectClass": "gilza",
+											"sid": 444505662740839,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "gilza",
+											"sid": 413953762687908,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "random(650,800)"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "gilza",
+											"sid": 556165559801227,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "random(0.01,  0.04)",
+												"type": "once",
+												"tag": "\"bullet\""
+											}
 										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "light muzzle"
+									],
+									"sid": 598452581439915
 								},
 								{
 									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 961371657344327,
-									"children": [
+									"conditions": [
 										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "create-object",
-													"objectClass": "System",
-													"sid": 535336793947146,
-													"parameters": {
-														"object-to-create": "fx_muzzle",
-														"layer": "\"player\"",
-														"x": "Player.ImagePointX(1)",
-														"y": "Player.ImagePointY(1)",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "fx_muzzle",
-													"sid": 770447530366544,
-													"parameters": {
-														"angle": "Player.Angle"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "fx_muzzle",
-													"sid": 172670836669029,
-													"parameters": {
-														"width": "32",
-														"height": "32"
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "fx_muzzle",
-													"sid": 492851643479665,
-													"parameters": {
-														"opacity": "80"
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "fx_muzzle",
-													"sid": 664069179366354,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "Player",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
-												}
-											],
-											"sid": 147451888485967,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "create-object",
-															"objectClass": "System",
-															"sid": 545869249502464,
-															"parameters": {
-																"object-to-create": "Light",
-																"layer": "\"light\"",
-																"x": "fx_muzzle.ImagePointX(1)",
-																"y": "fx_muzzle.ImagePointY(1)",
-																"create-hierarchy": false
-															}
-														},
-														{
-															"id": "pin-to-object-properties",
-															"objectClass": "Light",
-															"sid": 380016677804068,
-															"behaviorType": "Pin",
-															"parameters": {
-																"pin-to": "Player",
-																"x": true,
-																"y": true,
-																"angle": true,
-																"width-type": "no",
-																"height-type": "no",
-																"z": false
-															}
-														},
-														{
-															"id": "set-opacity",
-															"objectClass": "Light",
-															"sid": 260928409776552,
-															"parameters": {
-																"opacity": "0"
-															}
-														},
-														{
-															"id": "set-scale",
-															"objectClass": "Light",
-															"sid": 621178717796854,
-															"parameters": {
-																"scale": "0"
-															}
-														},
-														{
-															"id": "tween-one-property",
-															"objectClass": "Light",
-															"sid": 156849236833505,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "offsetOpacity",
-																"end-value": "100",
-																"time": "0.1",
-																"ease": "default",
-																"destroy-on-complete": "no",
-																"loop": "no",
-																"ping-pong": "yes"
-															}
-														},
-														{
-															"id": "tween-two-properties",
-															"objectClass": "Light",
-															"sid": 345261908458094,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "size",
-																"end-x": "125",
-																"end-y": "125",
-																"time": "0.1",
-																"ease": "default",
-																"destroy-on-complete": "yes",
-																"loop": "no",
-																"ping-pong": "yes"
-															}
-														}
-													],
-													"sid": 135551503038894
-												}
-											]
+											"id": "else",
+											"objectClass": "System",
+											"sid": 847601977814368
 										}
-									]
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "gilza",
+											"sid": 569526124647224,
+											"parameters": {
+												"angle": "Player.Angle + 90"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "gilza",
+											"sid": 723549208785353,
+											"parameters": {
+												"frame-number": "1"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "gilza",
+											"sid": 861283952302283,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "400"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "gilza",
+											"sid": 182975447570307,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "random(0.02,  0.08)",
+												"type": "once",
+												"tag": "\"shell\""
+											}
+										}
+									],
+									"sid": 460252153278769
 								}
 							]
 						},
@@ -4036,994 +5002,119 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 177450555507906
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 522664941360982,
+									"id": "on-timer",
+									"objectClass": "gilza",
+									"sid": 202001961077296,
+									"behaviorType": "Timer",
 									"parameters": {
-										"variable": "weapon",
-										"comparison": 0,
-										"value": "\"ak\""
+										"tag": "\"shell\""
 									}
 								}
 							],
-							"actions": [],
-							"sid": 842772468592975,
-							"children": [
+							"actions": [
 								{
-									"eventType": "comment",
-									"text": "main"
+									"id": "set-enabled",
+									"objectClass": "gilza",
+									"sid": 626110631136455,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "disabled"
+									}
 								},
 								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 470269174004502,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-key",
-													"objectClass": "weapon",
-													"sid": 759068817550779,
-													"parameters": {
-														"key": "\"ak_ammo\"",
-														"value": "max(weapon.get(\"ak_ammo\") - 1, 0)"
-													}
-												},
-												{
-													"callFunction": "create_audio_trigger",
-													"sid": 454068027043015,
-													"parameters": [
-														"Player.ImagePointX(1)",
-														"Player.ImagePointY(1)",
-														"15",
-														"0.5"
-													]
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "Player",
-													"sid": 787593104327755,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "random(0.08,0.1)",
-														"type": "once",
-														"tag": "\"ak\""
-													}
-												}
-											],
-											"sid": 499774095496686
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "audio"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 649281848995654,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 144575126025017,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "choose(\"ak-1\",\"ak-2\")",
-														"loop": "not-looping",
-														"volume": "0",
-														"tag-optional": "\"\""
-													}
-												},
-												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 942463389579332,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"tank shot\"",
-														"loop": "not-looping",
-														"volume": "0",
-														"tag-optional": "\"\""
-													}
-												}
-											],
-											"sid": 557008959224363
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 874773472212927,
-													"parameters": {
-														"first-value": "random(100)",
-														"comparison": 2,
-														"second-value": "30"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "play-at-object-by-name",
-													"objectClass": "Audio",
-													"sid": 182966785910091,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"bullet shell drop\"",
-														"loop": "not-looping",
-														"volume": "0",
-														"object": "Player",
-														"inner-angle": "360",
-														"outer-angle": "360",
-														"outer-gain": "0",
-														"tag-optional": "\"bullet_shell\""
-													}
-												}
-											],
-											"sid": 645622013698121
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "bullet"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 362163663238973,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 423115184869237,
-													"parameters": {
-														"object": "bullet",
-														"layer": "\"bullets\"",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "bullet",
-													"sid": 497803636857254,
-													"parameters": {
-														"angle": "Player.Angle"
-													}
-												},
-												{
-													"callFunction": "weapon_bullet_recoil",
-													"sid": 401758062796289,
-													"parameters": [
-														"bullet.UID",
-														"weapon"
-													]
-												},
-												{
-													"id": "add-to-eventvar",
-													"objectClass": "System",
-													"sid": 388699587151158,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"value": "10"
-													}
-												}
-											],
-											"sid": 596758143308455
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 619502058247739,
-													"parameters": {
-														"object": "gilza",
-														"layer": "\"items\"",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "gilza",
-													"sid": 381475149650826,
-													"parameters": {
-														"angle": "Player.Angle + 90"
-													}
-												},
-												{
-													"id": "set-speed",
-													"objectClass": "gilza",
-													"sid": 277596071085744,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"speed": "random(650,800)"
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "gilza",
-													"sid": 208044840635780,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "random(0.01,  0.04)",
-														"type": "once",
-														"tag": "\"bullet\""
-													}
-												}
-											],
-											"sid": 207072694534933
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "light muzzle"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 515438535563556,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "create-object",
-													"objectClass": "System",
-													"sid": 177964018934613,
-													"parameters": {
-														"object-to-create": "fx_muzzle",
-														"layer": "\"player\"",
-														"x": "Player.ImagePointX(1)",
-														"y": "Player.ImagePointY(1)",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "fx_muzzle",
-													"sid": 344511849990462,
-													"parameters": {
-														"angle": "Player.Angle"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "fx_muzzle",
-													"sid": 959696583576350,
-													"parameters": {
-														"width": "32",
-														"height": "32"
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "fx_muzzle",
-													"sid": 313403484788587,
-													"parameters": {
-														"opacity": "80"
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "fx_muzzle",
-													"sid": 476898788012016,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "Player",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
-												}
-											],
-											"sid": 286898461202690,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "create-object",
-															"objectClass": "System",
-															"sid": 128469768124466,
-															"parameters": {
-																"object-to-create": "Light",
-																"layer": "\"light\"",
-																"x": "fx_muzzle.ImagePointX(1)",
-																"y": "fx_muzzle.ImagePointY(1)",
-																"create-hierarchy": false
-															}
-														},
-														{
-															"id": "pin-to-object-properties",
-															"objectClass": "Light",
-															"sid": 727904632348136,
-															"behaviorType": "Pin",
-															"parameters": {
-																"pin-to": "Player",
-																"x": true,
-																"y": true,
-																"angle": true,
-																"width-type": "no",
-																"height-type": "no",
-																"z": false
-															}
-														},
-														{
-															"id": "set-opacity",
-															"objectClass": "Light",
-															"sid": 181913688527228,
-															"parameters": {
-																"opacity": "0"
-															}
-														},
-														{
-															"id": "set-scale",
-															"objectClass": "Light",
-															"sid": 515996576101962,
-															"parameters": {
-																"scale": "0"
-															}
-														},
-														{
-															"id": "tween-one-property",
-															"objectClass": "Light",
-															"sid": 750483567277805,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "offsetOpacity",
-																"end-value": "100",
-																"time": "0.1",
-																"ease": "default",
-																"destroy-on-complete": "no",
-																"loop": "no",
-																"ping-pong": "yes"
-															}
-														},
-														{
-															"id": "tween-two-properties",
-															"objectClass": "Light",
-															"sid": 477402841030453,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "size",
-																"end-x": "125",
-																"end-y": "125",
-																"time": "0.1",
-																"ease": "default",
-																"destroy-on-complete": "yes",
-																"loop": "no",
-																"ping-pong": "yes"
-															}
-														}
-													],
-													"sid": 480091908759058
-												}
-											]
-										}
-									]
+									"id": "set-angle",
+									"objectClass": "gilza",
+									"sid": 281373284187647,
+									"parameters": {
+										"angle": "Self.Angle + random(-45,45)"
+									}
 								}
-							]
+							],
+							"sid": 883443408160063
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 221581557139199
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 996486820872571,
+									"id": "on-timer",
+									"objectClass": "gilza",
+									"sid": 997024777319405,
+									"behaviorType": "Timer",
 									"parameters": {
-										"variable": "weapon",
-										"comparison": 0,
-										"value": "\"shotgun\""
+										"tag": "\"bullet\""
 									}
 								}
 							],
-							"actions": [],
-							"sid": 748503421590885,
-							"children": [
+							"actions": [
 								{
-									"eventType": "comment",
-									"text": "main"
+									"id": "set-enabled",
+									"objectClass": "gilza",
+									"sid": 331582552310987,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "disabled"
+									}
 								},
 								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 272278208513147,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-key",
-													"objectClass": "weapon",
-													"sid": 470524553266852,
-													"parameters": {
-														"key": "\"shotgun_ammo\"",
-														"value": "max(weapon.get(\"shotgun_ammo\") - 1, 0)"
-													}
-												},
-												{
-													"callFunction": "create_audio_trigger",
-													"sid": 336063285755692,
-													"parameters": [
-														"Player.ImagePointX(1)",
-														"Player.ImagePointY(1)",
-														"13",
-														"2"
-													]
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "Player",
-													"sid": 884792029789647,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "0.125",
-														"type": "once",
-														"tag": "\"shotgun\""
-													}
-												}
-											],
-											"sid": 463273797341079
-										}
-									]
+									"id": "set-scale",
+									"objectClass": "gilza",
+									"sid": 933418558148543,
+									"parameters": {
+										"scale": "random(0.5,0.6)"
+									}
 								},
 								{
-									"eventType": "comment",
-									"text": "audio"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 646724239153141,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 540277011641317,
-													"parameters": {
-														"audio-file": "shotgun 3",
-														"loop": "not-looping",
-														"volume": "0",
-														"tag-optional": "\"shotgun\""
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 190952491489478,
-													"parameters": {
-														"audio-file": "shotgun",
-														"loop": "not-looping",
-														"volume": "0",
-														"tag-optional": "\"shotgun\""
-													}
-												}
-											],
-											"sid": 285836878435933
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "bullet"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 572815026189914,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 409142775257888,
-													"parameters": {
-														"object": "bullet",
-														"layer": "\"bullets\"",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-distance-travelled",
-													"objectClass": "bullet",
-													"sid": 762717407672054,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"distance": "1300"
-													}
-												},
-												{
-													"id": "set-angle-toward-position",
-													"objectClass": "bullet",
-													"sid": 263482295639613,
-													"parameters": {
-														"x": "Mouse.X",
-														"y": "Mouse.Y\n"
-													}
-												},
-												{
-													"id": "set-width",
-													"objectClass": "bullet",
-													"sid": 192121097229417,
-													"parameters": {
-														"width": "8"
-													}
-												},
-												{
-													"callFunction": "weapon_bullet_recoil",
-													"sid": 833989192102817,
-													"parameters": [
-														"bullet.UID",
-														"weapon"
-													]
-												}
-											],
-											"sid": 712101041280019
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 155112311369952,
-													"parameters": {
-														"object": "bullet",
-														"layer": "\"bullets\"",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-distance-travelled",
-													"objectClass": "bullet",
-													"sid": 337556912665133,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"distance": "1300"
-													}
-												},
-												{
-													"id": "set-angle-toward-position",
-													"objectClass": "bullet",
-													"sid": 714900711404345,
-													"parameters": {
-														"x": "Mouse.X - 30",
-														"y": "Mouse.Y - 30\n"
-													}
-												},
-												{
-													"id": "set-width",
-													"objectClass": "bullet",
-													"sid": 299423379190390,
-													"parameters": {
-														"width": "8"
-													}
-												},
-												{
-													"callFunction": "weapon_bullet_recoil",
-													"sid": 975338081206791,
-													"parameters": [
-														"bullet.UID",
-														"weapon"
-													]
-												}
-											],
-											"sid": 257699651463235
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 469408429535231,
-													"parameters": {
-														"object": "bullet",
-														"layer": "\"bullets\"",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-distance-travelled",
-													"objectClass": "bullet",
-													"sid": 284709932454679,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"distance": "1300"
-													}
-												},
-												{
-													"id": "set-angle-toward-position",
-													"objectClass": "bullet",
-													"sid": 906292270721296,
-													"parameters": {
-														"x": "Mouse.X + 30",
-														"y": "Mouse.Y + 30\n"
-													}
-												},
-												{
-													"id": "set-width",
-													"objectClass": "bullet",
-													"sid": 308083267924456,
-													"parameters": {
-														"width": "8"
-													}
-												},
-												{
-													"callFunction": "weapon_bullet_recoil",
-													"sid": 316193064859335,
-													"parameters": [
-														"bullet.UID",
-														"weapon"
-													]
-												}
-											],
-											"sid": 873161093262237
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "add-to-eventvar",
-													"objectClass": "System",
-													"sid": 212969045553625,
-													"parameters": {
-														"variable": "weapon_recoil",
-														"value": "35"
-													}
-												}
-											],
-											"sid": 427327196813312
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 847639784253716,
-													"parameters": {
-														"object": "gilza",
-														"layer": "\"items\"",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "gilza",
-													"sid": 179456632788303,
-													"parameters": {
-														"angle": "Player.Angle + 90"
-													}
-												},
-												{
-													"id": "set-speed",
-													"objectClass": "gilza",
-													"sid": 835967170441319,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"speed": "random(650,800)"
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "gilza",
-													"sid": 662422153161895,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "random(0.01,  0.04)",
-														"type": "once",
-														"tag": "\"shell\""
-													}
-												},
-												{
-													"id": "set-animation-frame",
-													"objectClass": "gilza",
-													"sid": 832844837471216,
-													"parameters": {
-														"frame-number": "1"
-													}
-												}
-											],
-											"sid": 452449628893021
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "light muzzle"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 571601604174783,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "create-object",
-													"objectClass": "System",
-													"sid": 762123253615145,
-													"parameters": {
-														"object-to-create": "fx_muzzle",
-														"layer": "\"player\"",
-														"x": "Player.ImagePointX(1)",
-														"y": "Player.ImagePointY(1)",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "fx_muzzle",
-													"sid": 333727884350966,
-													"parameters": {
-														"angle": "Player.Angle"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "fx_muzzle",
-													"sid": 165124794565494,
-													"parameters": {
-														"width": "90",
-														"height": "90"
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "fx_muzzle",
-													"sid": 122104361557836,
-													"parameters": {
-														"opacity": "80"
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "fx_muzzle",
-													"sid": 916526640401551,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "Player",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
-												}
-											],
-											"sid": 535801157614838,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "create-object",
-															"objectClass": "System",
-															"sid": 392395646499146,
-															"parameters": {
-																"object-to-create": "Light",
-																"layer": "\"light\"",
-																"x": "fx_muzzle.ImagePointX(1)",
-																"y": "fx_muzzle.ImagePointY(1)",
-																"create-hierarchy": false
-															}
-														},
-														{
-															"id": "pin-to-object-properties",
-															"objectClass": "Light",
-															"sid": 744802445730722,
-															"behaviorType": "Pin",
-															"parameters": {
-																"pin-to": "Player",
-																"x": true,
-																"y": true,
-																"angle": true,
-																"width-type": "no",
-																"height-type": "no",
-																"z": false
-															}
-														},
-														{
-															"id": "set-opacity",
-															"objectClass": "Light",
-															"sid": 861915824260373,
-															"parameters": {
-																"opacity": "0"
-															}
-														},
-														{
-															"id": "set-scale",
-															"objectClass": "Light",
-															"sid": 361845161756019,
-															"parameters": {
-																"scale": "0"
-															}
-														},
-														{
-															"id": "tween-one-property",
-															"objectClass": "Light",
-															"sid": 872846467123291,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "offsetOpacity",
-																"end-value": "100",
-																"time": "0.1",
-																"ease": "default",
-																"destroy-on-complete": "no",
-																"loop": "no",
-																"ping-pong": "yes"
-															}
-														},
-														{
-															"id": "tween-two-properties",
-															"objectClass": "Light",
-															"sid": 304247531786903,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "size",
-																"end-x": "125",
-																"end-y": "125",
-																"time": "0.1",
-																"ease": "default",
-																"destroy-on-complete": "yes",
-																"loop": "no",
-																"ping-pong": "yes"
-															}
-														}
-													],
-													"sid": 884251908006578
-												}
-											]
-										}
-									]
+									"id": "set-angle",
+									"objectClass": "gilza",
+									"sid": 824955789946240,
+									"parameters": {
+										"angle": "Self.Angle + random(-45,45)"
+									}
 								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "gilza",
-							"sid": 769104545203595,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"shell\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-enabled",
-							"objectClass": "gilza",
-							"sid": 627555905665797,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"state": "disabled"
-							}
+							],
+							"sid": 400137655671069
 						},
 						{
-							"id": "set-angle",
-							"objectClass": "gilza",
-							"sid": 425650705117707,
-							"parameters": {
-								"angle": "Self.Angle + random(-45,45)"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "gilza",
+									"sid": 615077418330938
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 891927310827143,
+									"parameters": {
+										"variable": "settings_low_graphics"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-fade-out-time",
+									"objectClass": "gilza",
+									"sid": 568884841251880,
+									"behaviorType": "Fade",
+									"parameters": {
+										"fade-out-time": "5"
+									}
+								},
+								{
+									"id": "set-wait-time",
+									"objectClass": "gilza",
+									"sid": 868824563637844,
+									"behaviorType": "Fade",
+									"parameters": {
+										"wait-time": "22"
+									}
+								}
+							],
+							"sid": 738113442389387
 						}
 					],
-					"sid": 356823947660078
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "gilza",
-							"sid": 746610522824378,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"bullet\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-enabled",
-							"objectClass": "gilza",
-							"sid": 452383188238638,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "gilza",
-							"sid": 868974925253097,
-							"parameters": {
-								"scale": "random(0.5,0.6)"
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "gilza",
-							"sid": 415903208260086,
-							"parameters": {
-								"angle": "Self.Angle + random(-45,45)"
-							}
-						}
-					],
-					"sid": 995056897031207
+					"sid": 585007690670740
 				}
 			],
 			"sid": 570918614215341

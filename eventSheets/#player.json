@@ -240,6 +240,36 @@
 														"type": "once",
 														"tag": "\"reload_finish\""
 													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 813942223839726,
+													"parameters": {
+														"seconds": "0.125"
+													}
+												},
+												{
+													"callFunction": "weapon_create_shell",
+													"sid": 410469418895961,
+													"parameters": [
+														"1"
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 419388253914059,
+													"parameters": {
+														"seconds": "0.27"
+													}
+												},
+												{
+													"callFunction": "weapon_create_shell",
+													"sid": 994828818639450,
+													"parameters": [
+														"1"
+													]
 												}
 											],
 											"sid": 944640656334370
