@@ -2,7 +2,7 @@
 	"name": "resource",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "resource",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
@@ -330,7 +330,7 @@
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 16,
@@ -399,7 +399,7 @@
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 30,
@@ -562,7 +562,7 @@
 						"initially-visible": true,
 						"initial-animation": "Animation 2",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 185,
@@ -591,7 +591,7 @@
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 186,
@@ -778,7 +778,7 @@
 						"initially-visible": true,
 						"initial-animation": "pistol",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 348,
@@ -796,8 +796,8 @@
 						}
 					},
 					"world": {
-						"x": 58.49300587863645,
-						"y": 136.15259327482485,
+						"x": 110.42027226528883,
+						"y": 89.2358525921477,
 						"width": 12,
 						"height": 19.200000000000003,
 						"originX": 0.5,
@@ -847,6 +847,35 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "gun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 647,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 60.46160090457775,
+						"y": 125.70176064254963,
+						"width": 16.07600802927678,
+						"height": 11.023548362932651,
+						"originX": 0.5472972972972973,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.995760400972931,
 						"zElevation": 0
 					}
 				},
