@@ -15,6 +15,28 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
+					"sid": 107143171707384
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "cutscene_background",
+					"sid": 671164750562112,
+					"parameters": {
+						"width": "ViewportWidth(0) * 2",
+						"height": "ViewportHeight(0) * 2"
+					}
+				}
+			],
+			"sid": 101584651049865
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
 					"sid": 430858313673979
 				}
 			],

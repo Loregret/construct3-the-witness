@@ -174,7 +174,7 @@
 									"actions": [
 										{
 											"id": "set-position",
-											"objectClass": "SpriteFont2",
+											"objectClass": "cursorhint",
 											"sid": 190566140556758,
 											"parameters": {
 												"x": "cursor.X",
@@ -236,7 +236,7 @@
 														},
 														{
 															"id": "compare-text",
-															"objectClass": "SpriteFont2",
+															"objectClass": "cursorhint",
 															"sid": 729853926988103,
 															"parameters": {
 																"text-to-compare": "\"\"",
@@ -296,7 +296,7 @@
 																			"actions": [
 																				{
 																					"id": "set-text",
-																					"objectClass": "SpriteFont2",
+																					"objectClass": "cursorhint",
 																					"sid": 545424436207951,
 																					"parameters": {
 																						"text": "JSON.Get(dialog_trigger.SceneName&\".\"& JSON.CurrentKey &\".name\")"
@@ -304,7 +304,7 @@
 																				},
 																				{
 																					"id": "set-visible",
-																					"objectClass": "SpriteFont2",
+																					"objectClass": "cursorhint",
 																					"sid": 861826232498898,
 																					"parameters": {
 																						"visibility": "visible"
@@ -325,7 +325,7 @@
 																			"actions": [
 																				{
 																					"id": "set-text",
-																					"objectClass": "SpriteFont2",
+																					"objectClass": "cursorhint",
 																					"sid": 550854044152088,
 																					"parameters": {
 																						"text": "\"*Изучить*\""
@@ -333,7 +333,7 @@
 																				},
 																				{
 																					"id": "set-visible",
-																					"objectClass": "SpriteFont2",
+																					"objectClass": "cursorhint",
 																					"sid": 790646786681971,
 																					"parameters": {
 																						"visibility": "visible"
@@ -373,7 +373,7 @@
 															"actions": [
 																{
 																	"id": "set-default-color",
-																	"objectClass": "SpriteFont2",
+																	"objectClass": "cursorhint",
 																	"sid": 506697192604923,
 																	"parameters": {
 																		"color": "rgbEx(93, 93, 93)"
@@ -394,7 +394,7 @@
 															"actions": [
 																{
 																	"id": "set-default-color",
-																	"objectClass": "SpriteFont2",
+																	"objectClass": "cursorhint",
 																	"sid": 344386062717201,
 																	"parameters": {
 																		"color": "rgbEx(36, 36, 36)"
@@ -417,7 +417,7 @@
 												},
 												{
 													"id": "is-visible",
-													"objectClass": "SpriteFont2",
+													"objectClass": "cursorhint",
 													"sid": 131288320546023
 												}
 											],
@@ -457,7 +457,7 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "SpriteFont2",
+							"objectClass": "cursorhint",
 							"sid": 386468997623036,
 							"parameters": {
 								"visibility": "invisible"
@@ -465,7 +465,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "SpriteFont2",
+							"objectClass": "cursorhint",
 							"sid": 813740693989481,
 							"parameters": {
 								"text": "\"\""
@@ -473,7 +473,7 @@
 						},
 						{
 							"id": "set-width",
-							"objectClass": "SpriteFont2",
+							"objectClass": "cursorhint",
 							"sid": 363405240692253,
 							"parameters": {
 								"width": "250"
@@ -497,7 +497,7 @@
 							"objectClass": "System",
 							"sid": 188338528256847,
 							"parameters": {
-								"object-to-create": "SpriteFont2",
+								"object-to-create": "cursorhint",
 								"layer": "\"cursor\"",
 								"x": "Mouse.X",
 								"y": "Mouse.Y",
@@ -506,7 +506,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "SpriteFont2",
+							"objectClass": "cursorhint",
 							"sid": 671883394710477,
 							"parameters": {
 								"text": "\"\""
