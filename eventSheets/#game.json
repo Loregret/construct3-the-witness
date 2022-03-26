@@ -3837,6 +3837,13 @@
 																"bullet.UID",
 																"weapon"
 															]
+														},
+														{
+															"callFunction": "weapon_create_shell",
+															"sid": 524904027820708,
+															"parameters": [
+																"0"
+															]
 														}
 													],
 													"sid": 957480627427420
@@ -5036,7 +5043,49 @@
 											}
 										}
 									],
-									"sid": 850880247929641
+									"sid": 850880247929641,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "gilza",
+													"sid": 716478498447908,
+													"parameters": {
+														"instance-variable": "no_sound"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 743385708341229,
+													"parameters": {
+														"tag": "\"shell\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 706639123689778,
+													"parameters": {
+														"audio-file": "shell falling 1",
+														"loop": "not-looping",
+														"volume": "random(-25,-5)",
+														"object": "gilza",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"shell\""
+													}
+												}
+											],
+											"sid": 311794733386382
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -5078,7 +5127,49 @@
 											}
 										}
 									],
-									"sid": 295981941892992
+									"sid": 295981941892992,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "gilza",
+													"sid": 242919374179893,
+													"parameters": {
+														"instance-variable": "no_sound"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 961165154851476,
+													"parameters": {
+														"tag": "\"shell\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 152862214431509,
+													"parameters": {
+														"audio-file": "shell falling 1",
+														"loop": "not-looping",
+														"volume": "random(-8,0)",
+														"object": "gilza",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"shell\""
+													}
+												}
+											],
+											"sid": 623590062439105
+										}
+									]
 								}
 							]
 						},

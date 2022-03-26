@@ -240,39 +240,52 @@
 														"type": "once",
 														"tag": "\"reload_finish\""
 													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 813942223839726,
-													"parameters": {
-														"seconds": "0.125"
-													}
-												},
-												{
-													"callFunction": "weapon_create_shell",
-													"sid": 410469418895961,
-													"parameters": [
-														"1"
-													]
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 419388253914059,
-													"parameters": {
-														"seconds": "0.27"
-													}
-												},
-												{
-													"callFunction": "weapon_create_shell",
-													"sid": 994828818639450,
-													"parameters": [
-														"1"
-													]
 												}
 											],
-											"sid": 944640656334370
+											"sid": 944640656334370,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "shells"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 519913563079622,
+															"parameters": {
+																"seconds": "0.125"
+															}
+														},
+														{
+															"callFunction": "weapon_create_shell",
+															"sid": 768931911927828,
+															"parameters": [
+																"1"
+															]
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 922054888537707,
+															"parameters": {
+																"seconds": "0.27"
+															}
+														},
+														{
+															"callFunction": "weapon_create_shell",
+															"sid": 195686202306862,
+															"parameters": [
+																"1"
+															]
+														}
+													],
+													"sid": 240957815184693
+												}
+											]
 										}
 									]
 								}
