@@ -81,6 +81,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "settings_language",
+			"type": "string",
+			"initialValue": "english",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 841879093134913
+		},
+		{
+			"eventType": "variable",
 			"name": "settings_fullscreen",
 			"type": "string",
 			"initialValue": "scale_outer",
@@ -5565,11 +5575,11 @@
 												{
 													"id": "play-at-object",
 													"objectClass": "Audio",
-													"sid": 595072982815703,
+													"sid": 838368065870031,
 													"parameters": {
 														"audio-file": "fire",
 														"loop": "looping",
-														"volume": "-18",
+														"volume": "-34",
 														"object": "torch",
 														"inner-angle": "360",
 														"outer-angle": "360",
