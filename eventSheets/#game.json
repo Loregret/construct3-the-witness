@@ -161,7 +161,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": ">> курсор"
+			"text": "Курсор"
 		},
 		{
 			"eventType": "variable",
@@ -7305,6 +7305,11 @@
 																	"id": "else",
 																	"objectClass": "System",
 																	"sid": 532889751824040
+																},
+																{
+																	"id": "trigger-once-while-true",
+																	"objectClass": "System",
+																	"sid": 158544571751055
 																}
 															],
 															"actions": [],
@@ -7320,25 +7325,9 @@
 																			"parameters": {
 																				"instance-variable": "repeatable"
 																			}
-																		},
-																		{
-																			"id": "trigger-once-while-true",
-																			"objectClass": "System",
-																			"sid": 802934165330746
 																		}
 																	],
 																	"actions": [
-																		{
-																			"id": "play",
-																			"objectClass": "Audio",
-																			"sid": 109313651326210,
-																			"parameters": {
-																				"audio-file": "ui-click-8",
-																				"loop": "not-looping",
-																				"volume": "-28",
-																				"tag-optional": "\"\""
-																			}
-																		},
 																		{
 																			"callFunction": "triggers_create_hint",
 																			"sid": 632543335052199,
@@ -7365,11 +7354,6 @@
 																				"key": "dialog_trigger.DialogName"
 																			},
 																			"isInverted": true
-																		},
-																		{
-																			"id": "trigger-once-while-true",
-																			"objectClass": "System",
-																			"sid": 913353206389241
 																		}
 																	],
 																	"actions": [
@@ -7644,6 +7628,17 @@
 												}
 											],
 											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 728730405641557,
+													"parameters": {
+														"audio-file": "ui-click-8",
+														"loop": "not-looping",
+														"volume": "-28",
+														"tag-optional": "\"\""
+													}
+												},
 												{
 													"id": "create-object",
 													"objectClass": "System",

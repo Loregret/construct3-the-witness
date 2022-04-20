@@ -251,7 +251,9 @@
 	"objectTypes": {
 		"items": [
 			"decal_dirt",
-			"Sprite2"
+			"Sprite2",
+			"TiledBackground",
+			"Sprite"
 		],
 		"subfolders": [
 			{
@@ -499,18 +501,30 @@
 		]
 	},
 	"eventSheets": {
-		"items": [
-			"#Game",
-			"#Menu",
-			"#Logo",
-			"#Dialogic",
-			"#Enemy",
-			"#Player",
-			"#Debug",
-			"#Cutscene",
-			"#Cursor"
-		],
-		"subfolders": []
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"#Cursor",
+					"#Debug",
+					"#Enemy",
+					"#Player"
+				],
+				"subfolders": [],
+				"name": "sub events"
+			},
+			{
+				"items": [
+					"#Game",
+					"#Menu",
+					"#Dialogic",
+					"#Logo",
+					"#Cutscene"
+				],
+				"subfolders": [],
+				"name": "main events"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
@@ -1097,7 +1111,7 @@
 		"zAxisScale": "normalized",
 		"fov": 2.443460952792061,
 		"useLoaderLayout": false,
-		"fullscreenMode": "scale-outer",
+		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
