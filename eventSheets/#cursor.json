@@ -240,11 +240,23 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-overlapping-another-object",
-													"objectClass": "Player",
-													"sid": 503894313057789,
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 980766327376118,
 													"parameters": {
-														"object": "dialog_trigger"
+														"first-value": "Functions.trigger_dialog_is_seen(dialog_trigger.UID)",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 703930672595821,
+													"parameters": {
+														"first-value": "distance(Player.X,Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+														"comparison": 3,
+														"second-value": "dialog_trigger.activation_distance"
 													}
 												}
 											],
@@ -252,7 +264,7 @@
 												{
 													"id": "set-default-color",
 													"objectClass": "cursorhint",
-													"sid": 104194547791383,
+													"sid": 315971265587637,
 													"parameters": {
 														"color": "rgbEx(93, 93, 93)"
 													}
@@ -273,7 +285,7 @@
 												{
 													"id": "set-default-color",
 													"objectClass": "cursorhint",
-													"sid": 752737791863313,
+													"sid": 884830938834141,
 													"parameters": {
 														"color": "rgbEx(36, 36, 36)"
 													}
@@ -419,11 +431,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 373268777563855,
+											"sid": 796912356005257,
 											"parameters": {
 												"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
 												"comparison": 3,
-												"second-value": "350"
+												"second-value": "dialog_trigger.max_distance"
 											}
 										}
 									],
@@ -438,7 +450,7 @@
 													"objectClass": "System",
 													"sid": 450590220269003,
 													"parameters": {
-														"first-value": "Functions.trigger_dialog_is_available(dialog_trigger.UID)",
+														"first-value": "Functions.trigger_dialog_is_seen(dialog_trigger.UID)",
 														"comparison": 0,
 														"second-value": "1"
 													}

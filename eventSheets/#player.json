@@ -2400,6 +2400,90 @@
 												{
 													"id": "else",
 													"objectClass": "System",
+													"sid": 826333392394303
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 684997802067218,
+													"parameters": {
+														"object": "road2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 460011741758164,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 227570411001882,
+															"parameters": {
+																"interval-seconds": "0.3"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 147337127953697,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"8",
+																"1"
+															]
+														}
+													],
+													"sid": 821612693878019
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 605710859870138,
+															"parameters": {
+																"tag": "\"step_stone\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 351687408348200
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 603143006196614,
+															"parameters": {
+																"audio-file": "walk stone run",
+																"loop": "looping",
+																"volume": "0",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_stone\""
+															}
+														}
+													],
+													"sid": 736267262272905
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
 													"sid": 456000001741928
 												},
 												{
@@ -2820,6 +2904,90 @@
 														}
 													],
 													"sid": 893815831711968
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 107197959904941
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 595830155871534,
+													"parameters": {
+														"object": "road2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 680847371930758,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 647881600137660,
+															"parameters": {
+																"interval-seconds": "0.4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "create_audio_trigger",
+															"sid": 892528414711188,
+															"parameters": [
+																"Player.ImagePointX(1)",
+																"Player.ImagePointY(1)",
+																"5",
+																"1"
+															]
+														}
+													],
+													"sid": 721015240656212
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 652246246798426,
+															"parameters": {
+																"tag": "\"step_stone\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_stop_steps",
+															"sid": 200471583129713
+														},
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 894162550779182,
+															"parameters": {
+																"audio-file": "walk stone",
+																"loop": "looping",
+																"volume": "-5",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "360",
+																"tag-optional": "\"step_stone\""
+															}
+														}
+													],
+													"sid": 485389895170231
 												}
 											]
 										},
