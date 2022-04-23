@@ -546,18 +546,7 @@
 											}
 										}
 									],
-									"actions": [
-										{
-											"id": "set-group-active",
-											"objectClass": "System",
-											"sid": 855202472846946,
-											"disabled": true,
-											"parameters": {
-												"group-name": "\"[h1] Enemy ☠️ [/h1]\"",
-												"state": "deactivated"
-											}
-										}
-									],
+									"actions": [],
 									"sid": 918232974473500,
 									"children": [
 										{
@@ -661,6 +650,51 @@
 														}
 													],
 													"sid": 212328201833172,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 110869040795306,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "runner",
+															"sid": 783583228222295,
+															"parameters": {
+																"instance-variable": "state",
+																"comparison": 1,
+																"value": "\"dead\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-group-active",
+															"objectClass": "System",
+															"sid": 397887242163830,
+															"parameters": {
+																"group-name": "\"[h1] Enemy ☠️ [/h1]\"",
+																"state": "deactivated"
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "runner",
+															"sid": 137670367461305,
+															"behaviorType": "Solid",
+															"parameters": {
+																"state": "enabled"
+															}
+														}
+													],
+													"sid": 483524208730285,
 													"disabled": true
 												}
 											]

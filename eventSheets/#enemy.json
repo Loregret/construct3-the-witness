@@ -951,15 +951,6 @@
 																	"parameters": [
 																		"runner.UID"
 																	]
-																},
-																{
-																	"callFunction": "enemy_dialog",
-																	"sid": 811002374914171,
-																	"parameters": [
-																		"runner.UID",
-																		"choose( \"BASTARD!\", \"KILL HIM!\", \"ARRGH\", \"BRRGH\", \"AAARGH\")",
-																		"\"red\""
-																	]
 																}
 															],
 															"sid": 822613622194174,
@@ -1020,6 +1011,15 @@
 																					}
 																				},
 																				{
+																					"callFunction": "enemy_dialog",
+																					"sid": 514064551153668,
+																					"parameters": [
+																						"runner.UID",
+																						"choose( \"BASTARD!\", \"KILL HIM!\", \"ARRGH\", \"BRRGH\", \"AAARGH\")",
+																						"\"red\""
+																					]
+																				},
+																				{
 																					"callFunction": "create_audio_trigger",
 																					"sid": 461959369183479,
 																					"parameters": [
@@ -1041,8 +1041,7 @@
 																					}
 																				}
 																			],
-																			"sid": 734631881738947,
-																			"disabled": true
+																			"sid": 734631881738947
 																		}
 																	]
 																},
@@ -1608,10 +1607,10 @@
 																				{
 																					"id": "set-instvar-value",
 																					"objectClass": "runner",
-																					"sid": 216576708696708,
+																					"sid": 694175416146505,
 																					"parameters": {
 																						"instance-variable": "alert_nth",
-																						"value": "alert.PickedCount - 1"
+																						"value": "alert.PickedCount"
 																					}
 																				}
 																			],
@@ -3217,35 +3216,41 @@
 													"isInverted": true
 												}
 											],
-											"actions": [
-												{
-													"id": "typewriter-text",
-													"objectClass": "hint_sprfont",
-													"sid": 535740645555740,
-													"parameters": {
-														"text": "text",
-														"duration": "0.4"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 287257071399179,
-													"parameters": {
-														"seconds": "1.45"
-													}
-												},
-												{
-													"id": "set-text",
-													"objectClass": "hint_sprfont",
-													"sid": 315858064648253,
-													"parameters": {
-														"text": "\"\""
-													}
-												}
-											],
+											"actions": [],
 											"sid": 377480208921570,
 											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "hint_sprfont",
+															"sid": 574589905698252,
+															"parameters": {
+																"text": "text",
+																"duration": "0.4"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 496461250808543,
+															"parameters": {
+																"seconds": "1.45"
+															}
+														},
+														{
+															"id": "set-text",
+															"objectClass": "hint_sprfont",
+															"sid": 484159390030998,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 576189196988030
+												},
 												{
 													"eventType": "block",
 													"conditions": [
