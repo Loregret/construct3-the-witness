@@ -546,9 +546,19 @@
 											}
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 855202472846946,
+											"disabled": true,
+											"parameters": {
+												"group-name": "\"[h1] Enemy ☠️ [/h1]\"",
+												"state": "deactivated"
+											}
+										}
+									],
 									"sid": 918232974473500,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "comment",
@@ -559,7 +569,6 @@
 											"conditions": [],
 											"actions": [],
 											"sid": 229361635602609,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -569,6 +578,7 @@
 															"id": "play",
 															"objectClass": "Audio",
 															"sid": 480776706134089,
+															"disabled": true,
 															"parameters": {
 																"audio-file": "Forest ambient",
 																"loop": "looping",
@@ -592,6 +602,7 @@
 															"id": "play",
 															"objectClass": "Audio",
 															"sid": 901776638415985,
+															"disabled": true,
 															"parameters": {
 																"audio-file": "Eternity Clock",
 																"loop": "not-looping",
@@ -600,8 +611,7 @@
 															}
 														}
 													],
-													"sid": 376772964379862,
-													"disabled": true
+													"sid": 376772964379862
 												}
 											]
 										},
@@ -614,7 +624,6 @@
 											"conditions": [],
 											"actions": [],
 											"sid": 327669895249421,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -655,6 +664,30 @@
 													"disabled": true
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 246516805084067,
+													"parameters": {
+														"object": "Light"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-opacity",
+													"objectClass": "Light",
+													"sid": 867102020691610,
+													"parameters": {
+														"opacity": "Self.Opacity * 0.5"
+													}
+												}
+											],
+											"sid": 475272371845863
 										}
 									]
 								},
@@ -5381,343 +5414,6 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "torch"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 103452562852729,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-destroyed",
-											"objectClass": "torch",
-											"sid": 433619674872097
-										}
-									],
-									"actions": [],
-									"sid": 612938249225902,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "stop",
-													"objectClass": "Audio",
-													"sid": 174134606679048,
-													"parameters": {
-														"tag": "\"fire\"&torch.UID"
-													}
-												}
-											],
-											"sid": 916704431581063
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-nearestfurthest",
-													"objectClass": "fx_torch_fire",
-													"sid": 945826577132530,
-													"parameters": {
-														"which": "nearest",
-														"x": "torch.X",
-														"y": "torch.Y"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "destroy",
-													"objectClass": "fx_torch_fire",
-													"sid": 686346752883952
-												}
-											],
-											"sid": 272503310864701
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-created",
-											"objectClass": "torch",
-											"sid": 789741011844864
-										}
-									],
-									"actions": [],
-									"sid": 299299251539504,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "torch",
-													"sid": 617204155786140,
-													"parameters": {
-														"object": "Light",
-														"layer": "\"light\"",
-														"image-point": "0",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "Light",
-													"sid": 780081469663493,
-													"parameters": {
-														"opacity": "60"
-													}
-												},
-												{
-													"id": "set-scale",
-													"objectClass": "Light",
-													"sid": 429926667858459,
-													"parameters": {
-														"scale": "0.4"
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "Light",
-													"sid": 292376970282426,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "torch",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
-												},
-												{
-													"id": "set-active",
-													"objectClass": "Light",
-													"sid": 964408710353952,
-													"behaviorType": "Sine",
-													"parameters": {
-														"state": "active"
-													}
-												}
-											],
-											"sid": 128282856708449
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "torch",
-													"sid": 779589486246244,
-													"parameters": {
-														"object": "Light",
-														"layer": "\"light\"",
-														"image-point": "0",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "Light",
-													"sid": 651532015154093,
-													"parameters": {
-														"opacity": "40"
-													}
-												},
-												{
-													"id": "set-scale",
-													"objectClass": "Light",
-													"sid": 415456560990218,
-													"parameters": {
-														"scale": "0.9"
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "Light",
-													"sid": 161070457514150,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "torch",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
-												}
-											],
-											"sid": 765886299974298,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "set-period",
-															"objectClass": "Light",
-															"sid": 654282842281795,
-															"behaviorType": "Sine",
-															"parameters": {
-																"period": "10"
-															}
-														},
-														{
-															"id": "set-magnitude",
-															"objectClass": "Light",
-															"sid": 555624829950874,
-															"behaviorType": "Sine",
-															"parameters": {
-																"magnitude": "50"
-															}
-														},
-														{
-															"id": "set-movement",
-															"objectClass": "Light",
-															"sid": 887460038940912,
-															"behaviorType": "Sine",
-															"parameters": {
-																"movement": "size"
-															}
-														},
-														{
-															"id": "set-active",
-															"objectClass": "Light",
-															"sid": 674044116491191,
-															"behaviorType": "Sine",
-															"parameters": {
-																"state": "active"
-															}
-														}
-													],
-													"sid": 439247378889627
-												}
-											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "torch",
-													"sid": 177984311104821,
-													"parameters": {
-														"object": "color_light",
-														"layer": "\"items\"",
-														"image-point": "0",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-blend-mode",
-													"objectClass": "color_light",
-													"sid": 315259280162472,
-													"parameters": {
-														"blend-mode": "normal"
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "color_light",
-													"sid": 657119530902389,
-													"parameters": {
-														"opacity": "4"
-													}
-												},
-												{
-													"id": "set-scale",
-													"objectClass": "color_light",
-													"sid": 288081985108357,
-													"parameters": {
-														"scale": "0.2"
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "color_light",
-													"sid": 752615094529471,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "torch",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
-												},
-												{
-													"id": "set-default-color",
-													"objectClass": "color_light",
-													"sid": 352485283632815,
-													"parameters": {
-														"color": "rgbEx(255, 180, 100)"
-													}
-												},
-												{
-													"id": "set-active",
-													"objectClass": "color_light",
-													"sid": 953868544391630,
-													"disabled": true,
-													"behaviorType": "Sine",
-													"parameters": {
-														"state": "active"
-													}
-												},
-												{
-													"id": "set-magnitude",
-													"objectClass": "color_light",
-													"sid": 379218146955622,
-													"disabled": true,
-													"behaviorType": "Sine",
-													"parameters": {
-														"magnitude": "15"
-													}
-												}
-											],
-											"sid": 707241105550875
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "play-at-object",
-													"objectClass": "Audio",
-													"sid": 838368065870031,
-													"parameters": {
-														"audio-file": "fire",
-														"loop": "looping",
-														"volume": "-34",
-														"object": "torch",
-														"inner-angle": "360",
-														"outer-angle": "360",
-														"outer-gain": "0",
-														"tag-optional": "\"fire\"&torch.UID"
-													}
-												}
-											],
-											"sid": 536928846699159
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
 							"text": "campfire"
 						},
 						{
@@ -5878,7 +5574,7 @@
 															"objectClass": "light_stick",
 															"sid": 972982281555626,
 															"parameters": {
-																"object": "color_light",
+																"object": "color_aura",
 																"layer": "\"items\"",
 																"image-point": "0",
 																"create-hierarchy": false
@@ -5886,7 +5582,7 @@
 														},
 														{
 															"id": "set-blend-mode",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 618985114000954,
 															"parameters": {
 																"blend-mode": "normal"
@@ -5894,7 +5590,7 @@
 														},
 														{
 															"id": "set-opacity",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 546768417457300,
 															"parameters": {
 																"opacity": "15"
@@ -5902,7 +5598,7 @@
 														},
 														{
 															"id": "set-scale",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 495111149546991,
 															"parameters": {
 																"scale": "0.2"
@@ -5910,7 +5606,7 @@
 														},
 														{
 															"id": "pin-to-object-properties",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 998426840478438,
 															"behaviorType": "Pin",
 															"parameters": {
@@ -5925,7 +5621,7 @@
 														},
 														{
 															"id": "set-default-color",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 609132576309351,
 															"parameters": {
 																"color": "rgbEx(0, 255, 0)"
@@ -5933,7 +5629,7 @@
 														},
 														{
 															"id": "set-active",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 262686051934350,
 															"behaviorType": "Sine",
 															"parameters": {
@@ -5942,7 +5638,7 @@
 														},
 														{
 															"id": "set-period",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 851579763941735,
 															"behaviorType": "Sine",
 															"parameters": {
@@ -5951,7 +5647,7 @@
 														},
 														{
 															"id": "set-movement",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 121934090216897,
 															"behaviorType": "Sine",
 															"parameters": {
@@ -5960,7 +5656,7 @@
 														},
 														{
 															"id": "set-magnitude",
-															"objectClass": "color_light",
+															"objectClass": "color_aura",
 															"sid": 356201846528091,
 															"behaviorType": "Sine",
 															"parameters": {
@@ -6066,6 +5762,525 @@
 									"sid": 140880371515877
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "torch"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 412769731787405,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "torch",
+											"sid": 357274555491201
+										}
+									],
+									"actions": [],
+									"sid": 871227475016184,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "torch",
+													"sid": 488451185906887,
+													"parameters": {
+														"object": "Light",
+														"layer": "\"light\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "torch",
+													"sid": 919308136112891,
+													"parameters": {
+														"child": "Light",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-z-elevation": true,
+														"destroy-with-parent": true
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "Light",
+													"sid": 356978947469178,
+													"parameters": {
+														"opacity": "60"
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "Light",
+													"sid": 709246081785875,
+													"parameters": {
+														"scale": "0.4"
+													}
+												},
+												{
+													"id": "pin-to-object-properties",
+													"objectClass": "Light",
+													"sid": 523137808322967,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "torch",
+														"x": true,
+														"y": true,
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												},
+												{
+													"id": "set-active",
+													"objectClass": "Light",
+													"sid": 185867787989975,
+													"behaviorType": "Sine",
+													"parameters": {
+														"state": "active"
+													}
+												}
+											],
+											"sid": 135747791750679
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "torch",
+													"sid": 239801893637468,
+													"parameters": {
+														"object": "Light",
+														"layer": "\"light\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "torch",
+													"sid": 748397520912583,
+													"parameters": {
+														"child": "Light",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-z-elevation": true,
+														"destroy-with-parent": true
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "Light",
+													"sid": 797712188640355,
+													"parameters": {
+														"opacity": "40"
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "Light",
+													"sid": 580514805323305,
+													"parameters": {
+														"scale": "0.9"
+													}
+												},
+												{
+													"id": "pin-to-object-properties",
+													"objectClass": "Light",
+													"sid": 972819063842105,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "torch",
+														"x": true,
+														"y": true,
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												}
+											],
+											"sid": 178478670094157,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-period",
+															"objectClass": "Light",
+															"sid": 769654738481129,
+															"behaviorType": "Sine",
+															"parameters": {
+																"period": "10"
+															}
+														},
+														{
+															"id": "set-magnitude",
+															"objectClass": "Light",
+															"sid": 439634435788599,
+															"behaviorType": "Sine",
+															"parameters": {
+																"magnitude": "50"
+															}
+														},
+														{
+															"id": "set-movement",
+															"objectClass": "Light",
+															"sid": 860814968532703,
+															"behaviorType": "Sine",
+															"parameters": {
+																"movement": "size"
+															}
+														},
+														{
+															"id": "set-active",
+															"objectClass": "Light",
+															"sid": 221798809611255,
+															"behaviorType": "Sine",
+															"parameters": {
+																"state": "active"
+															}
+														}
+													],
+													"sid": 327394771073645
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "torch",
+													"sid": 117096652386567,
+													"parameters": {
+														"object": "color_aura",
+														"layer": "\"items\"",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "torch",
+													"sid": 292491153647981,
+													"parameters": {
+														"child": "color_aura",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-z-elevation": true,
+														"destroy-with-parent": true
+													}
+												},
+												{
+													"id": "set-blend-mode",
+													"objectClass": "color_aura",
+													"sid": 532043745844264,
+													"parameters": {
+														"blend-mode": "normal"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "color_aura",
+													"sid": 611482860337953,
+													"parameters": {
+														"opacity": "4"
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "color_aura",
+													"sid": 833875704916741,
+													"parameters": {
+														"scale": "0.2"
+													}
+												},
+												{
+													"id": "pin-to-object-properties",
+													"objectClass": "color_aura",
+													"sid": 710447508055055,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "torch",
+														"x": true,
+														"y": true,
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "color_aura",
+													"sid": 552751071649556,
+													"parameters": {
+														"color": "rgbEx(255, 180, 100)"
+													}
+												},
+												{
+													"id": "set-active",
+													"objectClass": "color_aura",
+													"sid": 494018888125652,
+													"disabled": true,
+													"behaviorType": "Sine",
+													"parameters": {
+														"state": "active"
+													}
+												},
+												{
+													"id": "set-magnitude",
+													"objectClass": "color_aura",
+													"sid": 436738996373858,
+													"disabled": true,
+													"behaviorType": "Sine",
+													"parameters": {
+														"magnitude": "15"
+													}
+												}
+											],
+											"sid": 812570778244271
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 685442315303869,
+													"parameters": {
+														"audio-file": "fire",
+														"loop": "looping",
+														"volume": "-34",
+														"object": "torch",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"fire\"&torch.UID"
+													}
+												}
+											],
+											"sid": 959229197618291
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-tweens-finished",
+											"objectClass": "torch",
+											"sid": 497287759646968,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"drop\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play-at-object",
+											"objectClass": "Audio",
+											"sid": 354821913162296,
+											"parameters": {
+												"audio-file": "drop2",
+												"loop": "not-looping",
+												"volume": "0",
+												"object": "torch",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"drop\""
+											}
+										}
+									],
+									"sid": 691403771351080
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "torch",
+											"sid": 926707954297704,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"fire\""
+											}
+										},
+										{
+											"id": "on-destroyed",
+											"objectClass": "torch",
+											"sid": 573047619806767
+										}
+									],
+									"actions": [],
+									"sid": 178264692804613,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 982840946540738,
+													"parameters": {
+														"tag": "\"fire\"&torch.UID"
+													}
+												}
+											],
+											"sid": 744898676661220
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "torch",
+													"sid": 491234725632750,
+													"parameters": {
+														"child": "color_aura",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "color_aura",
+													"sid": 275990253308628
+												}
+											],
+											"sid": 975710571750555
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "torch",
+													"sid": 382655624678565,
+													"parameters": {
+														"child": "Light",
+														"which": "own"
+													}
+												},
+												{
+													"id": "is-playing",
+													"objectClass": "Light",
+													"sid": 901775876569625,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"destroy\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-one-property",
+													"objectClass": "Light",
+													"sid": 954285173922339,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"destroy\"",
+														"property": "offsetOpacity",
+														"end-value": "0",
+														"time": "0.65",
+														"ease": "default",
+														"destroy-on-complete": "yes",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												}
+											],
+											"sid": 268582269403456
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "torch",
+													"sid": 690041381388297,
+													"parameters": {
+														"child": "fx_torch_fire",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 459582968013249,
+													"parameters": {
+														"seconds": "0.65"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "fx_torch_fire",
+													"sid": 907176064786834
+												}
+											],
+											"sid": 330359246501903
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 291274197127631,
+													"parameters": {
+														"seconds": "0.65"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "torch",
+													"sid": 338270534660191,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 745628712955472
+										}
+									],
+									"isOrBlock": true
+								}
+							]
 						}
 					],
 					"sid": 793517693674398
@@ -6080,6 +6295,152 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"functionName": "get_positions_visibility",
+					"functionDescription": "",
+					"functionCategory": "#light",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "X",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 669050245125268
+						},
+						{
+							"name": "Y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 751990563176527
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 859464504419588,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "visibility",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 636626773599630
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 670146045056785,
+									"parameters": {
+										"variable": "visibility",
+										"value": "-5"
+									}
+								}
+							],
+							"sid": 876245900222570
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-overlapping-point",
+									"objectClass": "System",
+									"sid": 520579774534476,
+									"parameters": {
+										"object": "lights",
+										"x": "X",
+										"y": "Y"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 351475621211978,
+									"parameters": {
+										"object": "lights"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 355282177439224,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 887124867565337,
+											"parameters": {
+												"first-value": "distance(Player.X,Player.Y,lights.X,lights.y)",
+												"comparison": 4,
+												"second-value": "lights.Width"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 168330426898555,
+											"parameters": {
+												"variable": "visibility",
+												"value": "lights.Opacity/2"
+											}
+										}
+									],
+									"sid": 411009368152783
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 313643178277102
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 418927217904540,
+											"parameters": {
+												"variable": "visibility",
+												"value": "lights.Opacity"
+											}
+										}
+									],
+									"sid": 966375082055163
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 181164174606538,
+									"parameters": {
+										"value": "visibility"
+									}
+								}
+							],
+							"sid": 922895950289244
+						}
+					]
+				},
 				{
 					"eventType": "group",
 					"disabled": false,
@@ -7181,6 +7542,54 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "Triggers - story",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 673496290443235
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Triggers - audio emitter",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "triggers_audio_emitter",
+									"sid": 376877557467240
+								}
+							],
+							"actions": [
+								{
+									"id": "play-at-object-by-name",
+									"objectClass": "Audio",
+									"sid": 778072769183098,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "triggers_audio_emitter.audioname",
+										"loop": "looping",
+										"volume": "triggers_audio_emitter.volume",
+										"object": "triggers_audio_emitter",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 488015144137144
+						}
+					],
+					"sid": 989298981137571
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "Triggers - dialogic 💬",
 					"description": "",
 					"isActiveOnStart": true,
@@ -7223,26 +7632,22 @@
 											"sid": 461950591527613
 										}
 									],
-									"actions": [],
-									"sid": 767607730334603,
-									"children": [
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-position",
-													"objectClass": "Hint",
-													"sid": 842707032368969,
-													"parameters": {
-														"x": "Player.X",
-														"y": "Player.Y -30"
-													}
-												}
-											],
-											"sid": 714968448299724
+											"id": "set-position",
+											"objectClass": "Hint",
+											"sid": 409283656963363,
+											"parameters": {
+												"x": "Player.X",
+												"y": "Player.Y -30"
+											}
 										}
-									]
+									],
+									"sid": 767607730334603
+								},
+								{
+									"eventType": "comment",
+									"text": "Нужна оптимизация"
 								},
 								{
 									"eventType": "block",
@@ -7266,6 +7671,7 @@
 									],
 									"actions": [],
 									"sid": 452207798781453,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "variable",
@@ -7301,6 +7707,7 @@
 											],
 											"actions": [],
 											"sid": 110581649440877,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -7316,6 +7723,7 @@
 													],
 													"actions": [],
 													"sid": 116916714686868,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -7347,6 +7755,7 @@
 																}
 															],
 															"sid": 872187761344649,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -7372,7 +7781,8 @@
 																			}
 																		}
 																	],
-																	"sid": 804236016844545
+																	"sid": 804236016844545,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -7394,7 +7804,8 @@
 																			}
 																		}
 																	],
-																	"sid": 520947208073786
+																	"sid": 520947208073786,
+																	"disabled": true
 																}
 															]
 														}
@@ -7421,6 +7832,7 @@
 														}
 													],
 													"sid": 502185149478651,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -7436,6 +7848,7 @@
 															],
 															"actions": [],
 															"sid": 916768866531715,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -7453,14 +7866,7 @@
 																	],
 																	"actions": [],
 																	"sid": 859442464515735,
-																	"children": [
-																		{
-																			"eventType": "block",
-																			"conditions": [],
-																			"actions": [],
-																			"sid": 174504602314118
-																		}
-																	]
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -7478,6 +7884,7 @@
 																	],
 																	"actions": [],
 																	"sid": 324030682260478,
+																	"disabled": true,
 																	"children": [
 																		{
 																			"eventType": "block",
@@ -7500,7 +7907,8 @@
 																					]
 																				}
 																			],
-																			"sid": 527795317029993
+																			"sid": 527795317029993,
+																			"disabled": true
 																		},
 																		{
 																			"eventType": "block",
@@ -7529,7 +7937,8 @@
 																					]
 																				}
 																			],
-																			"sid": 748761008018846
+																			"sid": 748761008018846,
+																			"disabled": true
 																		}
 																	]
 																}
@@ -7567,7 +7976,8 @@
 													]
 												}
 											],
-											"sid": 833783481301095
+											"sid": 833783481301095,
+											"disabled": true
 										}
 									]
 								}
@@ -7581,6 +7991,198 @@
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [
+								{
+									"functionName": "trigger_dialog_is_available",
+									"functionDescription": "",
+									"functionCategory": "#triggers",
+									"functionReturnType": "number",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "trigger_UID",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 476211440566058
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 479815836336000,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "dialog_trigger",
+													"sid": 616551818554752,
+													"parameters": {
+														"unique-id": "trigger_UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 750385838784116,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 478729487919649,
+															"parameters": {
+																"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "dialog_trigger",
+															"sid": 666224455671225,
+															"parameters": {
+																"instance-variable": "auto_start"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "dialog_trigger",
+															"sid": 520990136954250,
+															"parameters": {
+																"instance-variable": "active"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 221505632439676,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "has-los-to-object",
+																	"objectClass": "Player",
+																	"sid": 185470925987944,
+																	"behaviorType": "LineOfSight",
+																	"parameters": {
+																		"object": "dialog_trigger",
+																		"image-point": "0"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 267692876639732,
+																	"parameters": {
+																		"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+																		"comparison": 3,
+																		"second-value": "dialog_trigger.activation_distance"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 862721132280545,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 914367200382373
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 175769544843162
+																},
+																{
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "dialog_trigger",
+																	"sid": 468130538170119,
+																	"parameters": {
+																		"instance-variable": "is_visible_trough_walls"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 462138522091857,
+																	"parameters": {
+																		"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+																		"comparison": 3,
+																		"second-value": "dialog_trigger.activation_distance"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 987455287679691,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 774095047272857
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 805515351521592
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 730101062232296,
+																	"parameters": {
+																		"value": "0"
+																	}
+																}
+															],
+															"sid": 911973178921870
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 725731384378764
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 855041626494247,
+															"parameters": {
+																"value": "0"
+															}
+														}
+													],
+													"sid": 189257220157076
+												}
+											]
+										}
+									]
+								},
 								{
 									"functionName": "trigger_dialog_is_seen",
 									"functionDescription": "",
@@ -7662,6 +8264,16 @@
 																		"object": "dialog_trigger",
 																		"image-point": "0"
 																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 984718689289452,
+																	"parameters": {
+																		"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+																		"comparison": 3,
+																		"second-value": "dialog_trigger.max_distance"
+																	}
 																}
 															],
 															"actions": [
@@ -7690,6 +8302,16 @@
 																	"sid": 396430945626654,
 																	"parameters": {
 																		"instance-variable": "is_visible_trough_walls"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 375668348802643,
+																	"parameters": {
+																		"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+																		"comparison": 3,
+																		"second-value": "dialog_trigger.max_distance"
 																	}
 																}
 															],
@@ -8264,9 +8886,9 @@
 										{
 											"id": "append-text",
 											"objectClass": "debug",
-											"sid": 936240223103261,
+											"sid": 256845312067381,
 											"parameters": {
-												"text": "\"[color=gray]Видимость: [/color]\" & Player.visibility_lvl"
+												"text": "\"[color=gray]Видимость: [/color]\" & Functions.get_positions_visibility(Player.X, Player.Y)"
 											}
 										},
 										{
@@ -8292,18 +8914,19 @@
 							"conditions": [],
 							"actions": [],
 							"sid": 795370704242390,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
 											"id": "is-on-screen",
-											"objectClass": "enemy_runner",
+											"objectClass": "runner",
 											"sid": 279156850263494
 										},
 										{
 											"id": "pick-nearestfurthest",
-											"objectClass": "enemy_runner",
+											"objectClass": "runner",
 											"sid": 904618821306202,
 											"parameters": {
 												"which": "nearest",
@@ -8313,7 +8936,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "enemy_runner",
+											"objectClass": "runner",
 											"sid": 140303462482980,
 											"parameters": {
 												"instance-variable": "state",
@@ -8329,7 +8952,7 @@
 											"objectClass": "debug",
 											"sid": 661838584002159,
 											"parameters": {
-												"text": "\"[b][color=red]Противник[/color][/b]\"& newline &\n\"[color=gray]Расстояние до игрока:[/color] \" & round(distance(Player.X,Player.Y,enemy_runner.X,enemy_runner.Y)) & newline &\n\"[color=gray]Состояние:[/color] \" & enemy_runner.state & newline &\n\"[color=gray]Жизни: [/color]\" & enemy_runner.hp\n"
+												"text": "\"[b][color=red]Противник[/color][/b]\"& newline &\n\"[color=gray]Расстояние до игрока:[/color] \" & round(distance(Player.X,Player.Y,runner.X,runner.Y)) & newline &\n\"[color=gray]Состояние:[/color] \" & runner.state & newline &\n\"[color=gray]Жизни: [/color]\" & runner.hp\n"
 											}
 										},
 										{
@@ -8341,7 +8964,8 @@
 											}
 										}
 									],
-									"sid": 518419665452976
+									"sid": 518419665452976,
+									"disabled": true
 								}
 							]
 						}

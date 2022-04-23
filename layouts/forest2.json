@@ -20,7 +20,9 @@
 						"image-angle": 0
 					},
 					"uid": 358,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk grass"
+					},
 					"behaviors": {},
 					"world": {
 						"x": -2012,
@@ -87,7 +89,9 @@
 						"image-angle": 0
 					},
 					"uid": 359,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7543.098922465692,
@@ -120,7 +124,9 @@
 						"image-angle": 0
 					},
 					"uid": 361,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk wood"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7380,
@@ -153,7 +159,9 @@
 						"image-angle": 0
 					},
 					"uid": 362,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk wood"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 8257,
@@ -186,7 +194,9 @@
 						"image-angle": 0
 					},
 					"uid": 367,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7439,
@@ -219,7 +229,9 @@
 						"image-angle": 0
 					},
 					"uid": 370,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7517.912653389998,
@@ -252,7 +264,9 @@
 						"image-angle": 0
 					},
 					"uid": 371,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk wood"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 8087,
@@ -285,7 +299,9 @@
 						"image-angle": 0
 					},
 					"uid": 372,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7759,
@@ -318,7 +334,9 @@
 						"image-angle": 0
 					},
 					"uid": 373,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7632,
@@ -351,7 +369,9 @@
 						"image-angle": 0
 					},
 					"uid": 374,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 8145,
@@ -384,7 +404,9 @@
 						"image-angle": 0
 					},
 					"uid": 375,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 8502,
@@ -417,7 +439,9 @@
 						"image-angle": 0
 					},
 					"uid": 376,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 8391,
@@ -437,7 +461,7 @@
 					}
 				},
 				{
-					"type": "enemy_runner",
+					"type": "runner",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "dead",
@@ -450,7 +474,9 @@
 						"state": "dead",
 						"hp": 0,
 						"orig_X": 0,
-						"orig_Y": 0
+						"orig_Y": 0,
+						"alert_nth": 0,
+						"torch_amount": 0
 					},
 					"behaviors": {
 						"Bullet": {
@@ -460,7 +486,7 @@
 								"gravity": 0,
 								"bounce-off-solids": true,
 								"set-angle": true,
-								"step": false,
+								"step": true,
 								"enabled": false
 							}
 						},
@@ -488,6 +514,12 @@
 						},
 						"Timer": {
 							"properties": {}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": ""
+							}
 						}
 					},
 					"world": {
@@ -508,7 +540,7 @@
 					}
 				},
 				{
-					"type": "enemy_runner",
+					"type": "runner",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "dead",
@@ -521,7 +553,9 @@
 						"state": "dead",
 						"hp": 0,
 						"orig_X": 0,
-						"orig_Y": 0
+						"orig_Y": 0,
+						"alert_nth": 0,
+						"torch_amount": 0
 					},
 					"behaviors": {
 						"Bullet": {
@@ -531,7 +565,7 @@
 								"gravity": 0,
 								"bounce-off-solids": true,
 								"set-angle": true,
-								"step": false,
+								"step": true,
 								"enabled": false
 							}
 						},
@@ -559,6 +593,12 @@
 						},
 						"Timer": {
 							"properties": {}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": ""
+							}
 						}
 					},
 					"world": {
@@ -650,7 +690,9 @@
 						"image-angle": 0
 					},
 					"uid": 381,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7586,
@@ -1692,7 +1734,16 @@
 					},
 					"uid": 425,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 8634,
 						"y": 6347,
@@ -2236,7 +2287,7 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "dead",
@@ -2249,7 +2300,9 @@
 								"state": "dead",
 								"hp": 0,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -2259,7 +2312,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -2287,6 +2340,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -2307,7 +2366,7 @@
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "dead",
@@ -2320,7 +2379,9 @@
 								"state": "dead",
 								"hp": 0,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -2330,7 +2391,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -2358,6 +2419,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -2378,7 +2445,7 @@
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "dead",
@@ -2391,7 +2458,9 @@
 								"state": "dead",
 								"hp": 0,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -2401,7 +2470,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -2429,6 +2498,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -2449,7 +2524,7 @@
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -2462,7 +2537,9 @@
 								"state": "idle",
 								"hp": 1,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -2472,7 +2549,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -2500,6 +2577,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -2520,7 +2603,7 @@
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -2533,7 +2616,9 @@
 								"state": "idle",
 								"hp": 2,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -2543,7 +2628,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -2571,6 +2656,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -2591,7 +2682,7 @@
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -2604,7 +2695,9 @@
 								"state": "idle",
 								"hp": 1,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -2614,7 +2707,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -2642,6 +2735,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -2662,7 +2761,7 @@
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -2675,7 +2774,9 @@
 								"state": "idle",
 								"hp": 3,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -2685,7 +2786,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -2713,6 +2814,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -2733,7 +2840,7 @@
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -2746,7 +2853,9 @@
 								"state": "idle",
 								"hp": 3,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -2756,7 +2865,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -2784,6 +2893,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -2919,7 +3034,7 @@
 							},
 							"uid": 610,
 							"instanceVariables": {
-								"visibility_lvl": 0
+								"is_crouching": false
 							},
 							"behaviors": {
 								"8Direction": {
@@ -4853,7 +4968,9 @@
 						"image-angle": 0
 					},
 					"uid": 500,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk wood"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 8273,
@@ -8406,7 +8523,7 @@
 					}
 				},
 				{
-					"type": "color_light",
+					"type": "color_aura",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -9757,7 +9874,7 @@
 			"instances": [],
 			"sid": 813052463122081,
 			"effectTypes": [],
-			"isInitiallyVisible": false,
+			"isInitiallyVisible": true,
 			"isInitiallyInteractive": false,
 			"color": [
 				1,

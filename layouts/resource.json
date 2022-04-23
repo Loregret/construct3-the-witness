@@ -46,7 +46,7 @@
 					},
 					"uid": 8,
 					"instanceVariables": {
-						"visibility_lvl": 0
+						"is_crouching": false
 					},
 					"behaviors": {
 						"8Direction": {
@@ -73,7 +73,7 @@
 						}
 					},
 					"world": {
-						"x": 32,
+						"x": 0,
 						"y": 160,
 						"width": 66,
 						"height": 60,
@@ -274,7 +274,7 @@
 					}
 				},
 				{
-					"type": "color_light",
+					"type": "color_aura",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -478,7 +478,7 @@
 				{
 					"type": "trigger",
 					"properties": {
-						"initially-visible": false,
+						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -509,7 +509,7 @@
 							1,
 							1,
 							1,
-							0.15
+							0.05
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -596,7 +596,16 @@
 					},
 					"uid": 186,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 128,
 						"y": 32,
@@ -665,7 +674,7 @@
 					}
 				},
 				{
-					"type": "enemy_runner",
+					"type": "runner",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "idle",
@@ -678,7 +687,9 @@
 						"state": "idle",
 						"hp": 2,
 						"orig_X": 0,
-						"orig_Y": 0
+						"orig_Y": 0,
+						"alert_nth": 0,
+						"torch_amount": 0
 					},
 					"behaviors": {
 						"Bullet": {
@@ -688,7 +699,7 @@
 								"gravity": 0,
 								"bounce-off-solids": true,
 								"set-angle": true,
-								"step": false,
+								"step": true,
 								"enabled": true
 							}
 						},
@@ -703,7 +714,7 @@
 						"Pathfinding": {
 							"properties": {
 								"cell-size": 53,
-								"cell-border": 5,
+								"cell-border": 4,
 								"obstacles": "solids",
 								"max-speed": 200,
 								"acceleration": 1000,
@@ -716,10 +727,16 @@
 						},
 						"Timer": {
 							"properties": {}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": ""
+							}
 						}
 					},
 					"world": {
-						"x": 96,
+						"x": 100,
 						"y": 160,
 						"width": 37.800000000000004,
 						"height": 53.1,
@@ -834,8 +851,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 438.461213354321,
-						"y": 186.8610557000507,
+						"x": 339,
+						"y": 135,
 						"width": 250,
 						"height": 22.817830708503635,
 						"originX": 0.5,
@@ -865,10 +882,10 @@
 					"world": {
 						"x": 60.46160090457775,
 						"y": 125.70176064254963,
-						"width": 16.07600802927678,
-						"height": 11.023548362932651,
-						"originX": 0.5472972972972973,
-						"originY": 0.5,
+						"width": 11.023548362932651,
+						"height": 16.07600802927678,
+						"originX": 0.5,
+						"originY": 0.5472972972972973,
 						"color": [
 							1,
 							1,
@@ -959,6 +976,44 @@
 							0.1843137254901961,
 							0.011764705882352941,
 							0.45
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "hint_sprfont",
+					"properties": {
+						"text": "...",
+						"enable-bbcode": true,
+						"character-width": 58,
+						"character-height": 70,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+						"spacing-data": "[[36,\" \"],[14,\"il.,;:!'|`\"],[21,\"Ij1[]\"],[24,\"frt-_\\\"()°\"],[28,\"~=<>гз\"],[31,\"EFJLabcdeghknopqsuvxyz023456789?\\/$£ГЕЁЗабвеёийклнопрстухчьэя\"],[35,\"ABCDHOPQRSTUVXYZ#+*АБВНОПРСТУХЧЬЭЯдмц\"],[38,\"GKN&@ДИЙКЛЦъ\"],[39,\"€\"],[42,\"MWmwМФЪжфшыю\"],[45,\"ЫЮщ\"],[49,\"Ш\"],[52,\"Щ\"],[56,\"Ж\"]]",
+						"scale": 0.25,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "bottom"
+					},
+					"uid": 834,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 307.40074655243893,
+						"y": 403.0721625340233,
+						"width": 250,
+						"height": 73.81783070850364,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
 						],
 						"angle": 0,
 						"zElevation": 0

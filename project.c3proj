@@ -264,7 +264,10 @@
 					"house_door",
 					"house_concrete",
 					"metal_door",
-					"window"
+					"window",
+					"dust",
+					"dust2",
+					"stone"
 				],
 				"subfolders": [
 					{
@@ -283,7 +286,7 @@
 			{
 				"items": [
 					"Player",
-					"enemy_runner",
+					"runner",
 					"Player_dead",
 					"enemy_gunner"
 				],
@@ -295,7 +298,7 @@
 					"Light",
 					"ShadowLight",
 					"flashlight",
-					"color_light"
+					"color_aura"
 				],
 				"subfolders": [],
 				"name": "light"
@@ -330,7 +333,8 @@
 				"items": [
 					"light_stick",
 					"gun",
-					"gilza"
+					"gilza",
+					"lamp"
 				],
 				"subfolders": [],
 				"name": "items"
@@ -353,7 +357,8 @@
 					"solid",
 					"camera",
 					"dialog_trigger",
-					"enemy_line"
+					"enemy_line",
+					"triggers_audio_emitter"
 				],
 				"subfolders": [],
 				"name": "triggers"
@@ -419,7 +424,8 @@
 			},
 			{
 				"items": [
-					"cursorhint"
+					"cursorhint",
+					"hint_sprfont"
 				],
 				"subfolders": [],
 				"name": "interface"
@@ -445,7 +451,8 @@
 					"building",
 					"enemies",
 					"FX",
-					"lights"
+					"lights",
+					"floors"
 				],
 				"subfolders": [],
 				"name": "Families"
@@ -547,12 +554,12 @@
 							"sid": 589405696979581
 						},
 						{
-							"name": "walk_wood.webm",
+							"name": "walk wood.webm",
 							"type": "audio/webm; codecs=opus",
 							"sid": 405896563616375
 						},
 						{
-							"name": "walk wood run 4.webm",
+							"name": "walk wood run.webm",
 							"type": "audio/webm; codecs=opus",
 							"sid": 111962997747745
 						},
@@ -602,13 +609,29 @@
 							"name": "fire.webm",
 							"type": "audio/webm; codecs=opus",
 							"sid": 500236237139563
+						},
+						{
+							"name": "drop2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 535731435382947
+						},
+						{
+							"name": "lit_fire2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 164806473248454
 						}
 					],
 					"subfolders": [],
 					"name": "items"
 				},
 				{
-					"items": [],
+					"items": [
+						{
+							"name": "horror_chanting.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 250454960379680
+						}
+					],
 					"subfolders": [
 						{
 							"items": [
@@ -1006,7 +1029,7 @@
 						}
 					],
 					"subfolders": [],
-					"name": "gore"
+					"name": "body impact"
 				}
 			]
 		},
@@ -1092,7 +1115,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "0.1.4.0",
+		"version": "0.1.4.1",
 		"author": "Loregret",
 		"authorEmail": "Loregrets@yahoo.com",
 		"authorWebsite": "",

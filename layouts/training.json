@@ -20,7 +20,9 @@
 						"image-angle": 0
 					},
 					"uid": 300,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk dirt"
+					},
 					"behaviors": {},
 					"world": {
 						"x": -1835,
@@ -87,7 +89,9 @@
 						"image-angle": 0
 					},
 					"uid": 312,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 3831,
@@ -141,7 +145,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "color_light",
+					"type": "color_aura",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -192,7 +196,7 @@
 					}
 				},
 				{
-					"type": "color_light",
+					"type": "color_aura",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -364,20 +368,22 @@
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "gun",
+								"initial-animation": "dead",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 328,
 							"instanceVariables": {
-								"state": "idle",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 8
 							},
 							"behaviors": {
 								"Bullet": {
@@ -387,7 +393,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -415,27 +421,33 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
-								"x": 4112,
-								"y": 5011,
-								"width": 68.4,
-								"height": 53.1,
-								"originX": 0.42105263157894735,
-								"originY": 0.4576271186440678,
+								"x": 4287.684792134627,
+								"y": 5252.9610958083895,
+								"width": 118.80000000000001,
+								"height": 56.7,
+								"originX": 0.5227272727272727,
+								"originY": 0.5,
 								"color": [
 									0.796078431372549,
 									0.8901960784313725,
 									0.7529411764705882,
 									1
 								],
-								"angle": 3.7008565611125372,
+								"angle": 4.67324756370919,
 								"zElevation": 0
 							}
 						},
 						{
-							"type": "enemy_runner",
+							"type": "runner",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -448,7 +460,9 @@
 								"state": "idle",
 								"hp": 2,
 								"orig_X": 0,
-								"orig_Y": 0
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
 							},
 							"behaviors": {
 								"Bullet": {
@@ -458,7 +472,7 @@
 										"gravity": 0,
 										"bounce-off-solids": true,
 										"set-angle": true,
-										"step": false,
+										"step": true,
 										"enabled": true
 									}
 								},
@@ -486,6 +500,12 @@
 								},
 								"Timer": {
 									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
 								}
 							},
 							"world": {
@@ -502,6 +522,85 @@
 									1
 								],
 								"angle": 4.685390083295987,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "runner",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 841,
+							"instanceVariables": {
+								"state": "idle",
+								"hp": 2,
+								"orig_X": 0,
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 8
+							},
+							"behaviors": {
+								"Bullet": {
+									"properties": {
+										"speed": 0,
+										"acceleration": 0,
+										"gravity": 0,
+										"bounce-off-solids": true,
+										"set-angle": true,
+										"step": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1600,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": 5,
+										"obstacles": "solids",
+										"max-speed": 200,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 1500,
+										"rotate-object": true,
+										"diagonals": true,
+										"enabled": false
+									}
+								},
+								"Timer": {
+									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 4096,
+								"y": 4934,
+								"width": 37.800000000000004,
+								"height": 53.1,
+								"originX": 0.7619047619047619,
+								"originY": 0.4576271186440678,
+								"color": [
+									0.796078431372549,
+									0.8901960784313725,
+									0.7529411764705882,
+									1
+								],
+								"angle": 4.67324756370919,
 								"zElevation": 0
 							}
 						}
@@ -621,7 +720,7 @@
 							},
 							"uid": 388,
 							"instanceVariables": {
-								"visibility_lvl": 0
+								"is_crouching": false
 							},
 							"behaviors": {
 								"8Direction": {
@@ -1959,6 +2058,39 @@
 			"global": false
 		},
 		{
+			"name": "dialogs",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 669851310581585,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "2d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "light",
 			"overriden": 0,
 			"subLayers": [],
@@ -2231,17 +2363,74 @@
 						}
 					},
 					"world": {
-						"x": 4141,
-						"y": 4701,
-						"width": 11544,
-						"height": 11545,
+						"x": 4120.928,
+						"y": 5235.646,
+						"width": 1369,
+						"height": 1061,
 						"originX": 0.512,
 						"originY": 0.486,
 						"color": [
 							1,
 							1,
 							1,
-							0.6
+							0.25
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
+				},
+				{
+					"type": "Light",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 835,
+					"instanceVariables": {
+						"pinUID": -1
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "opacity",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 25,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 4117,
+						"y": 4270,
+						"width": 1369,
+						"height": 1061,
+						"originX": 0.512,
+						"originY": 0.486,
+						"color": [
+							1,
+							1,
+							1,
+							0.25
 						],
 						"angle": 0,
 						"zElevation": 0,
@@ -2322,7 +2511,7 @@
 					"sid": 328258764965410,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
-					"isInitiallyInteractive": true,
+					"isInitiallyInteractive": false,
 					"color": [
 						1,
 						1,
@@ -2593,7 +2782,7 @@
 			],
 			"sid": 491643931033351,
 			"effectTypes": [],
-			"isInitiallyVisible": false,
+			"isInitiallyVisible": true,
 			"isInitiallyInteractive": false,
 			"color": [
 				1,
