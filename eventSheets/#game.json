@@ -83,8 +83,8 @@
 			"eventType": "variable",
 			"name": "settings_language",
 			"type": "string",
-			"initialValue": "english",
-			"comment": "",
+			"initialValue": "ru",
+			"comment": "(ru, en)",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 841879093134913
@@ -278,6 +278,10 @@
 											}
 										},
 										{
+											"type": "comment",
+											"text": "ammo"
+										},
+										{
 											"id": "add-key",
 											"objectClass": "weapon",
 											"sid": 945084528425936,
@@ -367,7 +371,8 @@
 												"layer": "\"player\"",
 												"x": "Player.X",
 												"y": "Player.Y",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										}
 									],
@@ -386,7 +391,8 @@
 												"layer": "\"light\"",
 												"x": "Player.X",
 												"y": "Player.Y",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										},
 										{
@@ -445,7 +451,8 @@
 												"layer": "\"light\"",
 												"x": "Player.x",
 												"y": "Player.Y",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										},
 										{
@@ -655,6 +662,10 @@
 											]
 										},
 										{
+											"eventType": "comment",
+											"text": "enemy off"
+										},
+										{
 											"eventType": "block",
 											"conditions": [],
 											"actions": [],
@@ -678,24 +689,33 @@
 														{
 															"id": "set-group-active",
 															"objectClass": "System",
-															"sid": 397887242163830,
+															"sid": 229836046453816,
 															"parameters": {
-																"group-name": "\"[h1] Enemy ☠️ [/h1]\"",
+																"group-name": "\"Enemy - alerts\"",
 																"state": "deactivated"
 															}
 														},
 														{
 															"id": "set-enabled",
 															"objectClass": "runner",
-															"sid": 137670367461305,
+															"sid": 223291274925261,
 															"behaviorType": "Solid",
 															"parameters": {
 																"state": "enabled"
 															}
+														},
+														{
+															"id": "set-group-active",
+															"objectClass": "System",
+															"sid": 397887242163830,
+															"disabled": true,
+															"parameters": {
+																"group-name": "\"[h1] Enemy ☠️ [/h1]\"",
+																"state": "deactivated"
+															}
 														}
 													],
-													"sid": 483524208730285,
-													"disabled": true
+													"sid": 483524208730285
 												}
 											]
 										},
@@ -721,7 +741,8 @@
 													}
 												}
 											],
-											"sid": 475272371845863
+											"sid": 475272371845863,
+											"disabled": true
 										}
 									]
 								},
@@ -1227,9 +1248,9 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 863880878510601,
+													"sid": 443293800983313,
 													"parameters": {
-														"first-value": "Functions.trigger_dialog_is_seen(dialog_trigger.UID)",
+														"first-value": "Functions.trigger_dialog_is_available(dialog_trigger.UID)",
 														"comparison": 0,
 														"second-value": "1"
 													}
@@ -1243,13 +1264,6 @@
 														"dialog_trigger.SceneName",
 														"dialog_trigger.DialogName",
 														"dialog_trigger.LineNum"
-													]
-												},
-												{
-													"callFunction": "triggers_destroy_hint",
-													"sid": 818692855895054,
-													"parameters": [
-														"dialog_trigger.UID"
 													]
 												}
 											],
@@ -1280,6 +1294,163 @@
 														}
 													],
 													"sid": 356313293560128
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "подобрать / использовать"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 648905993789095,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 969606511904692,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "gun"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 663681173881594,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 956109456530102,
+													"parameters": {
+														"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
+														"comparison": 3,
+														"second-value": "100"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 195191998586661,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "choose(\"kick1\",\"kick1\",\"kick2\")",
+														"loop": "not-looping",
+														"volume": "-14",
+														"object": "Player",
+														"inner-angle": "360",
+														"outer-angle": "0",
+														"outer-gain": "0",
+														"tag-optional": "\"kick\""
+													}
+												}
+											],
+											"sid": 592122397603337,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "gun",
+															"sid": 904091329189398,
+															"parameters": {
+																"comparison": 0,
+																"number": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "add-key",
+															"objectClass": "weapon",
+															"sid": 582103096032084,
+															"parameters": {
+																"key": "\"pistol\"",
+																"value": "1"
+															}
+														}
+													],
+													"sid": 858188956915962
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "gun",
+															"sid": 599933463876769,
+															"parameters": {
+																"comparison": 0,
+																"number": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "add-key",
+															"objectClass": "weapon",
+															"sid": 667319143662450,
+															"parameters": {
+																"key": "\"ak\"",
+																"value": "1"
+															}
+														}
+													],
+													"sid": 258152633266543
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "gun",
+															"sid": 298462726707155,
+															"parameters": {
+																"comparison": 0,
+																"number": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "add-key",
+															"objectClass": "weapon",
+															"sid": 386545360956126,
+															"parameters": {
+																"key": "\"shotgun\"",
+																"value": "1"
+															}
+														}
+													],
+													"sid": 677227628919976
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "gun",
+															"sid": 502016011438833
+														}
+													],
+													"sid": 840723738653194
 												}
 											]
 										}
@@ -1500,6 +1671,16 @@
 											"parameters": {
 												"key": 50
 											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "weapon",
+											"sid": 132544306133127,
+											"parameters": {
+												"key": "\"pistol\"",
+												"comparison": 0,
+												"value": "1"
+											}
 										}
 									],
 									"actions": [],
@@ -1582,6 +1763,16 @@
 											"parameters": {
 												"key": 51
 											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "weapon",
+											"sid": 284994106649314,
+											"parameters": {
+												"key": "\"ak\"",
+												"comparison": 0,
+												"value": "1"
+											}
 										}
 									],
 									"actions": [],
@@ -1653,6 +1844,16 @@
 											"sid": 695177712893047,
 											"parameters": {
 												"key": 52
+											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "weapon",
+											"sid": 909086134443352,
+											"parameters": {
+												"key": "\"shotgun\"",
+												"comparison": 0,
+												"value": "1"
 											}
 										}
 									],
@@ -2412,13 +2613,6 @@
 														"dialog_trigger.DialogName",
 														"dialog_trigger.LineNum"
 													]
-												},
-												{
-													"callFunction": "triggers_destroy_hint",
-													"sid": 215208359623415,
-													"parameters": [
-														"dialog_trigger.UID"
-													]
 												}
 											],
 											"sid": 487853428758816,
@@ -2454,6 +2648,138 @@
 											]
 										}
 									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "пинок"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 173579651888019,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 620282720777939,
+											"parameters": {
+												"key": 88
+											}
+										},
+										{
+											"id": "is-timer-running",
+											"objectClass": "Player",
+											"sid": 180918121421634,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"kick\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 937157190606663,
+											"parameters": {
+												"animation": "\"kick\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Player",
+											"sid": 304127226835907,
+											"behaviorType": "8Direction"
+										},
+										{
+											"id": "set-ignoring-input",
+											"objectClass": "Player",
+											"sid": 810944421053201,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"input": "start-ignoring"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 451653378325846,
+											"parameters": {
+												"animation": "\"kick\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "Player",
+											"sid": 171156340969689,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "1.1",
+												"type": "once",
+												"tag": "\"kick\""
+											}
+										},
+										{
+											"id": "play-at-object-by-name",
+											"objectClass": "Audio",
+											"sid": 256693017288911,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "choose(\"kick1\",\"kick1\",\"kick2\")",
+												"loop": "not-looping",
+												"volume": "-17",
+												"object": "Player",
+												"inner-angle": "360",
+												"outer-angle": "0",
+												"outer-gain": "0",
+												"tag-optional": "\"kick\""
+											}
+										}
+									],
+									"sid": 338212840912013
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "Player",
+											"sid": 267018087695920,
+											"parameters": {
+												"animation": "\"kick\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 288290147589968,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-ignoring-input",
+											"objectClass": "Player",
+											"sid": 958637762710979,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"input": "stop-ignoring"
+											}
+										}
+									],
+									"sid": 548033172547258
 								}
 							]
 						}
@@ -4072,7 +4398,8 @@
 																"layer": "\"player\"",
 																"x": "Player.ImagePointX(1)",
 																"y": "Player.ImagePointY(1)",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -4131,7 +4458,8 @@
 																		"layer": "\"light\"",
 																		"x": "fx_muzzle.ImagePointX(1)",
 																		"y": "fx_muzzle.ImagePointY(1)",
-																		"create-hierarchy": false
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
 																	}
 																},
 																{
@@ -4447,7 +4775,8 @@
 																"layer": "\"player\"",
 																"x": "Player.ImagePointX(1)",
 																"y": "Player.ImagePointY(1)",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -4506,7 +4835,8 @@
 																		"layer": "\"light\"",
 																		"x": "fx_muzzle.ImagePointX(1)",
 																		"y": "fx_muzzle.ImagePointY(1)",
-																		"create-hierarchy": false
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
 																	}
 																},
 																{
@@ -4907,7 +5237,8 @@
 																"layer": "\"player\"",
 																"x": "Player.ImagePointX(1)",
 																"y": "Player.ImagePointY(1)",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -4966,7 +5297,8 @@
 																		"layer": "\"light\"",
 																		"x": "fx_muzzle.ImagePointX(1)",
 																		"y": "fx_muzzle.ImagePointY(1)",
-																		"create-hierarchy": false
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
 																	}
 																},
 																{
@@ -6315,6 +6647,33 @@
 									"isOrBlock": true
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "weapon"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 743554739726169,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "Player",
+											"sid": 724668409639136,
+											"parameters": {
+												"object": "gun"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 123813775756084
+								}
+							]
 						}
 					],
 					"sid": 793517693674398
@@ -7661,35 +8020,9 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-on-screen",
-											"objectClass": "Hint",
-											"sid": 461950591527613
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position",
-											"objectClass": "Hint",
-											"sid": 409283656963363,
-											"parameters": {
-												"x": "Player.X",
-												"y": "Player.Y -30"
-											}
-										}
-									],
-									"sid": 767607730334603
-								},
-								{
-									"eventType": "comment",
-									"text": "Нужна оптимизация"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for-each",
-											"objectClass": "System",
-											"sid": 480961095872000,
+											"id": "on-collision-with-another-object",
+											"objectClass": "Player",
+											"sid": 930750316794404,
 											"parameters": {
 												"object": "dialog_trigger"
 											}
@@ -7697,41 +8030,30 @@
 										{
 											"id": "is-boolean-instance-variable-set",
 											"objectClass": "dialog_trigger",
-											"sid": 692224812633598,
+											"sid": 625763401552208,
 											"parameters": {
 												"instance-variable": "active"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "dialog_trigger",
+											"sid": 793130060822857,
+											"parameters": {
+												"instance-variable": "auto_start"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 452207798781453,
-									"disabled": true,
+									"sid": 832716027199481,
 									"children": [
-										{
-											"eventType": "variable",
-											"name": "PlayerOnceEntered",
-											"type": "boolean",
-											"initialValue": "false",
-											"comment": "For Auto-Start Repeatable Trigger",
-											"isStatic": true,
-											"isConstant": false,
-											"sid": 120113748831406
-										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-overlapping-another-object",
-													"objectClass": "dialog_trigger",
-													"sid": 931390476361329,
-													"parameters": {
-														"object": "Player"
-													}
-												},
-												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 216987148198347,
+													"sid": 238825530297900,
 													"parameters": {
 														"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
 														"comparison": 0,
@@ -7739,279 +8061,44 @@
 													}
 												}
 											],
-											"actions": [],
-											"sid": 110581649440877,
-											"disabled": true,
-											"children": [
+											"actions": [
 												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
-															"sid": 980144057793817,
-															"parameters": {
-																"instance-variable": "auto_start"
-															}
-														}
-													],
-													"actions": [],
-													"sid": 116916714686868,
-													"disabled": true,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "trigger-once-while-true",
-																	"objectClass": "System",
-																	"sid": 257498601702981
-																},
-																{
-																	"id": "compare-boolean-eventvar",
-																	"objectClass": "System",
-																	"sid": 340033081240501,
-																	"parameters": {
-																		"variable": "PlayerOnceEntered"
-																	},
-																	"isInverted": true
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "dialogic_play_dialog",
-																	"sid": 954719302491350,
-																	"parameters": [
-																		"dialog_trigger.SceneName",
-																		"dialog_trigger.DialogName",
-																		"0"
-																	]
-																}
-															],
-															"sid": 872187761344649,
-															"disabled": true,
-															"children": [
-																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "is-boolean-instance-variable-set",
-																			"objectClass": "dialog_trigger",
-																			"sid": 844982486381924,
-																			"parameters": {
-																				"instance-variable": "repeatable"
-																			},
-																			"isInverted": true
-																		}
-																	],
-																	"actions": [
-																		{
-																			"id": "set-boolean-instvar",
-																			"objectClass": "dialog_trigger",
-																			"sid": 139755753503038,
-																			"parameters": {
-																				"instance-variable": "active",
-																				"value": "false"
-																			}
-																		}
-																	],
-																	"sid": 804236016844545,
-																	"disabled": true
-																},
-																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "else",
-																			"objectClass": "System",
-																			"sid": 230834351064810
-																		}
-																	],
-																	"actions": [
-																		{
-																			"id": "set-boolean-eventvar",
-																			"objectClass": "System",
-																			"sid": 210278656904630,
-																			"parameters": {
-																				"variable": "PlayerOnceEntered",
-																				"value": "true"
-																			}
-																		}
-																	],
-																	"sid": 520947208073786,
-																	"disabled": true
-																}
-															]
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 880920467166932
-														}
-													],
-													"actions": [
-														{
-															"id": "set-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 903614806777015,
-															"parameters": {
-																"variable": "PlayerOnceEntered",
-																"value": "false"
-															}
-														}
-													],
-													"sid": 502185149478651,
-													"disabled": true,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "compare-boolean-eventvar",
-																	"objectClass": "System",
-																	"sid": 835716070304173,
-																	"parameters": {
-																		"variable": "settings_show_trigger_zone_hint"
-																	}
-																}
-															],
-															"actions": [],
-															"sid": 916768866531715,
-															"disabled": true,
-															"children": [
-																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "compare-instance-variable",
-																			"objectClass": "Hint",
-																			"sid": 787764249552668,
-																			"parameters": {
-																				"instance-variable": "parentUID",
-																				"comparison": 0,
-																				"value": "dialog_trigger.UID"
-																			}
-																		}
-																	],
-																	"actions": [],
-																	"sid": 859442464515735,
-																	"disabled": true
-																},
-																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "else",
-																			"objectClass": "System",
-																			"sid": 955732468828919
-																		},
-																		{
-																			"id": "trigger-once-while-true",
-																			"objectClass": "System",
-																			"sid": 925485392965493
-																		}
-																	],
-																	"actions": [],
-																	"sid": 324030682260478,
-																	"disabled": true,
-																	"children": [
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "is-boolean-instance-variable-set",
-																					"objectClass": "dialog_trigger",
-																					"sid": 858775495605973,
-																					"parameters": {
-																						"instance-variable": "repeatable"
-																					}
-																				}
-																			],
-																			"actions": [
-																				{
-																					"callFunction": "triggers_create_hint",
-																					"sid": 793277424933409,
-																					"parameters": [
-																						"dialog_trigger.UID"
-																					]
-																				}
-																			],
-																			"sid": 527795317029993,
-																			"disabled": true
-																		},
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "else",
-																					"objectClass": "System",
-																					"sid": 931655520069121
-																				},
-																				{
-																					"id": "has-key",
-																					"objectClass": "dialogic_logs",
-																					"sid": 433416159726009,
-																					"parameters": {
-																						"key": "dialog_trigger.DialogName"
-																					},
-																					"isInverted": true
-																				}
-																			],
-																			"actions": [
-																				{
-																					"callFunction": "triggers_create_hint",
-																					"sid": 127157625071385,
-																					"parameters": [
-																						"dialog_trigger.UID"
-																					]
-																				}
-																			],
-																			"sid": 748761008018846,
-																			"disabled": true
-																		}
-																	]
-																}
-															]
-														}
+													"callFunction": "dialogic_play_dialog",
+													"sid": 902455881204017,
+													"parameters": [
+														"dialog_trigger.SceneName",
+														"dialog_trigger.DialogName",
+														"dialog_trigger.LineNum"
 													]
 												}
-											]
+											],
+											"sid": 839227055734892
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 879781044236328
-												},
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 372909460618603,
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "dialog_trigger",
+													"sid": 529295212867653,
 													"parameters": {
-														"first-value": "Hint.Count",
-														"comparison": 4,
-														"second-value": "0"
-													}
+														"instance-variable": "repeatable"
+													},
+													"isInverted": true
 												}
 											],
 											"actions": [
 												{
-													"callFunction": "triggers_destroy_hint",
-													"sid": 325573014305276,
-													"parameters": [
-														"dialog_trigger.UID"
-													]
+													"id": "set-boolean-instvar",
+													"objectClass": "dialog_trigger",
+													"sid": 202113059241596,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "false"
+													}
 												}
 											],
-											"sid": 833783481301095,
-											"disabled": true
+											"sid": 846571661388545
 										}
 									]
 								}
@@ -8408,240 +8495,6 @@
 											]
 										}
 									]
-								},
-								{
-									"functionName": "triggers_create_hint",
-									"functionDescription": "",
-									"functionCategory": "#triggers",
-									"functionReturnType": "none",
-									"functionIsAsync": false,
-									"functionParameters": [
-										{
-											"name": "trigger_UID",
-											"type": "number",
-											"initialValue": "-1",
-											"comment": "",
-											"sid": 593526976807273
-										}
-									],
-									"eventType": "function-block",
-									"conditions": [],
-									"actions": [],
-									"sid": 865939873584520,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 601555534326933,
-													"parameters": {
-														"variable": "settings_show_trigger_zone_hint"
-													}
-												},
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "dialog_trigger",
-													"sid": 726695874546645,
-													"parameters": {
-														"unique-id": "trigger_UID"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 728730405641557,
-													"parameters": {
-														"audio-file": "ui-click-8",
-														"loop": "not-looping",
-														"volume": "-28",
-														"tag-optional": "\"\""
-													}
-												},
-												{
-													"id": "create-object",
-													"objectClass": "System",
-													"sid": 953730024761512,
-													"parameters": {
-														"object-to-create": "Hint",
-														"layer": "\"hints\"",
-														"x": "Player.X",
-														"y": "Player.BBoxTop",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-instvar-value",
-													"objectClass": "Hint",
-													"sid": 878682137018819,
-													"parameters": {
-														"instance-variable": "parentUID",
-														"value": "dialog_trigger.UID"
-													}
-												},
-												{
-													"id": "set-height",
-													"objectClass": "Hint",
-													"sid": 147248213147488,
-													"parameters": {
-														"height": "1"
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "Hint",
-													"sid": 262515805633794,
-													"parameters": {
-														"opacity": "10"
-													}
-												},
-												{
-													"id": "tween-one-property",
-													"objectClass": "Hint",
-													"sid": 135349345938819,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"appear\"",
-														"property": "offsetOpacity",
-														"end-value": "100",
-														"time": "0.26",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no"
-													}
-												},
-												{
-													"id": "tween-one-property",
-													"objectClass": "Hint",
-													"sid": 489660866458281,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"appear2\"",
-														"property": "offsetHeight",
-														"end-value": "32",
-														"time": "0.25",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no"
-													}
-												}
-											],
-											"sid": 676970214038534
-										}
-									]
-								},
-								{
-									"functionName": "triggers_destroy_hint",
-									"functionDescription": "",
-									"functionCategory": "#triggers",
-									"functionReturnType": "none",
-									"functionIsAsync": false,
-									"functionParameters": [
-										{
-											"name": "trigger_UID",
-											"type": "number",
-											"initialValue": "-1",
-											"comment": "",
-											"sid": 570083937357090
-										}
-									],
-									"eventType": "function-block",
-									"conditions": [],
-									"actions": [],
-									"sid": 206509101851634,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "dialog_trigger",
-													"sid": 321191806455075,
-													"parameters": {
-														"unique-id": "trigger_UID"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 501276500465822,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Hint",
-															"sid": 551471243445043,
-															"parameters": {
-																"instance-variable": "parentUID",
-																"comparison": 0,
-																"value": "dialog_trigger.UID"
-															}
-														}
-													],
-													"actions": [],
-													"sid": 446917298456539,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-playing",
-																	"objectClass": "Hint",
-																	"sid": 458891923618603,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"destroy\""
-																	},
-																	"isInverted": true
-																}
-															],
-															"actions": [
-																{
-																	"id": "tween-one-property",
-																	"objectClass": "Hint",
-																	"sid": 434799639552816,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"destroy\"",
-																		"property": "offsetOpacity",
-																		"end-value": "0",
-																		"time": "0.4",
-																		"ease": "default",
-																		"destroy-on-complete": "yes",
-																		"loop": "no",
-																		"ping-pong": "no"
-																	}
-																},
-																{
-																	"id": "tween-one-property",
-																	"objectClass": "Hint",
-																	"sid": 849883479096501,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"destroy2\"",
-																		"property": "offsetHeight",
-																		"end-value": "0",
-																		"time": "0.25",
-																		"ease": "default",
-																		"destroy-on-complete": "yes",
-																		"loop": "no",
-																		"ping-pong": "no"
-																	}
-																}
-															],
-															"sid": 405847146941461
-														}
-													]
-												}
-											]
-										}
-									]
 								}
 							],
 							"sid": 950834549848535
@@ -8710,7 +8563,8 @@
 												"layer": "\"triggers_debug\"",
 												"x": "X",
 												"y": "Y",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										},
 										{

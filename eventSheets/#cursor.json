@@ -35,7 +35,8 @@
 								"layer": "\"cursor\"",
 								"x": "Mouse.X",
 								"y": "Mouse.Y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						}
 					],
@@ -229,6 +230,10 @@
 											]
 										}
 									]
+								},
+								{
+									"eventType": "comment",
+									"text": "colors"
 								},
 								{
 									"eventType": "block",
@@ -497,6 +502,139 @@
 										{
 											"id": "else",
 											"objectClass": "System",
+											"sid": 990997055343041
+										},
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 327768593602859,
+											"parameters": {
+												"object": "gun"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 432751629967685,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 250861814160216,
+													"parameters": {
+														"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
+														"comparison": 3,
+														"second-value": "100"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "cursorhint",
+													"sid": 944244700324139,
+													"parameters": {
+														"text": "\"*Поднять оружие*\""
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "cursorhint",
+													"sid": 312513497126189,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "cursorhint",
+													"sid": 558457118344411,
+													"parameters": {
+														"color": "rgbEx(93, 93, 93)"
+													}
+												}
+											],
+											"sid": 273433490614797
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 686755757267876
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 762109329633818,
+													"parameters": {
+														"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
+														"comparison": 3,
+														"second-value": "300"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "cursorhint",
+													"sid": 285646743014554,
+													"parameters": {
+														"text": "\"*Поднять оружие*\""
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "cursorhint",
+													"sid": 300670020995698,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "cursorhint",
+													"sid": 566216241239988,
+													"parameters": {
+														"color": "rgbEx(36, 36, 36)"
+													}
+												}
+											],
+											"sid": 906142363301171
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 578787364026443
+												},
+												{
+													"id": "is-visible",
+													"objectClass": "cursorhint",
+													"sid": 560376104408380
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "cursor_clear_hint",
+													"sid": 482099905709774
+												}
+											],
+											"sid": 608902794856477
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
 											"sid": 142201243067871
 										},
 										{
@@ -583,7 +721,8 @@
 								"layer": "\"cursor\"",
 								"x": "Mouse.X",
 								"y": "Mouse.Y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{

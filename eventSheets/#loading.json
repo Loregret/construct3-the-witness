@@ -1,0 +1,59 @@
+{
+	"name": "#Loading",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 220888196428334,
+					"parameters": {
+						"interval-seconds": "0.1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "loading",
+					"sid": 586114527644177,
+					"parameters": {
+						"degrees": "30"
+					}
+				}
+			],
+			"sid": 187627745549378
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 344665246247606
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 262701450138901,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 691144694120872,
+					"parameters": {
+						"layout": "logo"
+					}
+				}
+			],
+			"sid": 132173531423502
+		}
+	],
+	"sid": 583625621863782
+}

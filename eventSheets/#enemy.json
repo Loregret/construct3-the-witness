@@ -98,7 +98,8 @@
 												"layer": "\"enemy\"",
 												"x": "enemy_gunner.ImagePointX(1)",
 												"y": "enemy_gunner.ImagePointY(1)",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										},
 										{
@@ -157,7 +158,8 @@
 														"layer": "\"light\"",
 														"x": "fx_muzzle.ImagePointX(1)",
 														"y": "fx_muzzle.ImagePointY(1)",
-														"create-hierarchy": false
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												},
 												{
@@ -506,6 +508,16 @@
 															"objectClass": "runner",
 															"sid": 586062409331011,
 															"behaviorType": "Bullet"
+														},
+														{
+															"id": "compare-speed",
+															"objectClass": "runner",
+															"sid": 993926240737330,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"comparison": 4,
+																"speed": "0"
+															}
 														}
 													],
 													"actions": [],
@@ -515,49 +527,25 @@
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "compare-speed",
-																	"objectClass": "runner",
-																	"sid": 753828507774988,
-																	"behaviorType": "Bullet",
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 469536984124663,
 																	"parameters": {
-																		"comparison": 4,
-																		"speed": "0"
+																		"interval-seconds": "0.4"
 																	}
 																}
 															],
 															"actions": [
 																{
-																	"type": "comment",
-																	"text": "steps on"
+																	"callFunction": "enemy_check_step_sound",
+																	"sid": 108293207332541,
+																	"parameters": [
+																		true,
+																		"runner.UID"
+																	]
 																}
 															],
-															"sid": 708701353978002,
-															"children": [
-																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "every-x-seconds",
-																			"objectClass": "System",
-																			"sid": 171874061110714,
-																			"parameters": {
-																				"interval-seconds": "0.3"
-																			}
-																		}
-																	],
-																	"actions": [
-																		{
-																			"callFunction": "enemy_check_step_sound",
-																			"sid": 289171244468218,
-																			"parameters": [
-																				true,
-																				"runner.UID"
-																			]
-																		}
-																	],
-																	"sid": 897385024833549
-																}
-															]
+															"sid": 496742438713076
 														}
 													]
 												},
@@ -568,32 +556,137 @@
 															"id": "else",
 															"objectClass": "System",
 															"sid": 848697472306614
-														}
-													],
-													"actions": [
+														},
 														{
-															"type": "comment",
-															"text": "steps off"
+															"id": "compare-speed",
+															"objectClass": "runner",
+															"sid": 518278490939770,
+															"behaviorType": "Pathfinding",
+															"parameters": {
+																"comparison": 4,
+																"speed": "3"
+															}
 														}
 													],
+													"actions": [],
 													"sid": 860731031260673,
 													"children": [
 														{
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "compare-speed",
-																	"objectClass": "runner",
-																	"sid": 360080138832679,
-																	"behaviorType": "Pathfinding",
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 275643950897793,
 																	"parameters": {
-																		"comparison": 4,
-																		"speed": "5"
+																		"interval-seconds": "0.7"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "enemy_check_step_sound",
+																	"sid": 129518180115707,
+																	"parameters": [
+																		false,
+																		"runner.UID"
+																	]
+																}
+															],
+															"sid": 264692105756218
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 496888071882930
+														}
+													],
+													"actions": [],
+													"sid": 345205005477019,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 191817539949826,
+																	"parameters": {
+																		"tag": "\"leaves\"&runner.UID"
+																	}
+																},
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 616729562186592,
+																	"parameters": {
+																		"tag": "\"walk grass\"&runner.UID"
+																	}
+																},
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 301461559574904,
+																	"parameters": {
+																		"tag": "\"walk wood\"&runner.UID"
+																	}
+																},
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 143399281235282,
+																	"parameters": {
+																		"tag": "\"walk dirt\"&runner.UID"
+																	}
+																},
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 570017584491761,
+																	"parameters": {
+																		"tag": "\"walk stone\"&runner.UID"
+																	}
+																},
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 413122250308360,
+																	"parameters": {
+																		"tag": "\"walk grass run\"&runner.UID"
+																	}
+																},
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 301849089334579,
+																	"parameters": {
+																		"tag": "\"walk wood run\"&runner.UID"
+																	}
+																},
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 720539173171061,
+																	"parameters": {
+																		"tag": "\"walk dirt run\"&runner.UID"
+																	}
+																},
+																{
+																	"id": "is-tag-playing",
+																	"objectClass": "Audio",
+																	"sid": 927558558478070,
+																	"parameters": {
+																		"tag": "\"walk stone run\"&runner.UID"
 																	}
 																}
 															],
 															"actions": [],
-															"sid": 290188243908889,
+															"sid": 379443276809446,
 															"children": [
 																{
 																	"eventType": "block",
@@ -601,25 +694,25 @@
 																		{
 																			"id": "every-x-seconds",
 																			"objectClass": "System",
-																			"sid": 721073916845709,
+																			"sid": 559099541307155,
 																			"parameters": {
-																				"interval-seconds": "0.7"
+																				"interval-seconds": "0.5"
 																			}
 																		}
 																	],
 																	"actions": [
 																		{
-																			"callFunction": "enemy_check_step_sound",
-																			"sid": 447257991200885,
+																			"callFunction": "enemy_stop_steps",
+																			"sid": 627951147730544,
 																			"parameters": [
-																				false,
 																				"runner.UID"
 																			]
 																		}
 																	],
-																	"sid": 542522925427666
+																	"sid": 871302606472956
 																}
-															]
+															],
+															"isOrBlock": true
 														}
 													]
 												}
@@ -991,16 +1084,26 @@
 																					"id": "trigger-once-while-true",
 																					"objectClass": "System",
 																					"sid": 552699025447519
+																				},
+																				{
+																					"id": "compare-two-values",
+																					"objectClass": "System",
+																					"sid": 810347894122852,
+																					"parameters": {
+																						"first-value": "random(100)",
+																						"comparison": 2,
+																						"second-value": "70"
+																					}
 																				}
 																			],
 																			"actions": [
 																				{
 																					"id": "play-at-object-by-name",
 																					"objectClass": "Audio",
-																					"sid": 846154321489750,
+																					"sid": 920712367411511,
 																					"parameters": {
 																						"folder": "sounds",
-																						"audio-file-name": "choose(\"man scream\", \"man scream 2\",\"man scream 3\",\"\")",
+																						"audio-file-name": "choose(\"man scream\", \"man scream 2\",\"man scream 3\")",
 																						"loop": "not-looping",
 																						"volume": "random(-5,0)",
 																						"object": "runner",
@@ -1012,11 +1115,10 @@
 																				},
 																				{
 																					"callFunction": "enemy_dialog",
-																					"sid": 514064551153668,
+																					"sid": 547877674606053,
 																					"parameters": [
 																						"runner.UID",
-																						"choose( \"BASTARD!\", \"KILL HIM!\", \"ARRGH\", \"BRRGH\", \"AAARGH\")",
-																						"\"red\""
+																						"\"attack\""
 																					]
 																				},
 																				{
@@ -1165,7 +1267,8 @@
 																								"layer": "\"triggers_debug\"",
 																								"x": "runner.X",
 																								"y": "runner.Y",
-																								"create-hierarchy": false
+																								"create-hierarchy": false,
+																								"template-name": "\"\""
 																							}
 																						},
 																						{
@@ -2018,7 +2121,8 @@
 																																"layer": "torch.LayerName",
 																																"x": "torch.ImagePointX(1)",
 																																"y": "torch.ImagePointY(1) ",
-																																"create-hierarchy": false
+																																"create-hierarchy": false,
+																																"template-name": "\"\""
 																															}
 																														},
 																														{
@@ -2301,6 +2405,59 @@
 															]
 														}
 													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 522039680603507
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "runner",
+													"sid": 379664108631066,
+													"parameters": {
+														"instance-variable": "state",
+														"comparison": 0,
+														"value": "\"pray\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 942518807375273,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-timer-running",
+															"objectClass": "runner",
+															"sid": 654349102798879,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"pray\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "start-timer",
+															"objectClass": "runner",
+															"sid": 993150890465801,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "random(3)",
+																"type": "once",
+																"tag": "\"pray\""
+															}
+														}
+													],
+													"sid": 980955700560064
 												}
 											]
 										}
@@ -2721,8 +2878,11 @@
 															],
 															"actions": [
 																{
-																	"callFunction": "player_stop_steps",
-																	"sid": 274196831637854
+																	"callFunction": "enemy_stop_steps",
+																	"sid": 459202099210074,
+																	"parameters": [
+																		"uid"
+																	]
 																},
 																{
 																	"id": "play-at-object-by-name",
@@ -2807,8 +2967,11 @@
 															],
 															"actions": [
 																{
-																	"callFunction": "player_stop_steps",
-																	"sid": 186128108013044
+																	"callFunction": "enemy_stop_steps",
+																	"sid": 799024084297426,
+																	"parameters": [
+																		"uid"
+																	]
 																},
 																{
 																	"id": "play-at-object-by-name",
@@ -2840,7 +3003,7 @@
 						{
 							"functionName": "enemy_stop_steps",
 							"functionDescription": "",
-							"functionCategory": "#enemy",
+							"functionCategory": "#audio",
 							"functionReturnType": "none",
 							"functionIsAsync": false,
 							"functionParameters": [
@@ -2855,13 +3018,22 @@
 							"eventType": "function-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 636674802100262,
+							"sid": 862602006020996,
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "runner",
+											"sid": 798292116923418,
+											"parameters": {
+												"unique-id": "uid"
+											}
+										}
+									],
 									"actions": [],
-									"sid": 646344695952006,
+									"sid": 697195951347797,
 									"children": [
 										{
 											"eventType": "block",
@@ -2870,7 +3042,7 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 567312555508937,
+													"sid": 703336344475906,
 													"parameters": {
 														"tag": "\"leaves\"&UID"
 													}
@@ -2878,7 +3050,7 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 182716546995043,
+													"sid": 600773675074293,
 													"parameters": {
 														"tag": "\"walk grass\"&uid"
 													}
@@ -2886,7 +3058,7 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 959598330129744,
+													"sid": 488888174414285,
 													"parameters": {
 														"tag": "\"walk wood\"&uid"
 													}
@@ -2894,7 +3066,7 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 410124418187442,
+													"sid": 705404126078489,
 													"parameters": {
 														"tag": "\"walk dirt\"&uid"
 													}
@@ -2902,13 +3074,13 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 372561330327851,
+													"sid": 887275584163534,
 													"parameters": {
 														"tag": "\"walk stone\"&uid"
 													}
 												}
 											],
-											"sid": 983612953635347
+											"sid": 841282563613612
 										},
 										{
 											"eventType": "block",
@@ -2917,7 +3089,7 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 699379366743809,
+													"sid": 291061757440399,
 													"parameters": {
 														"tag": "\"walk grass run\"&uid"
 													}
@@ -2925,7 +3097,7 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 131811061161377,
+													"sid": 432091475847504,
 													"parameters": {
 														"tag": "\"walk wood run\"&uid"
 													}
@@ -2933,7 +3105,7 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 991526472384499,
+													"sid": 571079240068457,
 													"parameters": {
 														"tag": "\"walk dirt run\"&uid"
 													}
@@ -2941,13 +3113,13 @@
 												{
 													"id": "stop",
 													"objectClass": "Audio",
-													"sid": 551720263152986,
+													"sid": 995980174698124,
 													"parameters": {
 														"tag": "\"walk stone run\"&uid"
 													}
 												}
 											],
-											"sid": 184468870907599
+											"sid": 415642343945856
 										}
 									]
 								}
@@ -3055,7 +3227,8 @@
 												"layer": "\"triggers_debug\"",
 												"x": "X",
 												"y": "Y",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										},
 										{
@@ -3136,181 +3309,6 @@
 										}
 									],
 									"sid": 921415374310388
-								}
-							]
-						},
-						{
-							"functionName": "enemy_dialog",
-							"functionDescription": "",
-							"functionCategory": "#enemy",
-							"functionReturnType": "none",
-							"functionIsAsync": false,
-							"functionParameters": [
-								{
-									"name": "UID",
-									"type": "number",
-									"initialValue": "-1",
-									"comment": "",
-									"sid": 354703780204552
-								},
-								{
-									"name": "text",
-									"type": "string",
-									"initialValue": "",
-									"comment": "",
-									"sid": 196432611443488
-								},
-								{
-									"name": "color",
-									"type": "string",
-									"initialValue": "white",
-									"comment": "",
-									"sid": 792640936618249
-								}
-							],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 617196810321214,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-unique-id",
-											"objectClass": "runner",
-											"sid": 417068439172985,
-											"parameters": {
-												"unique-id": "UID"
-											}
-										},
-										{
-											"id": "pick-children",
-											"objectClass": "runner",
-											"sid": 861710972540653,
-											"parameters": {
-												"child": "hint_sprfont",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 678624097834826,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-text",
-													"objectClass": "hint_sprfont",
-													"sid": 146429675997388,
-													"parameters": {
-														"text-to-compare": "\"\"",
-														"case-sensitivity": "ignore-case"
-													}
-												},
-												{
-													"id": "is-running-typewriter-text",
-													"objectClass": "hint_sprfont",
-													"sid": 162844619474278,
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 377480208921570,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "typewriter-text",
-															"objectClass": "hint_sprfont",
-															"sid": 574589905698252,
-															"parameters": {
-																"text": "text",
-																"duration": "0.4"
-															}
-														},
-														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 496461250808543,
-															"parameters": {
-																"seconds": "1.45"
-															}
-														},
-														{
-															"id": "set-text",
-															"objectClass": "hint_sprfont",
-															"sid": 484159390030998,
-															"parameters": {
-																"text": "\"\""
-															}
-														}
-													],
-													"sid": 576189196988030
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 628095765753476,
-															"parameters": {
-																"variable": "color",
-																"comparison": 0,
-																"value": "\"white\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-default-color",
-															"objectClass": "hint_sprfont",
-															"sid": 542150677792291,
-															"parameters": {
-																"color": "rgbEx(100, 100, 100)"
-															}
-														}
-													],
-													"sid": 232114973201215
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 207965665735044
-														},
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 600875154005166,
-															"parameters": {
-																"variable": "color",
-																"comparison": 0,
-																"value": "\"red\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-default-color",
-															"objectClass": "hint_sprfont",
-															"sid": 690846317722312,
-															"parameters": {
-																"color": "rgbEx(100, 0, 0)"
-															}
-														}
-													],
-													"sid": 919322165827912
-												}
-											]
-										}
-									]
 								}
 							]
 						},
@@ -3903,7 +3901,8 @@
 																"layer": "\"floors\"",
 																"x": "runner.X  + random(-5,5)",
 																"y": "runner.Y + random(-15,15)",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -3915,7 +3914,8 @@
 																"layer": "\"floors\"",
 																"x": "runner.X  + random(-15,15)",
 																"y": "runner.Y + random(-5,5)",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														}
 													],
@@ -4062,6 +4062,361 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"functionName": "enemy_dialog",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "UID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 169484699002248
+								},
+								{
+									"name": "dialogname",
+									"type": "string",
+									"initialValue": "none",
+									"comment": "",
+									"sid": 824723210774977
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 136998651966794,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 618551577039560,
+											"parameters": {
+												"variable": "settings_language",
+												"comparison": 0,
+												"value": "\"ru\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 182866704051737,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 710857701299608,
+													"parameters": {
+														"variable": "dialogname",
+														"comparison": 0,
+														"value": "\"pray\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "enemy_play_dialogline",
+													"sid": 738508363848337,
+													"parameters": [
+														"UID",
+														"choose( \"Narsi!\", \"Al'Kahar\", \"Bus i 'olk\", \"Pash t'et\", \"Bas w'asr\", \"Kul 'huar\")",
+														"\"red\""
+													]
+												}
+											],
+											"sid": 913605827147158
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 312721492406473,
+													"parameters": {
+														"variable": "dialogname",
+														"comparison": 0,
+														"value": "\"attack\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "enemy_play_dialogline",
+													"sid": 811439920482140,
+													"parameters": [
+														"UID",
+														"choose( \"Ублюдок!\", \"Убейте его!\", \"Страдай!\", \"Бррр!\", \"Аггхх!\", \"Умри!\", \"Искалечьте его!\", \"Трус!\", \"Сгори в огне!\", \"Убийца\", \"Иди сюда!\")",
+														"\"red\""
+													]
+												}
+											],
+											"sid": 848957625374845
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 527083515523506
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 245067973013961,
+											"parameters": {
+												"variable": "settings_language",
+												"comparison": 0,
+												"value": "\"en\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 401716927653206,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 946723735096048,
+													"parameters": {
+														"variable": "dialogname",
+														"comparison": 0,
+														"value": "\"pray\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "enemy_play_dialogline",
+													"sid": 892145415649450,
+													"parameters": [
+														"UID",
+														"choose( \"Narsi!\", \"Al'Kahar\", \"Bus i 'olk\", \"Pash t'et\", \"Bas w'asr\", \"Kul 'huar\")",
+														"\"red\""
+													]
+												}
+											],
+											"sid": 935500728456656
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 670765566353834,
+													"parameters": {
+														"variable": "dialogname",
+														"comparison": 0,
+														"value": "\"attack\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "enemy_play_dialogline",
+													"sid": 942796761769405,
+													"parameters": [
+														"UID",
+														"choose( \"BASTARD!\", \"KILL HIM!\", \"SUFFER!\", \"BRRGH!\", \"AAARGH!\", \"DIE!\", \"MUTILATE HIM!\", \"COWARD!\", \"BURN IN HELL!\", \"MURDER\", \"COME HERE!\")",
+														"\"red\""
+													]
+												}
+											],
+											"sid": 908204262541295
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "enemy_play_dialogline",
+							"functionDescription": "",
+							"functionCategory": "#enemy",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "UID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 354703780204552
+								},
+								{
+									"name": "text",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 196432611443488
+								},
+								{
+									"name": "color",
+									"type": "string",
+									"initialValue": "white",
+									"comment": "",
+									"sid": 792640936618249
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 345317958690328,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "runner",
+											"sid": 822676722932774,
+											"parameters": {
+												"unique-id": "UID"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "runner",
+											"sid": 645720713995076,
+											"parameters": {
+												"child": "hint_sprfont",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 162962951618510,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-text",
+													"objectClass": "hint_sprfont",
+													"sid": 102182164982715,
+													"parameters": {
+														"text-to-compare": "\"\"",
+														"case-sensitivity": "ignore-case"
+													}
+												},
+												{
+													"id": "is-running-typewriter-text",
+													"objectClass": "hint_sprfont",
+													"sid": 655599640490170,
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 507478867482744,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "hint_sprfont",
+															"sid": 894158995629106,
+															"parameters": {
+																"text": "text",
+																"duration": "0.3"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 210753701128435,
+															"parameters": {
+																"seconds": "1.7"
+															}
+														},
+														{
+															"id": "set-text",
+															"objectClass": "hint_sprfont",
+															"sid": 766914344079560,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 531786875374344
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 134102404519954,
+															"parameters": {
+																"variable": "color",
+																"comparison": 0,
+																"value": "\"white\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-default-color",
+															"objectClass": "hint_sprfont",
+															"sid": 891949243010845,
+															"parameters": {
+																"color": "rgbEx(100, 100, 100)"
+															}
+														}
+													],
+													"sid": 977520835903589
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 466821330988710
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 714314966265368,
+															"parameters": {
+																"variable": "color",
+																"comparison": 0,
+																"value": "\"red\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-default-color",
+															"objectClass": "hint_sprfont",
+															"sid": 767786002257192,
+															"parameters": {
+																"color": "rgbEx(100, 0, 0)"
+															}
+														}
+													],
+													"sid": 550481041158271
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -4086,7 +4441,8 @@
 												"layer": "\"dialogs\"",
 												"x": "runner.X",
 												"y": "runner.Y",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										},
 										{
@@ -4338,6 +4694,41 @@
 									"sid": 178568223484896
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "runner",
+									"sid": 814904519068293,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"pray\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "runner",
+									"sid": 768201297931534,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"pray\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "enemy_dialog",
+									"sid": 211241260571387,
+									"parameters": [
+										"runner.UID",
+										"\"pray\""
+									]
+								}
+							],
+							"sid": 855966842193624
 						}
 					],
 					"sid": 154076189910759
@@ -4690,7 +5081,8 @@
 												"layer": "\"floors\"",
 												"x": "runner.X  ",
 												"y": "runner.Y",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										}
 									],

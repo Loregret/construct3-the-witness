@@ -776,7 +776,8 @@
 												"layer": "\"floors\"",
 												"x": "Player.X",
 												"y": "Player.Y",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										},
 										{
@@ -796,23 +797,46 @@
 									"sid": 336181980651262
 								},
 								{
+									"eventType": "comment",
+									"text": "exit"
+								},
+								{
 									"eventType": "block",
 									"conditions": [],
 									"actions": [],
 									"sid": 936044955238478,
 									"children": [
 										{
-											"eventType": "comment",
-											"text": "exit"
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 404154436545125,
+													"parameters": {
+														"first-value": "LayoutName",
+														"comparison": 0,
+														"second-value": "\"forest1\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 417315670817751
 										},
 										{
 											"eventType": "block",
-											"conditions": [],
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 763870999490785
+												}
+											],
 											"actions": [
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 401005035435444,
+													"sid": 676847901918707,
 													"parameters": {
 														"seconds": "1.0"
 													}
@@ -820,13 +844,13 @@
 												{
 													"id": "go-to-layout",
 													"objectClass": "System",
-													"sid": 653559391205124,
+													"sid": 632117897273423,
 													"parameters": {
 														"layout": "menu"
 													}
 												}
 											],
-											"sid": 417315670817751
+											"sid": 861448395703886
 										}
 									]
 								}
@@ -2299,6 +2323,16 @@
 							"sid": 850274003653168,
 							"children": [
 								{
+									"eventType": "variable",
+									"name": "steps_volume",
+									"type": "number",
+									"initialValue": "-5",
+									"comment": "",
+									"isStatic": true,
+									"isConstant": false,
+									"sid": 898516495235041
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -2378,9 +2412,9 @@
 														{
 															"id": "is-tag-playing",
 															"objectClass": "Audio",
-															"sid": 383635414776805,
+															"sid": 221905977377212,
 															"parameters": {
-																"tag": "floors.sound_name & \"run\""
+																"tag": "floors.sound_name & \" run\""
 															},
 															"isInverted": true
 														}
@@ -2393,12 +2427,12 @@
 														{
 															"id": "play-at-object-by-name",
 															"objectClass": "Audio",
-															"sid": 205800069019806,
+															"sid": 962974469099724,
 															"parameters": {
 																"folder": "sounds",
 																"audio-file-name": "floors.sound_name & \" run\"",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "steps_volume",
 																"object": "Player",
 																"inner-angle": "360",
 																"outer-angle": "360",
@@ -2472,9 +2506,9 @@
 														{
 															"id": "is-tag-playing",
 															"objectClass": "Audio",
-															"sid": 146998587535458,
+															"sid": 838769007320747,
 															"parameters": {
-																"tag": "floors.sound_name & \"crouch\""
+																"tag": "floors.sound_name & \" crouch\""
 															},
 															"isInverted": true
 														}
@@ -2487,12 +2521,12 @@
 														{
 															"id": "play-at-object-by-name",
 															"objectClass": "Audio",
-															"sid": 618757172706777,
+															"sid": 896414184284199,
 															"parameters": {
 																"folder": "sounds",
 																"audio-file-name": "floors.sound_name",
 																"loop": "not-looping",
-																"volume": "-20",
+																"volume": "steps_volume - 20",
 																"object": "Player",
 																"inner-angle": "360",
 																"outer-angle": "360",
@@ -2599,12 +2633,12 @@
 														{
 															"id": "play-at-object-by-name",
 															"objectClass": "Audio",
-															"sid": 677151427097640,
+															"sid": 880358264035588,
 															"parameters": {
 																"folder": "sounds",
 																"audio-file-name": "floors.sound_name",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "steps_volume",
 																"object": "Player",
 																"inner-angle": "360",
 																"outer-angle": "360",

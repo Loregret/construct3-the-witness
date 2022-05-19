@@ -61,28 +61,70 @@
 						"volume": "-10",
 						"tag-optional": "\"gameover\""
 					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 235690576791111,
-					"parameters": {
-						"seconds": "0.25"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 983691018225580,
-					"parameters": {
-						"audio-file": "The Darkest Day",
-						"loop": "not-looping",
-						"volume": "-10",
-						"tag-optional": "\"music_menu\""
-					}
 				}
 			],
-			"sid": 598555955856444
+			"sid": 598555955856444,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 676291746617833,
+							"parameters": {
+								"seconds": "0.25"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 132011397703028,
+							"parameters": {
+								"audio-file": "The Darkest Day",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"music_menu\""
+							}
+						}
+					],
+					"sid": 231523365027824
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 208459506188497,
+							"parameters": {
+								"group-name": "\"Menu - button\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 340239114275502,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 446003748002694,
+							"parameters": {
+								"group-name": "\"Menu - button\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 945240289341363
+				}
+			]
 		},
 		{
 			"eventType": "group",

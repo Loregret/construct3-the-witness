@@ -624,56 +624,6 @@
 					}
 				},
 				{
-					"type": "Hint",
-					"properties": {
-						"text": "Нажмите E чтобы изучить",
-						"enable-bbcode": true,
-						"font": "pixel",
-						"size": 11,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "center"
-					},
-					"uid": 283,
-					"instanceVariables": {
-						"parentUID": -1
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 416,
-						"y": 32,
-						"width": 210.11309172827796,
-						"height": 32.27348691698917,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "runner",
 					"properties": {
 						"initially-visible": true,
@@ -868,35 +818,6 @@
 					}
 				},
 				{
-					"type": "gun",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 647,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 60.46160090457775,
-						"y": 125.70176064254963,
-						"width": 11.023548362932651,
-						"height": 16.07600802927678,
-						"originX": 0.5,
-						"originY": 0.5472972972972973,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 5.995760400972931,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "gilza",
 					"properties": {
 						"initially-visible": true,
@@ -1016,6 +937,93 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "gun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 402,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 25,
+						"y": -34,
+						"width": 22.047096725865302,
+						"height": 32.15201605855356,
+						"originX": 0.5,
+						"originY": 0.5236486486486486,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "gun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 403,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 71,
+						"y": -94,
+						"width": 24.802983816598463,
+						"height": 76.70552402540635,
+						"originX": 0.5648148148148147,
+						"originY": 0.5089820359281438,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "gun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 2,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 404,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 65,
+						"y": -33,
+						"width": 18.372580604887755,
+						"height": 60.170201481007375,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
 						"zElevation": 0
 					}
 				},

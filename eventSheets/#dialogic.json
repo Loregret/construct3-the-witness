@@ -136,7 +136,18 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 881413395980888,
+									"parameters": {
+										"variable": "settings_language",
+										"comparison": 0,
+										"value": "\"ru\""
+									}
+								}
+							],
 							"actions": [
 								{
 									"id": "request-project-file",
@@ -170,6 +181,59 @@
 								}
 							],
 							"sid": 713828973852002
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 561157911781298
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 298252325365900,
+									"parameters": {
+										"variable": "settings_language",
+										"comparison": 0,
+										"value": "\"en\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "request-project-file",
+									"objectClass": "AJAX",
+									"sid": 366892747288344,
+									"parameters": {
+										"tag": "\"loaddialogue\"",
+										"file": "russian.json"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 743543552872648
+								},
+								{
+									"id": "parse",
+									"objectClass": "JSON",
+									"sid": 541316102315257,
+									"parameters": {
+										"data": "AJAX.LastData"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "dialog",
+									"sid": 116635059023378,
+									"parameters": {
+										"text": "\"\""
+									}
+								}
+							],
+							"sid": 141699305763365
 						}
 					]
 				},
