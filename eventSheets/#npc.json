@@ -1,0 +1,86 @@
+{
+	"name": "#NPC",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-screen",
+					"objectClass": "npc",
+					"sid": 613705574233875
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-toward-position",
+					"objectClass": "npc",
+					"sid": 270910761983867,
+					"parameters": {
+						"degrees": "50 * dt",
+						"x": "Player.X",
+						"y": "Player.Y"
+					}
+				}
+			],
+			"sid": 263288297316923
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "npc",
+					"sid": 471121478693589
+				}
+			],
+			"actions": [],
+			"sid": 544115716573305,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 387735082726277,
+							"parameters": {
+								"object-to-create": "sprfont",
+								"layer": "\"dialogs\"",
+								"x": "npc.X",
+								"y": "npc.BBoxTop",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "npc",
+							"sid": 472884998554463,
+							"parameters": {
+								"child": "sprfont",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "sprfont",
+							"sid": 644648463830799,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 655144805559303
+				}
+			]
+		}
+	],
+	"sid": 109530638442878
+}

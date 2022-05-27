@@ -865,7 +865,65 @@
 					"title": "Player - behaviour",
 					"description": "",
 					"isActiveOnStart": true,
-					"children": [],
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "Player",
+									"sid": 698452662158717
+								}
+							],
+							"actions": [],
+							"sid": 956209684768650,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 965262667094641,
+											"parameters": {
+												"object-to-create": "sprfont",
+												"layer": "\"dialogs\"",
+												"x": "Player.X",
+												"y": "Player.BBoxTop",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "Player",
+											"sid": 309802495293424,
+											"parameters": {
+												"child": "sprfont",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-z-elevation": false,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "sprfont",
+											"sid": 373578815963890,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 502631106152508
+								}
+							]
+						}
+					],
 					"sid": 903140920923453
 				},
 				{

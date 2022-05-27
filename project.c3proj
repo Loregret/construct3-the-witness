@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 29303,
-	"name": "TheWitness",
+	"name": "The Witness",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -90,6 +90,14 @@
 			"type": "plugin",
 			"id": "shadowlight",
 			"name": "Shadow light",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
 			"author": "Scirra",
 			"version": "r293.3",
 			"bundled": false
@@ -289,7 +297,8 @@
 					"Player",
 					"runner",
 					"Player_dead",
-					"enemy_gunner"
+					"enemy_gunner",
+					"npc"
 				],
 				"subfolders": [],
 				"name": "characters"
@@ -325,7 +334,8 @@
 					"fx_bullet_explosion",
 					"decal_blood",
 					"fx_torch_fire",
-					"fx_muzzle"
+					"fx_muzzle",
+					"fx_wood"
 				],
 				"subfolders": [],
 				"name": "fx"
@@ -358,7 +368,8 @@
 					"camera",
 					"dialog_trigger",
 					"enemy_line",
-					"triggers_audio_emitter"
+					"triggers_audio_emitter",
+					"triggers_talkie"
 				],
 				"subfolders": [],
 				"name": "triggers"
@@ -425,7 +436,7 @@
 			{
 				"items": [
 					"cursorhint",
-					"hint_sprfont",
+					"sprfont",
 					"loading"
 				],
 				"subfolders": [],
@@ -492,7 +503,8 @@
 			},
 			{
 				"items": [
-					"book1"
+					"book1",
+					"intro"
 				],
 				"subfolders": [],
 				"name": "cutscenes"
@@ -519,7 +531,9 @@
 					"#Menu",
 					"#Dialogic",
 					"#Logo",
-					"#Cutscene"
+					"#Cutscene",
+					"#Talkie",
+					"#NPC"
 				],
 				"subfolders": [],
 				"name": "main events"
@@ -1018,6 +1032,22 @@
 							"file-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "wood-hit.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 461210781674967,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "wood-break.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 980793063970849,
+							"file-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
@@ -1324,6 +1354,22 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "distant-worlds by theatre-of-delays Artlist.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 951600882290460,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "lightless-voids by kyle-preston Artlist.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 468051023541179,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -1391,7 +1437,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "0.1.4.1",
+		"version": "0.1.4.3",
 		"author": "Loregret",
 		"authorEmail": "Loregrets@yahoo.com",
 		"authorWebsite": "",

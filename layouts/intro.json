@@ -1,15 +1,15 @@
 {
-	"name": "logo",
+	"name": "intro",
 	"layers": [
 		{
 			"name": "background",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 677380283190012,
+			"sid": 833653987764235,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
-			"isInitiallyInteractive": false,
+			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,
@@ -35,17 +35,17 @@
 			"global": false
 		},
 		{
-			"name": "logo",
+			"name": "cutscene-dialogic",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "logo_text",
+					"type": "dialog",
 					"properties": {
-						"text": "Loregret",
+						"text": "...",
 						"enable-bbcode": true,
 						"font": "pixel",
-						"size": 36,
+						"size": 16,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -56,27 +56,23 @@
 							1
 						],
 						"horizontal-alignment": "center",
-						"vertical-alignment": "top",
+						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
 						"origin": "top-left"
 					},
-					"uid": 248,
-					"instanceVariables": {
-						"param": ""
-					},
+					"uid": 436,
+					"instanceVariables": {},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
+						"Timer": {
+							"properties": {}
 						}
 					},
 					"world": {
-						"x": 93.04484915180082,
-						"y": 237.11237583417878,
-						"width": 462.8061359353639,
-						"height": 79.91636156031053,
+						"x": 1,
+						"y": 350,
+						"width": 640,
+						"height": 128,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -88,47 +84,12 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "logo",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 247,
-					"instanceVariables": {},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 321.2322788519208,
-						"y": 196.2630513251633,
-						"width": 90,
-						"height": 90,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.5
-						],
-						"angle": 5.216435377837213,
-						"zElevation": 1
-					}
 				}
 			],
-			"sid": 836907272081993,
+			"sid": 985115840662503,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
-			"isInitiallyInteractive": false,
+			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,
@@ -136,9 +97,9 @@
 				1
 			],
 			"backgroundColor": [
-				0,
-				0,
-				0,
+				1,
+				1,
+				1,
 				1
 			],
 			"isTransparent": true,
@@ -154,14 +115,14 @@
 			"global": false
 		}
 	],
-	"sid": 841902463242553,
+	"sid": 646417385062411,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 640,
 	"height": 480,
-	"unboundedScrolling": true,
+	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "#Logo"
+	"eventSheet": "#Cutscene"
 }

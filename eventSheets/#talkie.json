@@ -1,0 +1,1638 @@
+{
+	"name": "#Talkie",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "player_is_talking",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 418012367607409
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Talkie",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "current:",
+					"background-color": [
+						0.6352941176470588,
+						0.9019607843137255,
+						0.8235294117647058,
+						1
+					]
+				},
+				{
+					"eventType": "variable",
+					"name": "player_sprfont_uid",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 225230556197398
+				},
+				{
+					"eventType": "variable",
+					"name": "npc_sprfont_uid",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 998652091799577
+				},
+				{
+					"eventType": "variable",
+					"name": "curLineNum",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 762330663997272
+				},
+				{
+					"eventType": "variable",
+					"name": "curScene",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 966538248921897
+				},
+				{
+					"eventType": "variable",
+					"name": "curDialogName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 100770727396554
+				},
+				{
+					"eventType": "comment",
+					"text": "custom:",
+					"background-color": [
+						0.6352941176470588,
+						0.9019607843137255,
+						0.8235294117647058,
+						1
+					]
+				},
+				{
+					"eventType": "variable",
+					"name": "next_line_no_sound",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 839488683820392
+				},
+				{
+					"eventType": "variable",
+					"name": "custom_wait_after_type",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 282836586090106
+				},
+				{
+					"eventType": "variable",
+					"name": "custom_typing_speed",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 496131418227114
+				},
+				{
+					"eventType": "comment",
+					"text": "default:",
+					"background-color": [
+						0.6352941176470588,
+						0.9019607843137255,
+						0.8235294117647058,
+						1
+					]
+				},
+				{
+					"eventType": "variable",
+					"name": "default_wait_after_type",
+					"type": "number",
+					"initialValue": "1.75",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 206523004747383
+				},
+				{
+					"eventType": "variable",
+					"name": "default_typing_speed",
+					"type": "number",
+					"initialValue": "0.65",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 666934304241352
+				},
+				{
+					"eventType": "comment",
+					"text": "1. Добавить диалоги по нажатию курсора на нпс\n3. Разрыв диалога на дистанции\n4. Не начинать новый диалог когда играет старый либо останавливать старый при начале нового."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 851641159506918
+						}
+					],
+					"actions": [],
+					"sid": 801040020477163,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 632316785099940,
+									"parameters": {
+										"child": "sprfont",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 912907140100788,
+									"parameters": {
+										"variable": "player_sprfont_uid",
+										"value": "sprfont.UID"
+									}
+								}
+							],
+							"sid": 222529097672646
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 372964030625273,
+							"parameters": {
+								"object": "triggers_talkie"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 931125869834413,
+							"parameters": {
+								"variable": "player_is_talking"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 661058112520743,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 362759268353934,
+									"parameters": {
+										"first-value": "Functions.talkie_is_dialog_playing(triggers_talkie.dialogName, 0, 0)",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 335199541481740,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "npc",
+											"sid": 318197681521478,
+											"parameters": {
+												"unique-id": "triggers_talkie.npc_uid"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 214485590977418,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "npc",
+													"sid": 758534744901946,
+													"parameters": {
+														"child": "sprfont",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "talkie_start_dialog",
+													"sid": 205866155619958,
+													"parameters": [
+														"\"talking\"",
+														"triggers_talkie.dialogName",
+														"triggers_talkie.lineNum",
+														"sprfont.UID"
+													]
+												}
+											],
+											"sid": 637912109760240
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Talkie - typewriter",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-running-typewriter-text",
+									"objectClass": "sprfont",
+									"sid": 907261927630026
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 152214996538598,
+									"parameters": {
+										"variable": "settings_dialog_typewriter_effect"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 167167139249826,
+									"parameters": {
+										"variable": "next_line_no_sound"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "sound"
+								}
+							],
+							"sid": 250284544923937,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 175911635841626,
+											"parameters": {
+												"interval-seconds": "0.08"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play-at-object",
+											"objectClass": "Audio",
+											"sid": 746587378811871,
+											"parameters": {
+												"audio-file": "switch-selector",
+												"loop": "not-looping",
+												"volume": "random(-20,-27)",
+												"object": "sprfont",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 448636606354811
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "sprfont",
+									"sid": 574554271399164,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"line_over\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "sprfont",
+									"sid": 258997928577724,
+									"parameters": {
+										"text": "\"\""
+									}
+								}
+							],
+							"sid": 423214127673431,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 609510731280568,
+											"parameters": {
+												"first-value": "curLineNum",
+												"comparison": 2,
+												"second-value": "Functions.talkie_line_count - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 831160780011685,
+											"parameters": {
+												"variable": "curLineNum",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "talkie_lines_iterate",
+											"sid": 534065026296806
+										}
+									],
+									"sid": 822099454592412
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 235745341766736
+										}
+									],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 511355796937771,
+											"parameters": {
+												"tag": "\"talkie-end\""
+											}
+										},
+										{
+											"callFunction": "talkie_end",
+											"sid": 996956208700216
+										}
+									],
+									"sid": 438389995489982
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-typewriter-text-finished",
+									"objectClass": "sprfont",
+									"sid": 259367216630750
+								}
+							],
+							"actions": [],
+							"sid": 819478981995174,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "sprfont",
+											"sid": 319604560116554,
+											"parameters": {
+												"unique-id": "player_sprfont_uid"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "sprfont",
+											"sid": 548361988772905,
+											"parameters": {
+												"unique-id": "npc_sprfont_uid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 868085991216960,
+											"parameters": {
+												"tag": "\"talkie-line-finished\""
+											}
+										}
+									],
+									"sid": 648660344811034,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 278947383029713,
+													"parameters": {
+														"variable": "custom_wait_after_type",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "sprfont",
+													"sid": 856890470721059,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "default_wait_after_type",
+														"type": "once",
+														"tag": "\"line_over\""
+													}
+												}
+											],
+											"sid": 651023036138060
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 216581142763307
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "sprfont",
+													"sid": 605315190299070,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "custom_wait_after_type",
+														"type": "once",
+														"tag": "\"line_over\""
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 199673880652273,
+													"parameters": {
+														"variable": "custom_wait_after_type",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 864378050192159
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 724246570419454
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Talkie - major functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "talkie_cur_line_type",
+							"functionDescription": "",
+							"functionCategory": "#talkie",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "JSON_key",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 440573095263625
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 286450416681364,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "start"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 781951051113492,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 746351435200762,
+													"parameters": {
+														"variable": "next_line_no_sound",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 527827967453333
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "audio"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 565854383422123,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "sound"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 524380835112239,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".sound\")",
+														"comparison": 1,
+														"second-value": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 155756444147013,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".sound\")",
+														"loop": "not-looping",
+														"volume": "0",
+														"object": "sprfont",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 278477680798784
+										},
+										{
+											"eventType": "comment",
+											"text": "end-sound"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 174013493514763,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".end-sound\")",
+														"comparison": 1,
+														"second-value": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait-for-signal",
+													"objectClass": "System",
+													"sid": 968207418130012,
+													"parameters": {
+														"tag": "\"talkie-line-finished\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 990594734462527,
+													"parameters": {
+														"seconds": "0.3"
+													}
+												},
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 177453245625649,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".end-sound\")",
+														"loop": "not-looping",
+														"volume": "0",
+														"object": "sprfont",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 789769711276883
+										},
+										{
+											"eventType": "comment",
+											"text": "no-sound"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 106104449665901,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".no-sound\")",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 642573136628288,
+													"parameters": {
+														"variable": "next_line_no_sound",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 509953909656386
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "speed"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 336379252668804,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "JSON",
+													"sid": 380638369153922,
+													"parameters": {
+														"path": "curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".speed\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 788719061107149,
+													"parameters": {
+														"variable": "custom_typing_speed",
+														"value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".speed\")"
+													}
+												}
+											],
+											"sid": 745100218424882
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 766936950770042
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 177776912616569,
+													"parameters": {
+														"variable": "custom_typing_speed",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 136782448372040
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "wait"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 168372432333863,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 100924796904716,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".wait\")",
+														"comparison": 1,
+														"second-value": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 908431522977889,
+													"parameters": {
+														"variable": "custom_wait_after_type",
+														"value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".wait\")"
+													}
+												}
+											],
+											"sid": 112567853659377
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 375727646938656
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 889762079269999,
+													"parameters": {
+														"variable": "custom_wait_after_type",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 180273136394779
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "typewriter launch"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 332734358820373,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "[h3] Setting - no typewriter effect"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 147245914055846,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "wait_time_modificator",
+													"type": "number",
+													"initialValue": "1.5",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": true,
+													"sid": 764039181233635
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 147937775408649,
+															"parameters": {
+																"variable": "settings_dialog_typewriter_effect"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 394384759762546,
+															"parameters": {
+																"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".typewriter\")",
+																"comparison": 0,
+																"second-value": "\"none\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"type": "comment",
+															"text": "no typewriter effect"
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 955275051127468,
+															"parameters": {
+																"variable": "custom_wait_after_type",
+																"value": "custom_wait_after_type=0? default_wait_after_type+wait_time_modificator:custom_wait_after_type+wait_time_modificator"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 955054993853913,
+															"parameters": {
+																"variable": "custom_typing_speed",
+																"value": "0.0001"
+															}
+														}
+													],
+													"sid": 911876518297600,
+													"children": [
+														{
+															"eventType": "comment",
+															"text": "no-sound tag"
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 453649887130516,
+																	"parameters": {
+																		"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".no-sound\")",
+																		"comparison": 0,
+																		"second-value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "play-at-object",
+																	"objectClass": "Audio",
+																	"sid": 506496424648860,
+																	"parameters": {
+																		"audio-file": "soft-switch",
+																		"loop": "not-looping",
+																		"volume": "random(-7,0)",
+																		"object": "sprfont",
+																		"inner-angle": "360",
+																		"outer-angle": "360",
+																		"outer-gain": "0",
+																		"tag-optional": "\"\""
+																	}
+																}
+															],
+															"sid": 662785387258305
+														}
+													],
+													"isOrBlock": true
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "[h3] TypeWriter"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 736874270857100,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".char\")",
+														"comparison": 0,
+														"second-value": "\"player\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Player"
+												}
+											],
+											"sid": 305866337776098,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "sprfont",
+															"sid": 452508555415424,
+															"parameters": {
+																"unique-id": "player_sprfont_uid"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "sprfont",
+															"sid": 335111417864004,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "stop-timer",
+															"objectClass": "sprfont",
+															"sid": 186614053816912,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"line_over\""
+															}
+														},
+														{
+															"id": "typewriter-text",
+															"objectClass": "sprfont",
+															"sid": 993390914170512,
+															"parameters": {
+																"text": "JSON.Get( curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".line\")",
+																"duration": "custom_typing_speed=0? default_typing_speed:custom_typing_speed"
+															}
+														}
+													],
+													"sid": 194323140240051
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 635473102853041
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "NPC"
+												}
+											],
+											"sid": 201083567105230,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "sprfont",
+															"sid": 119060368783028,
+															"parameters": {
+																"unique-id": "npc_sprfont_uid"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "sprfont",
+															"sid": 571945731630294,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "stop-timer",
+															"objectClass": "sprfont",
+															"sid": 367395997954321,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"line_over\""
+															}
+														},
+														{
+															"id": "typewriter-text",
+															"objectClass": "sprfont",
+															"sid": 921731233526673,
+															"parameters": {
+																"text": "JSON.Get( curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".line\")",
+																"duration": "custom_typing_speed=0? default_typing_speed:custom_typing_speed"
+															}
+														}
+													],
+													"sid": 997293895161663
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "logs"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 816683160731284,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "add-key",
+													"objectClass": "dialogic_logs",
+													"sid": 439743801899284,
+													"parameters": {
+														"key": "curDialogName",
+														"value": "str(curLineNum)"
+													}
+												}
+											],
+											"sid": 406183500471362
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "talkie_is_dialog_playing",
+							"functionDescription": "",
+							"functionCategory": "#talkie",
+							"functionReturnType": "number",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "DialogName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 626856281022812
+								},
+								{
+									"name": "CheckLine",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 459205977647128
+								},
+								{
+									"name": "LineNum",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 543623157861438
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 915255880092953,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 738335584626689,
+											"parameters": {
+												"variable": "CheckLine"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 244952377460345,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 742737003911192,
+													"parameters": {
+														"first-value": "DialogName",
+														"comparison": 0,
+														"second-value": "curDialogName"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 624615362553768,
+													"parameters": {
+														"first-value": "LineNum",
+														"comparison": 0,
+														"second-value": "curLineNum"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 736744966639522,
+													"parameters": {
+														"value": "1"
+													}
+												}
+											],
+											"sid": 350479389326376
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 149187391992435
+												}
+											],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 651968708781314,
+													"parameters": {
+														"value": "0"
+													}
+												}
+											],
+											"sid": 641366938231670
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 617132190316777
+										}
+									],
+									"actions": [],
+									"sid": 958431624253547,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 416238453444640,
+													"parameters": {
+														"first-value": "DialogName",
+														"comparison": 0,
+														"second-value": "curDialogName"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 894467319401106,
+													"parameters": {
+														"value": "1"
+													}
+												}
+											],
+											"sid": 673967105171057
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 255906663034195
+												}
+											],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 149401797112711,
+													"parameters": {
+														"value": "0"
+													}
+												}
+											],
+											"sid": 435801585998182
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "talkie_start_dialog",
+							"functionDescription": "",
+							"functionCategory": "#talkie",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "SceneNum",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 533436815750552
+								},
+								{
+									"name": "DialogName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 687493880483504
+								},
+								{
+									"name": "LineNum",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 899183386683494
+								},
+								{
+									"name": "sprfont_uid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 489079279128882
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 576531705434375,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 380368042390705,
+											"parameters": {
+												"variable": "player_is_talking",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 318961091627114,
+											"parameters": {
+												"variable": "curScene",
+												"value": "SceneNum"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 700565757514436,
+											"parameters": {
+												"variable": "curDialogName",
+												"value": "DialogName"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 888207763323143,
+											"parameters": {
+												"variable": "curLineNum",
+												"value": "LineNum"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 993660712405674,
+											"parameters": {
+												"variable": "npc_sprfont_uid",
+												"value": "sprfont_uid"
+											}
+										}
+									],
+									"sid": 443607588891341
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "talkie_lines_iterate",
+											"sid": 477038684593013
+										}
+									],
+									"sid": 418832865166015
+								}
+							]
+						},
+						{
+							"functionName": "talkie_lines_iterate",
+							"functionDescription": "",
+							"functionCategory": "#talkie",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 350298415146442,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 640654998808627,
+											"parameters": {
+												"path": "curScene&\".\""
+											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "JSON",
+											"sid": 465209356578900,
+											"parameters": {
+												"path": "curScene&\".\"&JSON.CurrentKey&\".id\"",
+												"cmp": 0,
+												"value": "curDialogName"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "talkie_cur_line_type",
+											"sid": 329822014359522,
+											"parameters": [
+												"JSON.CurrentKey"
+											]
+										}
+									],
+									"sid": 104261773405066
+								}
+							]
+						}
+					],
+					"sid": 616218281642649
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Talkie - minor functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "talkie_end",
+							"functionDescription": "",
+							"functionCategory": "#talkie",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 770006507926542,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 778407647585652,
+											"parameters": {
+												"variable": "player_is_talking",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 445285992428165,
+											"parameters": {
+												"variable": "curDialogName",
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 510883754276649,
+											"parameters": {
+												"variable": "curLineNum",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 450409258476902
+								}
+							]
+						},
+						{
+							"functionName": "talkie_line_count",
+							"functionDescription": "",
+							"functionCategory": "#talkie",
+							"functionReturnType": "number",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 411411392170198,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "counter",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": true,
+									"isConstant": false,
+									"sid": 624310752942106
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 235348675554706,
+											"parameters": {
+												"variable": "counter",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 794533220792189
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 134533880529592,
+											"parameters": {
+												"path": "curScene&\".\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 431367124032069,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "JSON",
+													"sid": 141955322188412,
+													"parameters": {
+														"path": "curScene&\".\" &JSON.CurrentKey&\".id\"",
+														"cmp": 0,
+														"value": "curDialogName"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 741056929337396,
+													"parameters": {
+														"variable": "counter",
+														"value": "JSON.ArraySize( curScene&\".\" &JSON.CurrentKey&\".dialogs\")"
+													}
+												}
+											],
+											"sid": 234888211636950
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 721466073755942,
+											"parameters": {
+												"value": "counter"
+											}
+										}
+									],
+									"sid": 711155432990063
+								}
+							]
+						}
+					],
+					"sid": 903435583579249
+				}
+			],
+			"sid": 333371726855934
+		}
+	],
+	"sid": 463600190198969
+}

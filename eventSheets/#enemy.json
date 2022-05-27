@@ -4064,7 +4064,7 @@
 						{
 							"functionName": "enemy_dialog",
 							"functionDescription": "",
-							"functionCategory": "",
+							"functionCategory": "#enemy",
 							"functionReturnType": "none",
 							"functionIsAsync": false,
 							"functionParameters": [
@@ -4291,7 +4291,7 @@
 											"objectClass": "runner",
 											"sid": 645720713995076,
 											"parameters": {
-												"child": "hint_sprfont",
+												"child": "sprfont",
 												"which": "own"
 											}
 										}
@@ -4304,7 +4304,7 @@
 											"conditions": [
 												{
 													"id": "compare-text",
-													"objectClass": "hint_sprfont",
+													"objectClass": "sprfont",
 													"sid": 102182164982715,
 													"parameters": {
 														"text-to-compare": "\"\"",
@@ -4313,7 +4313,7 @@
 												},
 												{
 													"id": "is-running-typewriter-text",
-													"objectClass": "hint_sprfont",
+													"objectClass": "sprfont",
 													"sid": 655599640490170,
 													"isInverted": true
 												}
@@ -4327,7 +4327,7 @@
 													"actions": [
 														{
 															"id": "typewriter-text",
-															"objectClass": "hint_sprfont",
+															"objectClass": "sprfont",
 															"sid": 894158995629106,
 															"parameters": {
 																"text": "text",
@@ -4344,7 +4344,7 @@
 														},
 														{
 															"id": "set-text",
-															"objectClass": "hint_sprfont",
+															"objectClass": "sprfont",
 															"sid": 766914344079560,
 															"parameters": {
 																"text": "\"\""
@@ -4370,7 +4370,7 @@
 													"actions": [
 														{
 															"id": "set-default-color",
-															"objectClass": "hint_sprfont",
+															"objectClass": "sprfont",
 															"sid": 891949243010845,
 															"parameters": {
 																"color": "rgbEx(100, 100, 100)"
@@ -4401,7 +4401,7 @@
 													"actions": [
 														{
 															"id": "set-default-color",
-															"objectClass": "hint_sprfont",
+															"objectClass": "sprfont",
 															"sid": 767786002257192,
 															"parameters": {
 																"color": "rgbEx(100, 0, 0)"
@@ -4435,12 +4435,12 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 524295833675753,
+											"sid": 746857615876206,
 											"parameters": {
-												"object-to-create": "hint_sprfont",
+												"object-to-create": "sprfont",
 												"layer": "\"dialogs\"",
 												"x": "runner.X",
-												"y": "runner.Y",
+												"y": "runner.BBoxTop",
 												"create-hierarchy": false,
 												"template-name": "\"\""
 											}
@@ -4450,7 +4450,7 @@
 											"objectClass": "runner",
 											"sid": 408463055623184,
 											"parameters": {
-												"child": "hint_sprfont",
+												"child": "sprfont",
 												"transform-x": true,
 												"transform-y": true,
 												"transform-w": false,
@@ -4462,7 +4462,7 @@
 										},
 										{
 											"id": "set-text",
-											"objectClass": "hint_sprfont",
+											"objectClass": "sprfont",
 											"sid": 403880011811719,
 											"parameters": {
 												"text": "\"\""
@@ -4716,6 +4716,11 @@
 										"comparison": 0,
 										"value": "\"pray\""
 									}
+								},
+								{
+									"id": "is-on-screen",
+									"objectClass": "runner",
+									"sid": 794257262763487
 								}
 							],
 							"actions": [

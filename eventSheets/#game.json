@@ -214,6 +214,14 @@
 			"includeSheet": "#Cursor"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "#Talkie"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "#NPC"
+		},
+		{
 			"eventType": "comment",
 			"text": "\"Нажмите Е чтобы изучить\" для текстов и заметок, которые открываются в отдельном окне.\n\n\"Имя диалога\" при наведении мыши для всех интерактивных объектов."
 		},
@@ -718,31 +726,6 @@
 													"sid": 483524208730285
 												}
 											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "for-each",
-													"objectClass": "System",
-													"sid": 246516805084067,
-													"parameters": {
-														"object": "Light"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-opacity",
-													"objectClass": "Light",
-													"sid": 867102020691610,
-													"parameters": {
-														"opacity": "Self.Opacity * 0.5"
-													}
-												}
-											],
-											"sid": 475272371845863,
-											"disabled": true
 										}
 									]
 								},
@@ -2525,7 +2508,8 @@
 													}
 												}
 											],
-											"sid": 645357849789898
+											"sid": 645357849789898,
+											"disabled": true
 										}
 									]
 								}
@@ -2780,6 +2764,155 @@
 										}
 									],
 									"sid": 548033172547258
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-destroyed",
+											"objectClass": "box",
+											"sid": 493582293940058
+										}
+									],
+									"actions": [
+										{
+											"id": "play-at-position-by-name",
+											"objectClass": "Audio",
+											"sid": 632083352212619,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"wood-break\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"x": "box.X",
+												"y": "box.Y",
+												"angle": "0",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"wood-hit\""
+											}
+										}
+									],
+									"sid": 837445159856645
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-frame-changed",
+											"objectClass": "Player",
+											"sid": 175831938186924
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 462241300878021,
+											"parameters": {
+												"animation": "\"kick\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 636922190514491,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-overlapping-point",
+													"objectClass": "System",
+													"sid": 255889749119056,
+													"parameters": {
+														"object": "box",
+														"x": "Player.ImagePointX(\"kick\")",
+														"y": "Player.ImagePointY(\"kick\")"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 445002884576899,
+													"parameters": {
+														"object-to-create": "fx_wood",
+														"layer": "\"items\"",
+														"x": "Player.ImagePointX(\"kick\")",
+														"y": "Player.ImagePointY(\"kick\")",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												}
+											],
+											"sid": 779967815384407,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "box",
+															"sid": 416887266432217,
+															"parameters": {
+																"instance-variable": "HP",
+																"comparison": 4,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play-at-position-by-name",
+															"objectClass": "Audio",
+															"sid": 151483970293887,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"wood-hit\"",
+																"loop": "not-looping",
+																"volume": "0",
+																"x": "Player.ImagePointX(\"kick\")",
+																"y": "Player.ImagePointY(\"kick\")",
+																"angle": "0",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "0",
+																"tag-optional": "\"wood-hit\""
+															}
+														},
+														{
+															"id": "subtract-from-instvar",
+															"objectClass": "box",
+															"sid": 323501969718661,
+															"parameters": {
+																"instance-variable": "HP",
+																"value": "1"
+															}
+														}
+													],
+													"sid": 100437999806405
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 837618797162756
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "box",
+															"sid": 418712085475873
+														}
+													],
+													"sid": 425692732824640
+												}
+											]
+										}
+									]
 								}
 							]
 						}

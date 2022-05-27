@@ -1,9 +1,28 @@
 {
-	"name": "loading",
+	"name": "triggers_talkie",
 	"plugin-id": "Sprite",
-	"sid": 460349590622457,
+	"sid": 133126322132512,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "dialogName",
+			"type": "string",
+			"desc": "",
+			"sid": 378993986496712
+		},
+		{
+			"name": "lineNum",
+			"type": "number",
+			"desc": "",
+			"sid": 665290649190353
+		},
+		{
+			"name": "npc_uid",
+			"type": "number",
+			"desc": "",
+			"sid": 320060295721090
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -11,37 +30,25 @@
 			{
 				"frames": [
 					{
-						"width": 80,
-						"height": 80,
+						"width": 49,
+						"height": 49,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2236787,
-						"collisionPoly": {
-							"points": [
-								1,
-								1,
-								0,
-								1,
-								0,
-								0,
-								1,
-								0
-							]
-						},
+						"imageSpriteId": 7160321,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 188143985204204,
+				"sid": 982001326924985,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 5
 			}
 		],
 		"subfolders": []

@@ -167,16 +167,124 @@
 			]
 		}			
 	],
+	"talking": [
+		{
+			"id": "test1",
+			"dialogs": [
+				{
+					"char": "npc",				
+					"line": "Hello, this is test dialog."		
+				},
+				{
+					"char": "player",				
+					"line": "Okay."		
+				},
+				{
+					"char": "npc",				
+					"line": "This line is long",
+					"speed": 1.5,
+					"wait": 5		
+				},
+				{
+					"char": "npc",				
+					"line": "This line is fast",
+					"speed": 0.5,
+					"wait": 1		
+				},
+				{
+					"char": "npc",				
+					"line": "This line has no typewriter effect",
+					"typewriter": "none"		
+				},
+				{
+					"char": "npc",				
+					"line": "This line has sound effect",
+					"end-sound": "notification1"		
+				}				
+			]
+		},
+		{
+			"id": "test-greetings",
+			"dialogs": [
+				{
+					"char": "npc",				
+					"line": "Hello!"		
+				},
+				{
+					"char": "player",				
+					"line": "Hi."		
+				},
+				{
+					"char": "npc",				
+					"line": "How are you holding up?"		
+				},	
+				{
+					"char": "player",				
+					"line": "I'm fine."		
+				}			
+			]
+		}		
+	
+	],
+
 	"intro1": [
 		{
 			"id": "cut1",
 			"dialogs": [
 				{
 					"char": "",				
-					"line": "Вам нужно провести анализы пресной воды в округе на наличие мутагенов.",
+					"line": "The world is on a brink of collapse.",
 					"speed": 1.35,
-					"wait": 1			
-				}
+					"wait": 2.55			
+				},
+				{
+					"char": "",				
+					"line": "Once fertile, land became barren.",
+					"speed": 1.35,
+					"wait": 2.75			
+				},
+				{
+					"char": "",				
+					"line": "The sun, known as a beacon of life before, became a sign of terror.",
+					"speed": 2.35,
+					"wait": 3			
+				},			
+				{
+					"char": "",				
+					"line": "The temperature is unbearable.",
+					"speed": 1.55,
+					"wait": 2			
+				},	
+				{
+					"char": "",				
+					"line": "Living beings live in constant fear and seek shelter from a blazing light.",
+					"speed": 2.35,
+					"wait": 3.75			
+				},					
+				{
+					"char": "",				
+					"line": "There's few nations who saved fraction of earth and made it inhabitable once again.",
+					"speed": 2.35,
+					"wait": 3		
+				},		
+				{
+					"char": "",				
+					"line": "But those who have been unfortunate to stay at dead wasteland are resentful.",
+					"speed": 2.35,
+					"wait": 3			
+				},		
+				{
+					"char": "",				
+					"line": "They invade and pillage settlements to stay alive for another day.",
+					"speed": 3.25,
+					"wait": 4.5		
+				},						
+				{
+					"char": "",				
+					"line": "Is there any hope left for humanity?",
+					"speed": 1.55,
+					"wait": 2.75			
+				}					
 			]
 		}	
 	

@@ -17,27 +17,12 @@
 					},
 					"uid": 611,
 					"instanceVariables": {},
-					"behaviors": {
-						"Sine": {
-							"properties": {
-								"movement": "size",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 10,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
-						"x": 314.32438666714665,
-						"y": 240.00000296763434,
-						"width": 68.6487851815239,
-						"height": 68.6487851815239,
+						"x": 319.99998171937534,
+						"y": 239.99999813847788,
+						"width": 68,
+						"height": 68,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -51,7 +36,7 @@
 					}
 				},
 				{
-					"type": "hint_sprfont",
+					"type": "sprfont",
 					"properties": {
 						"text": "LOADING",
 						"enable-bbcode": true,
@@ -70,12 +55,16 @@
 					},
 					"uid": 612,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 314.7873037702745,
-						"y": 474.6708507036303,
+						"x": 319.9999929188532,
+						"y": 479.9999934725158,
 						"width": 250,
-						"height": 73.81783070850364,
+						"height": 74,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [

@@ -64,7 +64,75 @@
 					]
 				}
 			],
-			"sid": 579385878280228
+			"sid": 579385878280228,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 196755363344278,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"intro\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 122713770244097,
+							"parameters": {
+								"audio-file": "distant-worlds by theatre-of-delays Artlist",
+								"loop": "not-looping",
+								"volume": "-20",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 335820564846125,
+							"disabled": true,
+							"parameters": {
+								"audio-file": "lightless-voids by kyle-preston Artlist",
+								"loop": "not-looping",
+								"volume": "-20",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 665161610541420,
+							"parameters": {
+								"tag": "\"dialog_end\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 748434110809222,
+							"disabled": true,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 139666793272424,
+							"parameters": {
+								"layout": "forest1"
+							}
+						}
+					],
+					"sid": 599120478744052
+				}
+			]
 		}
 	],
 	"sid": 843317000540230
