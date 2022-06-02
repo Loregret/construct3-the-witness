@@ -31,7 +31,7 @@
 			"actions": [
 				{
 					"id": "set-opacity",
-					"objectClass": "logo_text",
+					"objectClass": "menu_text",
 					"sid": 343724296897068,
 					"parameters": {
 						"opacity": "80"
@@ -149,382 +149,129 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-on-layer",
-									"objectClass": "logo_text",
-									"sid": 375162723771593,
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 971364446437557,
 									"parameters": {
-										"layer": "\"settings\""
+										"variable": "settings_language",
+										"comparison": 0,
+										"value": "\"en\""
 									}
 								}
 							],
 							"actions": [],
-							"sid": 948051778426331,
+							"sid": 488149593958453,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
-											"sid": 719044809059183,
+											"id": "is-on-layer",
+											"objectClass": "menu_text",
+											"sid": 876674761406990,
 											"parameters": {
-												"instance-variable": "param",
-												"comparison": 0,
-												"value": "\"zoom\""
+												"layer": "\"settings\""
 											}
 										}
 									],
 									"actions": [],
-									"sid": 571416228460336,
+									"sid": 963130755911925,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 686509962783022,
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 849796697714304,
 													"parameters": {
-														"variable": "settings_cam_zoom_auto"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 914936353836099,
-													"parameters": {
-														"text": "\"Отдаление камеры: [color=red]авто\""
-													}
-												}
-											],
-											"sid": 687317859842684
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 269566187823395
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 141115260516547,
-													"parameters": {
-														"text": "\"Отдаление камеры: [color=red]ручная\""
-													}
-												}
-											],
-											"sid": 555937992675786
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
-											"sid": 948348292577603,
-											"parameters": {
-												"instance-variable": "param",
-												"comparison": 0,
-												"value": "\"diff\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 951557920185179,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 234007157109414,
-													"parameters": {
-														"variable": "difficulty",
+														"instance-variable": "param",
 														"comparison": 0,
-														"value": "\"hard\""
+														"value": "\"back\""
 													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 126471329256479,
+											"children": [
 												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 633727417098141,
-													"parameters": {
-														"text": "\"Сложность: [color=red]сложно\""
-													}
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 436545986081774,
+															"parameters": {
+																"text": "\"Back\""
+															}
+														}
+													],
+													"sid": 531076312295552
 												}
-											],
-											"sid": 146478038129901
+											]
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 451259423125895
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 716886756521378,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"zoom\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 955217415604476,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 437289923438335,
+															"parameters": {
+																"variable": "settings_cam_zoom_auto"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 247307208565769,
+															"parameters": {
+																"text": "\"Zoom mode: [color=red]auto\""
+															}
+														}
+													],
+													"sid": 952461558992133
 												},
 												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 905391811070101,
-													"parameters": {
-														"variable": "difficulty",
-														"comparison": 0,
-														"value": "\"extreme\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 578465664934685,
-													"parameters": {
-														"text": "\"Сложность: [color=red]экстрим\""
-													}
-												}
-											],
-											"sid": 827114254063600
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
-											"sid": 995623722048722,
-											"parameters": {
-												"instance-variable": "param",
-												"comparison": 0,
-												"value": "\"cam_speed\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 140717940309447,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 301574402048329,
-													"parameters": {
-														"text": "\"Скорость камеры: [color=red]\" & settings_cam_speed_modificator"
-													}
-												}
-											],
-											"sid": 893158574798006
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
-											"sid": 852041900284332,
-											"parameters": {
-												"instance-variable": "param",
-												"comparison": 0,
-												"value": "\"fps\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 400861681669263,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 451118385866816,
-													"parameters": {
-														"variable": "settings_fps"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 385299136801628,
-													"parameters": {
-														"text": "\"Счетчик FPS: [color=red]вкл\""
-													}
-												}
-											],
-											"sid": 655050451914533
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 989527675422238
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 362915626094541,
-													"parameters": {
-														"text": "\"Счетчик FPS: [color=red]выкл\""
-													}
-												}
-											],
-											"sid": 340105025872853
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
-											"sid": 642573398762402,
-											"parameters": {
-												"instance-variable": "param",
-												"comparison": 0,
-												"value": "\"typewriter\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 846462472274639,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 341141875479495,
-													"parameters": {
-														"variable": "settings_dialog_typewriter_effect"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 768964964901512,
-													"parameters": {
-														"text": "\"Анимац. печатн. машинки: [color=red]вкл\""
-													}
-												}
-											],
-											"sid": 575255041199257
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 564736782940705
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 272904332161828,
-													"parameters": {
-														"text": "\"Анимац. печатн. машинки: [color=red]выкл\""
-													}
-												}
-											],
-											"sid": 556770738415342
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
-											"sid": 706859359107399,
-											"parameters": {
-												"instance-variable": "param",
-												"comparison": 0,
-												"value": "\"graphics\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 469281058621514,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 733988890829565,
-													"parameters": {
-														"variable": "settings_low_graphics"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 776775453875360,
-													"parameters": {
-														"text": "\"Графика: [color=red]низкая\""
-													}
-												}
-											],
-											"sid": 537027665699743,
-											"children": [
-												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 577869451079857
+														}
+													],
 													"actions": [
 														{
-															"id": "set-fullscreen-scaling",
-															"objectClass": "System",
-															"sid": 839965697926948,
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 976174550577021,
 															"parameters": {
-																"fullscreen-scaling": "low-quality"
-															}
-														},
-														{
-															"id": "set-pixel-rounding",
-															"objectClass": "System",
-															"sid": 608818362356455,
-															"parameters": {
-																"mode": "enabled"
+																"text": "\"Zoom mode: [color=red]manual\""
 															}
 														}
 													],
-													"sid": 970193628949167
+													"sid": 463437637886973
 												}
 											]
 										},
@@ -532,118 +279,952 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 895753307127577
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 104373383585083,
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 385683161767154,
 													"parameters": {
-														"text": "\"Графика: [color=red]нормальная\""
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"diff\""
 													}
 												}
 											],
-											"sid": 316727927880271,
+											"actions": [],
+											"sid": 755468323102118,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 592030191442445,
+															"parameters": {
+																"variable": "difficulty",
+																"comparison": 0,
+																"value": "\"hard\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 869935495905932,
+															"parameters": {
+																"text": "\"Difficulty: [color=red]hard\""
+															}
+														}
+													],
+													"sid": 797574190297240
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 342891299431810
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 221507794967466,
+															"parameters": {
+																"variable": "difficulty",
+																"comparison": 0,
+																"value": "\"extreme\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 414961249153579,
+															"parameters": {
+																"text": "\"Difficulty: [color=red]extreme\""
+															}
+														}
+													],
+													"sid": 381878167088531
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 317768471728201,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"cam_speed\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 136975374254238,
 											"children": [
 												{
 													"eventType": "block",
 													"conditions": [],
 													"actions": [
 														{
-															"id": "set-fullscreen-scaling",
-															"objectClass": "System",
-															"sid": 551298130641796,
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 217032687402987,
 															"parameters": {
-																"fullscreen-scaling": "high-quality"
-															}
-														},
-														{
-															"id": "set-pixel-rounding",
-															"objectClass": "System",
-															"sid": 264985173422691,
-															"parameters": {
-																"mode": "disabled"
+																"text": "\"Camera speed: [color=red]\" & settings_cam_speed_modificator"
 															}
 														}
 													],
-													"sid": 725748522344258
+													"sid": 440456759568699
 												}
 											]
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
-											"sid": 424690577906172,
-											"parameters": {
-												"instance-variable": "param",
-												"comparison": 0,
-												"value": "\"fullscreen\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 755045047137299,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 129164368112700,
-													"parameters": {
-														"variable": "settings_fullscreen",
-														"comparison": 0,
-														"value": "\"scale_outer\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 280808171190974,
-													"parameters": {
-														"text": "\"Полный экран: [color=red]вкл\""
-													}
-												}
-											],
-											"sid": 209342422292506
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 936373050163450,
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 539292547893484,
 													"parameters": {
-														"variable": "settings_fullscreen",
+														"instance-variable": "param",
 														"comparison": 0,
-														"value": "\"no\""
+														"value": "\"fps\""
 													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 628717941802674,
+											"children": [
 												{
-													"id": "set-text",
-													"objectClass": "logo_text",
-													"sid": 644431854833844,
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 336145827564792,
+															"parameters": {
+																"variable": "settings_fps"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 862718342063261,
+															"parameters": {
+																"text": "\"FPS counter: [color=red]on\""
+															}
+														}
+													],
+													"sid": 855897080844054
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 688709920390056
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 330843023760121,
+															"parameters": {
+																"text": "\"FPS counter: [color=red]off\""
+															}
+														}
+													],
+													"sid": 971137473118323
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 788677263523928,
 													"parameters": {
-														"text": "\"Полный экран: [color=red]выкл\""
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"typewriter\""
 													}
 												}
 											],
-											"sid": 836770120612695
+											"actions": [],
+											"sid": 554444395332635,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 958514389138295,
+															"parameters": {
+																"variable": "settings_dialog_typewriter_effect"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 999549465981685,
+															"parameters": {
+																"text": "\"Typewriter effect: [color=red]on\""
+															}
+														}
+													],
+													"sid": 667093600669944
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 322207343589175
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 571376782295482,
+															"parameters": {
+																"text": "\"Typewriter effect: [color=red]off\""
+															}
+														}
+													],
+													"sid": 965200260462328
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 404773117862530,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"graphics\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 572328879437278,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 822106067826572,
+															"parameters": {
+																"variable": "settings_low_graphics"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 287889462548775,
+															"parameters": {
+																"text": "\"Graphics: [color=red]low\""
+															}
+														}
+													],
+													"sid": 743662122819657,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-fullscreen-scaling",
+																	"objectClass": "System",
+																	"sid": 427878903458508,
+																	"parameters": {
+																		"fullscreen-scaling": "low-quality"
+																	}
+																},
+																{
+																	"id": "set-pixel-rounding",
+																	"objectClass": "System",
+																	"sid": 538199283864577,
+																	"parameters": {
+																		"mode": "enabled"
+																	}
+																}
+															],
+															"sid": 751501590573674
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 688484739000325
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 122955814117850,
+															"parameters": {
+																"text": "\"Graphics: [color=red]good\""
+															}
+														}
+													],
+													"sid": 857663957594859,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-fullscreen-scaling",
+																	"objectClass": "System",
+																	"sid": 193276900102769,
+																	"parameters": {
+																		"fullscreen-scaling": "high-quality"
+																	}
+																},
+																{
+																	"id": "set-pixel-rounding",
+																	"objectClass": "System",
+																	"sid": 420563354747445,
+																	"parameters": {
+																		"mode": "disabled"
+																	}
+																}
+															],
+															"sid": 894328780829053
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 828558248140275,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"fullscreen\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 991647337185115,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 953511001056025,
+															"parameters": {
+																"variable": "settings_fullscreen",
+																"comparison": 0,
+																"value": "\"scale_outer\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 140525417753548,
+															"parameters": {
+																"text": "\"Fullscreen: [color=red]on\""
+															}
+														}
+													],
+													"sid": 310830036747117
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 402044944769252,
+															"parameters": {
+																"variable": "settings_fullscreen",
+																"comparison": 0,
+																"value": "\"no\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 339899675244559,
+															"parameters": {
+																"text": "\"Fullscreen: [color=red]off\""
+															}
+														}
+													],
+													"sid": 398088849534846
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 353886218657653
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 639702231697537,
+									"parameters": {
+										"variable": "settings_language",
+										"comparison": 0,
+										"value": "\"ru\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 229249142398866,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-layer",
+											"objectClass": "menu_text",
+											"sid": 482692033825049,
+											"parameters": {
+												"layer": "\"settings\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 841395296144085,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 241331719471941,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"zoom\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 782369446608603,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 726276593507623,
+															"parameters": {
+																"variable": "settings_cam_zoom_auto"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 619114499947343,
+															"parameters": {
+																"text": "\"Отдаление камеры: [color=red]авто\""
+															}
+														}
+													],
+													"sid": 337334360341624
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 913414944389190
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 311543010895441,
+															"parameters": {
+																"text": "\"Отдаление камеры: [color=red]ручная\""
+															}
+														}
+													],
+													"sid": 519215915832807
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 973747917238962,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"diff\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 678935057865238,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 858937433222132,
+															"parameters": {
+																"variable": "difficulty",
+																"comparison": 0,
+																"value": "\"hard\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 927662284967343,
+															"parameters": {
+																"text": "\"Сложность: [color=red]сложно\""
+															}
+														}
+													],
+													"sid": 920169441085234
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 815451793854853
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 436497092512161,
+															"parameters": {
+																"variable": "difficulty",
+																"comparison": 0,
+																"value": "\"extreme\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 283713326445511,
+															"parameters": {
+																"text": "\"Сложность: [color=red]экстрим\""
+															}
+														}
+													],
+													"sid": 586769170915130
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 101642176244662,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"cam_speed\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 827135992871918,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 802689036930017,
+															"parameters": {
+																"text": "\"Скорость камеры: [color=red]\" & settings_cam_speed_modificator"
+															}
+														}
+													],
+													"sid": 456855416241621
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 400986192783337,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"fps\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 435611654476318,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 920389399448196,
+															"parameters": {
+																"variable": "settings_fps"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 183954946036682,
+															"parameters": {
+																"text": "\"Счетчик FPS: [color=red]вкл\""
+															}
+														}
+													],
+													"sid": 601063370579583
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 690247522714381
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 335928927565020,
+															"parameters": {
+																"text": "\"Счетчик FPS: [color=red]выкл\""
+															}
+														}
+													],
+													"sid": 361361665011565
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 824397314648154,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"typewriter\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 424961843484628,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 476558684181580,
+															"parameters": {
+																"variable": "settings_dialog_typewriter_effect"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 448284851255934,
+															"parameters": {
+																"text": "\"Анимац. печатн. машинки: [color=red]вкл\""
+															}
+														}
+													],
+													"sid": 841159537883767
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 635939201141880
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 404280800828122,
+															"parameters": {
+																"text": "\"Анимац. печатн. машинки: [color=red]выкл\""
+															}
+														}
+													],
+													"sid": 431460898456956
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 940848969881322,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"graphics\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 239516321011800,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 338741565170392,
+															"parameters": {
+																"variable": "settings_low_graphics"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 238265923408176,
+															"parameters": {
+																"text": "\"Графика: [color=red]низкая\""
+															}
+														}
+													],
+													"sid": 827731308054992,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-fullscreen-scaling",
+																	"objectClass": "System",
+																	"sid": 872192251769766,
+																	"parameters": {
+																		"fullscreen-scaling": "low-quality"
+																	}
+																},
+																{
+																	"id": "set-pixel-rounding",
+																	"objectClass": "System",
+																	"sid": 161931331765431,
+																	"parameters": {
+																		"mode": "enabled"
+																	}
+																}
+															],
+															"sid": 811560106270503
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 889088835447709
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 341250502578027,
+															"parameters": {
+																"text": "\"Графика: [color=red]нормальная\""
+															}
+														}
+													],
+													"sid": 727451427087413,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-fullscreen-scaling",
+																	"objectClass": "System",
+																	"sid": 723331370523810,
+																	"parameters": {
+																		"fullscreen-scaling": "high-quality"
+																	}
+																},
+																{
+																	"id": "set-pixel-rounding",
+																	"objectClass": "System",
+																	"sid": 424714175148359,
+																	"parameters": {
+																		"mode": "disabled"
+																	}
+																}
+															],
+															"sid": 559169775919753
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 646005455148167,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"fullscreen\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 966968527698449,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 623750030441906,
+															"parameters": {
+																"variable": "settings_fullscreen",
+																"comparison": 0,
+																"value": "\"scale_outer\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 200841314940965,
+															"parameters": {
+																"text": "\"Полный экран: [color=red]вкл\""
+															}
+														}
+													],
+													"sid": 607826806573396
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 524797078929150,
+															"parameters": {
+																"variable": "settings_fullscreen",
+																"comparison": 0,
+																"value": "\"no\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 752168911148777,
+															"parameters": {
+																"text": "\"Полный экран: [color=red]выкл\""
+															}
+														}
+													],
+													"sid": 284106240915337
+												}
+											]
 										}
 									]
 								}
@@ -676,7 +1257,7 @@
 							"conditions": [
 								{
 									"id": "pick-by-unique-id",
-									"objectClass": "logo_text",
+									"objectClass": "menu_text",
 									"sid": 118239778768101,
 									"parameters": {
 										"unique-id": "logo_text_uid"
@@ -691,7 +1272,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 130066534597087,
 											"parameters": {
 												"instance-variable": "param",
@@ -748,7 +1329,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 134322055844186,
 											"parameters": {
 												"instance-variable": "param",
@@ -819,7 +1400,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 691957922436807,
 											"parameters": {
 												"instance-variable": "param",
@@ -902,7 +1483,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 930649885484038,
 											"parameters": {
 												"instance-variable": "param",
@@ -1113,7 +1694,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 929756956851116,
 											"parameters": {
 												"instance-variable": "param",
@@ -1184,7 +1765,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 222765822187232,
 											"parameters": {
 												"instance-variable": "param",
@@ -1255,7 +1836,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 996192045158547,
 											"parameters": {
 												"instance-variable": "param",
@@ -1294,7 +1875,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 336467656173398,
 											"parameters": {
 												"instance-variable": "param",
@@ -1330,7 +1911,7 @@
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 639009372993089,
 											"parameters": {
 												"instance-variable": "param",
@@ -1492,7 +2073,7 @@
 					"conditions": [
 						{
 							"id": "pick-by-unique-id",
-							"objectClass": "logo_text",
+							"objectClass": "menu_text",
 							"sid": 882277161184678,
 							"parameters": {
 								"unique-id": "logo_text_uid"
@@ -1507,7 +2088,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "logo_text",
+									"objectClass": "menu_text",
 									"sid": 770450129731713,
 									"parameters": {
 										"instance-variable": "param",
@@ -1573,7 +2154,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "logo_text",
+									"objectClass": "menu_text",
 									"sid": 432458161213316,
 									"parameters": {
 										"instance-variable": "param",
@@ -1625,7 +2206,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "logo_text",
+									"objectClass": "menu_text",
 									"sid": 490357371786036,
 									"parameters": {
 										"instance-variable": "param",
@@ -1734,7 +2315,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "logo_text",
+													"objectClass": "menu_text",
 													"sid": 913056816358006,
 													"parameters": {
 														"instance-variable": "param",
@@ -1808,12 +2389,12 @@
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
-										"object-clicked": "logo_text"
+										"object-clicked": "menu_text"
 									}
 								},
 								{
 									"id": "is-on-layer",
-									"objectClass": "logo_text",
+									"objectClass": "menu_text",
 									"sid": 848069712802610,
 									"parameters": {
 										"layer": "current_layer"
@@ -1825,7 +2406,7 @@
 									"callFunction": "menu_button_click",
 									"sid": 518489305185676,
 									"parameters": [
-										"logo_text.UID"
+										"menu_text.UID"
 									]
 								}
 							],
@@ -1859,7 +2440,7 @@
 									"objectClass": "Mouse",
 									"sid": 707620224510212,
 									"parameters": {
-										"object": "logo_text"
+										"object": "menu_text"
 									}
 								}
 							],
@@ -1871,7 +2452,7 @@
 									"conditions": [
 										{
 											"id": "is-on-layer",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 395295094010380,
 											"parameters": {
 												"layer": "current_layer"
@@ -1884,12 +2465,12 @@
 											"parameters": {
 												"variable": "selected_logo_text_uid",
 												"comparison": 1,
-												"value": "logo_text.UID"
+												"value": "menu_text.UID"
 											}
 										},
 										{
 											"id": "pick-nearestfurthest",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 249451885679700,
 											"parameters": {
 												"which": "nearest",
@@ -1914,12 +2495,12 @@
 													"objectClass": "System",
 													"sid": 872557179503939,
 													"parameters": {
-														"object": "logo_text"
+														"object": "menu_text"
 													}
 												},
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "logo_text",
+													"objectClass": "menu_text",
 													"sid": 646627209397244,
 													"parameters": {
 														"instance-variable": "param",
@@ -1931,7 +2512,7 @@
 											"actions": [
 												{
 													"id": "set-opacity",
-													"objectClass": "logo_text",
+													"objectClass": "menu_text",
 													"sid": 504905402111120,
 													"parameters": {
 														"opacity": "80"
@@ -1939,7 +2520,7 @@
 												},
 												{
 													"id": "set-z-elevation",
-													"objectClass": "logo_text",
+													"objectClass": "menu_text",
 													"sid": 786946353841484,
 													"parameters": {
 														"z": "0"
@@ -1954,7 +2535,7 @@
 											"actions": [
 												{
 													"id": "set-opacity",
-													"objectClass": "logo_text",
+													"objectClass": "menu_text",
 													"sid": 601149582605048,
 													"parameters": {
 														"opacity": "100"
@@ -1962,7 +2543,7 @@
 												},
 												{
 													"id": "set-z-elevation",
-													"objectClass": "logo_text",
+													"objectClass": "menu_text",
 													"sid": 643288877901954,
 													"parameters": {
 														"z": "1"
@@ -1974,7 +2555,7 @@
 													"sid": 611128752950667,
 													"parameters": {
 														"variable": "selected_logo_text_uid",
-														"value": "logo_text.UID"
+														"value": "menu_text.UID"
 													}
 												}
 											],
@@ -2217,7 +2798,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 480678300098067,
 											"parameters": {
 												"instance-variable": "param",
@@ -2229,7 +2810,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 480606493721358,
 											"parameters": {
 												"text": "\"THE WITNESS\""
@@ -2243,7 +2824,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 150923656124426,
 											"parameters": {
 												"instance-variable": "param",
@@ -2255,7 +2836,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 727353633273678,
 											"parameters": {
 												"text": "\"Play\""
@@ -2269,7 +2850,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 206178854194377,
 											"parameters": {
 												"instance-variable": "param",
@@ -2281,7 +2862,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 153764984331119,
 											"parameters": {
 												"text": "\"Settings\""
@@ -2295,7 +2876,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 421854949089474,
 											"parameters": {
 												"instance-variable": "param",
@@ -2307,7 +2888,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 375324659622844,
 											"parameters": {
 												"text": "\"Exit\""
@@ -2345,7 +2926,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 130848728744737,
 											"parameters": {
 												"instance-variable": "param",
@@ -2357,7 +2938,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 607399784356014,
 											"parameters": {
 												"text": "\"СВИДЕТЕЛЬ\""
@@ -2371,7 +2952,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 693935780706625,
 											"parameters": {
 												"instance-variable": "param",
@@ -2383,7 +2964,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 385988960770564,
 											"parameters": {
 												"text": "\"Играть\""
@@ -2397,7 +2978,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 265317708520787,
 											"parameters": {
 												"instance-variable": "param",
@@ -2409,7 +2990,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 172392704336523,
 											"parameters": {
 												"text": "\"Настройки\""
@@ -2423,7 +3004,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 943622589220258,
 											"parameters": {
 												"instance-variable": "param",
@@ -2435,7 +3016,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "logo_text",
+											"objectClass": "menu_text",
 											"sid": 823501604851677,
 											"parameters": {
 												"text": "\"Выход\""

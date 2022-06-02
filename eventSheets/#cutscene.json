@@ -159,6 +159,84 @@
 					"sid": 599120478744052
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 395516008393923,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [],
+			"sid": 557765060706112,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 221853596164794,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"intro\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "dialog",
+							"sid": 418944330891359,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "fade-volume",
+							"objectClass": "Audio",
+							"sid": 764586346548895,
+							"parameters": {
+								"tag": "\"music\"",
+								"db": "-100",
+								"duration": "1",
+								"ending": "stop"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 419487427468239,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 528415606070872,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 242924730962896,
+							"parameters": {
+								"layout": "forest1"
+							}
+						}
+					],
+					"sid": 274542494532988
+				}
+			]
 		}
 	],
 	"sid": 843317000540230

@@ -93,7 +93,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
 						"text": "THE WITNESS",
 						"enable-bbcode": true,
@@ -177,7 +177,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Play",
 						"enable-bbcode": true,
@@ -196,7 +196,7 @@
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "top-left"
+						"origin": "center"
 					},
 					"uid": 37,
 					"instanceVariables": {
@@ -210,12 +210,12 @@
 						}
 					},
 					"world": {
-						"x": 134,
-						"y": 213,
+						"x": 232.82846538268043,
+						"y": 254.3044596148244,
 						"width": 200,
 						"height": 80.29333750406903,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -227,7 +227,7 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Exit",
 						"enable-bbcode": true,
@@ -246,7 +246,7 @@
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "top-left"
+						"origin": "center"
 					},
 					"uid": 38,
 					"instanceVariables": {
@@ -260,12 +260,12 @@
 						}
 					},
 					"world": {
-						"x": 134,
-						"y": 380,
+						"x": 232.82846538268043,
+						"y": 421.3044596148244,
 						"width": 200,
 						"height": 80.29333750406903,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -277,7 +277,7 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Settings",
 						"enable-bbcode": true,
@@ -296,7 +296,7 @@
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "top-left"
+						"origin": "center"
 					},
 					"uid": 208,
 					"instanceVariables": {
@@ -310,12 +310,12 @@
 						}
 					},
 					"world": {
-						"x": 92,
-						"y": 295,
+						"x": 232,
+						"y": 336.3044596148244,
 						"width": 268.85,
 						"height": 80.29333750406903,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -361,9 +361,9 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
-						"text": "Назад",
+						"text": "Back",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 48,
@@ -395,7 +395,7 @@
 					},
 					"world": {
 						"x": 148.22409874112134,
-						"y": 427.6267378261742,
+						"y": 419.0604212169409,
 						"width": 169.18479336483034,
 						"height": 55.24071502624216,
 						"originX": 0,
@@ -411,9 +411,9 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
-						"text": "Отдаление камеры: Авто",
+						"text": "Zoom mode: [color=red]auto",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -461,9 +461,9 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
-						"text": "Аним. печатн. машинки: вкл",
+						"text": "Typewriter effect: [color=red]on",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -511,9 +511,9 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
-						"text": "Скорость камеры: 2",
+						"text": "Camera speed:[color=red] 2",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -561,9 +561,9 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
-						"text": "Счетчик FPS: выкл",
+						"text": "FPS counter: [color=red]on",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -611,9 +611,9 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
-						"text": "Графика: нормально",
+						"text": "Graphics: [color=red]low",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -626,7 +626,7 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -661,9 +661,9 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
-						"text": "Полный экран: вкл",
+						"text": "Fullscreen: [color=red]on",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -676,7 +676,7 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -711,9 +711,9 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
-						"text": "Сложность: Сложно",
+						"text": "Difficulty: [color=red]hard",
 						"enable-bbcode": true,
 						"font": "pixel",
 						"size": 16,
@@ -726,7 +726,7 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -761,7 +761,7 @@
 					}
 				},
 				{
-					"type": "logo_text",
+					"type": "menu_text",
 					"properties": {
 						"text": "---",
 						"enable-bbcode": true,
