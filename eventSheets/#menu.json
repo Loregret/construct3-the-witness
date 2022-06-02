@@ -1918,14 +1918,14 @@
 													}
 												},
 												{
-													"id": "compare-text",
+													"id": "compare-instance-variable",
 													"objectClass": "logo_text",
-													"sid": 740438072649255,
+													"sid": 646627209397244,
 													"parameters": {
-														"text-to-compare": "\"Свидетель\"",
-														"case-sensitivity": "ignore-case"
-													},
-													"isInverted": true
+														"instance-variable": "param",
+														"comparison": 1,
+														"value": "\"logo\""
+													}
 												}
 											],
 											"actions": [
@@ -2175,6 +2175,281 @@
 				}
 			],
 			"sid": 621598551102135
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu - localization",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 315522432967974
+						}
+					],
+					"actions": [],
+					"sid": 980255370561361,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 445981251944634,
+									"parameters": {
+										"variable": "settings_language",
+										"comparison": 0,
+										"value": "\"en\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 554839779133167,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 480678300098067,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"logo\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 480606493721358,
+											"parameters": {
+												"text": "\"THE WITNESS\""
+											}
+										}
+									],
+									"sid": 310631498711960
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 150923656124426,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"play\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 727353633273678,
+											"parameters": {
+												"text": "\"Play\""
+											}
+										}
+									],
+									"sid": 363919123952940
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 206178854194377,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"settings\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 153764984331119,
+											"parameters": {
+												"text": "\"Settings\""
+											}
+										}
+									],
+									"sid": 428711253896061
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 421854949089474,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"exit\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 375324659622844,
+											"parameters": {
+												"text": "\"Exit\""
+											}
+										}
+									],
+									"sid": 958219804047657
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 112574844725014
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 995583464716159,
+									"parameters": {
+										"variable": "settings_language",
+										"comparison": 0,
+										"value": "\"ru\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 286783142676726,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 130848728744737,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"logo\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 607399784356014,
+											"parameters": {
+												"text": "\"СВИДЕТЕЛЬ\""
+											}
+										}
+									],
+									"sid": 914575201443653
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 693935780706625,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"play\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 385988960770564,
+											"parameters": {
+												"text": "\"Играть\""
+											}
+										}
+									],
+									"sid": 109784296460576
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 265317708520787,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"settings\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 172392704336523,
+											"parameters": {
+												"text": "\"Настройки\""
+											}
+										}
+									],
+									"sid": 221629917624015
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "logo_text",
+											"sid": 943622589220258,
+											"parameters": {
+												"instance-variable": "param",
+												"comparison": 0,
+												"value": "\"exit\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "logo_text",
+											"sid": 823501604851677,
+											"parameters": {
+												"text": "\"Выход\""
+											}
+										}
+									],
+									"sid": 675612748726647
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 155049068112177
 		}
 	],
 	"sid": 772844762173010
