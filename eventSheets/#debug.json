@@ -12,6 +12,263 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 184243038475734,
+							"parameters": {
+								"interval-seconds": "dt"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 346653791575450,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "очистка"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 182959883243877,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "debug",
+											"sid": 644373429160655,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 208094547366478,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "игровое инфо"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 434400592314280,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 595785866855409,
+											"parameters": {
+												"text": "\"[color=gray]Патроны: [/color] \" & weapon.Get(curWeapon&\"_ammo\")"
+											}
+										},
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 206427637972552,
+											"parameters": {
+												"text": "newline"
+											}
+										}
+									],
+									"sid": 752668443782875,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 233701749591477,
+											"parameters": {
+												"text": "\"[color=gray]Фонарик: [/color] \" & flashlight_battery"
+											}
+										},
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 440410476796109,
+											"parameters": {
+												"text": "newline"
+											}
+										}
+									],
+									"sid": 510187979618484,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "техн. инфо"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 495156644422100,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 850102203076001,
+											"parameters": {
+												"text": "\"[color=gray]Зум камеры:[/color] \" & (round(LayoutScale * 10)/10) * 100 & \"%\""
+											}
+										},
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 537945097999466,
+											"parameters": {
+												"text": "newline"
+											}
+										}
+									],
+									"sid": 868292336123638,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 475957569027278,
+											"parameters": {
+												"text": "\"[color=gray]Отдача:[/color] \" & weapon_recoil"
+											}
+										},
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 839814014700445,
+											"parameters": {
+												"text": "newline"
+											}
+										}
+									],
+									"sid": 439732473721048,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 913623149149002,
+											"parameters": {
+												"text": "\"[color=gray]Видимость: [/color]\" & Functions.get_positions_visibility(Player.X, Player.Y)"
+											}
+										},
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 306576115824410,
+											"parameters": {
+												"text": "newline"
+											}
+										}
+									],
+									"sid": 871722637625346,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "враги"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 214310245808354,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "runner",
+											"sid": 730591231431146
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "runner",
+											"sid": 881511674067551,
+											"parameters": {
+												"which": "nearest",
+												"x": "Player.X",
+												"y": "Player.Y"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "runner",
+											"sid": 747916138063408,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 0,
+												"value": "\"dead\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 468649120851121,
+											"parameters": {
+												"text": "\"[b][color=red]Противник[/color][/b]\"& newline &\n\"[color=gray]Расстояние до игрока:[/color] \" & round(distance(Player.X,Player.Y,runner.X,runner.Y)) & newline &\n\"[color=gray]Состояние:[/color] \" & runner.state & newline &\n\"[color=gray]Жизни: [/color]\" & runner.hp\n"
+											}
+										},
+										{
+											"id": "append-text",
+											"objectClass": "debug",
+											"sid": 583505239451403,
+											"parameters": {
+												"text": "newline"
+											}
+										}
+									],
+									"sid": 700047012310250,
+									"disabled": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-any-key-pressed",
 							"objectClass": "Keyboard",
 							"sid": 112499445660832

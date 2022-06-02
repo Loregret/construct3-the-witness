@@ -1388,9 +1388,9 @@
 														{
 															"id": "add-key",
 															"objectClass": "weapon",
-															"sid": 667319143662450,
+															"sid": 808631822138657,
 															"parameters": {
-																"key": "\"ak\"",
+																"key": "\"shotgun\"",
 																"value": "1"
 															}
 														}
@@ -1414,9 +1414,9 @@
 														{
 															"id": "add-key",
 															"objectClass": "weapon",
-															"sid": 386545360956126,
+															"sid": 226625907466975,
 															"parameters": {
-																"key": "\"shotgun\"",
+																"key": "\"ak\"",
 																"value": "1"
 															}
 														}
@@ -1577,70 +1577,345 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 206255403384801,
+											"id": "on-mouse-wheel",
+											"objectClass": "Mouse",
+											"sid": 457410327482758,
 											"parameters": {
-												"key": 49
+												"direction": "up"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 423059219871257,
+									"sid": 744353296867843,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 320139059674635,
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 996716987327985,
 													"parameters": {
-														"animation": "\"idle\""
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 415149250830665,
-													"parameters": {
-														"animation": "\"walk\""
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 497449341843082,
-													"parameters": {
-														"animation": "\"run\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "weapon_change_to_another",
-													"sid": 232635353261026,
-													"parameters": [
-														"\"\"",
-														"\"idle\""
-													]
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 993066594822778,
-													"parameters": {
-														"audio-file": "cloth",
-														"loop": "not-looping",
-														"volume": "-10",
-														"tag-optional": "\"player_undraw\""
+														"comparison": 0,
+														"number": "0"
 													}
 												}
 											],
-											"sid": 611438181135044
+											"actions": [],
+											"sid": 865117489975487,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 850133937306993,
+															"parameters": {
+																"key": "\"pistol\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 731521201691313,
+															"parameters": [
+																"\"pistol\"",
+																"\"pistol\""
+															]
+														}
+													],
+													"sid": 493886129237178,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 597694393828039
+														},
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 898690249885116,
+															"parameters": {
+																"key": "\"shotgun\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 428901723623219,
+															"parameters": [
+																"\"shotgun\"",
+																"\"shotgun\""
+															]
+														}
+													],
+													"sid": 545392746188602,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 494562791380534
+														},
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 225313483913408,
+															"parameters": {
+																"key": "\"ak\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 823016932971366,
+															"parameters": [
+																"\"ak\"",
+																"\"ak\""
+															]
+														}
+													],
+													"sid": 974912891939298,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 265579656968353
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 326891316799534,
+													"parameters": {
+														"comparison": 0,
+														"number": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 168269125451070,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 915590894791461,
+															"parameters": {
+																"key": "\"shotgun\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 603661029949697,
+															"parameters": [
+																"\"shotgun\"",
+																"\"shotgun\""
+															]
+														}
+													],
+													"sid": 493861972767461,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 285188781591213
+														},
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 599078069727262,
+															"parameters": {
+																"key": "\"ak\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 782775215996790,
+															"parameters": [
+																"\"ak\"",
+																"\"ak\""
+															]
+														}
+													],
+													"sid": 172998019456151,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 490025354992870
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 313836973780047,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 559118067493164,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 209194430050847
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 725485861701633,
+													"parameters": {
+														"comparison": 0,
+														"number": "2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 110655079750241,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 264942485002027,
+															"parameters": {
+																"key": "\"ak\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 927443466205802,
+															"parameters": [
+																"\"ak\"",
+																"\"ak\""
+															]
+														}
+													],
+													"sid": 830568389423832,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 507189238835787
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 435973011220943,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 136802693458178,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 262653653088562
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 186027094395327,
+													"parameters": {
+														"comparison": 0,
+														"number": "3"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 296560043731497,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 748602547813883,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 485493468965694,
+													"disabled": true
+												}
+											]
 										}
 									]
 								},
@@ -1648,255 +1923,704 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 907559328294902,
+											"id": "on-mouse-wheel",
+											"objectClass": "Mouse",
+											"sid": 446344324165415,
 											"parameters": {
-												"key": 50
-											}
-										},
-										{
-											"id": "compare-value",
-											"objectClass": "weapon",
-											"sid": 132544306133127,
-											"parameters": {
-												"key": "\"pistol\"",
-												"comparison": 0,
-												"value": "1"
+												"direction": "down"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 613763951356207,
+									"sid": 526025040819768,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 800191410197380,
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 473538311725013,
 													"parameters": {
-														"animation": "\"pistol\""
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 358659429806460,
-													"parameters": {
-														"animation": "\"run\""
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 469874284464012,
-													"parameters": {
-														"animation": "\"pistol_reload\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "weapon_change_to_another",
-													"sid": 371993357203246,
-													"parameters": [
-														"\"pistol\"",
-														"\"pistol\""
-													]
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 885067944818834,
-													"parameters": {
-														"audio-file": "cloth",
-														"loop": "not-looping",
-														"volume": "-10",
-														"tag-optional": "\"player_draw\""
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 684294584557845,
-													"parameters": {
-														"audio-file": "draw gun 2",
-														"loop": "not-looping",
-														"volume": "0",
-														"tag-optional": "\"player_undraw\""
+														"comparison": 0,
+														"number": "0"
 													}
 												}
 											],
-											"sid": 370576221219287
+											"actions": [],
+											"sid": 203815906447166,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 742995428118966,
+															"parameters": {
+																"key": "\"ak\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 100345802527006,
+															"parameters": [
+																"\"ak\"",
+																"\"ak\""
+															]
+														}
+													],
+													"sid": 588370300926553,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 471462097751303
+														},
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 908397866243011,
+															"parameters": {
+																"key": "\"shotgun\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 961236908167133,
+															"parameters": [
+																"\"shotgun\"",
+																"\"shotgun\""
+															]
+														}
+													],
+													"sid": 965326987649996,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 747938504328633
+														},
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 350920602937605,
+															"parameters": {
+																"key": "\"pistol\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 899054372067091,
+															"parameters": [
+																"\"pistol\"",
+																"\"pistol\""
+															]
+														}
+													],
+													"sid": 967685144121226,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 422535501149405
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 155733797869793,
+													"parameters": {
+														"comparison": 0,
+														"number": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 884865288247134,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 917662338993086,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 463487697596370,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 590384921534091
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 976242083205339,
+													"parameters": {
+														"comparison": 0,
+														"number": "2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 249375609692099,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 244195016615155,
+															"parameters": {
+																"key": "\"pistol\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 894782022379597,
+															"parameters": [
+																"\"pistol\"",
+																"\"pistol\""
+															]
+														}
+													],
+													"sid": 735509820908220,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 911504250602852
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 272532031823837,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 895061123531543,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 992890526938472
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 433961264596403,
+													"parameters": {
+														"comparison": 0,
+														"number": "3"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 565436882312807,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 583328208712956,
+															"parameters": {
+																"key": "\"shotgun\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 360350431203286,
+															"parameters": [
+																"\"shotgun\"",
+																"\"shotgun\""
+															]
+														}
+													],
+													"sid": 154110746618514,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 498175317659217
+														},
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 870718640301756,
+															"parameters": {
+																"key": "\"pistol\"",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 687828301866184,
+															"parameters": [
+																"\"pistol\"",
+																"\"pistol\""
+															]
+														}
+													],
+													"sid": 187158451404647,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 291502433124958
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 858157150139214,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 362994299856368,
+													"disabled": true
+												}
+											]
 										}
 									]
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 605658236968948,
-											"parameters": {
-												"key": 51
-											}
-										},
-										{
-											"id": "compare-value",
-											"objectClass": "weapon",
-											"sid": 284994106649314,
-											"parameters": {
-												"key": "\"ak\"",
-												"comparison": 0,
-												"value": "1"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 612955674155815,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 330180485175673,
-													"parameters": {
-														"animation": "\"idle\""
-													}
-												},
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 615861417408350,
-													"parameters": {
-														"animation": "\"walk\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "weapon_change_to_another",
-													"sid": 389311233873898,
-													"parameters": [
-														"\"ak\"",
-														"\"ak\""
-													]
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 232159396225426,
-													"parameters": {
-														"audio-file": "cloth",
-														"loop": "not-looping",
-														"volume": "-10",
-														"tag-optional": "\"player_draw\""
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 623554229132753,
-													"parameters": {
-														"audio-file": "draw gun 2",
-														"loop": "not-looping",
-														"volume": "0",
-														"tag-optional": "\"player_undraw\""
-													}
-												}
-											],
-											"sid": 441166946724476,
-											"isOrBlock": true
-										}
-									]
+									"eventType": "comment",
+									"text": "1 2 3 4 "
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 695177712893047,
-											"parameters": {
-												"key": 52
-											}
-										},
-										{
-											"id": "compare-value",
-											"objectClass": "weapon",
-											"sid": 909086134443352,
-											"parameters": {
-												"key": "\"shotgun\"",
-												"comparison": 0,
-												"value": "1"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [],
-									"sid": 270517623635083,
+									"sid": 768505492746307,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 956248614520339,
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 129368518962950,
 													"parameters": {
-														"animation": "\"idle\""
-													}
-												},
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 329160955222389,
-													"parameters": {
-														"animation": "\"walk\""
+														"key": 49
 													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 915844255703800,
+											"children": [
 												{
-													"callFunction": "weapon_change_to_another",
-													"sid": 702276093836966,
-													"parameters": [
-														"\"shotgun\"",
-														"\"shotgun\""
-													]
-												},
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 951539066173913,
+															"parameters": {
+																"animation": "\"idle\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 588600081386634,
+															"parameters": {
+																"animation": "\"walk\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 135392081640013,
+															"parameters": {
+																"animation": "\"run\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 566617317831385,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 977583543043426,
+															"parameters": {
+																"audio-file": "cloth",
+																"loop": "not-looping",
+																"volume": "-10",
+																"tag-optional": "\"player_undraw\""
+															}
+														}
+													],
+													"sid": 298749312858433
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
 												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 261129721643638,
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 423100298338311,
 													"parameters": {
-														"audio-file": "cloth",
-														"loop": "not-looping",
-														"volume": "-10",
-														"tag-optional": "\"player_draw\""
+														"key": 50
 													}
 												},
 												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 622779595315053,
+													"id": "compare-value",
+													"objectClass": "weapon",
+													"sid": 333048115477288,
 													"parameters": {
-														"audio-file": "draw gun 2",
-														"loop": "not-looping",
-														"volume": "0",
-														"tag-optional": "\"player_undraw\""
+														"key": "\"pistol\"",
+														"comparison": 0,
+														"value": "1"
 													}
 												}
 											],
-											"sid": 240581564027821,
-											"isOrBlock": true
+											"actions": [],
+											"sid": 816005245135817,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 386437268476853,
+															"parameters": {
+																"animation": "\"pistol\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 585419783425047,
+															"parameters": {
+																"animation": "\"run\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 680614280013012,
+															"parameters": {
+																"animation": "\"pistol_reload\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 551293602600730,
+															"parameters": [
+																"\"pistol\"",
+																"\"pistol\""
+															]
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 360460529436758,
+															"parameters": {
+																"audio-file": "cloth",
+																"loop": "not-looping",
+																"volume": "-10",
+																"tag-optional": "\"player_draw\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 831282546056897,
+															"parameters": {
+																"audio-file": "draw gun 2",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"player_undraw\""
+															}
+														}
+													],
+													"sid": 316281422025549
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 338963031216955,
+													"parameters": {
+														"key": 51
+													}
+												},
+												{
+													"id": "compare-value",
+													"objectClass": "weapon",
+													"sid": 675095952528812,
+													"parameters": {
+														"key": "\"shotgun\"",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 228619749464249,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 252890726910118,
+															"parameters": {
+																"animation": "\"shotgun\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 373173642722973,
+															"parameters": {
+																"animation": "\"run\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 412547826301671,
+															"parameters": {
+																"animation": "\"shotgun_reload\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 489095499853647,
+															"parameters": [
+																"\"shotgun\"",
+																"\"shotgun\""
+															]
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 783514364749130,
+															"parameters": {
+																"audio-file": "cloth",
+																"loop": "not-looping",
+																"volume": "-10",
+																"tag-optional": "\"player_draw\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 761812078004717,
+															"parameters": {
+																"audio-file": "draw gun 2",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"player_undraw\""
+															}
+														}
+													],
+													"sid": 752536860333710
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 895404569232816,
+													"parameters": {
+														"key": 52
+													}
+												},
+												{
+													"id": "compare-value",
+													"objectClass": "weapon",
+													"sid": 618405986637597,
+													"parameters": {
+														"key": "\"ak\"",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 767208984107192,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 227390136726354,
+															"parameters": {
+																"animation": "\"ak\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 826727052812992,
+															"parameters": {
+																"animation": "\"run\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player",
+															"sid": 605905733901448,
+															"parameters": {
+																"animation": "\"ak_reload\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 966998621659140,
+															"parameters": [
+																"\"ak\"",
+																"\"ak\""
+															]
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 671376724133552,
+															"parameters": {
+																"audio-file": "cloth",
+																"loop": "not-looping",
+																"volume": "-10",
+																"tag-optional": "\"player_draw\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 148773269671614,
+															"parameters": {
+																"audio-file": "draw gun 2",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"player_undraw\""
+															}
+														}
+													],
+													"sid": 453477320275093
+												}
+											]
 										}
 									]
 								}
@@ -2676,60 +3400,86 @@
 											"isInverted": true
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 338212840912013,
+									"children": [
 										{
-											"id": "stop",
-											"objectClass": "Player",
-											"sid": 304127226835907,
-											"behaviorType": "8Direction"
-										},
-										{
-											"id": "set-ignoring-input",
-											"objectClass": "Player",
-											"sid": 810944421053201,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"input": "start-ignoring"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Player",
-											"sid": 451653378325846,
-											"parameters": {
-												"animation": "\"kick\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "start-timer",
-											"objectClass": "Player",
-											"sid": 171156340969689,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "1.1",
-												"type": "once",
-												"tag": "\"kick\""
-											}
-										},
-										{
-											"id": "play-at-object-by-name",
-											"objectClass": "Audio",
-											"sid": 256693017288911,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "choose(\"kick1\",\"kick1\",\"kick2\")",
-												"loop": "not-looping",
-												"volume": "-17",
-												"object": "Player",
-												"inner-angle": "360",
-												"outer-angle": "0",
-												"outer-gain": "0",
-												"tag-optional": "\"kick\""
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 509839073896826,
+													"parameters": {
+														"animation": "\"walk\""
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 802125634923855,
+													"parameters": {
+														"animation": "\"idle\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Player",
+													"sid": 329263148336848,
+													"behaviorType": "8Direction"
+												},
+												{
+													"id": "set-ignoring-input",
+													"objectClass": "Player",
+													"sid": 283560514456090,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"input": "start-ignoring"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 232239169571027,
+													"parameters": {
+														"animation": "\"kick\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "Player",
+													"sid": 955577573324747,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "1.1",
+														"type": "once",
+														"tag": "\"kick\""
+													}
+												},
+												{
+													"id": "play-at-object-by-name",
+													"objectClass": "Audio",
+													"sid": 293387112124342,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "choose(\"kick1\",\"kick1\",\"kick2\")",
+														"loop": "not-looping",
+														"volume": "-17",
+														"object": "Player",
+														"inner-angle": "360",
+														"outer-angle": "0",
+														"outer-gain": "0",
+														"tag-optional": "\"kick\""
+													}
+												}
+											],
+											"sid": 957853060829773,
+											"isOrBlock": true
 										}
-									],
-									"sid": 338212840912013
+									]
 								},
 								{
 									"eventType": "block",
@@ -3724,6 +4474,10 @@
 												"variable": "curWeapon",
 												"value": "weapon_name"
 											}
+										},
+										{
+											"callFunction": "interface_show_weapon_circle",
+											"sid": 112827498548858
 										}
 									],
 									"sid": 595431617891746
@@ -8736,261 +9490,196 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
+					"functionName": "interface_show_weapon_circle",
+					"functionDescription": "",
+					"functionCategory": "#interface",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
 						{
-							"id": "every-x-seconds",
+							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 936360594376021,
+							"sid": 979845398134763,
 							"parameters": {
-								"interval-seconds": "dt"
+								"layer": "\"weapon_icon\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "weapon_icon",
+							"sid": 691885664764829,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"\""
 							}
 						}
 					],
-					"actions": [],
-					"sid": 941534979740325,
-					"disabled": true,
+					"sid": 708961179115497,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "очистка"
+							"text": "weapon icons"
 						},
 						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [],
-							"sid": 407864847470781,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "debug",
-											"sid": 869354651112458,
-											"parameters": {
-												"text": "\"\""
-											}
-										}
-									],
-									"sid": 812487840901614,
-									"disabled": true
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "игровое инфо"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 626179920401124,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 454781003475568,
-											"parameters": {
-												"text": "\"[color=gray]Патроны: [/color] \" & weapon.Get(curWeapon&\"_ammo\")"
-											}
-										},
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 456382340419391,
-											"parameters": {
-												"text": "newline"
-											}
-										}
-									],
-									"sid": 665221330076047,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 738061326932722,
-											"parameters": {
-												"text": "\"[color=gray]Фонарик: [/color] \" & flashlight_battery"
-											}
-										},
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 180389868072197,
-											"parameters": {
-												"text": "newline"
-											}
-										}
-									],
-									"sid": 227878657721295,
-									"disabled": true
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "техн. инфо"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 677418035696275,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 519281002083196,
-											"parameters": {
-												"text": "\"[color=gray]Зум камеры:[/color] \" & (round(LayoutScale * 10)/10) * 100 & \"%\""
-											}
-										},
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 243782633825673,
-											"parameters": {
-												"text": "newline"
-											}
-										}
-									],
-									"sid": 642118799413674,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 320578418464282,
-											"parameters": {
-												"text": "\"[color=gray]Отдача:[/color] \" & weapon_recoil"
-											}
-										},
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 329850088741460,
-											"parameters": {
-												"text": "newline"
-											}
-										}
-									],
-									"sid": 832386882600836,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 256845312067381,
-											"parameters": {
-												"text": "\"[color=gray]Видимость: [/color]\" & Functions.get_positions_visibility(Player.X, Player.Y)"
-											}
-										},
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 379237091978514,
-											"parameters": {
-												"text": "newline"
-											}
-										}
-									],
-									"sid": 710592358587549,
-									"disabled": true
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "враги"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 795370704242390,
-							"disabled": true,
+							"sid": 120044747942079,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-on-screen",
-											"objectClass": "runner",
-											"sid": 279156850263494
-										},
-										{
-											"id": "pick-nearestfurthest",
-											"objectClass": "runner",
-											"sid": 904618821306202,
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 383212678757584,
 											"parameters": {
-												"which": "nearest",
-												"x": "Player.X",
-												"y": "Player.Y"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "runner",
-											"sid": 140303462482980,
-											"parameters": {
-												"instance-variable": "state",
+												"variable": "curWeapon",
 												"comparison": 0,
-												"value": "\"dead\""
-											},
-											"isInverted": true
+												"value": "\"\""
+											}
 										}
 									],
 									"actions": [
 										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 661838584002159,
+											"id": "set-animation-frame",
+											"objectClass": "weapon_icon",
+											"sid": 997823099972313,
 											"parameters": {
-												"text": "\"[b][color=red]Противник[/color][/b]\"& newline &\n\"[color=gray]Расстояние до игрока:[/color] \" & round(distance(Player.X,Player.Y,runner.X,runner.Y)) & newline &\n\"[color=gray]Состояние:[/color] \" & runner.state & newline &\n\"[color=gray]Жизни: [/color]\" & runner.hp\n"
-											}
-										},
-										{
-											"id": "append-text",
-											"objectClass": "debug",
-											"sid": 349446068885809,
-											"parameters": {
-												"text": "newline"
+												"frame-number": "0"
 											}
 										}
 									],
-									"sid": 518419665452976,
-									"disabled": true
+									"sid": 724344897550182
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 264099527445594
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 583025521478820,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"pistol\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "weapon_icon",
+											"sid": 686543850630286,
+											"parameters": {
+												"frame-number": "1"
+											}
+										}
+									],
+									"sid": 428367274203109
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 464820589729634
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 976269762958505,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"shotgun\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "weapon_icon",
+											"sid": 713833723226590,
+											"parameters": {
+												"frame-number": "2"
+											}
+										}
+									],
+									"sid": 123904556091221
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 344281544006912
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 656180767939744,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"ak\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "weapon_icon",
+											"sid": 714192673635698,
+											"parameters": {
+												"frame-number": "3"
+											}
+										}
+									],
+									"sid": 659374284673888
 								}
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "weapon_icon",
+							"sid": 307094465574329,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 671162031407542,
+							"parameters": {
+								"layer": "\"weapon_icon\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 957008750530279
 				}
 			],
 			"sid": 513771635655873

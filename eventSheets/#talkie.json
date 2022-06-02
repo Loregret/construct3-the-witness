@@ -172,7 +172,7 @@
 									"objectClass": "Player",
 									"sid": 632316785099940,
 									"parameters": {
-										"child": "sprfont",
+										"child": "sprfont_dialog",
 										"which": "own"
 									}
 								}
@@ -184,7 +184,7 @@
 									"sid": 912907140100788,
 									"parameters": {
 										"variable": "player_sprfont_uid",
-										"value": "sprfont.UID"
+										"value": "sprfont_dialog.UID"
 									}
 								}
 							],
@@ -256,7 +256,7 @@
 													"objectClass": "npc",
 													"sid": 758534744901946,
 													"parameters": {
-														"child": "sprfont",
+														"child": "sprfont_dialog",
 														"which": "own"
 													}
 												}
@@ -269,7 +269,7 @@
 														"\"talking\"",
 														"triggers_talkie.dialogName",
 														"triggers_talkie.lineNum",
-														"sprfont.UID"
+														"sprfont_dialog.UID"
 													]
 												}
 											],
@@ -293,7 +293,7 @@
 							"conditions": [
 								{
 									"id": "is-running-typewriter-text",
-									"objectClass": "sprfont",
+									"objectClass": "sprfont_dialog",
 									"sid": 907261927630026
 								},
 								{
@@ -343,7 +343,7 @@
 												"audio-file": "switch-selector",
 												"loop": "not-looping",
 												"volume": "random(-20,-27)",
-												"object": "sprfont",
+												"object": "sprfont_dialog",
 												"inner-angle": "360",
 												"outer-angle": "360",
 												"outer-gain": "0",
@@ -360,7 +360,7 @@
 							"conditions": [
 								{
 									"id": "on-timer",
-									"objectClass": "sprfont",
+									"objectClass": "sprfont_dialog",
 									"sid": 574554271399164,
 									"behaviorType": "Timer",
 									"parameters": {
@@ -371,7 +371,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "sprfont",
+									"objectClass": "sprfont_dialog",
 									"sid": 258997928577724,
 									"parameters": {
 										"text": "\"\""
@@ -443,7 +443,7 @@
 							"conditions": [
 								{
 									"id": "on-typewriter-text-finished",
-									"objectClass": "sprfont",
+									"objectClass": "sprfont_dialog",
 									"sid": 259367216630750
 								}
 							],
@@ -455,7 +455,7 @@
 									"conditions": [
 										{
 											"id": "pick-by-unique-id",
-											"objectClass": "sprfont",
+											"objectClass": "sprfont_dialog",
 											"sid": 319604560116554,
 											"parameters": {
 												"unique-id": "player_sprfont_uid"
@@ -463,7 +463,7 @@
 										},
 										{
 											"id": "pick-by-unique-id",
-											"objectClass": "sprfont",
+											"objectClass": "sprfont_dialog",
 											"sid": 548361988772905,
 											"parameters": {
 												"unique-id": "npc_sprfont_uid"
@@ -499,7 +499,7 @@
 											"actions": [
 												{
 													"id": "start-timer",
-													"objectClass": "sprfont",
+													"objectClass": "sprfont_dialog",
 													"sid": 856890470721059,
 													"behaviorType": "Timer",
 													"parameters": {
@@ -523,7 +523,7 @@
 											"actions": [
 												{
 													"id": "start-timer",
-													"objectClass": "sprfont",
+													"objectClass": "sprfont_dialog",
 													"sid": 605315190299070,
 													"behaviorType": "Timer",
 													"parameters": {
@@ -645,7 +645,7 @@
 														"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".sound\")",
 														"loop": "not-looping",
 														"volume": "0",
-														"object": "sprfont",
+														"object": "sprfont_dialog",
 														"inner-angle": "360",
 														"outer-angle": "360",
 														"outer-gain": "0",
@@ -699,7 +699,7 @@
 														"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".end-sound\")",
 														"loop": "not-looping",
 														"volume": "0",
-														"object": "sprfont",
+														"object": "sprfont_dialog",
 														"inner-angle": "360",
 														"outer-angle": "360",
 														"outer-gain": "0",
@@ -968,7 +968,7 @@
 																		"audio-file": "soft-switch",
 																		"loop": "not-looping",
 																		"volume": "random(-7,0)",
-																		"object": "sprfont",
+																		"object": "sprfont_dialog",
 																		"inner-angle": "360",
 																		"outer-angle": "360",
 																		"outer-gain": "0",
@@ -1014,7 +1014,7 @@
 													"conditions": [
 														{
 															"id": "pick-by-unique-id",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 452508555415424,
 															"parameters": {
 																"unique-id": "player_sprfont_uid"
@@ -1024,7 +1024,7 @@
 													"actions": [
 														{
 															"id": "set-visible",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 335111417864004,
 															"parameters": {
 																"visibility": "visible"
@@ -1032,7 +1032,7 @@
 														},
 														{
 															"id": "stop-timer",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 186614053816912,
 															"behaviorType": "Timer",
 															"parameters": {
@@ -1041,7 +1041,7 @@
 														},
 														{
 															"id": "typewriter-text",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 993390914170512,
 															"parameters": {
 																"text": "JSON.Get( curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".line\")",
@@ -1075,7 +1075,7 @@
 													"conditions": [
 														{
 															"id": "pick-by-unique-id",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 119060368783028,
 															"parameters": {
 																"unique-id": "npc_sprfont_uid"
@@ -1085,7 +1085,7 @@
 													"actions": [
 														{
 															"id": "set-visible",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 571945731630294,
 															"parameters": {
 																"visibility": "visible"
@@ -1093,7 +1093,7 @@
 														},
 														{
 															"id": "stop-timer",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 367395997954321,
 															"behaviorType": "Timer",
 															"parameters": {
@@ -1102,7 +1102,7 @@
 														},
 														{
 															"id": "typewriter-text",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 921731233526673,
 															"parameters": {
 																"text": "JSON.Get( curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".line\")",

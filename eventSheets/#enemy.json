@@ -6,7 +6,7 @@
 			"disabled": false,
 			"title": "Enemy - turret",
 			"description": "",
-			"isActiveOnStart": false,
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -38,6 +38,16 @@
 							"objectClass": "enemy_gunner",
 							"sid": 206750943687934,
 							"behaviorType": "Turret"
+						},
+						{
+							"id": "has-los-to-object",
+							"objectClass": "enemy_gunner",
+							"sid": 153784068694805,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Player",
+								"image-point": "0"
+							}
 						}
 					],
 					"actions": [
@@ -74,6 +84,15 @@
 							"behaviorType": "Turret",
 							"parameters": {
 								"rate-of-fire": "random(0.6,1.4)"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "enemy_gunner",
+							"sid": 606701757679554,
+							"parameters": {
+								"animation": "\"shoot\"",
+								"from": "beginning"
 							}
 						}
 					],
@@ -234,6 +253,89 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-los-to-object",
+							"objectClass": "enemy_gunner",
+							"sid": 359203516929698,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Player",
+								"image-point": "0"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 208029399571478,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving-along-path",
+									"objectClass": "enemy_gunner",
+									"sid": 566566533236004,
+									"behaviorType": "Pathfinding"
+								},
+								{
+									"id": "is-calculating-path",
+									"objectClass": "enemy_gunner",
+									"sid": 625252208134014,
+									"behaviorType": "Pathfinding"
+								}
+							],
+							"actions": [],
+							"sid": 374665731500830,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 356067600000309
+								}
+							],
+							"actions": [
+								{
+									"id": "find-path",
+									"objectClass": "enemy_gunner",
+									"sid": 281902627004974,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"x": "Player.X ",
+										"y": "Player.Y"
+									}
+								}
+							],
+							"sid": 539834025651731
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-path-found",
+							"objectClass": "enemy_gunner",
+							"sid": 696448562170035,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"actions": [
+						{
+							"id": "move-along-path",
+							"objectClass": "enemy_gunner",
+							"sid": 115554109564584,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 847362629145626
 				}
 			],
 			"sid": 941103192186435
@@ -4291,7 +4393,7 @@
 											"objectClass": "runner",
 											"sid": 645720713995076,
 											"parameters": {
-												"child": "sprfont",
+												"child": "sprfont_dialog",
 												"which": "own"
 											}
 										}
@@ -4304,7 +4406,7 @@
 											"conditions": [
 												{
 													"id": "compare-text",
-													"objectClass": "sprfont",
+													"objectClass": "sprfont_dialog",
 													"sid": 102182164982715,
 													"parameters": {
 														"text-to-compare": "\"\"",
@@ -4313,7 +4415,7 @@
 												},
 												{
 													"id": "is-running-typewriter-text",
-													"objectClass": "sprfont",
+													"objectClass": "sprfont_dialog",
 													"sid": 655599640490170,
 													"isInverted": true
 												}
@@ -4327,7 +4429,7 @@
 													"actions": [
 														{
 															"id": "typewriter-text",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 894158995629106,
 															"parameters": {
 																"text": "text",
@@ -4344,7 +4446,7 @@
 														},
 														{
 															"id": "set-text",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 766914344079560,
 															"parameters": {
 																"text": "\"\""
@@ -4370,7 +4472,7 @@
 													"actions": [
 														{
 															"id": "set-default-color",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 891949243010845,
 															"parameters": {
 																"color": "rgbEx(100, 100, 100)"
@@ -4401,7 +4503,7 @@
 													"actions": [
 														{
 															"id": "set-default-color",
-															"objectClass": "sprfont",
+															"objectClass": "sprfont_dialog",
 															"sid": 767786002257192,
 															"parameters": {
 																"color": "rgbEx(100, 0, 0)"
@@ -4437,7 +4539,7 @@
 											"objectClass": "System",
 											"sid": 746857615876206,
 											"parameters": {
-												"object-to-create": "sprfont",
+												"object-to-create": "sprfont_dialog",
 												"layer": "\"dialogs\"",
 												"x": "runner.X",
 												"y": "runner.BBoxTop",
@@ -4450,7 +4552,7 @@
 											"objectClass": "runner",
 											"sid": 408463055623184,
 											"parameters": {
-												"child": "sprfont",
+												"child": "sprfont_dialog",
 												"transform-x": true,
 												"transform-y": true,
 												"transform-w": false,
@@ -4462,7 +4564,7 @@
 										},
 										{
 											"id": "set-text",
-											"objectClass": "sprfont",
+											"objectClass": "sprfont_dialog",
 											"sid": 403880011811719,
 											"parameters": {
 												"text": "\"\""

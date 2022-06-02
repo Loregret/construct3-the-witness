@@ -887,7 +887,7 @@
 											"objectClass": "System",
 											"sid": 965262667094641,
 											"parameters": {
-												"object-to-create": "sprfont",
+												"object-to-create": "sprfont_dialog",
 												"layer": "\"dialogs\"",
 												"x": "Player.X",
 												"y": "Player.BBoxTop",
@@ -900,7 +900,7 @@
 											"objectClass": "Player",
 											"sid": 309802495293424,
 											"parameters": {
-												"child": "sprfont",
+												"child": "sprfont_dialog",
 												"transform-x": true,
 												"transform-y": true,
 												"transform-w": false,
@@ -912,7 +912,7 @@
 										},
 										{
 											"id": "set-text",
-											"objectClass": "sprfont",
+											"objectClass": "sprfont_dialog",
 											"sid": 373578815963890,
 											"parameters": {
 												"text": "\"\""
@@ -1217,6 +1217,33 @@
 											],
 											"sid": 416095812132765,
 											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 508475656044635,
+															"parameters": {
+																"variable": "curWeapon",
+																"comparison": 1,
+																"value": "\"\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 864589756084384,
+															"parameters": {
+																"variable": "curWeapon",
+																"value": "\"\""
+															}
+														}
+													],
+													"sid": 693615475677022
+												},
 												{
 													"eventType": "block",
 													"conditions": [],

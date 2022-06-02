@@ -1,5 +1,5 @@
 {
-	"name": "training",
+	"name": "test_lvl",
 	"layers": [
 		{
 			"name": "background",
@@ -859,7 +859,7 @@
 							"type": "enemy_gunner",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "shoot",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -872,12 +872,34 @@
 										"range": 1000,
 										"rate-of-fire": 1,
 										"rotate": true,
-										"rotate-speed": 180,
+										"rotate-speed": 360,
 										"target-mode": "first-in-range",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
-										"enabled": false
+										"enabled": true
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 200,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 360,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
 									}
 								}
 							},
@@ -889,11 +911,11 @@
 								}
 							},
 							"world": {
-								"x": 3838,
-								"y": 5412,
-								"width": 52.5,
-								"height": 43.75,
-								"originX": 0.47619047619047616,
+								"x": 4091.0756515267235,
+								"y": 5138.645225762496,
+								"width": 61.25,
+								"height": 46.25,
+								"originX": 0.5053449951409135,
 								"originY": 0.45714285714285713,
 								"color": [
 									1,
@@ -2878,7 +2900,7 @@
 					"instances": [],
 					"sid": 328258764965410,
 					"effectTypes": [],
-					"isInitiallyVisible": true,
+					"isInitiallyVisible": false,
 					"isInitiallyInteractive": false,
 					"color": [
 						1,
@@ -2945,8 +2967,8 @@
 					"instances": [],
 					"sid": 995515004415089,
 					"effectTypes": [],
-					"isInitiallyVisible": true,
-					"isInitiallyInteractive": true,
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": false,
 					"color": [
 						1,
 						1,
@@ -2960,11 +2982,11 @@
 						1
 					],
 					"isTransparent": true,
-					"parallaxX": 1,
-					"parallaxY": 1,
-					"scaleRate": 1,
+					"parallaxX": 0,
+					"parallaxY": 0,
+					"scaleRate": 0,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -3157,7 +3179,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
 						"wrapping": "word",
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "top-left"
 					},
 					"uid": 323,

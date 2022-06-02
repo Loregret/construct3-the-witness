@@ -119,7 +119,7 @@
 										},
 										{
 											"id": "compare-text",
-											"objectClass": "cursorhint",
+											"objectClass": "sprfont_cursorhint",
 											"sid": 667518051769013,
 											"parameters": {
 												"text-to-compare": "\"\"",
@@ -179,7 +179,7 @@
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "cursorhint",
+																	"objectClass": "sprfont_cursorhint",
 																	"sid": 741374654087020,
 																	"parameters": {
 																		"text": "JSON.Get(dialog_trigger.SceneName&\".\"& JSON.CurrentKey &\".name\")"
@@ -187,7 +187,7 @@
 																},
 																{
 																	"id": "set-visible",
-																	"objectClass": "cursorhint",
+																	"objectClass": "sprfont_cursorhint",
 																	"sid": 138153920933319,
 																	"parameters": {
 																		"visibility": "visible"
@@ -208,7 +208,7 @@
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "cursorhint",
+																	"objectClass": "sprfont_cursorhint",
 																	"sid": 733946238559951,
 																	"parameters": {
 																		"text": "JSON.Get(\"misc.0.dialogs.0.line\")"
@@ -216,7 +216,7 @@
 																},
 																{
 																	"id": "set-visible",
-																	"objectClass": "cursorhint",
+																	"objectClass": "sprfont_cursorhint",
 																	"sid": 658334600500660,
 																	"parameters": {
 																		"visibility": "visible"
@@ -268,7 +268,7 @@
 											"actions": [
 												{
 													"id": "set-default-color",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 315971265587637,
 													"parameters": {
 														"color": "rgbEx(93, 93, 93)"
@@ -289,7 +289,7 @@
 											"actions": [
 												{
 													"id": "set-default-color",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 884830938834141,
 													"parameters": {
 														"color": "rgbEx(36, 36, 36)"
@@ -404,7 +404,7 @@
 							"actions": [
 								{
 									"id": "set-position",
-									"objectClass": "cursorhint",
+									"objectClass": "sprfont_cursorhint",
 									"sid": 307444540320017,
 									"parameters": {
 										"x": "cursor.X",
@@ -482,7 +482,7 @@
 												},
 												{
 													"id": "is-visible",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 962583145687431
 												}
 											],
@@ -533,7 +533,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 679338059641224,
 													"parameters": {
 														"text": "JSON.Get(\"misc.1.dialogs.0.line\")"
@@ -541,7 +541,7 @@
 												},
 												{
 													"id": "set-visible",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 312513497126189,
 													"parameters": {
 														"visibility": "visible"
@@ -549,7 +549,7 @@
 												},
 												{
 													"id": "set-default-color",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 558457118344411,
 													"parameters": {
 														"color": "rgbEx(93, 93, 93)"
@@ -580,7 +580,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 349671212387056,
 													"parameters": {
 														"text": "JSON.Get(\"misc.1.dialogs.0.line\")"
@@ -588,7 +588,7 @@
 												},
 												{
 													"id": "set-visible",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 300670020995698,
 													"parameters": {
 														"visibility": "visible"
@@ -596,7 +596,7 @@
 												},
 												{
 													"id": "set-default-color",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 566216241239988,
 													"parameters": {
 														"color": "rgbEx(36, 36, 36)"
@@ -615,7 +615,7 @@
 												},
 												{
 													"id": "is-visible",
-													"objectClass": "cursorhint",
+													"objectClass": "sprfont_cursorhint",
 													"sid": 560376104408380
 												}
 											],
@@ -639,7 +639,7 @@
 										},
 										{
 											"id": "is-visible",
-											"objectClass": "cursorhint",
+											"objectClass": "sprfont_cursorhint",
 											"sid": 361738812582524
 										}
 									],
@@ -677,7 +677,7 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "cursorhint",
+							"objectClass": "sprfont_cursorhint",
 							"sid": 386468997623036,
 							"parameters": {
 								"visibility": "invisible"
@@ -685,7 +685,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "cursorhint",
+							"objectClass": "sprfont_cursorhint",
 							"sid": 813740693989481,
 							"parameters": {
 								"text": "\"\""
@@ -693,7 +693,7 @@
 						},
 						{
 							"id": "set-width",
-							"objectClass": "cursorhint",
+							"objectClass": "sprfont_cursorhint",
 							"sid": 363405240692253,
 							"parameters": {
 								"width": "250"
@@ -717,7 +717,7 @@
 							"objectClass": "System",
 							"sid": 188338528256847,
 							"parameters": {
-								"object-to-create": "cursorhint",
+								"object-to-create": "sprfont_cursorhint",
 								"layer": "\"cursor\"",
 								"x": "Mouse.X",
 								"y": "Mouse.Y",
@@ -727,7 +727,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "cursorhint",
+							"objectClass": "sprfont_cursorhint",
 							"sid": 671883394710477,
 							"parameters": {
 								"text": "\"\""

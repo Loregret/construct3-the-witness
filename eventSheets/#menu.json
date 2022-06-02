@@ -3031,6 +3031,198 @@
 				}
 			],
 			"sid": 155049068112177
+		},
+		{
+			"functionName": "interface_show_weapon_circle2",
+			"functionDescription": "",
+			"functionCategory": "#interface",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 435683131561176,
+					"parameters": {
+						"layer": "\"weapon_icon\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "weapon_icon",
+					"sid": 196624834550631,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "0.5",
+						"type": "once",
+						"tag": "\"\""
+					}
+				}
+			],
+			"sid": 783994138663040,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "weapon icons"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 999360740037379,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 926902861691989,
+									"parameters": {
+										"variable": "curWeapon",
+										"comparison": 0,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "weapon_icon",
+									"sid": 239278185962266,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 366196052274034
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 834146284256998
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 971640600318697,
+									"parameters": {
+										"variable": "curWeapon",
+										"comparison": 0,
+										"value": "\"pistol\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "weapon_icon",
+									"sid": 310354211466826,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 697099850203544
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 204928067991004
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 201672190847031,
+									"parameters": {
+										"variable": "curWeapon",
+										"comparison": 0,
+										"value": "\"shotgun\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "weapon_icon",
+									"sid": 907606825361741,
+									"parameters": {
+										"frame-number": "2"
+									}
+								}
+							],
+							"sid": 377303075811096
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 415823886749547
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 274576490305418,
+									"parameters": {
+										"variable": "curWeapon",
+										"comparison": 0,
+										"value": "\"ak\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "weapon_icon",
+									"sid": 125311067494034,
+									"parameters": {
+										"frame-number": "3"
+									}
+								}
+							],
+							"sid": 627013481865523
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "weapon_icon",
+					"sid": 866937757577002,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 771067871954924,
+					"parameters": {
+						"layer": "\"weapon_icon\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 458457866809926
 		}
 	],
 	"sid": 772844762173010

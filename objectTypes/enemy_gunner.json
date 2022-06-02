@@ -9,6 +9,16 @@
 			"behaviorId": "Turret",
 			"name": "Turret",
 			"sid": 766376133183927
+		},
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 513712575240497
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 273954869933404
 		}
 	],
 	"effectTypes": [
@@ -22,32 +32,32 @@
 			{
 				"frames": [
 					{
-						"width": 42,
-						"height": 35,
-						"originX": 0.47619047619047616,
+						"width": 49,
+						"height": 37,
+						"originX": 0.5053449951409135,
 						"originY": 0.45714285714285713,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3884611,
+						"imageSpriteId": 2538198,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "Image Point 1",
-								"x": 0.9047619047619048,
-								"y": 0.5714285714285714
+								"x": 0.9183673469387755,
+								"y": 0.4594594594594595
 							}
 						],
-						"duration": 1
+						"duration": 2
 					}
 				],
 				"sid": 369098531295387,
-				"name": "Animation 1",
+				"name": "shoot",
 				"isLooping": false,
-				"isPingPong": false,
+				"isPingPong": true,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 10
 			}
 		],
 		"subfolders": []

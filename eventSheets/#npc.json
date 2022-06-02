@@ -45,7 +45,7 @@
 							"objectClass": "System",
 							"sid": 387735082726277,
 							"parameters": {
-								"object-to-create": "sprfont",
+								"object-to-create": "sprfont_dialog",
 								"layer": "\"dialogs\"",
 								"x": "npc.X",
 								"y": "npc.BBoxTop",
@@ -58,7 +58,7 @@
 							"objectClass": "npc",
 							"sid": 472884998554463,
 							"parameters": {
-								"child": "sprfont",
+								"child": "sprfont_dialog",
 								"transform-x": true,
 								"transform-y": true,
 								"transform-w": false,
@@ -70,7 +70,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "sprfont",
+							"objectClass": "sprfont_dialog",
 							"sid": 644648463830799,
 							"parameters": {
 								"text": "\"\""
