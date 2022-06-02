@@ -156,7 +156,7 @@
 								{
 									"id": "request-project-file",
 									"objectClass": "AJAX",
-									"sid": 629989614277883,
+									"sid": 318180604966015,
 									"parameters": {
 										"tag": "\"loaddialogue\"",
 										"file": "russian.json"
@@ -212,7 +212,7 @@
 									"sid": 366892747288344,
 									"parameters": {
 										"tag": "\"loaddialogue\"",
-										"file": "russian.json"
+										"file": "english.json"
 									}
 								},
 								{
@@ -1728,6 +1728,14 @@
 									"eventType": "block",
 									"conditions": [],
 									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "dialog",
+											"sid": 640501837606566,
+											"parameters": {
+												"text": "\"\""
+											}
+										},
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",

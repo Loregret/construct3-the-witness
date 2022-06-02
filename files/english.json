@@ -1,0 +1,377 @@
+{
+	"menu": [
+		{
+			"id": "cut1",
+			"dialogs": [
+				{
+					"char": "",				
+					"line": "The world is on a brink of collapse.",
+					"speed": 1.35,
+					"wait": 2.55			
+				},
+				{
+					"char": "",				
+					"line": "Once fertile, land became barren.",
+					"speed": 1.35,
+					"wait": 2.75			
+				},
+				{
+					"char": "",				
+					"line": "The sun, known as a beacon of life before, became a sign of terror.",
+					"speed": 2.35,
+					"wait": 3			
+				},			
+				{
+					"char": "",				
+					"line": "The temperature is unbearable.",
+					"speed": 1.55,
+					"wait": 2			
+				},	
+				{
+					"char": "",				
+					"line": "Living beings live in constant fear and seek shelter from a blazing light.",
+					"speed": 2.35,
+					"wait": 3.75			
+				},					
+				{
+					"char": "",				
+					"line": "There's few nations who saved fraction of earth and made it inhabitable once again.",
+					"speed": 2.35,
+					"wait": 3		
+				},		
+				{
+					"char": "",				
+					"line": "But those who have been unfortunate to stay at dead wasteland are resentful.",
+					"speed": 2.35,
+					"wait": 3			
+				},		
+				{
+					"char": "",				
+					"line": "They invade and pillage settlements to stay alive for another day.",
+					"speed": 3.25,
+					"wait": 4.5		
+				},						
+				{
+					"char": "",				
+					"line": "Is there any hope left for humanity?",
+					"speed": 1.55,
+					"wait": 2.75			
+				}					
+			]
+		}	
+	
+	],
+	"intro1": [
+		{
+			"id": "cut1",
+			"dialogs": [
+				{
+					"char": "",				
+					"line": "The world is on a brink of collapse.",
+					"speed": 1.35,
+					"wait": 2.55			
+				},
+				{
+					"char": "",				
+					"line": "Once fertile, land became barren.",
+					"speed": 1.35,
+					"wait": 2.75			
+				},
+				{
+					"char": "",				
+					"line": "The sun, known as a beacon of life before, became a sign of terror.",
+					"speed": 2.35,
+					"wait": 3			
+				},			
+				{
+					"char": "",				
+					"line": "The temperature is unbearable.",
+					"speed": 1.55,
+					"wait": 2			
+				},	
+				{
+					"char": "",				
+					"line": "Living beings live in constant fear and seek shelter from a blazing light.",
+					"speed": 2.35,
+					"wait": 3.75			
+				},					
+				{
+					"char": "",				
+					"line": "There's few nations who saved fraction of earth and made it inhabitable once again.",
+					"speed": 2.35,
+					"wait": 3		
+				},		
+				{
+					"char": "",				
+					"line": "But those who have been unfortunate to stay at dead wasteland are resentful.",
+					"speed": 2.35,
+					"wait": 3			
+				},		
+				{
+					"char": "",				
+					"line": "They invade and pillage settlements to stay alive for another day.",
+					"speed": 3.25,
+					"wait": 4.5		
+				},						
+				{
+					"char": "",				
+					"line": "Is there any hope left for humanity?",
+					"speed": 1.55,
+					"wait": 2.75			
+				}					
+			]
+		}	
+	
+	],
+	"forest1": [
+		{
+			"id": "template",
+			"dialogs": [
+				{
+					"char": "CHAR",				
+					"line": "LINE1",
+					"speed": 0.5,
+					"wait": 1,
+					"no-sound": true,
+					"sound": "soundname",
+					"end-sound": "soundname",
+					"typewriter": "none"					
+				}
+			]
+		},
+		{
+			"id": "start",
+			"dialogs": [
+				{
+					"line": "It's cold around here...",
+					"wait": 1.3,
+					"speed": 0.6
+				},
+				{
+					"line": "I should stick to this road.",
+					"wait": 1.5
+				}
+			]
+		},
+		{
+			"id": "tip1",
+			"dialogs": [
+				{
+					"char": "hint",
+					"line": "<color=lightgreen><i>press F to turn on the flashlight.</i></color>",
+					"wait": 2.5,
+					"no-sound": true,
+					"sound": "notification1",
+					"typewriter": "none"
+				}
+			]
+		},
+		{
+			"id": "flashlight_no_battery",
+			"dialogs": [
+				{
+
+					"line": "Flashlight's battery is gone."
+				},
+				{
+					"line": "I need a <color=blue>new one</blue>."
+				}
+			]
+		},
+		{
+			"id": "corpse_surprise1",
+			"dialogs": [
+				{
+					"line": "<color=red>Dead</color> corpse is laying here."
+				},
+				{
+					"line": "All torso is covered in <color=red>blood</color> but I don't see any wounds.",
+					"wait": 1.65
+				}
+			]
+		},
+		{
+			"id": "stone_wonder1",
+			"name": "Stone pyramid",
+			"dialogs": [
+				{
+					"line": "Weird looking pyramid made from stone."
+				},
+				{
+					"line": "How can anyone construct this in forest?"
+				}
+			]
+		},
+		{
+			"id": "many_corpse1",
+			"dialogs": [
+				{
+					"line": "A bunch of <color=red>corpses</color>."
+				},
+				{
+					"line": "All floor is covered in <color=red>blood</color>.",
+					"wait": 1.4
+				},
+				{
+					"line": "How did they die?",
+					"speed": 0.4,
+					"wait": 1.4					
+				}
+			]
+		},
+		{
+			"id": "campfire1",
+			"dialogs": [
+				{
+					"line": "Remainings of the campfire...",
+					"wait": 0.6
+				},
+				{
+					"line": "Not enough to warm me though...",
+					"wait": 0.9
+				}
+			]
+		},
+		{
+			"id": "closed",
+			"dialogs": [
+				{
+					"line": "Locked.",
+					"speed": 0.35,
+					"sound": "door-blocked"
+				}
+			]
+		},
+		{
+			"id": "dead_chickens",
+			"dialogs": [
+				{
+					"line": "Dead chickens locked in a crate...",
+					"speed": 0.7
+				}
+			]
+		},
+		{
+			"id": "torch1",
+			"dialogs": [
+				{
+					"line": "Lit torch.",
+					"speed": 0.3
+				}
+			]
+		},
+		{
+			"id": "empty_box",
+			"dialogs": [
+				{
+					"line": "Empty crates."
+				}
+			]
+		},
+		{
+			"id": "food1",
+			"dialogs": [
+				{
+					"line": "It looks like there was a fight..."
+				}
+			]
+		},
+		{
+			"id": "cultistgroup",
+			"dialogs": [
+				{
+					"line": "There is group of people... and a few <color=red>corpses</color>.",
+					"wait": 1.75,
+					"speed": 1
+				},
+				{
+					"line": "This people are not aware of me.",
+					"wait": 1.5			
+				},
+				{
+					"line": "Looks like they are in some form of trance. They totally ignore me.",
+					"wait": 1.86,
+					"speed": 1
+				}				
+			]
+		}			
+	],
+	"talking": [
+		{
+			"id": "test1",
+			"dialogs": [
+				{
+					"char": "npc",				
+					"line": "Hello, this is test dialog."		
+				},
+				{
+					"char": "player",				
+					"line": "Okay."		
+				},
+				{
+					"char": "npc",				
+					"line": "This line is long",
+					"speed": 1.5,
+					"wait": 5		
+				},
+				{
+					"char": "npc",				
+					"line": "This line is fast",
+					"speed": 0.5,
+					"wait": 1		
+				},
+				{
+					"char": "npc",				
+					"line": "This line has no typewriter effect",
+					"typewriter": "none"		
+				},
+				{
+					"char": "npc",				
+					"line": "This line has sound effect",
+					"end-sound": "notification1"		
+				}				
+			]
+		},
+		{
+			"id": "test-greetings",
+			"dialogs": [
+				{
+					"char": "npc",				
+					"line": "Hello!"		
+				},
+				{
+					"char": "player",				
+					"line": "Hi."		
+				},
+				{
+					"char": "npc",				
+					"line": "How are you holding up?"		
+				},	
+				{
+					"char": "player",				
+					"line": "I'm fine."		
+				}			
+			]
+		}		
+	
+	],
+	"misc": [
+		{
+			"id": "ui_examine",
+			"dialogs": [
+				{		
+					"line": "**Examine**"		
+				}		
+			]
+		},
+		{
+			"id": "ui_pickup",
+			"dialogs": [
+				{			
+					"line": "**Pick up**"		
+				}
+			]
+		}		
+	
+	]	
+}

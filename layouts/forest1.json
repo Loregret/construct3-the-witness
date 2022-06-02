@@ -7329,7 +7329,37 @@
 					"name": "items",
 					"overriden": 0,
 					"subLayers": [],
-					"instances": [],
+					"instances": [
+						{
+							"type": "gun",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": false,
+								"live-preview": false
+							},
+							"uid": 443,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 7636.73779296875,
+								"y": 9914.4931640625,
+								"width": 22.047096725865302,
+								"height": 32.15201605855356,
+								"originX": 0.5,
+								"originY": 0.5236486486486486,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.71238898038469,
+								"zElevation": 0
+							}
+						}
+					],
 					"sid": 453529289247150,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
@@ -19003,6 +19033,45 @@
 									0.55
 								],
 								"angle": 1.8272344497142248,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "dialog_trigger",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 440,
+							"instanceVariables": {
+								"SceneName": "forest1",
+								"DialogName": "empty_box",
+								"LineNum": 0,
+								"active": true,
+								"repeatable": true,
+								"auto_start": false,
+								"is_visible_trough_walls": true,
+								"activation_distance": 125,
+								"max_distance": 450
+							},
+							"behaviors": {},
+							"world": {
+								"x": 7671,
+								"y": 10156,
+								"width": 128.714710050654,
+								"height": 282.7360551889861,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.55
+								],
+								"angle": 1.2937908465752166,
 								"zElevation": 0
 							}
 						}
