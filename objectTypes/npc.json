@@ -3,12 +3,29 @@
 	"plugin-id": "Sprite",
 	"sid": 384809118401001,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "state",
+			"type": "string",
+			"desc": "",
+			"sid": 891843998818069
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 219642591981143
+		},
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 541938646295457
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 476980199958168
 		}
 	],
 	"effectTypes": [],
@@ -19,30 +36,6 @@
 				"items": [
 					{
 						"frames": [
-							{
-								"width": 35,
-								"height": 36,
-								"originX": 0.4857142857142857,
-								"originY": 0.4861111111111111,
-								"originalSource": "",
-								"exportFormat": "png",
-								"exportQuality": 0.8,
-								"imageSpriteId": 2444813,
-								"collisionPoly": {
-									"points": [
-										0.1,
-										0,
-										0.8714285714285714,
-										0,
-										0.8714285714285714,
-										1,
-										0.1,
-										1
-									]
-								},
-								"useCollisionPoly": true,
-								"duration": 1
-							},
 							{
 								"width": 28,
 								"height": 36,
@@ -61,6 +54,30 @@
 										0.9642857142857143,
 										1,
 										0,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 35,
+								"height": 36,
+								"originX": 0.4857142857142857,
+								"originY": 0.4861111111111111,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 2444813,
+								"collisionPoly": {
+									"points": [
+										0.1,
+										0,
+										0.8714285714285714,
+										0,
+										0.8714285714285714,
+										1,
+										0.1,
 										1
 									]
 								},

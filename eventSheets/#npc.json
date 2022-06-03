@@ -2,84 +2,282 @@
 	"name": "#NPC",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-on-screen",
-					"objectClass": "npc",
-					"sid": 613705574233875
-				}
-			],
-			"actions": [
-				{
-					"id": "rotate-toward-position",
-					"objectClass": "npc",
-					"sid": 270910761983867,
-					"parameters": {
-						"degrees": "50 * dt",
-						"x": "Player.X",
-						"y": "Player.Y"
-					}
-				}
-			],
-			"sid": 263288297316923
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "npc",
-					"sid": 471121478693589
-				}
-			],
-			"actions": [],
-			"sid": 544115716573305,
+			"eventType": "group",
+			"disabled": false,
+			"title": "NPC",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "on-path-found",
+							"objectClass": "npc",
+							"sid": 323307427318285,
+							"behaviorType": "Pathfinding"
+						}
+					],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 387735082726277,
-							"parameters": {
-								"object-to-create": "sprfont_dialog",
-								"layer": "\"dialogs\"",
-								"x": "npc.X",
-								"y": "npc.BBoxTop",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "add-child",
+							"id": "move-along-path",
 							"objectClass": "npc",
-							"sid": 472884998554463,
+							"sid": 979029149293165,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 820308955223769
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "npc",
+							"sid": 694020300631252
+						}
+					],
+					"actions": [],
+					"sid": 572758454500395,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-solid-collision-filter",
+									"objectClass": "npc",
+									"sid": 685252715547028,
+									"parameters": {
+										"mode": "exclusive",
+										"tags": "\"npc\""
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 419353562031492,
+									"parameters": {
+										"object-to-create": "sprfont_dialog",
+										"layer": "\"dialogs\"",
+										"x": "npc.X",
+										"y": "npc.BBoxTop",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "npc",
+									"sid": 675224187254091,
+									"parameters": {
+										"child": "sprfont_dialog",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-z-elevation": false,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "sprfont_dialog",
+									"sid": 467913714833919,
+									"parameters": {
+										"text": "\"\""
+									}
+								}
+							],
+							"sid": 372771239712606
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 984721140368512,
 							"parameters": {
-								"child": "sprfont_dialog",
-								"transform-x": true,
-								"transform-y": true,
-								"transform-w": false,
-								"transform-h": false,
-								"transform-a": false,
-								"transform-z-elevation": false,
-								"destroy-with-parent": true
+								"object": "npc"
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "sprfont_dialog",
-							"sid": 644648463830799,
+							"id": "compare-instance-variable",
+							"objectClass": "npc",
+							"sid": 900082516106216,
 							"parameters": {
-								"text": "\"\""
+								"instance-variable": "state",
+								"comparison": 1,
+								"value": "\"dead\""
 							}
 						}
 					],
-					"sid": 655144805559303
+					"actions": [],
+					"sid": 144780515081131,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "npc",
+									"sid": 755640752762644,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"follow_player\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 762003129708797,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 794024496073340,
+											"parameters": {
+												"first-value": "distance(npc.X, npc.Y, Player.X, Player.Y)",
+												"comparison": 4,
+												"second-value": "100"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 506860190930384,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "rotate-toward-position",
+													"objectClass": "npc",
+													"sid": 305371766036579,
+													"parameters": {
+														"degrees": "125 * dt",
+														"x": "Player.X",
+														"y": "Player.Y"
+													}
+												}
+											],
+											"sid": 225982561768674
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-moving-along-path",
+													"objectClass": "npc",
+													"sid": 879204696519265,
+													"behaviorType": "Pathfinding"
+												},
+												{
+													"id": "is-calculating-path",
+													"objectClass": "npc",
+													"sid": 561219743244274,
+													"behaviorType": "Pathfinding"
+												}
+											],
+											"actions": [],
+											"sid": 839070174910909,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 304077763060955
+												}
+											],
+											"actions": [
+												{
+													"id": "find-path",
+													"objectClass": "npc",
+													"sid": 212218978366292,
+													"behaviorType": "Pathfinding",
+													"parameters": {
+														"x": "Player.X",
+														"y": "Player.Y"
+													}
+												}
+											],
+											"sid": 291977941006031
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 305425265812883
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "npc",
+									"sid": 643487251276859,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"idle\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 175655346982326,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "npc",
+											"sid": 607496621112035
+										},
+										{
+											"id": "has-los-to-object",
+											"objectClass": "npc",
+											"sid": 693351284513590,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"object": "Player",
+												"image-point": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-toward-position",
+											"objectClass": "npc",
+											"sid": 379521420269452,
+											"parameters": {
+												"degrees": "80 * dt",
+												"x": "Player.X",
+												"y": "Player.Y"
+											}
+										}
+									],
+									"sid": 275817495874866
+								}
+							]
+						}
+					]
 				}
-			]
+			],
+			"sid": 693715214551204
 		}
 	],
 	"sid": 109530638442878

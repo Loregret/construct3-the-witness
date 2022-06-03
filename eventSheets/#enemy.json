@@ -6,7 +6,7 @@
 			"disabled": false,
 			"title": "Enemy - turret",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "block",
@@ -14,308 +14,21 @@
 						{
 							"id": "on-created",
 							"objectClass": "enemy_gunner",
-							"sid": 142148523256206
+							"sid": 385779301243235
 						}
 					],
 					"actions": [
 						{
 							"id": "add-object-to-target",
 							"objectClass": "enemy_gunner",
-							"sid": 858768009551290,
+							"sid": 386850397000340,
 							"behaviorType": "Turret",
 							"parameters": {
 								"target": "Player"
 							}
 						}
 					],
-					"sid": 796217568500191
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-shoot",
-							"objectClass": "enemy_gunner",
-							"sid": 206750943687934,
-							"behaviorType": "Turret"
-						},
-						{
-							"id": "has-los-to-object",
-							"objectClass": "enemy_gunner",
-							"sid": 153784068694805,
-							"behaviorType": "LineOfSight",
-							"parameters": {
-								"object": "Player",
-								"image-point": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "spawn-another-object",
-							"objectClass": "enemy_gunner",
-							"sid": 672327552355205,
-							"parameters": {
-								"object": "bullet",
-								"layer": "\"bullets\"",
-								"image-point": "1",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "play-at-object",
-							"objectClass": "Audio",
-							"sid": 321924449162925,
-							"parameters": {
-								"audio-file": "9mm - fire",
-								"loop": "not-looping",
-								"volume": "0",
-								"object": "enemy_gunner",
-								"inner-angle": "360",
-								"outer-angle": "360",
-								"outer-gain": "0",
-								"tag-optional": "\"gunshot\"&enemy_gunner.UID"
-							}
-						},
-						{
-							"id": "set-rate-of-fire",
-							"objectClass": "enemy_gunner",
-							"sid": 470727256467409,
-							"behaviorType": "Turret",
-							"parameters": {
-								"rate-of-fire": "random(0.6,1.4)"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "enemy_gunner",
-							"sid": 606701757679554,
-							"parameters": {
-								"animation": "\"shoot\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 596453494492259,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 511010337435509,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 699875564835341,
-											"parameters": {
-												"object-to-create": "fx_muzzle",
-												"layer": "\"enemy\"",
-												"x": "enemy_gunner.ImagePointX(1)",
-												"y": "enemy_gunner.ImagePointY(1)",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "fx_muzzle",
-											"sid": 135144308057650,
-											"parameters": {
-												"angle": "enemy_gunner.Angle"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "fx_muzzle",
-											"sid": 953088414352678,
-											"parameters": {
-												"width": "32",
-												"height": "32"
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "fx_muzzle",
-											"sid": 819769005984666,
-											"parameters": {
-												"opacity": "80"
-											}
-										},
-										{
-											"id": "pin-to-object-properties",
-											"objectClass": "fx_muzzle",
-											"sid": 339262205258789,
-											"behaviorType": "Pin",
-											"parameters": {
-												"pin-to": "enemy_gunner",
-												"x": true,
-												"y": true,
-												"angle": true,
-												"width-type": "no",
-												"height-type": "no",
-												"z": false
-											}
-										}
-									],
-									"sid": 136305589851474,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "create-object",
-													"objectClass": "System",
-													"sid": 132129074008431,
-													"parameters": {
-														"object-to-create": "Light",
-														"layer": "\"light\"",
-														"x": "fx_muzzle.ImagePointX(1)",
-														"y": "fx_muzzle.ImagePointY(1)",
-														"create-hierarchy": false,
-														"template-name": "\"\""
-													}
-												},
-												{
-													"id": "pin-to-object-properties",
-													"objectClass": "Light",
-													"sid": 163626589467453,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "enemy_gunner",
-														"x": true,
-														"y": true,
-														"angle": true,
-														"width-type": "no",
-														"height-type": "no",
-														"z": false
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "Light",
-													"sid": 872864989839789,
-													"parameters": {
-														"opacity": "0"
-													}
-												},
-												{
-													"id": "set-scale",
-													"objectClass": "Light",
-													"sid": 736570272422198,
-													"parameters": {
-														"scale": "0"
-													}
-												},
-												{
-													"id": "tween-one-property",
-													"objectClass": "Light",
-													"sid": 734000089525224,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "offsetOpacity",
-														"end-value": "100",
-														"time": "0.1",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "yes"
-													}
-												},
-												{
-													"id": "tween-two-properties",
-													"objectClass": "Light",
-													"sid": 150441192949779,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "size",
-														"end-x": "125",
-														"end-y": "125",
-														"time": "0.1",
-														"ease": "default",
-														"destroy-on-complete": "yes",
-														"loop": "no",
-														"ping-pong": "yes"
-													}
-												}
-											],
-											"sid": 401993939907125
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "has-los-to-object",
-							"objectClass": "enemy_gunner",
-							"sid": 359203516929698,
-							"behaviorType": "LineOfSight",
-							"parameters": {
-								"object": "Player",
-								"image-point": "0"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [],
-					"sid": 208029399571478,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-moving-along-path",
-									"objectClass": "enemy_gunner",
-									"sid": 566566533236004,
-									"behaviorType": "Pathfinding"
-								},
-								{
-									"id": "is-calculating-path",
-									"objectClass": "enemy_gunner",
-									"sid": 625252208134014,
-									"behaviorType": "Pathfinding"
-								}
-							],
-							"actions": [],
-							"sid": 374665731500830,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 356067600000309
-								}
-							],
-							"actions": [
-								{
-									"id": "find-path",
-									"objectClass": "enemy_gunner",
-									"sid": 281902627004974,
-									"behaviorType": "Pathfinding",
-									"parameters": {
-										"x": "Player.X ",
-										"y": "Player.Y"
-									}
-								}
-							],
-							"sid": 539834025651731
-						}
-					]
+					"sid": 195109853347697
 				},
 				{
 					"eventType": "block",
@@ -323,7 +36,7 @@
 						{
 							"id": "on-path-found",
 							"objectClass": "enemy_gunner",
-							"sid": 696448562170035,
+							"sid": 724710565211178,
 							"behaviorType": "Pathfinding"
 						}
 					],
@@ -331,11 +44,376 @@
 						{
 							"id": "move-along-path",
 							"objectClass": "enemy_gunner",
-							"sid": 115554109564584,
+							"sid": 622330058993752,
 							"behaviorType": "Pathfinding"
 						}
 					],
-					"sid": 847362629145626
+					"sid": 338017550239442
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "enemy_gunner",
+							"sid": 487615136685592,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 1,
+								"value": "\"dead\""
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 785519148942269,
+							"parameters": {
+								"object": "enemy_gunner"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 708525208294059,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "enemy_gunner",
+									"sid": 327530577947878,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"attack\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 368791883370889,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "shoot"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-los-to-object",
+											"objectClass": "enemy_gunner",
+											"sid": 146318790773882,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"object": "Player",
+												"image-point": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 114562241810670,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-shoot",
+													"objectClass": "enemy_gunner",
+													"sid": 581464607088834,
+													"behaviorType": "Turret"
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "enemy_gunner",
+													"sid": 867908352165154,
+													"parameters": {
+														"object": "bullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 815510588608548,
+													"parameters": {
+														"audio-file": "9mm - fire",
+														"loop": "not-looping",
+														"volume": "0",
+														"object": "enemy_gunner",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"gunshot\"&enemy_gunner.UID"
+													}
+												},
+												{
+													"id": "set-rate-of-fire",
+													"objectClass": "enemy_gunner",
+													"sid": 747763040408279,
+													"behaviorType": "Turret",
+													"parameters": {
+														"rate-of-fire": "random(0.6,1.4)"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "enemy_gunner",
+													"sid": 235253694593695,
+													"parameters": {
+														"animation": "\"shoot\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 173307465025803,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "effects"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 117831772650710,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 262452279625041,
+																	"parameters": {
+																		"object-to-create": "fx_muzzle",
+																		"layer": "\"enemy\"",
+																		"x": "enemy_gunner.ImagePointX(1)",
+																		"y": "enemy_gunner.ImagePointY(1)",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle",
+																	"objectClass": "fx_muzzle",
+																	"sid": 936620807699949,
+																	"parameters": {
+																		"angle": "enemy_gunner.Angle"
+																	}
+																},
+																{
+																	"id": "set-size",
+																	"objectClass": "fx_muzzle",
+																	"sid": 759421058683560,
+																	"parameters": {
+																		"width": "32",
+																		"height": "32"
+																	}
+																},
+																{
+																	"id": "set-opacity",
+																	"objectClass": "fx_muzzle",
+																	"sid": 352508472083347,
+																	"parameters": {
+																		"opacity": "80"
+																	}
+																},
+																{
+																	"id": "pin-to-object-properties",
+																	"objectClass": "fx_muzzle",
+																	"sid": 881405241032077,
+																	"behaviorType": "Pin",
+																	"parameters": {
+																		"pin-to": "enemy_gunner",
+																		"x": true,
+																		"y": true,
+																		"angle": true,
+																		"width-type": "no",
+																		"height-type": "no",
+																		"z": false
+																	}
+																}
+															],
+															"sid": 671514719724710,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "create-object",
+																			"objectClass": "System",
+																			"sid": 932415900377855,
+																			"parameters": {
+																				"object-to-create": "Light",
+																				"layer": "\"light\"",
+																				"x": "fx_muzzle.ImagePointX(1)",
+																				"y": "fx_muzzle.ImagePointY(1)",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "pin-to-object-properties",
+																			"objectClass": "Light",
+																			"sid": 733898046732013,
+																			"behaviorType": "Pin",
+																			"parameters": {
+																				"pin-to": "enemy_gunner",
+																				"x": true,
+																				"y": true,
+																				"angle": true,
+																				"width-type": "no",
+																				"height-type": "no",
+																				"z": false
+																			}
+																		},
+																		{
+																			"id": "set-opacity",
+																			"objectClass": "Light",
+																			"sid": 688173856932546,
+																			"parameters": {
+																				"opacity": "0"
+																			}
+																		},
+																		{
+																			"id": "set-scale",
+																			"objectClass": "Light",
+																			"sid": 649480946181386,
+																			"parameters": {
+																				"scale": "0"
+																			}
+																		},
+																		{
+																			"id": "tween-one-property",
+																			"objectClass": "Light",
+																			"sid": 217700955122804,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"\"",
+																				"property": "offsetOpacity",
+																				"end-value": "100",
+																				"time": "0.1",
+																				"ease": "default",
+																				"destroy-on-complete": "no",
+																				"loop": "no",
+																				"ping-pong": "yes"
+																			}
+																		},
+																		{
+																			"id": "tween-two-properties",
+																			"objectClass": "Light",
+																			"sid": 562101334497882,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"\"",
+																				"property": "size",
+																				"end-x": "125",
+																				"end-y": "125",
+																				"time": "0.1",
+																				"ease": "default",
+																				"destroy-on-complete": "yes",
+																				"loop": "no",
+																				"ping-pong": "yes"
+																			}
+																		}
+																	],
+																	"sid": 441755840960134
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "follow player"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-los-to-object",
+											"objectClass": "enemy_gunner",
+											"sid": 444385399340911,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"object": "Player",
+												"image-point": "0"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 580918456122369,
+											"parameters": {
+												"first-value": "distance(Player.X, Player.Y, enemy_gunner.X, enemy_gunner.Y)",
+												"comparison": 4,
+												"second-value": "800"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 307142331095174,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-moving-along-path",
+													"objectClass": "enemy_gunner",
+													"sid": 916954426786723,
+													"behaviorType": "Pathfinding"
+												},
+												{
+													"id": "is-calculating-path",
+													"objectClass": "enemy_gunner",
+													"sid": 150329826601655,
+													"behaviorType": "Pathfinding"
+												}
+											],
+											"actions": [],
+											"sid": 424496834705011,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 465808980404649
+												}
+											],
+											"actions": [
+												{
+													"id": "find-path",
+													"objectClass": "enemy_gunner",
+													"sid": 118186012391269,
+													"behaviorType": "Pathfinding",
+													"parameters": {
+														"x": "Player.X ",
+														"y": "Player.Y"
+													}
+												}
+											],
+											"sid": 707418573224069
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 941103192186435
