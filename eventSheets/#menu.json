@@ -697,6 +697,70 @@
 													"sid": 398088849534846
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 213486534072798,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"gui\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 461019008232395,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 994742271971041,
+															"parameters": {
+																"variable": "settings_show_gui"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 970047213431823,
+															"parameters": {
+																"text": "\"User Interface: [color=red]on\""
+															}
+														}
+													],
+													"sid": 455857582265775
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 770763217972912
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 965429610913697,
+															"parameters": {
+																"text": "\"User Interface: [color=red]off\""
+															}
+														}
+													],
+													"sid": 417871088324043
+												}
+											]
 										}
 									]
 								}
@@ -1223,6 +1287,70 @@
 														}
 													],
 													"sid": 284106240915337
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "menu_text",
+													"sid": 309761053122061,
+													"parameters": {
+														"instance-variable": "param",
+														"comparison": 0,
+														"value": "\"gui\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 183969450882998,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 575531488414550,
+															"parameters": {
+																"variable": "settings_show_gui"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 228739587737668,
+															"parameters": {
+																"text": "\"Интерфейс: [color=red]вкл\""
+															}
+														}
+													],
+													"sid": 163384664943791
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 770799193382739
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_text",
+															"sid": 311319878456632,
+															"parameters": {
+																"text": "\"Интерфейс: [color=red]выкл\""
+															}
+														}
+													],
+													"sid": 148475881848703
 												}
 											]
 										}
@@ -2026,6 +2154,67 @@
 													"sid": 851689592591376
 												}
 											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 477555863589146
+										}
+									],
+									"actions": [],
+									"sid": 867002998225091,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 875528800879578,
+													"parameters": {
+														"variable": "settings_show_gui"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 361599839017959,
+													"parameters": {
+														"variable": "settings_show_gui",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 408847072229716
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 480441413164040
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 657037498031716,
+													"parameters": {
+														"variable": "settings_show_gui",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 473057803969626
 										}
 									]
 								},

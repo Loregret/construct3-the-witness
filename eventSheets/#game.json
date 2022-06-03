@@ -131,6 +131,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "settings_show_gui",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 888721742148837
+		},
+		{
+			"eventType": "variable",
 			"name": "settings_fps",
 			"type": "boolean",
 			"initialValue": "false",
@@ -1060,6 +1070,14 @@
 											"parameters": {
 												"mouse-button": "left"
 											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 474608683033686,
+											"parameters": {
+												"animation": "\"ak\""
+											}
 										}
 									],
 									"actions": [],
@@ -1068,14 +1086,6 @@
 										{
 											"eventType": "block",
 											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Player",
-													"sid": 194136204987273,
-													"parameters": {
-														"animation": "\"ak\""
-													}
-												},
 												{
 													"id": "is-timer-running",
 													"objectClass": "Player",
@@ -1202,55 +1212,24 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "dialog_trigger",
-													"sid": 547650782872183,
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 312716143176781,
 													"parameters": {
-														"instance-variable": "active"
+														"animation": "\"idle\""
 													}
 												},
 												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "dialog_trigger",
-													"sid": 675327683459316,
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 830345996502990,
 													"parameters": {
-														"instance-variable": "auto_start"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 832787899544684,
-													"parameters": {
-														"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
-														"comparison": 0,
-														"second-value": "0"
-													}
-												},
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 443293800983313,
-													"parameters": {
-														"first-value": "Functions.trigger_dialog_is_available(dialog_trigger.UID)",
-														"comparison": 0,
-														"second-value": "1"
+														"animation": "\"walk\""
 													}
 												}
 											],
-											"actions": [
-												{
-													"callFunction": "dialogic_play_dialog",
-													"sid": 313029320978900,
-													"parameters": [
-														"dialog_trigger.SceneName",
-														"dialog_trigger.DialogName",
-														"dialog_trigger.LineNum"
-													]
-												}
-											],
-											"sid": 197017734870414,
+											"actions": [],
+											"sid": 888798246936212,
 											"children": [
 												{
 													"eventType": "block",
@@ -1258,27 +1237,84 @@
 														{
 															"id": "is-boolean-instance-variable-set",
 															"objectClass": "dialog_trigger",
-															"sid": 895431411878619,
+															"sid": 247952490281887,
 															"parameters": {
-																"instance-variable": "repeatable"
+																"instance-variable": "active"
+															}
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "dialog_trigger",
+															"sid": 975648613827251,
+															"parameters": {
+																"instance-variable": "auto_start"
 															},
 															"isInverted": true
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 480779367630101,
+															"parameters": {
+																"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 238103090800471,
+															"parameters": {
+																"first-value": "Functions.trigger_dialog_is_available(dialog_trigger.UID)",
+																"comparison": 0,
+																"second-value": "1"
+															}
 														}
 													],
 													"actions": [
 														{
-															"id": "set-boolean-instvar",
-															"objectClass": "dialog_trigger",
-															"sid": 779731469726440,
-															"parameters": {
-																"instance-variable": "active",
-																"value": "false"
-															}
+															"callFunction": "dialogic_play_dialog",
+															"sid": 199014161241319,
+															"parameters": [
+																"dialog_trigger.SceneName",
+																"dialog_trigger.DialogName",
+																"dialog_trigger.LineNum"
+															]
 														}
 													],
-													"sid": 356313293560128
+													"sid": 441886319409914,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "dialog_trigger",
+																	"sid": 734987843621141,
+																	"parameters": {
+																		"instance-variable": "repeatable"
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "dialog_trigger",
+																	"sid": 789051438370830,
+																	"parameters": {
+																		"instance-variable": "active",
+																		"value": "false"
+																	}
+																}
+															],
+															"sid": 964558056067765
+														}
+													]
 												}
-											]
+											],
+											"isOrBlock": true
 										}
 									]
 								}
@@ -1315,127 +1351,153 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 956109456530102,
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 527452845241395,
 													"parameters": {
-														"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
-														"comparison": 3,
-														"second-value": "100"
+														"animation": "\"idle\""
 													}
-												}
-											],
-											"actions": [
+												},
 												{
-													"id": "play-at-object-by-name",
-													"objectClass": "Audio",
-													"sid": 195191998586661,
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 450961463671542,
 													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "choose(\"kick1\",\"kick1\",\"kick2\")",
-														"loop": "not-looping",
-														"volume": "-14",
-														"object": "Player",
-														"inner-angle": "360",
-														"outer-angle": "0",
-														"outer-gain": "0",
-														"tag-optional": "\"kick\""
+														"animation": "\"walk\""
 													}
 												}
 											],
-											"sid": 592122397603337,
+											"actions": [],
+											"sid": 794874232009240,
 											"children": [
 												{
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-animation-frame",
-															"objectClass": "gun",
-															"sid": 904091329189398,
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 128059950422617,
 															"parameters": {
-																"comparison": 0,
-																"number": "0"
+																"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
+																"comparison": 3,
+																"second-value": "100"
 															}
 														}
 													],
 													"actions": [
 														{
-															"id": "add-key",
-															"objectClass": "weapon",
-															"sid": 582103096032084,
+															"id": "play-at-object-by-name",
+															"objectClass": "Audio",
+															"sid": 552422488176607,
 															"parameters": {
-																"key": "\"pistol\"",
-																"value": "1"
+																"folder": "sounds",
+																"audio-file-name": "choose(\"kick1\",\"kick1\",\"kick2\")",
+																"loop": "not-looping",
+																"volume": "-14",
+																"object": "Player",
+																"inner-angle": "360",
+																"outer-angle": "0",
+																"outer-gain": "0",
+																"tag-optional": "\"kick\""
 															}
 														}
 													],
-													"sid": 858188956915962
-												},
-												{
-													"eventType": "block",
-													"conditions": [
+													"sid": 674010674708550,
+													"children": [
 														{
-															"id": "compare-animation-frame",
-															"objectClass": "gun",
-															"sid": 599933463876769,
-															"parameters": {
-																"comparison": 0,
-																"number": "1"
-															}
-														}
-													],
-													"actions": [
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-animation-frame",
+																	"objectClass": "gun",
+																	"sid": 922764730047102,
+																	"parameters": {
+																		"comparison": 0,
+																		"number": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "add-key",
+																	"objectClass": "weapon",
+																	"sid": 442079052876314,
+																	"parameters": {
+																		"key": "\"pistol\"",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 752829321178550
+														},
 														{
-															"id": "add-key",
-															"objectClass": "weapon",
-															"sid": 808631822138657,
-															"parameters": {
-																"key": "\"shotgun\"",
-																"value": "1"
-															}
-														}
-													],
-													"sid": 258152633266543
-												},
-												{
-													"eventType": "block",
-													"conditions": [
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-animation-frame",
+																	"objectClass": "gun",
+																	"sid": 502351886417944,
+																	"parameters": {
+																		"comparison": 0,
+																		"number": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "add-key",
+																	"objectClass": "weapon",
+																	"sid": 167570851691905,
+																	"parameters": {
+																		"key": "\"shotgun\"",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 406323122815439
+														},
 														{
-															"id": "compare-animation-frame",
-															"objectClass": "gun",
-															"sid": 298462726707155,
-															"parameters": {
-																"comparison": 0,
-																"number": "2"
-															}
-														}
-													],
-													"actions": [
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-animation-frame",
+																	"objectClass": "gun",
+																	"sid": 525156255175836,
+																	"parameters": {
+																		"comparison": 0,
+																		"number": "2"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "add-key",
+																	"objectClass": "weapon",
+																	"sid": 454122702384972,
+																	"parameters": {
+																		"key": "\"ak\"",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 221091393877420
+														},
 														{
-															"id": "add-key",
-															"objectClass": "weapon",
-															"sid": 226625907466975,
-															"parameters": {
-																"key": "\"ak\"",
-																"value": "1"
-															}
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "destroy",
+																	"objectClass": "gun",
+																	"sid": 609223120436819
+																}
+															],
+															"sid": 274875339993320
 														}
-													],
-													"sid": 677227628919976
-												},
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "destroy",
-															"objectClass": "gun",
-															"sid": 502016011438833
-														}
-													],
-													"sid": 840723738653194
+													]
 												}
-											]
+											],
+											"isOrBlock": true
 										}
 									]
 								}
@@ -6260,6 +6322,17 @@
 											]
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "interface_show_weapon_circle",
+											"sid": 624347464164680
+										}
+									],
+									"sid": 534712264922230
 								}
 							]
 						}
@@ -9497,7 +9570,16 @@
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 574878966998138,
+							"parameters": {
+								"variable": "settings_show_gui"
+							}
+						}
+					],
 					"actions": [
 						{
 							"id": "set-layer-visible",
@@ -9511,10 +9593,10 @@
 						{
 							"id": "start-timer",
 							"objectClass": "weapon_icon",
-							"sid": 691885664764829,
+							"sid": 128541956146472,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "0.5",
+								"duration": "0.75",
 								"type": "once",
 								"tag": "\"\""
 							}
@@ -9554,6 +9636,14 @@
 											"parameters": {
 												"frame-number": "0"
 											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 275567735455671,
+											"parameters": {
+												"text": "\"\""
+											}
 										}
 									],
 									"sid": 724344897550182
@@ -9584,6 +9674,14 @@
 											"sid": 686543850630286,
 											"parameters": {
 												"frame-number": "1"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 553855842953944,
+											"parameters": {
+												"text": "weapon.Get(\"pistol_ammo\")"
 											}
 										}
 									],
@@ -9616,6 +9714,14 @@
 											"parameters": {
 												"frame-number": "2"
 											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 402797411623820,
+											"parameters": {
+												"text": "weapon.Get(\"shotgun_ammo\")"
+											}
 										}
 									],
 									"sid": 123904556091221
@@ -9646,6 +9752,14 @@
 											"sid": 714192673635698,
 											"parameters": {
 												"frame-number": "3"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 209766842226036,
+											"parameters": {
+												"text": "weapon.Get(\"ak_ammo\")"
 											}
 										}
 									],
