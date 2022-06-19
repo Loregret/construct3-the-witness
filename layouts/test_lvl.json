@@ -1324,6 +1324,243 @@
 								"angle": 1.5707963267948966,
 								"zElevation": 0
 							}
+						},
+						{
+							"type": "runner",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 406,
+							"instanceVariables": {
+								"state": "idle",
+								"hp": 2,
+								"orig_X": 0,
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
+							},
+							"behaviors": {
+								"Bullet": {
+									"properties": {
+										"speed": 0,
+										"acceleration": 0,
+										"gravity": 0,
+										"bounce-off-solids": true,
+										"set-angle": true,
+										"step": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1600,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": 4,
+										"obstacles": "solids",
+										"max-speed": 200,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 1500,
+										"rotate-object": true,
+										"diagonals": true,
+										"enabled": false
+									}
+								},
+								"Timer": {
+									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 3576,
+								"y": 4617,
+								"width": 37.800000000000004,
+								"height": 53.1,
+								"originX": 0.7619047619047619,
+								"originY": 0.4576271186440678,
+								"color": [
+									0.796078431372549,
+									0.8901960784313725,
+									0.7529411764705882,
+									1
+								],
+								"angle": 4.6553249555769,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "runner",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 405,
+							"instanceVariables": {
+								"state": "idle",
+								"hp": 2,
+								"orig_X": 0,
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
+							},
+							"behaviors": {
+								"Bullet": {
+									"properties": {
+										"speed": 0,
+										"acceleration": 0,
+										"gravity": 0,
+										"bounce-off-solids": true,
+										"set-angle": true,
+										"step": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1600,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": 4,
+										"obstacles": "solids",
+										"max-speed": 200,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 1500,
+										"rotate-object": true,
+										"diagonals": true,
+										"enabled": false
+									}
+								},
+								"Timer": {
+									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 5008,
+								"y": 4587,
+								"width": 37.800000000000004,
+								"height": 53.1,
+								"originX": 0.7619047619047619,
+								"originY": 0.4576271186440678,
+								"color": [
+									0.796078431372549,
+									0.8901960784313725,
+									0.7529411764705882,
+									1
+								],
+								"angle": 1.426712071144129,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "runner",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 407,
+							"instanceVariables": {
+								"state": "idle",
+								"hp": 2,
+								"orig_X": 0,
+								"orig_Y": 0,
+								"alert_nth": 0,
+								"torch_amount": 0
+							},
+							"behaviors": {
+								"Bullet": {
+									"properties": {
+										"speed": 0,
+										"acceleration": 0,
+										"gravity": 0,
+										"bounce-off-solids": true,
+										"set-angle": true,
+										"step": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1600,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": 4,
+										"obstacles": "solids",
+										"max-speed": 200,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 1500,
+										"rotate-object": true,
+										"diagonals": true,
+										"enabled": false
+									}
+								},
+								"Timer": {
+									"properties": {}
+								},
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 5115,
+								"y": 4584,
+								"width": 37.800000000000004,
+								"height": 53.1,
+								"originX": 0.7619047619047619,
+								"originY": 0.4576271186440678,
+								"color": [
+									0.796078431372549,
+									0.8901960784313725,
+									0.7529411764705882,
+									1
+								],
+								"angle": 1.426712071144129,
+								"zElevation": 0
+							}
 						}
 					],
 					"sid": 138275388697965,
@@ -3209,7 +3446,10 @@
 							"instanceVariables": {
 								"dialogName": "test-greetings",
 								"lineNum": 0,
-								"npc_uid": 242
+								"npc_uid": 242,
+								"repeatable": true,
+								"active": true,
+								"autostart": true
 							},
 							"behaviors": {},
 							"world": {
@@ -3223,7 +3463,7 @@
 									1,
 									1,
 									1,
-									0.5
+									0.7
 								],
 								"angle": 0,
 								"zElevation": 0
@@ -3242,7 +3482,10 @@
 							"instanceVariables": {
 								"dialogName": "test1",
 								"lineNum": 0,
-								"npc_uid": 410
+								"npc_uid": 410,
+								"repeatable": true,
+								"active": true,
+								"autostart": true
 							},
 							"behaviors": {},
 							"world": {
@@ -3256,7 +3499,7 @@
 									1,
 									1,
 									1,
-									0.5
+									0.7
 								],
 								"angle": 0,
 								"zElevation": 0
@@ -3298,7 +3541,7 @@
 					"instances": [],
 					"sid": 328258764965410,
 					"effectTypes": [],
-					"isInitiallyVisible": false,
+					"isInitiallyVisible": true,
 					"isInitiallyInteractive": false,
 					"color": [
 						1,
@@ -3577,7 +3820,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
 						"wrapping": "word",
-						"initially-visible": false,
+						"initially-visible": true,
 						"origin": "top-left"
 					},
 					"uid": 323,

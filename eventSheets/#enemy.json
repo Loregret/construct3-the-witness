@@ -426,6 +426,10 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Не добавлять детей раннеру (только алерты)"
+				},
+				{
 					"eventType": "variable",
 					"name": "enemy_alert_maximum",
 					"type": "number",
@@ -1820,7 +1824,7 @@
 																	"eventType": "block",
 																	"conditions": [],
 																	"actions": [],
-																	"sid": 643160676929743,
+																	"sid": 620234986806039,
 																	"children": [
 																		{
 																			"eventType": "block",
@@ -1828,7 +1832,7 @@
 																				{
 																					"id": "compare-two-values",
 																					"objectClass": "System",
-																					"sid": 561238313120673,
+																					"sid": 656418300578809,
 																					"parameters": {
 																						"first-value": "alert.PickedCount",
 																						"comparison": 4,
@@ -1837,7 +1841,7 @@
 																				}
 																			],
 																			"actions": [],
-																			"sid": 953220523331687,
+																			"sid": 800328060561392,
 																			"children": [
 																				{
 																					"eventType": "block",
@@ -1845,7 +1849,7 @@
 																						{
 																							"id": "pick-nth-child",
 																							"objectClass": "runner",
-																							"sid": 103142810311229,
+																							"sid": 265169247239176,
 																							"parameters": {
 																								"child": "alert",
 																								"instance": "0"
@@ -1856,7 +1860,7 @@
 																						{
 																							"id": "remove-child",
 																							"objectClass": "runner",
-																							"sid": 811937576531592,
+																							"sid": 559082156080253,
 																							"parameters": {
 																								"child": "alert"
 																							}
@@ -1864,10 +1868,10 @@
 																						{
 																							"id": "destroy",
 																							"objectClass": "alert",
-																							"sid": 922536168322813
+																							"sid": 886052551137229
 																						}
 																					],
-																					"sid": 935508761537366
+																					"sid": 504895442720270
 																				}
 																			]
 																		}
@@ -1890,10 +1894,10 @@
 																				{
 																					"id": "set-instvar-value",
 																					"objectClass": "runner",
-																					"sid": 694175416146505,
+																					"sid": 793948929866502,
 																					"parameters": {
 																						"instance-variable": "alert_nth",
-																						"value": "alert.PickedCount"
+																						"value": "runner.ChildCount"
 																					}
 																				}
 																			],
@@ -1915,81 +1919,85 @@
 																			"eventType": "block",
 																			"conditions": [
 																				{
-																					"id": "pick-nth-child",
+																					"id": "has-children",
 																					"objectClass": "runner",
-																					"sid": 317317050437335,
-																					"parameters": {
-																						"child": "alert",
-																						"instance": "Self.alert_nth"
-																					}
+																					"sid": 304821259537811
 																				}
 																			],
 																			"actions": [],
-																			"sid": 213866112166362,
+																			"sid": 603220083187506,
 																			"children": [
 																				{
 																					"eventType": "block",
-																					"conditions": [
-																						{
-																							"id": "is-calculating-path",
-																							"objectClass": "runner",
-																							"sid": 632455106305351,
-																							"behaviorType": "Pathfinding",
-																							"isInverted": true
-																						},
-																						{
-																							"id": "is-moving-along-path",
-																							"objectClass": "runner",
-																							"sid": 548120399172249,
-																							"behaviorType": "Pathfinding",
-																							"isInverted": true
-																						}
-																					],
+																					"conditions": [],
 																					"actions": [],
-																					"sid": 275666168130265,
+																					"sid": 874854503681289,
 																					"children": [
 																						{
 																							"eventType": "block",
-																							"conditions": [],
-																							"actions": [
+																							"conditions": [
 																								{
-																									"id": "regenerate-region-around-object",
-																									"objectClass": "runner",
-																									"sid": 974191213589525,
-																									"behaviorType": "Pathfinding",
+																									"id": "pick-all",
+																									"objectClass": "System",
+																									"sid": 759808163008058,
 																									"parameters": {
 																										"object": "alert"
 																									}
 																								},
 																								{
-																									"id": "regenerate-region-around-object",
+																									"id": "pick-nth-child",
 																									"objectClass": "runner",
-																									"sid": 901673954954249,
-																									"behaviorType": "Pathfinding",
+																									"sid": 341591459409710,
 																									"parameters": {
-																										"object": "runner"
-																									}
-																								},
-																								{
-																									"id": "regenerate-region-around-object",
-																									"objectClass": "runner",
-																									"sid": 282773505917856,
-																									"behaviorType": "Pathfinding",
-																									"parameters": {
-																										"object": "enemies"
+																										"child": "alert",
+																										"instance": "Self.alert_nth - 1"
 																									}
 																								}
 																							],
-																							"sid": 281816475105479,
+																							"actions": [],
+																							"sid": 109601276006207,
 																							"children": [
 																								{
 																									"eventType": "block",
-																									"conditions": [],
+																									"conditions": [
+																										{
+																											"id": "is-calculating-path",
+																											"objectClass": "runner",
+																											"sid": 236989020939473,
+																											"behaviorType": "Pathfinding",
+																											"isInverted": true
+																										},
+																										{
+																											"id": "is-moving-along-path",
+																											"objectClass": "runner",
+																											"sid": 282941559548321,
+																											"behaviorType": "Pathfinding",
+																											"isInverted": true
+																										}
+																									],
 																									"actions": [
+																										{
+																											"id": "regenerate-region-around-object",
+																											"objectClass": "runner",
+																											"sid": 118417733683916,
+																											"behaviorType": "Pathfinding",
+																											"parameters": {
+																												"object": "alert"
+																											}
+																										},
+																										{
+																											"id": "regenerate-region-around-object",
+																											"objectClass": "runner",
+																											"sid": 900744700053124,
+																											"behaviorType": "Pathfinding",
+																											"parameters": {
+																												"object": "runner"
+																											}
+																										},
 																										{
 																											"id": "find-path",
 																											"objectClass": "runner",
-																											"sid": 211736811342749,
+																											"sid": 639732422527161,
 																											"behaviorType": "Pathfinding",
 																											"parameters": {
 																												"x": "alert.X",
@@ -1997,7 +2005,7 @@
 																											}
 																										}
 																									],
-																									"sid": 300223840664808
+																									"sid": 934870241885468
 																								}
 																							]
 																						}
@@ -2671,6 +2679,52 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-timer",
+									"objectClass": "alert",
+									"sid": 182981578113418,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"destroy\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "alert",
+									"sid": 779260058334835
+								}
+							],
+							"sid": 549103288916955
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "alert",
+									"sid": 126386525257582
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "alert",
+									"sid": 345445150808997,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "clamp(distance(runner.X, runner.Y, alert.X, alert.y), 45, 120)/10",
+										"type": "once",
+										"tag": "\"destroy\""
+									}
+								}
+							],
+							"sid": 603590861326252
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "runner",
 									"sid": 434464809796077,
@@ -2791,52 +2845,6 @@
 									]
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-timer",
-									"objectClass": "alert",
-									"sid": 679737666468720,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"destroy\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "alert",
-									"sid": 400128472643680
-								}
-							],
-							"sid": 155182715362167
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-created",
-									"objectClass": "alert",
-									"sid": 756429386562522
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "alert",
-									"sid": 265403799717614,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "clamp(distance(runner.X, runner.Y, alert.X, alert.y), 45, 120)/10",
-										"type": "once",
-										"tag": "\"destroy\""
-									}
-								}
-							],
-							"sid": 399830740655534
 						},
 						{
 							"eventType": "block",

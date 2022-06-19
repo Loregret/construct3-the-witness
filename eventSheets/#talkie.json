@@ -204,6 +204,22 @@
 							}
 						},
 						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "triggers_talkie",
+							"sid": 220694178781755,
+							"parameters": {
+								"instance-variable": "autostart"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "triggers_talkie",
+							"sid": 661084055728307,
+							"parameters": {
+								"instance-variable": "active"
+							}
+						},
+						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 931125869834413,
@@ -237,16 +253,77 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "compare-instance-variable",
+											"objectClass": "triggers_talkie",
+											"sid": 318442605543918,
+											"parameters": {
+												"instance-variable": "npc_uid",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "talkie_start_dialog",
+											"sid": 316432564630126,
+											"parameters": [
+												"\"talking\"",
+												"triggers_talkie.dialogName",
+												"triggers_talkie.lineNum",
+												"sprfont_dialog.UID"
+											]
+										}
+									],
+									"sid": 387495725929107,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "triggers_talkie",
+													"sid": 924713851429724,
+													"parameters": {
+														"instance-variable": "repeatable"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "triggers_talkie",
+													"sid": 845842810474640,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 187396049962887
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 146890850484691
+										},
+										{
 											"id": "pick-by-unique-id",
 											"objectClass": "npc",
-											"sid": 318197681521478,
+											"sid": 813728226191903,
 											"parameters": {
 												"unique-id": "triggers_talkie.npc_uid"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 214485590977418,
+									"sid": 283974823732725,
 									"children": [
 										{
 											"eventType": "block",
@@ -254,7 +331,7 @@
 												{
 													"id": "pick-children",
 													"objectClass": "npc",
-													"sid": 758534744901946,
+													"sid": 520498503561930,
 													"parameters": {
 														"child": "sprfont_dialog",
 														"which": "own"
@@ -264,7 +341,7 @@
 											"actions": [
 												{
 													"callFunction": "talkie_start_dialog",
-													"sid": 205866155619958,
+													"sid": 648316995333295,
 													"parameters": [
 														"\"talking\"",
 														"triggers_talkie.dialogName",
@@ -273,7 +350,35 @@
 													]
 												}
 											],
-											"sid": 637912109760240
+											"sid": 284448994687829,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "triggers_talkie",
+															"sid": 776486351549727,
+															"parameters": {
+																"instance-variable": "repeatable"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 519330819965023,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 962673152084108
+												}
+											]
 										}
 									]
 								}

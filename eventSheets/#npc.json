@@ -18,15 +18,23 @@
 							"behaviorType": "Pathfinding"
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 820308955223769,
+					"children": [
 						{
-							"id": "move-along-path",
-							"objectClass": "npc",
-							"sid": 979029149293165,
-							"behaviorType": "Pathfinding"
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "move-along-path",
+									"objectClass": "npc",
+									"sid": 408476408669300,
+									"behaviorType": "Pathfinding"
+								}
+							],
+							"sid": 935015237910031
 						}
-					],
-					"sid": 820308955223769
+					]
 				},
 				{
 					"eventType": "block",

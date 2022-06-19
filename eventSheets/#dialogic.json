@@ -1179,6 +1179,105 @@
 								},
 								{
 									"eventType": "comment",
+									"text": "talkie"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 334349575149990,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 716815296832014,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".talkie-player\")",
+														"comparison": 1,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 309391536385092,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "Player",
+															"sid": 765583572222335,
+															"parameters": {
+																"child": "sprfont_dialog",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 176790877184603,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 969102631118403,
+																	"parameters": {
+																		"variable": "player_is_talking",
+																		"value": "true"
+																	}
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 309615540547507,
+																	"parameters": {
+																		"seconds": "1.0"
+																	}
+																},
+																{
+																	"id": "set-visible",
+																	"objectClass": "sprfont_dialog",
+																	"sid": 982525612114192,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																},
+																{
+																	"id": "stop-timer",
+																	"objectClass": "sprfont_dialog",
+																	"sid": 683416654629951,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"tag": "\"line_over\""
+																	}
+																},
+																{
+																	"id": "typewriter-text",
+																	"objectClass": "sprfont_dialog",
+																	"sid": 358540529577483,
+																	"parameters": {
+																		"text": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".talkie-player\")",
+																		"duration": "custom_typing_speed=0? default_typing_speed:custom_typing_speed"
+																	}
+																}
+															],
+															"sid": 453218538226850
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
 									"text": "logs"
 								},
 								{

@@ -1100,7 +1100,10 @@
 					"instanceVariables": {
 						"dialogName": "",
 						"lineNum": 0,
-						"npc_uid": -1
+						"npc_uid": -1,
+						"repeatable": true,
+						"active": true,
+						"autostart": true
 					},
 					"behaviors": {},
 					"world": {
@@ -1114,7 +1117,7 @@
 							1,
 							1,
 							1,
-							1
+							0.7
 						],
 						"angle": 0,
 						"zElevation": 0

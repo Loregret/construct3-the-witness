@@ -94,7 +94,7 @@
 			"name": "settings_fullscreen",
 			"type": "string",
 			"initialValue": "scale_outer",
-			"comment": "",
+			"comment": "(default: scale_outer)",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 639174913980437
@@ -790,9 +790,94 @@
 													"parameters": {
 														"opacity": "97"
 													}
+												},
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 140480295284926,
+													"parameters": {
+														"key": "\"pistol\"",
+														"value": "1"
+													}
+												},
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 988839301892605,
+													"parameters": {
+														"key": "\"shotgun\"",
+														"value": "1"
+													}
+												},
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 709415011873110,
+													"parameters": {
+														"key": "\"ak\"",
+														"value": "1"
+													}
 												}
 											],
 											"sid": 281923128725950
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 280401771995469
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 882343666723325,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"forest2\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 523656264164556,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 168685588011718,
+													"parameters": {
+														"key": "\"pistol\"",
+														"value": "1"
+													}
+												},
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 856210624607016,
+													"parameters": {
+														"key": "\"shotgun\"",
+														"value": "1"
+													}
+												},
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 762436528712452,
+													"parameters": {
+														"key": "\"ak\"",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 957632938583793
 										}
 									]
 								}

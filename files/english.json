@@ -165,7 +165,9 @@
 			"id": "many_corpse1",
 			"dialogs": [
 				{
-					"line": "A bunch of <color=red>corpses</color>."
+					"line": "A bunch of <color=red>corpses</color>.",
+					"talkie-player": "Shit.",					
+					"wait": 1.85
 				},
 				{
 					"line": "All floor is covered in <color=red>blood</color>.",
@@ -257,6 +259,33 @@
 	],
 	"talking": [
 		{
+			"id": "corpse-reaction1",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Ew. Disgusting..."
+				}
+			]
+		},	
+		{
+			"id": "wtf",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "What the...?"
+				}
+			]
+		},				
+		{
+			"id": "forest1-room",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Hello?"
+				}
+			]
+		},		
+		{		
 			"id": "test1",
 			"dialogs": [
 				{
