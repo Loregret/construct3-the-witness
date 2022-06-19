@@ -532,6 +532,41 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "wooden_floor",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 441,
+					"instanceVariables": {
+						"sound_name": "walk wood"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 7436.311499335942,
+						"y": 7629.571224190223,
+						"width": 8.239382806370044,
+						"height": 267,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.4980392156862745,
+							0.4627450980392157,
+							0.4627450980392157,
+							1
+						],
+						"angle": 4.9183854175590564,
+						"zElevation": 1
+					}
 				}
 			],
 			"sid": 776219429629899,
@@ -6562,7 +6597,7 @@
 					],
 					"sid": 715308332377933,
 					"effectTypes": [],
-					"isInitiallyVisible": true,
+					"isInitiallyVisible": false,
 					"isInitiallyInteractive": true,
 					"color": [
 						1,
