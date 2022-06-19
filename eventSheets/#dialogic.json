@@ -1199,6 +1199,15 @@
 														"comparison": 1,
 														"second-value": "0"
 													}
+												},
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 368957607298885,
+													"parameters": {
+														"variable": "player_is_talking"
+													},
+													"isInverted": true
 												}
 											],
 											"actions": [],
@@ -1236,9 +1245,9 @@
 																{
 																	"id": "wait",
 																	"objectClass": "System",
-																	"sid": 309615540547507,
+																	"sid": 663339827089569,
 																	"parameters": {
-																		"seconds": "1.0"
+																		"seconds": "random(0.5)"
 																	}
 																},
 																{

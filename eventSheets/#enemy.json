@@ -1194,6 +1194,75 @@
 																}
 															],
 															"sid": 277279891680960
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 358748439839082,
+																	"parameters": {
+																		"variable": "player_is_talking"
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "pick-children",
+																	"objectClass": "Player",
+																	"sid": 998367296998027,
+																	"parameters": {
+																		"child": "sprfont_dialog",
+																		"which": "own"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 900256753829468,
+																	"parameters": {
+																		"variable": "player_is_talking",
+																		"value": "true"
+																	}
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 467844803856039,
+																	"parameters": {
+																		"seconds": "1.0"
+																	}
+																},
+																{
+																	"id": "set-visible",
+																	"objectClass": "sprfont_dialog",
+																	"sid": 217514843289790,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																},
+																{
+																	"id": "stop-timer",
+																	"objectClass": "sprfont_dialog",
+																	"sid": 870359533033763,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"tag": "\"line_over\""
+																	}
+																},
+																{
+																	"id": "typewriter-text",
+																	"objectClass": "sprfont_dialog",
+																	"sid": 177566256777234,
+																	"parameters": {
+																		"text": "\"Get out of me!\"",
+																		"duration": "0.5"
+																	}
+																}
+															],
+															"sid": 147736201991419
 														}
 													]
 												},

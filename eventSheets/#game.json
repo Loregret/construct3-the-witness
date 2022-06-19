@@ -592,7 +592,6 @@
 															"id": "play",
 															"objectClass": "Audio",
 															"sid": 480776706134089,
-															"disabled": true,
 															"parameters": {
 																"audio-file": "Forest ambient",
 																"loop": "looping",
@@ -616,7 +615,6 @@
 															"id": "play",
 															"objectClass": "Audio",
 															"sid": 901776638415985,
-															"disabled": true,
 															"parameters": {
 																"audio-file": "Eternity Clock",
 																"loop": "not-looping",
@@ -657,12 +655,13 @@
 															}
 														},
 														{
-															"callFunction": "dialogic_play_dialog",
-															"sid": 927178501442357,
+															"callFunction": "talkie_start_dialog",
+															"sid": 224589495948353,
 															"parameters": [
 																"\"forest1\"",
 																"\"start\"",
-																"0"
+																"0",
+																"-1"
 															]
 														},
 														{
@@ -674,8 +673,7 @@
 															}
 														}
 													],
-													"sid": 212328201833172,
-													"disabled": true
+													"sid": 212328201833172
 												}
 											]
 										},
