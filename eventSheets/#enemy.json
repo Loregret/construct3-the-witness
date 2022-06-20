@@ -1215,54 +1215,96 @@
 																		"child": "sprfont_dialog",
 																		"which": "own"
 																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "set-boolean-eventvar",
-																	"objectClass": "System",
-																	"sid": 900256753829468,
-																	"parameters": {
-																		"variable": "player_is_talking",
-																		"value": "true"
-																	}
 																},
 																{
-																	"id": "wait",
-																	"objectClass": "System",
-																	"sid": 467844803856039,
-																	"parameters": {
-																		"seconds": "1.0"
-																	}
-																},
-																{
-																	"id": "set-visible",
-																	"objectClass": "sprfont_dialog",
-																	"sid": 217514843289790,
-																	"parameters": {
-																		"visibility": "visible"
-																	}
-																},
-																{
-																	"id": "stop-timer",
-																	"objectClass": "sprfont_dialog",
-																	"sid": 870359533033763,
+																	"id": "is-timer-running",
+																	"objectClass": "Player",
+																	"sid": 207082830747701,
 																	"behaviorType": "Timer",
 																	"parameters": {
-																		"tag": "\"line_over\""
-																	}
+																		"tag": "\"enemy_shout\""
+																	},
+																	"isInverted": true
 																},
 																{
-																	"id": "typewriter-text",
-																	"objectClass": "sprfont_dialog",
-																	"sid": 177566256777234,
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 827246770781168,
 																	"parameters": {
-																		"text": "\"Get out of me!\"",
-																		"duration": "0.5"
+																		"first-value": "distance(Player.X, Player.Y, runner.X, runner.Y)",
+																		"comparison": 2,
+																		"second-value": "1000"
 																	}
 																}
 															],
-															"sid": 147736201991419
+															"actions": [],
+															"sid": 147736201991419,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-eventvar",
+																			"objectClass": "System",
+																			"sid": 176942306769036,
+																			"parameters": {
+																				"variable": "settings_language",
+																				"comparison": 0,
+																				"value": "\"en\""
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "start-timer",
+																			"objectClass": "Player",
+																			"sid": 480118435491121,
+																			"behaviorType": "Timer",
+																			"parameters": {
+																				"duration": "random(5,20)",
+																				"type": "once",
+																				"tag": "\"enemy_shout\""
+																			}
+																		},
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 134484464262837,
+																			"parameters": {
+																				"variable": "player_is_talking",
+																				"value": "true"
+																			}
+																		},
+																		{
+																			"id": "set-visible",
+																			"objectClass": "sprfont_dialog",
+																			"sid": 682661724264634,
+																			"parameters": {
+																				"visibility": "visible"
+																			}
+																		},
+																		{
+																			"id": "stop-timer",
+																			"objectClass": "sprfont_dialog",
+																			"sid": 994130746727975,
+																			"behaviorType": "Timer",
+																			"parameters": {
+																				"tag": "\"line_over\""
+																			}
+																		},
+																		{
+																			"id": "typewriter-text",
+																			"objectClass": "sprfont_dialog",
+																			"sid": 743151090871809,
+																			"parameters": {
+																				"text": "choose(\"Stop!\", \"Shit!\", \"Stay away from me!\", \"Don't touch me!\", \"Ah!\", \"No!\", \"Wait!\")",
+																				"duration": "0.5"
+																			}
+																		}
+																	],
+																	"sid": 780704240290257
+																}
+															]
 														}
 													]
 												},
