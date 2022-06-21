@@ -278,38 +278,125 @@
 					"char": "player",
 					"line": "Who are those guys outside?",
 					"speed": 0.45,
-					"wait": 0.8
+					"wait": 1.35
 				},
 				{
 					"char": "npc",
 					"line": "FBI agents.",
 					"speed": 0.5,
-					"wait": 0.8
+					"wait": 1.25
 				},
 				{
 					"char": "player",
 					"line": "What do they need?",
-					"speed": 0.45,
-					"wait": 0.8
+					"speed": 0.45
 				},
 				{
 					"char": "npc",
 					"line": "Lookin' for intruders from wastelands.",
-					"speed": 0.45,
-					"wait": 0.8
+					"speed": 0.45
 				},
 				{
 					"char": "player",
 					"line": "Really? Have raiders got so far?",
-					"speed": 0.45,
-					"wait": 0.8
+					"speed": 0.45
 				},
 				{
 					"char": "npc",
 					"line": "Read the news. 'Runners' are everywhere.",
+					"speed": 0.45
+				},
+				{
+		 			"char": "player",
+					"line": "Madness.",
+					"speed": 0.45
+				}			
+			]
+		},
+		{
+			"id": "righteousness",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "It's too late to save the planet.",
 					"speed": 0.45,
-					"wait": 0.8
-				}				
+					"wait": 1.35
+				},
+				{
+					"char": "player",
+					"line": "We were doomed long before the drought happened.",
+					"speed": 0.5,
+					"wait": 1.25
+				},
+				{
+					"char": "player",
+					"line": "I just hope humanity survives long enough...",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "You know, to leave this dead atmosphere.",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "And find a new home... to shatter it as previous one.",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "We are the destroyers of the world.",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "No one is coming to save us.",
+					"speed": 0.45
+				}
+			]
+		},
+		{
+			"id": "fbi1",
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "I hope it's something urgent."
+				},
+				{
+					"char": "player",
+					"line": "What?"
+				},
+				{
+					"char": "npc",
+					"line": "You're parked on the wrong side. You wouldn't do that if there wasn't something urgent. Would you?",
+					"wait": 2.5,
+					"speed": 2
+				},
+				{
+					"char": "player",
+					"line": "No. Just coyotes with guns and badges make me rebellious..",
+					"speed": 1.5
+				},
+				{
+					"char": "npc",
+					"line": "Coyotes? No. More likely Grizzly."
+				},
+				{
+					"char": "npc",
+					"npc_uid": 602,
+					"line": "Look. Another guy with mentality of a criminal!"
+				},
+				{
+					"char": "npc",
+					"line": "You think you're tough. Look around you - if outsiders are comin', you will be begging us to help you!",
+					"wait": 2.5,
+					"speed": 1.7
+				},
+				{
+					"char": "player",
+					"line": "Whatever.",
+					"next-dialog": "righteousness"
+				}
 			]
 		}
 	],

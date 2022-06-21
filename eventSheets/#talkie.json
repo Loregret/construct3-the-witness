@@ -70,6 +70,16 @@
 				},
 				{
 					"eventType": "variable",
+					"name": "talkie_trigger_uid",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 624058914987756
+				},
+				{
+					"eventType": "variable",
 					"name": "curDialogName",
 					"type": "string",
 					"initialValue": "",
@@ -284,12 +294,13 @@
 									"actions": [
 										{
 											"callFunction": "talkie_start_dialog",
-											"sid": 910298496528569,
+											"sid": 538563313374278,
 											"parameters": [
 												"triggers_talkie.SceneName",
 												"triggers_talkie.dialogName",
 												"triggers_talkie.lineNum",
-												"sprfont_dialog.UID"
+												"sprfont_dialog.UID",
+												"triggers_talkie.UID"
 											]
 										}
 									],
@@ -359,12 +370,13 @@
 											"actions": [
 												{
 													"callFunction": "talkie_start_dialog",
-													"sid": 506384665038942,
+													"sid": 235088198105033,
 													"parameters": [
 														"triggers_talkie.SceneName",
 														"triggers_talkie.dialogName",
 														"triggers_talkie.lineNum",
-														"sprfont_dialog.UID"
+														"sprfont_dialog.UID",
+														"triggers_talkie.UID"
 													]
 												}
 											],
@@ -503,6 +515,52 @@
 							],
 							"sid": 423214127673431,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-parent",
+											"objectClass": "sprfont_dialog",
+											"sid": 182459344340986,
+											"isInverted": true
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "npc",
+											"sid": 281423526369567,
+											"parameters": {
+												"unique-id": "sprfont_dialog.true_parent"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "sprfont_dialog",
+											"sid": 290748308053765,
+											"parameters": {
+												"x": "npc.X",
+												"y": "npc.BBoxTop"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "npc",
+											"sid": 154420247498080,
+											"parameters": {
+												"child": "sprfont_dialog",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-z-elevation": false,
+												"destroy-with-parent": true
+											}
+										}
+									],
+									"sid": 703751138380018
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -1243,7 +1301,176 @@
 															}
 														}
 													],
-													"sid": 325147939098933
+													"sid": 325147939098933,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 706499311211197,
+																	"parameters": {
+																		"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".npc_uid\")",
+																		"comparison": 1,
+																		"second-value": "0"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 208567412086667,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-by-unique-id",
+																			"objectClass": "npc",
+																			"sid": 387216051219585,
+																			"parameters": {
+																				"unique-id": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".npc_uid\")"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "remove-from-parent",
+																			"objectClass": "sprfont_dialog",
+																			"sid": 783409747942533
+																		},
+																		{
+																			"id": "set-position",
+																			"objectClass": "sprfont_dialog",
+																			"sid": 788989206973477,
+																			"parameters": {
+																				"x": "npc.X",
+																				"y": "npc.BBoxTop"
+																			}
+																		}
+																	],
+																	"sid": 124764294681387
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "next dialog"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 815410269889952,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 356554455701188,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".next-scene\")",
+														"comparison": 1,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 329918237955101,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "triggers_talkie",
+															"sid": 822184191898908,
+															"parameters": {
+																"unique-id": "talkie_trigger_uid"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 213437146263970,
+															"parameters": {
+																"instance-variable": "SceneName",
+																"value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".next-scene\")"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 276441844315521,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 209950474860854
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 517561724363586,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".next-dialog\")",
+														"comparison": 1,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 333653856912886,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "triggers_talkie",
+															"sid": 898900125864011,
+															"parameters": {
+																"unique-id": "talkie_trigger_uid"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 642109727224221,
+															"parameters": {
+																"instance-variable": "dialogName",
+																"value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".next-dialog\")"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 437787605652865,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 767495764122488
 												}
 											]
 										}
@@ -1484,6 +1711,13 @@
 									"initialValue": "-1",
 									"comment": "",
 									"sid": 489079279128882
+								},
+								{
+									"name": "trigger_uid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 674384505224485
 								}
 							],
 							"eventType": "function-block",
@@ -1538,6 +1772,15 @@
 											"parameters": {
 												"variable": "npc_sprfont_uid",
 												"value": "sprfont_uid"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 236390469603649,
+											"parameters": {
+												"variable": "talkie_trigger_uid",
+												"value": "trigger_uid"
 											}
 										}
 									],

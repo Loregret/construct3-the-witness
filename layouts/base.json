@@ -1966,6 +1966,150 @@
 					}
 				},
 				{
+					"type": "stool1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 890,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 4270.229308690412,
+						"y": 2695.6125863070893,
+						"width": 31.891598597589134,
+						"height": 42.80188232834331,
+						"originX": 0.4540229885057471,
+						"originY": 0.5129310344827587,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.573851682369522,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "stool1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 891,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 4319.971009902856,
+						"y": 2695.6125863070893,
+						"width": 31.891598597589134,
+						"height": 42.80188232834331,
+						"originX": 0.4540229885057471,
+						"originY": 0.5129310344827587,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.573851682369522,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "stool1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 892,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 4371.720314814449,
+						"y": 2695.6125863070893,
+						"width": 31.891598597589134,
+						"height": 42.80188232834331,
+						"originX": 0.4540229885057471,
+						"originY": 0.5129310344827587,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.573851682369522,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "stool1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 893,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 4425.030606217045,
+						"y": 2695.6125863070893,
+						"width": 31.891598597589134,
+						"height": 42.80188232834331,
+						"originX": 0.4540229885057471,
+						"originY": 0.5129310344827587,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.573851682369522,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "table2",
 					"properties": {
 						"initially-visible": true,
@@ -2250,6 +2394,306 @@
 							"type": "npc",
 							"properties": {
 								"initially-visible": true,
+								"initial-animation": "doc1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 882,
+							"instanceVariables": {
+								"state": "none"
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								}
+							},
+							"world": {
+								"x": 3898.538922453457,
+								"y": 2681.015713754616,
+								"width": 36.400000000000006,
+								"height": 46.800000000000004,
+								"originX": 0.48214285714285715,
+								"originY": 0.48611111111111116,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 5.464407369723171,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "doc1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 883,
+							"instanceVariables": {
+								"state": "none"
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								}
+							},
+							"world": {
+								"x": 3950.1187469667184,
+								"y": 2670.190318486401,
+								"width": 36.400000000000006,
+								"height": 46.800000000000004,
+								"originX": 0.48214285714285715,
+								"originY": 0.48611111111111116,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 3.456782483678644,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "doc1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 884,
+							"instanceVariables": {
+								"state": "none"
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								}
+							},
+							"world": {
+								"x": 3912.5482575064416,
+								"y": 2635.1669808539395,
+								"width": 36.400000000000006,
+								"height": 46.800000000000004,
+								"originX": 0.48214285714285715,
+								"originY": 0.48611111111111116,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 1.3509166556121666,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "doc1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 885,
+							"instanceVariables": {
+								"state": "idle"
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								}
+							},
+							"world": {
+								"x": 4193.04442299274,
+								"y": 2494.9188981107905,
+								"width": 36.400000000000006,
+								"height": 46.800000000000004,
+								"originX": 0.48214285714285715,
+								"originY": 0.48611111111111116,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 1.6015673825389047,
+								"zElevation": 1
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "docwoman",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 881,
+							"instanceVariables": {
+								"state": "idle"
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								}
+							},
+							"world": {
+								"x": 4134.773225134151,
+								"y": 2487.786658195345,
+								"width": 36.400000000000006,
+								"height": 46.800000000000004,
+								"originX": 0.4821428571428572,
+								"originY": 0.5138888888888888,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 1.806158766764971,
+								"zElevation": 1
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
 								"initial-animation": "cop2",
 								"initial-frame": 0,
 								"enable-collisions": true,
@@ -2290,8 +2734,8 @@
 								}
 							},
 							"world": {
-								"x": 4420,
-								"y": 3840,
+								"x": 4391.538100639022,
+								"y": 3841.6034872879422,
 								"width": 33.800000000000004,
 								"height": 48.1,
 								"originX": 0.5192307692307693,
@@ -2352,8 +2796,8 @@
 							"world": {
 								"x": 4474,
 								"y": 3840,
-								"width": 36.400000000000006,
-								"height": 46.800000000000004,
+								"width": 43.4,
+								"height": 55.800000000000004,
 								"originX": 0.48214285714285715,
 								"originY": 0.5138888888888888,
 								"color": [
@@ -2543,6 +2987,186 @@
 									1
 								],
 								"angle": 4.703143092785846,
+								"zElevation": 1
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "swat",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 887,
+							"instanceVariables": {
+								"state": "none"
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								}
+							},
+							"world": {
+								"x": 4558.056573865112,
+								"y": 3839.705663692787,
+								"width": 33.800000000000004,
+								"height": 48.1,
+								"originX": 0.5192307692307693,
+								"originY": 0.5,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 1.5747686075977352,
+								"zElevation": 1
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "swat",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 888,
+							"instanceVariables": {
+								"state": "none"
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								}
+							},
+							"world": {
+								"x": 3764.379559944857,
+								"y": 3851.568181684571,
+								"width": 33.800000000000004,
+								"height": 48.1,
+								"originX": 0.5192307692307693,
+								"originY": 0.5,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 2.913186001168712,
+								"zElevation": 1
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "swat",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 889,
+							"instanceVariables": {
+								"state": "none"
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								}
+							},
+							"world": {
+								"x": 4717.877126041362,
+								"y": 3838.1424412321853,
+								"width": 67.60000000000001,
+								"height": 48.1,
+								"originX": 0.25,
+								"originY": 0.4864864864864865,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 5.9710639991805134,
 								"zElevation": 1
 							}
 						}
@@ -6324,7 +6948,7 @@
 					"world": {
 						"x": 4156.513509002321,
 						"y": 3847.180527032574,
-						"width": 1293.0059650423668,
+						"width": 2065.7212480108915,
 						"height": 303.02111630619737,
 						"originX": 0.512,
 						"originY": 0.486,
@@ -6480,6 +7104,86 @@
 								"y": 3735.330651719297,
 								"width": 61.304050185962296,
 								"height": 48.89202639515679,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.7
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_dialogic",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 880,
+							"instanceVariables": {
+								"SceneName": "forest1",
+								"DialogName": "car",
+								"LineNum": 0,
+								"active": true,
+								"repeatable": true,
+								"autostart": false,
+								"is_visible_trough_walls": true,
+								"activation_distance": 125,
+								"max_distance": 450
+							},
+							"behaviors": {},
+							"world": {
+								"x": 4159.91654636325,
+								"y": 4363.266226045259,
+								"width": 128.714710050654,
+								"height": 295.25704082805584,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.55
+								],
+								"angle": 1.2937908465752166,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_talkie",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 886,
+							"instanceVariables": {
+								"SceneName": "base-talking",
+								"dialogName": "fbi1",
+								"lineNum": 0,
+								"npc_uid": 600,
+								"interactive_start": true,
+								"repeatable": false,
+								"active": true,
+								"autostart": false,
+								"max_distance": 500,
+								"activation_distance": 125,
+								"is_visible_trough_walls": false
+							},
+							"behaviors": {},
+							"world": {
+								"x": 4431.345834791543,
+								"y": 3843.0442681084273,
+								"width": 130.58710674344275,
+								"height": 36.15972466380981,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [

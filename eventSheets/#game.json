@@ -638,6 +638,7 @@
 																"\"forest1\"",
 																"\"start\"",
 																"0",
+																"-1",
 																"-1"
 															]
 														},
@@ -1693,7 +1694,8 @@
 																"triggers_talkie.SceneName",
 																"triggers_talkie.DialogName",
 																"triggers_talkie.LineNum",
-																"triggers_talkie.npc_uid"
+																"triggers_talkie.npc_uid",
+																"-1"
 															]
 														}
 													],
@@ -1716,12 +1718,13 @@
 															"actions": [
 																{
 																	"callFunction": "talkie_start_dialog",
-																	"sid": 772532844606967,
+																	"sid": 279999421185672,
 																	"parameters": [
 																		"triggers_talkie.SceneName",
 																		"triggers_talkie.dialogName",
 																		"triggers_talkie.lineNum",
-																		"sprfont_dialog.UID"
+																		"sprfont_dialog.UID",
+																		"triggers_talkie.UID"
 																	]
 																}
 															],
@@ -1791,12 +1794,13 @@
 																	"actions": [
 																		{
 																			"callFunction": "talkie_start_dialog",
-																			"sid": 599335262891873,
+																			"sid": 284090953849474,
 																			"parameters": [
 																				"triggers_talkie.SceneName",
 																				"triggers_talkie.dialogName",
 																				"triggers_talkie.lineNum",
-																				"sprfont_dialog.UID"
+																				"sprfont_dialog.UID",
+																				"triggers_talkie.UID"
 																			]
 																		}
 																	],
