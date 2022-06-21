@@ -249,7 +249,10 @@
 	],
 	"uniqueId": "bmm21df34rr",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"TiledBackground",
+			"Sprite"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -276,7 +279,8 @@
 					"dust",
 					"dust2",
 					"stone",
-					"box"
+					"box",
+					"house_bricks"
 				],
 				"subfolders": [
 					{
@@ -284,7 +288,9 @@
 							"grass",
 							"road",
 							"sand",
-							"concrete"
+							"concrete",
+							"w_floor1",
+							"w_floor2"
 						],
 						"subfolders": [],
 						"name": "textures"
@@ -501,7 +507,8 @@
 						"items": [
 							"forest1",
 							"forest2",
-							"test_lvl"
+							"test_lvl",
+							"base"
 						],
 						"subfolders": [],
 						"name": "levels"
@@ -1343,6 +1350,14 @@
 					"name": "Forest ambient.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 335110034344435,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "distant-worlds by theatre-of-delays Artlist.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 699092831540391,
 					"file-info": {
 						"purpose": "none"
 					}
