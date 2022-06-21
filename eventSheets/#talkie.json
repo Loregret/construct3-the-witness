@@ -227,6 +227,24 @@
 								"variable": "player_is_talking"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "triggers_talkie",
+							"sid": 577020974581255,
+							"parameters": {
+								"instance-variable": "interactive_start"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 507273446308617,
+							"parameters": {
+								"variable": "player_is_talking"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -341,9 +359,9 @@
 											"actions": [
 												{
 													"callFunction": "talkie_start_dialog",
-													"sid": 648316995333295,
+													"sid": 506384665038942,
 													"parameters": [
-														"\"talking\"",
+														"triggers_talkie.SceneName",
 														"triggers_talkie.dialogName",
 														"triggers_talkie.lineNum",
 														"sprfont_dialog.UID"
@@ -1430,7 +1448,7 @@
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
-									"name": "SceneNum",
+									"name": "SceneName",
 									"type": "string",
 									"initialValue": "",
 									"comment": "",
@@ -1482,7 +1500,7 @@
 											"sid": 318961091627114,
 											"parameters": {
 												"variable": "curScene",
-												"value": "SceneNum"
+												"value": "SceneName"
 											}
 										},
 										{

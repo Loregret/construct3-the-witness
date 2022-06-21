@@ -382,7 +382,7 @@
 																{
 																	"id": "set-visible",
 																	"objectClass": "sprfont_cursorhint",
-																	"sid": 484555788505697,
+																	"sid": 590733827347129,
 																	"parameters": {
 																		"visibility": "visible"
 																	}
@@ -390,56 +390,13 @@
 																{
 																	"id": "set-text",
 																	"objectClass": "sprfont_cursorhint",
-																	"sid": 102771565929995,
+																	"sid": 934715212949782,
 																	"parameters": {
-																		"text": "JSON.Get(\"misc.0.dialogs.2.line\")"
-																	}
-																},
-																{
-																	"id": "alert",
-																	"objectClass": "Browser",
-																	"sid": 548676738488385,
-																	"parameters": {
-																		"message": "\"\""
+																		"text": "JSON.Get(\"misc.2.dialogs.0.line\")"
 																	}
 																}
 															],
-															"sid": 318515641314099
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "compare-value",
-																	"objectClass": "JSON",
-																	"sid": 807672178727964,
-																	"parameters": {
-																		"path": "triggers_talkie.SceneName&\".\"&JSON.CurrentKey&\".name\"",
-																		"cmp": 1,
-																		"value": "0"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "set-text",
-																	"objectClass": "sprfont_cursorhint",
-																	"sid": 741374654087020,
-																	"parameters": {
-																		"text": "JSON.Get(triggers_talkie.SceneName&\".\"& JSON.CurrentKey &\".name\")"
-																	}
-																},
-																{
-																	"id": "set-visible",
-																	"objectClass": "sprfont_cursorhint",
-																	"sid": 138153920933319,
-																	"parameters": {
-																		"visibility": "visible"
-																	}
-																}
-															],
-															"sid": 920496284425594,
-															"disabled": true
+															"sid": 327777774815935
 														}
 													]
 												}
@@ -455,17 +412,26 @@
 									"eventType": "block",
 									"conditions": [],
 									"actions": [],
-									"sid": 247013185178045,
+									"sid": 595060809563714,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 124432890445101,
+													"parameters": {
+														"variable": "player_is_talking"
+													},
+													"isInverted": true
+												},
+												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 980766327376118,
+													"sid": 891951303633347,
 													"parameters": {
-														"first-value": "Functions.trigger_dialog_is_seen(triggers_talkie.UID)",
+														"first-value": "Functions.trigger_talkie_is_seen(triggers_talkie.UID)",
 														"comparison": 0,
 														"second-value": "1"
 													}
@@ -473,7 +439,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 703930672595821,
+													"sid": 508193956502410,
 													"parameters": {
 														"first-value": "distance(Player.X,Player.Y, triggers_talkie.X, triggers_talkie.Y)",
 														"comparison": 3,
@@ -485,13 +451,13 @@
 												{
 													"id": "set-default-color",
 													"objectClass": "sprfont_cursorhint",
-													"sid": 315971265587637,
+													"sid": 407843836461130,
 													"parameters": {
 														"color": "rgbEx(93, 93, 93)"
 													}
 												}
 											],
-											"sid": 492072144353484
+											"sid": 221277139750579
 										},
 										{
 											"eventType": "block",
@@ -499,20 +465,20 @@
 												{
 													"id": "else",
 													"objectClass": "System",
-													"sid": 525621000861251
+													"sid": 376613326540530
 												}
 											],
 											"actions": [
 												{
 													"id": "set-default-color",
 													"objectClass": "sprfont_cursorhint",
-													"sid": 884830938834141,
+													"sid": 691882984882520,
 													"parameters": {
 														"color": "rgbEx(36, 36, 36)"
 													}
 												}
 											],
-											"sid": 829961805887909
+											"sid": 534626735998120
 										}
 									]
 								}
@@ -636,6 +602,101 @@
 										{
 											"id": "cursor-is-over-object",
 											"objectClass": "Mouse",
+											"sid": 421059570055252,
+											"parameters": {
+												"object": "triggers_talkie"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "triggers_talkie",
+											"sid": 277363866726631,
+											"parameters": {
+												"instance-variable": "interactive_start"
+											}
+										},
+										{
+											"id": "pick-topbottom",
+											"objectClass": "triggers_talkie",
+											"sid": 287602264288749,
+											"parameters": {
+												"which": "top"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 222572379315948,
+											"parameters": {
+												"first-value": "distance(Player.X, Player.Y,  triggers_talkie.X,triggers_talkie.Y)",
+												"comparison": 3,
+												"second-value": "200"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 669986261047240,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 716018300891840,
+													"parameters": {
+														"first-value": "Functions.trigger_talkie_is_seen(triggers_talkie.UID)",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "cursor_get_hint_from_trigger",
+													"sid": 878490046848270,
+													"parameters": [
+														"triggers_talkie.UID"
+													]
+												}
+											],
+											"sid": 124056669597551
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 952868334494975
+												},
+												{
+													"id": "is-visible",
+													"objectClass": "sprfont_cursorhint",
+													"sid": 795529320108224
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "cursor_clear_hint",
+													"sid": 890782287783335
+												}
+											],
+											"sid": 579485461497758
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 215796969977234
+										},
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
 											"sid": 357775597230547,
 											"parameters": {
 												"object": "triggers_dialogic"
@@ -709,93 +770,6 @@
 												}
 											],
 											"sid": 506476555198499
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 364755880282363
-										},
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 302217257348706,
-											"parameters": {
-												"object": "triggers_talkie"
-											}
-										},
-										{
-											"id": "pick-topbottom",
-											"objectClass": "triggers_talkie",
-											"sid": 718348852400076,
-											"parameters": {
-												"which": "top"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 858008518198220,
-											"parameters": {
-												"first-value": "distance(Player.X, Player.Y,  triggers_talkie.X,triggers_talkie.Y)",
-												"comparison": 3,
-												"second-value": "200"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 468369644765373,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 419776399795556,
-													"parameters": {
-														"first-value": "Functions.trigger_talkie_is_seen(triggers_talkie.UID)",
-														"comparison": 0,
-														"second-value": "1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "cursor_get_hint_from_trigger",
-													"sid": 333897519226918,
-													"parameters": [
-														"triggers_talkie.UID"
-													]
-												}
-											],
-											"sid": 609169191224411
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 985607536576282
-												},
-												{
-													"id": "is-visible",
-													"objectClass": "sprfont_cursorhint",
-													"sid": 943263337383078
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "cursor_clear_hint",
-													"sid": 621004621045054
-												}
-											],
-											"sid": 806203131345767
 										}
 									]
 								},

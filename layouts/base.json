@@ -1915,7 +1915,7 @@
 					"world": {
 						"x": 4342.991882320107,
 						"y": 3313.2582532749216,
-						"width": 31.891598597589137,
+						"width": 31.891598597589134,
 						"height": 42.80188232834331,
 						"originX": 0.4540229885057471,
 						"originY": 0.5129310344827587,
@@ -2262,7 +2262,7 @@
 							"behaviors": {
 								"Solid": {
 									"properties": {
-										"enabled": false,
+										"enabled": true,
 										"tags": "npc"
 									}
 								},
@@ -2322,7 +2322,7 @@
 							"behaviors": {
 								"Solid": {
 									"properties": {
-										"enabled": false,
+										"enabled": true,
 										"tags": "npc"
 									}
 								},
@@ -2382,7 +2382,7 @@
 							"behaviors": {
 								"Solid": {
 									"properties": {
-										"enabled": false,
+										"enabled": true,
 										"tags": "npc"
 									}
 								},
@@ -2442,7 +2442,7 @@
 							"behaviors": {
 								"Solid": {
 									"properties": {
-										"enabled": false,
+										"enabled": true,
 										"tags": "npc"
 									}
 								},
@@ -2502,7 +2502,7 @@
 							"behaviors": {
 								"Solid": {
 									"properties": {
-										"enabled": false,
+										"enabled": true,
 										"tags": "npc"
 									}
 								},
@@ -3868,7 +3868,7 @@
 						"x": 4725,
 						"y": 2901.5,
 						"width": 19.669990871818754,
-						"height": 1820,
+						"height": 1820.0000000000002,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -6378,8 +6378,8 @@
 							},
 							"behaviors": {},
 							"world": {
-								"x": 4137.824424330525,
-								"y": 3797.1205951956013,
+								"x": 4132.769644718723,
+								"y": 3799.928806091047,
 								"width": 204.61303261514058,
 								"height": 18.980182710562076,
 								"originX": 0.5,
@@ -6406,21 +6406,21 @@
 							"uid": 839,
 							"instanceVariables": {
 								"SceneName": "base-talking",
-								"dialogName": "base-robert-greet",
+								"dialogName": "base-robert-talk",
 								"lineNum": 0,
 								"npc_uid": 601,
 								"interactive_start": true,
 								"repeatable": false,
 								"active": true,
 								"autostart": false,
-								"max_distance": 300,
+								"max_distance": 500,
 								"activation_distance": 125,
-								"is_visible_trough_walls": false
+								"is_visible_trough_walls": true
 							},
 							"behaviors": {},
 							"world": {
-								"x": 4229.448880202664,
-								"y": 3719.604670704801,
+								"x": 4340.09238948323,
+								"y": 3735.330651719297,
 								"width": 61.304050185962296,
 								"height": 48.89202639515679,
 								"originX": 0.5,
