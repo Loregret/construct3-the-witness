@@ -6468,7 +6468,40 @@
 					"name": "triggers_debug",
 					"overriden": 0,
 					"subLayers": [],
-					"instances": [],
+					"instances": [
+						{
+							"type": "triggers_audio_emitter",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 453,
+							"instanceVariables": {
+								"audioname": "car engine",
+								"volume": -25
+							},
+							"behaviors": {},
+							"world": {
+								"x": 4199,
+								"y": 4422,
+								"width": 85,
+								"height": 85,
+								"originX": 1.011764705882353,
+								"originY": 1.2117647058823529,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						}
+					],
 					"sid": 572852541290308,
 					"effectTypes": [],
 					"isInitiallyVisible": false,
