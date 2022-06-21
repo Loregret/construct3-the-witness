@@ -128,6 +128,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "shadowcaster",
+			"name": "Shadow caster",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
@@ -215,14 +223,6 @@
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "shadowcaster",
-			"name": "Shadow caster",
-			"author": "Scirra",
-			"version": "r293.3",
-			"bundled": false
-		},
-		{
 			"type": "effect",
 			"id": "grayscale",
 			"name": "Grayscale",
@@ -249,10 +249,7 @@
 	],
 	"uniqueId": "bmm21df34rr",
 	"objectTypes": {
-		"items": [
-			"TiledBackground",
-			"Sprite"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -274,13 +271,12 @@
 					"car",
 					"house_door",
 					"house_concrete",
-					"metal_door",
 					"window",
 					"dust",
 					"dust2",
 					"stone",
-					"box",
-					"house_bricks"
+					"house_bricks",
+					"shadowcaster"
 				],
 				"subfolders": [
 					{
@@ -290,7 +286,8 @@
 							"sand",
 							"concrete",
 							"w_floor1",
-							"w_floor2"
+							"w_floor2",
+							"road3"
 						],
 						"subfolders": [],
 						"name": "textures"
@@ -393,7 +390,13 @@
 					"table",
 					"decal_dirt",
 					"door",
-					"road2"
+					"road2",
+					"table2",
+					"stool1",
+					"lamp1",
+					"metal_door",
+					"plant1",
+					"box"
 				],
 				"subfolders": [],
 				"name": "furniture"
@@ -478,7 +481,8 @@
 					"enemies",
 					"FX",
 					"lights",
-					"floors"
+					"floors",
+					"furniture"
 				],
 				"subfolders": [],
 				"name": "Families"
