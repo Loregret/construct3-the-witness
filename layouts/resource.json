@@ -476,7 +476,7 @@
 					}
 				},
 				{
-					"type": "trigger",
+					"type": "triggers_audio_waves",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1098,12 +1098,17 @@
 					},
 					"uid": 328,
 					"instanceVariables": {
+						"SceneName": "",
 						"dialogName": "",
 						"lineNum": 0,
 						"npc_uid": -1,
+						"interactive_start": false,
 						"repeatable": true,
 						"active": true,
-						"autostart": true
+						"autostart": true,
+						"max_distance": 250,
+						"activation_distance": 0,
+						"is_visible_trough_walls": false
 					},
 					"behaviors": {},
 					"world": {

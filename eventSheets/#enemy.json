@@ -2841,7 +2841,7 @@
 									"objectClass": "runner",
 									"sid": 434464809796077,
 									"parameters": {
-										"object": "trigger"
+										"object": "triggers_audio_waves"
 									}
 								},
 								{
@@ -2884,8 +2884,8 @@
 											"sid": 362339095177663,
 											"parameters": [
 												"runner.UID",
-												"trigger.X + random(-50,50)",
-												"trigger.Y + random(-50,50)"
+												"triggers_audio_waves.X + random(-50,50)",
+												"triggers_audio_waves.Y + random(-50,50)"
 											]
 										}
 									],

@@ -255,6 +255,43 @@
 			]
 		}			
 	],
+	"base-talking": [
+		{
+			"id": "base-robert-greet",
+			"dialogs": [
+				{
+					"char": "npc",				
+					"line": "Hi, Robert!",
+					"speed": 0.5,					
+					"wait": 0.8
+				},
+				{
+					"char": "player",				
+					"line": "Hello.",
+					"speed": 0.45,
+					"wait": 0.8
+				}	
+			]
+		},
+		{
+			"id": "base-robert-talk",
+			"dialogs": [
+				{
+					"char": "npc",				
+					"line": "Hi, Robert!",
+					"speed": 0.5,					
+					"wait": 0.8
+				},
+				{
+					"char": "player",				
+					"line": "Hello.",
+					"speed": 0.45,
+					"wait": 0.8
+				}	
+			]
+		},		
+		
+	],
 	"talking": [
 		{
 			"id": "corpse-reaction1",
@@ -344,13 +381,20 @@
 					"line": "**Examine**"		
 				}		
 			]
-		},
+		},	
 		{
 			"id": "ui_pickup",
 			"dialogs": [
 				{			
 					"line": "**Pick up**"		
 				}
+			]
+		},
+			"id": "ui_talk",
+			"dialogs": [
+				{		
+					"line": "**Talk**"		
+				}		
 			]
 		}		
 	]	

@@ -1261,7 +1261,7 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "dialog_trigger"
+												"object-clicked": "triggers_dialogic"
 											}
 										}
 									],
@@ -1296,7 +1296,7 @@
 													"conditions": [
 														{
 															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
+															"objectClass": "triggers_dialogic",
 															"sid": 247952490281887,
 															"parameters": {
 																"instance-variable": "active"
@@ -1304,10 +1304,10 @@
 														},
 														{
 															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
+															"objectClass": "triggers_dialogic",
 															"sid": 975648613827251,
 															"parameters": {
-																"instance-variable": "auto_start"
+																"instance-variable": "autostart"
 															},
 															"isInverted": true
 														},
@@ -1316,7 +1316,7 @@
 															"objectClass": "System",
 															"sid": 480779367630101,
 															"parameters": {
-																"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+																"first-value": "Functions.dialogic_is_dialog_playing(triggers_dialogic.DialogName, 0, 0)",
 																"comparison": 0,
 																"second-value": "0"
 															}
@@ -1326,7 +1326,7 @@
 															"objectClass": "System",
 															"sid": 238103090800471,
 															"parameters": {
-																"first-value": "Functions.trigger_dialog_is_available(dialog_trigger.UID)",
+																"first-value": "Functions.trigger_dialog_is_available(triggers_dialogic.UID)",
 																"comparison": 0,
 																"second-value": "1"
 															}
@@ -1337,9 +1337,9 @@
 															"callFunction": "dialogic_play_dialog",
 															"sid": 199014161241319,
 															"parameters": [
-																"dialog_trigger.SceneName",
-																"dialog_trigger.DialogName",
-																"dialog_trigger.LineNum"
+																"triggers_dialogic.SceneName",
+																"triggers_dialogic.DialogName",
+																"triggers_dialogic.LineNum"
 															]
 														}
 													],
@@ -1350,7 +1350,7 @@
 															"conditions": [
 																{
 																	"id": "is-boolean-instance-variable-set",
-																	"objectClass": "dialog_trigger",
+																	"objectClass": "triggers_dialogic",
 																	"sid": 734987843621141,
 																	"parameters": {
 																		"instance-variable": "repeatable"
@@ -1361,7 +1361,7 @@
 															"actions": [
 																{
 																	"id": "set-boolean-instvar",
-																	"objectClass": "dialog_trigger",
+																	"objectClass": "triggers_dialogic",
 																	"sid": 789051438370830,
 																	"parameters": {
 																		"instance-variable": "active",
@@ -3403,7 +3403,7 @@
 													"objectClass": "Player",
 													"sid": 202787715336838,
 													"parameters": {
-														"object": "dialog_trigger"
+														"object": "triggers_dialogic"
 													}
 												},
 												{
@@ -3411,14 +3411,14 @@
 													"objectClass": "System",
 													"sid": 286616069937905,
 													"parameters": {
-														"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+														"first-value": "Functions.dialogic_is_dialog_playing(triggers_dialogic.DialogName, 0, 0)",
 														"comparison": 0,
 														"second-value": "0"
 													}
 												},
 												{
 													"id": "is-boolean-instance-variable-set",
-													"objectClass": "dialog_trigger",
+													"objectClass": "triggers_dialogic",
 													"sid": 563474009361520,
 													"parameters": {
 														"instance-variable": "active"
@@ -3426,10 +3426,10 @@
 												},
 												{
 													"id": "is-boolean-instance-variable-set",
-													"objectClass": "dialog_trigger",
+													"objectClass": "triggers_dialogic",
 													"sid": 578225210595910,
 													"parameters": {
-														"instance-variable": "auto_start"
+														"instance-variable": "autostart"
 													},
 													"isInverted": true
 												}
@@ -3439,9 +3439,9 @@
 													"callFunction": "dialogic_play_dialog",
 													"sid": 318626848654059,
 													"parameters": [
-														"dialog_trigger.SceneName",
-														"dialog_trigger.DialogName",
-														"dialog_trigger.LineNum"
+														"triggers_dialogic.SceneName",
+														"triggers_dialogic.DialogName",
+														"triggers_dialogic.LineNum"
 													]
 												}
 											],
@@ -3453,7 +3453,7 @@
 													"conditions": [
 														{
 															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
+															"objectClass": "triggers_dialogic",
 															"sid": 583197554332837,
 															"parameters": {
 																"instance-variable": "repeatable"
@@ -3464,7 +3464,7 @@
 													"actions": [
 														{
 															"id": "set-boolean-instvar",
-															"objectClass": "dialog_trigger",
+															"objectClass": "triggers_dialogic",
 															"sid": 209094901731619,
 															"parameters": {
 																"instance-variable": "active",
@@ -9019,14 +9019,14 @@
 									"conditions": [
 										{
 											"id": "on-created",
-											"objectClass": "dialog_trigger",
+											"objectClass": "triggers_dialogic",
 											"sid": 392137901971175
 										}
 									],
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "dialog_trigger",
+											"objectClass": "triggers_dialogic",
 											"sid": 232576443550096,
 											"parameters": {
 												"instance-variable": "max_distance",
@@ -9044,12 +9044,12 @@
 											"objectClass": "Player",
 											"sid": 930750316794404,
 											"parameters": {
-												"object": "dialog_trigger"
+												"object": "triggers_dialogic"
 											}
 										},
 										{
 											"id": "is-boolean-instance-variable-set",
-											"objectClass": "dialog_trigger",
+											"objectClass": "triggers_dialogic",
 											"sid": 625763401552208,
 											"parameters": {
 												"instance-variable": "active"
@@ -9057,10 +9057,10 @@
 										},
 										{
 											"id": "is-boolean-instance-variable-set",
-											"objectClass": "dialog_trigger",
+											"objectClass": "triggers_dialogic",
 											"sid": 793130060822857,
 											"parameters": {
-												"instance-variable": "auto_start"
+												"instance-variable": "autostart"
 											}
 										}
 									],
@@ -9075,7 +9075,7 @@
 													"objectClass": "System",
 													"sid": 238825530297900,
 													"parameters": {
-														"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+														"first-value": "Functions.dialogic_is_dialog_playing(triggers_dialogic.DialogName, 0, 0)",
 														"comparison": 0,
 														"second-value": "0"
 													}
@@ -9086,9 +9086,9 @@
 													"callFunction": "dialogic_play_dialog",
 													"sid": 902455881204017,
 													"parameters": [
-														"dialog_trigger.SceneName",
-														"dialog_trigger.DialogName",
-														"dialog_trigger.LineNum"
+														"triggers_dialogic.SceneName",
+														"triggers_dialogic.DialogName",
+														"triggers_dialogic.LineNum"
 													]
 												}
 											],
@@ -9099,7 +9099,7 @@
 											"conditions": [
 												{
 													"id": "is-boolean-instance-variable-set",
-													"objectClass": "dialog_trigger",
+													"objectClass": "triggers_dialogic",
 													"sid": 529295212867653,
 													"parameters": {
 														"instance-variable": "repeatable"
@@ -9110,7 +9110,7 @@
 											"actions": [
 												{
 													"id": "set-boolean-instvar",
-													"objectClass": "dialog_trigger",
+													"objectClass": "triggers_dialogic",
 													"sid": 202113059241596,
 													"parameters": {
 														"instance-variable": "active",
@@ -9132,6 +9132,198 @@
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [
+								{
+									"functionName": "trigger_talkie_is_available",
+									"functionDescription": "",
+									"functionCategory": "#triggers",
+									"functionReturnType": "number",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "trigger_UID",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 830454895675200
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 531919000405769,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "triggers_talkie",
+													"sid": 261623736221923,
+													"parameters": {
+														"unique-id": "trigger_UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 154076003219980,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 368067836509949,
+															"parameters": {
+																"first-value": "Functions.talkie_is_dialog_playing(triggers_talkie.DialogName, 0, 0)",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "triggers_talkie",
+															"sid": 702545899820603,
+															"parameters": {
+																"instance-variable": "autostart"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "triggers_talkie",
+															"sid": 832148253331732,
+															"parameters": {
+																"instance-variable": "active"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 272407661918621,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "has-los-to-object",
+																	"objectClass": "Player",
+																	"sid": 801942597254603,
+																	"behaviorType": "LineOfSight",
+																	"parameters": {
+																		"object": "triggers_talkie",
+																		"image-point": "0"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 791639145484708,
+																	"parameters": {
+																		"first-value": "distance(Player.X, Player.Y, triggers_talkie.X, triggers_talkie.Y)",
+																		"comparison": 3,
+																		"second-value": "triggers_talkie.activation_distance"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 553190558160717,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 538572251970354
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 889060868170696
+																},
+																{
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "triggers_talkie",
+																	"sid": 210175481026249,
+																	"parameters": {
+																		"instance-variable": "is_visible_trough_walls"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 547157527058136,
+																	"parameters": {
+																		"first-value": "distance(Player.X, Player.Y, triggers_talkie.X, triggers_talkie.Y)",
+																		"comparison": 3,
+																		"second-value": "triggers_talkie.activation_distance"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 882011947974067,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 410264979199180
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 329743633908088
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 470097869037253,
+																	"parameters": {
+																		"value": "0"
+																	}
+																}
+															],
+															"sid": 614181999865235
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 764196209195902
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 759094528976390,
+															"parameters": {
+																"value": "0"
+															}
+														}
+													],
+													"sid": 827169663439799
+												}
+											]
+										}
+									]
+								},
 								{
 									"functionName": "trigger_dialog_is_available",
 									"functionDescription": "",
@@ -9157,7 +9349,7 @@
 											"conditions": [
 												{
 													"id": "pick-by-unique-id",
-													"objectClass": "dialog_trigger",
+													"objectClass": "triggers_dialogic",
 													"sid": 616551818554752,
 													"parameters": {
 														"unique-id": "trigger_UID"
@@ -9175,23 +9367,23 @@
 															"objectClass": "System",
 															"sid": 478729487919649,
 															"parameters": {
-																"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+																"first-value": "Functions.dialogic_is_dialog_playing(triggers_dialogic.DialogName, 0, 0)",
 																"comparison": 0,
 																"second-value": "0"
 															}
 														},
 														{
 															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
+															"objectClass": "triggers_dialogic",
 															"sid": 666224455671225,
 															"parameters": {
-																"instance-variable": "auto_start"
+																"instance-variable": "autostart"
 															},
 															"isInverted": true
 														},
 														{
 															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
+															"objectClass": "triggers_dialogic",
 															"sid": 520990136954250,
 															"parameters": {
 																"instance-variable": "active"
@@ -9210,7 +9402,7 @@
 																	"sid": 185470925987944,
 																	"behaviorType": "LineOfSight",
 																	"parameters": {
-																		"object": "dialog_trigger",
+																		"object": "triggers_dialogic",
 																		"image-point": "0"
 																	}
 																},
@@ -9219,9 +9411,9 @@
 																	"objectClass": "System",
 																	"sid": 267692876639732,
 																	"parameters": {
-																		"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+																		"first-value": "distance(Player.X, Player.Y, triggers_dialogic.X, triggers_dialogic.Y)",
 																		"comparison": 3,
-																		"second-value": "dialog_trigger.activation_distance"
+																		"second-value": "triggers_dialogic.activation_distance"
 																	}
 																}
 															],
@@ -9247,7 +9439,7 @@
 																},
 																{
 																	"id": "is-boolean-instance-variable-set",
-																	"objectClass": "dialog_trigger",
+																	"objectClass": "triggers_dialogic",
 																	"sid": 468130538170119,
 																	"parameters": {
 																		"instance-variable": "is_visible_trough_walls"
@@ -9258,9 +9450,9 @@
 																	"objectClass": "System",
 																	"sid": 462138522091857,
 																	"parameters": {
-																		"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+																		"first-value": "distance(Player.X, Player.Y, triggers_dialogic.X, triggers_dialogic.Y)",
 																		"comparison": 3,
-																		"second-value": "dialog_trigger.activation_distance"
+																		"second-value": "triggers_dialogic.activation_distance"
 																	}
 																}
 															],
@@ -9349,7 +9541,7 @@
 											"conditions": [
 												{
 													"id": "pick-by-unique-id",
-													"objectClass": "dialog_trigger",
+													"objectClass": "triggers_dialogic",
 													"sid": 199062268744191,
 													"parameters": {
 														"unique-id": "trigger_UID"
@@ -9367,23 +9559,23 @@
 															"objectClass": "System",
 															"sid": 539808887839673,
 															"parameters": {
-																"first-value": "Functions.dialogic_is_dialog_playing(dialog_trigger.DialogName, 0, 0)",
+																"first-value": "Functions.dialogic_is_dialog_playing(triggers_dialogic.DialogName, 0, 0)",
 																"comparison": 0,
 																"second-value": "0"
 															}
 														},
 														{
 															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
+															"objectClass": "triggers_dialogic",
 															"sid": 356637192816161,
 															"parameters": {
-																"instance-variable": "auto_start"
+																"instance-variable": "autostart"
 															},
 															"isInverted": true
 														},
 														{
 															"id": "is-boolean-instance-variable-set",
-															"objectClass": "dialog_trigger",
+															"objectClass": "triggers_dialogic",
 															"sid": 746695308552402,
 															"parameters": {
 																"instance-variable": "active"
@@ -9402,7 +9594,7 @@
 																	"sid": 911262819045691,
 																	"behaviorType": "LineOfSight",
 																	"parameters": {
-																		"object": "dialog_trigger",
+																		"object": "triggers_dialogic",
 																		"image-point": "0"
 																	}
 																},
@@ -9411,9 +9603,9 @@
 																	"objectClass": "System",
 																	"sid": 984718689289452,
 																	"parameters": {
-																		"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+																		"first-value": "distance(Player.X, Player.Y, triggers_dialogic.X, triggers_dialogic.Y)",
 																		"comparison": 3,
-																		"second-value": "dialog_trigger.max_distance"
+																		"second-value": "triggers_dialogic.max_distance"
 																	}
 																}
 															],
@@ -9439,7 +9631,7 @@
 																},
 																{
 																	"id": "is-boolean-instance-variable-set",
-																	"objectClass": "dialog_trigger",
+																	"objectClass": "triggers_dialogic",
 																	"sid": 396430945626654,
 																	"parameters": {
 																		"instance-variable": "is_visible_trough_walls"
@@ -9450,9 +9642,9 @@
 																	"objectClass": "System",
 																	"sid": 375668348802643,
 																	"parameters": {
-																		"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+																		"first-value": "distance(Player.X, Player.Y, triggers_dialogic.X, triggers_dialogic.Y)",
 																		"comparison": 3,
-																		"second-value": "dialog_trigger.max_distance"
+																		"second-value": "triggers_dialogic.max_distance"
 																	}
 																}
 															],
@@ -9511,6 +9703,186 @@
 														}
 													],
 													"sid": 668159555366072
+												}
+											]
+										}
+									]
+								},
+								{
+									"functionName": "trigger_talkie_is_seen",
+									"functionDescription": "",
+									"functionCategory": "#triggers",
+									"functionReturnType": "number",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "trigger_UID",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 907690529134158
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 302905397595689,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "triggers_talkie",
+													"sid": 113485108713242,
+													"parameters": {
+														"unique-id": "trigger_UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 100145769605037,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 870576428202115,
+															"parameters": {
+																"first-value": "Functions.talkie_is_dialog_playing(triggers_talkie.DialogName, 0, 0)",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "triggers_talkie",
+															"sid": 530520259348439,
+															"parameters": {
+																"instance-variable": "autostart"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "triggers_talkie",
+															"sid": 827396308642791,
+															"parameters": {
+																"instance-variable": "active"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 660802273147842,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 609054288022122,
+																	"parameters": {
+																		"first-value": "distance(Player.X, Player.Y, triggers_talkie.X, triggers_talkie.Y)",
+																		"comparison": 3,
+																		"second-value": "triggers_talkie.max_distance"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 387687265375383,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "has-los-to-object",
+																			"objectClass": "Player",
+																			"sid": 835515322986689,
+																			"behaviorType": "LineOfSight",
+																			"parameters": {
+																				"object": "triggers_talkie",
+																				"image-point": "0"
+																			}
+																		},
+																		{
+																			"id": "compare-two-values",
+																			"objectClass": "System",
+																			"sid": 122594011863594,
+																			"parameters": {
+																				"first-value": "distance(Player.X, Player.Y, triggers_talkie.X, triggers_talkie.Y)",
+																				"comparison": 3,
+																				"second-value": "triggers_talkie.max_distance"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-function-return-value",
+																			"objectClass": "Functions",
+																			"sid": 564389804890882,
+																			"parameters": {
+																				"value": "1"
+																			}
+																		}
+																	],
+																	"sid": 442588631656647
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 443370342650563
+																		},
+																		{
+																			"id": "is-boolean-instance-variable-set",
+																			"objectClass": "triggers_talkie",
+																			"sid": 875134668524332,
+																			"parameters": {
+																				"instance-variable": "is_visible_trough_walls"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-function-return-value",
+																			"objectClass": "Functions",
+																			"sid": 932007530574861,
+																			"parameters": {
+																				"value": "1"
+																			}
+																		}
+																	],
+																	"sid": 213288236977747
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 940045242476506
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 994621974177144,
+																	"parameters": {
+																		"value": "0"
+																	}
+																}
+															],
+															"sid": 212860956774651
+														}
+													]
 												}
 											]
 										}
@@ -9579,7 +9951,7 @@
 											"objectClass": "System",
 											"sid": 165157264250004,
 											"parameters": {
-												"object-to-create": "trigger",
+												"object-to-create": "triggers_audio_waves",
 												"layer": "\"triggers_debug\"",
 												"x": "X",
 												"y": "Y",
@@ -9589,7 +9961,7 @@
 										},
 										{
 											"id": "set-scale",
-											"objectClass": "trigger",
+											"objectClass": "triggers_audio_waves",
 											"sid": 991618264030889,
 											"parameters": {
 												"scale": "Scale"
@@ -9597,7 +9969,7 @@
 										},
 										{
 											"id": "set-fade-out-time",
-											"objectClass": "trigger",
+											"objectClass": "triggers_audio_waves",
 											"sid": 958407492972670,
 											"behaviorType": "Fade",
 											"parameters": {

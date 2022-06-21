@@ -3444,12 +3444,17 @@
 							},
 							"uid": 329,
 							"instanceVariables": {
+								"SceneName": "talking",
 								"dialogName": "test-greetings",
 								"lineNum": 0,
 								"npc_uid": 242,
+								"interactive_start": false,
 								"repeatable": true,
 								"active": true,
-								"autostart": true
+								"autostart": true,
+								"max_distance": 250,
+								"activation_distance": 0,
+								"is_visible_trough_walls": false
 							},
 							"behaviors": {},
 							"world": {
@@ -3480,12 +3485,17 @@
 							},
 							"uid": 411,
 							"instanceVariables": {
+								"SceneName": "talking",
 								"dialogName": "test1",
 								"lineNum": 0,
 								"npc_uid": 410,
+								"interactive_start": false,
 								"repeatable": true,
 								"active": true,
-								"autostart": true
+								"autostart": true,
+								"max_distance": 250,
+								"activation_distance": 0,
+								"is_visible_trough_walls": false
 							},
 							"behaviors": {},
 							"world": {

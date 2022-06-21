@@ -99,7 +99,220 @@
 							"conditions": [
 								{
 									"id": "pick-by-unique-id",
-									"objectClass": "dialog_trigger",
+									"objectClass": "triggers_dialogic",
+									"sid": 348052581337880,
+									"parameters": {
+										"unique-id": "UID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 521810926655886,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 818419911080841
+										},
+										{
+											"id": "compare-text",
+											"objectClass": "sprfont_cursorhint",
+											"sid": 892115409934614,
+											"parameters": {
+												"text-to-compare": "\"\"",
+												"case-sensitivity": "ignore-case"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 579341870054530,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "JSON",
+													"sid": 994062537836088,
+													"parameters": {
+														"path": "triggers_dialogic.SceneName&\".\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 459644683628335,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "JSON",
+															"sid": 368119126818488,
+															"parameters": {
+																"path": "triggers_dialogic.SceneName&\".\"&JSON.CurrentKey&\".id\"",
+																"cmp": 0,
+																"value": "triggers_dialogic.DialogName"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 682885097838443,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-value",
+																	"objectClass": "JSON",
+																	"sid": 351116874218767,
+																	"parameters": {
+																		"path": "triggers_dialogic.SceneName&\".\"&JSON.CurrentKey&\".name\"",
+																		"cmp": 1,
+																		"value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "sprfont_cursorhint",
+																	"sid": 858386393089923,
+																	"parameters": {
+																		"text": "JSON.Get(triggers_dialogic.SceneName&\".\"& JSON.CurrentKey &\".name\")"
+																	}
+																},
+																{
+																	"id": "set-visible",
+																	"objectClass": "sprfont_cursorhint",
+																	"sid": 226805031658184,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																}
+															],
+															"sid": 285642255024378
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 119748187933383
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "sprfont_cursorhint",
+																	"sid": 470433025850777,
+																	"parameters": {
+																		"text": "JSON.Get(\"misc.0.dialogs.0.line\")"
+																	}
+																},
+																{
+																	"id": "set-visible",
+																	"objectClass": "sprfont_cursorhint",
+																	"sid": 993915552791934,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																}
+															],
+															"sid": 735055205882362
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "colors"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 846305609470774,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 829451595952505,
+													"parameters": {
+														"first-value": "Functions.trigger_dialog_is_seen(triggers_dialogic.UID)",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 539258697101737,
+													"parameters": {
+														"first-value": "distance(Player.X,Player.Y, triggers_dialogic.X, triggers_dialogic.Y)",
+														"comparison": 3,
+														"second-value": "triggers_dialogic.activation_distance"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-default-color",
+													"objectClass": "sprfont_cursorhint",
+													"sid": 369758260321042,
+													"parameters": {
+														"color": "rgbEx(93, 93, 93)"
+													}
+												}
+											],
+											"sid": 301855326569956
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 987138940316541
+												}
+											],
+											"actions": [
+												{
+													"id": "set-default-color",
+													"objectClass": "sprfont_cursorhint",
+													"sid": 519134072261949,
+													"parameters": {
+														"color": "rgbEx(36, 36, 36)"
+													}
+												}
+											],
+											"sid": 903605483194794
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 769853023367063
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "triggers_talkie",
 									"sid": 606119187364258,
 									"parameters": {
 										"unique-id": "UID"
@@ -136,9 +349,9 @@
 												{
 													"id": "for-each",
 													"objectClass": "JSON",
-													"sid": 849451202819833,
+													"sid": 521827781912411,
 													"parameters": {
-														"path": "dialog_trigger.SceneName&\".\""
+														"path": "triggers_talkie.SceneName&\".\""
 													}
 												}
 											],
@@ -153,9 +366,9 @@
 															"objectClass": "JSON",
 															"sid": 599361512893698,
 															"parameters": {
-																"path": "dialog_trigger.SceneName&\".\"&JSON.CurrentKey&\".id\"",
+																"path": "triggers_talkie.SceneName&\".\"&JSON.CurrentKey&\".id\"",
 																"cmp": 0,
-																"value": "dialog_trigger.DialogName"
+																"value": "triggers_talkie.DialogName"
 															}
 														}
 													],
@@ -164,13 +377,44 @@
 													"children": [
 														{
 															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-visible",
+																	"objectClass": "sprfont_cursorhint",
+																	"sid": 484555788505697,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "sprfont_cursorhint",
+																	"sid": 102771565929995,
+																	"parameters": {
+																		"text": "JSON.Get(\"misc.0.dialogs.2.line\")"
+																	}
+																},
+																{
+																	"id": "alert",
+																	"objectClass": "Browser",
+																	"sid": 548676738488385,
+																	"parameters": {
+																		"message": "\"\""
+																	}
+																}
+															],
+															"sid": 318515641314099
+														},
+														{
+															"eventType": "block",
 															"conditions": [
 																{
 																	"id": "compare-value",
 																	"objectClass": "JSON",
 																	"sid": 807672178727964,
 																	"parameters": {
-																		"path": "dialog_trigger.SceneName&\".\"&JSON.CurrentKey&\".name\"",
+																		"path": "triggers_talkie.SceneName&\".\"&JSON.CurrentKey&\".name\"",
 																		"cmp": 1,
 																		"value": "0"
 																	}
@@ -182,7 +426,7 @@
 																	"objectClass": "sprfont_cursorhint",
 																	"sid": 741374654087020,
 																	"parameters": {
-																		"text": "JSON.Get(dialog_trigger.SceneName&\".\"& JSON.CurrentKey &\".name\")"
+																		"text": "JSON.Get(triggers_talkie.SceneName&\".\"& JSON.CurrentKey &\".name\")"
 																	}
 																},
 																{
@@ -194,36 +438,8 @@
 																	}
 																}
 															],
-															"sid": 920496284425594
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 379105872374826
-																}
-															],
-															"actions": [
-																{
-																	"id": "set-text",
-																	"objectClass": "sprfont_cursorhint",
-																	"sid": 733946238559951,
-																	"parameters": {
-																		"text": "JSON.Get(\"misc.0.dialogs.0.line\")"
-																	}
-																},
-																{
-																	"id": "set-visible",
-																	"objectClass": "sprfont_cursorhint",
-																	"sid": 658334600500660,
-																	"parameters": {
-																		"visibility": "visible"
-																	}
-																}
-															],
-															"sid": 602816935842231
+															"sid": 920496284425594,
+															"disabled": true
 														}
 													]
 												}
@@ -249,7 +465,7 @@
 													"objectClass": "System",
 													"sid": 980766327376118,
 													"parameters": {
-														"first-value": "Functions.trigger_dialog_is_seen(dialog_trigger.UID)",
+														"first-value": "Functions.trigger_dialog_is_seen(triggers_talkie.UID)",
 														"comparison": 0,
 														"second-value": "1"
 													}
@@ -259,9 +475,9 @@
 													"objectClass": "System",
 													"sid": 703930672595821,
 													"parameters": {
-														"first-value": "distance(Player.X,Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+														"first-value": "distance(Player.X,Player.Y, triggers_talkie.X, triggers_talkie.Y)",
 														"comparison": 3,
-														"second-value": "dialog_trigger.activation_distance"
+														"second-value": "triggers_talkie.activation_distance"
 													}
 												}
 											],
@@ -422,12 +638,12 @@
 											"objectClass": "Mouse",
 											"sid": 357775597230547,
 											"parameters": {
-												"object": "dialog_trigger"
+												"object": "triggers_dialogic"
 											}
 										},
 										{
 											"id": "pick-topbottom",
-											"objectClass": "dialog_trigger",
+											"objectClass": "triggers_dialogic",
 											"sid": 995497608524516,
 											"parameters": {
 												"which": "top"
@@ -438,9 +654,9 @@
 											"objectClass": "System",
 											"sid": 796912356005257,
 											"parameters": {
-												"first-value": "distance(Player.X, Player.Y, dialog_trigger.X, dialog_trigger.Y)",
+												"first-value": "distance(Player.X, Player.Y, triggers_dialogic.X, triggers_dialogic.Y)",
 												"comparison": 3,
-												"second-value": "dialog_trigger.max_distance"
+												"second-value": "triggers_dialogic.max_distance"
 											}
 										}
 									],
@@ -455,7 +671,7 @@
 													"objectClass": "System",
 													"sid": 450590220269003,
 													"parameters": {
-														"first-value": "Functions.trigger_dialog_is_seen(dialog_trigger.UID)",
+														"first-value": "Functions.trigger_dialog_is_seen(triggers_dialogic.UID)",
 														"comparison": 0,
 														"second-value": "1"
 													}
@@ -466,7 +682,7 @@
 													"callFunction": "cursor_get_hint_from_trigger",
 													"sid": 834849449987965,
 													"parameters": [
-														"dialog_trigger.UID"
+														"triggers_dialogic.UID"
 													]
 												}
 											],
@@ -493,6 +709,93 @@
 												}
 											],
 											"sid": 506476555198499
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 364755880282363
+										},
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 302217257348706,
+											"parameters": {
+												"object": "triggers_talkie"
+											}
+										},
+										{
+											"id": "pick-topbottom",
+											"objectClass": "triggers_talkie",
+											"sid": 718348852400076,
+											"parameters": {
+												"which": "top"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 858008518198220,
+											"parameters": {
+												"first-value": "distance(Player.X, Player.Y,  triggers_talkie.X,triggers_talkie.Y)",
+												"comparison": 3,
+												"second-value": "200"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 468369644765373,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 419776399795556,
+													"parameters": {
+														"first-value": "Functions.trigger_talkie_is_seen(triggers_talkie.UID)",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "cursor_get_hint_from_trigger",
+													"sid": 333897519226918,
+													"parameters": [
+														"triggers_talkie.UID"
+													]
+												}
+											],
+											"sid": 609169191224411
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 985607536576282
+												},
+												{
+													"id": "is-visible",
+													"objectClass": "sprfont_cursorhint",
+													"sid": 943263337383078
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "cursor_clear_hint",
+													"sid": 621004621045054
+												}
+											],
+											"sid": 806203131345767
 										}
 									]
 								},
