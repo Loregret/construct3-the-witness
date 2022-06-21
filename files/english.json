@@ -255,35 +255,6 @@
 	],
 	"base-talking": [
 		{
-			"id": "npc-talking",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "What a day...",
-					"speed": 0.5,
-					"wait": 0.8
-				},
-				{
-					"char": "npc2",
-					"line": "I'm tired.",
-					"speed": 0.45,
-					"wait": 0.8
-				},
-				{
-					"char": "npc",
-					"line": "Wanna go to the pub after work?",
-					"speed": 0.45,
-					"wait": 0.8
-				},	
-				{
-					"char": "npc2",
-					"line": "Sure.",
-					"speed": 0.45,
-					"wait": 0.8
-				}				
-			]
-		},	
-		{
 			"id": "base-chris-greet",
 			"dialogs": [
 				{
@@ -311,10 +282,34 @@
 				},
 				{
 					"char": "npc",
-					"line": "What?",
+					"line": "FBI agents.",
 					"speed": 0.5,
 					"wait": 0.8
-				}			
+				},
+				{
+					"char": "player",
+					"line": "What do they need?",
+					"speed": 0.45,
+					"wait": 0.8
+				},
+				{
+					"char": "npc",
+					"line": "Lookin' for intruders from wastelands.",
+					"speed": 0.45,
+					"wait": 0.8
+				},
+				{
+					"char": "player",
+					"line": "Really? Have they got so far?",
+					"speed": 0.45,
+					"wait": 0.8
+				},
+				{
+					"char": "npc",
+					"line": "Read the news. 'Runners' are everywhere.",
+					"speed": 0.45,
+					"wait": 0.8
+				}				
 			]
 		}
 	],

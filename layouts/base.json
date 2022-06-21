@@ -2250,7 +2250,7 @@
 							"type": "npc",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "doc2",
+								"initial-animation": "cop2",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -2292,10 +2292,10 @@
 							"world": {
 								"x": 4420,
 								"y": 3840,
-								"width": 36.400000000000006,
-								"height": 46.800000000000004,
-								"originX": 0.48214285714285715,
-								"originY": 0.48611111111111116,
+								"width": 33.800000000000004,
+								"height": 48.1,
+								"originX": 0.5192307692307693,
+								"originY": 0.5,
 								"color": [
 									0.8392156862745098,
 									0.9098039215686274,
@@ -2310,7 +2310,7 @@
 							"type": "npc",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "doc1",
+								"initial-animation": "cop1",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -2355,7 +2355,7 @@
 								"width": 36.400000000000006,
 								"height": 46.800000000000004,
 								"originX": 0.48214285714285715,
-								"originY": 0.48611111111111116,
+								"originY": 0.5138888888888888,
 								"color": [
 									0.8392156862745098,
 									0.9098039215686274,
@@ -6281,6 +6281,63 @@
 						"zElevation": 0,
 						"blendMode": "destination-out"
 					}
+				},
+				{
+					"type": "Light",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 879,
+					"instanceVariables": {
+						"pinUID": -1
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "opacity",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 25,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 4407.787337151595,
+						"y": 3841.776893810752,
+						"width": 365.55823196865504,
+						"height": 222.63307867500535,
+						"originX": 0.512,
+						"originY": 0.486,
+						"color": [
+							1,
+							1,
+							1,
+							0.25
+						],
+						"angle": 6.258300104720636,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
 				}
 			],
 			"sid": 526897213776462,
@@ -6486,7 +6543,71 @@
 							"behaviors": {},
 							"world": {
 								"x": 4199,
-								"y": 4422,
+								"y": 4635,
+								"width": 85,
+								"height": 85,
+								"originX": 1.011764705882353,
+								"originY": 1.2117647058823529,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_audio_emitter",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 877,
+							"instanceVariables": {
+								"audioname": "office amb",
+								"volume": -20
+							},
+							"behaviors": {},
+							"world": {
+								"x": 4726,
+								"y": 3089,
+								"width": 85,
+								"height": 85,
+								"originX": 1.011764705882353,
+								"originY": 1.2117647058823529,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_audio_emitter",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 878,
+							"instanceVariables": {
+								"audioname": "office amb",
+								"volume": -20
+							},
+							"behaviors": {},
+							"world": {
+								"x": 3675,
+								"y": 3092,
 								"width": 85,
 								"height": 85,
 								"originX": 1.011764705882353,
