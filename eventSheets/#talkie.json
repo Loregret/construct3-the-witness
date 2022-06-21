@@ -1182,7 +1182,17 @@
 												{
 													"id": "else",
 													"objectClass": "System",
-													"sid": 635473102853041
+													"sid": 787820873066644
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 627600089952905,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".char\")",
+														"comparison": 0,
+														"second-value": "\"npc\""
+													}
 												}
 											],
 											"actions": [
@@ -1191,7 +1201,7 @@
 													"text": "NPC"
 												}
 											],
-											"sid": 201083567105230,
+											"sid": 116523806694402,
 											"children": [
 												{
 													"eventType": "block",
@@ -1199,7 +1209,7 @@
 														{
 															"id": "pick-by-unique-id",
 															"objectClass": "sprfont_dialog",
-															"sid": 119060368783028,
+															"sid": 937657911224204,
 															"parameters": {
 																"unique-id": "npc_sprfont_uid"
 															}
@@ -1209,7 +1219,7 @@
 														{
 															"id": "set-visible",
 															"objectClass": "sprfont_dialog",
-															"sid": 571945731630294,
+															"sid": 889400021901229,
 															"parameters": {
 																"visibility": "visible"
 															}
@@ -1217,7 +1227,7 @@
 														{
 															"id": "stop-timer",
 															"objectClass": "sprfont_dialog",
-															"sid": 367395997954321,
+															"sid": 132693715988227,
 															"behaviorType": "Timer",
 															"parameters": {
 																"tag": "\"line_over\""
@@ -1226,14 +1236,14 @@
 														{
 															"id": "typewriter-text",
 															"objectClass": "sprfont_dialog",
-															"sid": 921731233526673,
+															"sid": 224306152610894,
 															"parameters": {
 																"text": "JSON.Get( curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".line\")",
 																"duration": "custom_typing_speed=0? default_typing_speed:custom_typing_speed"
 															}
 														}
 													],
-													"sid": 997293895161663
+													"sid": 325147939098933
 												}
 											]
 										}

@@ -255,7 +255,36 @@
 	],
 	"base-talking": [
 		{
-			"id": "base-robert-greet",
+			"id": "npc-talking",
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "What a day...",
+					"speed": 0.5,
+					"wait": 0.8
+				},
+				{
+					"char": "npc2",
+					"line": "I'm tired.",
+					"speed": 0.45,
+					"wait": 0.8
+				},
+				{
+					"char": "npc",
+					"line": "Wanna go to the pub after work?",
+					"speed": 0.45,
+					"wait": 0.8
+				},	
+				{
+					"char": "npc2",
+					"line": "Sure.",
+					"speed": 0.45,
+					"wait": 0.8
+				}				
+			]
+		},	
+		{
+			"id": "base-chris-greet",
 			"dialogs": [
 				{
 					"char": "npc",
@@ -265,27 +294,27 @@
 				},
 				{
 					"char": "player",
-					"line": "Hello.",
+					"line": "Hello, Chris.",
 					"speed": 0.45,
 					"wait": 0.8
 				}
 			]
 		},
 		{
-			"id": "base-robert-talk",
+			"id": "base-chris-talk",
 			"dialogs": [
-				{
-					"char": "npc",
-					"line": "What?",
-					"speed": 0.5,
-					"wait": 0.8
-				},
 				{
 					"char": "player",
 					"line": "Who are those guys outside?",
 					"speed": 0.45,
 					"wait": 0.8
-				}
+				},
+				{
+					"char": "npc",
+					"line": "What?",
+					"speed": 0.5,
+					"wait": 0.8
+				}			
 			]
 		}
 	],
