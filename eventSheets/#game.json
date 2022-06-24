@@ -143,7 +143,7 @@
 			"eventType": "variable",
 			"name": "settings_fps",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -712,6 +712,90 @@
 													"sid": 483524208730285
 												}
 											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 661124435527770
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 860955775814683,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"forest1_with_enemy\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 763676702575181,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 185361091289240,
+													"parameters": {
+														"variable": "flashlight_battery",
+														"value": "500"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 477508779684415,
+													"parameters": {
+														"variable": "stick_lights",
+														"value": "0"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "ShadowLight",
+													"sid": 831925361841267,
+													"parameters": {
+														"opacity": "97"
+													}
+												},
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 248794010330630,
+													"parameters": {
+														"key": "\"pistol\"",
+														"value": "1"
+													}
+												},
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 798819096792694,
+													"parameters": {
+														"key": "\"shotgun\"",
+														"value": "1"
+													}
+												},
+												{
+													"id": "add-key",
+													"objectClass": "weapon",
+													"sid": 302861174210275,
+													"parameters": {
+														"key": "\"ak\"",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 956954165197100
 										}
 									]
 								},
@@ -7190,9 +7274,9 @@
 														{
 															"id": "set-opacity",
 															"objectClass": "Light",
-															"sid": 921826581250512,
+															"sid": 120335649134598,
 															"parameters": {
-																"opacity": "70"
+																"opacity": "45"
 															}
 														},
 														{

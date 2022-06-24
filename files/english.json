@@ -298,7 +298,7 @@
 				},
 				{
 					"char": "player",
-					"line": "Really? Have raiders got so far?",
+					"line": "Really? Have raiders gotten so far?",
 					"speed": 0.45
 				},
 				{
@@ -309,8 +309,69 @@
 				{
 		 			"char": "player",
 					"line": "Madness.",
-					"speed": 0.45
+					"speed": 0.45,
+					"next-dialog": "base-chris-talk2"	
 				}			
+			]
+		},
+		{
+			"id": "base-chris-talk2",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Is Sarah in the office today?",
+					"speed": 0.45,
+					"wait": 1.35
+				},
+				{
+					"char": "npc",
+					"line": "Sarah the Witch?",
+					"speed": 0.5,
+					"wait": 2.4
+				},
+				{
+					"char": "player",
+					"line": "Yeah. But I don't call her that name.",
+					"speed": 0.45,
+					"wait": 2
+				},
+				{
+					"char": "npc",
+					"line": "She's there.",
+					"speed": 0.5,
+					"wait": 1.8
+				},
+				{
+					"char": "npc",
+					"line": "You are the only person around here who actually likes her.",
+					"speed": 0.45,
+					"wait": 2.7
+				},
+				{
+					"char": "player",
+					"line": "I respect her dedication to work.",
+					"speed": 0.45
+				},
+				{
+					"char": "npc",
+					"line": "And only that? Not her looks?",
+					"speed": 0.45
+				},
+				{
+		 			"char": "player",
+					"line": "Hmm. Let's stop this conversation.",
+					"speed": 0.45
+				},
+				{
+					"char": "npc",
+					"line": "You started this.",
+					"speed": 0.45	
+				},
+				{
+					"char": "npc",
+					"line": "I need to work, you know.",
+					"speed": 0.45	
+				}		
 			]
 		},
 		{
@@ -356,6 +417,23 @@
 			]
 		},
 		{
+			"id": "sarah1",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Sarah."
+				},
+				{
+					"char": "npc",
+					"line": "Did you get it?"
+				},
+				{
+					"char": "player",
+					"line": "Yeah."
+				}
+			]
+		},		
+		{
 			"id": "fbi1",
 			"dialogs": [
 				{
@@ -364,22 +442,29 @@
 				},
 				{
 					"char": "player",
-					"line": "What?"
+					"line": "Huh?",
+					"speed": 0.3
 				},
 				{
 					"char": "npc",
-					"line": "You're parked on the wrong side. You wouldn't do that if there wasn't something urgent. Would you?",
-					"wait": 2.5,
-					"speed": 2
+					"line": "You're parked on the wrong side.",
+					"wait": 1.0
 				},
+				{
+					"char": "npc",
+					"line": "You wouldn't do that if there wasn't something urgent. Would you?",
+					"wait": 2.0,
+					"speed": 1.7
+				},				
 				{
 					"char": "player",
-					"line": "No. Just coyotes with guns and badges make me rebellious..",
-					"speed": 1.5
+					"line": "I've felt rebellious when I saw bunch of coyotes in uniform.",
+					"speed": 2,		
+					"wait": 1.8			
 				},
 				{
 					"char": "npc",
-					"line": "Coyotes? No. More likely Grizzly."
+					"line": "Coyotes? You mean a Grizzly?"
 				},
 				{
 					"char": "npc",
@@ -387,16 +472,86 @@
 					"line": "Look. Another guy with mentality of a criminal!"
 				},
 				{
+					"char": "player",
+					"line": "I'm not the one who kills innocent and robs the poor in favor of establishment.",
+					"wait": 2.3,
+					"speed": 1.8					
+				},
+				{
 					"char": "npc",
-					"line": "You think you're tough. Look around you - if outsiders are comin', you will be begging us to help you!",
+					"npc_uid": 602,
+					"line": "You think you're tough.",
+					"wait": 1.45,
+					"speed": 0.75
+				},
+				{
+					"char": "npc",
+					"npc_uid": 602,
+					"line": "Look around you - if outsiders are comin', you will be begging us to help you!",
 					"wait": 2.5,
 					"speed": 1.7
 				},
 				{
 					"char": "player",
-					"line": "Whatever.",
-					"next-dialog": "righteousness"
-				}
+					"line": "I have means to protect myself."
+				},
+				{
+					"char": "player",
+					"line": "From them and from you."
+				},
+				{
+					"char": "npc",
+					"line": "How? You almost made me curious. Haha.",
+					"wait": 2,
+					"speed": 0.8
+				},
+				{
+					"char": "npc",
+					"npc_uid": 602,
+					"line": "Let's take a visit to his house, someday. We'll see how tough he is."
+				},
+				{
+					"char": "npc",
+					"line": "He's not worth it, pal. Let the coward pretend that he has some balls, for now.",
+					"speed": 1.7,
+					"wait": 2.6
+				},
+				{
+					"char": "npc",
+					"npc_uid": 602,
+					"line": "You are too soft, Markus."
+				},
+				{
+					"char": "player",
+					"line": "Assholes.",
+					"speed": 0.5,
+					"next-dialog": "fbi2"					
+				}				
+			]
+		},
+		{
+			"id": "fbi2",
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "Move the car, dumbass."
+				},
+				{
+					"char": "player",
+					"line": "Car? What is that?",
+					"speed": 0.3
+				},
+				{
+					"char": "npc",
+					"line": "Stop playing dumb, you fool.",
+					"npc_uid": 602,
+					"wait": 1.0
+				},	
+				{
+					"char": "player",
+					"line": "I don't have a badge for that, friend.",
+					"wait": 1.0
+				}	
 			]
 		}
 	],
@@ -410,6 +565,23 @@
 				}
 			]
 		},
+		{
+			"id": "madness",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "People are loosing their sanity...",
+					"speed": 0.45,
+					"wait": 1.35
+				},
+				{
+					"char": "player",
+					"line": "And I'm helpless to stop this.",
+					"speed": 0.5,
+					"wait": 1.25
+				}
+			]
+		},		
 		{
 			"id": "forest1-room",
 			"dialogs": [
@@ -476,6 +648,34 @@
 				{
 					"char": "player",
 					"line": "I'm fine."
+				}
+			]
+		}
+	],
+	"collection-talking": [
+		{
+			"id": "isaac1",
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "Ah. Here you are."
+				},
+				{
+					"char": "player",
+					"line": "It's great to see you, Isaac."
+				},
+				{
+					"char": "npc",
+					"line": "Yeah. Whatever. Let's get to work."
+				}
+			]
+		},
+		{
+			"id": "isaac2",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "It’s great to see you."
 				}
 			]
 		}

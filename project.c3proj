@@ -136,6 +136,22 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
@@ -208,17 +224,25 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Sin",
-			"name": "Sine",
+			"id": "scrollto",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"version": "r293.3",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
+			"type": "effect",
+			"id": "warpripple",
+			"name": "Warp ripple",
 			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "water",
+			"name": "Water",
+			"author": "Viktor Korsun",
 			"version": "r293.3",
 			"bundled": false
 		},
@@ -249,7 +273,9 @@
 	],
 	"uniqueId": "bmm21df34rr",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"water_texture2"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -276,7 +302,9 @@
 					"dust2",
 					"stone",
 					"house_bricks",
-					"shadowcaster"
+					"shadowcaster",
+					"water_hole",
+					"water_texture"
 				],
 				"subfolders": [
 					{
@@ -396,7 +424,9 @@
 					"lamp1",
 					"metal_door",
 					"plant1",
-					"box"
+					"box",
+					"cargo1",
+					"table3"
 				],
 				"subfolders": [],
 				"name": "furniture"
@@ -512,7 +542,9 @@
 							"forest1",
 							"forest2",
 							"test_lvl",
-							"base"
+							"base",
+							"forest1_with_enemy",
+							"collection"
 						],
 						"subfolders": [],
 						"name": "levels"

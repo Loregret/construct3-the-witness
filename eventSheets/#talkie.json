@@ -785,6 +785,65 @@
 												}
 											],
 											"sid": 527827967453333
+										},
+										{
+											"eventType": "comment",
+											"text": "check if player is far away"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 752916858215919,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "triggers_talkie",
+															"sid": 161264077451288,
+															"parameters": {
+																"unique-id": "talkie_trigger_uid"
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 457034488482355,
+															"parameters": {
+																"first-value": "distance(Player.X, Player.Y, triggers_talkie.X, triggers_talkie.Y)",
+																"comparison": 4,
+																"second-value": "500"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "signal",
+															"objectClass": "System",
+															"sid": 993837505234072,
+															"parameters": {
+																"tag": "\"talkie-end\""
+															}
+														},
+														{
+															"callFunction": "talkie_end",
+															"sid": 940091449525068
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 791866231246250,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 176440584712272
+												}
+											]
 										}
 									]
 								},
@@ -1879,6 +1938,15 @@
 											"parameters": {
 												"variable": "player_is_talking",
 												"value": "false"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 156975712550582,
+											"parameters": {
+												"variable": "curScene",
+												"value": "\"\""
 											}
 										},
 										{

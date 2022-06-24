@@ -1,0 +1,73 @@
+{
+	"name": "water_hole",
+	"plugin-id": "Sprite",
+	"sid": 504792454877139,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 993601211344038
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 258370047253294
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "warpripple",
+			"name": "WarpRipple"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 925,
+						"height": 770,
+						"originX": 0.5,
+						"originY": 0.4844155844155844,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7870275,
+						"collisionPoly": {
+							"points": [
+								0.17945945945945946,
+								0.15194805194805194,
+								0.5,
+								0.06623376623376623,
+								0.8118918918918919,
+								0.16103896103896104,
+								0.9632432432432433,
+								0.4844155844155844,
+								0.8389189189189189,
+								0.8389610389610389,
+								0.5,
+								0.9545454545454546,
+								0.18054054054054053,
+								0.8142857142857143,
+								0.06054054054054054,
+								0.4844155844155844
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 475657661490173,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
