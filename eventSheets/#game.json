@@ -947,12 +947,12 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 110584262609799
+											"sid": 841920792666095
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 589443479467950,
+											"sid": 809875257510244,
 											"parameters": {
 												"first-value": "LayoutName",
 												"comparison": 0,
@@ -961,7 +961,49 @@
 										}
 									],
 									"actions": [],
-									"sid": 818419140167655
+									"sid": 802091347669717
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 110584262609799
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 525475976776563,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"collection\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 818419140167655,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 379298606940218,
+													"parameters": {
+														"audio-file": "desert ambiance",
+														"loop": "looping",
+														"volume": "-28",
+														"tag-optional": "\"ambience\""
+													}
+												}
+											],
+											"sid": 534524292813195
+										}
+									]
 								}
 							]
 						},
