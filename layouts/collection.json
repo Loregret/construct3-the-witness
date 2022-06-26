@@ -1318,9 +1318,9 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
-							1,
-							1,
-							1,
+							0.6509803921568628,
+							0.6509803921568628,
+							0.6509803921568628,
 							1
 						],
 						"angle": 0.33380060075136686,
@@ -2046,8 +2046,8 @@
 						}
 					},
 					"world": {
-						"x": 4414.552802314727,
-						"y": 3456.5729991169383,
+						"x": 4432.999634643938,
+						"y": 3431.418234039797,
 						"width": 29.122545243266657,
 						"height": 29.122545243266657,
 						"originX": 0.5,
@@ -2579,8 +2579,8 @@
 						}
 					},
 					"world": {
-						"x": 5062.419299138038,
-						"y": 3412.8427388384,
+						"x": 4461.325261657587,
+						"y": 3404.084010524349,
 						"width": 29.122545243266657,
 						"height": 29.122545243266657,
 						"originX": 0.5,
@@ -2628,8 +2628,8 @@
 						}
 					},
 					"world": {
-						"x": 5012.86720048901,
-						"y": 3405.64967314133,
+						"x": 4537.169109793245,
+						"y": 3260.6273748841463,
 						"width": 29.122545243266657,
 						"height": 29.122545243266657,
 						"originX": 0.5,
@@ -2677,8 +2677,8 @@
 						}
 					},
 					"world": {
-						"x": 5024.855665268888,
-						"y": 3437.618766211486,
+						"x": 4549.1575745731225,
+						"y": 3292.5964679543026,
 						"width": 29.122545243266657,
 						"height": 29.122545243266657,
 						"originX": 0.5,
@@ -3639,7 +3639,7 @@
 							},
 							"uid": 1476,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "go"
 							},
 							"behaviors": {
 								"Solid": {
@@ -3672,8 +3672,8 @@
 								}
 							},
 							"world": {
-								"x": 4890.8754495423855,
-								"y": 3436.935659928725,
+								"x": 4919.68808133999,
+								"y": 3431.8982491299607,
 								"width": 36.400000000000006,
 								"height": 46.800000000000004,
 								"originX": 0.4821428571428572,
@@ -3684,7 +3684,7 @@
 									1,
 									1
 								],
-								"angle": 2.3875625700211205,
+								"angle": 2.43796499165512,
 								"zElevation": 0
 							}
 						}
@@ -4276,20 +4276,20 @@
 								"dialogName": "isaac1",
 								"lineNum": 0,
 								"npc_uid": 1476,
-								"interactive_start": true,
+								"interactive_start": false,
 								"repeatable": false,
 								"active": true,
-								"autostart": false,
+								"autostart": true,
 								"max_distance": 450,
 								"activation_distance": 200,
 								"is_visible_trough_walls": true
 							},
 							"behaviors": {},
 							"world": {
-								"x": 4893.615423602966,
-								"y": 3436.6310293120964,
-								"width": 38.59177931677674,
-								"height": 49,
+								"x": 4902.930680232847,
+								"y": 3428.8683758628426,
+								"width": 392.42800512167867,
+								"height": 292.9226134474094,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -4298,7 +4298,46 @@
 									1,
 									0.7
 								],
-								"angle": 5.586703118084478,
+								"angle": 0.3490658503988659,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_dialogic",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1499,
+							"instanceVariables": {
+								"SceneName": "forest1",
+								"DialogName": "car",
+								"LineNum": 0,
+								"active": true,
+								"repeatable": true,
+								"autostart": false,
+								"is_visible_trough_walls": true,
+								"activation_distance": 125,
+								"max_distance": 450
+							},
+							"behaviors": {},
+							"world": {
+								"x": 4556.5,
+								"y": 4617,
+								"width": 128.714710050654,
+								"height": 311.7360551889861,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.55
+								],
+								"angle": 1.5707963267948966,
 								"zElevation": 0
 							}
 						}
@@ -4464,8 +4503,8 @@
 								}
 							},
 							"world": {
-								"x": 4660,
-								"y": 2858,
+								"x": 4675,
+								"y": 2845.527241304756,
 								"width": 489.7404534266223,
 								"height": 2166.458927595349,
 								"originX": 0.5,
@@ -4476,7 +4515,7 @@
 									1,
 									0.6
 								],
-								"angle": 4.788285489381543,
+								"angle": 4.778268611440309,
 								"zElevation": 0
 							}
 						},

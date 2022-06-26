@@ -1287,6 +1287,52 @@
 								},
 								{
 									"eventType": "comment",
+									"text": "go to scene"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 554388253759558,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 620121236427807,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".go-scene\")",
+														"comparison": 1,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait-for-signal",
+													"objectClass": "System",
+													"sid": 235270260635068,
+													"parameters": {
+														"tag": "\"line-finished\""
+													}
+												},
+												{
+													"id": "go-to-layout-by-name",
+													"objectClass": "System",
+													"sid": 937805107562734,
+													"parameters": {
+														"layout": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".go-scene\")"
+													}
+												}
+											],
+											"sid": 131656037731953
+										}
+									]
+								},
+								{
+									"eventType": "comment",
 									"text": "logs"
 								},
 								{

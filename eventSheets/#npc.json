@@ -290,6 +290,36 @@
 									"sid": 275817495874866
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 944357273482244
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "npc",
+									"sid": 877022584961723,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"go\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 847631767278362,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 170458026667638
+								}
+							]
 						}
 					]
 				}
