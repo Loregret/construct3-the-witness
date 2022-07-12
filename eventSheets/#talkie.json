@@ -1419,6 +1419,43 @@
 								},
 								{
 									"eventType": "comment",
+									"text": "events"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 509182074182600,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 896957632365985,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".event\")",
+														"comparison": 1,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "event",
+													"sid": 648873382980416,
+													"parameters": [
+														"JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".event\")"
+													]
+												}
+											],
+											"sid": 702782221089601
+										}
+									]
+								},
+								{
+									"eventType": "comment",
 									"text": "next dialog"
 								},
 								{

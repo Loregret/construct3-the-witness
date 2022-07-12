@@ -315,8 +315,25 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [],
-									"actions": [],
+									"conditions": [
+										{
+											"id": "on-arrived",
+											"objectClass": "npc",
+											"sid": 363703495282087,
+											"behaviorType": "Pathfinding"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "npc",
+											"sid": 643411086570948,
+											"parameters": {
+												"instance-variable": "state",
+												"value": "\"idle\""
+											}
+										}
+									],
 									"sid": 170458026667638
 								}
 							]

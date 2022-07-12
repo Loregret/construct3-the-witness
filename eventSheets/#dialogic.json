@@ -1179,6 +1179,43 @@
 								},
 								{
 									"eventType": "comment",
+									"text": "events"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 218843634561464,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 854302170054512,
+													"parameters": {
+														"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".event\")",
+														"comparison": 1,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "event",
+													"sid": 940090960427339,
+													"parameters": [
+														"JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".event\")"
+													]
+												}
+											],
+											"sid": 726896594685691
+										}
+									]
+								},
+								{
+									"eventType": "comment",
 									"text": "talkie"
 								},
 								{
@@ -1715,6 +1752,143 @@
 										}
 									],
 									"sid": 542935933539147
+								}
+							]
+						},
+						{
+							"functionName": "event",
+							"functionDescription": "",
+							"functionCategory": "#events",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "eventName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 166170965415165
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 170761317462550,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "level: collection"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 678864933352722,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 558290826092132,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"IsaacRelocate\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 403989141211204,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "npc",
+															"sid": 458194118853863,
+															"parameters": {
+																"unique-id": "1476"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "npc",
+															"sid": 245548393394515,
+															"parameters": {
+																"instance-variable": "state",
+																"value": "\"go\""
+															}
+														},
+														{
+															"id": "find-path",
+															"objectClass": "npc",
+															"sid": 682485296581242,
+															"behaviorType": "Pathfinding",
+															"parameters": {
+																"x": "triggers_marker.X",
+																"y": "triggers_marker.Y"
+															}
+														}
+													],
+													"sid": 301371781446881
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 359742402853579
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 905084589313207,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"carActivate\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 724647368136161,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "triggers_dialogic",
+															"sid": 192895360167181,
+															"parameters": {
+																"unique-id": "1499"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_dialogic",
+															"sid": 254836683027646,
+															"parameters": {
+																"instance-variable": "SceneName",
+																"value": "\"\""
+															}
+														}
+													],
+													"sid": 984852409955852
+												}
+											]
+										}
+									]
 								}
 							]
 						}

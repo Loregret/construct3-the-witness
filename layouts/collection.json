@@ -2033,55 +2033,6 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 1469,
-					"instanceVariables": {
-						"HP": 2
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 4432.999634643938,
-						"y": 3431.418234039797,
-						"width": 29.122545243266657,
-						"height": 29.122545243266657,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							0.6901960784313725,
-							0.6901960784313725,
-							0.6901960784313725,
-							1
-						],
-						"angle": 0.16593464613266462,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "box",
-					"properties": {
-						"shape": "box",
-						"z-height": 3,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
 					"uid": 1470,
 					"instanceVariables": {
 						"HP": 2
@@ -2581,104 +2532,6 @@
 					"world": {
 						"x": 4461.325261657587,
 						"y": 3404.084010524349,
-						"width": 29.122545243266657,
-						"height": 29.122545243266657,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							0.6901960784313725,
-							0.6901960784313725,
-							0.6901960784313725,
-							1
-						],
-						"angle": 5.772910944444405,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "box",
-					"properties": {
-						"shape": "box",
-						"z-height": 3,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 1497,
-					"instanceVariables": {
-						"HP": 2
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 4537.169109793245,
-						"y": 3260.6273748841463,
-						"width": 29.122545243266657,
-						"height": 29.122545243266657,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							0.6901960784313725,
-							0.6901960784313725,
-							0.6901960784313725,
-							1
-						],
-						"angle": 5.772910944444405,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "box",
-					"properties": {
-						"shape": "box",
-						"z-height": 3,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 1498,
-					"instanceVariables": {
-						"HP": 2
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 4549.1575745731225,
-						"y": 3292.5964679543026,
 						"width": 29.122545243266657,
 						"height": 29.122545243266657,
 						"originX": 0.5,
@@ -3639,7 +3492,7 @@
 							},
 							"uid": 1476,
 							"instanceVariables": {
-								"state": "go"
+								"state": "idle"
 							},
 							"behaviors": {
 								"Solid": {
@@ -3657,7 +3510,7 @@
 										"acceleration": 1000,
 										"deceleration": 2000,
 										"rotate-speed": 135,
-										"rotate-object": false,
+										"rotate-object": true,
 										"diagonals": true,
 										"enabled": true
 									}
@@ -3710,7 +3563,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -4064,7 +3917,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -4313,8 +4166,8 @@
 							},
 							"uid": 1499,
 							"instanceVariables": {
-								"SceneName": "forest1",
-								"DialogName": "car",
+								"SceneName": "misc",
+								"DialogName": "car-blocked",
 								"LineNum": 0,
 								"active": true,
 								"repeatable": true,
@@ -4338,6 +4191,45 @@
 									0.55
 								],
 								"angle": 1.5707963267948966,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_dialogic",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1091,
+							"instanceVariables": {
+								"SceneName": "collection",
+								"DialogName": "anomaly",
+								"LineNum": 0,
+								"active": true,
+								"repeatable": true,
+								"autostart": false,
+								"is_visible_trough_walls": true,
+								"activation_distance": 500,
+								"max_distance": 800
+							},
+							"behaviors": {},
+							"world": {
+								"x": 4753,
+								"y": 2887,
+								"width": 294.714710050654,
+								"height": 411.7360551889861,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.55
+								],
+								"angle": 1.6044624176634135,
 								"zElevation": 0
 							}
 						}
