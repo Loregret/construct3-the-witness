@@ -1348,20 +1348,11 @@
 											],
 											"actions": [
 												{
-													"id": "wait-for-signal",
-													"objectClass": "System",
-													"sid": 235270260635068,
-													"parameters": {
-														"tag": "\"line-finished\""
-													}
-												},
-												{
-													"id": "go-to-layout-by-name",
-													"objectClass": "System",
-													"sid": 937805107562734,
-													"parameters": {
-														"layout": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".go-scene\")"
-													}
+													"callFunction": "go_to_another_scene",
+													"sid": 194857847733540,
+													"parameters": [
+														"JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".go-scene\")"
+													]
 												}
 											],
 											"sid": 131656037731953
@@ -1752,6 +1743,51 @@
 										}
 									],
 									"sid": 542935933539147
+								}
+							]
+						},
+						{
+							"functionName": "go_to_another_scene",
+							"functionDescription": "",
+							"functionCategory": "#levels",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "level",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 920002950085250
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 502391377323626,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait-for-signal",
+											"objectClass": "System",
+											"sid": 235270260635068,
+											"parameters": {
+												"tag": "\"line-finished\""
+											}
+										},
+										{
+											"id": "go-to-layout-by-name",
+											"objectClass": "System",
+											"sid": 370460116240133,
+											"parameters": {
+												"layout": "level"
+											}
+										}
+									],
+									"sid": 311087424854397
 								}
 							]
 						},
