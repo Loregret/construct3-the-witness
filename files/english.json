@@ -710,7 +710,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "There. In the water.",
+					"line": "In the water.",
 					"event": "IsaacRelocate"
 				},
 				{
@@ -736,11 +736,13 @@
 				},
 				{
 					"char": "npc",
-					"line": "Yes... it's a common thing outside of the protection."
+					"line": "Yes. It's a common thing outside of shield-protection.",
+					"speed": 1.7,
+					"wait": 2.7
 				},
 				{
 					"char": "player",
-					"line": "That means you know what causes it?"
+					"line": "Do you know what causes it?"
 				},
 				{
 					"char": "npc",
@@ -756,7 +758,98 @@
 				},
 				{
 					"char": "npc",
-					"line": "It happens quite often near the KHM-stations."
+					"line": "It happens quite often near the SFG-stations.",
+					"speed": 1.5,
+					"wait": 2.3
+				},
+				{
+					"char": "npc",
+					"line": "Salt battery's wastes can produce same effect.",
+					"speed": 1.5,
+					"wait": 2.3
+				},
+				{
+					"char": "player",
+					"line": "Are you sure that's the reason behind this?",
+					"speed": 1.5,
+					"wait": 2.3
+				},
+				{
+					"char": "npc",
+					"line": "Certainty is a luxury I don't have.",
+					"speed": 1.5,
+					"wait": 2.3
+				},
+				{
+					"char": "npc",
+					"line": "But I guess we're lucky that there's one station nearby.",
+					"speed": 1.5,
+					"wait": 2.3
+				},
+				{
+					"char": "npc",
+					"line": "You should visit it today.",
+					"wait": 2.7,
+					"event": "carActivate"
+				},
+				{
+					"char": "npc",
+					"line": "Maybe you will learn something new there.",
+					"wait": 2.7,
+					"next-dialog": "isaac3"
+				}
+			]
+		},
+		{
+			"id": "isaac3",
+			"dialogs": [
+ 				{
+					"char": "player",
+					"line": "Quite frankly, I hate new technology."
+				},
+				{
+					"char": "player",
+					"line": "Their view of the world and it's laws... it contradicts everything we know.",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "player",
+					"line": "Science 2.0, they say."
+				},
+				{
+					"char": "player",
+					"line": "I never thought there will be so much deviation in science community.",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "The truth is rarely pure and never simple.",
+					"speed": 1.7,
+					"wait": 2.5
+				},
+				{
+					"char": "npc",
+					"line": "Who knows which secrets will be found in the future?",
+					"speed": 1.7,
+					"wait": 2.3
+				},
+				{
+					"char": "npc",
+					"line": "And, surely, there will be new ways of looking at everything. Always.",
+					"speed": 1.85,
+					"wait": 2.5,
+					"next-dialog": "isaac4"
+				}
+			]
+		},
+		{
+			"id": "isaac4",
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "You should go now."
 				}
 			]
 		}
