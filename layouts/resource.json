@@ -56,6 +56,7 @@
 								"deceleration": 600,
 								"directions": "dir-8",
 								"set-angle": "smooth",
+								"allow-sliding": true,
 								"default-controls": true,
 								"enabled": true
 							}
@@ -535,6 +536,7 @@
 					"behaviors": {},
 					"effects": {
 						"BlurHorizontal": {
+							"isEnabled": true,
 							"parameters": {
 								"intensity": 1
 							}

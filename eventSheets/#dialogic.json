@@ -1833,6 +1833,113 @@
 																"x": "triggers_marker.X",
 																"y": "triggers_marker.Y"
 															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "npc",
+															"sid": 444052873390489,
+															"parameters": {
+																"object": "triggers_talkie",
+																"layer": "\"triggers_dialog\"",
+																"image-point": "0",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "add-child",
+															"objectClass": "npc",
+															"sid": 249630385160448,
+															"parameters": {
+																"child": "triggers_talkie",
+																"transform-x": true,
+																"transform-y": true,
+																"transform-w": true,
+																"transform-h": true,
+																"transform-a": true,
+																"transform-z-elevation": true,
+																"destroy-with-parent": false
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 741786054161947,
+															"parameters": {
+																"instance-variable": "npc_uid",
+																"value": "1476"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 679700391884760,
+															"parameters": {
+																"instance-variable": "SceneName",
+																"value": "\"collection-talking\""
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 196008195414647,
+															"parameters": {
+																"instance-variable": "dialogName",
+																"value": "\"isaac2\""
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 204835633346373,
+															"parameters": {
+																"instance-variable": "activation_distance",
+																"value": "150"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 753506083054482,
+															"parameters": {
+																"instance-variable": "max_distance",
+																"value": "300"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 265930494583752,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 502091415832143,
+															"parameters": {
+																"instance-variable": "interactive_start",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 792874143572920,
+															"parameters": {
+																"instance-variable": "autostart",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 509892683304666,
+															"parameters": {
+																"instance-variable": "is_visible_trough_walls",
+																"value": "true"
+															}
 														}
 													],
 													"sid": 301371781446881

@@ -35,8 +35,8 @@
 				},
 				{
 					"char": "",
-					"line": "There's few nations who saved fraction of earth and made it inhabitable once again.",
-					"speed": 2.35,
+					"line": "There's few wealthy nations who saved fraction of earth and made it inhabitable once again by technology.",
+					"speed": 2.55,
 					"wait": 3
 				},
 				{
@@ -53,13 +53,43 @@
 				},
 				{
 					"char": "",
-					"line": "Desperation is a common trait in people.",
+					"line": "Desperation and madness follows them, slowly infecting society.",
 					"speed": 1.55,
 					"wait": 2.75
 				},
 				{
 					"char": "",
-					"line": "Smartest people of Earth are trying to find a solution to fight desertification and drought.",
+					"line": "But hope remains as if nothing can kill it.",
+					"speed": 1.55,
+					"wait": 2.75
+				},
+				{
+					"char": "",
+					"line": "The smartest people of Earth are trying to find a solution to end desertification and drought.",
+					"speed": 1.55,
+					"wait": 2.75
+				},
+				{
+					"char": "",
+					"line": "Settlements unite to bring peace and prosperity to their families.",
+					"speed": 1.55,
+					"wait": 2.75
+				},
+				{
+					"char": "",
+					"line": "And there's progress in saving the world.",
+					"speed": 1.55,
+					"wait": 2.75
+				},
+				{
+					"char": "",
+					"line": "I'm Robert. Employee of CEER.",
+					"speed": 1.55,
+					"wait": 2.75
+				},
+				{
+					"char": "",
+					"line": "This story is how I'd witnessed the end of humankind.",
 					"speed": 1.55,
 					"wait": 2.75
 				}
@@ -643,29 +673,17 @@
 			"name": "The Anomaly",
 			"dialogs": [
 				{
-					"line": "Big hole in the water.",
+					"line": "Big funnel in the water.",
 					"wait": 1.3,
 					"speed": 0.6
 				},
 				{
-					"line": "It wasn't here yesterday.",
+					"line": "It wasn't there yesterday.",
 					"wait": 1.5
 				},
 				{
-					"line": "Fisherman reported it.",
-					"wait": 1.5
-				},
-				{
-					"line": "This river is quite important.",
-					"wait": 1.5
-				},
-				{
-					"line": "It's a big part of local ecosystem.",
-					"wait": 1.5
-				},
-				{
-					"line": "We should do something to stop it.",
-					"wait": 1.5
+					"line": "Without water, nearest ecosystem will die.",
+					"wait": 2.7
 				}
 			]
 		}
@@ -684,24 +702,20 @@
 				},
 				{
 					"char": "npc",
-					"line": "There's no time for a chat. Let's start examination..."
+					"line": "We're running out of time, Robert."
 				},
 				{
 					"char": "player",
-					"line": "Okay, Isaac."
-				},
-				{
-					"char": "player",
-					"line": "Where is the anomaly?"
+					"line": "Show me then."
 				},
 				{
 					"char": "npc",
-					"line": "Look in the water."
+					"line": "There. In the water.",
+					"event": "IsaacRelocate"
 				},
 				{
 					"char": "player",
-					"line": "Water? Hmm, okay.",
-					"event": "IsaacRelocate"
+					"line": "Okay."
 				}
 			]
 		},
@@ -710,7 +724,39 @@
 			"dialogs": [
 				{
 					"char": "player",
-					"line": "It’s great to see you."
+					"line": "I've never seen anything like it."
+				},
+				{
+					"char": "npc",
+					"line": "I wish I could say the same."
+				},
+				{
+					"char": "player",
+					"line": "Have you seen something similar?"
+				},
+				{
+					"char": "npc",
+					"line": "Yes... it's a common thing outside of the protection."
+				},
+				{
+					"char": "player",
+					"line": "That means you know what causes it?"
+				},
+				{
+					"char": "npc",
+					"line": "Maybe."
+				},
+				{
+					"char": "player",
+					"line": "What is it?"
+				},
+				{
+					"char": "npc",
+					"line": "Well, that's only an assumption."
+				},
+				{
+					"char": "npc",
+					"line": "It happens quite often near the KHM-stations."
 				}
 			]
 		}
@@ -721,6 +767,22 @@
 			"dialogs": [
 				{
 					"line": "**Examine**"
+				}
+			]
+		},
+		{
+			"id": "ui_pickup",
+			"dialogs": [
+				{
+					"line": "**Pick up**"
+				}
+			]
+		},
+		{
+			"id": "ui_talk",
+			"dialogs": [
+				{
+					"line": "**Talk**"
 				}
 			]
 		},
@@ -756,18 +818,14 @@
 			]
 		},
 		{
-			"id": "ui_pickup",
+			"id": "car-to-forest1",
+			"name": "My Car",
 			"dialogs": [
 				{
-					"line": "**Pick up**"
-				}
-			]
-		},
-		{
-			"id": "ui_talk",
-			"dialogs": [
-				{
-					"line": "**Talk**"
+					"line": "I'm ready to go.",
+					"wait": 1.3,
+					"speed": 0.6,
+					"go-scene": "forest1"
 				}
 			]
 		}

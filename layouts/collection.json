@@ -1123,6 +1123,7 @@
 					"behaviors": {},
 					"effects": {
 						"Water": {
+							"isEnabled": true,
 							"parameters": {
 								"speed": 0.02,
 								"x-speed": 0.05,
@@ -1171,6 +1172,7 @@
 					"behaviors": {},
 					"effects": {
 						"Water": {
+							"isEnabled": true,
 							"parameters": {
 								"speed": 0.01,
 								"x-speed": 0.3,
@@ -1238,6 +1240,7 @@
 					},
 					"effects": {
 						"WarpRipple": {
+							"isEnabled": true,
 							"parameters": {
 								"frequency": 3,
 								"amplitude": 0.03,
@@ -3700,6 +3703,7 @@
 										"deceleration": 600,
 										"directions": "dir-8",
 										"set-angle": "no",
+										"allow-sliding": true,
 										"default-controls": false,
 										"enabled": true
 									}
@@ -4139,10 +4143,10 @@
 							},
 							"behaviors": {},
 							"world": {
-								"x": 4902.930680232847,
-								"y": 3428.8683758628426,
-								"width": 392.42800512167867,
-								"height": 292.9226134474094,
+								"x": 4751,
+								"y": 3374,
+								"width": 745.063880609694,
+								"height": 302.9814236318978,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -4151,7 +4155,7 @@
 									1,
 									0.7
 								],
-								"angle": 0.3490658503988659,
+								"angle": 0.03812377885916263,
 								"zElevation": 0
 							}
 						},

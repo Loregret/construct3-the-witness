@@ -8470,6 +8470,7 @@
 										"deceleration": 600,
 										"directions": "dir-8",
 										"set-angle": "no",
+										"allow-sliding": true,
 										"default-controls": false,
 										"enabled": true
 									}
@@ -12812,85 +12813,6 @@
 						],
 						"angle": 1.4757744408299598,
 						"zElevation": 0
-					}
-				},
-				{
-					"type": "runner",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "dead",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 664,
-					"instanceVariables": {
-						"state": "dead",
-						"hp": 0,
-						"orig_X": 0,
-						"orig_Y": 0,
-						"alert_nth": 0,
-						"torch_amount": 0
-					},
-					"behaviors": {
-						"Bullet": {
-							"properties": {
-								"speed": 0,
-								"acceleration": 0,
-								"gravity": 0,
-								"bounce-off-solids": true,
-								"set-angle": true,
-								"step": true,
-								"enabled": false
-							}
-						},
-						"LineOfSight": {
-							"properties": {
-								"obstacles": "solids",
-								"range": 1600,
-								"cone-of-view": 180,
-								"use-collision-cells": true
-							}
-						},
-						"Pathfinding": {
-							"properties": {
-								"cell-size": 53,
-								"cell-border": 5,
-								"obstacles": "solids",
-								"max-speed": 200,
-								"acceleration": 1000,
-								"deceleration": 2000,
-								"rotate-speed": 1500,
-								"rotate-object": true,
-								"diagonals": true,
-								"enabled": false
-							}
-						},
-						"Timer": {
-							"properties": {}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 8098.576047325244,
-						"y": 4920.217750241448,
-						"width": 118.80000000000001,
-						"height": 56.7,
-						"originX": 0.5227272727272727,
-						"originY": 0.5,
-						"color": [
-							0.6078431372549019,
-							0.49019607843137253,
-							0.5137254901960784,
-							1
-						],
-						"angle": 6.1494697162505965,
-						"zElevation": 2
 					}
 				},
 				{
@@ -18970,45 +18892,6 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 745,
-							"instanceVariables": {
-								"SceneName": "forest1",
-								"DialogName": "corpse_surprise1",
-								"LineNum": 0,
-								"active": true,
-								"repeatable": false,
-								"autostart": false,
-								"is_visible_trough_walls": false,
-								"activation_distance": 125,
-								"max_distance": 450
-							},
-							"behaviors": {},
-							"world": {
-								"x": 8093.400869761439,
-								"y": 4922.3798117366,
-								"width": 102.76714653317255,
-								"height": 145.63227536014483,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									0.55
-								],
-								"angle": 1.3739034855384338,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "triggers_dialogic",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
 							"uid": 283,
 							"instanceVariables": {
 								"SceneName": "forest1",
@@ -19023,9 +18906,9 @@
 							},
 							"behaviors": {},
 							"world": {
-								"x": 9755,
-								"y": 2275,
-								"width": 511.20298670059344,
+								"x": 9669.589061296714,
+								"y": 2483.7418971352968,
+								"width": 147.96784330354888,
 								"height": 889.2319978209139,
 								"originX": 0.5,
 								"originY": 0.5,
