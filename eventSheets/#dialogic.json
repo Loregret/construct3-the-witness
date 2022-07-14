@@ -2093,6 +2093,54 @@
 													"sid": 984852409955852
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 634990518780320
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 917918805051728,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"playerHide\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 310467359350582,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "Player",
+															"sid": 262969475153920,
+															"parameters": {
+																"visibility": "invisible"
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "Player",
+															"sid": 427661161994919,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"state": "disabled"
+															}
+														}
+													],
+													"sid": 748395803942364
+												}
+											]
 										}
 									]
 								}
