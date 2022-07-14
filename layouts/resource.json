@@ -1166,6 +1166,45 @@
 					}
 				},
 				{
+					"type": "blackTransition",
+					"properties": {
+						"initially-visible": true,
+						"origin": "center",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 664,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 352,
+						"y": 192,
+						"width": 100,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "fx_muzzle",
 					"properties": {
 						"initially-visible": true,

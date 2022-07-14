@@ -1773,21 +1773,75 @@
 										{
 											"id": "wait-for-signal",
 											"objectClass": "System",
-											"sid": 235270260635068,
+											"sid": 179403544101484,
 											"parameters": {
 												"tag": "\"line-finished\""
 											}
 										},
 										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 816191671492945,
+											"parameters": {
+												"object-to-create": "blackTransition",
+												"layer": "\"_user_interface\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "blackTransition",
+											"sid": 471948628304286,
+											"parameters": {
+												"width": "ViewportWidth(\"_user_interface\") * 2",
+												"height": "ViewportHeight(\"_user_interface\") * 2"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "blackTransition",
+											"sid": 998127101379556,
+											"parameters": {
+												"opacity": "0"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "blackTransition",
+											"sid": 478292578269636,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"trans\"",
+												"property": "offsetOpacity",
+												"end-value": "100",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 726175885000262,
+											"parameters": {
+												"seconds": "2"
+											}
+										},
+										{
 											"id": "go-to-layout-by-name",
 											"objectClass": "System",
-											"sid": 370460116240133,
+											"sid": 795130154240433,
 											"parameters": {
 												"layout": "level"
 											}
 										}
 									],
-									"sid": 311087424854397
+									"sid": 545542182953507
 								}
 							]
 						},
