@@ -35,7 +35,7 @@
 			"eventType": "variable",
 			"name": "flashlight_battery",
 			"type": "number",
-			"initialValue": "100",
+			"initialValue": "10000",
 			"comment": "Батарея у фонарика.",
 			"isStatic": false,
 			"isConstant": false,
@@ -913,6 +913,7 @@
 													"id": "add-key",
 													"objectClass": "weapon",
 													"sid": 168685588011718,
+													"disabled": true,
 													"parameters": {
 														"key": "\"pistol\"",
 														"value": "1"
@@ -922,6 +923,7 @@
 													"id": "add-key",
 													"objectClass": "weapon",
 													"sid": 856210624607016,
+													"disabled": true,
 													"parameters": {
 														"key": "\"shotgun\"",
 														"value": "1"
@@ -931,6 +933,7 @@
 													"id": "add-key",
 													"objectClass": "weapon",
 													"sid": 762436528712452,
+													"disabled": true,
 													"parameters": {
 														"key": "\"ak\"",
 														"value": "1"

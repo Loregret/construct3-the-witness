@@ -1409,15 +1409,6 @@
 																					}
 																				},
 																				{
-																					"callFunction": "enemy_dialog",
-																					"sid": 547877674606053,
-																					"disabled": true,
-																					"parameters": [
-																						"runner.UID",
-																						"\"attack\""
-																					]
-																				},
-																				{
 																					"callFunction": "create_audio_trigger",
 																					"sid": 461959369183479,
 																					"parameters": [
@@ -1439,7 +1430,35 @@
 																					}
 																				}
 																			],
-																			"sid": 734631881738947
+																			"sid": 734631881738947,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "compare-two-values",
+																							"objectClass": "System",
+																							"sid": 163792908241934,
+																							"parameters": {
+																								"first-value": "random(100)",
+																								"comparison": 2,
+																								"second-value": "55"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"callFunction": "enemy_dialog",
+																							"sid": 163357535202026,
+																							"parameters": [
+																								"runner.UID",
+																								"\"attack\""
+																							]
+																						}
+																					],
+																					"sid": 534158059534670
+																				}
+																			]
 																		}
 																	]
 																},
@@ -2170,10 +2189,10 @@
 																						{
 																							"id": "pick-nth-child",
 																							"objectClass": "runner",
-																							"sid": 371893555533043,
+																							"sid": 164637280502972,
 																							"parameters": {
 																								"child": "alert",
-																								"instance": "Self.alert_nth"
+																								"instance": "Self.alert_nth - 1"
 																							}
 																						},
 																						{
@@ -2199,11 +2218,11 @@
 																						{
 																							"id": "compare-two-values",
 																							"objectClass": "System",
-																							"sid": 443641477923164,
+																							"sid": 601773983913862,
 																							"parameters": {
 																								"first-value": "Functions.enemy_alert_visibility(alert.UID)",
 																								"comparison": 3,
-																								"second-value": "45"
+																								"second-value": "35"
 																							}
 																						}
 																					],
@@ -2216,11 +2235,11 @@
 																								{
 																									"id": "compare-two-values",
 																									"objectClass": "System",
-																									"sid": 702298012863297,
+																									"sid": 997221441165945,
 																									"parameters": {
 																										"first-value": "int(random(0,100))",
 																										"comparison": 4,
-																										"second-value": "70"
+																										"second-value": "60"
 																									}
 																								}
 																							],
@@ -5631,6 +5650,24 @@
 											"behaviorType": "LineOfSight",
 											"parameters": {
 												"obstacle": "tree"
+											}
+										},
+										{
+											"id": "add-obstacle",
+											"objectClass": "runner",
+											"sid": 165488651845257,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"obstacle": "box"
+											}
+										},
+										{
+											"id": "add-obstacle",
+											"objectClass": "runner",
+											"sid": 648440856399705,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"obstacle": "car"
 											}
 										},
 										{
