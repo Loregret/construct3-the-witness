@@ -390,48 +390,6 @@
 			]
 		},
 		{
-			"id": "righteousness",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "It's too late to save the planet.",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "player",
-					"line": "We were doomed long before the drought happened.",
-					"speed": 0.5,
-					"wait": 1.25
-				},
-				{
-					"char": "player",
-					"line": "I just hope humanity survives long enough...",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "You know, to leave this dead atmosphere.",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "And find a new home... to shatter it as previous one.",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "We are the destroyers of the world.",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "No one is coming to save us.",
-					"speed": 0.45
-				}
-			]
-		},
-		{
 			"id": "sarah1",
 			"dialogs": [
 				{
@@ -440,11 +398,162 @@
 				},
 				{
 					"char": "npc",
-					"line": "Did you get it?"
+					"line": "You're late, again."
 				},
 				{
 					"char": "player",
-					"line": "Yeah."
+					"line": "So what?"
+				},
+				{
+					"char": "npc",
+					"line": "I'll have to penalize you."
+				},
+				{
+					"char": "npc",
+					"line": "For violation of the rules of..."
+				},
+				{
+					"char": "player",
+					"line": "You have no power over me."
+				},
+				{
+					"char": "npc",
+					"line": "What?"
+				},
+				{
+					"char": "player",
+					"line": "I was born with no lust for money."
+				},
+				{
+					"char": "player",
+					"line": "Doing good is what I care about, Sarah."
+				},
+				{
+					"char": "player",
+					"line": "You can rip off all my money, but my soul remains intact."
+				},
+				{
+					"char": "npc",
+					"line": "You!"
+				},
+				{
+					"char": "player",
+					"line": "Everything I earn, I spend to the charity anyways."
+				},
+				{
+					"char": "npc",
+					"line": "Oh, how noble off you!"
+				},
+				{
+					"char": "npc",
+					"line": "Would you say anything to promote your lack of punctuality?!"
+				},
+				{
+					"char": "player",
+					"line": "I just consider it as unimportant right now."
+				},
+				{
+					"char": "player",
+					"line": "When there's giant holes in the water."
+				},
+				{
+					"char": "player",
+					"line": "And we can see and smell a drought coming."
+				},
+				{
+					"char": "npc",
+					"line": "This is the reason punctuality is important as never before!",
+					"next-dialog": "sarah2"
+				}
+			]
+		},
+		{
+			"id": "sarah2",
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "We'are running out of time, Robert."
+				},
+				{
+					"char": "player",
+					"line": "Quoting Isaac? That's exactly what he said."
+				},
+				{
+					"char": "npc",
+					"line": "Did you get what causes anomaly?"
+				},
+				{
+					"char": "player",
+					"line": "Isaac has a hypothesis that may explain that."
+				},
+				{
+					"char": "player",
+					"line": "He thinks that salt projectors from SFG station causes anomaly."
+				},
+				{
+					"char": "npc",
+					"line": "Salt projectors? Interesting..."
+				},
+				{
+					"char": "npc",
+					"line": "We have no one with expertise on new technology."
+				},
+				{
+					"char": "player",
+					"line": "Big-money men don't allow that?"
+				},
+				{
+					"char": "npc",
+					"line": "Ah, you! Stop this crap!"
+				},
+				{
+					"char": "npc",
+					"line": "You know where I stand on this topic."
+				},
+				{
+					"char": "player",
+					"line": "Yeah. I'm sorry to bring that up."
+				},
+				{
+					"char": "player",
+					"line": "I will investigate nearest station with your permission, then."
+				},
+				{
+					"char": "npc",
+					"line": "Oh, so do you need my permission now?"
+				},
+				{
+					"char": "npc",
+					"line": "Aren't you a 'need-no-permission' guy?"
+				},
+				{
+					"char": "player",
+					"line": "I know it's hard to deal with me."
+				},
+				{
+					"char": "player",
+					"line": "But you will achieve nothing just scolding me."
+				},
+				{
+					"char": "npc",
+					"line": "You!"
+				},
+				{
+					"char": "npc",
+					"line": "*sigh*"
+				},
+				{
+					"char": "npc",
+					"line": "Alright."
+				},
+				{
+					"char": "npc",
+					"line": "Go and investigate.",
+					"event": "carActivate"
+				},
+				{
+					"char": "player",
+					"line": "Okay."
 				}
 			]
 		},
@@ -803,7 +912,7 @@
 		{
 			"id": "isaac3",
 			"dialogs": [
- 				{
+				{
 					"char": "player",
 					"line": "Quite frankly, I hate new technology."
 				},
@@ -887,10 +996,6 @@
 					"line": "It's early to leave yet.",
 					"wait": 1.3,
 					"speed": 0.6
-				},
-				{
-					"line": "I need to complete my mission.",
-					"wait": 1.5
 				}
 			]
 		},
@@ -921,6 +1026,48 @@
 					"wait": 1.3,
 					"speed": 0.6,
 					"go-scene": "forest1"
+				}
+			]
+		},
+		{
+			"id": "righteousness",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "It's too late to save the planet.",
+					"speed": 0.45,
+					"wait": 1.35
+				},
+				{
+					"char": "player",
+					"line": "We were doomed long before the drought happened.",
+					"speed": 0.5,
+					"wait": 1.25
+				},
+				{
+					"char": "player",
+					"line": "I just hope humanity survives long enough...",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "You know, to leave this dead atmosphere.",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "And find a new home... to shatter it as previous one.",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "We are the destroyers of the world.",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "No one is coming to save us.",
+					"speed": 0.45
 				}
 			]
 		}

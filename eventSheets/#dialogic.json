@@ -1085,41 +1085,6 @@
 														}
 													],
 													"sid": 843241055529226,
-													"children": [
-														{
-															"eventType": "comment",
-															"text": "no-sound tag"
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "compare-two-values",
-																	"objectClass": "System",
-																	"sid": 397667813953081,
-																	"parameters": {
-																		"first-value": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".no-sound\")",
-																		"comparison": 0,
-																		"second-value": "0"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "play",
-																	"objectClass": "Audio",
-																	"sid": 917028072894483,
-																	"parameters": {
-																		"audio-file": "soft-switch",
-																		"loop": "not-looping",
-																		"volume": "random(-7,0)",
-																		"tag-optional": "\"ui\""
-																	}
-																}
-															],
-															"sid": 368173975736537
-														}
-													],
 													"isOrBlock": true
 												}
 											]
@@ -2062,35 +2027,112 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "pick-by-unique-id",
-															"objectClass": "triggers_dialogic",
-															"sid": 192895360167181,
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 626549994050825,
 															"parameters": {
-																"unique-id": "1499"
+																"first-value": "LayoutName",
+																"comparison": 0,
+																"second-value": "\"collection\""
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 270786948365984,
+													"children": [
 														{
-															"id": "set-instvar-value",
-															"objectClass": "triggers_dialogic",
-															"sid": 864851971826458,
-															"parameters": {
-																"instance-variable": "SceneName",
-																"value": "\"misc\""
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-unique-id",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 296053410856487,
+																	"parameters": {
+																		"unique-id": "1499"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 557179752909333,
+																	"parameters": {
+																		"instance-variable": "SceneName",
+																		"value": "\"misc\""
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 222776153299154,
+																	"parameters": {
+																		"instance-variable": "DialogName",
+																		"value": "\"car-to-base\""
+																	}
+																}
+															],
+															"sid": 956720802855047
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 718698829223178
 														},
 														{
-															"id": "set-instvar-value",
-															"objectClass": "triggers_dialogic",
-															"sid": 707179167494500,
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 576468548347829,
 															"parameters": {
-																"instance-variable": "DialogName",
-																"value": "\"car-to-base\""
+																"first-value": "LayoutName",
+																"comparison": 0,
+																"second-value": "\"base\""
 															}
 														}
 													],
-													"sid": 984852409955852
+													"actions": [],
+													"sid": 939519794837686,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-unique-id",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 812160737004860,
+																	"parameters": {
+																		"unique-id": "880"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 233948919432302,
+																	"parameters": {
+																		"instance-variable": "SceneName",
+																		"value": "\"misc\""
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 763868200162568,
+																	"parameters": {
+																		"instance-variable": "DialogName",
+																		"value": "\"car-to-forest1\""
+																	}
+																}
+															],
+															"sid": 531651253455248
+														}
+													]
 												}
 											]
 										},

@@ -212,8 +212,8 @@
 						"wrap-vertical": "repeat",
 						"image-offset-x": 0,
 						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
+						"image-scale-x": 1.5,
+						"image-scale-y": 1.5,
 						"image-angle": 0
 					},
 					"uid": 626,
@@ -2925,9 +2925,9 @@
 								}
 							},
 							"world": {
-								"x": 4134.773225134151,
-								"y": 2487.786658195345,
-								"width": 36.400000000000006,
+								"x": 4134.5015857262615,
+								"y": 2488.9194001950555,
+								"width": 34.15062048860285,
 								"height": 46.800000000000004,
 								"originX": 0.4821428571428572,
 								"originY": 0.5138888888888888,
@@ -2937,7 +2937,7 @@
 									1,
 									1
 								],
-								"angle": 1.806158766764971,
+								"angle": 1.5707963267948966,
 								"zElevation": 1
 							}
 						},
@@ -7621,6 +7621,47 @@
 								"angle": 0,
 								"zElevation": 0
 							}
+						},
+						{
+							"type": "triggers_talkie",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1572,
+							"instanceVariables": {
+								"SceneName": "base-talking",
+								"dialogName": "sarah1",
+								"lineNum": 0,
+								"npc_uid": 881,
+								"interactive_start": true,
+								"repeatable": false,
+								"active": true,
+								"autostart": false,
+								"max_distance": 500,
+								"activation_distance": 125,
+								"is_visible_trough_walls": true
+							},
+							"behaviors": {},
+							"world": {
+								"x": 4134.263308841288,
+								"y": 2488.6966141010425,
+								"width": 45.25547233707286,
+								"height": 36.09274984797193,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.7
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
 						}
 					],
 					"sid": 877268568882711,
@@ -8309,7 +8350,7 @@
 			"instances": [],
 			"sid": 708505357297884,
 			"effectTypes": [],
-			"isInitiallyVisible": true,
+			"isInitiallyVisible": false,
 			"isInitiallyInteractive": false,
 			"color": [
 				1,
