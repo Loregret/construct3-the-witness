@@ -759,10 +759,10 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "Player",
-											"sid": 395532301075861,
+											"sid": 798249835875883,
 											"parameters": {
 												"object": "decal_blood",
-												"layer": "\"floor\"",
+												"layer": "\"floors\"",
 												"image-point": "0",
 												"create-hierarchy": false
 											}
@@ -842,12 +842,9 @@
 													}
 												},
 												{
-													"id": "go-to-layout",
+													"id": "restart-layout",
 													"objectClass": "System",
-													"sid": 632117897273423,
-													"parameters": {
-														"layout": "menu"
-													}
+													"sid": 745173203902729
 												}
 											],
 											"sid": 861448395703886
@@ -2762,6 +2759,55 @@
 						}
 					],
 					"sid": 448735895102974
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Player - misc",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "bullet",
+									"sid": 260610030823552,
+									"parameters": {
+										"object": "Player"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 636123612739653,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "bullet",
+											"sid": 456436930925907,
+											"parameters": {
+												"instance-variable": "enemy_bullet"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "player_death",
+											"sid": 682033304865157
+										}
+									],
+									"sid": 669491664037599,
+									"disabled": true
+								}
+							]
+						}
+					],
+					"sid": 607965668934558
 				}
 			],
 			"sid": 321622848304693

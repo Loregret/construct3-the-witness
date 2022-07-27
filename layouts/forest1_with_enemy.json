@@ -1221,7 +1221,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 0
+						"torch_amount": 0,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -1264,6 +1265,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},
@@ -3395,7 +3409,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 0
+						"torch_amount": 0,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -3438,6 +3453,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},
@@ -4864,7 +4892,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 0
+						"torch_amount": 0,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -4907,6 +4936,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},
@@ -4990,7 +5032,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 0
+						"torch_amount": 0,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -5033,6 +5076,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},
@@ -6487,7 +6543,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 0
+						"torch_amount": 0,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -6530,6 +6587,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},
@@ -6566,7 +6636,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 1
+						"torch_amount": 1,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -6609,6 +6680,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},
@@ -7005,7 +7089,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 0
+						"torch_amount": 0,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -7048,6 +7133,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},
@@ -7613,7 +7711,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 0
+								"torch_amount": 0,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -7656,6 +7755,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -7692,7 +7804,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 1
+								"torch_amount": 1,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -7735,6 +7848,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -7771,7 +7897,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 0
+								"torch_amount": 0,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -7814,6 +7941,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -7850,7 +7990,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 0
+								"torch_amount": 0,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -7893,6 +8034,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -7929,7 +8083,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 1
+								"torch_amount": 1,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -7972,6 +8127,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -8008,7 +8176,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 2
+								"torch_amount": 2,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -8051,6 +8220,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -8087,7 +8269,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 2
+								"torch_amount": 2,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -8130,6 +8313,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -8166,7 +8362,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 2
+								"torch_amount": 2,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -8209,6 +8406,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -8245,7 +8455,8 @@
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
-								"torch_amount": 2
+								"torch_amount": 2,
+								"weapon": ""
 							},
 							"behaviors": {
 								"Bullet": {
@@ -8288,6 +8499,19 @@
 									"properties": {
 										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
 									}
 								}
 							},
@@ -12795,7 +13019,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 0
+						"torch_amount": 0,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -12838,6 +13063,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},

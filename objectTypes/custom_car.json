@@ -1,21 +1,14 @@
 {
-	"name": "bullet",
+	"name": "custom_car",
 	"plugin-id": "Sprite",
-	"sid": 329865589493406,
+	"sid": 664250078965320,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "enemy_bullet",
-			"type": "boolean",
-			"desc": "",
-			"sid": 877792004165490
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 905920301935024
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 165328525243227
 		}
 	],
 	"effectTypes": [],
@@ -24,19 +17,19 @@
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 10,
-						"originX": 0.3,
+						"width": 300,
+						"height": 126,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6237827,
+						"imageSpriteId": 556535,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 548790086344132,
+				"sid": 147411790620823,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

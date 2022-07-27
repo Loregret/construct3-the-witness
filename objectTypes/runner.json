@@ -39,6 +39,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 152063545766155
+		},
+		{
+			"name": "weapon",
+			"type": "string",
+			"desc": "",
+			"sid": 285181229611443
 		}
 	],
 	"behaviorTypes": [
@@ -66,6 +72,11 @@
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 170508024594506
+		},
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 206192713092075
 		}
 	],
 	"effectTypes": [],
@@ -525,17 +536,17 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2997433,
+						"imageSpriteId": 3291121,
 						"collisionPoly": {
 							"points": [
 								0,
 								0,
+								0.6381580649412122,
 								0,
+								0.6513159994841967,
+								1,
 								0,
-								0,
-								0,
-								0,
-								0
+								1
 							]
 						},
 						"useCollisionPoly": true,
@@ -697,7 +708,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 159975,
+						"imageSpriteId": 8826363,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -722,7 +733,49 @@
 					}
 				],
 				"sid": 939182712438410,
-				"name": "ak47",
+				"name": "shotgun",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 25
+			},
+			{
+				"frames": [
+					{
+						"width": 76,
+						"height": 59,
+						"originX": 0.42105263157894735,
+						"originY": 0.4576271186440678,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9800145,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0,
+								0,
+								0,
+								0,
+								0,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 678293780603831,
+				"name": "Animation 1",
 				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,

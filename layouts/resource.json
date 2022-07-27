@@ -157,7 +157,9 @@
 						"live-preview": false
 					},
 					"uid": 18,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"enemy_bullet": false
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -641,7 +643,8 @@
 						"orig_X": 0,
 						"orig_Y": 0,
 						"alert_nth": 0,
-						"torch_amount": 0
+						"torch_amount": 0,
+						"weapon": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -684,6 +687,19 @@
 							"properties": {
 								"enabled": false,
 								"tags": ""
+							}
+						},
+						"Turret": {
+							"properties": {
+								"range": 300,
+								"rate-of-fire": 1,
+								"rotate": true,
+								"rotate-speed": 180,
+								"target-mode": "first-in-range",
+								"predictive-aim": false,
+								"projectile-speed": 500,
+								"use-collision-cells": true,
+								"enabled": false
 							}
 						}
 					},
