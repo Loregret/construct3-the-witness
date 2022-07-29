@@ -923,6 +923,125 @@
 																		}
 																	],
 																	"sid": 871449610237996
+																},
+																{
+																	"eventType": "comment",
+																	"text": "scream!"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 661051375130494,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-tag-playing",
+																					"objectClass": "Audio",
+																					"sid": 324614147569824,
+																					"parameters": {
+																						"tag": "\"enemy_scream\"&runner.UID"
+																					},
+																					"isInverted": true
+																				},
+																				{
+																					"id": "is-timer-running",
+																					"objectClass": "runner",
+																					"sid": 352582237911884,
+																					"behaviorType": "Timer",
+																					"parameters": {
+																						"tag": "\"scream_cooldown\""
+																					},
+																					"isInverted": true
+																				},
+																				{
+																					"id": "trigger-once-while-true",
+																					"objectClass": "System",
+																					"sid": 249273830080144
+																				},
+																				{
+																					"id": "compare-two-values",
+																					"objectClass": "System",
+																					"sid": 897414211605279,
+																					"parameters": {
+																						"first-value": "random(100)",
+																						"comparison": 2,
+																						"second-value": "70"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "play-at-object-by-name",
+																					"objectClass": "Audio",
+																					"sid": 284999325574752,
+																					"parameters": {
+																						"folder": "sounds",
+																						"audio-file-name": "choose(\"man shout\", \"man shout\")",
+																						"loop": "not-looping",
+																						"volume": "random(-5,0)",
+																						"object": "runner",
+																						"inner-angle": "360",
+																						"outer-angle": "360",
+																						"outer-gain": "0",
+																						"tag-optional": "\"enemy_scream\" & runner.UID"
+																					}
+																				},
+																				{
+																					"callFunction": "create_audio_trigger",
+																					"sid": 818999126036210,
+																					"parameters": [
+																						"runner.X",
+																						"runner.Y",
+																						"4",
+																						"1"
+																					]
+																				},
+																				{
+																					"id": "start-timer",
+																					"objectClass": "runner",
+																					"sid": 217650331812600,
+																					"behaviorType": "Timer",
+																					"parameters": {
+																						"duration": "random(1,5)",
+																						"type": "once",
+																						"tag": "\"scream_cooldown\""
+																					}
+																				}
+																			],
+																			"sid": 527414379411627,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "compare-two-values",
+																							"objectClass": "System",
+																							"sid": 693490480962463,
+																							"parameters": {
+																								"first-value": "random(100)",
+																								"comparison": 2,
+																								"second-value": "80"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"callFunction": "enemy_dialog",
+																							"sid": 650454001950621,
+																							"parameters": [
+																								"runner.UID",
+																								"\"attack\""
+																							]
+																						}
+																					],
+																					"sid": 863404780717287
+																				}
+																			]
+																		}
+																	]
 																}
 															]
 														},
@@ -1065,40 +1184,47 @@
 																				"variable": "player_is_talking"
 																			},
 																			"isInverted": true
-																		},
-																		{
-																			"id": "pick-children",
-																			"objectClass": "Player",
-																			"sid": 251792511182324,
-																			"parameters": {
-																				"child": "sprfont_dialog",
-																				"which": "own"
-																			}
-																		},
-																		{
-																			"id": "is-timer-running",
-																			"objectClass": "Player",
-																			"sid": 210155958153344,
-																			"behaviorType": "Timer",
-																			"parameters": {
-																				"tag": "\"enemy_shout\""
-																			},
-																			"isInverted": true
-																		},
-																		{
-																			"id": "compare-two-values",
-																			"objectClass": "System",
-																			"sid": 455440596641748,
-																			"parameters": {
-																				"first-value": "distance(Player.X, Player.Y, runner.X, runner.Y)",
-																				"comparison": 2,
-																				"second-value": "1000"
-																			}
 																		}
 																	],
 																	"actions": [],
 																	"sid": 634492547192512,
 																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "pick-children",
+																					"objectClass": "Player",
+																					"sid": 321829036135077,
+																					"parameters": {
+																						"child": "sprfont_dialog",
+																						"which": "own"
+																					}
+																				},
+																				{
+																					"id": "is-timer-running",
+																					"objectClass": "Player",
+																					"sid": 623109777071426,
+																					"behaviorType": "Timer",
+																					"parameters": {
+																						"tag": "\"enemy_shout\""
+																					},
+																					"isInverted": true
+																				},
+																				{
+																					"id": "compare-two-values",
+																					"objectClass": "System",
+																					"sid": 907584943894807,
+																					"parameters": {
+																						"first-value": "distance(Player.X, Player.Y, runner.X, runner.Y)",
+																						"comparison": 2,
+																						"second-value": "1000"
+																					}
+																				}
+																			],
+																			"actions": [],
+																			"sid": 785710839600812
+																		},
 																		{
 																			"eventType": "block",
 																			"conditions": [

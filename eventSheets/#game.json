@@ -4925,10 +4925,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 337220527723503,
+									"sid": 827073299330197,
 									"parameters": {
 										"variable": "weapon_recoil",
-										"value": "weapon_recoil-1"
+										"value": "weapon_recoil-5"
 									}
 								},
 								{
@@ -5307,10 +5307,10 @@
 															"actions": [
 																{
 																	"callFunction": "camera_shake",
-																	"sid": 663575378481183,
+																	"sid": 846521097243552,
 																	"parameters": [
 																		"0.25",
-																		"400"
+																		"370"
 																	]
 																}
 															],
@@ -5336,14 +5336,6 @@
 																}
 															],
 															"actions": [
-																{
-																	"id": "set-angle",
-																	"objectClass": "bullet",
-																	"sid": 968156334154049,
-																	"parameters": {
-																		"angle": "Self.Angle + random(-7,7)"
-																	}
-																},
 																{
 																	"callFunction": "camera_shake",
 																	"sid": 786738959276236,
@@ -5378,9 +5370,9 @@
 																{
 																	"id": "set-angle",
 																	"objectClass": "bullet",
-																	"sid": 117748064595941,
+																	"sid": 175222091473740,
 																	"parameters": {
-																		"angle": "Self.Angle + random(-12,12)"
+																		"angle": "Self.Angle + random(-3,3)"
 																	}
 																},
 																{
@@ -6149,10 +6141,10 @@
 														{
 															"id": "add-to-eventvar",
 															"objectClass": "System",
-															"sid": 507756113893298,
+															"sid": 760093546400436,
 															"parameters": {
 																"variable": "weapon_recoil",
-																"value": "10"
+																"value": "1"
 															}
 														}
 													],
