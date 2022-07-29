@@ -295,7 +295,8 @@
 							},
 							"uid": 242,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -331,8 +332,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -368,7 +369,8 @@
 							},
 							"uid": 410,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -404,8 +406,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -441,7 +443,8 @@
 							},
 							"uid": 414,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -477,8 +480,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -514,7 +517,8 @@
 							},
 							"uid": 420,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -550,8 +554,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -587,7 +591,8 @@
 							},
 							"uid": 424,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -623,8 +628,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -660,7 +665,8 @@
 							},
 							"uid": 425,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -696,8 +702,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -733,7 +739,8 @@
 							},
 							"uid": 426,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -769,8 +776,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -806,7 +813,8 @@
 							},
 							"uid": 427,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -842,8 +850,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -879,7 +887,8 @@
 							},
 							"uid": 428,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -915,8 +924,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -952,7 +961,8 @@
 							},
 							"uid": 432,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -988,8 +998,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -1025,7 +1035,8 @@
 							},
 							"uid": 433,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -1061,8 +1072,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -1098,7 +1109,8 @@
 							},
 							"uid": 434,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -1134,8 +1146,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -1171,7 +1183,8 @@
 							},
 							"uid": 437,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -1207,8 +1220,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -1244,7 +1257,8 @@
 							},
 							"uid": 438,
 							"instanceVariables": {
-								"state": "idle"
+								"state": "idle",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -1280,8 +1294,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -1317,7 +1331,304 @@
 							},
 							"uid": 446,
 							"instanceVariables": {
-								"state": "s"
+								"state": "guard",
+								"enemy_can_interact": false
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 360,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 1500,
+										"rate-of-fire": 0.8,
+										"rotate": true,
+										"rotate-speed": 400,
+										"target-mode": "nearest",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 3882.570290666962,
+								"y": 4237.501101577245,
+								"width": 67.60000000000001,
+								"height": 48.1,
+								"originX": 0.25,
+								"originY": 0.4864864864864865,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 1.571810109980212,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "swat",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 322,
+							"instanceVariables": {
+								"state": "guard",
+								"enemy_can_interact": false
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 360,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 1500,
+										"rate-of-fire": 0.8,
+										"rotate": true,
+										"rotate-speed": 400,
+										"target-mode": "nearest",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 3884.777834075557,
+								"y": 4684.5898748434565,
+								"width": 67.60000000000001,
+								"height": 48.1,
+								"originX": 0.25,
+								"originY": 0.4864864864864865,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "swat",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1626,
+							"instanceVariables": {
+								"state": "guard",
+								"enemy_can_interact": false
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 360,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 1500,
+										"rate-of-fire": 0.8,
+										"rotate": true,
+										"rotate-speed": 400,
+										"target-mode": "nearest",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 4294.174328116816,
+								"y": 4238.937408443478,
+								"width": 67.60000000000001,
+								"height": 48.1,
+								"originX": 0.25,
+								"originY": 0.4864864864864865,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 1.571810109980212,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "swat",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1627,
+							"instanceVariables": {
+								"state": "guard",
+								"enemy_can_interact": false
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 360,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 1500,
+										"rate-of-fire": 0.8,
+										"rotate": true,
+										"rotate-speed": 400,
+										"target-mode": "nearest",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 4306.4918290498335,
+								"y": 4643.329484245479,
+								"width": 67.60000000000001,
+								"height": 48.1,
+								"originX": 0.25,
+								"originY": 0.4864864864864865,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 2.530727415391778,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "swat",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1628,
+							"instanceVariables": {
+								"state": "guard",
+								"enemy_can_interact": false
 							},
 							"behaviors": {
 								"Solid": {
@@ -1353,8 +1664,8 @@
 										"range": 1500,
 										"rate-of-fire": 0.8,
 										"rotate": true,
-										"rotate-speed": 360,
-										"target-mode": "first-in-range",
+										"rotate-speed": 400,
+										"target-mode": "nearest",
 										"predictive-aim": false,
 										"projectile-speed": 500,
 										"use-collision-cells": true,
@@ -1363,8 +1674,8 @@
 								}
 							},
 							"world": {
-								"x": 4256.945269092905,
-								"y": 5398.201227543715,
+								"x": 3904,
+								"y": 5242,
 								"width": 67.60000000000001,
 								"height": 48.1,
 								"originX": 0.25,
@@ -1376,6 +1687,80 @@
 									1
 								],
 								"angle": 1.571810109980212,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "swat",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1629,
+							"instanceVariables": {
+								"state": "guard",
+								"enemy_can_interact": false
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 360,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 1500,
+										"rate-of-fire": 0.8,
+										"rotate": true,
+										"rotate-speed": 400,
+										"target-mode": "nearest",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 4501,
+								"y": 5518,
+								"width": 67.60000000000001,
+								"height": 48.1,
+								"originX": 0.25,
+								"originY": 0.4864864864864865,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 2.530727415391778,
 								"zElevation": 0
 							}
 						}
@@ -1474,7 +1859,7 @@
 										"bounce-off-solids": true,
 										"set-angle": true,
 										"step": true,
-										"enabled": true
+										"enabled": false
 									}
 								},
 								"LineOfSight": {
@@ -1567,7 +1952,7 @@
 										"bounce-off-solids": true,
 										"set-angle": true,
 										"step": true,
-										"enabled": true
+										"enabled": false
 									}
 								},
 								"LineOfSight": {
@@ -1660,7 +2045,7 @@
 										"bounce-off-solids": true,
 										"set-angle": true,
 										"step": true,
-										"enabled": true
+										"enabled": false
 									}
 								},
 								"LineOfSight": {
@@ -1753,7 +2138,7 @@
 										"bounce-off-solids": true,
 										"set-angle": true,
 										"step": true,
-										"enabled": true
+										"enabled": false
 									}
 								},
 								"LineOfSight": {
@@ -1846,7 +2231,7 @@
 										"bounce-off-solids": true,
 										"set-angle": true,
 										"step": true,
-										"enabled": true
+										"enabled": false
 									}
 								},
 								"LineOfSight": {
@@ -1939,7 +2324,7 @@
 										"bounce-off-solids": true,
 										"set-angle": true,
 										"step": true,
-										"enabled": true
+										"enabled": false
 									}
 								},
 								"LineOfSight": {
@@ -2032,7 +2417,7 @@
 										"bounce-off-solids": true,
 										"set-angle": true,
 										"step": true,
-										"enabled": true
+										"enabled": false
 									}
 								},
 								"LineOfSight": {

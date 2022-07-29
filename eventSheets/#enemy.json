@@ -16,7 +16,7 @@
 					"eventType": "variable",
 					"name": "enemy_alert_maximum",
 					"type": "number",
-					"initialValue": "5",
+					"initialValue": "4",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": true,
@@ -538,6 +538,83 @@
 													"children": [
 														{
 															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-enabled",
+																	"objectClass": "runner",
+																	"sid": 166130186179229,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"state": "disabled"
+																	}
+																},
+																{
+																	"id": "set-enabled",
+																	"objectClass": "runner",
+																	"sid": 856010918550233,
+																	"behaviorType": "Turret",
+																	"parameters": {
+																		"state": "disabled"
+																	}
+																},
+																{
+																	"id": "set-speed",
+																	"objectClass": "runner",
+																	"sid": 955902739569340,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"speed": "0"
+																	}
+																}
+															],
+															"sid": 120052343831002
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "runner",
+																	"sid": 265562676430411,
+																	"parameters": {
+																		"animation": "\"gun\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "runner",
+																	"sid": 771126784478482,
+																	"parameters": {
+																		"instance-variable": "weapon",
+																		"comparison": 0,
+																		"value": "\"gun\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "enemy_clear_attack_line",
+																	"sid": 633022751609809,
+																	"parameters": [
+																		"runner.UID"
+																	]
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "runner",
+																	"sid": 491780518433006,
+																	"parameters": {
+																		"animation": "\"gun\"",
+																		"from": "beginning"
+																	}
+																}
+															],
+															"sid": 983561438900298
+														},
+														{
+															"eventType": "block",
 															"conditions": [
 																{
 																	"id": "is-animation-playing",
@@ -547,6 +624,16 @@
 																		"animation": "\"idle\""
 																	},
 																	"isInverted": true
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "runner",
+																	"sid": 299513820795743,
+																	"parameters": {
+																		"instance-variable": "weapon",
+																		"comparison": 0,
+																		"value": "\"\""
+																	}
 																}
 															],
 															"actions": [
@@ -557,24 +644,6 @@
 																	"parameters": {
 																		"animation": "\"idle\"",
 																		"from": "beginning"
-																	}
-																},
-																{
-																	"id": "set-speed",
-																	"objectClass": "runner",
-																	"sid": 459109673108950,
-																	"behaviorType": "Bullet",
-																	"parameters": {
-																		"speed": "0"
-																	}
-																},
-																{
-																	"id": "set-enabled",
-																	"objectClass": "runner",
-																	"sid": 669259136618547,
-																	"behaviorType": "Turret",
-																	"parameters": {
-																		"state": "disabled"
 																	}
 																}
 															],
@@ -808,8 +877,23 @@
 															"children": [
 																{
 																	"eventType": "block",
-																	"conditions": [],
+																	"conditions": [
+																		{
+																			"id": "is-enabled",
+																			"objectClass": "runner",
+																			"sid": 911693052020132,
+																			"behaviorType": "Turret",
+																			"isInverted": true
+																		}
+																	],
 																	"actions": [
+																		{
+																			"callFunction": "enemy_clear_alerts",
+																			"sid": 224374138802620,
+																			"parameters": [
+																				"runner.UID"
+																			]
+																		},
 																		{
 																			"id": "set-animation",
 																			"objectClass": "runner",
@@ -890,6 +974,16 @@
 															"id": "else",
 															"objectClass": "System",
 															"sid": 515111620082467
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "runner",
+															"sid": 625995830979130,
+															"parameters": {
+																"instance-variable": "weapon",
+																"comparison": 0,
+																"value": "\"\""
+															}
 														}
 													],
 													"actions": [],
@@ -1104,6 +1198,15 @@
 																			"parameters": [
 																				"runner.UID"
 																			]
+																		},
+																		{
+																			"id": "set-enabled",
+																			"objectClass": "runner",
+																			"sid": 205447678181966,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"state": "enabled"
+																			}
 																		}
 																	],
 																	"sid": 799836545007737,
@@ -1637,6 +1740,40 @@
 																}
 															],
 															"sid": 794836283551828
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-enabled",
+																	"objectClass": "runner",
+																	"sid": 979979281535784,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"state": "disabled"
+																	}
+																},
+																{
+																	"id": "set-enabled",
+																	"objectClass": "runner",
+																	"sid": 137760541370642,
+																	"behaviorType": "Turret",
+																	"parameters": {
+																		"state": "disabled"
+																	}
+																},
+																{
+																	"id": "set-speed",
+																	"objectClass": "runner",
+																	"sid": 999742748870453,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"speed": "0"
+																	}
+																}
+															],
+															"sid": 581427286687020
 														}
 													]
 												},
@@ -2126,7 +2263,7 @@
 																												{
 																													"id": "spawn-another-object",
 																													"objectClass": "runner",
-																													"sid": 125405814480144,
+																													"sid": 823914258742687,
 																													"parameters": {
 																														"object": "torch",
 																														"layer": "\"furniture\"",
@@ -2386,6 +2523,40 @@
 																}
 															],
 															"sid": 350943291773151
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-enabled",
+																	"objectClass": "runner",
+																	"sid": 582085995268399,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"state": "disabled"
+																	}
+																},
+																{
+																	"id": "set-enabled",
+																	"objectClass": "runner",
+																	"sid": 663411329819598,
+																	"behaviorType": "Turret",
+																	"parameters": {
+																		"state": "disabled"
+																	}
+																},
+																{
+																	"id": "set-speed",
+																	"objectClass": "runner",
+																	"sid": 623000196504148,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"speed": "0"
+																	}
+																}
+															],
+															"sid": 832321741309852
 														}
 													]
 												},
@@ -4927,6 +5098,16 @@
 									"behaviorType": "Turret"
 								},
 								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 822767485811097,
+									"parameters": {
+										"first-value": "Functions.enemy_check_player_visibility(runner.UID)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								},
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "runner",
 									"sid": 899141838108540,
@@ -4974,10 +5155,29 @@
 										"instance-variable": "enemy_bullet",
 										"value": "true"
 									}
+								},
+								{
+									"id": "play-at-object",
+									"objectClass": "Audio",
+									"sid": 227714409109039,
+									"parameters": {
+										"audio-file": "9mm - fire",
+										"loop": "not-looping",
+										"volume": "0",
+										"object": "runner",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"shot\""
+									}
 								}
 							],
 							"sid": 750916604939657,
 							"children": [
+								{
+									"eventType": "comment",
+									"text": "angle"
+								},
 								{
 									"eventType": "block",
 									"conditions": [],
@@ -5063,28 +5263,6 @@
 											"sid": 973335324267103
 										}
 									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "play-at-object",
-											"objectClass": "Audio",
-											"sid": 459134698269080,
-											"parameters": {
-												"audio-file": "9mm - fire",
-												"loop": "not-looping",
-												"volume": "0",
-												"object": "runner",
-												"inner-angle": "360",
-												"outer-angle": "360",
-												"outer-gain": "0",
-												"tag-optional": "\"shot\""
-											}
-										}
-									],
-									"sid": 702084049821531
 								},
 								{
 									"eventType": "comment",

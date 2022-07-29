@@ -12,6 +12,258 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-shoot",
+							"objectClass": "npc",
+							"sid": 937925311813535,
+							"behaviorType": "Turret"
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "runner",
+							"sid": 840607068179906,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 1,
+								"value": "\"dead\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 108404617268143,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-target",
+									"objectClass": "npc",
+									"sid": 873009472475371,
+									"behaviorType": "Turret"
+								},
+								{
+									"id": "has-los-to-object",
+									"objectClass": "npc",
+									"sid": 311727712968269,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "runner",
+										"image-point": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "npc",
+									"sid": 764482942007479,
+									"parameters": {
+										"object": "bullet",
+										"layer": "\"bullets\"",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bullet",
+									"sid": 132456800324498,
+									"parameters": {
+										"angle": "Self.Angle + random(-5,5)"
+									}
+								},
+								{
+									"id": "play-at-object",
+									"objectClass": "Audio",
+									"sid": 428301045576906,
+									"parameters": {
+										"audio-file": "9mm - fire",
+										"loop": "not-looping",
+										"volume": "0",
+										"object": "npc",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"shot\""
+									}
+								},
+								{
+									"id": "set-rate-of-fire",
+									"objectClass": "npc",
+									"sid": 361210286244552,
+									"behaviorType": "Turret",
+									"parameters": {
+										"rate-of-fire": "random(0.8,1.2)"
+									}
+								}
+							],
+							"sid": 190651677980673,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "muzzle"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 411593849216153,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 643249450320883,
+													"parameters": {
+														"object-to-create": "fx_muzzle",
+														"layer": "\"bullets\"",
+														"x": "runner.ImagePointX(1)",
+														"y": "runner.ImagePointY(1)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "fx_muzzle",
+													"sid": 159433525895704,
+													"parameters": {
+														"angle": "runner.Angle"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "fx_muzzle",
+													"sid": 183563937355134,
+													"parameters": {
+														"width": "32",
+														"height": "32"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "fx_muzzle",
+													"sid": 313704620630801,
+													"parameters": {
+														"opacity": "80"
+													}
+												},
+												{
+													"id": "pin-to-object-properties",
+													"objectClass": "fx_muzzle",
+													"sid": 660366034685360,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "runner",
+														"x": true,
+														"y": true,
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												}
+											],
+											"sid": 331225368777808,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 107967871335085,
+															"parameters": {
+																"object-to-create": "Light",
+																"layer": "\"light\"",
+																"x": "fx_muzzle.ImagePointX(1)",
+																"y": "fx_muzzle.ImagePointY(1)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "Light",
+															"sid": 639568770608264,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "runner",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Light",
+															"sid": 142554560238922,
+															"parameters": {
+																"opacity": "0"
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "Light",
+															"sid": 564603730911068,
+															"parameters": {
+																"scale": "0"
+															}
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "Light",
+															"sid": 175429575452649,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "100",
+																"time": "0.1",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "yes"
+															}
+														},
+														{
+															"id": "tween-two-properties",
+															"objectClass": "Light",
+															"sid": 841818531011978,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "size",
+																"end-x": "125",
+																"end-y": "125",
+																"time": "0.1",
+																"ease": "default",
+																"destroy-on-complete": "yes",
+																"loop": "no",
+																"ping-pong": "yes"
+															}
+														}
+													],
+													"sid": 209097684168820
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-path-found",
 							"objectClass": "npc",
 							"sid": 323307427318285,
@@ -107,7 +359,34 @@
 									}
 								}
 							],
-							"sid": 372771239712606
+							"sid": 372771239712606,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-object-to-target",
+											"objectClass": "npc",
+											"sid": 340051099362632,
+											"behaviorType": "Turret",
+											"parameters": {
+												"target": "runner"
+											}
+										},
+										{
+											"id": "set-rotate-speed",
+											"objectClass": "npc",
+											"sid": 788820419969531,
+											"behaviorType": "Turret",
+											"parameters": {
+												"rotate-speed": "360"
+											}
+										}
+									],
+									"sid": 685059219351735
+								}
+							]
 						}
 					]
 				},
@@ -139,6 +418,54 @@
 						{
 							"eventType": "block",
 							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "npc",
+									"sid": 467120374491850,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"guard\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 129720978184010,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-enabled",
+											"objectClass": "npc",
+											"sid": 785848147131082,
+											"behaviorType": "Turret",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "npc",
+											"sid": 534605340821870,
+											"behaviorType": "Turret",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 616070398059629
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 802633040190609
+								},
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "npc",
@@ -258,6 +585,22 @@
 							"children": [
 								{
 									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "npc",
+											"sid": 559476968597466,
+											"behaviorType": "Turret",
+											"parameters": {
+												"state": "disabled"
+											}
+										}
+									],
+									"sid": 486610407011985
+								},
+								{
+									"eventType": "block",
 									"conditions": [
 										{
 											"id": "is-on-screen",
@@ -350,6 +693,14 @@
 							"parameters": {
 								"object": "npc"
 							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "npc",
+							"sid": 353940180649080,
+							"parameters": {
+								"animation": "\"swat\""
+							}
 						}
 					],
 					"actions": [],
@@ -374,6 +725,11 @@
 									"parameters": [
 										"npc.UID"
 									]
+								},
+								{
+									"id": "destroy",
+									"objectClass": "bullet",
+									"sid": 740653922228737
 								}
 							],
 							"sid": 197531922405333
@@ -397,45 +753,144 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 873432438504473,
+					"children": [
 						{
-							"id": "set-instvar-value",
-							"objectClass": "npc",
-							"sid": 801797420913484,
-							"parameters": {
-								"instance-variable": "state",
-								"value": "\"dead\""
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "npc",
-							"sid": 321395578756960,
-							"behaviorType": "Pathfinding",
-							"parameters": {
-								"set": "disabled"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "npc",
-							"sid": 332559289563892,
-							"behaviorType": "Turret",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "npc",
-							"sid": 631454459961793,
-							"behaviorType": "Solid",
-							"parameters": {
-								"state": "disabled"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "npc",
+									"sid": 568884346629041,
+									"parameters": {
+										"unique-id": "npc_uid"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "npc",
+									"sid": 457649474876766,
+									"disabled": true,
+									"parameters": {
+										"frame-number": "choose(0,1,2,3,4)"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "npc",
+									"sid": 614998149968397,
+									"parameters": {
+										"animation": "\"dead_swat\"",
+										"from": "current-frame"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "npc",
+									"sid": 140774615055585,
+									"parameters": {
+										"frame-number": "choose(0,1,2)"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "npc",
+									"sid": 811797617672073,
+									"parameters": {
+										"object": "decal_blood",
+										"layer": "\"floors\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "npc",
+									"sid": 883762690698801,
+									"parameters": {
+										"instance-variable": "state",
+										"value": "\"dead\""
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "npc",
+									"sid": 852915379509517,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"set": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "npc",
+									"sid": 370176894328534,
+									"behaviorType": "Turret",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "npc",
+									"sid": 669589213160178,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 283696947997563,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "play-at-object",
+											"objectClass": "Audio",
+											"sid": 976357164996566,
+											"parameters": {
+												"audio-file": "bullet impact flash",
+												"loop": "not-looping",
+												"volume": "0",
+												"object": "npc",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"npc hurt\""
+											}
+										},
+										{
+											"id": "play-at-object",
+											"objectClass": "Audio",
+											"sid": 167980431637635,
+											"parameters": {
+												"audio-file": "man grunt 2",
+												"loop": "not-looping",
+												"volume": "-10",
+												"object": "npc",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"npc hurt\""
+											}
+										}
+									],
+									"sid": 453705512335255
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 772738976829854
+								}
+							]
 						}
-					],
-					"sid": 873432438504473
+					]
 				}
 			],
 			"sid": 693715214551204

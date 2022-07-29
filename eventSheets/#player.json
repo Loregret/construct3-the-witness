@@ -2487,12 +2487,12 @@
 													"actions": [
 														{
 															"callFunction": "create_audio_trigger",
-															"sid": 144282994555834,
+															"sid": 589610257844717,
 															"parameters": [
 																"Player.ImagePointX(1)",
 																"Player.ImagePointY(1)",
-																"8",
-																"1"
+																"4",
+																"0.8"
 															]
 														}
 													],
@@ -2693,12 +2693,12 @@
 													"actions": [
 														{
 															"callFunction": "create_audio_trigger",
-															"sid": 652122628791973,
+															"sid": 544522546145931,
 															"parameters": [
 																"Player.ImagePointX(1)",
 																"Player.ImagePointY(1)",
-																"Player.8Direction.Speed * 0.038",
-																"1"
+																"Player.8Direction.Speed * 0.0235",
+																"0.65"
 															]
 														}
 													],
@@ -2796,6 +2796,11 @@
 										}
 									],
 									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "bullet",
+											"sid": 381604908570125
+										},
 										{
 											"callFunction": "player_death",
 											"sid": 682033304865157
