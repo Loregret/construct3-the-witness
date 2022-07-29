@@ -620,18 +620,39 @@
 																	}
 																}
 															],
-															"actions": [
+															"actions": [],
+															"sid": 220189413737251,
+															"children": [
 																{
-																	"id": "set-instvar-value",
-																	"objectClass": "runner",
-																	"sid": 243139578556753,
-																	"parameters": {
-																		"instance-variable": "state",
-																		"value": "\"attack\""
-																	}
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-timer-running",
+																			"objectClass": "runner",
+																			"sid": 109572901447775,
+																			"behaviorType": "Timer",
+																			"parameters": {
+																				"tag": "\"spotted\""
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "start-timer",
+																			"objectClass": "runner",
+																			"sid": 541477526843883,
+																			"behaviorType": "Timer",
+																			"parameters": {
+																				"duration": "0.35",
+																				"type": "once",
+																				"tag": "\"spotted\""
+																			}
+																		}
+																	],
+																	"sid": 328931817117992
 																}
-															],
-															"sid": 220189413737251
+															]
 														},
 														{
 															"eventType": "block",
@@ -1648,15 +1669,28 @@
 															"children": [
 																{
 																	"eventType": "block",
-																	"conditions": [],
+																	"conditions": [
+																		{
+																			"id": "is-timer-running",
+																			"objectClass": "runner",
+																			"sid": 841746434044571,
+																			"behaviorType": "Timer",
+																			"parameters": {
+																				"tag": "\"spotted\""
+																			},
+																			"isInverted": true
+																		}
+																	],
 																	"actions": [
 																		{
-																			"id": "set-instvar-value",
+																			"id": "start-timer",
 																			"objectClass": "runner",
-																			"sid": 892656682901517,
+																			"sid": 208980812862601,
+																			"behaviorType": "Timer",
 																			"parameters": {
-																				"instance-variable": "state",
-																				"value": "\"attack\""
+																				"duration": "0.26",
+																				"type": "once",
+																				"tag": "\"spotted\""
 																			}
 																		}
 																	],
@@ -4707,6 +4741,61 @@
 								{
 									"id": "on-timer",
 									"objectClass": "runner",
+									"sid": 525059397973398,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"spotted\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "runner",
+									"sid": 154636792661265,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 1,
+										"value": "\"dead\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 607247814912280,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 880194187486472,
+											"parameters": {
+												"first-value": "Functions.enemy_check_player_visibility(runner.UID)",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "runner",
+											"sid": 989320193602013,
+											"parameters": {
+												"instance-variable": "state",
+												"value": "\"attack\""
+											}
+										}
+									],
+									"sid": 466640992853809
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "runner",
 									"sid": 657678699035427,
 									"behaviorType": "Timer",
 									"parameters": {
@@ -4913,9 +5002,9 @@
 												{
 													"id": "set-angle",
 													"objectClass": "bullet",
-													"sid": 932467331837505,
+													"sid": 183803322476659,
 													"parameters": {
-														"angle": "Self.Angle + random(-25,25)"
+														"angle": "Self.Angle + random(-10,10)"
 													}
 												}
 											],
@@ -4944,9 +5033,9 @@
 												{
 													"id": "set-angle",
 													"objectClass": "bullet",
-													"sid": 997280535845847,
+													"sid": 611319990108614,
 													"parameters": {
-														"angle": "Self.Angle + random(-11,11)"
+														"angle": "Self.Angle + random(-7,7)"
 													}
 												}
 											],
@@ -4998,63 +5087,13 @@
 									"sid": 702084049821531
 								},
 								{
+									"eventType": "comment",
+									"text": "muzzle"
+								},
+								{
 									"eventType": "block",
 									"conditions": [],
-									"actions": [
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 467826035723909,
-											"parameters": {
-												"object-to-create": "fx_muzzle",
-												"layer": "\"bullets\"",
-												"x": "runner.ImagePointX(1)",
-												"y": "runner.ImagePointY(1)",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "fx_muzzle",
-											"sid": 296869497263571,
-											"parameters": {
-												"angle": "runner.Angle"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "fx_muzzle",
-											"sid": 640100164859914,
-											"parameters": {
-												"width": "32",
-												"height": "32"
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "fx_muzzle",
-											"sid": 292112602848259,
-											"parameters": {
-												"opacity": "80"
-											}
-										},
-										{
-											"id": "pin-to-object-properties",
-											"objectClass": "fx_muzzle",
-											"sid": 225410705713106,
-											"behaviorType": "Pin",
-											"parameters": {
-												"pin-to": "runner",
-												"x": true,
-												"y": true,
-												"angle": true,
-												"width-type": "no",
-												"height-type": "no",
-												"z": false
-											}
-										}
-									],
+									"actions": [],
 									"sid": 990039884209629,
 									"children": [
 										{
@@ -5064,20 +5103,45 @@
 												{
 													"id": "create-object",
 													"objectClass": "System",
-													"sid": 214680528882151,
+													"sid": 643566665071550,
 													"parameters": {
-														"object-to-create": "Light",
-														"layer": "\"light\"",
-														"x": "fx_muzzle.ImagePointX(1)",
-														"y": "fx_muzzle.ImagePointY(1)",
+														"object-to-create": "fx_muzzle",
+														"layer": "\"bullets\"",
+														"x": "runner.ImagePointX(1)",
+														"y": "runner.ImagePointY(1)",
 														"create-hierarchy": false,
 														"template-name": "\"\""
 													}
 												},
 												{
+													"id": "set-angle",
+													"objectClass": "fx_muzzle",
+													"sid": 411496298353868,
+													"parameters": {
+														"angle": "runner.Angle"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "fx_muzzle",
+													"sid": 971004393962946,
+													"parameters": {
+														"width": "32",
+														"height": "32"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "fx_muzzle",
+													"sid": 760681288616726,
+													"parameters": {
+														"opacity": "80"
+													}
+												},
+												{
 													"id": "pin-to-object-properties",
-													"objectClass": "Light",
-													"sid": 298282559906001,
+													"objectClass": "fx_muzzle",
+													"sid": 143261564550236,
 													"behaviorType": "Pin",
 													"parameters": {
 														"pin-to": "runner",
@@ -5088,58 +5152,95 @@
 														"height-type": "no",
 														"z": false
 													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "Light",
-													"sid": 523069732134861,
-													"parameters": {
-														"opacity": "0"
-													}
-												},
-												{
-													"id": "set-scale",
-													"objectClass": "Light",
-													"sid": 556818398046539,
-													"parameters": {
-														"scale": "0"
-													}
-												},
-												{
-													"id": "tween-one-property",
-													"objectClass": "Light",
-													"sid": 926922315364788,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "offsetOpacity",
-														"end-value": "100",
-														"time": "0.1",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "yes"
-													}
-												},
-												{
-													"id": "tween-two-properties",
-													"objectClass": "Light",
-													"sid": 950024641408528,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "size",
-														"end-x": "125",
-														"end-y": "125",
-														"time": "0.1",
-														"ease": "default",
-														"destroy-on-complete": "yes",
-														"loop": "no",
-														"ping-pong": "yes"
-													}
 												}
 											],
-											"sid": 843328217491665
+											"sid": 343851799362541,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 173408013138581,
+															"parameters": {
+																"object-to-create": "Light",
+																"layer": "\"light\"",
+																"x": "fx_muzzle.ImagePointX(1)",
+																"y": "fx_muzzle.ImagePointY(1)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "Light",
+															"sid": 405757267835410,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "runner",
+																"x": true,
+																"y": true,
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Light",
+															"sid": 997913291259290,
+															"parameters": {
+																"opacity": "0"
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "Light",
+															"sid": 842282285147389,
+															"parameters": {
+																"scale": "0"
+															}
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "Light",
+															"sid": 698119556654453,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "100",
+																"time": "0.1",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "yes"
+															}
+														},
+														{
+															"id": "tween-two-properties",
+															"objectClass": "Light",
+															"sid": 726458961114981,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "size",
+																"end-x": "125",
+																"end-y": "125",
+																"time": "0.1",
+																"ease": "default",
+																"destroy-on-complete": "yes",
+																"loop": "no",
+																"ping-pong": "yes"
+															}
+														}
+													],
+													"sid": 317517552260806
+												}
+											]
 										}
 									]
 								}

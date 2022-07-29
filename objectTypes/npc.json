@@ -26,6 +26,11 @@
 			"behaviorId": "LOS",
 			"name": "LineOfSight",
 			"sid": 476980199958168
+		},
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 209987280098393
 		}
 	],
 	"effectTypes": [],
@@ -596,6 +601,113 @@
 						"repeatCount": 1,
 						"repeatTo": 0,
 						"speed": 10
+					},
+					{
+						"frames": [
+							{
+								"width": 41,
+								"height": 65,
+								"originX": 0.5731707317073171,
+								"originY": 0.16923076923076924,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 1583445,
+								"collisionPoly": {
+									"points": [
+										0.9459459459459459,
+										0.16346153846153846,
+										0.9459459459459459,
+										0.6634615384615384,
+										0,
+										0.6634615384615384,
+										0,
+										0.16346153846153846
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 65,
+								"height": 41,
+								"originX": 0.16923076923076924,
+								"originY": 0.426829268292683,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 3916975,
+								"collisionPoly": {
+									"points": [
+										0.10000000000000006,
+										0.03658536585365857,
+										0.5,
+										0.03658536585365857,
+										0.5,
+										0.8902439024390244,
+										0.10000000000000006,
+										0.8902439024390244
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 65,
+								"height": 41,
+								"originX": 0.16923076923076924,
+								"originY": 0.426829268292683,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 1679469,
+								"collisionPoly": {
+									"points": [
+										0.10000000000000006,
+										0.03658536585365857,
+										0.5,
+										0.03658536585365857,
+										0.5,
+										0.8902439024390244,
+										0.10000000000000006,
+										0.8902439024390244
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 65,
+								"height": 41,
+								"originX": 0.16923076923076924,
+								"originY": 0.426829268292683,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 7474328,
+								"collisionPoly": {
+									"points": [
+										0.10000000000000006,
+										0.03658536585365857,
+										0.5,
+										0.03658536585365857,
+										0.5,
+										0.8902439024390244,
+										0.10000000000000006,
+										0.8902439024390244
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							}
+						],
+						"sid": 618714826286147,
+						"name": "dead_swat",
+						"isLooping": false,
+						"isPingPong": false,
+						"repeatCount": 1,
+						"repeatTo": 0,
+						"speed": 0
 					}
 				],
 				"subfolders": [],

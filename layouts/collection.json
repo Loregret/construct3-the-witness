@@ -3525,6 +3525,19 @@
 										"cone-of-view": 180,
 										"use-collision-cells": true
 									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": true
+									}
 								}
 							},
 							"world": {
@@ -4889,7 +4902,7 @@
 			"instances": [],
 			"sid": 908777652518776,
 			"effectTypes": [],
-			"isInitiallyVisible": false,
+			"isInitiallyVisible": true,
 			"isInitiallyInteractive": false,
 			"color": [
 				1,

@@ -339,6 +339,103 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "bullet",
+							"sid": 846859397723481,
+							"parameters": {
+								"object": "npc"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 745453858105632,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "bullet",
+									"sid": 797532349687908,
+									"parameters": {
+										"instance-variable": "enemy_bullet"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "npc_death",
+									"sid": 310220844209998,
+									"parameters": [
+										"npc.UID"
+									]
+								}
+							],
+							"sid": 197531922405333
+						}
+					]
+				},
+				{
+					"functionName": "npc_death",
+					"functionDescription": "",
+					"functionCategory": "#npc",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "npc_uid",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 170377189391176
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "npc",
+							"sid": 801797420913484,
+							"parameters": {
+								"instance-variable": "state",
+								"value": "\"dead\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "npc",
+							"sid": 321395578756960,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"set": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "npc",
+							"sid": 332559289563892,
+							"behaviorType": "Turret",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "npc",
+							"sid": 631454459961793,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 873432438504473
 				}
 			],
 			"sid": 693715214551204
