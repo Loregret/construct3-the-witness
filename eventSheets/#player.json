@@ -691,6 +691,67 @@
 							]
 						},
 						{
+							"functionName": "player_hit",
+							"functionDescription": "",
+							"functionCategory": "#player",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 822795701373198,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 531831036939303,
+											"parameters": {
+												"audio-file": "bullet impact flash",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"playerhurt\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 211336551891125,
+											"parameters": {
+												"audio-file": "man grunt 2",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"playerhurt\""
+											}
+										}
+									],
+									"sid": 150236830197020
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 530660300299658,
+											"parameters": {
+												"object": "decal_blood",
+												"layer": "\"floors\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										}
+									],
+									"sid": 268922965073990
+								}
+							]
+						},
+						{
 							"functionName": "player_death",
 							"functionDescription": "",
 							"functionCategory": "#player",
@@ -722,28 +783,6 @@
 											"id": "destroy",
 											"objectClass": "flashlight",
 											"sid": 584262916992668
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 575960347077672,
-											"parameters": {
-												"audio-file": "bullet impact flash",
-												"loop": "not-looping",
-												"volume": "0",
-												"tag-optional": "\"gameover\""
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 200696308897643,
-											"parameters": {
-												"audio-file": "man grunt 2",
-												"loop": "not-looping",
-												"volume": "0",
-												"tag-optional": "\"gameover\""
-											}
 										}
 									],
 									"sid": 431329316766566
@@ -757,20 +796,9 @@
 									"conditions": [],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Player",
-											"sid": 798249835875883,
-											"parameters": {
-												"object": "decal_blood",
-												"layer": "\"floors\"",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 463022110211927,
+											"sid": 118386311070238,
 											"parameters": {
 												"object-to-create": "Player_dead",
 												"layer": "\"floors\"",
@@ -783,7 +811,7 @@
 										{
 											"id": "set-angle",
 											"objectClass": "Player_dead",
-											"sid": 879126386677760,
+											"sid": 739588419775905,
 											"parameters": {
 												"angle": "Player.Angle"
 											}
@@ -791,10 +819,10 @@
 										{
 											"id": "destroy",
 											"objectClass": "Player",
-											"sid": 487529958152643
+											"sid": 849656823512084
 										}
 									],
-									"sid": 336181980651262
+									"sid": 512833751226267
 								},
 								{
 									"eventType": "comment",
@@ -2799,6 +2827,10 @@
 											"id": "destroy",
 											"objectClass": "bullet",
 											"sid": 381604908570125
+										},
+										{
+											"callFunction": "player_hit",
+											"sid": 380298221029609
 										},
 										{
 											"callFunction": "player_death",
