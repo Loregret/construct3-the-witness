@@ -1739,6 +1739,10 @@
 																							"sid": 292850178586594
 																						},
 																						{
+																							"callFunction": "player_hit",
+																							"sid": 646849194178353
+																						},
+																						{
 																							"callFunction": "player_death",
 																							"sid": 224257907302776
 																						}
@@ -4641,10 +4645,10 @@
 											"actions": [
 												{
 													"callFunction": "enemy_play_dialogline",
-													"sid": 942796761769405,
+													"sid": 893809201130133,
 													"parameters": [
 														"UID",
-														"choose( \"BASTARD!\", \"KILL HIM!\", \"SUFFER!\", \"BRRGH!\", \"AAARGH!\", \"DIE!\", \"MUTILATE HIM!\", \"COWARD!\", \"BURN IN HELL!\", \"MURDER\", \"COME HERE!\")",
+														"choose( \"BASTARD!\", \"KILL HIM!\", \"SUFFER!\", \"BRRGH!\", \"AAARGH!\", \"DIE!\", \"MUTILATE HIM!\", \"COWARD!\", \"BURN IN HELL!\", \"BLEED!\", \"COME HERE!\")",
 														"\"red\""
 													]
 												}
