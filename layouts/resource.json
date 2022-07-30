@@ -1221,6 +1221,62 @@
 					}
 				},
 				{
+					"type": "proj_stone",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1633,
+					"instanceVariables": {
+						"active": true
+					},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 800,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 600,
+								"acceleration": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 224,
+						"y": 288,
+						"width": 12,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "fx_muzzle",
 					"properties": {
 						"initially-visible": true,

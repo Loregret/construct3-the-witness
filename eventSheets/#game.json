@@ -143,7 +143,7 @@
 			"eventType": "variable",
 			"name": "settings_fps",
 			"type": "boolean",
-			"initialValue": "true",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -4200,6 +4200,207 @@
 									]
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "камень"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 180188471873914,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "Player",
+											"sid": 682686466294477,
+											"parameters": {
+												"animation": "\"stone_release\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 829475886935957,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 390547833508502
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "Player",
+											"sid": 301691842783048,
+											"parameters": {
+												"animation": "\"stone\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 522977622979775,
+											"parameters": {
+												"animation": "\"stone_release\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "Player",
+											"sid": 871955893066256,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "1.1",
+												"type": "once",
+												"tag": "\"stone\""
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 183276916877975,
+											"parameters": {
+												"object": "proj_stone",
+												"layer": "\"bullets\"",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "proj_stone",
+											"sid": 829541555002395,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "angle(Self.X, Self.Y, Mouse.X, Mouse.Y)"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "proj_stone",
+											"sid": 560398470231027,
+											"parameters": {
+												"scale": "1.3"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "proj_stone",
+											"sid": 149613392786295,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"drop\"",
+												"property": "scale",
+												"end-x": "1",
+												"end-y": "1",
+												"time": "0.85",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "tween-value",
+											"objectClass": "proj_stone",
+											"sid": 500583151873756,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"speed\"",
+												"start-value": "Self.Bullet.Speed",
+												"end-value": "0",
+												"time": "clamp(distance(Self.x, Self.Y, Mouse.X, Mouse.Y)/300, 0.25, 1.25)",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										}
+									],
+									"sid": 658412021069278
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 365134487394387,
+											"parameters": {
+												"key": 88
+											}
+										},
+										{
+											"id": "is-timer-running",
+											"objectClass": "Player",
+											"sid": 636620918429224,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"stone\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 350806619223921,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 717014955513247,
+													"parameters": {
+														"animation": "\"walk\""
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player",
+													"sid": 334382647030144,
+													"parameters": {
+														"animation": "\"idle\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Player",
+													"sid": 445450545049558,
+													"behaviorType": "8Direction"
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Player",
+													"sid": 703960746847555,
+													"parameters": {
+														"animation": "\"stone\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 616845613282391,
+											"isOrBlock": true
+										}
+									]
+								}
+							]
 						}
 					],
 					"sid": 108363543795255
@@ -6037,24 +6238,24 @@
 														{
 															"id": "play-by-name",
 															"objectClass": "Audio",
-															"sid": 929619230780598,
+															"sid": 598053758569719,
 															"parameters": {
 																"folder": "sounds",
 																"audio-file-name": "choose(\"ak-1\",\"ak-2\")",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "-5",
 																"tag-optional": "\"\""
 															}
 														},
 														{
 															"id": "play-by-name",
 															"objectClass": "Audio",
-															"sid": 859530240146926,
+															"sid": 344196504152635,
 															"parameters": {
 																"folder": "sounds",
 																"audio-file-name": "\"tank shot\"",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "-5",
 																"tag-optional": "\"\""
 															}
 														}
@@ -8097,6 +8298,290 @@
 									],
 									"actions": [],
 									"sid": 123813775756084
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "stone"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 493304044122404,
+							"children": [
+								{
+									"functionName": "stone_stop",
+									"functionDescription": "",
+									"functionCategory": "#projectiles",
+									"functionReturnType": "none",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "stoneUID",
+											"type": "number",
+											"initialValue": "-1",
+											"comment": "",
+											"sid": 768023462956604
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 118648282781689,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "proj_stone",
+													"sid": 882054139754544,
+													"parameters": {
+														"unique-id": "stoneUID"
+													}
+												},
+												{
+													"id": "is-enabled",
+													"objectClass": "proj_stone",
+													"sid": 550196516245145,
+													"behaviorType": "Bullet"
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "proj_stone",
+													"sid": 792358084892292,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 598050174712246,
+													"parameters": {
+														"audio-file": "throwStone",
+														"loop": "not-looping",
+														"volume": "-6",
+														"object": "proj_stone",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"\""
+													}
+												},
+												{
+													"id": "move-to-layer",
+													"objectClass": "proj_stone",
+													"sid": 841289964196690,
+													"parameters": {
+														"layer": "\"floors\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 687974205409420,
+													"parameters": {
+														"seconds": "random(0.15)"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "proj_stone",
+													"sid": 663542119332895,
+													"behaviorType": "Rotate",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"callFunction": "create_audio_trigger",
+													"sid": 886950328187283,
+													"parameters": [
+														"proj_stone.X",
+														"proj_stone.Y",
+														"4",
+														"0.85"
+													]
+												},
+												{
+													"id": "stop-all-tweens",
+													"objectClass": "proj_stone",
+													"sid": 557009564767562,
+													"behaviorType": "Tween"
+												}
+											],
+											"sid": 174047861482926
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-enabled",
+											"objectClass": "proj_stone",
+											"sid": 262415564840038,
+											"behaviorType": "Bullet"
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "proj_stone",
+											"sid": 464715869913728,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 517671488023531,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-speed",
+													"objectClass": "proj_stone",
+													"sid": 583738939837391,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "Self.Tween.Value(\"speed\")"
+													}
+												}
+											],
+											"sid": 525913358333914
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-distance-travelled",
+													"objectClass": "proj_stone",
+													"sid": 226706422144735,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"comparison": 4,
+														"distance": "16"
+													}
+												},
+												{
+													"id": "compare-speed",
+													"objectClass": "proj_stone",
+													"sid": 460277876099087,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"comparison": 3,
+														"speed": "4"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 799377090101426,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "System",
+															"sid": 536554878055128,
+															"parameters": {
+																"object": "proj_stone"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "proj_stone",
+															"sid": 740607128408303,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "false"
+															}
+														},
+														{
+															"callFunction": "stone_stop",
+															"sid": 849365080177051,
+															"parameters": [
+																"proj_stone.UID"
+															]
+														}
+													],
+													"sid": 416754059462559
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-enabled",
+											"objectClass": "proj_stone",
+											"sid": 699297794571314,
+											"behaviorType": "Bullet"
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "proj_stone",
+											"sid": 234649837859827,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 901407035628344,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "proj_stone",
+													"sid": 438841854008944,
+													"parameters": {
+														"object": "furniture"
+													}
+												},
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "proj_stone",
+													"sid": 301332795528428,
+													"parameters": {
+														"object": "building"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 806521318891112,
+													"parameters": {
+														"audio-file": "stonesImpact",
+														"loop": "not-looping",
+														"volume": "0",
+														"object": "proj_stone",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 289919619331309,
+											"isOrBlock": true
+										}
+									]
 								}
 							]
 						}

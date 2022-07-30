@@ -1223,71 +1223,73 @@
 																				}
 																			],
 																			"actions": [],
-																			"sid": 785710839600812
-																		},
-																		{
-																			"eventType": "block",
-																			"conditions": [
+																			"sid": 785710839600812,
+																			"children": [
 																				{
-																					"id": "compare-eventvar",
-																					"objectClass": "System",
-																					"sid": 867719702825216,
-																					"parameters": {
-																						"variable": "settings_language",
-																						"comparison": 0,
-																						"value": "\"en\""
-																					}
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "compare-eventvar",
+																							"objectClass": "System",
+																							"sid": 186743781946413,
+																							"parameters": {
+																								"variable": "settings_language",
+																								"comparison": 0,
+																								"value": "\"en\""
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "start-timer",
+																							"objectClass": "Player",
+																							"sid": 468098665758282,
+																							"behaviorType": "Timer",
+																							"parameters": {
+																								"duration": "random(5,20)",
+																								"type": "once",
+																								"tag": "\"enemy_shout\""
+																							}
+																						},
+																						{
+																							"id": "set-boolean-eventvar",
+																							"objectClass": "System",
+																							"sid": 297513080069551,
+																							"parameters": {
+																								"variable": "player_is_talking",
+																								"value": "true"
+																							}
+																						},
+																						{
+																							"id": "set-visible",
+																							"objectClass": "sprfont_dialog",
+																							"sid": 717734838476891,
+																							"parameters": {
+																								"visibility": "visible"
+																							}
+																						},
+																						{
+																							"id": "stop-timer",
+																							"objectClass": "sprfont_dialog",
+																							"sid": 672262056372720,
+																							"behaviorType": "Timer",
+																							"parameters": {
+																								"tag": "\"line_over\""
+																							}
+																						},
+																						{
+																							"id": "typewriter-text",
+																							"objectClass": "sprfont_dialog",
+																							"sid": 897608900588658,
+																							"parameters": {
+																								"text": "choose(\"Stop!\", \"Shit!\", \"Stay away from me!\", \"Don't touch me!\", \"Ah!\", \"No!\", \"Wait!\")",
+																								"duration": "0.5"
+																							}
+																						}
+																					],
+																					"sid": 275385352475630
 																				}
-																			],
-																			"actions": [
-																				{
-																					"id": "start-timer",
-																					"objectClass": "Player",
-																					"sid": 791901385438378,
-																					"behaviorType": "Timer",
-																					"parameters": {
-																						"duration": "random(5,20)",
-																						"type": "once",
-																						"tag": "\"enemy_shout\""
-																					}
-																				},
-																				{
-																					"id": "set-boolean-eventvar",
-																					"objectClass": "System",
-																					"sid": 411055194549584,
-																					"parameters": {
-																						"variable": "player_is_talking",
-																						"value": "true"
-																					}
-																				},
-																				{
-																					"id": "set-visible",
-																					"objectClass": "sprfont_dialog",
-																					"sid": 779516715986895,
-																					"parameters": {
-																						"visibility": "visible"
-																					}
-																				},
-																				{
-																					"id": "stop-timer",
-																					"objectClass": "sprfont_dialog",
-																					"sid": 889948408161609,
-																					"behaviorType": "Timer",
-																					"parameters": {
-																						"tag": "\"line_over\""
-																					}
-																				},
-																				{
-																					"id": "typewriter-text",
-																					"objectClass": "sprfont_dialog",
-																					"sid": 167139653737796,
-																					"parameters": {
-																						"text": "choose(\"Stop!\", \"Shit!\", \"Stay away from me!\", \"Don't touch me!\", \"Ah!\", \"No!\", \"Wait!\")",
-																						"duration": "0.5"
-																					}
-																				}
-																			],
-																			"sid": 277206182132625
+																			]
 																		}
 																	]
 																}
@@ -3093,75 +3095,27 @@
 								{
 									"id": "start-timer",
 									"objectClass": "alert",
-									"sid": 511279313957206,
+									"sid": 146712229297703,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "0.2",
+										"duration": "random(0.2, 1)",
 										"type": "once",
 										"tag": "\"destroy\""
 									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "runner",
+									"sid": 304807092858903,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "random(1.5, 8)",
+										"type": "once",
+										"tag": "\"alert\""
+									}
 								}
 							],
-							"sid": 513731958846556,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-all",
-											"objectClass": "System",
-											"sid": 460482776653444,
-											"parameters": {
-												"object": "alert"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 971921107988720,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-children",
-													"objectClass": "runner",
-													"sid": 491414520349012,
-													"parameters": {
-														"child": "alert",
-														"which": "own"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 237045605157597
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 327036973236822
-												}
-											],
-											"actions": [
-												{
-													"id": "start-timer",
-													"objectClass": "runner",
-													"sid": 314484159136615,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "random(6)",
-														"type": "once",
-														"tag": "\"alert\""
-													}
-												}
-											],
-											"sid": 757937341096177
-										}
-									]
-								}
-							]
+							"sid": 513731958846556
 						}
 					],
 					"sid": 779258313369731
@@ -5844,6 +5798,103 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "proj_stone",
+									"sid": 557088671647286,
+									"parameters": {
+										"object": "runner"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "runner",
+									"sid": 399042826260662,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 1,
+										"value": "\"dead\""
+									}
+								},
+								{
+									"id": "is-enabled",
+									"objectClass": "proj_stone",
+									"sid": 837570144620306,
+									"behaviorType": "Bullet"
+								}
+							],
+							"actions": [],
+							"sid": 692526241593531,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "stone_stop",
+											"sid": 178613726706098,
+											"parameters": [
+												"proj_stone.UID"
+											]
+										},
+										{
+											"id": "play-at-object",
+											"objectClass": "Audio",
+											"sid": 798599536891450,
+											"parameters": {
+												"audio-file": "fist to body",
+												"loop": "not-looping",
+												"volume": "0",
+												"object": "runner",
+												"inner-angle": "360",
+												"outer-angle": "360",
+												"outer-gain": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 461496474965597
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "runner",
+											"sid": 135632658715635,
+											"parameters": {
+												"instance-variable": "state",
+												"comparison": 1,
+												"value": "\"attack\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 823169785232552,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "enemy_create_alert",
+													"sid": 729345760272994,
+													"parameters": [
+														"runner.UID",
+														"Player.X",
+														"Player.Y"
+													]
+												}
+											],
+											"sid": 504005534757547
+										}
+									]
+								}
+							]
+						},
 						{
 							"eventType": "block",
 							"conditions": [
