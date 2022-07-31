@@ -1892,6 +1892,70 @@
 										{
 											"id": "else",
 											"objectClass": "System",
+											"sid": 239082304629433
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player",
+											"sid": 276772980843308,
+											"parameters": {
+												"animation": "\"pistol_reload\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 112567635610142,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player",
+													"sid": 967592122370067,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"max-speed": "100"
+													}
+												}
+											],
+											"sid": 660211670028170,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 529811779281670,
+															"parameters": {
+																"interval-seconds": "0.65"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "player_check_step_sound",
+															"sid": 922339775269665,
+															"parameters": [
+																false,
+																false
+															]
+														}
+													],
+													"sid": 541213476056300
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
 											"sid": 726787800789451
 										},
 										{

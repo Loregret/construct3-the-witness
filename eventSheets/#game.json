@@ -3326,10 +3326,10 @@
 																{
 																	"id": "start-timer",
 																	"objectClass": "Player",
-																	"sid": 857562429449067,
+																	"sid": 940858239555296,
 																	"behaviorType": "Timer",
 																	"parameters": {
-																		"duration": "1.8",
+																		"duration": "1.45",
 																		"type": "once",
 																		"tag": "\"reload\""
 																	}
@@ -3545,6 +3545,7 @@
 																}
 															],
 															"sid": 701926539467440,
+															"disabled": true,
 															"isOrBlock": true
 														}
 													]
@@ -6014,35 +6015,22 @@
 														{
 															"id": "play",
 															"objectClass": "Audio",
-															"sid": 279192468193313,
-															"disabled": true,
+															"sid": 341012366908584,
 															"parameters": {
 																"audio-file": "9mm - fire",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "-10",
 																"tag-optional": "\"\""
 															}
 														},
 														{
 															"id": "play",
 															"objectClass": "Audio",
-															"sid": 950919450609040,
+															"sid": 717637087031954,
 															"parameters": {
 																"audio-file": "pistol4",
 																"loop": "not-looping",
 																"volume": "-12",
-																"tag-optional": "\"\""
-															}
-														},
-														{
-															"id": "play-by-name",
-															"objectClass": "Audio",
-															"sid": 445639945159420,
-															"parameters": {
-																"folder": "sounds",
-																"audio-file-name": "choose(\"pistol2\",\"pistol3\")",
-																"loop": "not-looping",
-																"volume": "0",
 																"tag-optional": "\"\""
 															}
 														}
@@ -6353,24 +6341,12 @@
 														{
 															"id": "play-by-name",
 															"objectClass": "Audio",
-															"sid": 598053758569719,
+															"sid": 587297752396838,
 															"parameters": {
 																"folder": "sounds",
-																"audio-file-name": "choose(\"ak-1\",\"ak-2\")",
+																"audio-file-name": "choose(\"pistol2\",\"pistol3\")",
 																"loop": "not-looping",
-																"volume": "-5",
-																"tag-optional": "\"\""
-															}
-														},
-														{
-															"id": "play-by-name",
-															"objectClass": "Audio",
-															"sid": 344196504152635,
-															"parameters": {
-																"folder": "sounds",
-																"audio-file-name": "\"tank shot\"",
-																"loop": "not-looping",
-																"volume": "-5",
+																"volume": "0",
 																"tag-optional": "\"\""
 															}
 														}
@@ -6395,12 +6371,12 @@
 														{
 															"id": "play-at-object-by-name",
 															"objectClass": "Audio",
-															"sid": 794855929159512,
+															"sid": 675687936575880,
 															"parameters": {
 																"folder": "sounds",
 																"audio-file-name": "\"bullet shell drop\"",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "-12",
 																"object": "Player",
 																"inner-angle": "360",
 																"outer-angle": "360",
