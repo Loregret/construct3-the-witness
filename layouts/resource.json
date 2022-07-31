@@ -1236,7 +1236,7 @@
 					"behaviors": {
 						"Bullet": {
 							"properties": {
-								"speed": 800,
+								"speed": 900,
 								"acceleration": 0,
 								"gravity": 0,
 								"bounce-off-solids": true,
@@ -1257,22 +1257,32 @@
 							"properties": {
 								"enabled": true
 							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 50,
+								"fade-out-time": 1,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
 						}
 					},
 					"world": {
 						"x": 224,
 						"y": 288,
 						"width": 12,
-						"height": 10,
+						"height": 11,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.45454545454545453,
 						"color": [
 							1,
 							1,
 							1,
 							1
 						],
-						"angle": 0,
+						"angle": 0.6636909764986745,
 						"zElevation": 0
 					}
 				},
@@ -1374,5 +1384,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": null
+	"eventSheet": "#Game"
 }

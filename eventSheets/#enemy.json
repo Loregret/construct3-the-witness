@@ -5243,9 +5243,24 @@
 								{
 									"id": "play-at-object",
 									"objectClass": "Audio",
-									"sid": 227714409109039,
+									"sid": 626493564196504,
 									"parameters": {
 										"audio-file": "9mm - fire",
+										"loop": "not-looping",
+										"volume": "-10",
+										"object": "runner",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"shot\""
+									}
+								},
+								{
+									"id": "play-at-object",
+									"objectClass": "Audio",
+									"sid": 150648378330791,
+									"parameters": {
+										"audio-file": "pistol4",
 										"loop": "not-looping",
 										"volume": "0",
 										"object": "runner",
@@ -5881,11 +5896,11 @@
 											"actions": [
 												{
 													"callFunction": "enemy_create_alert",
-													"sid": 729345760272994,
+													"sid": 485909853048936,
 													"parameters": [
 														"runner.UID",
-														"Player.X",
-														"Player.Y"
+														"Player.X + random(-20,20)",
+														"Player.Y + random(-20,20)"
 													]
 												}
 											],

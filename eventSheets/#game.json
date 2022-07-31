@@ -161,6 +161,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "settings_enable_stones",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 114109529239964
+		},
+		{
+			"eventType": "variable",
 			"name": "settings_show_gun_shells",
 			"type": "boolean",
 			"initialValue": "true",
@@ -563,6 +573,101 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
+											"sid": 687592303433189,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"resource\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 916145488352891,
+											"parameters": {
+												"layout": "menu"
+											}
+										}
+									],
+									"sid": 530683992290671
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 256050258397881
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 853508698173150,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"base\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 858914155940347
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 625712683484706
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 189308768205454,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"collection\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 910337448385381,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 833188100356603,
+													"parameters": {
+														"audio-file": "desert ambiance",
+														"loop": "looping",
+														"volume": "-28",
+														"tag-optional": "\"ambience\""
+													}
+												}
+											],
+											"sid": 364309040388048
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 875385437485504
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
 											"sid": 132036668874732,
 											"parameters": {
 												"first-value": "LayoutName",
@@ -941,70 +1046,6 @@
 												}
 											],
 											"sid": 957632938583793
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 841920792666095
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 809875257510244,
-											"parameters": {
-												"first-value": "LayoutName",
-												"comparison": 0,
-												"second-value": "\"base\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 802091347669717
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 110584262609799
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 525475976776563,
-											"parameters": {
-												"first-value": "LayoutName",
-												"comparison": 0,
-												"second-value": "\"collection\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 818419140167655,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 379298606940218,
-													"parameters": {
-														"audio-file": "desert ambiance",
-														"loop": "looping",
-														"volume": "-28",
-														"tag-optional": "\"ambience\""
-													}
-												}
-											],
-											"sid": 534524292813195
 										}
 									]
 								}
@@ -4261,10 +4302,10 @@
 										{
 											"id": "start-timer",
 											"objectClass": "Player",
-											"sid": 871955893066256,
+											"sid": 721941388052112,
 											"behaviorType": "Timer",
 											"parameters": {
-												"duration": "1.1",
+												"duration": "2.65",
 												"type": "once",
 												"tag": "\"stone\""
 											}
@@ -4279,59 +4320,101 @@
 												"image-point": "1",
 												"create-hierarchy": false
 											}
-										},
-										{
-											"id": "set-angle-of-motion",
-											"objectClass": "proj_stone",
-											"sid": 829541555002395,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"angle": "angle(Self.X, Self.Y, Mouse.X, Mouse.Y)"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "proj_stone",
-											"sid": 560398470231027,
-											"parameters": {
-												"scale": "1.3"
-											}
-										},
-										{
-											"id": "tween-two-properties",
-											"objectClass": "proj_stone",
-											"sid": 149613392786295,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"drop\"",
-												"property": "scale",
-												"end-x": "1",
-												"end-y": "1",
-												"time": "0.85",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no"
-											}
-										},
-										{
-											"id": "tween-value",
-											"objectClass": "proj_stone",
-											"sid": 500583151873756,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"speed\"",
-												"start-value": "Self.Bullet.Speed",
-												"end-value": "0",
-												"time": "clamp(distance(Self.x, Self.Y, Mouse.X, Mouse.Y)/300, 0.25, 1.25)",
-												"ease": "easeoutsine",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no"
-											}
 										}
 									],
-									"sid": 658412021069278
+									"sid": 658412021069278,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "proj_stone",
+													"sid": 921178749677229,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(Self.X, Self.Y, Mouse.X, Mouse.Y)"
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "proj_stone",
+													"sid": 971208503962354,
+													"parameters": {
+														"scale": "1.3"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "proj_stone",
+													"sid": 544159073906172,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"drop\"",
+														"property": "scale",
+														"end-x": "1",
+														"end-y": "1",
+														"time": "0.85",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "tween-value",
+													"objectClass": "proj_stone",
+													"sid": 285720276150101,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"speed\"",
+														"start-value": "Self.Bullet.Speed",
+														"end-value": "0",
+														"time": "clamp(distance(Self.x, Self.Y, Mouse.X, Mouse.Y)/300, 0.25, 1.25)",
+														"ease": "easeoutsine",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												}
+											],
+											"sid": 493502296143823,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "proj_stone",
+															"sid": 326207042508599,
+															"parameters": {
+																"visibility": "invisible"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 899559397329263,
+															"parameters": {
+																"seconds": "0.05"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "proj_stone",
+															"sid": 484350255439228,
+															"parameters": {
+																"visibility": "visible"
+															}
+														}
+													],
+													"sid": 817590412898003
+												}
+											]
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -4353,6 +4436,14 @@
 												"tag": "\"stone\""
 											},
 											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 306110124835677,
+											"parameters": {
+												"variable": "settings_enable_stones"
+											}
 										}
 									],
 									"actions": [],
@@ -5924,8 +6015,32 @@
 															"id": "play",
 															"objectClass": "Audio",
 															"sid": 279192468193313,
+															"disabled": true,
 															"parameters": {
 																"audio-file": "9mm - fire",
+																"loop": "not-looping",
+																"volume": "0",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 950919450609040,
+															"parameters": {
+																"audio-file": "pistol4",
+																"loop": "not-looping",
+																"volume": "-12",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 445639945159420,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "choose(\"pistol2\",\"pistol3\")",
 																"loop": "not-looping",
 																"volume": "0",
 																"tag-optional": "\"\""
@@ -6612,17 +6727,6 @@
 													"eventType": "block",
 													"conditions": [],
 													"actions": [
-														{
-															"id": "play",
-															"objectClass": "Audio",
-															"sid": 250156539386316,
-															"parameters": {
-																"audio-file": "shotgun 3",
-																"loop": "not-looping",
-																"volume": "0",
-																"tag-optional": "\"shotgun\""
-															}
-														},
 														{
 															"id": "play",
 															"objectClass": "Audio",
@@ -8547,18 +8651,63 @@
 												{
 													"id": "on-collision-with-another-object",
 													"objectClass": "proj_stone",
+													"sid": 887277020608138,
+													"parameters": {
+														"object": "building"
+													}
+												},
+												{
+													"id": "is-enabled",
+													"objectClass": "building",
+													"sid": 453898028825047,
+													"behaviorType": "Solid"
+												}
+											],
+											"actions": [
+												{
+													"id": "play-at-object",
+													"objectClass": "Audio",
+													"sid": 102171907215387,
+													"parameters": {
+														"audio-file": "stonesImpact",
+														"loop": "not-looping",
+														"volume": "0",
+														"object": "proj_stone",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
+														"tag-optional": "\"\""
+													}
+												},
+												{
+													"callFunction": "create_audio_trigger",
+													"sid": 590057144968142,
+													"parameters": [
+														"proj_stone.X",
+														"proj_stone.Y",
+														"4",
+														"0.5"
+													]
+												}
+											],
+											"sid": 859539381154637
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "proj_stone",
 													"sid": 438841854008944,
 													"parameters": {
 														"object": "furniture"
 													}
 												},
 												{
-													"id": "on-collision-with-another-object",
-													"objectClass": "proj_stone",
-													"sid": 301332795528428,
-													"parameters": {
-														"object": "building"
-													}
+													"id": "is-enabled",
+													"objectClass": "furniture",
+													"sid": 353661297593866,
+													"behaviorType": "Solid"
 												}
 											],
 											"actions": [
@@ -8576,10 +8725,19 @@
 														"outer-gain": "0",
 														"tag-optional": "\"\""
 													}
+												},
+												{
+													"callFunction": "create_audio_trigger",
+													"sid": 151296688404366,
+													"parameters": [
+														"proj_stone.X",
+														"proj_stone.Y",
+														"4",
+														"0.5"
+													]
 												}
 											],
-											"sid": 289919619331309,
-											"isOrBlock": true
+											"sid": 289919619331309
 										}
 									]
 								}
