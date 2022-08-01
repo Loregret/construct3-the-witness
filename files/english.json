@@ -133,8 +133,21 @@
 			"dialogs": [
 				{
 					"char": "hint",
-					"line": "<color=lightgreen><i>F - flashlight.</i></color>",
+					"line": "<color=lightgreen><i>F - turn on flashlight.</i></color>",
 					"wait": 2.5,
+					"no-sound": true,
+					"sound": "notification1",
+					"typewriter": "none"
+				}
+			]
+		},
+		{
+			"id": "tip-sneak",
+			"dialogs": [
+				{
+					"char": "hint",
+					"line": "Enemies can hear you. Press <color=lightgreen>SPACE</color> to move quietly.",
+					"wait": 3,
 					"no-sound": true,
 					"sound": "notification1",
 					"typewriter": "none"

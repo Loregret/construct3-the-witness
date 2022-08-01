@@ -6248,6 +6248,51 @@
 									"sid": 343377755188241
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "runner",
+									"sid": 227753311397625,
+									"parameters": {
+										"object": "Player"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "runner",
+									"sid": 984573546811137,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 1,
+										"value": "\"dead\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "runner",
+									"sid": 188099167833054,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 1,
+										"value": "\"attack\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "enemy_create_alert",
+									"sid": 428449286738196,
+									"parameters": [
+										"runner.UID",
+										"Player.X",
+										"Player.Y"
+									]
+								}
+							],
+							"sid": 214174176389192
 						}
 					],
 					"sid": 401416542205071
