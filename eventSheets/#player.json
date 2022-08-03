@@ -2897,12 +2897,40 @@
 											"sid": 380298221029609
 										},
 										{
-											"callFunction": "player_death",
-											"sid": 682033304865157,
-											"disabled": true
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 986644746264726,
+											"parameters": {
+												"variable": "player_health",
+												"value": "1"
+											}
 										}
 									],
-									"sid": 669491664037599
+									"sid": 669491664037599,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 971090509639057,
+													"parameters": {
+														"variable": "player_health",
+														"comparison": 3,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "player_death",
+													"sid": 281466664177552
+												}
+											],
+											"sid": 968550370337107
+										}
+									]
 								}
 							]
 						}

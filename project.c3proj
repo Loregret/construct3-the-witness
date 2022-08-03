@@ -256,6 +256,22 @@
 		},
 		{
 			"type": "effect",
+			"id": "glowvertical",
+			"name": "Glow vertical",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowhorizontal",
+			"name": "Glow horizontal",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "vignette",
 			"name": "Vignette",
 			"author": "Brad Larson",
@@ -282,21 +298,18 @@
 			},
 			{
 				"items": [
-					"house_wood",
 					"wooden_floor",
 					"car",
-					"house_door",
-					"house_concrete",
 					"window",
 					"dust",
 					"dust2",
 					"stone",
-					"house_bricks",
 					"shadowcaster",
 					"water_hole",
 					"water_texture",
 					"water_texture2",
-					"custom_car"
+					"custom_car",
+					"debris1"
 				],
 				"subfolders": [
 					{
@@ -311,6 +324,17 @@
 						],
 						"subfolders": [],
 						"name": "textures"
+					},
+					{
+						"items": [
+							"house_bricks",
+							"house_concrete",
+							"house_concrete2",
+							"house_door",
+							"house_wood"
+						],
+						"subfolders": [],
+						"name": "house"
 					}
 				],
 				"name": "building"
@@ -359,7 +383,8 @@
 					"fx_torch_fire",
 					"fx_muzzle",
 					"fx_wood",
-					"blackTransition"
+					"blackTransition",
+					"fire_particles"
 				],
 				"subfolders": [],
 				"name": "fx"
@@ -420,7 +445,9 @@
 					"plant1",
 					"box",
 					"cargo1",
-					"table3"
+					"table3",
+					"floorLab",
+					"sofa"
 				],
 				"subfolders": [],
 				"name": "furniture"
@@ -536,7 +563,7 @@
 						"items": [
 							"forest1",
 							"forest2",
-							"training",
+							"lab1",
 							"base",
 							"forest1_with_enemy",
 							"collection"
@@ -1241,6 +1268,14 @@
 									"name": "pistol4.webm",
 									"type": "audio/webm; codecs=opus",
 									"sid": 514204643328186,
+									"file-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "pistolQuip.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 374145103741226,
 									"file-info": {
 										"purpose": "none"
 									}

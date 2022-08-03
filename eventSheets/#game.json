@@ -43,6 +43,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "player_health",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 862772557825414
+		},
+		{
+			"eventType": "variable",
 			"name": "player_visibility_check",
 			"type": "boolean",
 			"initialValue": "true",
@@ -278,6 +288,15 @@
 									"eventType": "block",
 									"conditions": [],
 									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 863639149596274,
+											"parameters": {
+												"variable": "player_health",
+												"value": "2"
+											}
+										},
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
@@ -901,90 +920,6 @@
 												}
 											],
 											"sid": 956954165197100
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 896411575487917
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 145407356411957,
-											"parameters": {
-												"first-value": "LayoutName",
-												"comparison": 0,
-												"second-value": "\"training\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 957944440512154,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 631828024648548,
-													"parameters": {
-														"variable": "flashlight_battery",
-														"value": "500"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 647311558924382,
-													"parameters": {
-														"variable": "stick_lights",
-														"value": "0"
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "ShadowLight",
-													"sid": 942701400520270,
-													"parameters": {
-														"opacity": "97"
-													}
-												},
-												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 140480295284926,
-													"parameters": {
-														"key": "\"pistol\"",
-														"value": "1"
-													}
-												},
-												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 988839301892605,
-													"parameters": {
-														"key": "\"shotgun\"",
-														"value": "1"
-													}
-												},
-												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 709415011873110,
-													"parameters": {
-														"key": "\"ak\"",
-														"value": "1"
-													}
-												}
-											],
-											"sid": 281923128725950
 										}
 									]
 								},
@@ -3006,6 +2941,17 @@
 																"volume": "0",
 																"tag-optional": "\"player_undraw\""
 															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 639707529710251,
+															"parameters": {
+																"audio-file": "pistolQuip",
+																"loop": "not-looping",
+																"volume": "-6",
+																"tag-optional": "\"player_draw\""
+															}
 														}
 													],
 													"sid": 316281422025549
@@ -4491,6 +4437,63 @@
 											"isOrBlock": true
 										}
 									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "slow-motion"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 115919771615914,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 122285907593074,
+											"parameters": {
+												"key": 84
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 532022516444632,
+											"parameters": {
+												"time-scale": "0.55"
+											}
+										}
+									],
+									"sid": 263854768848961
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 266440456697344
+										}
+									],
+									"actions": [
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 554751052606406,
+											"parameters": {
+												"time-scale": "1"
+											}
+										}
+									],
+									"sid": 622173974154688
 								}
 							]
 						}
