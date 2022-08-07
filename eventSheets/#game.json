@@ -632,7 +632,15 @@
 										}
 									],
 									"actions": [],
-									"sid": 858914155940347
+									"sid": 858914155940347,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 550737665028751
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -3135,6 +3143,17 @@
 																"loop": "not-looping",
 																"volume": "0",
 																"tag-optional": "\"player_undraw\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 823201327681659,
+															"parameters": {
+																"audio-file": "akdraw",
+																"loop": "not-looping",
+																"volume": "-6",
+																"tag-optional": "\"player_draw\""
 															}
 														}
 													],

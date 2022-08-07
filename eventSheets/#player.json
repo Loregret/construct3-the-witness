@@ -1842,6 +1842,148 @@
 												{
 													"id": "else",
 													"objectClass": "System",
+													"sid": 519466962523859
+												},
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 106608486735359,
+													"parameters": {
+														"key": 32
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "crouching"
+												}
+											],
+											"sid": 840008567520660,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 377112681290681,
+															"parameters": {
+																"object": "tree"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 755091897731745,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 706791537067220,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "min(Self.8Direction.Speed, 40)"
+															}
+														}
+													],
+													"sid": 107088594427547,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 754480220934094,
+																	"parameters": {
+																		"interval-seconds": "0.95"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 442857160757375,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 813579153891068
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 259198400453980
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 193817191550202,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 616944295630035,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "80"
+															}
+														}
+													],
+													"sid": 919571760630336,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 404310266577261,
+																	"parameters": {
+																		"interval-seconds": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 496203894689618,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 104794409532397
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
 													"sid": 859580123955285
 												}
 											],
@@ -1908,7 +2050,150 @@
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [],
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 309747529966259,
+													"parameters": {
+														"key": 32
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "crouching"
+												}
+											],
+											"sid": 451316808400772,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 618700132408223,
+															"parameters": {
+																"object": "tree"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 900093958618833,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 658351694890878,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "min(Self.8Direction.Speed, 40)"
+															}
+														}
+													],
+													"sid": 250656171543610,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 712739955802991,
+																	"parameters": {
+																		"interval-seconds": "0.95"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 475057644002721,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 810686418516609
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 394069225894055
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 365305895632013,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 802840247551313,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "80"
+															}
+														}
+													],
+													"sid": 860271733485377,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 153781328957488,
+																	"parameters": {
+																		"interval-seconds": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 532764846004063,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 656857732863597
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 598507295988066
+												}
+											],
 											"actions": [
 												{
 													"id": "set-max-speed",
@@ -2007,6 +2292,148 @@
 												{
 													"id": "else",
 													"objectClass": "System",
+													"sid": 476742268794604
+												},
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 692029304123764,
+													"parameters": {
+														"key": 32
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "crouching"
+												}
+											],
+											"sid": 417496817556052,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 458853960271422,
+															"parameters": {
+																"object": "tree"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 958495386685397,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 353910080268951,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "min(Self.8Direction.Speed, 40)"
+															}
+														}
+													],
+													"sid": 607895618262975,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 240297933238283,
+																	"parameters": {
+																		"interval-seconds": "0.95"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 373446065657784,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 865479266158896
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 474476937940366
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 211432720402729,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 258461962523957,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "80"
+															}
+														}
+													],
+													"sid": 295408628668480,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 572385944959482,
+																	"parameters": {
+																		"interval-seconds": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 966461147849888,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 985742578607731
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
 													"sid": 992989176108789
 												}
 											],
@@ -2073,7 +2500,150 @@
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [],
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 626875917411120,
+													"parameters": {
+														"key": 32
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "crouching"
+												}
+											],
+											"sid": 970765042693859,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 534091558477870,
+															"parameters": {
+																"object": "tree"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 625968568660234,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 774373399693532,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "min(Self.8Direction.Speed, 30)"
+															}
+														}
+													],
+													"sid": 416421331916446,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 588239772677255,
+																	"parameters": {
+																		"interval-seconds": "0.95"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 280014880217574,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 711759832844353
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 217154625977289
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 413416427072541,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 503160407011067,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "40"
+															}
+														}
+													],
+													"sid": 679150238990635,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 456847082019370,
+																	"parameters": {
+																		"interval-seconds": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 774355852183850,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 886505001317978
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 389534614724037
+												}
+											],
 											"actions": [
 												{
 													"id": "set-max-speed",
@@ -2172,6 +2742,148 @@
 												{
 													"id": "else",
 													"objectClass": "System",
+													"sid": 246549208269343
+												},
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 459762385152512,
+													"parameters": {
+														"key": 32
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "crouching"
+												}
+											],
+											"sid": 930016908718706,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 114653809894983,
+															"parameters": {
+																"object": "tree"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 474635005054066,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 491321245269496,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "min(Self.8Direction.Speed, 40)"
+															}
+														}
+													],
+													"sid": 945180644689475,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 847950215898201,
+																	"parameters": {
+																		"interval-seconds": "0.95"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 841513142680035,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 230935719628881
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 534842666509110
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 267987101495374,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 292692405634230,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "80"
+															}
+														}
+													],
+													"sid": 177557848522865,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 172292526841759,
+																	"parameters": {
+																		"interval-seconds": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 859992180321246,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 107155869406404
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
 													"sid": 727881857580837
 												}
 											],
@@ -2238,7 +2950,150 @@
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [],
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 383919680430569,
+													"parameters": {
+														"key": 32
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "crouching"
+												}
+											],
+											"sid": 192509813054854,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Player",
+															"sid": 215245833276455,
+															"parameters": {
+																"object": "tree"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 975536711807581,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "Player",
+															"sid": 594281049027212,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"speed": "min(Self.8Direction.Speed, 40)"
+															}
+														}
+													],
+													"sid": 992430733745924,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 982876193681163,
+																	"parameters": {
+																		"interval-seconds": "0.95"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 730425811834369,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 774688368533893
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 828654839907233
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-speed",
+															"objectClass": "Player",
+															"sid": 739045842482982,
+															"parameters": {
+																"speed": "3"
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player",
+															"sid": 875226750341306,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"max-speed": "80"
+															}
+														}
+													],
+													"sid": 772177722557659,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 798591585606330,
+																	"parameters": {
+																		"interval-seconds": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "player_check_step_sound",
+																	"sid": 681384943575847,
+																	"parameters": [
+																		false,
+																		true
+																	]
+																}
+															],
+															"sid": 559616941854709
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 882710678186897
+												}
+											],
 											"actions": [
 												{
 													"id": "set-max-speed",
