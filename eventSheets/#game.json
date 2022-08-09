@@ -62,6 +62,16 @@
 			"sid": 721638465530355
 		},
 		{
+			"eventType": "variable",
+			"name": "is_pause",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "Активация паузы.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 159828455129529
+		},
+		{
 			"eventType": "comment",
 			"text": "Оружие"
 		},
@@ -958,39 +968,42 @@
 											"conditions": [],
 											"actions": [
 												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 168685588011718,
-													"disabled": true,
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 419994568076262,
 													"parameters": {
-														"key": "\"pistol\"",
-														"value": "1"
-													}
-												},
-												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 856210624607016,
-													"disabled": true,
-													"parameters": {
-														"key": "\"shotgun\"",
-														"value": "1"
-													}
-												},
-												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 762436528712452,
-													"disabled": true,
-													"parameters": {
-														"key": "\"ak\"",
-														"value": "1"
+														"audio-file": "Forest ambient",
+														"loop": "looping",
+														"volume": "-28",
+														"tag-optional": "\"ambience\""
 													}
 												}
 											],
 											"sid": 957632938583793
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 967820087549461
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 611542396605370,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"lab1\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 625199087087410
 								}
 							]
 						},
@@ -4471,48 +4484,122 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 122285907593074,
-											"parameters": {
-												"key": 84
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-time-scale",
 											"objectClass": "System",
-											"sid": 532022516444632,
-											"parameters": {
-												"time-scale": "0.55"
-											}
-										}
-									],
-									"sid": 263854768848961
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 266440456697344
-										}
-									],
-									"actions": [
-										{
-											"id": "set-time-scale",
-											"objectClass": "System",
-											"sid": 554751052606406,
+											"sid": 651580930095340,
 											"parameters": {
 												"time-scale": "1"
 											}
 										}
 									],
-									"sid": 622173974154688
+									"sid": 449026262150077,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 907828177386852,
+													"parameters": {
+														"key": 84
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-time-scale",
+													"objectClass": "System",
+													"sid": 223075353356219,
+													"parameters": {
+														"time-scale": "0.55"
+													}
+												}
+											],
+											"sid": 416052989391604
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "pause"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 493698846668520,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-released",
+											"objectClass": "Keyboard",
+											"sid": 135006392675103,
+											"parameters": {
+												"key": 27
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "save",
+											"objectClass": "System",
+											"sid": 144130488671623,
+											"parameters": {
+												"slot": "\"pause\""
+											}
+										},
+										{
+											"id": "wait-for-signal",
+											"objectClass": "System",
+											"sid": 931034088396936,
+											"parameters": {
+												"tag": "\"savecomplete\""
+											}
+										},
+										{
+											"id": "stop-all",
+											"objectClass": "Audio",
+											"sid": 642504784820347
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 637332036589186,
+											"parameters": {
+												"layout": "pause"
+											}
+										}
+									],
+									"sid": 629874765608709
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-save-complete",
+											"objectClass": "System",
+											"sid": 389633550126880
+										}
+									],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 688939698730644,
+											"parameters": {
+												"tag": "\"savecomplete\""
+											}
+										}
+									],
+									"sid": 782436675180420
 								}
 							]
 						}
@@ -9665,6 +9752,11 @@
 												"loop": "no",
 												"ping-pong": "no"
 											}
+										},
+										{
+											"id": "move-to-bottom",
+											"objectClass": "decal_blood",
+											"sid": 448752091077642
 										}
 									],
 									"sid": 550529044927821

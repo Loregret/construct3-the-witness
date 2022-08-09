@@ -1,0 +1,30 @@
+{
+	"name": "#Pause",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 399113239255489,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "System",
+					"sid": 811634128617803,
+					"parameters": {
+						"slot": "\"pause\""
+					}
+				}
+			],
+			"sid": 578399990696749
+		}
+	],
+	"sid": 231168814031918
+}
