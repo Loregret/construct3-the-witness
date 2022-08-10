@@ -745,6 +745,11 @@
 												"image-point": "0",
 												"create-hierarchy": false
 											}
+										},
+										{
+											"id": "move-to-top",
+											"objectClass": "decal_blood",
+											"sid": 499003194514900
 										}
 									],
 									"sid": 268922965073990
@@ -820,6 +825,14 @@
 											"id": "destroy",
 											"objectClass": "Player",
 											"sid": 849656823512084
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Player_dead",
+											"sid": 829303561535098,
+											"parameters": {
+												"scale": "1.125"
+											}
 										}
 									],
 									"sid": 512833751226267
