@@ -1096,8 +1096,8 @@
 					"world": {
 						"x": 4119.781577467788,
 						"y": 5214.58743984512,
-						"width": 452.6093356255878,
-						"height": 216.44984567215104,
+						"width": 452.60933562558785,
+						"height": 216.44984567215107,
 						"originX": 0.3750355436617332,
 						"originY": 0.5565893864859573,
 						"color": [
@@ -1401,7 +1401,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "doorbroken",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -9884,8 +9884,8 @@
 							},
 							"behaviors": {},
 							"world": {
-								"x": 5633,
-								"y": 4660,
+								"x": 5646,
+								"y": 4696,
 								"width": 85,
 								"height": 85,
 								"originX": 1.011764705882353,
@@ -9912,12 +9912,76 @@
 							"uid": 1843,
 							"instanceVariables": {
 								"audioname": "alarm",
+								"volume": 0
+							},
+							"behaviors": {},
+							"world": {
+								"x": 6377,
+								"y": 5666,
+								"width": 85,
+								"height": 85,
+								"originX": 1.011764705882353,
+								"originY": 1.2117647058823529,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_audio_emitter",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1846,
+							"instanceVariables": {
+								"audioname": "alarm",
 								"volume": -10
 							},
 							"behaviors": {},
 							"world": {
-								"x": 5633,
-								"y": 5473,
+								"x": 5646,
+								"y": 5547,
+								"width": 85,
+								"height": 85,
+								"originX": 1.011764705882353,
+								"originY": 1.2117647058823529,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_audio_emitter",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1847,
+							"instanceVariables": {
+								"audioname": "alarm",
+								"volume": 0
+							},
+							"behaviors": {},
+							"world": {
+								"x": 7498,
+								"y": 5666,
 								"width": 85,
 								"height": 85,
 								"originX": 1.011764705882353,
