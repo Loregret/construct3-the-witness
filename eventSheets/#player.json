@@ -861,7 +861,29 @@
 													}
 												}
 											],
-											"actions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 953871147425773,
+													"parameters": {
+														"seconds": "1.0"
+													}
+												},
+												{
+													"id": "stop-all",
+													"objectClass": "Audio",
+													"sid": 984170416215636
+												},
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 446357027761718,
+													"parameters": {
+														"layout": "forest2"
+													}
+												}
+											],
 											"sid": 417315670817751
 										},
 										{

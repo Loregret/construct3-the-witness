@@ -1054,17 +1054,17 @@
 				{
 					"type": "fx_wood",
 					"properties": {
-						"rate": 45,
+						"rate": 80,
 						"spray-cone": 360,
 						"type": "one-shot",
 						"object": -1,
 						"live-preview": false,
 						"speed": 150,
-						"size": 5,
+						"size": 10,
 						"opacity": 100,
-						"grow-rate": -6,
-						"x-randomiser": 10,
-						"y-randomiser": 10,
+						"grow-rate": -10,
+						"x-randomiser": 200,
+						"y-randomiser": 50,
 						"initial-speed-randomiser": 100,
 						"size-randomiser": 3,
 						"grow-rate-randomiser": 0,
@@ -1074,7 +1074,7 @@
 						"life-speed-randomiser": 800,
 						"opacity-randomiser": 0,
 						"destroy-mode": "timeout-expired",
-						"timeout": 1
+						"timeout": 2
 					},
 					"uid": 408,
 					"instanceVariables": {},

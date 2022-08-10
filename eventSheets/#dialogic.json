@@ -2333,6 +2333,79 @@
 													"sid": 429754957412787
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 106866731266171
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 466912390530740,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"forest2-door\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 388193200238205,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "house_door",
+															"sid": 428532180975328,
+															"parameters": {
+																"unique-id": "1899"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 463228690690028,
+															"parameters": {
+																"audio-file": "wood-break",
+																"loop": "not-looping",
+																"volume": "0",
+																"object": "house_door",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "0",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "house_door",
+															"sid": 538549744419678
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 598816047715306,
+															"parameters": {
+																"object-to-create": "fx_wood",
+																"layer": "\"furniture\"",
+																"x": "house_door.X",
+																"y": "house_door.Y - 20",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														}
+													],
+													"sid": 832464043505902
+												}
+											]
 										}
 									]
 								}
