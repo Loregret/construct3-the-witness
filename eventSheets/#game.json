@@ -823,15 +823,6 @@
 													],
 													"actions": [
 														{
-															"id": "set-group-active",
-															"objectClass": "System",
-															"sid": 229836046453816,
-															"parameters": {
-																"group-name": "\"Enemy - alerts\"",
-																"state": "deactivated"
-															}
-														},
-														{
 															"id": "set-enabled",
 															"objectClass": "runner",
 															"sid": 223291274925261,
@@ -844,7 +835,6 @@
 															"id": "set-group-active",
 															"objectClass": "System",
 															"sid": 397887242163830,
-															"disabled": true,
 															"parameters": {
 																"group-name": "\"[h1] Enemy ☠️ [/h1]\"",
 																"state": "deactivated"

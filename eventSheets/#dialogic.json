@@ -2183,6 +2183,156 @@
 													"sid": 748395803942364
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 697972087841525
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 418985341401751,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"forest1-attack\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 158351807512929,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 610233818496055,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "7600",
+																"y": "9800",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 585243887006486,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "7400",
+																"y": "9800",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 718481515213225,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "7900",
+																"y": "6900",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 549427893931671,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "9200",
+																"y": "2700",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 795039941100413,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "9700",
+																"y": "3000",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														}
+													],
+													"sid": 605084421303106
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "runner",
+															"sid": 865543588135089,
+															"parameters": {
+																"instance-variable": "state",
+																"comparison": 1,
+																"value": "\"dead\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-group-active",
+															"objectClass": "System",
+															"sid": 993705220798767,
+															"parameters": {
+																"group-name": "\"[h1] Enemy ☠️ [/h1]\"",
+																"state": "activated"
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "runner",
+															"sid": 372319456491948,
+															"behaviorType": "Solid",
+															"parameters": {
+																"state": "disabled"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "runner",
+															"sid": 576959977449206,
+															"parameters": {
+																"instance-variable": "state",
+																"value": "\"attack\""
+															}
+														},
+														{
+															"id": "set-angle-toward-position",
+															"objectClass": "runner",
+															"sid": 134813278071853,
+															"parameters": {
+																"x": "Player.X",
+																"y": "Player.Y"
+															}
+														}
+													],
+													"sid": 429754957412787
+												}
+											]
 										}
 									]
 								}

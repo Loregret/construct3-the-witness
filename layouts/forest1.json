@@ -7182,7 +7182,82 @@
 					"name": "characters",
 					"overriden": 0,
 					"subLayers": [],
-					"instances": [],
+					"instances": [
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "madman1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1874,
+							"instanceVariables": {
+								"state": "dead",
+								"enemy_can_interact": false
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 360,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": false
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 1500,
+										"rate-of-fire": 0.8,
+										"rotate": true,
+										"rotate-speed": 400,
+										"target-mode": "nearest",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
+									}
+								}
+							},
+							"world": {
+								"x": 9858.389904761334,
+								"y": 2236.9714568342965,
+								"width": 56.227579824408025,
+								"height": 75.95459309355222,
+								"originX": 0.48214285714285715,
+								"originY": 0.48611111111111116,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 1.9107068842133694,
+								"zElevation": 0
+							}
+						}
+					],
 					"sid": 582251639886700,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
@@ -7599,8 +7674,8 @@
 							},
 							"uid": 787,
 							"instanceVariables": {
-								"state": "pray",
-								"hp": 2,
+								"state": "idle",
+								"hp": 8,
 								"orig_X": 0,
 								"orig_Y": 0,
 								"alert_nth": 0,
@@ -7665,8 +7740,8 @@
 								}
 							},
 							"world": {
-								"x": 9830,
-								"y": 2324,
+								"x": 9786.352168836222,
+								"y": 2233.184351288266,
 								"width": 37.800000000000004,
 								"height": 53.1,
 								"originX": 0.7619047619047619,
@@ -7677,7 +7752,7 @@
 									0.7529411764705882,
 									1
 								],
-								"angle": 2.10308765475066,
+								"angle": 1.7851791530382592,
 								"zElevation": 0
 							}
 						},
@@ -18546,6 +18621,47 @@
 									0.7
 								],
 								"angle": 0.39249493424384013,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_talkie",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1873,
+							"instanceVariables": {
+								"SceneName": "forest1",
+								"dialogName": "enemy1",
+								"lineNum": 0,
+								"npc_uid": 1874,
+								"interactive_start": true,
+								"repeatable": false,
+								"active": true,
+								"autostart": false,
+								"max_distance": 250,
+								"activation_distance": 50,
+								"is_visible_trough_walls": true
+							},
+							"behaviors": {},
+							"world": {
+								"x": 9850.630244526632,
+								"y": 2238.2355022966267,
+								"width": 59.02611278448073,
+								"height": 53.06380829497334,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.7
+								],
+								"angle": 0.19781628418523028,
 								"zElevation": 0
 							}
 						}

@@ -262,21 +262,20 @@
 			]
 		},
 		{
-			"id": "cultistgroup",
+			"id": "enemy1",
 			"dialogs": [
 				{
-					"line": "There's group of people... and some <color=red>corpses</color>.",
-					"wait": 1.75,
-					"speed": 1
+					"char": "player",
+					"line": "**Placeholder**",
+					"speed": 0.45,
+					"wait": 1.35
 				},
 				{
-					"line": "This people aren't aware of me.",
-					"wait": 1.5
-				},
-				{
-					"line": "Looks like they're in some form of trance. They totally ignore me.",
-					"wait": 1.86,
-					"speed": 1
+					"char": "npc",
+					"line": "KILL HIM!",
+					"speed": 0.5,
+					"wait": 1.25,
+					"event": "forest1-attack"
 				}
 			]
 		}
