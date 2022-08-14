@@ -1530,6 +1530,211 @@
 							"sid": 648905993789095,
 							"children": [
 								{
+									"functionName": "weapon_compare_ammo",
+									"functionDescription": "",
+									"functionCategory": "#weapon",
+									"functionReturnType": "number",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "gun_uid",
+											"type": "number",
+											"initialValue": "-1",
+											"comment": "",
+											"sid": 969027224253339
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 180488989068283,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "gun",
+													"sid": 355278429989584,
+													"parameters": {
+														"unique-id": "gun_uid"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 327911978841903,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "gun",
+															"sid": 882721692723244,
+															"parameters": {
+																"comparison": 0,
+																"number": "0"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 552878331166964,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "has-key",
+																	"objectClass": "weapon",
+																	"sid": 767801420955479,
+																	"parameters": {
+																		"key": "\"pistol\""
+																	}
+																},
+																{
+																	"id": "compare-value",
+																	"objectClass": "weapon",
+																	"sid": 667649291527570,
+																	"parameters": {
+																		"key": "\"pistol_ammo\"",
+																		"comparison": 5,
+																		"value": "weapon.Get(\"pistol_max_ammo\")"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 721736087717852,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 918134747642895
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 183389788233110
+														},
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "gun",
+															"sid": 831990664115424,
+															"parameters": {
+																"comparison": 0,
+																"number": "1"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 639608282067174,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "has-key",
+																	"objectClass": "weapon",
+																	"sid": 734307672445176,
+																	"parameters": {
+																		"key": "\"shotgun\""
+																	}
+																},
+																{
+																	"id": "compare-value",
+																	"objectClass": "weapon",
+																	"sid": 634223471599810,
+																	"parameters": {
+																		"key": "\"shotgun_ammo\"",
+																		"comparison": 5,
+																		"value": "weapon.Get(\"shotgun_max_ammo\")"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 201908016398403,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 540585424015344
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 933979996080565
+														},
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "gun",
+															"sid": 722717285698115,
+															"parameters": {
+																"comparison": 0,
+																"number": "2"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 831645037582549,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "has-key",
+																	"objectClass": "weapon",
+																	"sid": 729834017241907,
+																	"parameters": {
+																		"key": "\"ak\""
+																	}
+																},
+																{
+																	"id": "compare-value",
+																	"objectClass": "weapon",
+																	"sid": 393746953375584,
+																	"parameters": {
+																		"key": "\"ak_ammo\"",
+																		"comparison": 5,
+																		"value": "weapon.Get(\"ak_max_ammo\")"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-function-return-value",
+																	"objectClass": "Functions",
+																	"sid": 432703547021185,
+																	"parameters": {
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 873936000145956
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -1540,6 +1745,33 @@
 												"mouse-button": "left",
 												"click-type": "clicked",
 												"object-clicked": "gun"
+											}
+										},
+										{
+											"id": "pick-topbottom",
+											"objectClass": "gun",
+											"sid": 212882412215651,
+											"parameters": {
+												"which": "top"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "gun",
+											"sid": 218158275206514,
+											"parameters": {
+												"animation": "\"empty\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 632013757525996,
+											"parameters": {
+												"first-value": "Functions.weapon_compare_ammo(gun.UID)",
+												"comparison": 0,
+												"second-value": "0"
 											}
 										}
 									],
@@ -1616,18 +1848,136 @@
 																	}
 																}
 															],
-															"actions": [
+															"actions": [],
+															"sid": 752829321178550,
+															"children": [
 																{
-																	"id": "add-key",
-																	"objectClass": "weapon",
-																	"sid": 442079052876314,
-																	"parameters": {
-																		"key": "\"pistol\"",
-																		"value": "1"
-																	}
+																	"eventType": "comment",
+																	"text": "weapon"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 617105256165490,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "has-key",
+																					"objectClass": "weapon",
+																					"sid": 144535144884232,
+																					"parameters": {
+																						"key": "\"pistol\""
+																					},
+																					"isInverted": true
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 769048386435994,
+																					"parameters": {
+																						"key": "\"pistol\"",
+																						"value": "1"
+																					}
+																				},
+																				{
+																					"id": "destroy",
+																					"objectClass": "gun",
+																					"sid": 922301512837602
+																				}
+																			],
+																			"sid": 838788630381784
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 810560646682338
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-animation",
+																					"objectClass": "gun",
+																					"sid": 901511319360917,
+																					"parameters": {
+																						"animation": "\"empty\"",
+																						"from": "current-frame"
+																					}
+																				}
+																			],
+																			"sid": 812080659672558
+																		}
+																	]
+																},
+																{
+																	"eventType": "comment",
+																	"text": "ammo"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 676380060030680,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "gun",
+																					"sid": 804481636232036,
+																					"parameters": {
+																						"instance-variable": "ammo",
+																						"comparison": 0,
+																						"value": "-1"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 556925565930192,
+																					"parameters": {
+																						"key": "\"pistol_ammo\"",
+																						"value": "7"
+																					}
+																				}
+																			],
+																			"sid": 488624870249412
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 544914978028511
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 731304396399975,
+																					"parameters": {
+																						"key": "\"pistol_ammo\"",
+																						"value": "gun.ammo"
+																					}
+																				}
+																			],
+																			"sid": 275064297576676
+																		}
+																	]
 																}
-															],
-															"sid": 752829321178550
+															]
 														},
 														{
 															"eventType": "block",
@@ -1642,18 +1992,136 @@
 																	}
 																}
 															],
-															"actions": [
+															"actions": [],
+															"sid": 406323122815439,
+															"children": [
 																{
-																	"id": "add-key",
-																	"objectClass": "weapon",
-																	"sid": 167570851691905,
-																	"parameters": {
-																		"key": "\"shotgun\"",
-																		"value": "1"
-																	}
+																	"eventType": "comment",
+																	"text": "weapon"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 444325244565012,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "has-key",
+																					"objectClass": "weapon",
+																					"sid": 915386634843291,
+																					"parameters": {
+																						"key": "\"shotgun\""
+																					},
+																					"isInverted": true
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 812442415188093,
+																					"parameters": {
+																						"key": "\"shotgun\"",
+																						"value": "1"
+																					}
+																				},
+																				{
+																					"id": "destroy",
+																					"objectClass": "gun",
+																					"sid": 335790633843043
+																				}
+																			],
+																			"sid": 455206148742380
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 731523247478340
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-animation",
+																					"objectClass": "gun",
+																					"sid": 859070171558931,
+																					"parameters": {
+																						"animation": "\"empty\"",
+																						"from": "current-frame"
+																					}
+																				}
+																			],
+																			"sid": 132106179516294
+																		}
+																	]
+																},
+																{
+																	"eventType": "comment",
+																	"text": "ammo"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 754587729347418,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "gun",
+																					"sid": 634167450188328,
+																					"parameters": {
+																						"instance-variable": "ammo",
+																						"comparison": 0,
+																						"value": "-1"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 395359719407162,
+																					"parameters": {
+																						"key": "\"shotgun_ammo\"",
+																						"value": "2"
+																					}
+																				}
+																			],
+																			"sid": 979120473252867
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 164983576317045
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 426199192424645,
+																					"parameters": {
+																						"key": "\"shotgun_ammo\"",
+																						"value": "gun.ammo"
+																					}
+																				}
+																			],
+																			"sid": 292335386465949
+																		}
+																	]
 																}
-															],
-															"sid": 406323122815439
+															]
 														},
 														{
 															"eventType": "block",
@@ -1668,30 +2136,136 @@
 																	}
 																}
 															],
-															"actions": [
+															"actions": [],
+															"sid": 221091393877420,
+															"children": [
 																{
-																	"id": "add-key",
-																	"objectClass": "weapon",
-																	"sid": 454122702384972,
-																	"parameters": {
-																		"key": "\"ak\"",
-																		"value": "1"
-																	}
-																}
-															],
-															"sid": 221091393877420
-														},
-														{
-															"eventType": "block",
-															"conditions": [],
-															"actions": [
+																	"eventType": "comment",
+																	"text": "weapon"
+																},
 																{
-																	"id": "destroy",
-																	"objectClass": "gun",
-																	"sid": 609223120436819
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 937974946766701,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "has-key",
+																					"objectClass": "weapon",
+																					"sid": 358709943877024,
+																					"parameters": {
+																						"key": "\"ak\""
+																					},
+																					"isInverted": true
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 538009958227020,
+																					"parameters": {
+																						"key": "\"ak\"",
+																						"value": "1"
+																					}
+																				},
+																				{
+																					"id": "destroy",
+																					"objectClass": "gun",
+																					"sid": 947889527114382
+																				}
+																			],
+																			"sid": 299778309598514
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 486286852593259
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-animation",
+																					"objectClass": "gun",
+																					"sid": 259244223785322,
+																					"parameters": {
+																						"animation": "\"empty\"",
+																						"from": "current-frame"
+																					}
+																				}
+																			],
+																			"sid": 112371816019655
+																		}
+																	]
+																},
+																{
+																	"eventType": "comment",
+																	"text": "ammo"
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [],
+																	"sid": 975090272817282,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "gun",
+																					"sid": 849633125019342,
+																					"parameters": {
+																						"instance-variable": "ammo",
+																						"comparison": 0,
+																						"value": "-1"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 629918858026304,
+																					"parameters": {
+																						"key": "\"ak_ammo\"",
+																						"value": "30"
+																					}
+																				}
+																			],
+																			"sid": 183182119664883
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 655318564617615
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "add-key",
+																					"objectClass": "weapon",
+																					"sid": 893109260885471,
+																					"parameters": {
+																						"key": "\"ak_ammo\"",
+																						"value": "gun.ammo"
+																					}
+																				}
+																			],
+																			"sid": 708557586485388
+																		}
+																	]
 																}
-															],
-															"sid": 274875339993320
+															]
 														}
 													]
 												}
@@ -4592,6 +5166,330 @@
 									"sid": 782436675180420
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "бросить оружие"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 158692897746161,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 382772060636966,
+											"parameters": {
+												"key": 71
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 106369476833282,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 996376624397800,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 268158266248188,
+													"parameters": {
+														"variable": "curWeapon",
+														"comparison": 0,
+														"value": "\"pistol\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 436373286231881,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 478034696263403,
+															"parameters": {
+																"key": "\"pistol_ammo\"",
+																"comparison": 0,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_drop",
+															"sid": 694050910650228,
+															"parameters": [
+																"curWeapon",
+																true,
+																"0"
+															]
+														}
+													],
+													"sid": 635379904765968
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 788211029180742
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_drop",
+															"sid": 486245155831274,
+															"parameters": [
+																"curWeapon",
+																false,
+																"weapon.Get(\"pistol_ammo\")"
+															]
+														}
+													],
+													"sid": 938457028178543
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 213223512711474,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 421621145669690
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 332033966615755
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 174978118516628,
+													"parameters": {
+														"variable": "curWeapon",
+														"comparison": 0,
+														"value": "\"ak\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 417109268478380,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 567846762086127,
+															"parameters": {
+																"key": "\"ak_ammo\"",
+																"comparison": 0,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_drop",
+															"sid": 700439259108154,
+															"parameters": [
+																"curWeapon",
+																true,
+																"0"
+															]
+														}
+													],
+													"sid": 210997828225844
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 397129998123643
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_drop",
+															"sid": 649637593349187,
+															"parameters": [
+																"curWeapon",
+																false,
+																"weapon.Get(\"ak_ammo\")"
+															]
+														}
+													],
+													"sid": 226734807762762
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 895102137309208,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 615432003688805
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 147942015005441
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 705990419740562,
+													"parameters": {
+														"variable": "curWeapon",
+														"comparison": 0,
+														"value": "\"shotgun\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 530987817329696,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-value",
+															"objectClass": "weapon",
+															"sid": 179257523880992,
+															"parameters": {
+																"key": "\"shotgun_ammo\"",
+																"comparison": 0,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_drop",
+															"sid": 211075951063461,
+															"parameters": [
+																"curWeapon",
+																true,
+																"0"
+															]
+														}
+													],
+													"sid": 634460317153317
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 507032425859266
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "weapon_drop",
+															"sid": 773890265362642,
+															"parameters": [
+																"curWeapon",
+																false,
+																"weapon.Get(\"shotgun_ammo\")"
+															]
+														}
+													],
+													"sid": 967278106008460
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "weapon_change_to_another",
+															"sid": 671803292011263,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
+														}
+													],
+													"sid": 637592144887491
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 226414790727397,
+													"parameters": {
+														"seconds": "0.5"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 628561964414211,
+													"parameters": {
+														"audio-file": "stonesImpact",
+														"loop": "not-looping",
+														"volume": "-10",
+														"tag-optional": "\"player_undraw\""
+													}
+												}
+											],
+											"sid": 231660438094243
+										}
+									]
+								}
+							]
 						}
 					],
 					"sid": 108363543795255
@@ -5345,6 +6243,314 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"functionName": "weapon_drop",
+							"functionDescription": "",
+							"functionCategory": "#weapon",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "weapon",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 304502533286715
+								},
+								{
+									"name": "isEmpty",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 526807459776485
+								},
+								{
+									"name": "ammo",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 948914787019154
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 121936325448830,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "delete-key",
+											"objectClass": "weapon",
+											"sid": 625602503934701,
+											"parameters": {
+												"key": "weapon"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 675284059964573,
+											"parameters": {
+												"object": "gun",
+												"layer": "\"items\"",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "gun",
+											"sid": 289580545180563,
+											"parameters": {
+												"instance-variable": "ammo",
+												"value": "ammo"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "gun",
+											"sid": 267550666458056,
+											"behaviorType": "Tween",
+											"parameters": {
+												"mode": "enabled"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "gun",
+											"sid": 409224588378561,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"rotate\"",
+												"property": "offsetAngle",
+												"end-value": "Self.Angle + choose(random(120),-random(120))",
+												"time": "0.55",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "gun",
+											"sid": 152663617451943,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-acceleration",
+											"objectClass": "gun",
+											"sid": 870943574965902,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"acceleration": "-random(600,1000)"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "gun",
+											"sid": 318356201687336,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "Player.Angle"
+											}
+										}
+									],
+									"sid": 407309670173791,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "animation"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 442930474029152,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 318232369044241,
+															"parameters": {
+																"variable": "isEmpty"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation",
+															"objectClass": "gun",
+															"sid": 461163171936225,
+															"parameters": {
+																"animation": "\"empty\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 612818304523363
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 218922967004982
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation",
+															"objectClass": "gun",
+															"sid": 777811186012655,
+															"parameters": {
+																"animation": "\"default\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 160852866628842
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "frame"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 788120691400885,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 448836508854217,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"pistol\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-frame",
+															"objectClass": "gun",
+															"sid": 150736122036560,
+															"parameters": {
+																"frame-number": "0"
+															}
+														}
+													],
+													"sid": 224628954070495
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 995902656086072
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 691724408790824,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"shotgun\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-frame",
+															"objectClass": "gun",
+															"sid": 979489562719670,
+															"parameters": {
+																"frame-number": "1"
+															}
+														}
+													],
+													"sid": 884804271067623
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 145444265226776
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 786058655035691,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"ak\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-frame",
+															"objectClass": "gun",
+															"sid": 829550906844238,
+															"parameters": {
+																"frame-number": "2"
+															}
+														}
+													],
+													"sid": 221247700501135
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 866091730094322,
+													"parameters": {
+														"seconds": "0.65"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "gun",
+													"sid": 173731217797945,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "disabled"
+													}
+												}
+											],
+											"sid": 313448189005211
+										}
+									]
+								}
+							]
+						},
 						{
 							"functionName": "weapon_change_to_another",
 							"functionDescription": "",
@@ -8461,24 +9667,7 @@
 							"eventType": "block",
 							"conditions": [],
 							"actions": [],
-							"sid": 743554739726169,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-collision-with-another-object",
-											"objectClass": "Player",
-											"sid": 724668409639136,
-											"parameters": {
-												"object": "gun"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 123813775756084
-								}
-							]
+							"sid": 743554739726169
 						},
 						{
 							"eventType": "comment",
@@ -9317,8 +10506,17 @@
 															"id": "set-opacity",
 															"objectClass": "flashlight",
 															"sid": 668208783416786,
+															"disabled": true,
 															"parameters": {
 																"opacity": "lerp(Self.Opacity, clamp(default_flashlight_opacity-Self.Width/16,15,50),  dt * 15)"
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "flashlight",
+															"sid": 845288601526669,
+															"parameters": {
+																"opacity": "90"
 															}
 														}
 													],

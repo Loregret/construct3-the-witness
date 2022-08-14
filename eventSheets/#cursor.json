@@ -797,112 +797,140 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 250861814160216,
+													"id": "is-animation-playing",
+													"objectClass": "gun",
+													"sid": 329034631734374,
 													"parameters": {
-														"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
-														"comparison": 3,
-														"second-value": "100"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "sprfont_cursorhint",
-													"sid": 679338059641224,
-													"parameters": {
-														"text": "JSON.Get(\"misc.1.dialogs.0.line\")"
-													}
-												},
-												{
-													"id": "set-visible",
-													"objectClass": "sprfont_cursorhint",
-													"sid": 312513497126189,
-													"parameters": {
-														"visibility": "visible"
-													}
-												},
-												{
-													"id": "set-default-color",
-													"objectClass": "sprfont_cursorhint",
-													"sid": 558457118344411,
-													"parameters": {
-														"color": "rgbEx(93, 93, 93)"
-													}
-												}
-											],
-											"sid": 273433490614797
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 686755757267876
+														"animation": "\"empty\""
+													},
+													"isInverted": true
 												},
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 762109329633818,
+													"sid": 892281138577738,
 													"parameters": {
-														"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
-														"comparison": 3,
-														"second-value": "300"
+														"first-value": "Functions.weapon_compare_ammo(gun.UID)",
+														"comparison": 0,
+														"second-value": "0"
 													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 909139959397957,
+											"children": [
 												{
-													"id": "set-text",
-													"objectClass": "sprfont_cursorhint",
-													"sid": 349671212387056,
-													"parameters": {
-														"text": "JSON.Get(\"misc.1.dialogs.0.line\")"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 346161987028063,
+															"parameters": {
+																"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
+																"comparison": 3,
+																"second-value": "100"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "sprfont_cursorhint",
+															"sid": 900147921001998,
+															"parameters": {
+																"text": "JSON.Get(\"misc.1.dialogs.0.line\")"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "sprfont_cursorhint",
+															"sid": 712126631145806,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "sprfont_cursorhint",
+															"sid": 741341142385393,
+															"parameters": {
+																"color": "rgbEx(93, 93, 93)"
+															}
+														}
+													],
+													"sid": 380081383412476
 												},
 												{
-													"id": "set-visible",
-													"objectClass": "sprfont_cursorhint",
-													"sid": 300670020995698,
-													"parameters": {
-														"visibility": "visible"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 447067773243256
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 895658413199565,
+															"parameters": {
+																"first-value": "distance(gun.X, gun.Y, Player.x, Player.Y)",
+																"comparison": 3,
+																"second-value": "300"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "sprfont_cursorhint",
+															"sid": 868986930774228,
+															"parameters": {
+																"text": "JSON.Get(\"misc.1.dialogs.0.line\")"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "sprfont_cursorhint",
+															"sid": 242794374065954,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "sprfont_cursorhint",
+															"sid": 305879009285156,
+															"parameters": {
+																"color": "rgbEx(36, 36, 36)"
+															}
+														}
+													],
+													"sid": 785127313976295
 												},
 												{
-													"id": "set-default-color",
-													"objectClass": "sprfont_cursorhint",
-													"sid": 566216241239988,
-													"parameters": {
-														"color": "rgbEx(36, 36, 36)"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 675153932156968
+														},
+														{
+															"id": "is-visible",
+															"objectClass": "sprfont_cursorhint",
+															"sid": 432471880731239
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "cursor_clear_hint",
+															"sid": 775614967323041
+														}
+													],
+													"sid": 775498603659426
 												}
-											],
-											"sid": 906142363301171
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 578787364026443
-												},
-												{
-													"id": "is-visible",
-													"objectClass": "sprfont_cursorhint",
-													"sid": 560376104408380
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "cursor_clear_hint",
-													"sid": 482099905709774
-												}
-											],
-											"sid": 608902794856477
+											]
 										}
 									]
 								},

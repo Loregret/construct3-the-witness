@@ -968,14 +968,33 @@
 					"type": "gun",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "default",
 						"initial-frame": 0,
-						"enable-collisions": false,
+						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 402,
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"ammo": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
 					"world": {
 						"x": 352,
 						"y": 64,
@@ -997,21 +1016,40 @@
 					"type": "gun",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "default",
 						"initial-frame": 1,
-						"enable-collisions": false,
+						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 403,
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"ammo": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
 					"world": {
 						"x": 352,
 						"y": 32,
-						"width": 31.00372977074808,
-						"height": 104.22582653833841,
-						"originX": 0.42999999999999994,
-						"originY": 0.5589887640449438,
+						"width": 16.121939480789003,
+						"height": 48.01414480979634,
+						"originX": 0.4423076923076922,
+						"originY": 0.6280487804878049,
 						"color": [
 							1,
 							1,
@@ -1026,14 +1064,33 @@
 					"type": "gun",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "default",
 						"initial-frame": 2,
-						"enable-collisions": false,
+						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 404,
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"ammo": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
 					"world": {
 						"x": 352,
 						"y": 96,
