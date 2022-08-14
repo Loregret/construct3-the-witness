@@ -4288,13 +4288,17 @@
 													}
 												},
 												{
-													"id": "play",
+													"id": "play-at-object",
 													"objectClass": "Audio",
-													"sid": 489221521967512,
+													"sid": 744029551240317,
 													"parameters": {
 														"audio-file": "gore blood 1",
 														"loop": "not-looping",
-														"volume": "0",
+														"volume": "-10",
+														"object": "runner",
+														"inner-angle": "360",
+														"outer-angle": "360",
+														"outer-gain": "0",
 														"tag-optional": "\"\""
 													}
 												}
@@ -4319,6 +4323,11 @@
 															}
 														},
 														{
+															"id": "move-to-top",
+															"objectClass": "decal_blood",
+															"sid": 425023142206765
+														},
+														{
 															"id": "create-object",
 															"objectClass": "System",
 															"sid": 517720755035632,
@@ -4330,6 +4339,29 @@
 																"create-hierarchy": false,
 																"template-name": "\"\""
 															}
+														},
+														{
+															"id": "move-to-top",
+															"objectClass": "decal_blood",
+															"sid": 363464409951711
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 101829790383284,
+															"parameters": {
+																"object-to-create": "decal_blood",
+																"layer": "\"floors\"",
+																"x": "runner.X  + random(-15,15)",
+																"y": "runner.Y + random(-5,5)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "move-to-top",
+															"objectClass": "decal_blood",
+															"sid": 205452512087661
 														}
 													],
 													"sid": 971804155103587
