@@ -2301,42 +2301,6 @@
 												{
 													"id": "key-is-down",
 													"objectClass": "Keyboard",
-													"sid": 602688785076594,
-													"parameters": {
-														"key": 16
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "player_stop_steps",
-													"sid": 737670856861405,
-													"disabled": true
-												},
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 839241947361326,
-													"disabled": true,
-													"parameters": {
-														"animation": "\"run\"",
-														"from": "beginning"
-													}
-												}
-											],
-											"sid": 668484095066606
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 476742268794604
-												},
-												{
-													"id": "key-is-down",
-													"objectClass": "Keyboard",
 													"sid": 692029304123764,
 													"parameters": {
 														"key": 32
@@ -2748,42 +2712,6 @@
 										{
 											"eventType": "block",
 											"conditions": [
-												{
-													"id": "key-is-down",
-													"objectClass": "Keyboard",
-													"sid": 610233579559446,
-													"parameters": {
-														"key": 16
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "player_stop_steps",
-													"sid": 741305662627224,
-													"disabled": true
-												},
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 712874363533480,
-													"disabled": true,
-													"parameters": {
-														"animation": "\"run\"",
-														"from": "beginning"
-													}
-												}
-											],
-											"sid": 355318764478125
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 246549208269343
-												},
 												{
 													"id": "key-is-down",
 													"objectClass": "Keyboard",

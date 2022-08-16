@@ -6377,6 +6377,107 @@
 				}
 			],
 			"sid": 598339292072374
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Red Monster",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Player",
+							"sid": 647101842486305,
+							"behaviorType": "8Direction"
+						}
+					],
+					"actions": [
+						{
+							"id": "find-path",
+							"objectClass": "Sprite",
+							"sid": 167520268992545,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "Player.X",
+								"y": "Player.Y"
+							}
+						}
+					],
+					"sid": 312779623014095
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-path-found",
+							"objectClass": "Sprite",
+							"sid": 315227445275000,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"actions": [
+						{
+							"id": "move-along-path",
+							"objectClass": "Sprite",
+							"sid": 817251865991237,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 898487981370156
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-speed",
+							"objectClass": "Sprite",
+							"sid": 454576936143810,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"comparison": 4,
+								"speed": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "Sprite",
+							"sid": 872591633012018,
+							"parameters": {
+								"speed": "2.55"
+							}
+						}
+					],
+					"sid": 670578042974538
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 695426705688625
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "Sprite",
+							"sid": 298515259345039,
+							"parameters": {
+								"speed": "0"
+							}
+						}
+					],
+					"sid": 527207947757076
+				}
+			],
+			"sid": 986185971774168
 		}
 	],
 	"sid": 835774610273675
