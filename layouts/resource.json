@@ -1344,6 +1344,39 @@
 					}
 				},
 				{
+					"type": "triggers_move2Layout",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2335,
+					"instanceVariables": {
+						"layoutName": "",
+						"text": "",
+						"eventname": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 192,
+						"y": 288,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "fx_muzzle",
 					"properties": {
 						"initially-visible": true,
@@ -1381,6 +1414,50 @@
 						],
 						"angle": 1.5547544648377238,
 						"zElevation": 1
+					}
+				},
+				{
+					"type": "mnstr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2115,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pathfinding": {
+							"properties": {
+								"cell-size": 138,
+								"cell-border": -1,
+								"obstacles": "solids",
+								"max-speed": 300,
+								"acceleration": 1000,
+								"deceleration": 2000,
+								"rotate-speed": 300,
+								"rotate-object": true,
+								"diagonals": true,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 512,
+						"y": 64,
+						"width": 138,
+						"height": 60,
+						"originX": 0.5735955056179776,
+						"originY": 0.5012820512820513,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.8271846453537237,
+						"zElevation": 2
 					}
 				}
 			],

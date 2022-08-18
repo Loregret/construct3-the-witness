@@ -282,7 +282,7 @@
 	"uniqueId": "bmm21df34rr",
 	"objectTypes": {
 		"items": [
-			"Sprite"
+			"mnstr"
 		],
 		"subfolders": [
 			{
@@ -423,7 +423,8 @@
 					"enemy_line",
 					"triggers_audio_emitter",
 					"triggers_talkie",
-					"triggers_marker"
+					"triggers_marker",
+					"triggers_move2Layout"
 				],
 				"subfolders": [],
 				"name": "triggers"
@@ -565,14 +566,14 @@
 				"subfolders": [
 					{
 						"items": [
+							"collection",
+							"base",
 							"forest1",
 							"forest2",
+							"forest3",
 							"lab1",
 							"lab2",
-							"base",
-							"base_after_raid",
-							"forest1_with_enemy",
-							"collection"
+							"base_after_raid"
 						],
 						"subfolders": [],
 						"name": "levels"

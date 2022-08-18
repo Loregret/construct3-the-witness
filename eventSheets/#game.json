@@ -1707,22 +1707,6 @@
 																					"id": "destroy",
 																					"objectClass": "gun",
 																					"sid": 922301512837602
-																				},
-																				{
-																					"id": "wait",
-																					"objectClass": "System",
-																					"sid": 568893081358168,
-																					"parameters": {
-																						"seconds": "0.35"
-																					}
-																				},
-																				{
-																					"callFunction": "weapon_change_to_another",
-																					"sid": 625183474531651,
-																					"parameters": [
-																						"\"pistol\"",
-																						"\"pistol\""
-																					]
 																				}
 																			],
 																			"sid": 838788630381784
@@ -1799,6 +1783,29 @@
 																					"sid": 753690144361276
 																				}
 																			]
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [],
+																			"actions": [
+																				{
+																					"id": "wait",
+																					"objectClass": "System",
+																					"sid": 766452711023929,
+																					"parameters": {
+																						"seconds": "0.35"
+																					}
+																				},
+																				{
+																					"callFunction": "weapon_change_to_another",
+																					"sid": 569491572606269,
+																					"parameters": [
+																						"\"pistol\"",
+																						"\"pistol\""
+																					]
+																				}
+																			],
+																			"sid": 518538638144353
 																		}
 																	]
 																}
@@ -1866,22 +1873,6 @@
 																					"id": "destroy",
 																					"objectClass": "gun",
 																					"sid": 335790633843043
-																				},
-																				{
-																					"id": "wait",
-																					"objectClass": "System",
-																					"sid": 813751234444348,
-																					"parameters": {
-																						"seconds": "0.35"
-																					}
-																				},
-																				{
-																					"callFunction": "weapon_change_to_another",
-																					"sid": 910261864217252,
-																					"parameters": [
-																						"\"shotgun\"",
-																						"\"shotgun\""
-																					]
 																				}
 																			],
 																			"sid": 455206148742380
@@ -1958,6 +1949,29 @@
 																					"sid": 948723440575117
 																				}
 																			]
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [],
+																			"actions": [
+																				{
+																					"id": "wait",
+																					"objectClass": "System",
+																					"sid": 753267370797214,
+																					"parameters": {
+																						"seconds": "0.35"
+																					}
+																				},
+																				{
+																					"callFunction": "weapon_change_to_another",
+																					"sid": 158890929419924,
+																					"parameters": [
+																						"\"shotgun\"",
+																						"\"shotgun\""
+																					]
+																				}
+																			],
+																			"sid": 157895851284632
 																		}
 																	]
 																}
@@ -2025,22 +2039,6 @@
 																					"id": "destroy",
 																					"objectClass": "gun",
 																					"sid": 947889527114382
-																				},
-																				{
-																					"id": "wait",
-																					"objectClass": "System",
-																					"sid": 423255560015794,
-																					"parameters": {
-																						"seconds": "0.35"
-																					}
-																				},
-																				{
-																					"callFunction": "weapon_change_to_another",
-																					"sid": 779573737118173,
-																					"parameters": [
-																						"\"ak\"",
-																						"\"ak\""
-																					]
 																				}
 																			],
 																			"sid": 299778309598514
@@ -2117,6 +2115,29 @@
 																					"sid": 261475395171500
 																				}
 																			]
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [],
+																			"actions": [
+																				{
+																					"id": "wait",
+																					"objectClass": "System",
+																					"sid": 392987848936516,
+																					"parameters": {
+																						"seconds": "0.35"
+																					}
+																				},
+																				{
+																					"callFunction": "weapon_change_to_another",
+																					"sid": 524090092108939,
+																					"parameters": [
+																						"\"ak\"",
+																						"\"ak\""
+																					]
+																				}
+																			],
+																			"sid": 743983455495512
 																		}
 																	]
 																}
@@ -2126,6 +2147,59 @@
 												}
 											],
 											"isOrBlock": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 529191702223430,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "triggers_move2Layout"
+											}
+										},
+										{
+											"id": "pick-topbottom",
+											"objectClass": "triggers_move2Layout",
+											"sid": 742830455301192,
+											"parameters": {
+												"which": "top"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 263322297085719,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 523432851841121,
+													"parameters": {
+														"first-value": "distance(triggers_move2Layout.X, triggers_move2Layout.y, Player.X, Player.Y)",
+														"comparison": 3,
+														"second-value": "250"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout-by-name",
+													"objectClass": "System",
+													"sid": 430864796988422,
+													"parameters": {
+														"layout": "triggers_move2Layout.layoutName"
+													}
+												}
+											],
+											"sid": 785545897706757
 										}
 									]
 								}

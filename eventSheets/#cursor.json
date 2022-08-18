@@ -779,6 +779,77 @@
 										{
 											"id": "else",
 											"objectClass": "System",
+											"sid": 191445581691175
+										},
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 224232262865694,
+											"parameters": {
+												"object": "triggers_move2Layout"
+											}
+										},
+										{
+											"id": "pick-topbottom",
+											"objectClass": "triggers_move2Layout",
+											"sid": 193422781299297,
+											"parameters": {
+												"which": "top"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 463996416690371,
+											"parameters": {
+												"first-value": "distance(Player.X, Player.Y, triggers_move2Layout.X, triggers_move2Layout.Y)",
+												"comparison": 3,
+												"second-value": "250"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 553829135433686,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "sprfont_cursorhint",
+													"sid": 789496730399756,
+													"parameters": {
+														"text": "triggers_move2Layout.text"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "sprfont_cursorhint",
+													"sid": 515944144753424,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "sprfont_cursorhint",
+													"sid": 293191618852195,
+													"parameters": {
+														"color": "rgbEx(93, 93, 93)"
+													}
+												}
+											],
+											"sid": 112833966063443
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
 											"sid": 990997055343041
 										},
 										{

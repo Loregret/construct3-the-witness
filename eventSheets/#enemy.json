@@ -6393,12 +6393,20 @@
 							"objectClass": "Player",
 							"sid": 647101842486305,
 							"behaviorType": "8Direction"
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 834064201354745,
+							"parameters": {
+								"interval-seconds": "0.65"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "find-path",
-							"objectClass": "Sprite",
+							"objectClass": "mnstr",
 							"sid": 167520268992545,
 							"behaviorType": "Pathfinding",
 							"parameters": {
@@ -6414,7 +6422,7 @@
 					"conditions": [
 						{
 							"id": "on-path-found",
-							"objectClass": "Sprite",
+							"objectClass": "mnstr",
 							"sid": 315227445275000,
 							"behaviorType": "Pathfinding"
 						}
@@ -6422,7 +6430,7 @@
 					"actions": [
 						{
 							"id": "move-along-path",
-							"objectClass": "Sprite",
+							"objectClass": "mnstr",
 							"sid": 817251865991237,
 							"behaviorType": "Pathfinding"
 						}
@@ -6434,7 +6442,7 @@
 					"conditions": [
 						{
 							"id": "compare-speed",
-							"objectClass": "Sprite",
+							"objectClass": "mnstr",
 							"sid": 454576936143810,
 							"behaviorType": "Pathfinding",
 							"parameters": {
@@ -6446,10 +6454,10 @@
 					"actions": [
 						{
 							"id": "set-animation-speed",
-							"objectClass": "Sprite",
-							"sid": 872591633012018,
+							"objectClass": "mnstr",
+							"sid": 511339420541171,
 							"parameters": {
-								"speed": "2.55"
+								"speed": "4"
 							}
 						}
 					],
@@ -6467,7 +6475,7 @@
 					"actions": [
 						{
 							"id": "set-animation-speed",
-							"objectClass": "Sprite",
+							"objectClass": "mnstr",
 							"sid": 298515259345039,
 							"parameters": {
 								"speed": "0"
