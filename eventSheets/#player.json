@@ -347,18 +347,126 @@
 														"animation": "\"pistol\"",
 														"from": "beginning"
 													}
+												}
+											],
+											"sid": 766165959044775
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 762220937345354,
+													"parameters": {
+														"first-value": "weapon.Get(\"pistol_ammo\")",
+														"comparison": 5,
+														"second-value": "weapon.Get(\"pistol_max_ammo\")"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 169727951565294,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 778946412756611,
+															"parameters": {
+																"first-value": "weapon.Get(\"pistol_curammo\")",
+																"comparison": 3,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 381802193682675,
+															"parameters": {
+																"key": "\"pistol_curammo\"",
+																"value": "weapon.Get(\"pistol_max_ammo\")"
+															}
+														},
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 514577306198512,
+															"parameters": {
+																"key": "\"pistol_ammo\"",
+																"value": "weapon.Get(\"pistol_ammo\") - weapon.Get(\"pistol_max_ammo\")"
+															}
+														}
+													],
+													"sid": 849531264618800
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 257715679565279
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 928178169401734,
+															"parameters": {
+																"key": "\"pistol_ammo\"",
+																"value": "weapon.Get(\"pistol_ammo\") - (weapon.Get(\"pistol_max_ammo\") - weapon.Get(\"pistol_curammo\"))"
+															}
+														},
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 976810772634510,
+															"parameters": {
+																"key": "\"pistol_curammo\"",
+																"value": "weapon.Get(\"pistol_max_ammo\")"
+															}
+														}
+													],
+													"sid": 615439623313636
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 852368431907908
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "weapon",
+													"sid": 466000457659556,
+													"parameters": {
+														"key": "\"pistol_curammo\"",
+														"value": "weapon.Get(\"pistol_curammo\") + weapon.Get(\"pistol_ammo\")"
+													}
 												},
 												{
 													"id": "set-key",
 													"objectClass": "weapon",
-													"sid": 923515128678754,
+													"sid": 115857052979892,
 													"parameters": {
 														"key": "\"pistol_ammo\"",
-														"value": "weapon.Get(\"pistol_max_ammo\")"
+														"value": "0"
 													}
 												}
 											],
-											"sid": 766165959044775
+											"sid": 173060140630366
 										}
 									]
 								},
@@ -407,18 +515,126 @@
 														"animation": "\"ak\"",
 														"from": "beginning"
 													}
+												}
+											],
+											"sid": 578574449188514
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 570183556629015,
+													"parameters": {
+														"first-value": "weapon.Get(\"ak_ammo\")",
+														"comparison": 5,
+														"second-value": "weapon.Get(\"ak_max_ammo\")"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 411577515286441,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 953846136757477,
+															"parameters": {
+																"first-value": "weapon.Get(\"ak_curammo\")",
+																"comparison": 3,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 605142590266962,
+															"parameters": {
+																"key": "\"ak_curammo\"",
+																"value": "weapon.Get(\"ak_max_ammo\")"
+															}
+														},
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 995598154083537,
+															"parameters": {
+																"key": "\"ak_ammo\"",
+																"value": "weapon.Get(\"ak_ammo\") - weapon.Get(\"ak_max_ammo\")"
+															}
+														}
+													],
+													"sid": 305052139757173
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 446961395231042
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 677558865912408,
+															"parameters": {
+																"key": "\"ak_ammo\"",
+																"value": "weapon.Get(\"ak_ammo\") - (weapon.Get(\"ak_max_ammo\") - weapon.Get(\"ak_curammo\"))"
+															}
+														},
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 431911099883368,
+															"parameters": {
+																"key": "\"ak_curammo\"",
+																"value": "weapon.Get(\"ak_max_ammo\")"
+															}
+														}
+													],
+													"sid": 588171069345961
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 443757582323559
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "weapon",
+													"sid": 819003478635841,
+													"parameters": {
+														"key": "\"ak_curammo\"",
+														"value": "weapon.Get(\"ak_curammo\") + weapon.Get(\"ak_ammo\")"
+													}
 												},
 												{
 													"id": "set-key",
 													"objectClass": "weapon",
-													"sid": 848667490561067,
+													"sid": 483548472528708,
 													"parameters": {
 														"key": "\"ak_ammo\"",
-														"value": "weapon.Get(\"ak_max_ammo\")"
+														"value": "0"
 													}
 												}
 											],
-											"sid": 578574449188514
+											"sid": 117252742713969
 										}
 									]
 								},
@@ -467,20 +683,139 @@
 														"animation": "\"shotgun\"",
 														"from": "beginning"
 													}
+												}
+											],
+											"sid": 484937041831854
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 787748802018091,
+													"parameters": {
+														"first-value": "weapon.Get(\"shotgun_ammo\")",
+														"comparison": 5,
+														"second-value": "weapon.Get(\"shotgun_max_ammo\")"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 759952239244197,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 102527492635668,
+															"parameters": {
+																"first-value": "weapon.Get(\"shotgun_curammo\")",
+																"comparison": 3,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 644701502555828,
+															"parameters": {
+																"key": "\"shotgun_curammo\"",
+																"value": "weapon.Get(\"shotgun_max_ammo\")"
+															}
+														},
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 238563367748498,
+															"parameters": {
+																"key": "\"shotgun_ammo\"",
+																"value": "weapon.Get(\"shotgun_ammo\") - weapon.Get(\"shotgun_max_ammo\")"
+															}
+														}
+													],
+													"sid": 220160434074640
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 915897503292156
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 128056598444016,
+															"parameters": {
+																"key": "\"shotgun_ammo\"",
+																"value": "weapon.Get(\"shotgun_ammo\") - (weapon.Get(\"shotgun_max_ammo\") - weapon.Get(\"shotgun_curammo\"))"
+															}
+														},
+														{
+															"id": "set-key",
+															"objectClass": "weapon",
+															"sid": 118540947603395,
+															"parameters": {
+																"key": "\"shotgun_curammo\"",
+																"value": "weapon.Get(\"shotgun_max_ammo\")"
+															}
+														}
+													],
+													"sid": 825858018110675
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 711287151098282
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "weapon",
+													"sid": 464000296471593,
+													"parameters": {
+														"key": "\"shotgun_curammo\"",
+														"value": "weapon.Get(\"shotgun_curammo\") + weapon.Get(\"shotgun_ammo\")"
+													}
 												},
 												{
 													"id": "set-key",
 													"objectClass": "weapon",
-													"sid": 903505851028977,
+													"sid": 489580339050313,
 													"parameters": {
 														"key": "\"shotgun_ammo\"",
-														"value": "weapon.Get(\"shotgun_max_ammo\")"
+														"value": "0"
 													}
 												}
 											],
-											"sid": 484937041831854
+											"sid": 646425512472999
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "interface_update_ammo_ui",
+											"sid": 170155333603719
+										}
+									],
+									"sid": 911154391142529
 								}
 							]
 						}
