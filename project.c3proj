@@ -224,6 +224,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -250,6 +258,14 @@
 			"type": "effect",
 			"id": "blurhorizontal",
 			"name": "Blur horizontal",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "grayscale",
+			"name": "Grayscale",
 			"author": "Scirra",
 			"version": "r302",
 			"bundled": false
@@ -322,7 +338,8 @@
 							"w_floor1",
 							"w_floor2",
 							"road3",
-							"floorLab"
+							"floorLab",
+							"grass2"
 						],
 						"subfolders": [],
 						"name": "textures"
@@ -386,7 +403,8 @@
 					"fx_muzzle",
 					"fx_wood",
 					"blackTransition",
-					"fire_particles"
+					"fire_particles",
+					"fx_dust"
 				],
 				"subfolders": [],
 				"name": "fx"
@@ -497,8 +515,7 @@
 			},
 			{
 				"items": [
-					"ui_loading",
-					"ui_weapon_frame"
+					"ui_loading"
 				],
 				"subfolders": [],
 				"name": "interface"
@@ -507,7 +524,8 @@
 				"items": [
 					"sprfont_cursorhint",
 					"sprfont_dialog",
-					"sprfont_ammo"
+					"sprfont_ammo",
+					"sprfont_wpnicon"
 				],
 				"subfolders": [],
 				"name": "sprfonts"

@@ -4559,35 +4559,6 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "ui_weapon_frame",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1535,
-							"instanceVariables": {},
-							"behaviors": {},
-							"world": {
-								"x": 39.647649348161366,
-								"y": 461.5862940788577,
-								"width": 76.54031906264001,
-								"height": 51,
-								"originX": 0.5,
-								"originY": 0.45323741007194246,
-								"color": [
-									0.4196078431372549,
-									0.4196078431372549,
-									0.4196078431372549,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
 							"type": "weapon_icon",
 							"properties": {
 								"initially-visible": true,
@@ -4601,15 +4572,37 @@
 							"behaviors": {
 								"Timer": {
 									"properties": {}
+								},
+								"Anchor": {
+									"properties": {
+										"left-edge": "window-left",
+										"top-edge": "window-top",
+										"right-edge": "none",
+										"bottom-edge": "none",
+										"enabled": true
+									}
+								},
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
+								}
+							},
+							"effects": {
+								"Grayscale": {
+									"isEnabled": true,
+									"parameters": {
+										"intensity": 1
+									}
 								}
 							},
 							"world": {
 								"x": 25.09195308877168,
 								"y": 459.37129782572237,
 								"width": 32.5,
-								"height": 32.5,
-								"originX": 0.49230769230769234,
-								"originY": 0.5076923076923077,
+								"height": 23,
+								"originX": 0.5,
+								"originY": 0.5,
 								"color": [
 									0.7215686274509804,
 									0.7215686274509804,
@@ -4643,6 +4636,15 @@
 							"behaviors": {
 								"Timer": {
 									"properties": {}
+								},
+								"Anchor": {
+									"properties": {
+										"left-edge": "window-left",
+										"top-edge": "window-top",
+										"right-edge": "none",
+										"bottom-edge": "none",
+										"enabled": true
+									}
 								}
 							},
 							"world": {

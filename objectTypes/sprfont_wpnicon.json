@@ -1,19 +1,26 @@
 {
-	"name": "sprfont_ammo",
+	"name": "sprfont_wpnicon",
 	"plugin-id": "Spritefont2",
-	"sid": 605252724070702,
+	"sid": 439537347744676,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "number",
+			"desc": "",
+			"sid": 238105247502314
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Timer",
 			"name": "Timer",
-			"sid": 264148742653899
+			"sid": 643442806583085
 		},
 		{
 			"behaviorId": "Anchor",
 			"name": "Anchor",
-			"sid": 528619744605783
+			"sid": 499942122938509
 		}
 	],
 	"effectTypes": [],
@@ -25,7 +32,7 @@
 		"originalSource": "",
 		"exportFormat": "png",
 		"exportQuality": 0.8,
-		"imageSpriteId": 9627022,
+		"imageSpriteId": 3092733,
 		"useCollisionPoly": true
 	}
 }
