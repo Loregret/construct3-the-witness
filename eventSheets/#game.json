@@ -6632,13 +6632,13 @@
 																{
 																	"id": "tween-two-properties",
 																	"objectClass": "gun",
-																	"sid": 861235276321843,
+																	"sid": 182596110248633,
 																	"behaviorType": "Tween",
 																	"parameters": {
 																		"tags": "\"\"",
 																		"property": "scale",
-																		"end-x": "0.65",
-																		"end-y": "0.65",
+																		"end-x": "0.75",
+																		"end-y": "0.75",
 																		"time": "0.25",
 																		"ease": "default",
 																		"destroy-on-complete": "no",
@@ -12893,7 +12893,16 @@
 											}
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 865842428937059,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
 									"sid": 246132623555566
 								},
 								{

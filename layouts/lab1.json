@@ -3987,8 +3987,8 @@
 						}
 					},
 					"world": {
-						"x": 4624.271735373958,
-						"y": 5566.303808428308,
+						"x": 4707,
+						"y": 5402,
 						"width": 94,
 						"height": 68,
 						"originX": 0.425531914893617,
@@ -3999,7 +3999,7 @@
 							1,
 							1
 						],
-						"angle": 1.6918500152447726,
+						"angle": 0.5657023884346177,
 						"zElevation": 0
 					}
 				},
@@ -4059,8 +4059,8 @@
 						}
 					},
 					"world": {
-						"x": 4715.596737588689,
-						"y": 5545.028938203339,
+						"x": 4726,
+						"y": 5551,
 						"width": 94,
 						"height": 68,
 						"originX": 0.425531914893617,
@@ -4071,7 +4071,7 @@
 							1,
 							1
 						],
-						"angle": 2.4255198018612107,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
@@ -9913,42 +9913,6 @@
 					}
 				},
 				{
-					"type": "solid",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 2128,
-					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 4309.4573785514185,
-						"y": 5228,
-						"width": 132.40239681544426,
-						"height": 202,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.6
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "doorbroken",
 					"properties": {
 						"initially-visible": true,
@@ -10196,6 +10160,54 @@
 							1
 						],
 						"angle": 5.223998892002048,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "gun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "default",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 299,
+					"instanceVariables": {
+						"ammo": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"world": {
+						"x": 3629.8935995085303,
+						"y": 5753.464618981999,
+						"width": 11.942177541666666,
+						"height": 37.66379024001989,
+						"originX": 0.4423076923076922,
+						"originY": 0.6280487804878049,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.585053606381854,
 						"zElevation": 0
 					}
 				},
@@ -18786,6 +18798,75 @@
 									1,
 									1,
 									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_move2Layout",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 346,
+							"instanceVariables": {
+								"layoutName": "lab2",
+								"text": "**Go Inside**",
+								"eventname": ""
+							},
+							"behaviors": {},
+							"world": {
+								"x": 8083.923232811472,
+								"y": 4854.873585104646,
+								"width": 64,
+								"height": 64,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "solid",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 2128,
+							"instanceVariables": {},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 4309.4573785514185,
+								"y": 5228,
+								"width": 132.40239681544426,
+								"height": 202,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.6
 								],
 								"angle": 0,
 								"zElevation": 0

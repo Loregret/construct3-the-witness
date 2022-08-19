@@ -6403,65 +6403,8 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "find-path",
-							"objectClass": "mnstr",
-							"sid": 167520268992545,
-							"behaviorType": "Pathfinding",
-							"parameters": {
-								"x": "Player.X",
-								"y": "Player.Y"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 312779623014095
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-path-found",
-							"objectClass": "mnstr",
-							"sid": 315227445275000,
-							"behaviorType": "Pathfinding"
-						}
-					],
-					"actions": [
-						{
-							"id": "move-along-path",
-							"objectClass": "mnstr",
-							"sid": 817251865991237,
-							"behaviorType": "Pathfinding"
-						}
-					],
-					"sid": 898487981370156
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-speed",
-							"objectClass": "mnstr",
-							"sid": 454576936143810,
-							"behaviorType": "Pathfinding",
-							"parameters": {
-								"comparison": 4,
-								"speed": "5"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-speed",
-							"objectClass": "mnstr",
-							"sid": 511339420541171,
-							"parameters": {
-								"speed": "4"
-							}
-						}
-					],
-					"sid": 670578042974538
 				},
 				{
 					"eventType": "block",
@@ -6472,16 +6415,7 @@
 							"sid": 695426705688625
 						}
 					],
-					"actions": [
-						{
-							"id": "set-animation-speed",
-							"objectClass": "mnstr",
-							"sid": 298515259345039,
-							"parameters": {
-								"speed": "0"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 527207947757076
 				}
 			],
