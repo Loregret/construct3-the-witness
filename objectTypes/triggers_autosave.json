@@ -1,20 +1,14 @@
 {
-	"name": "triggers_audio_emitter",
+	"name": "triggers_autosave",
 	"plugin-id": "Sprite",
-	"sid": 563821777224750,
+	"sid": 495745724277687,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "audioname",
-			"type": "string",
+			"name": "Active",
+			"type": "boolean",
 			"desc": "",
-			"sid": 399442264403974
-		},
-		{
-			"name": "volume",
-			"type": "number",
-			"desc": "",
-			"sid": 634034434920480
+			"sid": 175053463828489
 		}
 	],
 	"behaviorTypes": [],
@@ -24,25 +18,25 @@
 			{
 				"frames": [
 					{
-						"width": 85,
-						"height": 85,
-						"originX": 1.011764705882353,
-						"originY": 1.2117647058823529,
+						"width": 42,
+						"height": 42,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7440101,
+						"imageSpriteId": 7651076,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 711051188097957,
+				"sid": 572945763954116,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 5
 			}
 		],
 		"subfolders": []

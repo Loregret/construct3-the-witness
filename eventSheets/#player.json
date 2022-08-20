@@ -834,6 +834,7 @@
 							"functionDescription": "",
 							"functionCategory": "#player",
 							"functionReturnType": "number",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -863,6 +864,7 @@
 							"functionDescription": "",
 							"functionCategory": "#player",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -1030,6 +1032,7 @@
 							"functionDescription": "",
 							"functionCategory": "#player",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -1097,6 +1100,7 @@
 							"functionDescription": "",
 							"functionCategory": "#player",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -1111,22 +1115,30 @@
 								{
 									"eventType": "block",
 									"conditions": [],
-									"actions": [
+									"actions": [],
+									"sid": 431329316766566,
+									"children": [
 										{
-											"id": "stop",
-											"objectClass": "Audio",
-											"sid": 381402526467790,
-											"parameters": {
-												"tag": "\"music\""
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "flashlight",
-											"sid": 584262916992668
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 228400584723530,
+													"parameters": {
+														"tag": "\"music\""
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "flashlight",
+													"sid": 696921919261934
+												}
+											],
+											"sid": 104292907115404
 										}
-									],
-									"sid": 431329316766566
+									]
 								},
 								{
 									"eventType": "comment",
@@ -1135,43 +1147,51 @@
 								{
 									"eventType": "block",
 									"conditions": [],
-									"actions": [
+									"actions": [],
+									"sid": 512833751226267,
+									"children": [
 										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 118386311070238,
-											"parameters": {
-												"object-to-create": "Player_dead",
-												"layer": "\"floors\"",
-												"x": "Player.X",
-												"y": "Player.Y",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "Player_dead",
-											"sid": 739588419775905,
-											"parameters": {
-												"angle": "Player.Angle"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Player",
-											"sid": 849656823512084
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Player_dead",
-											"sid": 829303561535098,
-											"parameters": {
-												"scale": "1.125"
-											}
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 251650288907937,
+													"parameters": {
+														"object-to-create": "Player_dead",
+														"layer": "\"floors\"",
+														"x": "Player.X",
+														"y": "Player.Y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "Player_dead",
+													"sid": 226296783422300,
+													"parameters": {
+														"angle": "Player.Angle"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "Player",
+													"sid": 203199082400588
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "Player_dead",
+													"sid": 141912320913192,
+													"parameters": {
+														"scale": "1.125"
+													}
+												}
+											],
+											"sid": 955884003213549
 										}
-									],
-									"sid": 512833751226267
+									]
 								},
 								{
 									"eventType": "comment",
@@ -1244,14 +1264,26 @@
 													"id": "stop-all",
 													"objectClass": "Audio",
 													"sid": 671618205359814
-												},
-												{
-													"id": "restart-layout",
-													"objectClass": "System",
-													"sid": 745173203902729
 												}
 											],
-											"sid": 861448395703886
+											"sid": 861448395703886,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "load",
+															"objectClass": "System",
+															"sid": 319296599722917,
+															"parameters": {
+																"slot": "\"autosave\""
+															}
+														}
+													],
+													"sid": 827255586009237
+												}
+											]
 										}
 									]
 								}
@@ -3515,6 +3547,7 @@
 							"functionDescription": "",
 							"functionCategory": "#audio",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -3653,6 +3686,7 @@
 							"functionDescription": "",
 							"functionCategory": "#audio",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{

@@ -353,6 +353,31 @@
 										}
 									],
 									"sid": 827240593385479
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 525790880194497,
+											"parameters": {
+												"layer": "\"triggers_debug\"",
+												"interactive": true
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 177426313624782,
+											"parameters": {
+												"layer": "\"triggers_dialog\"",
+												"interactive": true
+											}
+										}
+									],
+									"sid": 568498210855417
 								}
 							]
 						},
@@ -1048,6 +1073,45 @@
 							"conditions": [],
 							"actions": [],
 							"sid": 249134603553667
+						},
+						{
+							"eventType": "comment",
+							"text": "autosave"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 707037109881523,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "triggers_autosave",
+											"sid": 545055898608153,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 425057314023305,
+											"parameters": {
+												"object-to-create": "triggers_autosave",
+												"layer": "\"triggers_debug\"",
+												"x": "Player.X",
+												"y": "Player.y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 570338235608298
+								}
+							]
 						}
 					]
 				}
@@ -1385,6 +1449,7 @@
 									"functionDescription": "",
 									"functionCategory": "#weapon",
 									"functionReturnType": "number",
+									"functionCopyPicked": false,
 									"functionIsAsync": false,
 									"functionParameters": [
 										{
@@ -5634,6 +5699,7 @@
 							"functionDescription": "",
 							"functionCategory": "#camera",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -5834,6 +5900,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -6162,6 +6229,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -6360,6 +6428,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -6491,6 +6560,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -6674,6 +6744,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -7154,6 +7225,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -7227,6 +7299,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -7827,6 +7900,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -9334,6 +9408,7 @@
 							"functionDescription": "",
 							"functionCategory": "#weapon",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -10616,6 +10691,7 @@
 									"functionDescription": "",
 									"functionCategory": "#projectiles",
 									"functionReturnType": "none",
+									"functionCopyPicked": false,
 									"functionIsAsync": false,
 									"functionParameters": [
 										{
@@ -10957,6 +11033,7 @@
 					"functionDescription": "",
 					"functionCategory": "#light",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -11130,6 +11207,7 @@
 									"functionDescription": "",
 									"functionCategory": "#items",
 									"functionReturnType": "none",
+									"functionCopyPicked": false,
 									"functionIsAsync": false,
 									"functionParameters": [],
 									"eventType": "function-block",
@@ -12213,6 +12291,57 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "Triggers - autosave",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "triggers_autosave",
+									"sid": 880298234989870,
+									"parameters": {
+										"object": "Player"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "triggers_autosave",
+									"sid": 814406867410870,
+									"parameters": {
+										"instance-variable": "Active"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "save",
+									"objectClass": "System",
+									"sid": 605780594132425,
+									"parameters": {
+										"slot": "\"autosave\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "triggers_autosave",
+									"sid": 727648487453882,
+									"parameters": {
+										"instance-variable": "Active",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 811264787871071
+						}
+					],
+					"sid": 383375625351393
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "Triggers - story",
 					"description": "",
 					"isActiveOnStart": true,
@@ -12395,6 +12524,7 @@
 									"functionDescription": "",
 									"functionCategory": "#triggers",
 									"functionReturnType": "number",
+									"functionCopyPicked": false,
 									"functionIsAsync": false,
 									"functionParameters": [
 										{
@@ -12587,6 +12717,7 @@
 									"functionDescription": "",
 									"functionCategory": "#triggers",
 									"functionReturnType": "number",
+									"functionCopyPicked": false,
 									"functionIsAsync": false,
 									"functionParameters": [
 										{
@@ -12779,6 +12910,7 @@
 									"functionDescription": "",
 									"functionCategory": "#triggers",
 									"functionReturnType": "number",
+									"functionCopyPicked": false,
 									"functionIsAsync": false,
 									"functionParameters": [
 										{
@@ -12980,6 +13112,7 @@
 									"functionDescription": "",
 									"functionCategory": "#triggers",
 									"functionReturnType": "number",
+									"functionCopyPicked": false,
 									"functionIsAsync": false,
 									"functionParameters": [
 										{
@@ -13142,6 +13275,7 @@
 							"functionDescription": "",
 							"functionCategory": "#triggers",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -13238,10 +13372,254 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"functionName": "interface_update_ammo_ui",
+							"functionDescription": "",
+							"functionCategory": "#interface",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "interface_clear_weaponicons",
+									"sid": 555715832554200
+								}
+							],
+							"sid": 728505364341324,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 856962853573904,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 957378922972231,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 171559985519882,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 261887687559843,
+													"parameters": {
+														"comparison": 0,
+														"number": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "interface_activate_weaponicon",
+													"sid": 806954972488340,
+													"parameters": [
+														"weapon_icon.UID"
+													]
+												}
+											],
+											"sid": 434993475258975
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 128981753766172
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 688634604472049,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"pistol\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 628300255592648,
+											"parameters": {
+												"text": "weapon.Get(\"pistol_curammo\")&\"/\"&weapon.Get(\"pistol_ammo\")"
+											}
+										}
+									],
+									"sid": 415197184594241,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 706256963051801,
+													"parameters": {
+														"comparison": 0,
+														"number": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "interface_activate_weaponicon",
+													"sid": 310233772754471,
+													"parameters": [
+														"weapon_icon.UID"
+													]
+												}
+											],
+											"sid": 986084353748279
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 568045608885095
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 775105797879182,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"shotgun\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 623601151090704,
+											"parameters": {
+												"text": "weapon.Get(\"shotgun_curammo\")&\"/\"&weapon.Get(\"shotgun_ammo\")"
+											}
+										}
+									],
+									"sid": 706098991620842,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 426920478787243,
+													"parameters": {
+														"comparison": 0,
+														"number": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "interface_activate_weaponicon",
+													"sid": 110882930134419,
+													"parameters": [
+														"weapon_icon.UID"
+													]
+												}
+											],
+											"sid": 338926400461278
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 164636186432693
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 310216335738195,
+											"parameters": {
+												"variable": "curWeapon",
+												"comparison": 0,
+												"value": "\"ak\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "sprfont_ammo",
+											"sid": 546947284257244,
+											"parameters": {
+												"text": "weapon.Get(\"ak_curammo\")&\"/\"&weapon.Get(\"ak_ammo\")"
+											}
+										}
+									],
+									"sid": 231856352573620,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "weapon_icon",
+													"sid": 801028786530142,
+													"parameters": {
+														"comparison": 0,
+														"number": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "interface_activate_weaponicon",
+													"sid": 744865980000598,
+													"parameters": [
+														"weapon_icon.UID"
+													]
+												}
+											],
+											"sid": 732549434172889
+										}
+									]
+								}
+							]
+						},
+						{
 							"functionName": "interface_clear_weaponicons",
 							"functionDescription": "",
 							"functionCategory": "#interface",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -13250,44 +13628,60 @@
 							"sid": 216794935854045,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "clean"
+								},
+								{
 									"eventType": "block",
 									"conditions": [],
-									"actions": [
+									"actions": [],
+									"sid": 657466266910089,
+									"children": [
 										{
-											"id": "set-effect-enabled",
-											"objectClass": "weapon_icon",
-											"sid": 908611488851204,
-											"parameters": {
-												"mode": "enable",
-												"effect": "\"Grayscale\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "weapon_icon",
-											"sid": 549508731002876,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "weapon_icon",
-											"sid": 103459308186697,
-											"parameters": {
-												"scale": "0.60"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "sprfont_wpnicon",
-											"sid": 717858099426665,
-											"parameters": {
-												"visibility": "invisible"
-											}
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-effect-enabled",
+													"objectClass": "weapon_icon",
+													"sid": 138621393467565,
+													"parameters": {
+														"mode": "enable",
+														"effect": "\"Grayscale\""
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "weapon_icon",
+													"sid": 819070781251252,
+													"parameters": {
+														"opacity": "0"
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "weapon_icon",
+													"sid": 574162690998803,
+													"parameters": {
+														"scale": "0.60"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "sprfont_wpnicon",
+													"sid": 250010526084853,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 656099448122665
 										}
-									],
-									"sid": 657466266910089
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "pick and change"
 								},
 								{
 									"eventType": "block",
@@ -13546,6 +13940,7 @@
 							"functionDescription": "",
 							"functionCategory": "#interface",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -13626,248 +14021,6 @@
 										}
 									],
 									"sid": 169063967826434
-								}
-							]
-						},
-						{
-							"functionName": "interface_update_ammo_ui",
-							"functionDescription": "",
-							"functionCategory": "#interface",
-							"functionReturnType": "none",
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [
-								{
-									"callFunction": "interface_clear_weaponicons",
-									"sid": 525049438434203
-								}
-							],
-							"sid": 122881806248755,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 484947570262467,
-											"parameters": {
-												"variable": "curWeapon",
-												"comparison": 0,
-												"value": "\"\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "sprfont_ammo",
-											"sid": 865842428937059,
-											"parameters": {
-												"text": "\"\""
-											}
-										}
-									],
-									"sid": 246132623555566,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "weapon_icon",
-													"sid": 355549175429508,
-													"parameters": {
-														"comparison": 0,
-														"number": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "interface_activate_weaponicon",
-													"sid": 121813500710887,
-													"parameters": [
-														"weapon_icon.UID"
-													]
-												}
-											],
-											"sid": 402777157298950
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 552774012761964
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 246345196503017,
-											"parameters": {
-												"variable": "curWeapon",
-												"comparison": 0,
-												"value": "\"pistol\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "sprfont_ammo",
-											"sid": 328823991426129,
-											"parameters": {
-												"text": "weapon.Get(\"pistol_curammo\")&\"/\"&weapon.Get(\"pistol_ammo\")"
-											}
-										}
-									],
-									"sid": 514626558844304,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "weapon_icon",
-													"sid": 393144521351314,
-													"parameters": {
-														"comparison": 0,
-														"number": "1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "interface_activate_weaponicon",
-													"sid": 135797244190636,
-													"parameters": [
-														"weapon_icon.UID"
-													]
-												}
-											],
-											"sid": 257993626422378
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 193224292305948
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 298035056882376,
-											"parameters": {
-												"variable": "curWeapon",
-												"comparison": 0,
-												"value": "\"shotgun\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "sprfont_ammo",
-											"sid": 251896644499533,
-											"parameters": {
-												"text": "weapon.Get(\"shotgun_curammo\")&\"/\"&weapon.Get(\"shotgun_ammo\")"
-											}
-										}
-									],
-									"sid": 772852799713389,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "weapon_icon",
-													"sid": 266255844900989,
-													"parameters": {
-														"comparison": 0,
-														"number": "2"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "interface_activate_weaponicon",
-													"sid": 412511867813017,
-													"parameters": [
-														"weapon_icon.UID"
-													]
-												}
-											],
-											"sid": 362625620785057
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 797680628243940
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 667612923105930,
-											"parameters": {
-												"variable": "curWeapon",
-												"comparison": 0,
-												"value": "\"ak\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "sprfont_ammo",
-											"sid": 969419521777971,
-											"parameters": {
-												"text": "weapon.Get(\"ak_curammo\")&\"/\"&weapon.Get(\"ak_ammo\")"
-											}
-										}
-									],
-									"sid": 674991871109379,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "weapon_icon",
-													"sid": 475159678371538,
-													"parameters": {
-														"comparison": 0,
-														"number": "3"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "interface_activate_weaponicon",
-													"sid": 311393866099121,
-													"parameters": [
-														"weapon_icon.UID"
-													]
-												}
-											],
-											"sid": 575463395687407
-										}
-									]
 								}
 							]
 						}

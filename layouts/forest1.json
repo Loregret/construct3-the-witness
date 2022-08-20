@@ -14322,10 +14322,10 @@
 						}
 					},
 					"world": {
-						"x": 8657.686400588364,
-						"y": 4419.933707905761,
-						"width": 76.28531640627862,
-						"height": 6.277802450656113,
+						"x": 8660.012517541552,
+						"y": 4418.06881934768,
+						"width": 77.17983995593657,
+						"height": 8.902058244164248,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -20851,12 +20851,43 @@
 								"angle": 0.39232225350304484,
 								"zElevation": 0
 							}
+						},
+						{
+							"type": "triggers_autosave",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1064,
+							"instanceVariables": {
+								"Active": true
+							},
+							"behaviors": {},
+							"world": {
+								"x": 7653.720646954277,
+								"y": 10018.381277085893,
+								"width": 114.5911037297187,
+								"height": 114.5911037297187,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.8
+								],
+								"angle": 6.023760511696952,
+								"zElevation": 0
+							}
 						}
 					],
 					"sid": 949788174507344,
 					"effectTypes": [],
 					"isInitiallyVisible": false,
-					"isInitiallyInteractive": false,
+					"isInitiallyInteractive": true,
 					"color": [
 						1,
 						1,
@@ -21400,6 +21431,37 @@
 									0.6
 								],
 								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_autosave",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1065,
+							"instanceVariables": {
+								"Active": true
+							},
+							"behaviors": {},
+							"world": {
+								"x": 7595.505937214957,
+								"y": 7576.508003673567,
+								"width": 114.5911037297187,
+								"height": 114.5911037297187,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.8
+								],
+								"angle": 0.17453292519943275,
 								"zElevation": 0
 							}
 						}
