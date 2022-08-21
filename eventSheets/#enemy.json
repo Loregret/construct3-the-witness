@@ -2,6 +2,16 @@
 	"name": "#Enemy",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "enemy_visibility_threshold",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 797112552977267
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "[h1] Enemy ☠️ [/h1]",
@@ -3874,11 +3884,11 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 620062797497150,
+															"sid": 802840169044544,
 															"parameters": {
 																"first-value": "Functions.player_get_visibility",
 																"comparison": 4,
-																"second-value": "35"
+																"second-value": "35 + enemy_visibility_threshold"
 															}
 														}
 													],
@@ -3984,11 +3994,11 @@
 																{
 																	"id": "compare-two-values",
 																	"objectClass": "System",
-																	"sid": 513873149382330,
+																	"sid": 785605180948395,
 																	"parameters": {
 																		"first-value": "Functions.player_get_visibility",
 																		"comparison": 4,
-																		"second-value": "24"
+																		"second-value": "24 + enemy_visibility_threshold"
 																	}
 																}
 															],
@@ -4024,11 +4034,11 @@
 																{
 																	"id": "compare-two-values",
 																	"objectClass": "System",
-																	"sid": 605261652589034,
+																	"sid": 901080360982085,
 																	"parameters": {
 																		"first-value": "Functions.player_get_visibility",
 																		"comparison": 4,
-																		"second-value": "32"
+																		"second-value": "32 + enemy_visibility_threshold"
 																	}
 																}
 															],
@@ -6388,49 +6398,6 @@
 				}
 			],
 			"sid": 598339292072374
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Red Monster",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-moving",
-							"objectClass": "Player",
-							"sid": 647101842486305,
-							"behaviorType": "8Direction"
-						},
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 834064201354745,
-							"parameters": {
-								"interval-seconds": "0.65"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 312779623014095
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 695426705688625
-						}
-					],
-					"actions": [],
-					"sid": 527207947757076
-				}
-			],
-			"sid": 986185971774168
 		}
 	],
 	"sid": 835774610273675

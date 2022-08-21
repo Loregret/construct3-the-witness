@@ -269,6 +269,24 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-load-complete",
+							"objectClass": "System",
+							"sid": 297406481162897
+						}
+					],
+					"actions": [
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 373952196023271
+						}
+					],
+					"sid": 997171920838377
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-any-key-pressed",
 							"objectClass": "Keyboard",
 							"sid": 112499445660832

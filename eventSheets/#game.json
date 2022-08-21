@@ -963,12 +963,12 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 967820087549461
+											"sid": 359649197157034
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 611542396605370,
+											"sid": 433527819028045,
 											"parameters": {
 												"first-value": "LayoutName",
 												"comparison": 0,
@@ -977,7 +977,47 @@
 										}
 									],
 									"actions": [],
-									"sid": 625199087087410
+									"sid": 310136525530747
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 967820087549461
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 991428877559787,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"lab2\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 625199087087410,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 320759573875120,
+													"parameters": {
+														"variable": "enemy_visibility_threshold",
+														"value": "-40"
+													}
+												}
+											],
+											"sid": 849134672614323
+										}
+									]
 								}
 							]
 						},
@@ -1073,45 +1113,6 @@
 							"conditions": [],
 							"actions": [],
 							"sid": 249134603553667
-						},
-						{
-							"eventType": "comment",
-							"text": "autosave"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 707037109881523,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-on-screen",
-											"objectClass": "triggers_autosave",
-											"sid": 545055898608153,
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 425057314023305,
-											"parameters": {
-												"object-to-create": "triggers_autosave",
-												"layer": "\"triggers_debug\"",
-												"x": "Player.X",
-												"y": "Player.y",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										}
-									],
-									"sid": 570338235608298
-								}
-							]
 						}
 					]
 				}
@@ -6166,17 +6167,6 @@
 											],
 											"actions": [
 												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 331180894718731,
-													"parameters": {
-														"audio-file": "shotgun bullet inject",
-														"loop": "not-looping",
-														"volume": "-5",
-														"tag-optional": "\"reload\""
-													}
-												},
-												{
 													"callFunction": "create_audio_trigger",
 													"sid": 841493393391423,
 													"parameters": [
@@ -6196,14 +6186,74 @@
 													}
 												},
 												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 491944467388829,
+													"parameters": {
+														"audio-file": "shotgun bullet inject",
+														"loop": "not-looping",
+														"volume": "-5",
+														"tag-optional": "\"reload\""
+													}
+												},
+												{
 													"id": "start-timer",
 													"objectClass": "Player",
-													"sid": 493260788344465,
+													"sid": 979217982234594,
 													"behaviorType": "Timer",
 													"parameters": {
-														"duration": "0.3",
+														"duration": "0.65",
 														"type": "once",
 														"tag": "\"reload\""
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 326473376503380,
+													"parameters": {
+														"audio-file": "shotgun bullet inject",
+														"loop": "not-looping",
+														"volume": "-5",
+														"tag-optional": "\"reload\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 474393962847933,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 513655833224055,
+													"parameters": {
+														"audio-file": "shotgun bullet inject",
+														"loop": "not-looping",
+														"volume": "-5",
+														"tag-optional": "\"reload\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 341546753083126,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 990902282113448,
+													"parameters": {
+														"audio-file": "shotgun bullet inject",
+														"loop": "not-looping",
+														"volume": "-5",
+														"tag-optional": "\"reload\""
 													}
 												}
 											],
@@ -12317,20 +12367,20 @@
 							],
 							"actions": [
 								{
+									"id": "set-boolean-instvar",
+									"objectClass": "triggers_autosave",
+									"sid": 518478825605418,
+									"parameters": {
+										"instance-variable": "Active",
+										"value": "false"
+									}
+								},
+								{
 									"id": "save",
 									"objectClass": "System",
 									"sid": 605780594132425,
 									"parameters": {
 										"slot": "\"autosave\""
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "triggers_autosave",
-									"sid": 727648487453882,
-									"parameters": {
-										"instance-variable": "Active",
-										"value": "false"
 									}
 								}
 							],

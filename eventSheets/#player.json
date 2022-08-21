@@ -1273,6 +1273,16 @@
 													"conditions": [],
 													"actions": [
 														{
+															"id": "destroy",
+															"objectClass": "enemies",
+															"sid": 335304936531537
+														},
+														{
+															"id": "wait-for-previous-actions",
+															"objectClass": "System",
+															"sid": 601968745263768
+														},
+														{
 															"id": "load",
 															"objectClass": "System",
 															"sid": 319296599722917,
