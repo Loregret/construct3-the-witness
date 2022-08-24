@@ -89,7 +89,7 @@
 				},
 				{
 					"char": "",
-					"line": "This story is how I'd witnessed the end of humankind.",
+					"line": "This story is how I'd witnessed the End.",
 					"speed": 1.55,
 					"wait": 2.75
 				}
@@ -212,7 +212,7 @@
 			"id": "campfire1",
 			"dialogs": [
 				{
-					"line": "Campfire. Or what's left from it.",
+					"line": "Campfire.",
 					"wait": 0.6
 				}
 			]
@@ -323,7 +323,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "FBI agents.",
+					"line": "BCA.",
 					"speed": 0.5,
 					"wait": 1.25
 				},
@@ -334,7 +334,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "Lookin' for intruders from wastelands.",
+					"line": "Looking for intruders from the wastelands.",
 					"speed": 0.45
 				},
 				{
@@ -400,7 +400,7 @@
 				},
 				{
 					"char": "player",
-					"line": "Hmm. Let's stop this conversation.",
+					"line": "...",
 					"speed": 0.45
 				},
 				{
@@ -424,89 +424,11 @@
 				},
 				{
 					"char": "npc",
-					"line": "You're late, again."
+					"line": "You're late. Again."
 				},
 				{
 					"char": "player",
-					"line": "So what?"
-				},
-				{
-					"char": "npc",
-					"line": "I'll have to penalize you."
-				},
-				{
-					"char": "npc",
-					"line": "For violation of the rules of..."
-				},
-				{
-					"char": "player",
-					"line": "You have no power over me."
-				},
-				{
-					"char": "npc",
-					"line": "What?"
-				},
-				{
-					"char": "player",
-					"line": "I was born with no lust for money."
-				},
-				{
-					"char": "player",
-					"line": "Doing good is what I care about, Sarah."
-				},
-				{
-					"char": "player",
-					"line": "You can rip off all my money, but my soul remains intact."
-				},
-				{
-					"char": "npc",
-					"line": "You!"
-				},
-				{
-					"char": "player",
-					"line": "Everything I earn, I spend to the charity anyways."
-				},
-				{
-					"char": "npc",
-					"line": "Oh, how noble off you!"
-				},
-				{
-					"char": "npc",
-					"line": "Would you say anything to promote your lack of punctuality?!"
-				},
-				{
-					"char": "player",
-					"line": "I just consider it as unimportant right now."
-				},
-				{
-					"char": "player",
-					"line": "When there's giant holes in the water."
-				},
-				{
-					"char": "player",
-					"line": "And we can see and smell a drought coming."
-				},
-				{
-					"char": "npc",
-					"line": "This is the reason punctuality is important as never before!",
-					"next-dialog": "sarah2"
-				},
-				{
-					"char": "player",
-					"line": "Right."
-				}
-			]
-		},
-		{
-			"id": "sarah2",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "We'are running out of time, Robert."
-				},
-				{
-					"char": "player",
-					"line": "Quoting Isaac? That's exactly what he said."
+					"line": "I know."
 				},
 				{
 					"char": "npc",
@@ -522,11 +444,11 @@
 				},
 				{
 					"char": "npc",
-					"line": "Salt projectors? Interesting..."
+					"line": "Salt projectors? Hmm..."
 				},
 				{
 					"char": "npc",
-					"line": "We have no one with expertise on new technology."
+					"line": "We have no one with expertise on salt technology."
 				},
 				{
 					"char": "player",
@@ -534,7 +456,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "Ah, you! Stop this crap!"
+					"line": "Don't start this!"
 				},
 				{
 					"char": "npc",
@@ -550,40 +472,8 @@
 				},
 				{
 					"char": "npc",
-					"line": "Oh, so do you need my permission now?"
-				},
-				{
-					"char": "npc",
-					"line": "Aren't you a 'need-no-permission' guy?"
-				},
-				{
-					"char": "player",
-					"line": "I know it's hard to deal with me."
-				},
-				{
-					"char": "player",
-					"line": "But you will achieve nothing just scolding me."
-				},
-				{
-					"char": "npc",
-					"line": "You!"
-				},
-				{
-					"char": "npc",
-					"line": "*sigh*"
-				},
-				{
-					"char": "npc",
-					"line": "Alright."
-				},
-				{
-					"char": "npc",
-					"line": "Go and investigate.",
+					"line": "Be careful there.",
 					"event": "carActivate"
-				},
-				{
-					"char": "player",
-					"line": "Okay."
 				}
 			]
 		},
@@ -845,11 +735,11 @@
 				},
 				{
 					"char": "player",
-					"line": "Show me then."
+					"line": "I'm listening."
 				},
 				{
 					"char": "npc",
-					"line": "In the water.",
+					"line": "Come here. It's in the water.",
 					"event": "IsaacRelocate"
 				},
 				{
@@ -871,45 +761,141 @@
 				},
 				{
 					"char": "player",
-					"line": "Have you seen something similar?"
+					"line": "Why? Have you seen it before?"
 				},
 				{
 					"char": "npc",
-					"line": "Yes. It's a common thing outside of shield-protection.",
+					"line": "It's common in places where you are lucky to have food for a day.",
 					"speed": 1.7,
 					"wait": 2.7
 				},
 				{
 					"char": "player",
-					"line": "Do you know what causes it?"
+					"line": "So, you've been outside?",
+					"speed": 1.0,
+					"wait": 2.0
 				},
 				{
 					"char": "npc",
-					"line": "Maybe."
+					"line": "Yes. And it was eye-opening...",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "The good thing about a starving person is that he's not a hypocrite.",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "You are aware of his main desire, which makes manipulating him very easy.",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "That's how our politician deals with them.",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "Give food supplies to the most cruel person of them all.",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "Make people envy his power.",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "And he will do anything to keep them under control.",
+					"speed": 1.7,
+					"wait": 2.7
 				},
 				{
 					"char": "player",
-					"line": "What is it?"
+					"line": "I've heard about warlords."
+				},
+				{
+					"char": "player",
+					"line": "I know there's chaos outside."
+				},
+				{
+					"char": "player",
+					"line": "We are developing tools to help them."
+				},
+				{
+					"char": "player",
+					"line": "But we need to save and protect our ecology first."
+				},
+				{
+					"char": "player",
+					"line": "Or there will be no more us and them."
 				},
 				{
 					"char": "npc",
-					"line": "Well, that's only an assumption."
+					"line": "Probably."
 				},
 				{
 					"char": "npc",
-					"line": "It happens quite often near the SFG-stations.",
+					"line": "But don't you feel like it's wrong to have a feast when your neighbor is dying of malnutrition?"
+				},
+				{
+					"char": "npc",
+					"line": "Maybe. I don't know."
+				},
+				{
+					"char": "npc",
+					"line": "This is what we doing."
+				},
+				{
+					"char": "npc",
+					"line": "And the worst thing is we tell ourselves this people are awful when indeed the evil ones are we."
+				},
+				{
+					"char": "player",
+					"line": "..."
+				},
+				{
+					"char": "player",
+					"line": "*sigh*"
+				},
+				{
+					"char": "player",
+					"line": "You aren't fun at parties, are you?"
+				},
+				{
+					"char": "npc",
+					"line": "No."
+				},
+				{
+					"char": "player",
+					"line": "So, what can we do with this anomaly then?"
+				},
+				{
+					"char": "npc",
+					"line": "Well, that's only an assumption but I've found a pattern."
+				},
+				{
+					"char": "npc",
+					"line": "It happens quite often near the salt energy generators.",
 					"speed": 1.5,
 					"wait": 2.3
 				},
 				{
 					"char": "npc",
-					"line": "Salt projectors absorbs water.",
+					"line": "Probably, mineral projectors absorb water in gigantic quantities.",
 					"speed": 1.5,
 					"wait": 2.3
 				},
 				{
 					"char": "player",
-					"line": "Are you sure that's the reason behind this?",
+					"line": "Are you sure?",
 					"speed": 1.5,
 					"wait": 2.3
 				},
@@ -921,7 +907,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "But I guess we're lucky that there's one station nearby.",
+					"line": "But we're lucky that there's one station nearby.",
 					"speed": 1.5,
 					"wait": 2.3
 				},
@@ -944,11 +930,11 @@
 			"dialogs": [
 				{
 					"char": "player",
-					"line": "Quite frankly, I hate new technology."
+					"line": "I hate new technology."
 				},
 				{
 					"char": "player",
-					"line": "Their view of the world and it's laws... it contradicts everything we know.",
+					"line": "It violates all physical laws that humankind has discovered so far.",
 					"speed": 1.7,
 					"wait": 2.7
 				},
@@ -958,9 +944,25 @@
 				},
 				{
 					"char": "player",
-					"line": "I never thought there will be so much deviation in science community.",
+					"line": "It reminds me of the Roman Empire, when it was divided in two."
+				},
+				{
+					"char": "npc",
+					"line": "The East and the West."
+				},
+				{
+					"char": "npc",
+					"line": "Division. It happens all the time."
+				},
+				{
+					"char": "player",
+					"line": "I never thought there would be so much sectarianism in the science community.",
 					"speed": 1.7,
 					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "This division is only likely to be exacerbated further."
 				},
 				{
 					"char": "npc",
