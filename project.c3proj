@@ -3,8 +3,8 @@
 	"savedWithRelease": 30700,
 	"name": "The Witness",
 	"runtime": "c3",
-	"useWorker": "auto",
-	"bundleAddons": false,
+	"useWorker": "dom",
+	"bundleAddons": true,
 	"usedAddons": [
 		{
 			"type": "plugin",
@@ -1570,6 +1570,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "The Shoulder Tap - Tamuz Dekel.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 495351990725970,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -1659,7 +1667,7 @@
 	},
 	"properties": {
 		"description": "The Witness is top-down horror adventure. \n\nEarth is dying. People becoming insane. There's small group of people trying to save humanity. And there is you. A witness. Witness of the end of the World.",
-		"version": "0.1.4.6",
+		"version": "0.1.5",
 		"author": "Loregret",
 		"authorEmail": "Loregrets@yahoo.com",
 		"authorWebsite": "",
@@ -1699,7 +1707,7 @@
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"renderingMode": "auto",
-		"anisotropicFiltering": "off",
+		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "progress",
 		"preloadSounds": true,

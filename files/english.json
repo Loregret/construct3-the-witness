@@ -765,7 +765,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "It's common in places where you are lucky to have food for a day.",
+					"line": "It's common in places where luck is to have food for another day.",
 					"speed": 1.7,
 					"wait": 2.7
 				},
@@ -827,59 +827,94 @@
 				},
 				{
 					"char": "player",
-					"line": "We are developing tools to help them."
+					"line": "We are developing tools to help people out there.",
+					"speed": 1.7,
+					"wait": 2.0
 				},
 				{
 					"char": "player",
-					"line": "But we need to save and protect our ecology first."
+					"line": "But we need to save and protect ourselves first.",
+					"speed": 1.25,
+					"wait": 1.9
 				},
 				{
 					"char": "player",
-					"line": "Or there will be no more us and them."
+					"line": "Or there will be no more us and no more them.",
+					"speed": 1.5,
+					"wait": 2.2
 				},
 				{
 					"char": "npc",
-					"line": "Probably."
+					"line": "Death is all around us.",
+					"speed": 1.45,
+					"wait": 1.7
 				},
 				{
 					"char": "npc",
-					"line": "But don't you feel like it's wrong to have a feast when your neighbor is dying of malnutrition?"
+					"line": "But don't you feel like it's wrong to have a feast when your neighbor is dying of malnutrition?",
+					"speed": 2.0,
+					"wait": 2.7
 				},
 				{
-					"char": "npc",
+					"char": "player",
 					"line": "Maybe. I don't know."
 				},
 				{
 					"char": "npc",
-					"line": "This is what we doing."
+					"line": "That's what we doing."
 				},
 				{
 					"char": "npc",
-					"line": "And the worst thing is we tell ourselves this people are awful when indeed the evil ones are we."
+					"line": "Worse, we convince ourselves that these people are terrible when, in fact, we are the evil ones...",
+					"speed": 2.7,
+					"wait": 2.75
 				},
 				{
 					"char": "player",
-					"line": "..."
-				},
-				{
-					"char": "player",
-					"line": "*sigh*"
-				},
-				{
-					"char": "player",
-					"line": "You aren't fun at parties, are you?"
+					"line": "...",
+					"speed": 0.35,
+					"wait": 1.0
 				},
 				{
 					"char": "npc",
-					"line": "No."
+					"line": "We are lacking empathy."
 				},
 				{
 					"char": "player",
-					"line": "So, what can we do with this anomaly then?"
+					"line": "*sigh*",
+					"speed": 0.2,
+					"wait": 1.0
+				},
+				{
+					"char": "player",
+					"line": "Sir, you must be fun at parties.",
+					"speed": 1.5,
+					"wait": 1.5
 				},
 				{
 					"char": "npc",
-					"line": "Well, that's only an assumption but I've found a pattern."
+					"line": "What? No.",
+					"speed": 0.25,
+					"wait": 1.0,
+					"next-dialog": "isaac3"
+				}
+			]
+		},
+
+		{
+			"id": "isaac3",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "So, what can we do with this anomaly?",
+					"speed": 1.75,
+					"wait": 2.3
+				},
+				{
+					"char": "npc",
+					"line": "Well, that's only an assumption but I've found a pattern.",
+					"speed": 2.0,
+					"wait": 2.7
 				},
 				{
 					"char": "npc",
@@ -895,9 +930,7 @@
 				},
 				{
 					"char": "player",
-					"line": "Are you sure?",
-					"speed": 1.5,
-					"wait": 2.3
+					"line": "Are you sure?"
 				},
 				{
 					"char": "npc",
@@ -921,16 +954,16 @@
 					"char": "npc",
 					"line": "Maybe you will learn something there.",
 					"wait": 2.7,
-					"next-dialog": "isaac3"
+					"next-dialog": "isaac4"
 				}
 			]
 		},
 		{
-			"id": "isaac3",
+			"id": "isaac4",
 			"dialogs": [
 				{
 					"char": "player",
-					"line": "I hate new technology."
+					"line": "I despise new technology."
 				},
 				{
 					"char": "player",
@@ -944,7 +977,9 @@
 				},
 				{
 					"char": "player",
-					"line": "It reminds me of the Roman Empire, when it was divided in two."
+					"line": "It reminds me of the Roman Empire, when it was divided in two.",
+					"speed": 2.0,
+					"wait": 2.7
 				},
 				{
 					"char": "npc",
@@ -956,37 +991,39 @@
 				},
 				{
 					"char": "player",
-					"line": "I never thought there would be so much sectarianism in the science community.",
+					"line": "I never thought there would be so much sects in the science community.",
 					"speed": 1.7,
 					"wait": 2.7
 				},
 				{
 					"char": "npc",
-					"line": "This division is only likely to be exacerbated further."
+					"line": "This division is only likely to be exacerbated further.",
+					"speed": 1.65,
+					"wait": 2.3
 				},
 				{
 					"char": "npc",
 					"line": "The truth is rarely pure and never simple.",
 					"speed": 1.7,
-					"wait": 2.5
+					"wait": 2.2
 				},
 				{
 					"char": "npc",
 					"line": "Who knows which secrets will be found in the future?",
-					"speed": 1.7,
-					"wait": 2.3
+					"speed": 1.5,
+					"wait": 1.7
 				},
 				{
 					"char": "npc",
 					"line": "And, surely, there will be new ways of looking at everything. Always.",
-					"speed": 1.85,
+					"speed": 1.4,
 					"wait": 2.5,
-					"next-dialog": "isaac4"
+					"next-dialog": "isaac5"
 				}
 			]
 		},
 		{
-			"id": "isaac4",
+			"id": "isaac5",
 			"dialogs": [
 				{
 					"char": "npc",
@@ -1111,6 +1148,16 @@
 				{
 					"char": "player",
 					"line": "No one is coming to save us.",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "We are left alone here.",
+					"speed": 0.45
+				},
+				{
+					"char": "player",
+					"line": "Orphans of the Earth.",
 					"speed": 0.45
 				}
 			]
