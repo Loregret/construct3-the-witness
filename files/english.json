@@ -35,13 +35,13 @@
 				},
 				{
 					"char": "",
-					"line": "There's few wealthy nations who saved fraction of earth and made it inhabitable once again by technology.",
+					"line": "A few wealthy nations have used technology to save a portion of the planet and make it habitable once more. ",
 					"speed": 2.55,
 					"wait": 3
 				},
 				{
 					"char": "",
-					"line": "But those who have been unfortunate to stay at dead wasteland are resentful.",
+					"line": "Those who have been unfortunate enough to remain on a dead wasteland are furious.",
 					"speed": 2.35,
 					"wait": 3
 				},
@@ -59,7 +59,7 @@
 				},
 				{
 					"char": "",
-					"line": "But hope remains as if nothing can kill it.",
+					"line": "Yet amongst these exhausted, desperate people, hope remains.",
 					"speed": 1.55,
 					"wait": 2.75
 				},
@@ -83,7 +83,7 @@
 				},
 				{
 					"char": "",
-					"line": "I'm Robert. Employee of Ecology Restoration program.",
+					"line": "I'm Robert. Employee of Ecology Restoration Program.",
 					"speed": 1.55,
 					"wait": 2.75
 				},
@@ -109,6 +109,15 @@
 					"sound": "soundname",
 					"end-sound": "soundname",
 					"typewriter": "none"
+				}
+			]
+		},
+		{
+			"id": "forest1-room",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Hello?"
 				}
 			]
 		},
@@ -289,7 +298,7 @@
 					"line": "",
 					"typewriter": "none",
 					"sound": "wood-hit",
-					"event": "forest2-door"				
+					"event": "forest2-door"
 				}
 			]
 		}
@@ -323,34 +332,48 @@
 				},
 				{
 					"char": "npc",
-					"line": "BCA.",
-					"speed": 0.5,
+					"line": "Border control, plus two guys from FBI.",
+					"speed": 1,
 					"wait": 1.25
 				},
 				{
 					"char": "player",
 					"line": "What do they need?",
-					"speed": 0.45
+					"speed": 0.8
 				},
 				{
 					"char": "npc",
-					"line": "Looking for intruders from the wastelands.",
-					"speed": 0.45
+					"line": "They were digging information about locals.",
+					"speed": 1
 				},
 				{
 					"char": "player",
-					"line": "Really? Have raiders gotten so far?",
-					"speed": 0.45
+					"line": "Someone had crossed the border?",
+					"speed": 0.9
 				},
 				{
 					"char": "npc",
-					"line": "Read the news. 'Runners' are everywhere.",
-					"speed": 0.45
+					"line": "I don't know, but they're furious and think that we were involved.",
+					"speed": 1.0,
+					"wait": 1.5
 				},
 				{
 					"char": "player",
-					"line": "Madness.",
-					"speed": 0.45,
+					"line": "What interesting times we live in.",
+					"speed": 1,
+					"wait": 1.6
+				},
+				{
+					"char": "npc",
+					"line": "You need to tell them everything you know. We all did.",
+					"speed": 1.25,
+					"wait": 2.0
+				},
+				{
+					"char": "player",
+					"line": "They wouldn't bear my intellect, Chris.",
+					"speed": 1.25,
+					"wait": 2.0,
 					"next-dialog": "base-chris-talk2"
 				}
 			]
@@ -372,7 +395,7 @@
 				},
 				{
 					"char": "player",
-					"line": "Yeah. But I don't call her that name.",
+					"line": "Yeah. But I don't call her that.",
 					"speed": 0.45,
 					"wait": 2
 				},
@@ -601,15 +624,6 @@
 	],
 	"talking": [
 		{
-			"id": "corpse-reaction1",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Ew. Disgusting..."
-				}
-			]
-		},
-		{
 			"id": "madness",
 			"dialogs": [
 				{
@@ -623,75 +637,6 @@
 					"line": "And I'm helpless to stop this.",
 					"speed": 0.5,
 					"wait": 1.25
-				}
-			]
-		},
-		{
-			"id": "forest1-room",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Hello?"
-				},
-				{
-					"char": "player",
-					"line": "What the...?"
-				}
-			]
-		},
-		{
-			"id": "test1",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "Hello, this is test dialog."
-				},
-				{
-					"char": "player",
-					"line": "Okay."
-				},
-				{
-					"char": "npc",
-					"line": "This line is long",
-					"speed": 1.5,
-					"wait": 5
-				},
-				{
-					"char": "npc",
-					"line": "This line is fast",
-					"speed": 0.5,
-					"wait": 1
-				},
-				{
-					"char": "npc",
-					"line": "This line has no typewriter effect",
-					"typewriter": "none"
-				},
-				{
-					"char": "npc",
-					"line": "This line has sound effect",
-					"end-sound": "notification1"
-				}
-			]
-		},
-		{
-			"id": "test-greetings",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "Hello!"
-				},
-				{
-					"char": "player",
-					"line": "Hi."
-				},
-				{
-					"char": "npc",
-					"line": "How are you holding up?"
-				},
-				{
-					"char": "player",
-					"line": "I'm fine."
 				}
 			]
 		}
@@ -772,8 +717,8 @@
 				{
 					"char": "player",
 					"line": "So, you've been outside?",
-					"speed": 1.0,
-					"wait": 2.0
+					"speed": 1,
+					"wait": 2
 				},
 				{
 					"char": "npc",
@@ -829,7 +774,7 @@
 					"char": "player",
 					"line": "We are developing tools to help people out there.",
 					"speed": 1.7,
-					"wait": 2.0
+					"wait": 2
 				},
 				{
 					"char": "player",
@@ -852,7 +797,7 @@
 				{
 					"char": "npc",
 					"line": "But don't you feel like it's wrong to have a feast when your neighbor is dying of malnutrition?",
-					"speed": 2.0,
+					"speed": 2,
 					"wait": 2.7
 				},
 				{
@@ -865,7 +810,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "Worse, we convince ourselves that these people are terrible when, in fact, we are the evil ones...",
+					"line": "Worse, we convince ourselves that these people are terrible when, in fact, we are...",
 					"speed": 2.7,
 					"wait": 2.75
 				},
@@ -873,17 +818,11 @@
 					"char": "player",
 					"line": "...",
 					"speed": 0.35,
-					"wait": 1.0
+					"wait": 1
 				},
 				{
 					"char": "npc",
-					"line": "We are lacking empathy."
-				},
-				{
-					"char": "player",
-					"line": "*sigh*",
-					"speed": 0.2,
-					"wait": 1.0
+					"line": "No empathy among us."
 				},
 				{
 					"char": "player",
@@ -895,12 +834,11 @@
 					"char": "npc",
 					"line": "What? No.",
 					"speed": 0.25,
-					"wait": 1.0,
+					"wait": 2.3,
 					"next-dialog": "isaac3"
 				}
 			]
 		},
-
 		{
 			"id": "isaac3",
 			"dialogs": [
@@ -913,7 +851,7 @@
 				{
 					"char": "npc",
 					"line": "Well, that's only an assumption but I've found a pattern.",
-					"speed": 2.0,
+					"speed": 2,
 					"wait": 2.7
 				},
 				{
@@ -978,7 +916,7 @@
 				{
 					"char": "player",
 					"line": "It reminds me of the Roman Empire, when it was divided in two.",
-					"speed": 2.0,
+					"speed": 2,
 					"wait": 2.7
 				},
 				{
@@ -996,7 +934,7 @@
 					"wait": 2.7
 				},
 				{
-					"char": "npc",
+					"char": "player",
 					"line": "This division is only likely to be exacerbated further.",
 					"speed": 1.65,
 					"wait": 2.3

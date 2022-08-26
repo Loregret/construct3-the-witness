@@ -672,6 +672,17 @@
 														"volume": "-28",
 														"tag-optional": "\"ambience\""
 													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 738349124722271,
+													"parameters": {
+														"audio-file": "in-the-desert by g-yerro Artlist",
+														"loop": "not-looping",
+														"volume": "-25",
+														"tag-optional": "\"music\""
+													}
 												}
 											],
 											"sid": 364309040388048
@@ -951,6 +962,17 @@
 														"volume": "-28",
 														"tag-optional": "\"ambience\""
 													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 402872805351531,
+													"parameters": {
+														"audio-file": "Outlaws - Max H.",
+														"loop": "looping",
+														"volume": "-13",
+														"tag-optional": "\"music\""
+													}
 												}
 											],
 											"sid": 957632938583793
@@ -977,7 +999,27 @@
 										}
 									],
 									"actions": [],
-									"sid": 310136525530747
+									"sid": 310136525530747,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 258877079059440,
+													"parameters": {
+														"audio-file": "Assault - Max H.",
+														"loop": "looping",
+														"volume": "-13",
+														"tag-optional": "\"music\""
+													}
+												}
+											],
+											"sid": 248971707852116
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1113,6 +1155,171 @@
 							"conditions": [],
 							"actions": [],
 							"sid": 249134603553667
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 882822538777015
+						}
+					],
+					"actions": [],
+					"sid": 460148670432330,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 665910850235564,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"collection\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 745330457103778,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 759056972393840,
+									"parameters": {
+										"tag": "\"ambience\""
+									}
+								}
+							],
+							"sid": 794238530700955
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 790037632470446
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 817881955531474,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"forest1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 258031721883556,
+									"parameters": {
+										"tag": "\"ambience\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 368692872314923,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								}
+							],
+							"sid": 146532081410069
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 729484095957356
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 190903513875418,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"forest2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 101931072754272,
+									"parameters": {
+										"tag": "\"ambience\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 439179690729760,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								}
+							],
+							"sid": 935602546697954
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 938453582870379
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 907656605453987,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"lab1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 758541896644402,
+									"parameters": {
+										"tag": "\"ambience\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 163622839603995,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								}
+							],
+							"sid": 776441685634804
 						}
 					]
 				}

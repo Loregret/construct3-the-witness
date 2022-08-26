@@ -1,0 +1,160 @@
+{
+	"name": "#SkipIntro",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "#Cursor"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "#Debug"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 461362990797508,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "menu_text"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 927806345694967,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "menu_text",
+							"sid": 878759662907612,
+							"parameters": {
+								"instance-variable": "param",
+								"comparison": 0,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 948760639390614,
+							"parameters": {
+								"layout": "intro"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 897224000477093,
+							"parameters": {
+								"audio-file": "switch4",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 188625319605213
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 615322372469329
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "menu_text",
+							"sid": 736428370089375,
+							"parameters": {
+								"instance-variable": "param",
+								"comparison": 0,
+								"value": "\"skip\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 104885855088238,
+							"parameters": {
+								"layout": "forest2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 501287735069897,
+							"parameters": {
+								"audio-file": "switch4",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 866141988995038
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 919678344909884,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 474591124480637,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 196488156179956
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 947160140817496,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 230708732579568,
+					"parameters": {
+						"layout": "intro"
+					}
+				}
+			],
+			"sid": 593279762247417
+		}
+	],
+	"sid": 631530038904557
+}

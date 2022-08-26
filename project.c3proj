@@ -297,7 +297,9 @@
 	],
 	"uniqueId": "bmm21df34rr",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Sprite"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -572,7 +574,8 @@
 					"logo",
 					"Dialogic",
 					"loading",
-					"pause"
+					"pause",
+					"SkipIntro"
 				],
 				"subfolders": [],
 				"name": "sub"
@@ -591,7 +594,8 @@
 							"forest3",
 							"lab1",
 							"lab2",
-							"base_after_raid"
+							"base_after_raid",
+							"police_station"
 						],
 						"subfolders": [],
 						"name": "levels"
@@ -632,7 +636,8 @@
 					"#Cutscene",
 					"#Talkie",
 					"#NPC",
-					"#Pause"
+					"#Pause",
+					"#SkipIntro"
 				],
 				"subfolders": [],
 				"name": "main events"
@@ -1564,17 +1569,33 @@
 					}
 				},
 				{
-					"name": "distant-worlds by theatre-of-delays Artlist.webm",
+					"name": "The Shoulder Tap - Tamuz Dekel.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 699092831540391,
+					"sid": 495351990725970,
 					"file-info": {
 						"purpose": "none"
 					}
 				},
 				{
-					"name": "The Shoulder Tap - Tamuz Dekel.webm",
+					"name": "in-the-desert by g-yerro Artlist.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 495351990725970,
+					"sid": 147190901087652,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Assault - Max H..webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 402434307497297,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Outlaws - Max H..webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 927490843143473,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -1621,14 +1642,6 @@
 							"name": "english.json",
 							"type": "application/json",
 							"sid": 633567098931315,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "russian.json",
-							"type": "application/json",
-							"sid": 673640609442104,
 							"file-info": {
 								"purpose": "none"
 							}
