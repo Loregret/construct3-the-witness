@@ -163,7 +163,7 @@
 			"eventType": "variable",
 			"name": "settings_fps",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -1320,6 +1320,38 @@
 								}
 							],
 							"sid": 776441685634804
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 265293353142003
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 935047240586204,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"lab2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 662722035797548,
+									"parameters": {
+										"variable": "enemy_visibility_threshold",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 741155486152407
 						}
 					]
 				}
