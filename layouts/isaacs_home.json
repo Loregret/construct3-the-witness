@@ -48,8 +48,8 @@
 						"wrap-vertical": "repeat",
 						"image-offset-x": 0,
 						"image-offset-y": 0,
-						"image-scale-x": 2,
-						"image-scale-y": 2,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
 						"image-angle": 0
 					},
 					"uid": 3061,
@@ -109,10 +109,46 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "house_door",
+					"type": "plant1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3097,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1539.755859375,
+						"y": 1750.444091796875,
+						"width": 46,
+						"height": 45,
+						"originX": 0.5271739130434783,
+						"originY": 0.5,
+						"color": [
+							0.5529411764705883,
+							0.5450980392156862,
+							0.5450980392156862,
+							1
+						],
+						"angle": 4.428217420652938,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "metal_door",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 2,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -128,14 +164,14 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3101,
+					"uid": 3098,
 					"instanceVariables": {},
 					"behaviors": {
 						"ShadowCaster": {
 							"properties": {
 								"height": 0,
 								"tag": "",
-								"enabled": true
+								"enabled": false
 							}
 						},
 						"Solid": {
@@ -146,20 +182,201 @@
 						}
 					},
 					"world": {
-						"x": 1062,
-						"y": 2091,
-						"width": 100,
-						"height": 50,
+						"x": 1535.1483113892314,
+						"y": 2032.4500106534115,
+						"width": 65.4779959370236,
+						"height": 53.094226502595404,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
-							0.4588235294117647,
-							0.4588235294117647,
-							0.4588235294117647,
+							0.5294117647058824,
+							0.5294117647058824,
+							0.5294117647058824,
 							1
 						],
-						"angle": 3.168738046353675,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
+					}
+				},
+				{
+					"type": "sofa",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1304,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1535.5358378447916,
+						"y": 1870.1384839642687,
+						"width": 66.10805850212284,
+						"height": 42.43956395529891,
+						"originX": 0.425531914893617,
+						"originY": 0.5073529411764706,
+						"color": [
+							1,
+							0.7529411764705882,
+							0.6196078431372549,
+							1
+						],
+						"angle": 1.5741843596797738,
+						"zElevation": 1
+					}
+				},
+				{
+					"type": "SaltBall",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3099,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1552.6142762164063,
+						"y": 2022.1439849868184,
+						"width": 16.85370933430925,
+						"height": 17.415499645452893,
+						"originX": 0.48333333333333334,
+						"originY": 0.5127334465195247,
+						"color": [
+							0.6196078431372549,
+							0.6196078431372549,
+							0.6196078431372549,
+							1
+						],
+						"angle": 0,
+						"zElevation": 2
+					}
+				},
+				{
+					"type": "SaltBall",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3100,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1535.8909605134863,
+						"y": 2020.3418953991463,
+						"width": 18.124164806708173,
+						"height": 19.974945571328746,
+						"originX": 0.48333333333333334,
+						"originY": 0.5127334465195247,
+						"color": [
+							0.6196078431372549,
+							0.6196078431372549,
+							0.6196078431372549,
+							1
+						],
+						"angle": 1.0614417405074297,
+						"zElevation": 2
+					}
+				},
+				{
+					"type": "SaltBall",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3102,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1542.5447145140986,
+						"y": 2034.737351054505,
+						"width": 12.31221510727076,
+						"height": 12.72262227751312,
+						"originX": 0.48333333333333334,
+						"originY": 0.5127334465195247,
+						"color": [
+							0.6196078431372549,
+							0.6196078431372549,
+							0.6196078431372549,
+							1
+						],
+						"angle": 0,
+						"zElevation": 2
+					}
+				},
+				{
+					"type": "SaltBall",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3103,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1524.0192356033951,
+						"y": 2032.3347504775631,
+						"width": 24.745045143596794,
+						"height": 25.56987998171669,
+						"originX": 0.48333333333333334,
+						"originY": 0.5127334465195247,
+						"color": [
+							0.6196078431372549,
+							0.6196078431372549,
+							0.6196078431372549,
+							1
+						],
+						"angle": 5.457452767394341,
+						"zElevation": 2
+					}
+				},
+				{
+					"type": "SaltBall",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3107,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1537.524959288227,
+						"y": 2049.2350521185676,
+						"width": 21.49918440217591,
+						"height": 22.215823882248444,
+						"originX": 0.48333333333333334,
+						"originY": 0.5127334465195247,
+						"color": [
+							0.6196078431372549,
+							0.6196078431372549,
+							0.6196078431372549,
+							1
+						],
+						"angle": 0,
+						"zElevation": 2
 					}
 				}
 			],
@@ -304,6 +521,80 @@
 									1
 								],
 								"angle": 2.43796499165512,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "dusty",
+								"initial-frame": 2,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 3109,
+							"instanceVariables": {
+								"state": "idle",
+								"enemy_can_interact": false
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": false,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": false
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 300,
+										"rate-of-fire": 1,
+										"rotate": true,
+										"rotate-speed": 180,
+										"target-mode": "first-in-range",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
+									}
+								}
+							},
+							"world": {
+								"x": 1535.2431798681466,
+								"y": 1873.5881929402913,
+								"width": 67.08157595975558,
+								"height": 91,
+								"originX": 0.4818181818181818,
+								"originY": 0.5,
+								"color": [
+									0.8196078431372549,
+									0.8470588235294118,
+									0.8784313725490196,
+									1
+								],
+								"angle": 3.141592653589793,
 								"zElevation": 0
 							}
 						}
@@ -484,8 +775,8 @@
 								}
 							},
 							"world": {
-								"x": 1057,
-								"y": 1998,
+								"x": 1218,
+								"y": 2023,
 								"width": 33.75,
 								"height": 53.75,
 								"originX": 0.5370370370370371,
@@ -598,10 +889,10 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -609,223 +900,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3064,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 550,
-						"y": 850,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 1.5707963267948966,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "box",
-						"z-height": 15,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3082,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 550,
-						"y": 1200,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 1.5707963267948966,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "box",
-						"z-height": 15,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3083,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 550,
-						"y": 1550,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 1.5707963267948966,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "box",
-						"z-height": 15,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3085,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 550,
-						"y": 1900,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 1.5707963267948966,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "box",
-						"z-height": 15,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -851,27 +926,27 @@
 						}
 					},
 					"world": {
-						"x": 700,
-						"y": 2100,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1600,
+						"y": 1500,
+						"width": 246,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 3.141592653589793,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -879,169 +954,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3087,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 700,
-						"y": 650,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 3.141592653589793,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "box",
-						"z-height": 15,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3088,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 1050,
-						"y": 650,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 3.141592653589793,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "box",
-						"z-height": 15,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3089,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 1400,
-						"y": 650,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 3.141592653589793,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "box",
-						"z-height": 15,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1067,27 +980,27 @@
 						}
 					},
 					"world": {
-						"x": 1750,
-						"y": 650,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1000,
+						"y": 1475.1531390134528,
+						"width": 197,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 3.141592653589793,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1095,7 +1008,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1121,16 +1034,16 @@
 						}
 					},
 					"world": {
-						"x": 1050,
-						"y": 2100,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1107,
+						"y": 1554,
+						"width": 261,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
 						"angle": 3.141592653589793,
@@ -1138,10 +1051,10 @@
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1149,7 +1062,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1175,16 +1088,16 @@
 						}
 					},
 					"world": {
-						"x": 1400,
-						"y": 2100,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1350,
+						"y": 1554,
+						"width": 246,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
 						"angle": 3.141592653589793,
@@ -1192,10 +1105,10 @@
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1203,7 +1116,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1229,16 +1142,16 @@
 						}
 					},
 					"world": {
-						"x": 1750,
-						"y": 2100,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1500,
+						"y": 1554,
+						"width": 246,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
 						"angle": 3.141592653589793,
@@ -1246,10 +1159,10 @@
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_door",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 8,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1283,27 +1196,27 @@
 						}
 					},
 					"world": {
-						"x": 1900,
-						"y": 850,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1253.5164805387358,
+						"y": 1570.1923181144246,
+						"width": 91,
+						"height": 7.501741649753846,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
-							1,
-							1,
-							1,
+							0.4588235294117647,
+							0.4588235294117647,
+							0.4588235294117647,
 							1
 						],
-						"angle": 4.71238898038469,
+						"angle": 0,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_door",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 8,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1319,7 +1232,7 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3095,
+					"uid": 3101,
 					"instanceVariables": {},
 					"behaviors": {
 						"ShadowCaster": {
@@ -1337,27 +1250,27 @@
 						}
 					},
 					"world": {
-						"x": 1900,
-						"y": 1900,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1250.5117077182742,
+						"y": 2081.154001756641,
+						"width": 100,
+						"height": 12.294112153265317,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
-							1,
-							1,
-							1,
+							0.4588235294117647,
+							0.4588235294117647,
+							0.4588235294117647,
 							1
 						],
-						"angle": 4.71238898038469,
+						"angle": 3.1349919429219906,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1365,7 +1278,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1373,7 +1286,7 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3096,
+					"uid": 1303,
 					"instanceVariables": {},
 					"behaviors": {
 						"ShadowCaster": {
@@ -1391,27 +1304,27 @@
 						}
 					},
 					"world": {
-						"x": 1900,
-						"y": 1550,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1600,
+						"y": 1728,
+						"width": 246,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 4.71238898038469,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1419,61 +1332,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3097,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 1900,
-						"y": 1200,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "box",
-						"z-height": 15,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1499,27 +1358,27 @@
 						}
 					},
 					"world": {
-						"x": 1562,
-						"y": 850,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1600,
+						"y": 1962,
+						"width": 246,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 4.71238898038469,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1527,7 +1386,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1535,7 +1394,7 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3098,
+					"uid": 3064,
 					"instanceVariables": {},
 					"behaviors": {
 						"ShadowCaster": {
@@ -1553,27 +1412,27 @@
 						}
 					},
 					"world": {
-						"x": 1562,
-						"y": 1900,
-						"width": 350,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1600,
+						"y": 2187,
+						"width": 246,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 4.71238898038469,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1581,7 +1440,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1589,7 +1448,7 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3100,
+					"uid": 3082,
 					"instanceVariables": {},
 					"behaviors": {
 						"ShadowCaster": {
@@ -1607,27 +1466,27 @@
 						}
 					},
 					"world": {
-						"x": 1562,
-						"y": 1619.4785714285715,
-						"width": 213,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1000,
+						"y": 1652,
+						"width": 197,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 4.71238898038469,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1635,7 +1494,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1643,7 +1502,7 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3102,
+					"uid": 3083,
 					"instanceVariables": {},
 					"behaviors": {
 						"ShadowCaster": {
@@ -1661,27 +1520,27 @@
 						}
 					},
 					"world": {
-						"x": 1562,
-						"y": 1140.3642857142856,
-						"width": 229,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1000,
+						"y": 1839,
+						"width": 197,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 4.71238898038469,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1689,7 +1548,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1697,7 +1556,7 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3099,
+					"uid": 3085,
 					"instanceVariables": {},
 					"behaviors": {
 						"ShadowCaster": {
@@ -1715,27 +1574,27 @@
 						}
 					},
 					"world": {
-						"x": 1559,
-						"y": 1517,
-						"width": 213,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1000,
+						"y": 2019,
+						"width": 197,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 3.141592653589793,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
 				{
-					"type": "house_wood",
+					"type": "house_bricks",
 					"properties": {
 						"shape": "box",
-						"z-height": 15,
+						"z-height": 12,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -1743,7 +1602,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
-						"z-tiling-factor": 8,
+						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
 						"object-left": -1,
@@ -1751,7 +1610,7 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3103,
+					"uid": 3087,
 					"instanceVariables": {},
 					"behaviors": {
 						"ShadowCaster": {
@@ -1769,19 +1628,235 @@
 						}
 					},
 					"world": {
-						"x": 1559,
-						"y": 1237,
-						"width": 213,
-						"height": 50,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
+						"x": 1000,
+						"y": 2210,
+						"width": 197,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
 						"color": [
-							1,
-							1,
-							1,
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
 							1
 						],
-						"angle": 3.141592653589793,
+						"angle": 1.5707963267948966,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "house_bricks",
+					"properties": {
+						"shape": "box",
+						"z-height": 12,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 3088,
+					"instanceVariables": {},
+					"behaviors": {
+						"ShadowCaster": {
+							"properties": {
+								"height": 0,
+								"tag": "",
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1075,
+						"y": 2099,
+						"width": 197,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
+						"color": [
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "house_bricks",
+					"properties": {
+						"shape": "box",
+						"z-height": 12,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 3089,
+					"instanceVariables": {},
+					"behaviors": {
+						"ShadowCaster": {
+							"properties": {
+								"height": 0,
+								"tag": "",
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1254,
+						"y": 2099,
+						"width": 197,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
+						"color": [
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "house_bricks",
+					"properties": {
+						"shape": "box",
+						"z-height": 12,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 3095,
+					"instanceVariables": {},
+					"behaviors": {
+						"ShadowCaster": {
+							"properties": {
+								"height": 0,
+								"tag": "",
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1434,
+						"y": 2099,
+						"width": 197,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
+						"color": [
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "house_bricks",
+					"properties": {
+						"shape": "box",
+						"z-height": 12,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 3096,
+					"instanceVariables": {},
+					"behaviors": {
+						"ShadowCaster": {
+							"properties": {
+								"height": 0,
+								"tag": "",
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1577.5044843049327,
+						"y": 2099,
+						"width": 127,
+						"height": 35.88457268119896,
+						"originX": 0.5070787956438181,
+						"originY": 0.4767777150385845,
+						"color": [
+							0.3607843137254902,
+							0.3607843137254902,
+							0.3607843137254902,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}
