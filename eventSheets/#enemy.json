@@ -6284,15 +6284,6 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "runner",
-											"sid": 442271073004425,
-											"parameters": {
-												"instance-variable": "hp",
-												"value": "choose(1,1,1,2)"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "runner",
 											"sid": 525943860088601,
 											"parameters": {
 												"instance-variable": "orig_X",
@@ -6345,6 +6336,55 @@
 										}
 									],
 									"sid": 343377755188241
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 803269916340680,
+											"parameters": {
+												"variable": "difficulty",
+												"comparison": 0,
+												"value": "\"hard\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "runner",
+											"sid": 747948226882843,
+											"parameters": {
+												"instance-variable": "hp",
+												"value": "choose(1,1,1,2)"
+											}
+										}
+									],
+									"sid": 613371877809601
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 862139422558620
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "runner",
+											"sid": 661931802012906,
+											"parameters": {
+												"instance-variable": "hp",
+												"value": "choose(2,3,3,3,4)"
+											}
+										}
+									],
+									"sid": 447798255652535
 								}
 							]
 						},
