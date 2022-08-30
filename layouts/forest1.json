@@ -8565,228 +8565,6 @@
 								"angle": 1.9107068842133694,
 								"zElevation": 0
 							}
-						},
-						{
-							"type": "npc",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "madman1",
-								"initial-frame": 2,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1875,
-							"instanceVariables": {
-								"state": "",
-								"enemy_can_interact": false
-							},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": "npc"
-									}
-								},
-								"Pathfinding": {
-									"properties": {
-										"cell-size": 53,
-										"cell-border": -1,
-										"obstacles": "solids",
-										"max-speed": 180,
-										"acceleration": 1000,
-										"deceleration": 2000,
-										"rotate-speed": 360,
-										"rotate-object": false,
-										"diagonals": true,
-										"enabled": false
-									}
-								},
-								"LineOfSight": {
-									"properties": {
-										"obstacles": "solids",
-										"range": 1000,
-										"cone-of-view": 180,
-										"use-collision-cells": true
-									}
-								},
-								"Turret": {
-									"properties": {
-										"range": 1500,
-										"rate-of-fire": 0.8,
-										"rotate": true,
-										"rotate-speed": 400,
-										"target-mode": "nearest",
-										"predictive-aim": false,
-										"projectile-speed": 500,
-										"use-collision-cells": true,
-										"enabled": false
-									}
-								}
-							},
-							"world": {
-								"x": 10263.190296813156,
-								"y": 2338.7003650572838,
-								"width": 50.32787329889514,
-								"height": 64.70726567000804,
-								"originX": 0.48214285714285715,
-								"originY": 0.48611111111111116,
-								"color": [
-									0.8392156862745098,
-									0.9098039215686274,
-									1,
-									1
-								],
-								"angle": 2.4454939362073316,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "npc",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "runner",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1876,
-							"instanceVariables": {
-								"state": "",
-								"enemy_can_interact": false
-							},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": "npc"
-									}
-								},
-								"Pathfinding": {
-									"properties": {
-										"cell-size": 53,
-										"cell-border": -1,
-										"obstacles": "solids",
-										"max-speed": 180,
-										"acceleration": 1000,
-										"deceleration": 2000,
-										"rotate-speed": 360,
-										"rotate-object": false,
-										"diagonals": true,
-										"enabled": false
-									}
-								},
-								"LineOfSight": {
-									"properties": {
-										"obstacles": "solids",
-										"range": 1000,
-										"cone-of-view": 180,
-										"use-collision-cells": true
-									}
-								},
-								"Turret": {
-									"properties": {
-										"range": 1500,
-										"rate-of-fire": 0.8,
-										"rotate": true,
-										"rotate-speed": 400,
-										"target-mode": "nearest",
-										"predictive-aim": false,
-										"projectile-speed": 500,
-										"use-collision-cells": true,
-										"enabled": false
-									}
-								}
-							},
-							"world": {
-								"x": 9603.345501134445,
-								"y": 2194.3350723222043,
-								"width": 36.8263652166808,
-								"height": 51.73227494724206,
-								"originX": 0.4821428571428572,
-								"originY": 0.48611111111111116,
-								"color": [
-									0.8196078431372549,
-									0.8274509803921568,
-									0.8392156862745098,
-									1
-								],
-								"angle": 3.8258729706074064,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "npc",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "runner",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1898,
-							"instanceVariables": {
-								"state": "",
-								"enemy_can_interact": false
-							},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": "npc"
-									}
-								},
-								"Pathfinding": {
-									"properties": {
-										"cell-size": 53,
-										"cell-border": -1,
-										"obstacles": "solids",
-										"max-speed": 180,
-										"acceleration": 1000,
-										"deceleration": 2000,
-										"rotate-speed": 360,
-										"rotate-object": false,
-										"diagonals": true,
-										"enabled": false
-									}
-								},
-								"LineOfSight": {
-									"properties": {
-										"obstacles": "solids",
-										"range": 1000,
-										"cone-of-view": 180,
-										"use-collision-cells": true
-									}
-								},
-								"Turret": {
-									"properties": {
-										"range": 1500,
-										"rate-of-fire": 0.8,
-										"rotate": true,
-										"rotate-speed": 400,
-										"target-mode": "nearest",
-										"predictive-aim": false,
-										"projectile-speed": 500,
-										"use-collision-cells": true,
-										"enabled": false
-									}
-								}
-							},
-							"world": {
-								"x": 9331.038084150528,
-								"y": 2166.354110389254,
-								"width": 42,
-								"height": 59,
-								"originX": 0.4821428571428572,
-								"originY": 0.48611111111111116,
-								"color": [
-									0.8392156862745098,
-									0.9098039215686274,
-									1,
-									1
-								],
-								"angle": 6.1086523819801535,
-								"zElevation": 0
-							}
 						}
 					],
 					"sid": 582251639886700,
@@ -9019,7 +8797,7 @@
 							},
 							"uid": 783,
 							"instanceVariables": {
-								"state": "pray",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
 								"orig_Y": 0,
@@ -9298,7 +9076,7 @@
 							},
 							"uid": 792,
 							"instanceVariables": {
-								"state": "pray",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
 								"orig_Y": 0,
@@ -9391,7 +9169,7 @@
 							},
 							"uid": 790,
 							"instanceVariables": {
-								"state": "pray",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
 								"orig_Y": 0,
@@ -9484,7 +9262,7 @@
 							},
 							"uid": 791,
 							"instanceVariables": {
-								"state": "pray",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
 								"orig_Y": 0,
@@ -9577,7 +9355,7 @@
 							},
 							"uid": 2371,
 							"instanceVariables": {
-								"state": "pray",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
 								"orig_Y": 0,
@@ -9670,7 +9448,7 @@
 							},
 							"uid": 2372,
 							"instanceVariables": {
-								"state": "pray",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
 								"orig_Y": 0,
@@ -9763,7 +9541,7 @@
 							},
 							"uid": 2373,
 							"instanceVariables": {
-								"state": "pray",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
 								"orig_Y": 0,
@@ -9846,6 +9624,80 @@
 							}
 						},
 						{
+							"type": "npc",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "runner",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1898,
+							"instanceVariables": {
+								"state": "dead",
+								"enemy_can_interact": false
+							},
+							"behaviors": {
+								"Solid": {
+									"properties": {
+										"enabled": true,
+										"tags": "npc"
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 53,
+										"cell-border": -1,
+										"obstacles": "solids",
+										"max-speed": 180,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 360,
+										"rotate-object": false,
+										"diagonals": true,
+										"enabled": false
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 1000,
+										"cone-of-view": 180,
+										"use-collision-cells": true
+									}
+								},
+								"Turret": {
+									"properties": {
+										"range": 1500,
+										"rate-of-fire": 0.8,
+										"rotate": true,
+										"rotate-speed": 400,
+										"target-mode": "nearest",
+										"predictive-aim": false,
+										"projectile-speed": 500,
+										"use-collision-cells": true,
+										"enabled": false
+									}
+								}
+							},
+							"world": {
+								"x": 9331.038084150528,
+								"y": 2166.354110389254,
+								"width": 42,
+								"height": 59,
+								"originX": 0.4821428571428572,
+								"originY": 0.48611111111111116,
+								"color": [
+									0.8392156862745098,
+									0.9098039215686274,
+									1,
+									1
+								],
+								"angle": 6.1086523819801535,
+								"zElevation": 0
+							}
+						},
+						{
 							"type": "runner",
 							"properties": {
 								"initially-visible": true,
@@ -9856,7 +9708,7 @@
 							},
 							"uid": 815,
 							"instanceVariables": {
-								"state": "pray",
+								"state": "dead",
 								"hp": 2,
 								"orig_X": 0,
 								"orig_Y": 0,
@@ -10082,8 +9934,8 @@
 								}
 							},
 							"world": {
-								"x": 9567,
-								"y": 2805,
+								"x": 7633.7294904084465,
+								"y": 10064.558112701578,
 								"width": 33.75,
 								"height": 53.75,
 								"originX": 0.5370370370370371,
@@ -21100,10 +20952,10 @@
 							},
 							"behaviors": {},
 							"world": {
-								"x": 7653.720646954277,
-								"y": 10018.381277085893,
-								"width": 114.5911037297187,
-								"height": 114.5911037297187,
+								"x": 7594.009030382192,
+								"y": 10001.52418815717,
+								"width": 700.1496014246574,
+								"height": 51.37007847766864,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [

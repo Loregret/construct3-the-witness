@@ -161,11 +161,23 @@
 				},
 				{
 					"char": "player",
-					"line": "Why? Have you seen it before?"
+					"line": "Why? Have you seen...?"
 				},
 				{
 					"char": "npc",
-					"line": "It's common in places where luck is to have food for another day.",
+					"line": "It happens in regions where people die from hunger and disease.",
+					"speed": 2,
+					"wait": 2.8
+				},
+				{
+					"char": "npc",
+					"line": "In this day and age fresh water is scarce resource.",
+					"speed": 1.7,
+					"wait": 2.7
+				},
+				{
+					"char": "npc",
+					"line": "And this 'phenomenon' makes situation worse and worse.",
 					"speed": 1.7,
 					"wait": 2.7
 				},
@@ -265,7 +277,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "Worse, we convince ourselves that these people are terrible when, in fact, we are...",
+					"line": "Worse, we have convinced ourselves that these people are terrible when, in fact, only we are...",
 					"speed": 2.7,
 					"wait": 2.75
 				},
@@ -322,8 +334,30 @@
 					"wait": 2.3
 				},
 				{
+					"char": "npc",
+					"line": "See those blue objects laying around?",
+					"speed": 1.5,
+					"wait": 2.3
+				},
+				{
 					"char": "player",
-					"line": "Are you sure?"
+					"line": "Yeah, they are, like, everywhere.."
+				},
+				{
+					"char": "npc",
+					"line": "These stones are connected to our problem.",
+					"speed": 1.5,
+					"wait": 2.3
+				},
+				{
+					"char": "npc",
+					"line": "I'm studying them, and maybe we'll have answers soon.",
+					"speed": 1.5,
+					"wait": 2.3
+				},
+				{
+					"char": "player",
+					"line": "Are you sure in this hypothesis?"
 				},
 				{
 					"char": "npc",
@@ -454,7 +488,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "Border control, plus two guys from FBI.",
+					"line": "Border Control, plus two FBI agents.",
 					"speed": 1,
 					"wait": 1.25
 				},
@@ -477,7 +511,7 @@
 					"char": "npc",
 					"line": "I don't know, but they're furious and think that we were involved.",
 					"speed": 1,
-					"wait": 1.5
+					"wait": 2.5
 				},
 				{
 					"char": "player",
@@ -517,7 +551,7 @@
 				},
 				{
 					"char": "player",
-					"line": "Yeah. But I don't call her that.",
+					"line": "Yeah. But I don't use that nickname.",
 					"speed": 0.45,
 					"wait": 2
 				},
@@ -530,32 +564,24 @@
 				{
 					"char": "npc",
 					"line": "You are the only person around here who actually likes her.",
-					"speed": 0.45,
+					"speed": 1.75,
 					"wait": 2.7
 				},
 				{
 					"char": "player",
-					"line": "I respect her dedication to work.",
-					"speed": 0.45
+					"line": "I respect her. She has a good heart despite who she's pretending to be.",
+					"speed": 1.25,
+					"wait": 2.65
 				},
 				{
 					"char": "npc",
-					"line": "And only that? Not her looks?",
-					"speed": 0.45
+					"line": "Oh, and I thought outsiders are delusional...",
+					"speed": 1.7,
+					"wait": 1.8
 				},
 				{
 					"char": "player",
 					"line": "...",
-					"speed": 0.45
-				},
-				{
-					"char": "npc",
-					"line": "You started this.",
-					"speed": 0.45
-				},
-				{
-					"char": "npc",
-					"line": "I have a job to do, you know.",
 					"speed": 0.45
 				}
 			]
@@ -627,7 +653,9 @@
 			"dialogs": [
 				{
 					"char": "npc",
-					"line": "I hope it's something urgent."
+					"line": "Is it a life-or-death situation or are you just plain dumb?",
+					"wait": 2.75,
+					"speed": 2
 				},
 				{
 					"char": "player",
@@ -636,8 +664,9 @@
 				},
 				{
 					"char": "npc",
-					"line": "You're parked on the wrong side.",
-					"wait": 1
+					"line": "You're parked on the wrong side, pal.",
+					"speed": 1.6,
+					"wait": 1.8
 				},
 				{
 					"char": "npc",
@@ -647,24 +676,41 @@
 				},
 				{
 					"char": "player",
-					"line": "I've felt rebellious when I saw bunch of coyotes in uniform.",
-					"speed": 2,
-					"wait": 1.8
+					"line": "Nah, I just felt breaking the law.",
+					"speed": 1.15,
+					"wait": 1.65
 				},
 				{
-					"char": "npc",
-					"line": "Coyotes? You mean a Grizzly?"
+					"char": "player",
+					"line": "It often happens when I see bunch of coyotes on my parking lot.",
+					"speed": 1.6,
+					"wait": 2
 				},
 				{
 					"char": "npc",
 					"npc_uid": 602,
-					"line": "Look. Another guy with mentality of a criminal!"
+					"line": "Coyotes? You spelled the word 'grizzlies' wrong.",
+					"speed": 1.45,
+					"wait": 2.0
+				},
+				{
+					"char": "player",
+					"line": "Being fat doesn't make you a grizzly.",
+					"speed": 1,
+					"wait": 1.9
+				},
+				{
+					"char": "npc",
+					"npc_uid": 602,
+					"line": "Look. Another guy with mentality of a criminal!",
+					"speed": 1.45,
+					"wait": 2.0
 				},
 				{
 					"char": "player",
 					"line": "I'm not the one who kills innocent and robs the poor in favor of establishment.",
-					"wait": 2.3,
-					"speed": 1.8
+					"wait": 2.6,
+					"speed": 1.9
 				},
 				{
 					"char": "npc",
@@ -676,33 +722,59 @@
 				{
 					"char": "npc",
 					"npc_uid": 602,
-					"line": "Look around you - if outsiders are comin', you will be begging us to help you!",
+					"line": "Look around you - if outsiders are comin', you will come begging us to help you!",
 					"wait": 2.5,
-					"speed": 1.7
+					"speed": 1.86
 				},
 				{
 					"char": "player",
-					"line": "I have means to protect myself."
+					"line": "Oh, you protect no one but the big guys.",
+					"speed": 1.45,
+					"wait": 2.0
 				},
 				{
 					"char": "player",
-					"line": "From them and from you."
+					"line": "We, ordinary people, have to defend ourselves alone.",
+					"speed": 1.8,
+					"wait": 2.2
+				},
+				{
+					"char": "player",
+					"line": "From all of you."
+				},
+				{
+					"char": "player",
+					"line": "The Bad guys... The 'Good' guys. You're all are wrongdoers.",
+					"speed": 1.45,
+					"wait": 2.0
 				},
 				{
 					"char": "npc",
-					"line": "How? You almost made me curious. Haha.",
-					"wait": 2,
+					"line": "Haha. Funny.",
+					"wait": 0.85,
 					"speed": 0.8
 				},
 				{
 					"char": "npc",
-					"npc_uid": 602,
-					"line": "Let's take a visit to his house, someday. We'll see how tough he is."
+					"line": "You won't be protected from anyone by the tiny weenie you're carrying, buddy.",
+					"wait": 2.5,
+					"speed": 2
+				},
+				{
+					"char": "player",
+					"line": "We'll see about that."
 				},
 				{
 					"char": "npc",
-					"line": "He's not worth it, pal. Let the coward pretend that he has some balls, for now.",
-					"speed": 1.7,
+					"npc_uid": 602,
+					"line": "Let's take a visit to his house someday. We'll see how tough he is.",
+					"wait": 2,
+					"speed": 1.5
+				},
+				{
+					"char": "npc",
+					"line": "He's not worth it, pal. Let the coward act as if he has guts.",
+					"speed": 2,
 					"wait": 2.6
 				},
 				{
@@ -711,9 +783,10 @@
 					"line": "You are too soft, Markus."
 				},
 				{
-					"char": "player",
-					"line": "Assholes.",
-					"speed": 0.5,
+					"char": "npc",
+					"line": "Remember, pal. We're always watching.",
+					"speed": 1.9,
+					"wait": 1.75,
 					"next-dialog": "fbi2"
 				}
 			]
@@ -738,7 +811,7 @@
 				},
 				{
 					"char": "player",
-					"line": "I don't wear a badge, friend.",
+					"line": "I don't wear a badge for that, friend.",
 					"wait": 1
 				}
 			]
@@ -931,7 +1004,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "We? We are nobody.",
+					"line": "Nobody.",
 					"speed": 0.45,
 					"wait": 1.35
 				},
@@ -943,9 +1016,13 @@
 				},
 				{
 					"char": "player",
-					"line": "Just a guy passing nearby and who hasn't seen anything.",
-					"speed": 1.45,
-					"wait": 2.35
+					"line": "Just a guy passing nearby."
+				},
+				{
+					"char": "player",
+					"line": "I've seen nothing and never was here.",
+					"speed": 1.76,
+					"wait": 2.5
 				},
 				{
 					"char": "npc",
@@ -962,6 +1039,12 @@
 					"char": "npc",
 					"line": "NOW!",
 					"event": "forest1-attack"
+				},
+				{
+					"char": "npc",
+					"line": "He will tell us everything.",
+					"speed": 0.45,
+					"wait": 1.35
 				}
 			]
 		}
