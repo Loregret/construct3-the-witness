@@ -202,7 +202,7 @@
 			"id": "many_corpse1",
 			"dialogs": [
 				{
-					"line": "A bunch of <color=red>corpses</color>.",
+					"line": "Several <color=red>dead bodies</color>.",
 					"talkie-player": "Shit.",
 					"wait": 1.85
 				},
@@ -275,15 +275,42 @@
 			"dialogs": [
 				{
 					"char": "player",
-					"line": "**Placeholder**",
+					"line": "Who are you?",
 					"speed": 0.45,
 					"wait": 1.35
 				},
 				{
 					"char": "npc",
-					"line": "KILL HIM!",
-					"speed": 0.5,
-					"wait": 1.25,
+					"line": "We? We are nobody.",
+					"speed": 0.45,
+					"wait": 1.35
+				},
+				{
+					"char": "npc",
+					"line": "And who are you, buddy?",
+					"speed": 0.45,
+					"wait": 1.35
+				},
+				{
+					"char": "player",
+					"line": "Just a guy passing nearby and who hasn't seen anything.",
+					"speed": 1.45,
+					"wait": 2.35
+				},
+				{
+					"char": "npc",
+					"line": "Good.",
+					"speed": 0.45,
+					"wait": 1.35
+				},
+				{
+					"char": "npc",
+					"line": "CATCH HIM!",
+					"sound": "man shout"
+				},
+				{
+					"char": "npc",
+					"line": "NOW!",
 					"event": "forest1-attack"
 				}
 			]

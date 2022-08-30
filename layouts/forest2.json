@@ -12196,114 +12196,6 @@
 					}
 				},
 				{
-					"type": "house_concrete2",
-					"properties": {
-						"shape": "box",
-						"z-height": 1,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 1325,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 100,
-								"tag": "",
-								"enabled": false
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 14531.679598555605,
-						"y": 3964.6505999510327,
-						"width": 49.07796868058545,
-						"height": 87.8839552951755,
-						"originX": 0.5070807453416148,
-						"originY": 0.4929212043561819,
-						"color": [
-							0.6313725490196078,
-							0.6313725490196078,
-							0.6313725490196078,
-							1
-						],
-						"angle": 5.370363712107207,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "house_concrete2",
-					"properties": {
-						"shape": "box",
-						"z-height": 0,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 1326,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 100,
-								"tag": "",
-								"enabled": false
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 14779,
-						"y": 4085,
-						"width": 49.07796868058545,
-						"height": 87.8839552951755,
-						"originX": 0.5070807453416148,
-						"originY": 0.4929212043561819,
-						"color": [
-							0.6313725490196078,
-							0.6313725490196078,
-							0.6313725490196078,
-							1
-						],
-						"angle": 4.856866680365353,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "custom_car",
 					"properties": {
 						"initially-visible": true,
@@ -18902,6 +18794,39 @@
 									0.8
 								],
 								"angle": 0.17119662443936134,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_move2Layout",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1325,
+							"instanceVariables": {
+								"layoutName": "lab1",
+								"text": "**Go Inside**",
+								"eventname": ""
+							},
+							"behaviors": {},
+							"world": {
+								"x": 15085.990440961697,
+								"y": 3791.114881982653,
+								"width": 176.88292264376105,
+								"height": 101.38329066202186,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
 								"zElevation": 0
 							}
 						}

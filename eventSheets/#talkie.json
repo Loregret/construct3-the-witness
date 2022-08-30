@@ -876,25 +876,42 @@
 													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 278477680798784,
+											"children": [
 												{
-													"id": "play-at-object-by-name",
-													"objectClass": "Audio",
-													"sid": 155756444147013,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".sound\")",
-														"loop": "not-looping",
-														"volume": "0",
-														"object": "sprfont_dialog",
-														"inner-angle": "360",
-														"outer-angle": "360",
-														"outer-gain": "0",
-														"tag-optional": "\"\""
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "triggers_talkie",
+															"sid": 684969023599620,
+															"parameters": {
+																"unique-id": "talkie_trigger_uid"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play-at-object-by-name",
+															"objectClass": "Audio",
+															"sid": 156976812607661,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".sound\")",
+																"loop": "not-looping",
+																"volume": "0",
+																"object": "triggers_talkie",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "0",
+																"tag-optional": "\"\""
+															}
+														}
+													],
+													"sid": 198231878545615
 												}
-											],
-											"sid": 278477680798784
+											]
 										},
 										{
 											"eventType": "comment",
@@ -914,41 +931,58 @@
 													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 789769711276883,
+											"children": [
 												{
-													"id": "wait-for-signal",
-													"objectClass": "System",
-													"sid": 968207418130012,
-													"parameters": {
-														"tag": "\"talkie-line-finished\""
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 990594734462527,
-													"parameters": {
-														"seconds": "0.3"
-													}
-												},
-												{
-													"id": "play-at-object-by-name",
-													"objectClass": "Audio",
-													"sid": 177453245625649,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".end-sound\")",
-														"loop": "not-looping",
-														"volume": "0",
-														"object": "sprfont_dialog",
-														"inner-angle": "360",
-														"outer-angle": "360",
-														"outer-gain": "0",
-														"tag-optional": "\"\""
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "triggers_talkie",
+															"sid": 334421421157363,
+															"parameters": {
+																"unique-id": "talkie_trigger_uid"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "wait-for-signal",
+															"objectClass": "System",
+															"sid": 302062740331245,
+															"parameters": {
+																"tag": "\"talkie-line-finished\""
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 154886503145087,
+															"parameters": {
+																"seconds": "0.3"
+															}
+														},
+														{
+															"id": "play-at-object-by-name",
+															"objectClass": "Audio",
+															"sid": 135728278682003,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "JSON.Get(curScene&\".\" & JSON_key & \".dialogs.\" & curLineNum & \".end-sound\")",
+																"loop": "not-looping",
+																"volume": "0",
+																"object": "triggers_talkie",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "0",
+																"tag-optional": "\"\""
+															}
+														}
+													],
+													"sid": 250461630217986
 												}
-											],
-											"sid": 789769711276883
+											]
 										},
 										{
 											"eventType": "comment",
