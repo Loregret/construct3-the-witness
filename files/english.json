@@ -796,23 +796,55 @@
 			"dialogs": [
 				{
 					"char": "npc",
-					"line": "Move the car, dumbass."
+					"line": "Hey. Are you working here?"
 				},
 				{
 					"char": "player",
-					"line": "Car? What is that?",
-					"speed": 0.3
+					"line": "Just a visitor."
 				},
 				{
 					"char": "npc",
-					"line": "Stop playing dumb, you fool.",
+					"line": "What's your name?"
+				},
+				{
+					"char": "player",
+					"line": "Joe."
+				},
+				{
+					"char": "npc",
+					"line": "And surname?"
+				},
+				{
+					"char": "player",
+					"line": "Average."
+				},
+				{
+					"char": "npc",
+					"line": "W-what?",
 					"npc_uid": 602,
 					"wait": 1
 				},
 				{
+					"char": "npc",
+					"line": "Bullshit!"
+				},
+				{
 					"char": "player",
-					"line": "I don't wear a badge for that, friend.",
-					"wait": 1
+					"line": "Just kidding. It's Bloggs.",
+					"speed": 1.5,
+					"wait": 1.8
+				},
+				{
+					"char": "npc",
+					"line": "Don't play games with us!"
+				},
+				{
+					"char": "player",
+					"line": "Okay. Can I go now?"
+				},
+				{
+					"char": "npc",
+					"line": "Get lost."
 				}
 			]
 		}
