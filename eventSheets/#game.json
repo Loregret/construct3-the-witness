@@ -953,6 +953,32 @@
 											"conditions": [],
 											"actions": [
 												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 210735857131718,
+													"parameters": {
+														"seconds": "0.75"
+													}
+												},
+												{
+													"callFunction": "talkie_start_dialog",
+													"sid": 759896302965809,
+													"parameters": [
+														"\"forest2-talking\"",
+														"\"head\"",
+														"0",
+														"-1",
+														"-1"
+													]
+												}
+											],
+											"sid": 563817905199797
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
 													"id": "play",
 													"objectClass": "Audio",
 													"sid": 419994568076262,
