@@ -461,196 +461,6 @@
 	],
 	"base-talking": [
 		{
-			"id": "base-chris-greet",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "Hi, Robert!",
-					"speed": 0.5,
-					"wait": 0.8
-				},
-				{
-					"char": "player",
-					"line": "Hello, Chris.",
-					"speed": 0.45,
-					"wait": 0.8
-				}
-			]
-		},
-		{
-			"id": "base-chris-talk",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Who are those guys outside?",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "npc",
-					"line": "Border Control, plus two FBI agents.",
-					"speed": 1,
-					"wait": 1.25
-				},
-				{
-					"char": "player",
-					"line": "What do they need?",
-					"speed": 0.8
-				},
-				{
-					"char": "npc",
-					"line": "They were digging information about locals.",
-					"speed": 1
-				},
-				{
-					"char": "player",
-					"line": "Someone had crossed the border?",
-					"speed": 0.9
-				},
-				{
-					"char": "npc",
-					"line": "I don't know, but they're furious and think that we were involved.",
-					"speed": 1,
-					"wait": 2.5
-				},
-				{
-					"char": "player",
-					"line": "What interesting times we live in.",
-					"speed": 1,
-					"wait": 1.6
-				},
-				{
-					"char": "npc",
-					"line": "You need to tell them everything you know. We all did.",
-					"speed": 1.25,
-					"wait": 2
-				},
-				{
-					"char": "player",
-					"line": "They wouldn't bear my intellect, Chris.",
-					"speed": 1.25,
-					"wait": 2,
-					"next-dialog": "base-chris-talk2"
-				}
-			]
-		},
-		{
-			"id": "base-chris-talk2",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Is Sarah in the office today?",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "npc",
-					"line": "Sarah the Witch?",
-					"speed": 0.5,
-					"wait": 2.4
-				},
-				{
-					"char": "player",
-					"line": "Yeah. But I don't use that nickname.",
-					"speed": 0.45,
-					"wait": 2
-				},
-				{
-					"char": "npc",
-					"line": "She's there.",
-					"speed": 0.5,
-					"wait": 1.8
-				},
-				{
-					"char": "npc",
-					"line": "You are the only person around here who actually likes her.",
-					"speed": 1.75,
-					"wait": 2.7
-				},
-				{
-					"char": "player",
-					"line": "I respect her. She has a good heart despite who she's pretending to be.",
-					"speed": 1.25,
-					"wait": 2.65
-				},
-				{
-					"char": "npc",
-					"line": "Oh, and I thought outsiders are delusional...",
-					"speed": 1.7,
-					"wait": 1.8
-				},
-				{
-					"char": "player",
-					"line": "...",
-					"speed": 0.45
-				}
-			]
-		},
-		{
-			"id": "sarah1",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Sarah."
-				},
-				{
-					"char": "npc",
-					"line": "You're late. Again."
-				},
-				{
-					"char": "player",
-					"line": "I know. Sorry."
-				},
-				{
-					"char": "npc",
-					"line": "Did you get what causes anomaly?"
-				},
-				{
-					"char": "player",
-					"line": "Isaac has a potential explanation."
-				},
-				{
-					"char": "player",
-					"line": "He thinks salt generator is the problem or have a tight connection to it.",
-					"speed": 1.95,
-					"wait": 2.88
-				},
-				{
-					"char": "npc",
-					"line": "Salt generator? Hmm..."
-				},
-				{
-					"char": "npc",
-					"line": "We have no one with expertise in salt technology."
-				},
-				{
-					"char": "player",
-					"line": "Big-money men don't allow that?"
-				},
-				{
-					"char": "npc",
-					"line": "Don't start this!"
-				},
-				{
-					"char": "npc",
-					"line": "You know where I stand on this topic."
-				},
-				{
-					"char": "player",
-					"line": "Yeah. I'm sorry to bring that up."
-				},
-				{
-					"char": "player",
-					"line": "I will investigate nearest station with your permission, then."
-				},
-				{
-					"char": "npc",
-					"line": "Be careful there.",
-					"event": "carActivate"
-				}
-			]
-		},
-		{
 			"id": "fbi1",
 			"dialogs": [
 				{
@@ -847,6 +657,200 @@
 				{
 					"char": "npc",
 					"line": "Get lost."
+				}
+			]
+		},		
+		{
+			"id": "base-chris-greet",
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "Hi, Robert!",
+					"speed": 0.5,
+					"wait": 0.8
+				},
+				{
+					"char": "player",
+					"line": "Hello, Chris.",
+					"speed": 0.45,
+					"wait": 0.8
+				}
+			]
+		},
+		{
+			"id": "base-chris-talk",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Who are those guys outside?",
+					"speed": 0.45,
+					"wait": 1.35
+				},
+				{
+					"char": "npc",
+					"line": "Border Control, plus two FBI agents.",
+					"speed": 1,
+					"wait": 1.25
+				},
+				{
+					"char": "player",
+					"line": "What do they need?",
+					"speed": 0.8
+				},
+				{
+					"char": "npc",
+					"line": "They were digging information about locals.",
+					"speed": 1
+				},
+				{
+					"char": "player",
+					"line": "Someone had crossed the border?",
+					"speed": 0.9
+				},
+				{
+					"char": "npc",
+					"line": "I don't know, but they're furious and think that we were involved.",
+					"speed": 1,
+					"wait": 2.5
+				},
+				{
+					"char": "player",
+					"line": "What interesting times we live in.",
+					"speed": 1,
+					"wait": 1.6
+				},
+				{
+					"char": "npc",
+					"line": "You need to tell them everything you know. We all did.",
+					"speed": 1.25,
+					"wait": 2
+				},
+				{
+					"char": "player",
+					"line": "They wouldn't bear my intellect, Chris.",
+					"speed": 1.25,
+					"wait": 2,
+					"next-dialog": "base-chris-talk2"
+				}
+			]
+		},
+		{
+			"id": "base-chris-talk2",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Is Sarah in the office today?",
+					"speed": 0.45,
+					"wait": 1.35
+				},
+				{
+					"char": "npc",
+					"line": "Sarah the Witch?",
+					"speed": 0.5,
+					"wait": 2.4
+				},
+				{
+					"char": "player",
+					"line": "Yeah. But I don't use that nickname.",
+					"speed": 0.45,
+					"wait": 2
+				},
+				{
+					"char": "npc",
+					"line": "She's there.",
+					"speed": 0.5,
+					"wait": 1.8
+				},
+				{
+					"char": "npc",
+					"line": "You are the only person around here who actually likes her.",
+					"speed": 1.75,
+					"wait": 2.7
+				},
+				{
+					"char": "player",
+					"line": "I respect her. She has a good heart despite who she's pretending to be.",
+					"speed": 1.25,
+					"wait": 2.65
+				},
+				{
+					"char": "npc",
+					"line": "Oh, and I thought outsiders are delusional...",
+					"speed": 1.7,
+					"wait": 1.8
+				},
+				{
+					"char": "player",
+					"line": "...",
+					"speed": 0.45
+				}
+			]
+		},
+		{
+			"id": "sarah1",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Sarah."
+				},
+				{
+					"char": "npc",
+					"line": "You're late. Again."
+				},
+				{
+					"char": "player",
+					"line": "I know. Sorry."
+				},
+				{
+					"char": "npc",
+					"line": "Did you get what causes anomaly?"
+				},
+				{
+					"char": "player",
+					"line": "Isaac has a theory."
+				},
+				{
+					"char": "player",
+					"line": "According to him, salt generator is the problem.",
+					"speed": 1.95,
+					"wait": 2.88
+				},
+				{
+					"char": "npc",
+					"line": "Salt generator? Hmm..."
+				},
+				{
+					"char": "npc",
+					"line": "We have no one with expertise in salt technology."
+				},
+				{
+					"char": "player",
+					"line": "Do we need mr. moneybags' approval so much?"
+				},
+				{
+					"char": "player",
+					"line": "We can study new tech by ourselves."
+				},
+				{
+					"char": "npc",
+					"line": "Stop right here!"
+				},
+				{
+					"char": "npc",
+					"line": "You know where I stand and what I believe in!"
+				},
+				{
+					"char": "player",
+					"line": "Yeah. Whatever."
+				},
+				{
+					"char": "player",
+					"line": "I will investigate the station."
+				},
+				{
+					"char": "npc",
+					"line": "Don't rush as you usually do.",
+					"event": "carActivate"
 				}
 			]
 		}

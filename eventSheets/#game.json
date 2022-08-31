@@ -5490,6 +5490,16 @@
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
+													"sid": 809343817387667,
+													"parameters": {
+														"variable": "curWeapon",
+														"comparison": 0,
+														"value": "\"pistol\""
+													}
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
 													"sid": 255385470704402,
 													"parameters": {
 														"variable": "curWeapon",
@@ -13795,6 +13805,701 @@
 						}
 					],
 					"sid": 580767296863490
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Triggers - events",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "event",
+							"functionDescription": "",
+							"functionCategory": "#events",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "eventName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 166170965415165
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 125965771562206,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 510020183877471,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 476259762718984,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"IsaacRelocate\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 149551899692079,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "npc",
+															"sid": 414975327591179,
+															"parameters": {
+																"unique-id": "1476"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "npc",
+															"sid": 989191765421973,
+															"parameters": {
+																"instance-variable": "state",
+																"value": "\"go\""
+															}
+														},
+														{
+															"id": "find-path",
+															"objectClass": "npc",
+															"sid": 539970157518214,
+															"behaviorType": "Pathfinding",
+															"parameters": {
+																"x": "triggers_marker.X",
+																"y": "triggers_marker.Y"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "npc",
+															"sid": 202700812534211,
+															"parameters": {
+																"object": "triggers_talkie",
+																"layer": "\"triggers_dialog\"",
+																"image-point": "0",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "add-child",
+															"objectClass": "npc",
+															"sid": 255943285087099,
+															"parameters": {
+																"child": "triggers_talkie",
+																"transform-x": true,
+																"transform-y": true,
+																"transform-w": true,
+																"transform-h": true,
+																"transform-a": true,
+																"transform-z-elevation": true,
+																"destroy-with-parent": false
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 857095054311896,
+															"parameters": {
+																"instance-variable": "npc_uid",
+																"value": "1476"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 279799411759571,
+															"parameters": {
+																"instance-variable": "SceneName",
+																"value": "\"collection-talking\""
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 167401577280217,
+															"parameters": {
+																"instance-variable": "dialogName",
+																"value": "\"isaac2\""
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 548454189327755,
+															"parameters": {
+																"instance-variable": "activation_distance",
+																"value": "150"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "triggers_talkie",
+															"sid": 999475798397881,
+															"parameters": {
+																"instance-variable": "max_distance",
+																"value": "300"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 976882139369248,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 409008313066707,
+															"parameters": {
+																"instance-variable": "interactive_start",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 110558885243024,
+															"parameters": {
+																"instance-variable": "autostart",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "triggers_talkie",
+															"sid": 522239756963590,
+															"parameters": {
+																"instance-variable": "is_visible_trough_walls",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 945832274687586
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 111415917982560
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 665564419679386,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"carActivate\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 329787674378289,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 225196944840841,
+															"parameters": {
+																"first-value": "LayoutName",
+																"comparison": 0,
+																"second-value": "\"collection\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 553865259744508,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-unique-id",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 328583200687573,
+																	"parameters": {
+																		"unique-id": "1499"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 644777311034655,
+																	"parameters": {
+																		"instance-variable": "SceneName",
+																		"value": "\"misc\""
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 635770551033114,
+																	"parameters": {
+																		"instance-variable": "DialogName",
+																		"value": "\"car-to-base\""
+																	}
+																}
+															],
+															"sid": 416048052239405
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 305598040880005
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 233559420059313,
+															"parameters": {
+																"first-value": "LayoutName",
+																"comparison": 0,
+																"second-value": "\"base\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 524177969199798,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-unique-id",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 159295820026131,
+																	"parameters": {
+																		"unique-id": "880"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 322523615491967,
+																	"parameters": {
+																		"instance-variable": "SceneName",
+																		"value": "\"misc\""
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "triggers_dialogic",
+																	"sid": 418370989371832,
+																	"parameters": {
+																		"instance-variable": "DialogName",
+																		"value": "\"car-to-forest1\""
+																	}
+																}
+															],
+															"sid": 783895381248767
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 893999913081126
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 387098021373641,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"playerHide\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 534865911811022,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "Player",
+															"sid": 413242760140685,
+															"parameters": {
+																"visibility": "invisible"
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "Player",
+															"sid": 528888834465748,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"state": "disabled"
+															}
+														}
+													],
+													"sid": 533301099459887
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 975170961102580
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 262308746791758,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"forest1-attack\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 200768817415990,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 834452913204939,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "7600",
+																"y": "9800",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 120307832600578,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "7400",
+																"y": "9800",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 411285797028686,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "7900",
+																"y": "6900",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 260679254121709,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "9200",
+																"y": "2700",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 461377548208672,
+															"parameters": {
+																"object-to-create": "runner",
+																"layer": "\"enemy\"",
+																"x": "9700",
+																"y": "3000",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														}
+													],
+													"sid": 557129662777971
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "runner",
+															"sid": 443761774209475,
+															"parameters": {
+																"instance-variable": "state",
+																"comparison": 1,
+																"value": "\"dead\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-group-active",
+															"objectClass": "System",
+															"sid": 769118317225419,
+															"parameters": {
+																"group-name": "\"[h1] Enemy ☠️ [/h1]\"",
+																"state": "activated"
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "runner",
+															"sid": 281585311556058,
+															"behaviorType": "Solid",
+															"parameters": {
+																"state": "disabled"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "runner",
+															"sid": 152899828819019,
+															"parameters": {
+																"instance-variable": "state",
+																"value": "\"attack\""
+															}
+														},
+														{
+															"id": "set-angle-toward-position",
+															"objectClass": "runner",
+															"sid": 134932066255249,
+															"parameters": {
+																"x": "Player.X",
+																"y": "Player.Y"
+															}
+														}
+													],
+													"sid": 139191277761672
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 865474630785723
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 974424922933414,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"forest2-door\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 881969365418110,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "house_door",
+															"sid": 637790375216596,
+															"parameters": {
+																"unique-id": "1899"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play-at-object",
+															"objectClass": "Audio",
+															"sid": 235284794485084,
+															"parameters": {
+																"audio-file": "wood-break",
+																"loop": "not-looping",
+																"volume": "0",
+																"object": "house_door",
+																"inner-angle": "360",
+																"outer-angle": "360",
+																"outer-gain": "0",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "house_door",
+															"sid": 697479110625161
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 890518144036982,
+															"parameters": {
+																"object-to-create": "fx_wood",
+																"layer": "\"furniture\"",
+																"x": "house_door.X",
+																"y": "house_door.Y - 20",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														}
+													],
+													"sid": 402599783052271
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 117833236846760
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 953311903318656,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"blocklabdoor\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 985152103073235,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "metal_door",
+															"sid": 945867624194718,
+															"parameters": {
+																"unique-id": "3210"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "tween-one-property",
+															"objectClass": "metal_door",
+															"sid": 541751902943830,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetHeight",
+																"end-value": "355",
+																"time": "0.25",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no"
+															}
+														}
+													],
+													"sid": 711194376401786
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Player",
+									"sid": 888102593443247,
+									"parameters": {
+										"object": "triggers_event"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "triggers_event",
+									"sid": 232908751933600,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "event",
+									"sid": 785399285598082,
+									"parameters": [
+										"triggers_event.eventName"
+									]
+								}
+							],
+							"sid": 164620475540435
+						}
+					],
+					"sid": 833018582292581
 				}
 			],
 			"sid": 256625401733780

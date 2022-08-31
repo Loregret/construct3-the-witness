@@ -1630,6 +1630,38 @@
 					}
 				},
 				{
+					"type": "triggers_event",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2089,
+					"instanceVariables": {
+						"eventName": "",
+						"active": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 393,
+						"y": 611,
+						"width": 592,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.45
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "fx_muzzle",
 					"properties": {
 						"initially-visible": true,

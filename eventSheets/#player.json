@@ -1686,13 +1686,12 @@
 													],
 													"actions": [
 														{
-															"id": "set-eventvar-value",
-															"objectClass": "System",
-															"sid": 864589756084384,
-															"parameters": {
-																"variable": "curWeapon",
-																"value": "\"\""
-															}
+															"callFunction": "weapon_change_to_another",
+															"sid": 139691918710800,
+															"parameters": [
+																"\"\"",
+																"\"idle\""
+															]
 														}
 													],
 													"sid": 693615475677022

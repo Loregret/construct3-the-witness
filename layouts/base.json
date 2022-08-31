@@ -375,6 +375,11 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -482,6 +487,11 @@
 							"properties": {
 								"enabled": true,
 								"tags": ""
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -1529,6 +1539,11 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -1582,6 +1597,11 @@
 							"properties": {
 								"enabled": true,
 								"tags": ""
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -1637,6 +1657,11 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -1690,6 +1715,11 @@
 							"properties": {
 								"enabled": true,
 								"tags": ""
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -2249,6 +2279,150 @@
 							1
 						],
 						"angle": 3.7524578917878086,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "policecar",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1326,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 3551,
+						"y": 3865,
+						"width": 354.2020454683221,
+						"height": 170.90248693846542,
+						"originX": 0.18813905930470348,
+						"originY": 0.4322033898305085,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.705260340591211,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "policecar",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1875,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 4816,
+						"y": 3879,
+						"width": 354.2020454683221,
+						"height": 170.90248693846542,
+						"originX": 0.18813905930470348,
+						"originY": 0.4322033898305085,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.46536197392310286,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "policecar",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3111,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 4900,
+						"y": 4131,
+						"width": 354.2020454683221,
+						"height": 170.90248693846542,
+						"originX": 0.18813905930470348,
+						"originY": 0.4322033898305085,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.2217304763960306,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "policecar",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3112,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 3546,
+						"y": 4068,
+						"width": 354.2020454683221,
+						"height": 170.90248693846542,
+						"originX": 0.18813905930470348,
+						"originY": 0.4322033898305085,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.9594994727689128,
 						"zElevation": 0
 					}
 				},
@@ -7760,6 +7934,120 @@
 							1
 						],
 						"angle": 5.893339664389801,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
+				},
+				{
+					"type": "Light",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1876,
+					"instanceVariables": {
+						"pinUID": -1
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "opacity",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 25,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 4879,
+						"y": 3997,
+						"width": 585.9982608908214,
+						"height": 589.7179258612985,
+						"originX": 0.512,
+						"originY": 0.486,
+						"color": [
+							1,
+							1,
+							1,
+							0.45
+						],
+						"angle": 5.1487212933832724,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
+				},
+				{
+					"type": "Light",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3110,
+					"instanceVariables": {
+						"pinUID": -1
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "opacity",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 25,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 3561,
+						"y": 3999,
+						"width": 585.9982608908214,
+						"height": 589.7179258612985,
+						"originX": 0.512,
+						"originY": 0.486,
+						"color": [
+							1,
+							1,
+							1,
+							0.45
+						],
+						"angle": 5.1487212933832724,
 						"zElevation": 0,
 						"blendMode": "destination-out"
 					}
