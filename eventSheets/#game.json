@@ -14413,16 +14413,72 @@
 												{
 													"id": "else",
 													"objectClass": "System",
+													"sid": 265632528747731
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 863744969038892,
+													"parameters": {
+														"variable": "eventName",
+														"comparison": 0,
+														"value": "\"blocklabdoor\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 673440093160786,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "metal_door",
+															"sid": 159242301680793,
+															"parameters": {
+																"unique-id": "3210"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "tween-one-property",
+															"objectClass": "metal_door",
+															"sid": 796476544858142,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetHeight",
+																"end-value": "355",
+																"time": "0.25",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no"
+															}
+														}
+													],
+													"sid": 534880722135265
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
 													"sid": 117833236846760
 												},
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 953311903318656,
+													"sid": 856157550913526,
 													"parameters": {
 														"variable": "eventName",
 														"comparison": 0,
-														"value": "\"blocklabdoor\""
+														"value": "\"openlabdoor\""
 													}
 												}
 											],
@@ -14435,9 +14491,9 @@
 														{
 															"id": "pick-by-unique-id",
 															"objectClass": "metal_door",
-															"sid": 945867624194718,
+															"sid": 814989227307184,
 															"parameters": {
-																"unique-id": "3210"
+																"unique-id": "3196"
 															}
 														}
 													],
@@ -14445,18 +14501,31 @@
 														{
 															"id": "tween-one-property",
 															"objectClass": "metal_door",
-															"sid": 541751902943830,
+															"sid": 903191915651593,
 															"behaviorType": "Tween",
 															"parameters": {
 																"tags": "\"\"",
 																"property": "offsetHeight",
-																"end-value": "355",
+																"end-value": "0",
 																"time": "0.25",
 																"ease": "default",
 																"destroy-on-complete": "no",
 																"loop": "no",
 																"ping-pong": "no"
 															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 727488578839973,
+															"parameters": {
+																"seconds": "0.25"
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "metal_door",
+															"sid": 714179789469553
 														}
 													],
 													"sid": 711194376401786

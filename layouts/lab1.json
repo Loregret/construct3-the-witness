@@ -3259,7 +3259,7 @@
 					"world": {
 						"x": 5814.071673651116,
 						"y": 5286.495488537109,
-						"width": 336.6037611206992,
+						"width": 336.6037611206991,
 						"height": 142.30533891912492,
 						"originX": 0.3750355436617332,
 						"originY": 0.5565893864859573,
@@ -10079,65 +10079,6 @@
 							1
 						],
 						"angle": 5.585053606381854,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "metal_door",
-					"properties": {
-						"shape": "box",
-						"z-height": 9,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3210,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": false
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						},
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 5516.463384277586,
-						"y": 4152,
-						"width": -28.57159172901609,
-						"height": 39.90491960539454,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
@@ -21274,65 +21215,6 @@
 						"object-top": -1,
 						"object-bottom": -1
 					},
-					"uid": 3208,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						},
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 5528.02661530965,
-						"y": 5068.965539219084,
-						"width": -28.57159172901609,
-						"height": 114.12335207800783,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							0.3803921568627451,
-							0.3803921568627451,
-							0.3803921568627451,
-							1
-						],
-						"angle": 1.5721540401916838,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "metal_door",
-					"properties": {
-						"shape": "box",
-						"z-height": 8,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
 					"uid": 3196,
 					"instanceVariables": {},
 					"behaviors": {
@@ -21356,16 +21238,16 @@
 						}
 					},
 					"world": {
-						"x": 5642.802297998345,
-						"y": 5068.967580276972,
-						"width": -28.57159172901609,
-						"height": 102.73328884792693,
+						"x": 5502.367074314146,
+						"y": 5068.776909375235,
+						"width": -18.502896915982166,
+						"height": 347.40516311517854,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
-							0.3803921568627451,
-							0.3803921568627451,
-							0.3803921568627451,
+							0.32941176470588235,
+							0.32941176470588235,
+							0.32941176470588235,
 							1
 						],
 						"angle": 1.5721540401916838,
@@ -21585,6 +21467,65 @@
 							1
 						],
 						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "metal_door",
+					"properties": {
+						"shape": "box",
+						"z-height": 8,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 3210,
+					"instanceVariables": {},
+					"behaviors": {
+						"ShadowCaster": {
+							"properties": {
+								"height": 0,
+								"tag": "",
+								"enabled": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 5516.463384277586,
+						"y": 4149.079319880045,
+						"width": -20.223671664932937,
+						"height": 39.90491960539454,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.30980392156862746,
+							0.30980392156862746,
+							0.30980392156862746,
+							1
+						],
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
@@ -24598,6 +24539,38 @@
 							"world": {
 								"x": 5579.5,
 								"y": 4307,
+								"width": 613,
+								"height": 30,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.45
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_event",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 3208,
+							"instanceVariables": {
+								"eventName": "openlabdoor",
+								"active": true
+							},
+							"behaviors": {},
+							"world": {
+								"x": 5580,
+								"y": 5041,
 								"width": 613,
 								"height": 30,
 								"originX": 0.5,
