@@ -503,7 +503,7 @@
 					"npc_uid": 602,
 					"line": "Coyotes? You spelled the word 'grizzlies' wrong.",
 					"speed": 1.45,
-					"wait": 2.0
+					"wait": 2
 				},
 				{
 					"char": "player",
@@ -516,7 +516,7 @@
 					"npc_uid": 602,
 					"line": "Look. Another guy with mentality of a criminal!",
 					"speed": 1.45,
-					"wait": 2.0
+					"wait": 2
 				},
 				{
 					"char": "player",
@@ -542,7 +542,7 @@
 					"char": "player",
 					"line": "Oh, you protect no one but the big guys.",
 					"speed": 1.45,
-					"wait": 2.0
+					"wait": 2
 				},
 				{
 					"char": "player",
@@ -558,7 +558,7 @@
 					"char": "player",
 					"line": "The Bad guys... The 'Good' guys. You're all are wrongdoers.",
 					"speed": 1.45,
-					"wait": 2.0
+					"wait": 2
 				},
 				{
 					"char": "npc",
@@ -659,7 +659,7 @@
 					"line": "Get lost."
 				}
 			]
-		},		
+		},
 		{
 			"id": "base-chris-greet",
 			"dialogs": [
@@ -1116,6 +1116,149 @@
 			]
 		}
 	],
+	"lab1": [
+		{
+			"id": "unlock_door",
+			"name": "**Unlock the Door**",
+			"dialogs": [
+				{
+					"line": "There's sticky note near the door button."
+				},
+				{
+					"line": "''Don't laser the balls!''"
+				},
+				{
+					"line": "''There's gigantic amount of water in them.''",
+					"wait": 2.5
+				},
+				{
+					"line": "Those balls contain water, then?"
+				},
+				{
+					"line": "So water doesn't evaporate, it's being absorbed by this things.",
+					"wait": 2.8,
+					"speed": 1.8
+				},
+				{
+					"line": "I need to tell this to Sarah."
+				},
+				{
+					"line": "If we can restore the water from them..."
+				},
+				{
+					"line": "Then we could possible bring water back."
+				},
+				{
+					"line": "**Button press**"
+				},
+				{
+					"line": " ",
+					"event": "openlabdoor",
+					"typewriter": "none",
+					"sound": "soft-switch"
+				}
+			]
+		}
+	],
+	"lab1-talking": [
+		{
+			"id": "dyingsec",
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "*Cough*"
+				},
+				{
+					"char": "player",
+					"line": "Shit. You're still alive."
+				},
+				{
+					"char": "npc",
+					"line": "Take me... to the hospital..."
+				},
+				{
+					"char": "player",
+					"line": "Impossible."
+				},
+				{
+					"char": "player",
+					"line": "This place is surrounded by raiders."
+				},
+				{
+					"char": "npc",
+					"line": "*Cough*"
+				},
+				{
+					"char": "npc",
+					"line": "They want to take over the city..."
+				},
+				{
+					"char": "npc",
+					"line": "We should inform...the goverment."
+				},
+				{
+					"char": "player",
+					"line": "Shouldn't Border Control handle this?"
+				},
+				{
+					"char": "npc",
+					"line": "Invaders. They have... a big army."
+				},
+				{
+					"char": "npc",
+					"line": "They were preparing... for war since..."
+				},
+				{
+					"char": "npc",
+					"line": "*Cough*"
+				},
+				{
+					"char": "player",
+					"line": "Since what?"
+				},
+				{
+					"char": "player",
+					"line": "...",
+					"wait": 0.6
+				},
+				{
+					"char": "player",
+					"line": "Damnit."
+				}
+			]
+		},
+		{
+			"id": "lab1door",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "I can't go back now."
+				}
+			]
+		},
+		{
+			"id": "lab1",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "What the hell?"
+				},
+				{
+					"char": "player",
+					"line": "I should get out of here."
+				}
+			]
+		},
+		{
+			"id": "lab1-start",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "They are close..."
+				}
+			]
+		}
+	],
 	"talking": [
 		{
 			"id": "madness",
@@ -1183,6 +1326,61 @@
 					"char": "player",
 					"line": "Orphans of the Earth.",
 					"speed": 0.45
+				}
+			]
+		},
+		{
+			"id": "weapon1",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Do I have nerves to kill?",
+					"speed": 0.5,
+					"wait": 1
+				}
+			]
+		},
+		{
+			"id": "weapon2",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Deadly weapon.",
+					"speed": 0.5,
+					"wait": 1
+				}
+			]
+		},
+		{
+			"id": "weapon3",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Now I'm dangerous.",
+					"speed": 0.5,
+					"wait": 1
+				}
+			]
+		},
+		{
+			"id": "weapon4",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Kill or be killed.",
+					"speed": 0.5,
+					"wait": 1
+				}
+			]
+		},
+		{
+			"id": "weapon5",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Survival of the fittest.",
+					"speed": 0.5,
+					"wait": 1
 				}
 			]
 		}

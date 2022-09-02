@@ -406,7 +406,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 498054811255857,
+											"sid": 813153334209649,
 											"parameters": {
 												"object-to-create": "ShadowLight",
 												"layer": "\"player\"",
@@ -1041,6 +1041,25 @@
 														"volume": "-18",
 														"tag-optional": "\"music\""
 													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 927646551338380,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"callFunction": "talkie_start_dialog",
+													"sid": 524669054674354,
+													"parameters": [
+														"\"lab1-talking\"",
+														"\"lab1-start\"",
+														"0",
+														"-1",
+														"-1"
+													]
 												}
 											],
 											"sid": 248971707852116
@@ -2174,6 +2193,34 @@
 																					"eventType": "block",
 																					"conditions": [
 																						{
+																							"id": "compare-boolean-eventvar",
+																							"objectClass": "System",
+																							"sid": 623946170986855,
+																							"parameters": {
+																								"variable": "player_is_talking"
+																							},
+																							"isInverted": true
+																						}
+																					],
+																					"actions": [
+																						{
+																							"callFunction": "talkie_start_dialog",
+																							"sid": 821783145644761,
+																							"parameters": [
+																								"\"talking\"",
+																								"choose(\"weapon1\",\"weapon2\",\"weapon3\",\"weapon4\",\"weapon5\")",
+																								"0",
+																								"-1",
+																								"-1"
+																							]
+																						}
+																					],
+																					"sid": 517409607736483
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
 																							"id": "compare-instance-variable",
 																							"objectClass": "gun",
 																							"sid": 368765792899463,
@@ -2423,6 +2470,34 @@
 																					"eventType": "block",
 																					"conditions": [
 																						{
+																							"id": "compare-boolean-eventvar",
+																							"objectClass": "System",
+																							"sid": 137160310776114,
+																							"parameters": {
+																								"variable": "player_is_talking"
+																							},
+																							"isInverted": true
+																						}
+																					],
+																					"actions": [
+																						{
+																							"callFunction": "talkie_start_dialog",
+																							"sid": 338815568907090,
+																							"parameters": [
+																								"\"talking\"",
+																								"choose(\"weapon1\",\"weapon2\",\"weapon3\",\"weapon4\",\"weapon5\")",
+																								"0",
+																								"-1",
+																								"-1"
+																							]
+																						}
+																					],
+																					"sid": 262015058289015
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
 																							"id": "compare-instance-variable",
 																							"objectClass": "gun",
 																							"sid": 421169294559000,
@@ -2668,6 +2743,34 @@
 																			],
 																			"sid": 299778309598514,
 																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "compare-boolean-eventvar",
+																							"objectClass": "System",
+																							"sid": 850755274876901,
+																							"parameters": {
+																								"variable": "player_is_talking"
+																							},
+																							"isInverted": true
+																						}
+																					],
+																					"actions": [
+																						{
+																							"callFunction": "talkie_start_dialog",
+																							"sid": 481470489227973,
+																							"parameters": [
+																								"\"talking\"",
+																								"choose(\"weapon1\",\"weapon2\",\"weapon3\",\"weapon4\",\"weapon5\")",
+																								"0",
+																								"-1",
+																								"-1"
+																							]
+																						}
+																					],
+																					"sid": 634206243411708
+																				},
 																				{
 																					"eventType": "block",
 																					"conditions": [
@@ -14459,7 +14562,37 @@
 															}
 														}
 													],
-													"sid": 534880722135265
+													"sid": 534880722135265,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 984017279385971,
+																	"parameters": {
+																		"variable": "player_is_talking"
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "talkie_start_dialog",
+																	"sid": 550246174685739,
+																	"parameters": [
+																		"\"lab1-talking\"",
+																		"\"lab1door\"",
+																		"0",
+																		"-1",
+																		"-1"
+																	]
+																}
+															],
+															"sid": 241509085903977
+														}
+													]
 												}
 											]
 										},
@@ -14563,6 +14696,15 @@
 									"parameters": [
 										"triggers_event.eventName"
 									]
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "triggers_event",
+									"sid": 757287245176353,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "false"
+									}
 								}
 							],
 							"sid": 164620475540435
