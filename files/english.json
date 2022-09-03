@@ -115,6 +115,31 @@
 					"wait": 2.7
 				}
 			]
+		},
+		{
+			"id": "instruments",
+			"name": "Isaac's instruments",
+			"dialogs": [
+				{
+					"line": "Isaac has a nice collection of rust.",
+					"wait": 1.3,
+					"speed": 0.6
+				}
+			]
+		},
+		{
+			"id": "crystal",
+			"name": "*Unknown crystal*",
+			"dialogs": [
+				{
+					"line": "I've seen this crystals many times.",
+					"wait": 2.0
+				},
+				{
+					"line": "But I don't know anything about them.",
+					"wait": 2.0
+				}
+			]
 		}
 	],
 	"collection-talking": [
@@ -688,7 +713,7 @@
 				},
 				{
 					"char": "npc",
-					"line": "Border Control, plus two FBI agents.",
+					"line": "Border Control and two FBI agents.",
 					"speed": 1,
 					"wait": 1.25
 				},
@@ -833,11 +858,11 @@
 				},
 				{
 					"char": "npc",
-					"line": "Stop right here!"
+					"line": "Stop!"
 				},
 				{
 					"char": "npc",
-					"line": "You know where I stand and what I believe in!"
+					"line": "You know where I stand on this topic!"
 				},
 				{
 					"char": "player",

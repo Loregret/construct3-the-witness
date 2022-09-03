@@ -612,6 +612,59 @@
 										{
 											"id": "else",
 											"objectClass": "System",
+											"sid": 837103242235641
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 937488215194779,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"collection\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 725622507433755,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 993809190440637,
+													"parameters": {
+														"audio-file": "desert ambiance",
+														"loop": "looping",
+														"volume": "-28",
+														"tag-optional": "\"ambience\""
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 495413475795105,
+													"parameters": {
+														"audio-file": "in-the-desert by g-yerro Artlist",
+														"loop": "not-looping",
+														"volume": "-30",
+														"tag-optional": "\"music\""
+													}
+												}
+											],
+											"sid": 197052044126928
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
 											"sid": 256050258397881
 										},
 										{
@@ -633,59 +686,6 @@
 											"conditions": [],
 											"actions": [],
 											"sid": 550737665028751
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 625712683484706
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 189308768205454,
-											"parameters": {
-												"first-value": "LayoutName",
-												"comparison": 0,
-												"second-value": "\"collection\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 910337448385381,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 833188100356603,
-													"parameters": {
-														"audio-file": "desert ambiance",
-														"loop": "looping",
-														"volume": "-28",
-														"tag-optional": "\"ambience\""
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 738349124722271,
-													"parameters": {
-														"audio-file": "in-the-desert by g-yerro Artlist",
-														"loop": "not-looping",
-														"volume": "-25",
-														"tag-optional": "\"music\""
-													}
-												}
-											],
-											"sid": 364309040388048
 										}
 									]
 								},
@@ -11567,6 +11567,39 @@
 											"sid": 289919619331309
 										}
 									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "crystals"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 686689046558444,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "SaltBall",
+											"sid": 467792935726195
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "SaltBall",
+											"sid": 950872163351595,
+											"parameters": {
+												"angle": "random(360)"
+											}
+										}
+									],
+									"sid": 123718364226635
 								}
 							]
 						}
