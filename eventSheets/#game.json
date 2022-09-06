@@ -1105,6 +1105,68 @@
 											"sid": 849134672614323
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 727377302729756
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 512902361558844,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"isaacs_home\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 189707708813178,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 156396904403903,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"callFunction": "flashlight_turn",
+													"sid": 281826690629915
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 862076747207568,
+													"parameters": {
+														"seconds": "0.5"
+													}
+												},
+												{
+													"callFunction": "talkie_start_dialog",
+													"sid": 941323820946545,
+													"parameters": [
+														"\"isaac-home\"",
+														"\"start1\"",
+														"0",
+														"-1",
+														"-1"
+													]
+												}
+											],
+											"sid": 654590196724500
+										}
+									]
 								}
 							]
 						},

@@ -107,11 +107,11 @@
 					"speed": 0.6
 				},
 				{
-					"line": "It wasn't there yesterday.",
+					"line": "There will be no river soon.",
 					"wait": 1.5
 				},
 				{
-					"line": "Without water, nearest ecosystem will die.",
+					"line": "And without water, nearest ecosystem will die.",
 					"wait": 2.7
 				}
 			]
@@ -1141,6 +1141,50 @@
 			]
 		}
 	],
+	"isaac-home": [
+		{
+			"id": "start1",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": ""
+				}
+			]
+		},
+		{
+			"id": "start2",
+			"dialogs": [
+				{
+					"char": "player",
+					"line": "Four weeks under occupation."
+				},
+				{
+					"char": "player",
+					"line": "Electricity was out on seventh day."
+				},
+				{
+					"char": "player",
+					"line": "No food, no water."
+				},
+				{
+					"char": "player",
+					"line": "I never expected to see public executions."
+				},
+				{
+					"char": "player",
+					"line": "But it's a common thing now."
+				},
+				{
+					"char": "player",
+					"line": "Ruthless warlord."
+				},
+				{
+					"char": "player",
+					"line": ""
+				}
+			]
+		}
+	],
 	"lab1": [
 		{
 			"id": "unlock_door",
@@ -1150,17 +1194,21 @@
 					"line": "There's sticky note near the door button."
 				},
 				{
-					"line": "''Don't touch the crystals!''"
+					"line": "''Don't hydrate the crystals!''"
 				},
 				{
-					"line": "''There's gigantic amount of water in them.''",
+					"line": "''They contain gigantic amount of water.''",
+					"wait": 2.5
+				},
+				{
+					"line": "''Last flood in the lab killed three men!''",
 					"wait": 2.5
 				},
 				{
 					"line": "Those crystals contain water, then?"
 				},
 				{
-					"line": "So water doesn't evaporate, it's being absorbed by this crystals.",
+					"line": "So water doesn't disappear, it's being absorbed by this crystals.",
 					"wait": 2.8,
 					"speed": 1.8
 				},
@@ -1168,13 +1216,10 @@
 					"line": "I need to tell this to Sarah."
 				},
 				{
-					"line": "If we can restore the water from them..."
+					"line": "If we can restore the water from crystals..."
 				},
 				{
-					"line": "Then we could possible bring water back."
-				},
-				{
-					"line": "**Button press**"
+					"line": "Then we could possible bring life back to the wastelands."
 				},
 				{
 					"line": " ",
@@ -1257,7 +1302,7 @@
 			"dialogs": [
 				{
 					"char": "player",
-					"line": "I can't go back now."
+					"line": "The door had just closed!"
 				}
 			]
 		},
