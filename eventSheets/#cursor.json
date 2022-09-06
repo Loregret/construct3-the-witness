@@ -378,7 +378,47 @@
 													"children": [
 														{
 															"eventType": "block",
-															"conditions": [],
+															"conditions": [
+																{
+																	"id": "compare-value",
+																	"objectClass": "JSON",
+																	"sid": 368415319221487,
+																	"parameters": {
+																		"path": "triggers_talkie.SceneName&\".\"&JSON.CurrentKey&\".name\"",
+																		"cmp": 1,
+																		"value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "sprfont_cursorhint",
+																	"sid": 654588857670024,
+																	"parameters": {
+																		"text": "JSON.Get(triggers_talkie.SceneName&\".\"& JSON.CurrentKey &\".name\")"
+																	}
+																},
+																{
+																	"id": "set-visible",
+																	"objectClass": "sprfont_cursorhint",
+																	"sid": 129288168731285,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																}
+															],
+															"sid": 810069918782219
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 530423436443408
+																}
+															],
 															"actions": [
 																{
 																	"id": "set-visible",
@@ -788,6 +828,14 @@
 											"sid": 224232262865694,
 											"parameters": {
 												"object": "triggers_move2Layout"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "triggers_move2Layout",
+											"sid": 551173814919557,
+											"parameters": {
+												"instance-variable": "active"
 											}
 										},
 										{
