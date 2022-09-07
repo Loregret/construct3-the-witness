@@ -1168,6 +1168,54 @@
 										{
 											"id": "else",
 											"objectClass": "System",
+											"sid": 147613122639980
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 441009240403838,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"base_after_raid\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 131488572869872,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 150040686242080,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"callFunction": "dialogic_play_dialog",
+													"sid": 224016718928675,
+													"parameters": [
+														"\"base_after_raid\"",
+														"\"base-name\"",
+														"0"
+													]
+												}
+											],
+											"sid": 199319677980872
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
 											"sid": 765277466294019
 										},
 										{
