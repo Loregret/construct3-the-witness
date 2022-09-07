@@ -1301,20 +1301,102 @@
 				{
 					"char": "player",
 					"line": "Why..."
-
 				},
 				{
 					"char": "player",
-					"line": "I should give information about crystals to officials."
+					"line": "..."
 				},
 				{
 					"char": "player",
-					"line": "She would want that, for sure.",
+					"line": "I need to inform authorities about crystals."
+				},
+				{
+					"char": "player",
+					"line": "She'd want that, for sure.",
 					"event": "baseraidcar"					
 				}
 			]
 		}
 	],
+	"police_station": [
+		{
+			"id": "officialman1",
+
+			"dialogs": [
+				{
+					"char": "npc",
+					"line": "You called me."
+				},
+				{
+					"char": "npc",
+					"line": "Do you have any proof of the theory?"
+				},
+				{
+					"char": "player",
+					"line": "Yeah."
+				},
+				{
+					"char": "npc",
+					"line": "I have photos of the lab with all the blueprints."
+				},
+				{
+					"char": "npc",
+					"line": "Give it to me."
+				},
+				{
+					"char": "player",
+					"line": "What will you do with this information?"
+				},
+				{
+					"char": "npc",
+					"line": "Like always. We will save the world."
+				},
+				{
+					"char": "player",
+					"line": "And what happens to our city?"
+				},
+				{
+					"char": "npc",
+					"line": "It'll be liberated."
+				},
+				{
+					"char": "npc",
+					"line": "Outsiders can't hold it so long."
+				},
+				{
+					"char": "npc",
+					"line": "And we know what they want."
+				},
+				{
+					"char": "npc",
+					"line": "We'll give them supplies and they go."
+				},
+				{
+					"char": "player",
+					"line": "Alright."
+				},
+				{
+					"char": "npc",
+					"line": "Meet me here after two weeks and we will discuss our next moves."
+				},
+				{
+					"char": "player",
+					"line": "Okay."
+				}
+			]
+		},
+		{
+			"id": "ceo",
+			"dialogs": [
+				{
+					"line": "I have a meeting with CEO of Ecology Restoration Program."
+				},
+				{
+					"line": "I will give him all the information I've collected."
+				}
+			]
+		}
+	],	
 	"isaac_home": [
 		{
 			"id": "start1",
