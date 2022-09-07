@@ -646,11 +646,11 @@
 												{
 													"id": "play",
 													"objectClass": "Audio",
-													"sid": 495413475795105,
+													"sid": 109142933897003,
 													"parameters": {
 														"audio-file": "in-the-desert by g-yerro Artlist",
 														"loop": "not-looping",
-														"volume": "-30",
+														"volume": "-36",
 														"tag-optional": "\"music\""
 													}
 												},
@@ -887,90 +887,6 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 661124435527770
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 860955775814683,
-											"parameters": {
-												"first-value": "LayoutName",
-												"comparison": 0,
-												"second-value": "\"forest1_with_enemy\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 763676702575181,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 185361091289240,
-													"parameters": {
-														"variable": "flashlight_battery",
-														"value": "500"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 477508779684415,
-													"parameters": {
-														"variable": "stick_lights",
-														"value": "0"
-													}
-												},
-												{
-													"id": "set-opacity",
-													"objectClass": "ShadowLight",
-													"sid": 831925361841267,
-													"parameters": {
-														"opacity": "97"
-													}
-												},
-												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 248794010330630,
-													"parameters": {
-														"key": "\"pistol\"",
-														"value": "1"
-													}
-												},
-												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 798819096792694,
-													"parameters": {
-														"key": "\"shotgun\"",
-														"value": "1"
-													}
-												},
-												{
-													"id": "add-key",
-													"objectClass": "weapon",
-													"sid": 302861174210275,
-													"parameters": {
-														"key": "\"ak\"",
-														"value": "1"
-													}
-												}
-											],
-											"sid": 956954165197100
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
 											"sid": 280401771995469
 										},
 										{
@@ -1031,11 +947,11 @@
 												{
 													"id": "play",
 													"objectClass": "Audio",
-													"sid": 208517064451086,
+													"sid": 877902636030256,
 													"parameters": {
 														"audio-file": "Outlaws - Max H.",
 														"loop": "looping",
-														"volume": "-20",
+														"volume": "-34",
 														"tag-optional": "\"music\""
 													}
 												}
@@ -1895,6 +1811,15 @@
 															"sid": 975648613827251,
 															"parameters": {
 																"instance-variable": "autostart"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 469703658164716,
+															"parameters": {
+																"variable": "player_is_talking"
 															},
 															"isInverted": true
 														},
