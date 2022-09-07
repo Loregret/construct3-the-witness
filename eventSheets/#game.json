@@ -653,6 +653,23 @@
 														"volume": "-30",
 														"tag-optional": "\"music\""
 													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 517423021069307,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"callFunction": "dialogic_play_dialog",
+													"sid": 814402460303483,
+													"parameters": [
+														"\"collection\"",
+														"\"collection-name\"",
+														"0"
+													]
 												}
 											],
 											"sid": 197052044126928
@@ -684,7 +701,25 @@
 										{
 											"eventType": "block",
 											"conditions": [],
-											"actions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 624639122037402,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"callFunction": "dialogic_play_dialog",
+													"sid": 495682038987133,
+													"parameters": [
+														"\"base\"",
+														"\"base-name\"",
+														"0"
+													]
+												}
+											],
 											"sid": 550737665028751
 										}
 									]
@@ -756,16 +791,28 @@
 													"conditions": [],
 													"actions": [
 														{
-															"id": "wait-for-previous-actions",
+															"id": "wait",
 															"objectClass": "System",
-															"sid": 830116925972999
+															"sid": 645822597589497,
+															"parameters": {
+																"seconds": "0.2"
+															}
+														},
+														{
+															"callFunction": "dialogic_play_dialog",
+															"sid": 343719580273599,
+															"parameters": [
+																"\"forest1\"",
+																"\"forest1-name\"",
+																"0"
+															]
 														},
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 163670696240324,
+															"sid": 331544437486188,
 															"parameters": {
-																"seconds": "1.85"
+																"seconds": "2.8"
 															}
 														},
 														{
@@ -778,14 +825,6 @@
 																"-1",
 																"-1"
 															]
-														},
-														{
-															"id": "set-opacity",
-															"objectClass": "ShadowLight",
-															"sid": 186735956674185,
-															"parameters": {
-																"opacity": "98"
-															}
 														}
 													],
 													"sid": 212328201833172
@@ -1051,6 +1090,23 @@
 													}
 												},
 												{
+													"callFunction": "dialogic_play_dialog",
+													"sid": 939787543648925,
+													"parameters": [
+														"\"lab1\"",
+														"\"lab1-name\"",
+														"0"
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 783791023950963,
+													"parameters": {
+														"seconds": "1.5"
+													}
+												},
+												{
 													"callFunction": "talkie_start_dialog",
 													"sid": 524669054674354,
 													"parameters": [
@@ -1227,7 +1283,25 @@
 										{
 											"eventType": "block",
 											"conditions": [],
-											"actions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 707871928132572,
+													"parameters": {
+														"seconds": "0.25"
+													}
+												},
+												{
+													"callFunction": "dialogic_play_dialog",
+													"sid": 142830247222713,
+													"parameters": [
+														"\"isaac_home\"",
+														"\"start1\"",
+														"0"
+													]
+												}
+											],
 											"sid": 654590196724500
 										}
 									]

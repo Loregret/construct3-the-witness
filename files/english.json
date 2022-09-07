@@ -98,6 +98,16 @@
 ],
 "collection": [
 	{
+		"id": "collection-name",
+		"dialogs": [
+			{
+				"line": "Case #23. Main river of the region.",
+				"wait": 1.3,
+				"speed": 0.6
+			}
+		]
+	},
+	{
 		"id": "anomaly",
 		"name": "The Anomaly",
 		"dialogs": [
@@ -480,6 +490,16 @@
 			{
 				"char": "npc",
 				"line": "You should go now."
+			}
+		]
+	}
+],
+"base": [
+	{
+		"id": "base-name",
+		"dialogs": [
+			{
+				"line": "Main Office of the Ecology Restoration Program."
 			}
 		]
 	}
@@ -882,6 +902,14 @@
 ],
 "forest1": [
 	{
+		"id": "forest1-name",
+		"dialogs": [
+			{
+				"line": "Near the Salt-Energy Generator Station."
+			}
+		]
+	},
+	{
 		"id": "template",
 		"dialogs": [
 			{
@@ -1143,6 +1171,14 @@
 ],
 "lab1": [
 	{
+		"id": "lab1-name",
+		"dialogs": [
+			{
+				"line": "Main Laboratory of the Salt-Energy Station."
+			}
+		]
+	},
+	{
 		"id": "unlock_door",
 		"name": "**Unlock the Door**",
 		"dialogs": [
@@ -1286,6 +1322,14 @@
 	}
 ],
 "base_after_raid": [
+	{
+		"id": "base-name",
+		"dialogs": [
+			{
+				"line": "Main Office of the Ecology Restoration Program."
+			}
+		]
+	},	
 	{
 		"id": "sarahD",
 		"name": "**Sarah**",
@@ -1536,8 +1580,7 @@
 		"id": "start1",
 		"dialogs": [
 			{
-				"char": "player",
-				"line": ""
+				"line": "Isaac's home."
 			}
 		]
 	},
