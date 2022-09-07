@@ -1732,6 +1732,38 @@
 																								{
 																									"id": "else",
 																									"objectClass": "System",
+																									"sid": 511195022662788
+																								},
+																								{
+																									"id": "compare-two-values",
+																									"objectClass": "System",
+																									"sid": 751770085748661,
+																									"parameters": {
+																										"first-value": "LayoutName",
+																										"comparison": 0,
+																										"second-value": "\"lab2\""
+																									}
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "set-speed",
+																									"objectClass": "runner",
+																									"sid": 726285663129240,
+																									"behaviorType": "Bullet",
+																									"parameters": {
+																										"speed": "296"
+																									}
+																								}
+																							],
+																							"sid": 679655134357940
+																						},
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "else",
+																									"objectClass": "System",
 																									"sid": 388360095650857
 																								}
 																							],
