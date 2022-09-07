@@ -154,10 +154,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 4167,
-						"y": 3900,
-						"width": 80,
-						"height": 83,
+						"x": 4491,
+						"y": 3959,
+						"width": 138.75441475751663,
+						"height": 143.95770531092353,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3045,7 +3045,7 @@
 							"behaviors": {
 								"Solid": {
 									"properties": {
-										"enabled": false,
+										"enabled": true,
 										"tags": "npc"
 									}
 								},
@@ -7755,6 +7755,47 @@
 									0.55
 								],
 								"angle": 2.8797932657906435,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "triggers_talkie",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 3410,
+							"instanceVariables": {
+								"SceneName": "police_station",
+								"dialogName": "officialman1",
+								"lineNum": 0,
+								"npc_uid": 3394,
+								"interactive_start": true,
+								"repeatable": false,
+								"active": true,
+								"autostart": false,
+								"max_distance": 355,
+								"activation_distance": 250,
+								"is_visible_trough_walls": true
+							},
+							"behaviors": {},
+							"world": {
+								"x": 5528.90455350831,
+								"y": 3842.4449507747117,
+								"width": 95.18852827641513,
+								"height": 48.43273790682679,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.7
+								],
+								"angle": 0,
 								"zElevation": 0
 							}
 						}

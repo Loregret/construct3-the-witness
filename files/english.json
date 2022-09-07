@@ -1325,19 +1325,43 @@
 			"dialogs": [
 				{
 					"char": "npc",
-					"line": "You called me."
+					"line": "I was waiting for you, Robert.",
+					"speed": 1.8,
+					"wait": 2.6
+				},
+				{
+					"char": "player",
+					"line": "I thought you will run away."
 				},
 				{
 					"char": "npc",
-					"line": "Do you have any proof of the theory?"
+					"line": "Are you kidding, Robert?",
+					"speed": 1.8,
+					"wait": 2.6
+				},
+				{
+					"char": "npc",
+					"line": "I'll be with my city till the end.",
+					"speed": 1.8,
+					"wait": 2.6
+				},
+				{
+					"char": "player",
+					"line": "Okay."
+				},
+				{
+					"char": "npc",
+					"line": "Do you have any proof of the theory?",
+					"wait": 2.75
 				},
 				{
 					"char": "player",
 					"line": "I do."
 				},
 				{
-					"char": "npc",
-					"line": "I have photos of the lab with all the blueprints."
+					"char": "player",
+					"line": "I have photos of the lab with all the blueprints.",
+					"wait": 2.75
 				},
 				{
 					"char": "npc",
@@ -1345,11 +1369,13 @@
 				},
 				{
 					"char": "player",
-					"line": "What will you do with this information?"
+					"line": "What will you do with this?",
+					"wait": 2.75
 				},
 				{
 					"char": "npc",
-					"line": "Like we always do. Save the world."
+					"line": "Like we always do. Save the world.",
+					"wait": 2.45
 				},
 				{
 					"char": "player",
@@ -1380,8 +1406,8 @@
 					"line": "I know. Savages."
 				},
 				{
-					"char": "npc",
-					"line": "But what can we do?"
+					"char": "player",
+					"line": "What can we do?"
 				},
 				{
 					"char": "npc",
@@ -1389,7 +1415,8 @@
 				},
 				{
 					"char": "npc",
-					"line": "We don't have numbers, but we have technology."
+					"line": "We don't have numbers, but we have technology.",
+					"wait": 2.5
 				},
 				{
 					"char": "npc",
@@ -1405,15 +1432,25 @@
 				},
 				{
 					"char": "npc",
-					"line": "Patience."
+					"line": "You need patience."
 				},
 				{
 					"char": "npc",
-					"line": "We will act when the time is right."
+					"line": "We will act when the time is right.",
+					"wait": 2.45
 				},
 				{
 					"char": "npc",
-					"line": "Meet me here after two weeks."
+					"line": "Meet me here at sunday.",
+					"wait": 2.7
+				},
+				{
+					"char": "player",
+					"line": "Will you be here?"
+				},
+				{
+					"char": "npc",
+					"line": "Of course!"
 				},
 				{
 					"char": "player",
