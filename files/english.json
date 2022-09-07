@@ -1220,7 +1220,7 @@
 			},
 			{
 				"char": "npc",
-				"line": "We should inform...the goverment."
+				"line": "We should inform... the goverment."
 			},
 			{
 				"char": "player",
@@ -1319,6 +1319,21 @@
 	}
 ],
 "police_station": [
+	{
+		"id": "ceo",
+		"dialogs": [
+			{
+				"line": "I have a meeting with Governor.",
+				"wait": 2.85,
+				"speed": 1.8
+			},
+			{
+				"line": "I'll give him all the information I collected.",
+				"wait": 2.85,
+				"speed": 1.8
+			}
+		]
+	},
 	{
 		"id": "officialman1",
 		"dialogs": [
@@ -1457,21 +1472,6 @@
 				"event": "opencar"
 			}
 		]
-	},
-	{
-		"id": "ceo",
-		"dialogs": [
-			{
-				"line": "I have a meeting with Governor.",
-				"wait": 2.85,
-				"speed": 1.8
-			},
-			{
-				"line": "I'll give him all the information I've collected.",
-				"wait": 2.85,
-				"speed": 1.8
-			}
-		]
 	}
 ],
 "police_station2": [
@@ -1509,7 +1509,7 @@
 		"id": "surprise2",
 		"dialogs": [
 			{
-				"line": "This building is empty.",
+				"line": "Building is empty.",
 				"speed": 1.5,
 				"wait": 2.65
 			},
@@ -1519,14 +1519,18 @@
 				"wait": 2.65
 			},
 			{
-				"line": "And they took all the photos and blueprints.",
+				"line": "And they fled with all the photos and blueprints.",
 				"speed": 1.5,
 				"wait": 2.65
 			},
 			{
-				"line": "Cowards.",
+				"line": "People with plastic hearts.",
 				"wait": 2.0,
 				"event": "opencar2"
+			},
+			{
+				"line": "He lied to me.",
+				"wait": 2.0
 			}
 		]
 	}
@@ -1604,7 +1608,7 @@
 			},
 			{
 				"char": "player",
-				"line": "We were doomed long before the drought happened.",
+				"line": "We were doomed long before droughts happened.",
 				"speed": 0.5,
 				"wait": 1.25
 			},
