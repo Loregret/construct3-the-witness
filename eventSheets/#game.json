@@ -1112,6 +1112,54 @@
 										{
 											"id": "else",
 											"objectClass": "System",
+											"sid": 677708874236730
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 181441793570487,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"police_station\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 302786604035897,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 731094826800642,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"callFunction": "dialogic_play_dialog",
+													"sid": 200345854015243,
+													"parameters": [
+														"\"police_station\"",
+														"\"ceo\"",
+														"0"
+													]
+												}
+											],
+											"sid": 640132391276287
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
 											"sid": 727377302729756
 										},
 										{
@@ -14788,6 +14836,67 @@
 												}
 											],
 											"sid": 998387161578721
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 722187849971381
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 126970722635384,
+											"parameters": {
+												"variable": "eventName",
+												"comparison": 0,
+												"value": "\"opencar\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 626963250545401,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "triggers_dialogic",
+													"sid": 158357711588946,
+													"parameters": {
+														"unique-id": "3122"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "triggers_dialogic",
+													"sid": 782977706870336
+												}
+											],
+											"sid": 846558481087112
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "triggers_move2Layout",
+													"sid": 440251113042242,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 212617320933843
 										}
 									]
 								}

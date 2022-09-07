@@ -133,11 +133,11 @@
 			"dialogs": [
 				{
 					"line": "I've seen this crystals many times.",
-					"wait": 2.0
+					"wait": 2
 				},
 				{
 					"line": "But I don't know anything about them.",
-					"wait": 2.0
+					"wait": 2
 				}
 			]
 		}
@@ -1313,7 +1313,7 @@
 				{
 					"char": "player",
 					"line": "She'd want that, for sure.",
-					"event": "baseraidcar"					
+					"event": "baseraidcar"
 				}
 			]
 		}
@@ -1321,7 +1321,6 @@
 	"police_station": [
 		{
 			"id": "officialman1",
-
 			"dialogs": [
 				{
 					"char": "npc",
@@ -1336,13 +1335,11 @@
 				{
 					"char": "npc",
 					"line": "Are you kidding, Robert?",
-					"speed": 1.8,
-					"wait": 2.6
+					"wait": 2.0
 				},
 				{
 					"char": "npc",
 					"line": "I'll be with my city till the end.",
-					"speed": 1.8,
 					"wait": 2.6
 				},
 				{
@@ -1361,6 +1358,7 @@
 				{
 					"char": "player",
 					"line": "I have photos of the lab with all the blueprints.",
+					"speed": 1.8,
 					"wait": 2.75
 				},
 				{
@@ -1416,6 +1414,7 @@
 				{
 					"char": "npc",
 					"line": "We don't have numbers, but we have technology.",
+					"speed": 1.75,
 					"wait": 2.5
 				},
 				{
@@ -1446,7 +1445,7 @@
 				},
 				{
 					"char": "player",
-					"line": "Will you be here?"
+					"line": "Will you still be here?"
 				},
 				{
 					"char": "npc",
@@ -1454,7 +1453,8 @@
 				},
 				{
 					"char": "player",
-					"line": "Okay."
+					"line": "Okay.",
+					"event": "opencar"
 				}
 			]
 		},
@@ -1462,14 +1462,18 @@
 			"id": "ceo",
 			"dialogs": [
 				{
-					"line": "I have a meeting with CEO of Ecology Restoration Program."
+					"line": "I have a meeting with CEO of Ecology Restoration Program.",
+					"wait": 2.85,
+					"speed": 1.8
 				},
 				{
-					"line": "I'll give him all the information I've collected."
+					"line": "I'll give him all the information I've collected.",
+					"wait": 2.85,
+					"speed": 1.8
 				}
 			]
 		}
-	],	
+	],
 	"isaac_home": [
 		{
 			"id": "start1",
