@@ -1708,6 +1708,98 @@
 							]
 						},
 						{
+							"functionName": "go_to_another_scene_no_waiting",
+							"functionDescription": "",
+							"functionCategory": "#levels",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "level",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 323904553490659
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 513984480714311,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 837385672738453,
+											"parameters": {
+												"object-to-create": "blackTransition",
+												"layer": "\"_user_interface\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "blackTransition",
+											"sid": 477014280017127,
+											"parameters": {
+												"width": "ViewportWidth(\"_user_interface\") * 2",
+												"height": "ViewportHeight(\"_user_interface\") * 2"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "blackTransition",
+											"sid": 149674961228798,
+											"parameters": {
+												"opacity": "0"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "blackTransition",
+											"sid": 707396882879717,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"trans\"",
+												"property": "offsetOpacity",
+												"end-value": "100",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 993596317386234,
+											"parameters": {
+												"seconds": "2"
+											}
+										},
+										{
+											"id": "go-to-layout-by-name",
+											"objectClass": "System",
+											"sid": 774788871880418,
+											"parameters": {
+												"layout": "level"
+											}
+										}
+									],
+									"sid": 113278677847744
+								}
+							]
+						},
+						{
 							"functionName": "go_to_another_scene",
 							"functionDescription": "",
 							"functionCategory": "#levels",

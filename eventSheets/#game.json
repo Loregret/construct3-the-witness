@@ -1112,16 +1112,64 @@
 										{
 											"id": "else",
 											"objectClass": "System",
+											"sid": 765277466294019
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 208055403352617,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"police_station\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 380808564592897,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 877765831351468,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"callFunction": "dialogic_play_dialog",
+													"sid": 543264880419283,
+													"parameters": [
+														"\"police_station\"",
+														"\"ceo\"",
+														"0"
+													]
+												}
+											],
+											"sid": 991683086754849
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
 											"sid": 677708874236730
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 181441793570487,
+											"sid": 938203287869722,
 											"parameters": {
 												"first-value": "LayoutName",
 												"comparison": 0,
-												"second-value": "\"police_station\""
+												"second-value": "\"police_station2\""
 											}
 										}
 									],
@@ -1142,10 +1190,10 @@
 												},
 												{
 													"callFunction": "dialogic_play_dialog",
-													"sid": 200345854015243,
+													"sid": 928920621270455,
 													"parameters": [
-														"\"police_station\"",
-														"\"ceo\"",
+														"\"police_station2\"",
+														"\"surprise0\"",
 														"0"
 													]
 												}
@@ -3347,12 +3395,11 @@
 											],
 											"actions": [
 												{
-													"id": "go-to-layout-by-name",
-													"objectClass": "System",
-													"sid": 938246910757486,
-													"parameters": {
-														"layout": "triggers_move2Layout.layoutName"
-													}
+													"callFunction": "go_to_another_scene_no_waiting",
+													"sid": 256593397326978,
+													"parameters": [
+														"triggers_move2Layout.layoutName"
+													]
 												}
 											],
 											"sid": 851904822594116
