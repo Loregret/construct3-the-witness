@@ -14845,16 +14845,77 @@
 										{
 											"id": "else",
 											"objectClass": "System",
+											"sid": 330471332921224
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 226426495912236,
+											"parameters": {
+												"variable": "eventName",
+												"comparison": 0,
+												"value": "\"opencar\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 582408269752840,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "triggers_dialogic",
+													"sid": 599667417726777,
+													"parameters": {
+														"unique-id": "3122"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "triggers_dialogic",
+													"sid": 696255051705197
+												}
+											],
+											"sid": 315616711471201
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "triggers_move2Layout",
+													"sid": 460901201025688,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 317139969044432
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
 											"sid": 722187849971381
 										},
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 126970722635384,
+											"sid": 814599626975665,
 											"parameters": {
 												"variable": "eventName",
 												"comparison": 0,
-												"value": "\"opencar\""
+												"value": "\"opencar2\""
 											}
 										}
 									],
@@ -14867,9 +14928,9 @@
 												{
 													"id": "pick-by-unique-id",
 													"objectClass": "triggers_dialogic",
-													"sid": 158357711588946,
+													"sid": 545602691782860,
 													"parameters": {
-														"unique-id": "3122"
+														"unique-id": "3562"
 													}
 												}
 											],

@@ -1,1714 +1,1756 @@
 {
-	"intro1": [
-		{
-			"id": "cut1",
-			"dialogs": [
-				{
-					"char": "",
-					"line": "The world is on a brink of collapse.",
-					"speed": 1.35,
-					"wait": 2.55
-				},
-				{
-					"char": "",
-					"line": "Once fertile, land became barren.",
-					"speed": 1.35,
-					"wait": 2.75
-				},
-				{
-					"char": "",
-					"line": "The sun, known as a beacon of life before, became a sign of terror.",
-					"speed": 2.35,
-					"wait": 3
-				},
-				{
-					"char": "",
-					"line": "The temperature is unbearable.",
-					"speed": 1.55,
-					"wait": 2
-				},
-				{
-					"char": "",
-					"line": "Living beings live in constant fear and seek shelter from a blazing light.",
-					"speed": 2.35,
-					"wait": 3.75
-				},
-				{
-					"char": "",
-					"line": "A few wealthy nations have used technology to save a portion of the planet and make it habitable once more. ",
-					"speed": 2.55,
-					"wait": 3
-				},
-				{
-					"char": "",
-					"line": "Those who have been unfortunate enough to remain on a dead wasteland are furious.",
-					"speed": 2.35,
-					"wait": 3
-				},
-				{
-					"char": "",
-					"line": "They invade and pillage settlements to stay alive for another day.",
-					"speed": 3.25,
-					"wait": 4.5
-				},
-				{
-					"char": "",
-					"line": "Desperation and madness follows them, slowly infecting society.",
-					"speed": 1.55,
-					"wait": 2.75
-				},
-				{
-					"char": "",
-					"line": "Yet amongst these exhausted, desperate people, hope remains.",
-					"speed": 1.55,
-					"wait": 2.75
-				},
-				{
-					"char": "",
-					"line": "The smartest people of Earth are trying to find a solution to end desertification and drought.",
-					"speed": 1.55,
-					"wait": 2.75
-				},
-				{
-					"char": "",
-					"line": "Settlements unite with each other for peace and prosperity.",
-					"speed": 1.55,
-					"wait": 2.75
-				},
-				{
-					"char": "",
-					"line": "And there's progress in saving the world.",
-					"speed": 1.55,
-					"wait": 2.75
-				},
-				{
-					"char": "",
-					"line": "I'm Robert. Employee of Ecology Restoration Program.",
-					"speed": 1.55,
-					"wait": 2.75
-				},
-				{
-					"char": "",
-					"line": "This story is how I'd witnessed the End.",
-					"speed": 1.55,
-					"wait": 2.75
-				}
-			]
-		}
-	],
-	"collection": [
-		{
-			"id": "anomaly",
-			"name": "The Anomaly",
-			"dialogs": [
-				{
-					"line": "Big funnel in the water.",
-					"wait": 1.3,
-					"speed": 0.6
-				},
-				{
-					"line": "There will be no river soon.",
-					"wait": 1.5
-				},
-				{
-					"line": "And without water, nearest ecosystem will die.",
-					"wait": 2.7
-				}
-			]
-		},
-		{
-			"id": "instruments",
-			"name": "Isaac's instruments",
-			"dialogs": [
-				{
-					"line": "Isaac has a nice collection of rust.",
-					"wait": 1.3,
-					"speed": 0.6
-				}
-			]
-		},
-		{
-			"id": "crystal",
-			"name": "*Unknown crystal*",
-			"dialogs": [
-				{
-					"line": "I've seen this crystals many times.",
-					"wait": 2
-				},
-				{
-					"line": "But I don't know anything about them.",
-					"wait": 2
-				}
-			]
-		}
-	],
-	"collection-talking": [
-		{
-			"id": "isaac1",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "Ah. Here you are."
-				},
-				{
-					"char": "player",
-					"line": "It's great to see you, Isaac."
-				},
-				{
-					"char": "npc",
-					"line": "We're running out of time, Robert."
-				},
-				{
-					"char": "player",
-					"line": "I'm listening."
-				},
-				{
-					"char": "npc",
-					"line": "Come here. It's in the water.",
-					"event": "IsaacRelocate"
-				},
-				{
-					"char": "player",
-					"line": "Okay."
-				}
-			]
-		},
-		{
-			"id": "isaac2",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "I've never seen anything like it."
-				},
-				{
-					"char": "npc",
-					"line": "I wish I could say the same."
-				},
-				{
-					"char": "player",
-					"line": "Why? Have you seen...?"
-				},
-				{
-					"char": "npc",
-					"line": "It happens in regions where people die from hunger and disease.",
-					"speed": 2,
-					"wait": 2.8
-				},
-				{
-					"char": "npc",
-					"line": "In this day and age fresh water is scarce resource.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "And this 'phenomenon' makes situation worse and worse.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "player",
-					"line": "So, you've been outside?",
-					"speed": 1,
-					"wait": 2
-				},
-				{
-					"char": "npc",
-					"line": "Yes. And it was eye-opening...",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "The good thing about a starving person is that he's not a hypocrite.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "You are aware of his main desire, which makes manipulating him very easy.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "That's how our politician deals with them.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "Give food supplies to the most cruel person of them all.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "Make people envy his power.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "And he will do anything to keep them under control.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "player",
-					"line": "I've heard about warlords."
-				},
-				{
-					"char": "player",
-					"line": "I know there's chaos outside."
-				},
-				{
-					"char": "player",
-					"line": "We are developing tools to help people out there.",
-					"speed": 1.7,
-					"wait": 2
-				},
-				{
-					"char": "player",
-					"line": "But we need to save and protect ourselves first.",
-					"speed": 1.25,
-					"wait": 1.9
-				},
-				{
-					"char": "player",
-					"line": "Or there will be no more us and no more them.",
-					"speed": 1.5,
-					"wait": 2.2
-				},
-				{
-					"char": "npc",
-					"line": "Death is all around us.",
-					"speed": 1.45,
-					"wait": 1.7
-				},
-				{
-					"char": "npc",
-					"line": "But don't you feel like it's wrong to have a feast when your neighbor is dying of malnutrition?",
-					"speed": 2,
-					"wait": 2.7
-				},
-				{
-					"char": "player",
-					"line": "Maybe. I don't know."
-				},
-				{
-					"char": "npc",
-					"line": "That's what we doing."
-				},
-				{
-					"char": "npc",
-					"line": "Worse, we have convinced ourselves that these people are terrible when, in fact, only we are...",
-					"speed": 2.7,
-					"wait": 2.75
-				},
-				{
-					"char": "player",
-					"line": "...",
-					"speed": 0.35,
-					"wait": 1
-				},
-				{
-					"char": "npc",
-					"line": "No empathy among us."
-				},
-				{
-					"char": "player",
-					"line": "Sir, you must be fun at parties.",
-					"speed": 1.5,
-					"wait": 1.5
-				},
-				{
-					"char": "npc",
-					"line": "No. I hate parties.",
-					"speed": 0.45,
-					"wait": 2.3,
-					"next-dialog": "isaac3"
-				}
-			]
-		},
-		{
-			"id": "isaac3",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "So, what can we do with this anomaly?",
-					"speed": 1.75,
-					"wait": 2.3
-				},
-				{
-					"char": "npc",
-					"line": "Well, that's only an assumption but I've found a pattern.",
-					"speed": 2,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "It happens quite often near the salt energy generators.",
-					"speed": 1.5,
-					"wait": 2.3
-				},
-				{
-					"char": "npc",
-					"line": "Probably, mineral projectors absorb water in gigantic quantities.",
-					"speed": 1.5,
-					"wait": 2.3
-				},
-				{
-					"char": "npc",
-					"line": "See those blue objects laying around?",
-					"speed": 1.5,
-					"wait": 2.3
-				},
-				{
-					"char": "player",
-					"line": "Yeah, they are, like, everywhere.."
-				},
-				{
-					"char": "npc",
-					"line": "These blue crystals are connected to our problem.",
-					"speed": 1.5,
-					"wait": 2.3
-				},
-				{
-					"char": "npc",
-					"line": "I'm studying them, and maybe we'll have answers soon.",
-					"speed": 1.5,
-					"wait": 2.3
-				},
-				{
-					"char": "player",
-					"line": "Are you sure in this hypothesis?"
-				},
-				{
-					"char": "npc",
-					"line": "Certainty is a luxury I don't have.",
-					"speed": 1.5,
-					"wait": 2.3
-				},
-				{
-					"char": "npc",
-					"line": "But we're lucky that there's one station nearby.",
-					"speed": 1.5,
-					"wait": 2.3
-				},
-				{
-					"char": "npc",
-					"line": "You should visit it today.",
-					"wait": 2.7,
-					"event": "carActivate"
-				},
-				{
-					"char": "npc",
-					"line": "Maybe you will learn something there.",
-					"wait": 2.7,
-					"next-dialog": "isaac4"
-				}
-			]
-		},
-		{
-			"id": "isaac4",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "I despise new technology."
-				},
-				{
-					"char": "player",
-					"line": "It violates all physical laws that humankind has discovered so far.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "player",
-					"line": "Science 2.0, they say."
-				},
-				{
-					"char": "player",
-					"line": "It reminds me of the Roman Empire, when it was divided in two.",
-					"speed": 2,
-					"wait": 2.7
-				},
-				{
-					"char": "npc",
-					"line": "The East and the West."
-				},
-				{
-					"char": "npc",
-					"line": "Division. It happens all the time."
-				},
-				{
-					"char": "player",
-					"line": "I never thought there would be so much sects in the science community.",
-					"speed": 1.7,
-					"wait": 2.7
-				},
-				{
-					"char": "player",
-					"line": "This division is only likely to be exacerbated further.",
-					"speed": 1.65,
-					"wait": 2.3
-				},
-				{
-					"char": "npc",
-					"line": "The truth is rarely pure and never simple.",
-					"speed": 1.7,
-					"wait": 2.2
-				},
-				{
-					"char": "npc",
-					"line": "Who knows which secrets will be found in the future?",
-					"speed": 1.5,
-					"wait": 1.7
-				},
-				{
-					"char": "npc",
-					"line": "And, surely, there will be new ways of looking at everything. Always.",
-					"speed": 1.4,
-					"wait": 2.5,
-					"next-dialog": "isaac5"
-				}
-			]
-		},
-		{
-			"id": "isaac5",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "You should go now."
-				}
-			]
-		}
-	],
-	"base-talking": [
-		{
-			"id": "fbi1",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "Is it a life-or-death situation or are you just plain dumb?",
-					"wait": 2.75,
-					"speed": 2
-				},
-				{
-					"char": "player",
-					"line": "Huh?",
-					"speed": 0.3
-				},
-				{
-					"char": "npc",
-					"line": "You're parked on the wrong side, pal.",
-					"speed": 1.6,
-					"wait": 1.8
-				},
-				{
-					"char": "npc",
-					"line": "You wouldn't do that if there wasn't something urgent. Would you?",
-					"wait": 2,
-					"speed": 1.7
-				},
-				{
-					"char": "player",
-					"line": "Nah, I just felt breaking the law.",
-					"speed": 1.15,
-					"wait": 1.65
-				},
-				{
-					"char": "player",
-					"line": "It often happens when I see bunch of coyotes on my parking lot.",
-					"speed": 1.6,
-					"wait": 2
-				},
-				{
-					"char": "npc",
-					"npc_uid": 602,
-					"line": "Coyotes? You spelled the word 'grizzlies' wrong.",
-					"speed": 1.45,
-					"wait": 2
-				},
-				{
-					"char": "player",
-					"line": "Being fat doesn't make you a grizzly.",
-					"speed": 1,
-					"wait": 1.9
-				},
-				{
-					"char": "npc",
-					"npc_uid": 602,
-					"line": "Look. Another guy with mentality of a criminal!",
-					"speed": 1.45,
-					"wait": 2
-				},
-				{
-					"char": "player",
-					"line": "I'm not the one who kills innocent and robs the poor in favor of establishment.",
-					"wait": 2.6,
-					"speed": 1.9
-				},
-				{
-					"char": "npc",
-					"npc_uid": 602,
-					"line": "You think you're tough.",
-					"wait": 1.45,
-					"speed": 0.75
-				},
-				{
-					"char": "npc",
-					"npc_uid": 602,
-					"line": "Look around you - if outsiders are comin', you will come begging us to help you!",
-					"wait": 2.5,
-					"speed": 1.86
-				},
-				{
-					"char": "player",
-					"line": "Oh, you protect no one but the big guys.",
-					"speed": 1.45,
-					"wait": 2
-				},
-				{
-					"char": "player",
-					"line": "We, ordinary people, have to defend ourselves alone.",
-					"speed": 1.8,
-					"wait": 2.2
-				},
-				{
-					"char": "player",
-					"line": "From all of you."
-				},
-				{
-					"char": "player",
-					"line": "The Bad guys... The 'Good' guys. You're all are wrongdoers.",
-					"speed": 1.45,
-					"wait": 2
-				},
-				{
-					"char": "npc",
-					"line": "Haha. Funny.",
-					"wait": 0.85,
-					"speed": 0.8
-				},
-				{
-					"char": "npc",
-					"line": "You won't be protected from anyone by the tiny weenie you're carrying, buddy.",
-					"wait": 2.5,
-					"speed": 2
-				},
-				{
-					"char": "player",
-					"line": "We'll see about that."
-				},
-				{
-					"char": "npc",
-					"npc_uid": 602,
-					"line": "Let's take a visit to his house someday. We'll see how tough he is.",
-					"wait": 2,
-					"speed": 1.5
-				},
-				{
-					"char": "npc",
-					"line": "He's not worth it, pal. Let the coward act as if he has guts.",
-					"speed": 2,
-					"wait": 2.6
-				},
-				{
-					"char": "npc",
-					"npc_uid": 602,
-					"line": "You are too soft, Markus."
-				},
-				{
-					"char": "npc",
-					"line": "Remember, pal. We're always watching.",
-					"speed": 1.9,
-					"wait": 1.75,
-					"next-dialog": "fbi2"
-				}
-			]
-		},
-		{
-			"id": "fbi2",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "Hey. Are you working here?"
-				},
-				{
-					"char": "player",
-					"line": "Just a visitor."
-				},
-				{
-					"char": "npc",
-					"line": "What's your name?"
-				},
-				{
-					"char": "player",
-					"line": "Joe."
-				},
-				{
-					"char": "npc",
-					"line": "And surname?"
-				},
-				{
-					"char": "player",
-					"line": "Average."
-				},
-				{
-					"char": "npc",
-					"line": "W-what?",
-					"npc_uid": 602,
-					"wait": 1
-				},
-				{
-					"char": "npc",
-					"line": "Bullshit!"
-				},
-				{
-					"char": "player",
-					"line": "Just kidding. It's Bloggs.",
-					"speed": 1.5,
-					"wait": 1.8
-				},
-				{
-					"char": "npc",
-					"line": "Don't play games with us!"
-				},
-				{
-					"char": "player",
-					"line": "Okay. Can I go now?"
-				},
-				{
-					"char": "npc",
-					"line": "Get lost."
-				}
-			]
-		},
-		{
-			"id": "base-chris-greet",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "Hi, Robert!",
-					"speed": 0.5,
-					"wait": 0.8
-				},
-				{
-					"char": "player",
-					"line": "Hello, Chris.",
-					"speed": 0.45,
-					"wait": 0.8
-				}
-			]
-		},
-		{
-			"id": "base-chris-talk",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Who are those guys outside?",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "npc",
-					"line": "Border Control and two FBI agents.",
-					"speed": 1,
-					"wait": 1.25
-				},
-				{
-					"char": "player",
-					"line": "What do they need?",
-					"speed": 0.8
-				},
-				{
-					"char": "npc",
-					"line": "They were digging information about locals.",
-					"speed": 1
-				},
-				{
-					"char": "player",
-					"line": "Someone had crossed the border?",
-					"speed": 0.9
-				},
-				{
-					"char": "npc",
-					"line": "I don't know, but they're furious and think that we were involved.",
-					"speed": 1,
-					"wait": 2.5
-				},
-				{
-					"char": "player",
-					"line": "What interesting times we live in.",
-					"speed": 1,
-					"wait": 1.6
-				},
-				{
-					"char": "npc",
-					"line": "You need to tell them everything you know. We all did.",
-					"speed": 1.25,
-					"wait": 2
-				},
-				{
-					"char": "player",
-					"line": "They wouldn't bear my intellect, Chris.",
-					"speed": 1.25,
-					"wait": 2,
-					"next-dialog": "base-chris-talk2"
-				}
-			]
-		},
-		{
-			"id": "base-chris-talk2",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Is Sarah in the office today?",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "npc",
-					"line": "Sarah the Witch?",
-					"speed": 0.5,
-					"wait": 2.4
-				},
-				{
-					"char": "player",
-					"line": "Yeah. But I don't use that nickname.",
-					"speed": 0.45,
-					"wait": 2
-				},
-				{
-					"char": "npc",
-					"line": "She's there.",
-					"speed": 0.5,
-					"wait": 1.8
-				},
-				{
-					"char": "npc",
-					"line": "You are the only person around here who actually likes her.",
-					"speed": 1.75,
-					"wait": 2.7
-				},
-				{
-					"char": "player",
-					"line": "I respect her. She has a good heart despite who she's pretending to be.",
-					"speed": 1.25,
-					"wait": 2.65
-				},
-				{
-					"char": "npc",
-					"line": "Oh, and I thought outsiders are delusional...",
-					"speed": 1.7,
-					"wait": 1.8
-				},
-				{
-					"char": "player",
-					"line": "...",
-					"speed": 0.45
-				}
-			]
-		},
-		{
-			"id": "sarah1",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Sarah."
-				},
-				{
-					"char": "npc",
-					"line": "You're late. Again."
-				},
-				{
-					"char": "player",
-					"line": "I know. Sorry."
-				},
-				{
-					"char": "npc",
-					"line": "Did you get what causes anomaly?"
-				},
-				{
-					"char": "player",
-					"line": "Isaac has a theory."
-				},
-				{
-					"char": "player",
-					"line": "According to him, salt generator is the problem.",
-					"speed": 1.95,
-					"wait": 2.88
-				},
-				{
-					"char": "npc",
-					"line": "Salt generator? Hmm..."
-				},
-				{
-					"char": "npc",
-					"line": "We have no one with expertise in salt technology."
-				},
-				{
-					"char": "player",
-					"line": "Do we need mr. moneybags' approval so much?"
-				},
-				{
-					"char": "player",
-					"line": "We can study new tech by ourselves."
-				},
-				{
-					"char": "npc",
-					"line": "Stop!"
-				},
-				{
-					"char": "npc",
-					"line": "You know where I stand on this topic!"
-				},
-				{
-					"char": "player",
-					"line": "Yeah. Whatever."
-				},
-				{
-					"char": "player",
-					"line": "I will investigate the station."
-				},
-				{
-					"char": "npc",
-					"line": "Don't rush as you usually do.",
-					"event": "carActivate"
-				}
-			]
-		}
-	],
-	"forest1": [
-		{
-			"id": "template",
-			"dialogs": [
-				{
-					"char": "CHAR",
-					"line": "LINE1",
-					"speed": 0.5,
-					"wait": 1,
-					"no-sound": true,
-					"sound": "soundname",
-					"end-sound": "soundname",
-					"typewriter": "none"
-				}
-			]
-		},
-		{
-			"id": "forest1-room",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Hello?"
-				}
-			]
-		},
-		{
-			"id": "start",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "I don't want to get lost in this forest.",
-					"wait": 1.3,
-					"speed": 0.6
-				},
-				{
-					"char": "player",
-					"line": "I should stick to the road.",
-					"wait": 1.5
-				}
-			]
-		},
-		{
-			"id": "tip1",
-			"dialogs": [
-				{
-					"char": "hint",
-					"line": "<color=lightgreen><i>F - turn on flashlight.</i></color>",
-					"wait": 2.5,
-					"no-sound": true,
-					"sound": "notification1",
-					"typewriter": "none"
-				}
-			]
-		},
-		{
-			"id": "tip-sneak",
-			"dialogs": [
-				{
-					"char": "hint",
-					"line": "Enemies can hear you. Press <color=lightgreen>SPACE</color> to move quietly.",
-					"wait": 3,
-					"no-sound": true,
-					"sound": "notification1",
-					"typewriter": "none"
-				}
-			]
-		},
-		{
-			"id": "flashlight_no_battery",
-			"dialogs": [
-				{
-					"line": "Flashlight's battery is gone."
-				},
-				{
-					"line": "I need a <color=blue>new one</blue>."
-				}
-			]
-		},
-		{
-			"id": "corpse_surprise1",
-			"dialogs": [
-				{
-					"line": "<color=red>Dead</color> corpse..."
-				},
-				{
-					"line": "Torso is covered in <color=red>blood</color> but I don't see any wounds.",
-					"wait": 1.65
-				}
-			]
-		},
-		{
-			"id": "stone_wonder1",
-			"name": "Stone pyramid",
-			"dialogs": [
-				{
-					"line": "Weird looking pyramid made from stone."
-				},
-				{
-					"line": "How can anyone construct this in forest?"
-				}
-			]
-		},
-		{
-			"id": "many_corpse1",
-			"dialogs": [
-				{
-					"line": "Several <color=red>dead bodies</color>.",
-					"talkie-player": "Shit.",
-					"wait": 1.85
-				},
-				{
-					"line": "All floor is covered in <color=red>blood</color>.",
-					"wait": 1.4
-				},
-				{
-					"line": "How did they die?",
-					"speed": 0.4,
-					"wait": 1.4
-				}
-			]
-		},
-		{
-			"id": "campfire1",
-			"dialogs": [
-				{
-					"line": "Campfire.",
-					"wait": 0.6
-				}
-			]
-		},
-		{
-			"id": "closed",
-			"dialogs": [
-				{
-					"line": "Locked.",
-					"speed": 0.35,
-					"sound": "door-blocked"
-				}
-			]
-		},
-		{
-			"id": "dead_chickens",
-			"dialogs": [
-				{
-					"line": "Dead chickens locked in a crate...",
-					"speed": 0.7
-				}
-			]
-		},
-		{
-			"id": "torch1",
-			"dialogs": [
-				{
-					"line": "Lit torch.",
-					"speed": 0.45
-				}
-			]
-		},
-		{
-			"id": "empty_box",
-			"dialogs": [
-				{
-					"line": "Empty crates."
-				}
-			]
-		},
-		{
-			"id": "food1",
-			"dialogs": [
-				{
-					"line": "It looks like there was a fight..."
-				}
-			]
-		}
-	],
-	"forest1-talking": [
-		{
-			"id": "enemy1",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Who are you?",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "npc",
-					"line": "Nobody.",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "npc",
-					"line": "And who are you, buddy?",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "player",
-					"line": "Just a guy passing nearby."
-				},
-				{
-					"char": "player",
-					"line": "I've seen nothing and never was here.",
-					"speed": 1.76,
-					"wait": 2.5
-				},
-				{
-					"char": "npc",
-					"line": "Good.",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "npc",
-					"line": "CATCH HIM!",
-					"sound": "man shout"
-				},
-				{
-					"char": "npc",
-					"line": "NOW!",
-					"event": "forest1-attack"
-				},
-				{
-					"char": "npc",
-					"line": "He will tell us everything.",
-					"speed": 0.45,
-					"wait": 1.35
-				}
-			]
-		}
-	],
-	"forest2": [
-		{
-			"id": "remove_door",
-			"name": "**Unlock the Door**",
-			"dialogs": [
-				{
-					"line": "",
-					"typewriter": "none",
-					"sound": "wood-hit",
-					"event": "forest2-door"
-				}
-			]
-		}
-	],
-	"forest2-talking": [
-		{
-			"id": "head",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "My head..."
-				},
-				{
-					"char": "player",
-					"line": "Where am I?"
-				}
-			]
-		}
-	],
-	"lab1": [
-		{
-			"id": "unlock_door",
-			"name": "**Unlock the Door**",
-			"dialogs": [
-				{
-					"line": "There's sticky note near the door button."
-				},
-				{
-					"line": "''Don't hydrate the crystals!''"
-				},
-				{
-					"line": "''They contain gigantic amount of water.''",
-					"wait": 2.5
-				},
-				{
-					"line": "''Last flood in the lab killed three men!''",
-					"wait": 2.5
-				},
-				{
-					"line": "Those crystals contain water, then?"
-				},
-				{
-					"line": "So water doesn't disappear, it's being absorbed by this crystals.",
-					"wait": 2.8,
-					"speed": 1.8
-				},
-				{
-					"line": "I need to tell this to Sarah."
-				},
-				{
-					"line": "If we can restore the water from crystals..."
-				},
-				{
-					"line": "Then we could possible bring life back to the wastelands."
-				},
-				{
-					"line": " ",
-					"event": "openlabdoor",
-					"typewriter": "none",
-					"sound": "soft-switch"
-				}
-			]
-		}
-	],
-	"lab1-talking": [
-		{
-			"id": "dyingsec",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "*Cough*"
-				},
-				{
-					"char": "player",
-					"line": "Shit. You're still alive."
-				},
-				{
-					"char": "npc",
-					"line": "Take me... to the hospital..."
-				},
-				{
-					"char": "player",
-					"line": "Impossible."
-				},
-				{
-					"char": "player",
-					"line": "This place is surrounded by raiders."
-				},
-				{
-					"char": "npc",
-					"line": "*Cough*"
-				},
-				{
-					"char": "npc",
-					"line": "They want to take over the city..."
-				},
-				{
-					"char": "npc",
-					"line": "We should inform...the goverment."
-				},
-				{
-					"char": "player",
-					"line": "Shouldn't Border Control handle this?"
-				},
-				{
-					"char": "npc",
-					"line": "Invaders. They have... a big army."
-				},
-				{
-					"char": "npc",
-					"line": "They were preparing... for war since..."
-				},
-				{
-					"char": "npc",
-					"line": "*Cough*"
-				},
-				{
-					"char": "player",
-					"line": "Since what?"
-				},
-				{
-					"char": "player",
-					"line": "...",
-					"wait": 0.6
-				},
-				{
-					"char": "player",
-					"line": "Damnit."
-				}
-			]
-		},
-		{
-			"id": "lab1door",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "The door had just closed!"
-				}
-			]
-		},
-		{
-			"id": "lab1",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "What the hell?"
-				},
-				{
-					"char": "player",
-					"line": "I should get out of here."
-				}
-			]
-		},
-		{
-			"id": "lab1-start",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "They are close..."
-				}
-			]
-		}
-	],
-	"base_after_raid": [
-		{
-			"id": "sarahD",
-			"name": "**Sarah**",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Oh, no."
-				},
-				{
-					"char": "player",
-					"line": "Sarah..."
-				},
-				{
-					"char": "player",
-					"line": "Why..."
-				},
-				{
-					"char": "player",
-					"line": "..."
-				},
-				{
-					"char": "player",
-					"line": "I need to inform authorities about crystals."
-				},
-				{
-					"char": "player",
-					"line": "She'd want that, for sure.",
-					"event": "baseraidcar"
-				}
-			]
-		}
-	],
-	"police_station": [
-		{
-			"id": "officialman1",
-			"dialogs": [
-				{
-					"char": "npc",
-					"line": "I was waiting for you, Robert.",
-					"speed": 1.8,
-					"wait": 2.6
-				},
-				{
-					"char": "player",
-					"line": "I thought you will run away."
-				},
-				{
-					"char": "npc",
-					"line": "Are you kidding, Robert?",
-					"wait": 2.0
-				},
-				{
-					"char": "npc",
-					"line": "I'll be with my city till the end.",
-					"wait": 2.6
-				},
-				{
-					"char": "player",
-					"line": "Okay."
-				},
-				{
-					"char": "npc",
-					"line": "Do you have any proof of the theory?",
-					"wait": 2.75
-				},
-				{
-					"char": "player",
-					"line": "I do."
-				},
-				{
-					"char": "player",
-					"line": "I have photos of the lab with all the blueprints.",
-					"speed": 1.8,
-					"wait": 2.75
-				},
-				{
-					"char": "npc",
-					"line": "Give it to me."
-				},
-				{
-					"char": "player",
-					"line": "What will you do with this?",
-					"wait": 2.75
-				},
-				{
-					"char": "npc",
-					"line": "Like we always do. Save the world.",
-					"wait": 2.45
-				},
-				{
-					"char": "player",
-					"line": "And what happens to our city?"
-				},
-				{
-					"char": "npc",
-					"line": "It'll be liberated."
-				},
-				{
-					"char": "npc",
-					"line": "Outsiders can't hold it so long."
-				},
-				{
-					"char": "npc",
-					"line": "And we know what they need."
-				},
-				{
-					"char": "npc",
-					"line": "We'll give them supplies and they go."
-				},
-				{
-					"char": "player",
-					"line": "They've killed a lot of people."
-				},
-				{
-					"char": "npc",
-					"line": "I know. Savages."
-				},
-				{
-					"char": "player",
-					"line": "What can we do?"
-				},
-				{
-					"char": "npc",
-					"line": "We will outgrow them."
-				},
-				{
-					"char": "npc",
-					"line": "We don't have numbers, but we have technology.",
-					"speed": 1.75,
-					"wait": 2.5
-				},
-				{
-					"char": "npc",
-					"line": "Believe me."
-				},
-				{
-					"char": "player",
-					"line": "I've lost many friends."
-				},
-				{
-					"char": "player",
-					"line": "I want retribution."
-				},
-				{
-					"char": "npc",
-					"line": "You need patience."
-				},
-				{
-					"char": "npc",
-					"line": "We will act when the time is right.",
-					"wait": 2.45
-				},
-				{
-					"char": "npc",
-					"line": "Meet me here at sunday.",
-					"wait": 2.7
-				},
-				{
-					"char": "player",
-					"line": "Will you still be here?"
-				},
-				{
-					"char": "npc",
-					"line": "Of course!"
-				},
-				{
-					"char": "player",
-					"line": "Okay.",
-					"event": "opencar"
-				}
-			]
-		},
-		{
-			"id": "ceo",
-			"dialogs": [
-				{
-					"line": "I have a meeting with CEO of Ecology Restoration Program.",
-					"wait": 2.85,
-					"speed": 1.8
-				},
-				{
-					"line": "I'll give him all the information I've collected.",
-					"wait": 2.85,
-					"speed": 1.8
-				}
-			]
-		}
-	],
-	"isaac_home": [
-		{
-			"id": "start1",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": ""
-				}
-			]
-		},
-		{
-			"id": "isaac1",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Four weeks under occupation."
-				},
-				{
-					"char": "player",
-					"line": "Electricity was out on seventh day."
-				},
-				{
-					"char": "player",
-					"line": "No food, no water."
-				},
-				{
-					"char": "player",
-					"line": "I never expected to see public executions."
-				},
-				{
-					"char": "player",
-					"line": "But it's a common thing now."
-				},
-				{
-					"char": "player",
-					"line": "Ruthless warlord."
-				},
-				{
-					"char": "player",
-					"line": "..."
-				}
-			]
-		}
-	],
-	"talking": [
-		{
-			"id": "madness",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "People are loosing their sanity...",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "player",
-					"line": "And I'm helpless to stop this.",
-					"speed": 0.5,
-					"wait": 1.25
-				}
-			]
-		},
-		{
-			"id": "righteousness",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "It's too late to save the planet.",
-					"speed": 0.45,
-					"wait": 1.35
-				},
-				{
-					"char": "player",
-					"line": "We were doomed long before the drought happened.",
-					"speed": 0.5,
-					"wait": 1.25
-				},
-				{
-					"char": "player",
-					"line": "I just hope humanity survives long enough...",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "You know, to leave this dead atmosphere.",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "And find a new home... to shatter it as previous one.",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "We are the destroyers of the world.",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "No one is coming to save us.",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "We are left alone here.",
-					"speed": 0.45
-				},
-				{
-					"char": "player",
-					"line": "Orphans of the Earth.",
-					"speed": 0.45
-				}
-			]
-		},
-		{
-			"id": "weapon1",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Do I have nerves to kill?",
-					"speed": 0.5,
-					"wait": 1
-				}
-			]
-		},
-		{
-			"id": "weapon2",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Deadly weapon.",
-					"speed": 0.5,
-					"wait": 1
-				}
-			]
-		},
-		{
-			"id": "weapon3",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Now I'm dangerous.",
-					"speed": 0.5,
-					"wait": 1
-				}
-			]
-		},
-		{
-			"id": "weapon4",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Kill or be killed.",
-					"speed": 0.5,
-					"wait": 1
-				}
-			]
-		},
-		{
-			"id": "weapon5",
-			"dialogs": [
-				{
-					"char": "player",
-					"line": "Survival of the fittest.",
-					"speed": 0.5,
-					"wait": 1
-				}
-			]
-		}
-	],
-	"misc": [
-		{
-			"id": "ui_examine",
-			"dialogs": [
-				{
-					"line": "**Examine**"
-				}
-			]
-		},
-		{
-			"id": "ui_pickup",
-			"dialogs": [
-				{
-					"line": "**Pick up**"
-				}
-			]
-		},
-		{
-			"id": "ui_talk",
-			"dialogs": [
-				{
-					"line": "**Talk**"
-				}
-			]
-		},
-		{
-			"id": "car-blocked",
-			"name": "My Car",
-			"dialogs": [
-				{
-					"line": "It's early to leave yet.",
-					"wait": 1.3,
-					"speed": 0.6
-				}
-			]
-		},
-		{
-			"id": "car-to-base",
-			"name": "My Car",
-			"dialogs": [
-				{
-					"line": "I'm ready to go.",
-					"wait": 1.3,
-					"speed": 0.6
-				},
-				{
-					"line": "Sarah is waiting for my report.",
-					"wait": 1.5,
-					"go-scene": "base",
-					"event": "playerHide",
-					"sound": "car door"
-				}
-			]
-		},
-		{
-			"id": "car-to-forest1",
-			"name": "My Car",
-			"dialogs": [
-				{
-					"line": "I'm ready to go.",
-					"wait": 1.3,
-					"speed": 0.6,
-					"go-scene": "forest1"
-				}
-			]
-		}
-	]
+"intro1": [
+	{
+		"id": "cut1",
+		"dialogs": [
+			{
+				"char": "",
+				"line": "The world is on a brink of collapse.",
+				"speed": 1.35,
+				"wait": 2.55
+			},
+			{
+				"char": "",
+				"line": "Once fertile, land became barren.",
+				"speed": 1.35,
+				"wait": 2.75
+			},
+			{
+				"char": "",
+				"line": "The sun, known as a beacon of life before, became a sign of terror.",
+				"speed": 2.35,
+				"wait": 3
+			},
+			{
+				"char": "",
+				"line": "The temperature is unbearable.",
+				"speed": 1.55,
+				"wait": 2
+			},
+			{
+				"char": "",
+				"line": "Living beings live in constant fear and seek shelter from a blazing light.",
+				"speed": 2.35,
+				"wait": 3.75
+			},
+			{
+				"char": "",
+				"line": "A few wealthy nations have used technology to save a portion of the planet and make it habitable once more. ",
+				"speed": 2.55,
+				"wait": 3
+			},
+			{
+				"char": "",
+				"line": "Those who have been unfortunate enough to remain on a dead wasteland are furious.",
+				"speed": 2.35,
+				"wait": 3
+			},
+			{
+				"char": "",
+				"line": "They invade and pillage settlements to stay alive for another day.",
+				"speed": 3.25,
+				"wait": 4.5
+			},
+			{
+				"char": "",
+				"line": "Desperation and madness follows them, slowly infecting society.",
+				"speed": 1.55,
+				"wait": 2.75
+			},
+			{
+				"char": "",
+				"line": "Yet amongst these exhausted, desperate people, hope remains.",
+				"speed": 1.55,
+				"wait": 2.75
+			},
+			{
+				"char": "",
+				"line": "The smartest people of Earth are trying to find a solution to end desertification and drought.",
+				"speed": 1.55,
+				"wait": 2.75
+			},
+			{
+				"char": "",
+				"line": "Settlements unite with each other for peace and prosperity.",
+				"speed": 1.55,
+				"wait": 2.75
+			},
+			{
+				"char": "",
+				"line": "And there's progress in saving the world.",
+				"speed": 1.55,
+				"wait": 2.75
+			},
+			{
+				"char": "",
+				"line": "I'm Robert. Employee of Ecology Restoration Program.",
+				"speed": 1.55,
+				"wait": 2.75
+			},
+			{
+				"char": "",
+				"line": "This story is how I'd witnessed the End.",
+				"speed": 1.55,
+				"wait": 2.75
+			}
+		]
+	}
+],
+"collection": [
+	{
+		"id": "anomaly",
+		"name": "The Anomaly",
+		"dialogs": [
+			{
+				"line": "Big funnel in the water.",
+				"wait": 1.3,
+				"speed": 0.6
+			},
+			{
+				"line": "There will be no river soon.",
+				"wait": 1.5
+			},
+			{
+				"line": "And without water, nearest ecosystem will die.",
+				"wait": 2.7
+			}
+		]
+	},
+	{
+		"id": "instruments",
+		"name": "Isaac's instruments",
+		"dialogs": [
+			{
+				"line": "Isaac has a nice collection of rust.",
+				"wait": 1.3,
+				"speed": 0.6
+			}
+		]
+	},
+	{
+		"id": "crystal",
+		"name": "*Unknown crystal*",
+		"dialogs": [
+			{
+				"line": "I've seen this crystals many times.",
+				"wait": 2
+			},
+			{
+				"line": "But I don't know anything about them.",
+				"wait": 2
+			}
+		]
+	}
+],
+"collection-talking": [
+	{
+		"id": "isaac1",
+		"dialogs": [
+			{
+				"char": "npc",
+				"line": "Ah. Here you are."
+			},
+			{
+				"char": "player",
+				"line": "It's great to see you, Isaac."
+			},
+			{
+				"char": "npc",
+				"line": "We're running out of time, Robert."
+			},
+			{
+				"char": "player",
+				"line": "I'm listening."
+			},
+			{
+				"char": "npc",
+				"line": "Come here. It's in the water.",
+				"event": "IsaacRelocate"
+			},
+			{
+				"char": "player",
+				"line": "Okay."
+			}
+		]
+	},
+	{
+		"id": "isaac2",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "I've never seen anything like it."
+			},
+			{
+				"char": "npc",
+				"line": "I wish I could say the same."
+			},
+			{
+				"char": "player",
+				"line": "Why? Have you seen...?"
+			},
+			{
+				"char": "npc",
+				"line": "It happens in regions where people die from hunger and disease.",
+				"speed": 2,
+				"wait": 2.8
+			},
+			{
+				"char": "npc",
+				"line": "In this day and age fresh water is scarce resource.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "And this 'phenomenon' makes situation worse and worse.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "player",
+				"line": "So, you've been outside?",
+				"speed": 1,
+				"wait": 2
+			},
+			{
+				"char": "npc",
+				"line": "Yes. And it was eye-opening...",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "The good thing about a starving person is that he's not a hypocrite.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "You are aware of his main desire, which makes manipulating him very easy.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "That's how our politician deals with them.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "Give food supplies to the most cruel person of them all.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "Make people envy his power.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "And he will do anything to keep them under control.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "player",
+				"line": "I've heard about warlords."
+			},
+			{
+				"char": "player",
+				"line": "I know there's chaos outside."
+			},
+			{
+				"char": "player",
+				"line": "We are developing tools to help people out there.",
+				"speed": 1.7,
+				"wait": 2
+			},
+			{
+				"char": "player",
+				"line": "But we need to save and protect ourselves first.",
+				"speed": 1.25,
+				"wait": 1.9
+			},
+			{
+				"char": "player",
+				"line": "Or there will be no more us and no more them.",
+				"speed": 1.5,
+				"wait": 2.2
+			},
+			{
+				"char": "npc",
+				"line": "Death is all around us.",
+				"speed": 1.45,
+				"wait": 1.7
+			},
+			{
+				"char": "npc",
+				"line": "But don't you feel like it's wrong to have a feast when your neighbor is dying of malnutrition?",
+				"speed": 2,
+				"wait": 2.7
+			},
+			{
+				"char": "player",
+				"line": "Maybe. I don't know."
+			},
+			{
+				"char": "npc",
+				"line": "That's what we doing."
+			},
+			{
+				"char": "npc",
+				"line": "Worse, we have convinced ourselves that these people are terrible when, in fact, only we are...",
+				"speed": 2.7,
+				"wait": 2.75
+			},
+			{
+				"char": "player",
+				"line": "...",
+				"speed": 0.35,
+				"wait": 1
+			},
+			{
+				"char": "npc",
+				"line": "No empathy among us."
+			},
+			{
+				"char": "player",
+				"line": "Sir, you must be fun at parties.",
+				"speed": 1.5,
+				"wait": 1.5
+			},
+			{
+				"char": "npc",
+				"line": "No. I hate parties.",
+				"speed": 0.45,
+				"wait": 2.3,
+				"next-dialog": "isaac3"
+			}
+		]
+	},
+	{
+		"id": "isaac3",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "So, what can we do with this anomaly?",
+				"speed": 1.75,
+				"wait": 2.3
+			},
+			{
+				"char": "npc",
+				"line": "Well, that's only an assumption but I've found a pattern.",
+				"speed": 2,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "It happens quite often near the salt energy generators.",
+				"speed": 1.5,
+				"wait": 2.3
+			},
+			{
+				"char": "npc",
+				"line": "Probably, mineral projectors absorb water in gigantic quantities.",
+				"speed": 1.5,
+				"wait": 2.3
+			},
+			{
+				"char": "npc",
+				"line": "See those blue objects laying around?",
+				"speed": 1.5,
+				"wait": 2.3
+			},
+			{
+				"char": "player",
+				"line": "Yeah, they are, like, everywhere.."
+			},
+			{
+				"char": "npc",
+				"line": "These blue crystals are connected to our problem.",
+				"speed": 1.5,
+				"wait": 2.3
+			},
+			{
+				"char": "npc",
+				"line": "I'm studying them, and maybe we'll have answers soon.",
+				"speed": 1.5,
+				"wait": 2.3
+			},
+			{
+				"char": "player",
+				"line": "Are you sure in this hypothesis?"
+			},
+			{
+				"char": "npc",
+				"line": "Certainty is a luxury I don't have.",
+				"speed": 1.5,
+				"wait": 2.3
+			},
+			{
+				"char": "npc",
+				"line": "But we're lucky that there's one station nearby.",
+				"speed": 1.5,
+				"wait": 2.3
+			},
+			{
+				"char": "npc",
+				"line": "You should visit it today.",
+				"wait": 2.7,
+				"event": "carActivate"
+			},
+			{
+				"char": "npc",
+				"line": "Maybe you will learn something there.",
+				"wait": 2.7,
+				"next-dialog": "isaac4"
+			}
+		]
+	},
+	{
+		"id": "isaac4",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "I despise new technology."
+			},
+			{
+				"char": "player",
+				"line": "It violates all physical laws that humankind has discovered so far.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "player",
+				"line": "Science 2.0, they say."
+			},
+			{
+				"char": "player",
+				"line": "It reminds me of the Roman Empire, when it was divided in two.",
+				"speed": 2,
+				"wait": 2.7
+			},
+			{
+				"char": "npc",
+				"line": "The East and the West."
+			},
+			{
+				"char": "npc",
+				"line": "Division. It happens all the time."
+			},
+			{
+				"char": "player",
+				"line": "I never thought there would be so much sects in the science community.",
+				"speed": 1.7,
+				"wait": 2.7
+			},
+			{
+				"char": "player",
+				"line": "This division is only likely to be exacerbated further.",
+				"speed": 1.65,
+				"wait": 2.3
+			},
+			{
+				"char": "npc",
+				"line": "The truth is rarely pure and never simple.",
+				"speed": 1.7,
+				"wait": 2.2
+			},
+			{
+				"char": "npc",
+				"line": "Who knows which secrets will be found in the future?",
+				"speed": 1.5,
+				"wait": 1.7
+			},
+			{
+				"char": "npc",
+				"line": "And, surely, there will be new ways of looking at everything. Always.",
+				"speed": 1.4,
+				"wait": 2.5,
+				"next-dialog": "isaac5"
+			}
+		]
+	},
+	{
+		"id": "isaac5",
+		"dialogs": [
+			{
+				"char": "npc",
+				"line": "You should go now."
+			}
+		]
+	}
+],
+"base-talking": [
+	{
+		"id": "fbi1",
+		"dialogs": [
+			{
+				"char": "npc",
+				"line": "Is it a life-or-death situation or are you just plain dumb?",
+				"wait": 2.75,
+				"speed": 2
+			},
+			{
+				"char": "player",
+				"line": "Huh?",
+				"speed": 0.3
+			},
+			{
+				"char": "npc",
+				"line": "You're parked on the wrong side, pal.",
+				"speed": 1.6,
+				"wait": 1.8
+			},
+			{
+				"char": "npc",
+				"line": "You wouldn't do that if there wasn't something urgent. Would you?",
+				"wait": 2,
+				"speed": 1.7
+			},
+			{
+				"char": "player",
+				"line": "Nah, I just felt breaking the law.",
+				"speed": 1.15,
+				"wait": 1.65
+			},
+			{
+				"char": "player",
+				"line": "It often happens when I see bunch of coyotes on my parking lot.",
+				"speed": 1.6,
+				"wait": 2
+			},
+			{
+				"char": "npc",
+				"npc_uid": 602,
+				"line": "Coyotes? You spelled the word 'grizzlies' wrong.",
+				"speed": 1.45,
+				"wait": 2
+			},
+			{
+				"char": "player",
+				"line": "Being fat doesn't make you a grizzly.",
+				"speed": 1,
+				"wait": 1.9
+			},
+			{
+				"char": "npc",
+				"npc_uid": 602,
+				"line": "Look. Another guy with mentality of a criminal!",
+				"speed": 1.45,
+				"wait": 2
+			},
+			{
+				"char": "player",
+				"line": "I'm not the one who kills innocent and robs the poor in favor of establishment.",
+				"wait": 2.6,
+				"speed": 1.9
+			},
+			{
+				"char": "npc",
+				"npc_uid": 602,
+				"line": "You think you're tough.",
+				"wait": 1.45,
+				"speed": 0.75
+			},
+			{
+				"char": "npc",
+				"npc_uid": 602,
+				"line": "Look around you - if outsiders are comin', you will come begging us to help you!",
+				"wait": 2.5,
+				"speed": 1.86
+			},
+			{
+				"char": "player",
+				"line": "Oh, you protect no one but the big guys.",
+				"speed": 1.45,
+				"wait": 2
+			},
+			{
+				"char": "player",
+				"line": "We, ordinary people, have to defend ourselves alone.",
+				"speed": 1.8,
+				"wait": 2.2
+			},
+			{
+				"char": "player",
+				"line": "From all of you."
+			},
+			{
+				"char": "player",
+				"line": "The Bad guys... The 'Good' guys. You're all are wrongdoers.",
+				"speed": 1.45,
+				"wait": 2
+			},
+			{
+				"char": "npc",
+				"line": "Haha. Funny.",
+				"wait": 0.85,
+				"speed": 0.8
+			},
+			{
+				"char": "npc",
+				"line": "You won't be protected from anyone by the tiny weenie you're carrying, buddy.",
+				"wait": 2.5,
+				"speed": 2
+			},
+			{
+				"char": "player",
+				"line": "We'll see about that."
+			},
+			{
+				"char": "npc",
+				"npc_uid": 602,
+				"line": "Let's take a visit to his house someday. We'll see how tough he is.",
+				"wait": 2,
+				"speed": 1.5
+			},
+			{
+				"char": "npc",
+				"line": "He's not worth it, pal. Let the coward act as if he has guts.",
+				"speed": 2,
+				"wait": 2.6
+			},
+			{
+				"char": "npc",
+				"npc_uid": 602,
+				"line": "You are too soft, Markus."
+			},
+			{
+				"char": "npc",
+				"line": "Remember, pal. We're always watching.",
+				"speed": 1.9,
+				"wait": 1.75,
+				"next-dialog": "fbi2"
+			}
+		]
+	},
+	{
+		"id": "fbi2",
+		"dialogs": [
+			{
+				"char": "npc",
+				"line": "Hey. Are you working here?"
+			},
+			{
+				"char": "player",
+				"line": "Just a visitor."
+			},
+			{
+				"char": "npc",
+				"line": "What's your name?"
+			},
+			{
+				"char": "player",
+				"line": "Joe."
+			},
+			{
+				"char": "npc",
+				"line": "And surname?"
+			},
+			{
+				"char": "player",
+				"line": "Average."
+			},
+			{
+				"char": "npc",
+				"line": "W-what?",
+				"npc_uid": 602,
+				"wait": 1
+			},
+			{
+				"char": "npc",
+				"line": "Bullshit!"
+			},
+			{
+				"char": "player",
+				"line": "Just kidding. It's Bloggs.",
+				"speed": 1.5,
+				"wait": 1.8
+			},
+			{
+				"char": "npc",
+				"line": "Don't play games with us!"
+			},
+			{
+				"char": "player",
+				"line": "Okay. Can I go now?"
+			},
+			{
+				"char": "npc",
+				"line": "Get lost."
+			}
+		]
+	},
+	{
+		"id": "base-chris-greet",
+		"dialogs": [
+			{
+				"char": "npc",
+				"line": "Hi, Robert!",
+				"speed": 0.5,
+				"wait": 0.8
+			},
+			{
+				"char": "player",
+				"line": "Hello, Chris.",
+				"speed": 0.45,
+				"wait": 0.8
+			}
+		]
+	},
+	{
+		"id": "base-chris-talk",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Who are those guys outside?",
+				"speed": 0.45,
+				"wait": 1.35
+			},
+			{
+				"char": "npc",
+				"line": "Border Control and two FBI agents.",
+				"speed": 1,
+				"wait": 1.25
+			},
+			{
+				"char": "player",
+				"line": "What do they need?",
+				"speed": 0.8
+			},
+			{
+				"char": "npc",
+				"line": "They were digging information about locals.",
+				"speed": 1
+			},
+			{
+				"char": "player",
+				"line": "Someone had crossed the border?",
+				"speed": 0.9
+			},
+			{
+				"char": "npc",
+				"line": "I don't know, but they're furious and think that we were involved.",
+				"speed": 1,
+				"wait": 2.5
+			},
+			{
+				"char": "player",
+				"line": "What interesting times we live in.",
+				"speed": 1,
+				"wait": 1.6
+			},
+			{
+				"char": "npc",
+				"line": "You need to tell them everything you know. We all did.",
+				"speed": 1.25,
+				"wait": 2
+			},
+			{
+				"char": "player",
+				"line": "They wouldn't bear my intellect, Chris.",
+				"speed": 1.25,
+				"wait": 2,
+				"next-dialog": "base-chris-talk2"
+			}
+		]
+	},
+	{
+		"id": "base-chris-talk2",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Is Sarah in the office today?",
+				"speed": 0.45,
+				"wait": 1.35
+			},
+			{
+				"char": "npc",
+				"line": "Sarah the Witch?",
+				"speed": 0.5,
+				"wait": 2.4
+			},
+			{
+				"char": "player",
+				"line": "Yeah. But I don't use that nickname.",
+				"speed": 0.45,
+				"wait": 2
+			},
+			{
+				"char": "npc",
+				"line": "She's there.",
+				"speed": 0.5,
+				"wait": 1.8
+			},
+			{
+				"char": "npc",
+				"line": "You are the only person around here who actually likes her.",
+				"speed": 1.75,
+				"wait": 2.7
+			},
+			{
+				"char": "player",
+				"line": "I respect her. She has a good heart despite who she's pretending to be.",
+				"speed": 1.25,
+				"wait": 2.65
+			},
+			{
+				"char": "npc",
+				"line": "Oh, and I thought outsiders are delusional...",
+				"speed": 1.7,
+				"wait": 1.8
+			},
+			{
+				"char": "player",
+				"line": "...",
+				"speed": 0.45
+			}
+		]
+	},
+	{
+		"id": "sarah1",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Sarah."
+			},
+			{
+				"char": "npc",
+				"line": "You're late. Again."
+			},
+			{
+				"char": "player",
+				"line": "I know. Sorry."
+			},
+			{
+				"char": "npc",
+				"line": "Did you get what causes anomaly?"
+			},
+			{
+				"char": "player",
+				"line": "Isaac has a theory."
+			},
+			{
+				"char": "player",
+				"line": "According to him, salt generator is the problem.",
+				"speed": 1.95,
+				"wait": 2.88
+			},
+			{
+				"char": "npc",
+				"line": "Salt generator? Hmm..."
+			},
+			{
+				"char": "npc",
+				"line": "We have no one with expertise in salt technology."
+			},
+			{
+				"char": "player",
+				"line": "Do we need mr. moneybags' approval so much?"
+			},
+			{
+				"char": "player",
+				"line": "We can study new tech by ourselves."
+			},
+			{
+				"char": "npc",
+				"line": "Stop!"
+			},
+			{
+				"char": "npc",
+				"line": "You know where I stand on this topic!"
+			},
+			{
+				"char": "player",
+				"line": "Yeah. Whatever."
+			},
+			{
+				"char": "player",
+				"line": "I will investigate the station."
+			},
+			{
+				"char": "npc",
+				"line": "Don't rush as you usually do.",
+				"event": "carActivate"
+			}
+		]
+	}
+],
+"forest1": [
+	{
+		"id": "template",
+		"dialogs": [
+			{
+				"char": "CHAR",
+				"line": "LINE1",
+				"speed": 0.5,
+				"wait": 1,
+				"no-sound": true,
+				"sound": "soundname",
+				"end-sound": "soundname",
+				"typewriter": "none"
+			}
+		]
+	},
+	{
+		"id": "forest1-room",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Hello?"
+			}
+		]
+	},
+	{
+		"id": "start",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "I don't want to get lost in this forest.",
+				"wait": 1.3,
+				"speed": 0.6
+			},
+			{
+				"char": "player",
+				"line": "I should stick to the road.",
+				"wait": 1.5
+			}
+		]
+	},
+	{
+		"id": "tip1",
+		"dialogs": [
+			{
+				"char": "hint",
+				"line": "<color=lightgreen><i>F - turn on flashlight.</i></color>",
+				"wait": 2.5,
+				"no-sound": true,
+				"sound": "notification1",
+				"typewriter": "none"
+			}
+		]
+	},
+	{
+		"id": "tip-sneak",
+		"dialogs": [
+			{
+				"char": "hint",
+				"line": "Enemies can hear you. Press <color=lightgreen>SPACE</color> to move quietly.",
+				"wait": 3,
+				"no-sound": true,
+				"sound": "notification1",
+				"typewriter": "none"
+			}
+		]
+	},
+	{
+		"id": "flashlight_no_battery",
+		"dialogs": [
+			{
+				"line": "Flashlight's battery is gone."
+			},
+			{
+				"line": "I need a <color=blue>new one</blue>."
+			}
+		]
+	},
+	{
+		"id": "corpse_surprise1",
+		"dialogs": [
+			{
+				"line": "<color=red>Dead</color> corpse..."
+			},
+			{
+				"line": "Torso is covered in <color=red>blood</color> but I don't see any wounds.",
+				"wait": 1.65
+			}
+		]
+	},
+	{
+		"id": "stone_wonder1",
+		"name": "Stone pyramid",
+		"dialogs": [
+			{
+				"line": "Weird looking pyramid made from stone."
+			},
+			{
+				"line": "How can anyone construct this in forest?"
+			}
+		]
+	},
+	{
+		"id": "many_corpse1",
+		"dialogs": [
+			{
+				"line": "Several <color=red>dead bodies</color>.",
+				"talkie-player": "Shit.",
+				"wait": 1.85
+			},
+			{
+				"line": "All floor is covered in <color=red>blood</color>.",
+				"wait": 1.4
+			},
+			{
+				"line": "How did they die?",
+				"speed": 0.4,
+				"wait": 1.4
+			}
+		]
+	},
+	{
+		"id": "campfire1",
+		"dialogs": [
+			{
+				"line": "Campfire.",
+				"wait": 0.6
+			}
+		]
+	},
+	{
+		"id": "closed",
+		"dialogs": [
+			{
+				"line": "Locked.",
+				"speed": 0.35,
+				"sound": "door-blocked"
+			}
+		]
+	},
+	{
+		"id": "dead_chickens",
+		"dialogs": [
+			{
+				"line": "Dead chickens locked in a crate...",
+				"speed": 0.7
+			}
+		]
+	},
+	{
+		"id": "torch1",
+		"dialogs": [
+			{
+				"line": "Lit torch.",
+				"speed": 0.45
+			}
+		]
+	},
+	{
+		"id": "empty_box",
+		"dialogs": [
+			{
+				"line": "Empty crates."
+			}
+		]
+	},
+	{
+		"id": "food1",
+		"dialogs": [
+			{
+				"line": "It looks like there was a fight..."
+			}
+		]
+	}
+],
+"forest1-talking": [
+	{
+		"id": "enemy1",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Who are you?",
+				"speed": 0.45,
+				"wait": 1.35
+			},
+			{
+				"char": "npc",
+				"line": "Nobody.",
+				"speed": 0.45,
+				"wait": 1.35
+			},
+			{
+				"char": "npc",
+				"line": "And who are you, buddy?",
+				"speed": 0.45,
+				"wait": 1.35
+			},
+			{
+				"char": "player",
+				"line": "Just a guy passing nearby."
+			},
+			{
+				"char": "player",
+				"line": "I've seen nothing and never was here.",
+				"speed": 1.76,
+				"wait": 2.5
+			},
+			{
+				"char": "npc",
+				"line": "Good.",
+				"speed": 0.45,
+				"wait": 1.35
+			},
+			{
+				"char": "npc",
+				"line": "CATCH HIM!",
+				"sound": "man shout"
+			},
+			{
+				"char": "npc",
+				"line": "NOW!",
+				"event": "forest1-attack"
+			},
+			{
+				"char": "npc",
+				"line": "He will tell us everything.",
+				"speed": 0.45,
+				"wait": 1.35
+			}
+		]
+	}
+],
+"forest2": [
+	{
+		"id": "remove_door",
+		"name": "**Unlock the Door**",
+		"dialogs": [
+			{
+				"line": "",
+				"typewriter": "none",
+				"sound": "wood-hit",
+				"event": "forest2-door"
+			}
+		]
+	}
+],
+"forest2-talking": [
+	{
+		"id": "head",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "My head..."
+			},
+			{
+				"char": "player",
+				"line": "Where am I?"
+			}
+		]
+	}
+],
+"lab1": [
+	{
+		"id": "unlock_door",
+		"name": "**Unlock the Door**",
+		"dialogs": [
+			{
+				"line": "There's sticky note near the door button."
+			},
+			{
+				"line": "''Don't hydrate the crystals!''"
+			},
+			{
+				"line": "''They contain gigantic amount of water.''",
+				"wait": 2.5
+			},
+			{
+				"line": "''Last flood in the lab killed three men!''",
+				"wait": 2.5
+			},
+			{
+				"line": "Those crystals contain water, then?"
+			},
+			{
+				"line": "So water doesn't disappear, it's being absorbed by this crystals.",
+				"wait": 2.8,
+				"speed": 1.8
+			},
+			{
+				"line": "I need to tell this to Sarah."
+			},
+			{
+				"line": "If we can restore the water from crystals..."
+			},
+			{
+				"line": "Then we could possible bring life back to the wastelands."
+			},
+			{
+				"line": " ",
+				"event": "openlabdoor",
+				"typewriter": "none",
+				"sound": "soft-switch"
+			}
+		]
+	}
+],
+"lab1-talking": [
+	{
+		"id": "dyingsec",
+		"dialogs": [
+			{
+				"char": "npc",
+				"line": "*Cough*"
+			},
+			{
+				"char": "player",
+				"line": "Shit. You're still alive."
+			},
+			{
+				"char": "npc",
+				"line": "Take me... to the hospital..."
+			},
+			{
+				"char": "player",
+				"line": "Impossible."
+			},
+			{
+				"char": "player",
+				"line": "This place is surrounded by raiders."
+			},
+			{
+				"char": "npc",
+				"line": "*Cough*"
+			},
+			{
+				"char": "npc",
+				"line": "They want to take over the city..."
+			},
+			{
+				"char": "npc",
+				"line": "We should inform...the goverment."
+			},
+			{
+				"char": "player",
+				"line": "Shouldn't Border Control handle this?"
+			},
+			{
+				"char": "npc",
+				"line": "Invaders. They have... a big army."
+			},
+			{
+				"char": "npc",
+				"line": "They were preparing... for war since..."
+			},
+			{
+				"char": "npc",
+				"line": "*Cough*"
+			},
+			{
+				"char": "player",
+				"line": "Since what?"
+			},
+			{
+				"char": "player",
+				"line": "...",
+				"wait": 0.6
+			},
+			{
+				"char": "player",
+				"line": "Damnit."
+			}
+		]
+	},
+	{
+		"id": "lab1door",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "The door had just closed!"
+			}
+		]
+	},
+	{
+		"id": "lab1",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "What the hell?"
+			},
+			{
+				"char": "player",
+				"line": "I should get out of here."
+			}
+		]
+	},
+	{
+		"id": "lab1-start",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "They are close..."
+			}
+		]
+	}
+],
+"base_after_raid": [
+	{
+		"id": "sarahD",
+		"name": "**Sarah**",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Oh, no."
+			},
+			{
+				"char": "player",
+				"line": "Sarah..."
+			},
+			{
+				"char": "player",
+				"line": "Why..."
+			},
+			{
+				"char": "player",
+				"line": "..."
+			},
+			{
+				"char": "player",
+				"line": "I need to inform authorities about crystals."
+			},
+			{
+				"char": "player",
+				"line": "She'd want that, for sure.",
+				"event": "baseraidcar"
+			}
+		]
+	}
+],
+"police_station": [
+	{
+		"id": "officialman1",
+		"dialogs": [
+			{
+				"char": "npc",
+				"line": "I was waiting for you, Robert.",
+				"speed": 1.8,
+				"wait": 2.6
+			},
+			{
+				"char": "player",
+				"line": "I thought you will run away."
+			},
+			{
+				"char": "npc",
+				"line": "Are you kidding, Robert?",
+				"wait": 2.0
+			},
+			{
+				"char": "npc",
+				"line": "I'll be with my city till the end.",
+				"wait": 2.6
+			},
+			{
+				"char": "player",
+				"line": "Okay."
+			},
+			{
+				"char": "npc",
+				"line": "Do you have any proof of the theory?",
+				"wait": 2.75
+			},
+			{
+				"char": "player",
+				"line": "I do."
+			},
+			{
+				"char": "player",
+				"line": "I have photos of the lab with all the blueprints.",
+				"speed": 1.8,
+				"wait": 2.75
+			},
+			{
+				"char": "npc",
+				"line": "Give it to me."
+			},
+			{
+				"char": "player",
+				"line": "What will you do with this?",
+				"wait": 2.75
+			},
+			{
+				"char": "npc",
+				"line": "Like we always do. Save the world.",
+				"wait": 2.45
+			},
+			{
+				"char": "player",
+				"line": "And what happens to our city?"
+			},
+			{
+				"char": "npc",
+				"line": "It'll be liberated."
+			},
+			{
+				"char": "npc",
+				"line": "Outsiders can't hold it so long."
+			},
+			{
+				"char": "npc",
+				"line": "And we know what they need."
+			},
+			{
+				"char": "npc",
+				"line": "We'll give them supplies and they go."
+			},
+			{
+				"char": "player",
+				"line": "They've killed a lot of people."
+			},
+			{
+				"char": "npc",
+				"line": "I know. Savages."
+			},
+			{
+				"char": "player",
+				"line": "What can we do?"
+			},
+			{
+				"char": "npc",
+				"line": "We will outgrow them."
+			},
+			{
+				"char": "npc",
+				"line": "We don't have numbers, but we have technology.",
+				"speed": 1.75,
+				"wait": 2.5
+			},
+			{
+				"char": "npc",
+				"line": "Believe me."
+			},
+			{
+				"char": "player",
+				"line": "I've lost many friends."
+			},
+			{
+				"char": "player",
+				"line": "I want retribution."
+			},
+			{
+				"char": "npc",
+				"line": "You need patience."
+			},
+			{
+				"char": "npc",
+				"line": "We will act when the time is right.",
+				"wait": 2.45
+			},
+			{
+				"char": "npc",
+				"line": "Meet me here at sunday.",
+				"wait": 2.7
+			},
+			{
+				"char": "player",
+				"line": "Will you still be here?"
+			},
+			{
+				"char": "npc",
+				"line": "Of course!"
+			},
+			{
+				"char": "player",
+				"line": "Okay.",
+				"event": "opencar"
+			}
+		]
+	},
+	{
+		"id": "ceo",
+		"dialogs": [
+			{
+				"line": "I have a meeting with CEO of Ecology Restoration Program.",
+				"wait": 2.85,
+				"speed": 1.8
+			},
+			{
+				"line": "I'll give him all the information I've collected.",
+				"wait": 2.85,
+				"speed": 1.8
+			}
+		]
+	}
+],
+"police_station2": [
+	{
+		"id": "surprise1",
+		"dialogs": [
+			{
+				"line": "No electricity.",
+				"speed": 0.86,
+				"wait": 2.3
+			},
+			{
+				"line": "Outsiders took care of it.",
+				"speed": 0.86,
+				"wait": 1.4
+			}			
+		]
+	},
+	{
+		"id": "surprise2",
+		"dialogs": [
+			{
+				"line": "This building is empty.",
+				"speed": 1.5,
+				"wait": 2.65
+			},
+			{
+				"line": "They were never going to help this city.",
+				"speed": 1.5,
+				"wait": 2.65
+			},
+			{
+				"line": "And they took all the photos and blueprints.",
+				"speed": 1.5,
+				"wait": 2.65
+			},
+			{
+				"line": "Cowards.",
+				"wait": 2.0,
+				"event": "opencar2"
+			}
+		]
+	}
+],
+"isaac_home": [
+	{
+		"id": "start1",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": ""
+			}
+		]
+	},
+	{
+		"id": "isaac1",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Four weeks under occupation."
+			},
+			{
+				"char": "player",
+				"line": "Electricity was out on seventh day."
+			},
+			{
+				"char": "player",
+				"line": "No food, no water."
+			},
+			{
+				"char": "player",
+				"line": "I never expected to see public executions."
+			},
+			{
+				"char": "player",
+				"line": "But it's a common thing now."
+			},
+			{
+				"char": "player",
+				"line": "Ruthless warlord."
+			},
+			{
+				"char": "player",
+				"line": "..."
+			}
+		]
+	}
+],
+"talking": [
+	{
+		"id": "madness",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "People are loosing their sanity...",
+				"speed": 0.45,
+				"wait": 1.35
+			},
+			{
+				"char": "player",
+				"line": "And I'm helpless to stop this.",
+				"speed": 0.5,
+				"wait": 1.25
+			}
+		]
+	},
+	{
+		"id": "righteousness",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "It's too late to save the planet.",
+				"speed": 0.45,
+				"wait": 1.35
+			},
+			{
+				"char": "player",
+				"line": "We were doomed long before the drought happened.",
+				"speed": 0.5,
+				"wait": 1.25
+			},
+			{
+				"char": "player",
+				"line": "I just hope humanity survives long enough...",
+				"speed": 0.45
+			},
+			{
+				"char": "player",
+				"line": "You know, to leave this dead atmosphere.",
+				"speed": 0.45
+			},
+			{
+				"char": "player",
+				"line": "And find a new home... to shatter it as previous one.",
+				"speed": 0.45
+			},
+			{
+				"char": "player",
+				"line": "We are the destroyers of the world.",
+				"speed": 0.45
+			},
+			{
+				"char": "player",
+				"line": "No one is coming to save us.",
+				"speed": 0.45
+			},
+			{
+				"char": "player",
+				"line": "We are left alone here.",
+				"speed": 0.45
+			},
+			{
+				"char": "player",
+				"line": "Orphans of the Earth.",
+				"speed": 0.45
+			}
+		]
+	},
+	{
+		"id": "weapon1",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Do I have nerves to kill?",
+				"speed": 0.5,
+				"wait": 1
+			}
+		]
+	},
+	{
+		"id": "weapon2",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Deadly weapon.",
+				"speed": 0.5,
+				"wait": 1
+			}
+		]
+	},
+	{
+		"id": "weapon3",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Now I'm dangerous.",
+				"speed": 0.5,
+				"wait": 1
+			}
+		]
+	},
+	{
+		"id": "weapon4",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Kill or be killed.",
+				"speed": 0.5,
+				"wait": 1
+			}
+		]
+	},
+	{
+		"id": "weapon5",
+		"dialogs": [
+			{
+				"char": "player",
+				"line": "Survival of the fittest.",
+				"speed": 0.5,
+				"wait": 1
+			}
+		]
+	}
+],
+"misc": [
+	{
+		"id": "ui_examine",
+		"dialogs": [
+			{
+				"line": "**Examine**"
+			}
+		]
+	},
+	{
+		"id": "ui_pickup",
+		"dialogs": [
+			{
+				"line": "**Pick up**"
+			}
+		]
+	},
+	{
+		"id": "ui_talk",
+		"dialogs": [
+			{
+				"line": "**Talk**"
+			}
+		]
+	},
+	{
+		"id": "car-blocked",
+		"name": "My Car",
+		"dialogs": [
+			{
+				"line": "It's early to leave yet.",
+				"wait": 1.3,
+				"speed": 0.6
+			}
+		]
+	},
+	{
+		"id": "car-to-base",
+		"name": "My Car",
+		"dialogs": [
+			{
+				"line": "I'm ready to go.",
+				"wait": 1.3,
+				"speed": 0.6
+			},
+			{
+				"line": "Sarah is waiting for my report.",
+				"wait": 1.5,
+				"go-scene": "base",
+				"event": "playerHide",
+				"sound": "car door"
+			}
+		]
+	},
+	{
+		"id": "car-to-forest1",
+		"name": "My Car",
+		"dialogs": [
+			{
+				"line": "I'm ready to go.",
+				"wait": 1.3,
+				"speed": 0.6,
+				"go-scene": "forest1"
+			}
+		]
+	}
+]
 }
