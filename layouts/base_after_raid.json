@@ -3531,6 +3531,193 @@
 					}
 				},
 				{
+					"type": "decal_blood",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 3548,
+					"instanceVariables": {
+						"is_decor": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0.15,
+								"wait-time": 120,
+								"fade-out-time": 5,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 4156.892367883753,
+						"y": 2416.9015763930774,
+						"width": 28.901139183290766,
+						"height": 28.41128936662482,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.5215686274509804,
+							0.5215686274509804,
+							0.5215686274509804,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "concrete",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 3549,
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 4150.96872866007,
+						"y": 2467.1293796348195,
+						"width": 11.85680129515913,
+						"height": 15.416423704127737,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.6941176470588235,
+							0.48627450980392156,
+							0.48627450980392156,
+							0.7
+						],
+						"angle": 0.17453292519943275,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "concrete",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 3550,
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 4163.527071726367,
+						"y": 2469.6485747548963,
+						"width": 11.85680129515913,
+						"height": 17.308765397391156,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.611764705882353,
+							0.42745098039215684,
+							0.42745098039215684,
+							0.7
+						],
+						"angle": 5.846852994181004,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "concrete",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 3551,
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 4081.7378195383976,
+						"y": 2437.79745619259,
+						"width": 11.85680129515913,
+						"height": 15.416423704127737,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.6941176470588235,
+							0.48627450980392156,
+							0.48627450980392156,
+							0.7
+						],
+						"angle": 5.615829845881654,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "concrete",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 3552,
+					"instanceVariables": {
+						"sound_name": "walk stone"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 4168.611945932592,
+						"y": 2463.8744723127256,
+						"width": 11.85680129515913,
+						"height": 17.308765397391156,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.5215686274509804,
+							0.4196078431372549,
+							0.4196078431372549,
+							0.7
+						],
+						"angle": 4.625122517784973,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "npc",
 					"properties": {
 						"initially-visible": true,
