@@ -1186,38 +1186,43 @@
 		"name": "**Unlock the Door**",
 		"dialogs": [
 			{
-				"line": "There's sticky note near the door button."
+				"line": "There's <color=blue>documents and blueprints</color> hanging on the wall near the door.",
+				"wait": 2.7,
+				"speed": 1.8
 			},
 			{
-				"line": "''Don't hydrate the crystals!''"
+				"line": "I took pictures with my smartphone."
 			},
 			{
-				"line": "''They contain gigantic amount of water.''",
-				"wait": 2.5
-			},
-			{
-				"line": "''Last flood in the lab killed three men!''",
-				"wait": 2.5
-			},
-			{
-				"line": "Those crystals contain water, then?"
-			},
-			{
-				"line": "So water doesn't disappear, it's being absorbed by this crystals.",
+				"line": "This <color=blue>documents</color> tells that those crystals are key to restoring the environment.",
 				"wait": 2.8,
 				"speed": 1.8
 			},
 			{
-				"line": "I need to tell this to Sarah."
+				"line": "Chemicals inside them can help to ease the <color=orange>climate damage</color> and bring back <color=lightblue>fresh water.",
+				"wait": 3.25,
+				"speed": 2.0
 			},
 			{
-				"line": "If we can restore the water from crystals..."
+				"line": "This knowledge could have<color=lightgreen> a big impact on people's lives.",
+				"wait": 2.8,
+				"speed": 1.8
 			},
 			{
-				"line": "Then we could possible bring life back to the wastelands."
+				"line": "If we are able to repair the environmental damage we have caused,",
+				"wait": 2.8,
+				"speed": 1.8
 			},
 			{
-				"line": " ",
+				"line": "Then we could <color=lightgreen>bring life</color> back to the wastelands...",
+				"wait": 2.3,
+				"speed": 1.6
+			},
+			{
+				"line": "Sarah will be pleased."
+			},
+			{
+				"line": "*beep*",
 				"event": "openlabdoor",
 				"typewriter": "none",
 				"sound": "soft-switch"
@@ -1543,7 +1548,7 @@
 				"wait": 2.3
 			},
 			{
-				"line": "Outsiders took care of it.",
+				"line": "Outsiders took care of it recently.",
 				"speed": 0.86,
 				"wait": 1.4
 			}			
@@ -1553,17 +1558,17 @@
 		"id": "surprise2",
 		"dialogs": [
 			{
-				"line": "Building is empty.",
+				"line": "The building is empty...",
 				"speed": 1.5,
 				"wait": 2.65
 			},
 			{
-				"line": "They were never going to help this city.",
+				"line": "They were never going to help the city.",
 				"speed": 1.5,
 				"wait": 2.65
 			},
 			{
-				"line": "And they fled with all the photos and blueprints.",
+				"line": "They fled with all the photos and blueprints.",
 				"speed": 1.5,
 				"wait": 2.65
 			},
@@ -1573,7 +1578,23 @@
 				"event": "opencar2"
 			},
 			{
-				"line": "Lied to me, left city to burn.",
+				"line": "Lied to me, left city to die.",
+				"wait": 2.0
+			},
+			{
+				"line": "I'm such a fool.",
+				"wait": 2.0
+			},
+			{
+				"line": "What was I even thinking?",
+				"wait": 2.0
+			},
+			{
+				"line": "I need to speak with Isaac.",
+				"wait": 2.0
+			},
+			{
+				"line": "He is the only one I can trust.",
 				"wait": 2.0
 			}
 		]
