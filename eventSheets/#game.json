@@ -15054,6 +15054,42 @@
 											"sid": 212617320933843
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 784333762373903
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 376119163356786,
+											"parameters": {
+												"variable": "eventName",
+												"comparison": 0,
+												"value": "\"spawnOutsiders\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 957540233127373,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 176088645868233
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 635993995467919
+										}
+									]
 								}
 							]
 						},
