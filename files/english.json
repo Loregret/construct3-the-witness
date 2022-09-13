@@ -1614,51 +1614,72 @@
 		"id": "isaac1",
 		"dialogs": [
 			{
-				"char": "player",
-				"line": "Four weeks under occupation."
+				"char": "npc",
+				"line": "Well, how did it go?"
 			},
 			{
 				"char": "player",
-				"line": "Electricity was out on seventh day."
+				"line": "Governor didn't show up."
 			},
 			{
 				"char": "player",
-				"line": "No food, no water."
+				"line": "Whole place is abandoned."
+			},
+			{
+				"char": "npc",
+				"line": "Never trust a wretched person..."
+			},
+			{
+				"char": "npc",
+				"line": "You've learned that the hard way."
+			},
+			{
+				"char": "npc",
+				"line": "He's probably at another city. Having a comfortable life."
+			},
+			{
+				"char": "npc",
+				"line": "In the meantime, city is suffering from thirst and hunger."
 			},
 			{
 				"char": "player",
-				"line": "I never expected to see public executions."
+				"line": "And this is only few weeks under occupation."
+			},
+			{
+				"char": "npc",
+				"line": "It horrifies me that this is only the beginning."
+			},
+			{
+				"char": "npc",
+				"line": "Nonetheless, you can congratulate me."
+			},
+			{
+				"char": "npc",
+				"line": "It's the first time I've witnessed a public execution."
 			},
 			{
 				"char": "player",
-				"line": "But it's a common thing now."
+				"line": "It doesn't sound like an achievement to me."
 			},
 			{
 				"char": "player",
-				"line": "Ruthless warlord."
+				"line": "I've also seen a lot of deaths after the invasion."
+			},
+			{
+				"char": "npc",
+				"line": "What a time to live in."
+			},
+			{
+				"char": "npc",
+				"line": "What's next in your plan?"
 			},
 			{
 				"char": "player",
-				"line": "..."
-			}
-		]
-	}
-],
-"talking": [
-	{
-		"id": "madness",
-		"dialogs": [
-			{
-				"char": "player",
-				"line": "People are loosing sanity...",
-				"speed": 0.45,
-				"wait": 1.35
+				"line": "I should talk to the rest of the citizens."
 			},
 			{
 				"char": "player",
-				"line": "I'm helpless to stop this.",
-				"speed": 0.5,
-				"wait": 1.25
+				"line": "Gather more information about warlords."
 			}
 		]
 	},
@@ -1713,7 +1734,9 @@
 				"speed": 0.45
 			}
 		]
-	},
+	}
+],
+"talking": [
 	{
 		"id": "weapon1",
 		"dialogs": [
