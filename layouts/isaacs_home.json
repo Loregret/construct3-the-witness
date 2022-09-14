@@ -395,60 +395,6 @@
 					}
 				},
 				{
-					"type": "house_wood",
-					"properties": {
-						"shape": "wedge",
-						"z-height": 6,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 3381,
-					"instanceVariables": {},
-					"behaviors": {
-						"ShadowCaster": {
-							"properties": {
-								"height": 0,
-								"tag": "",
-								"enabled": true
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 2882.8357142857144,
-						"y": 2289,
-						"width": 73.04802534702026,
-						"height": 114.80693463707325,
-						"originX": 0.5071428571428571,
-						"originY": 0.5071428571428571,
-						"color": [
-							0.5411764705882353,
-							0.5411764705882353,
-							0.5411764705882353,
-							1
-						],
-						"angle": 3.141592653589793,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "sofa",
 					"properties": {
 						"initially-visible": true,
@@ -4780,6 +4726,60 @@
 							1
 						],
 						"angle": 6.021385919380437,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "house_wood",
+					"properties": {
+						"shape": "wedge",
+						"z-height": 6,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 3381,
+					"instanceVariables": {},
+					"behaviors": {
+						"ShadowCaster": {
+							"properties": {
+								"height": 0,
+								"tag": "",
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 2882.8357142857144,
+						"y": 2289,
+						"width": 73.04802534702026,
+						"height": 114.80693463707325,
+						"originX": 0.5071428571428571,
+						"originY": 0.5071428571428571,
+						"color": [
+							0.5411764705882353,
+							0.5411764705882353,
+							0.5411764705882353,
+							1
+						],
+						"angle": 3.141592653589793,
 						"zElevation": 0
 					}
 				},
