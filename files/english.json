@@ -101,9 +101,31 @@
 		"id": "collection-name",
 		"dialogs": [
 			{
-				"line": "Case #23. Main river of the region.",
+				"line": "Case #23.",
 				"wait": 2.0,
 				"speed": 0.9
+			},
+			{
+				"line": "Hint: <color=lightgreen>WASD keys to move.</color>",
+				"wait": 2.5,
+				"no-sound": true,
+				"sound": "notification1",
+				"typewriter": "none"
+			},
+			{
+				"line": "Hint: <color=lightgreen>Mouse click to interact.</color>",
+				"wait": 2.5,
+				"no-sound": true,
+				"sound": "notification1",
+				"typewriter": "none"
+			},
+			{
+				"char": "hint",
+				"line": "<color=lightgreen><i>SHIFT - to run</i></color>",
+				"wait": 2.5,
+				"no-sound": true,
+				"sound": "notification1",
+				"typewriter": "none"
 			}
 		]
 	},
@@ -1381,7 +1403,7 @@
 			},
 			{
 				"char": "player",
-				"line": "W-h-y..."
+				"line": "You..."
 			},
 			{
 				"char": "player",
@@ -1389,11 +1411,7 @@
 			},
 			{
 				"char": "player",
-				"line": "I'll inform authorities about crystals."
-			},
-			{
-				"char": "player",
-				"line": "She'd want that, for sure.",
+				"line": "I need to tell someone about the blueprints.",
 				"event": "baseraidcar"
 			}
 		]
