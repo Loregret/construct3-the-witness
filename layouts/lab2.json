@@ -1618,6 +1618,150 @@
 								"angle": 2.9796910386217905,
 								"zElevation": 0
 							}
+						},
+						{
+							"type": "gun",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "default",
+								"initial-frame": 2,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1063,
+							"instanceVariables": {
+								"ammo": -1
+							},
+							"behaviors": {
+								"Tween": {
+									"properties": {
+										"enabled": false
+									}
+								},
+								"Bullet": {
+									"properties": {
+										"speed": 400,
+										"acceleration": 0,
+										"gravity": 0,
+										"bounce-off-solids": true,
+										"set-angle": false,
+										"step": false,
+										"enabled": false
+									}
+								}
+							},
+							"world": {
+								"x": 6193,
+								"y": 3834,
+								"width": 32.23396507273697,
+								"height": 99.68652161383471,
+								"originX": 0.5648148148148147,
+								"originY": 0.5089820359281438,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0.6108652381980155,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "gun",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "default",
+								"initial-frame": 2,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1086,
+							"instanceVariables": {
+								"ammo": -1
+							},
+							"behaviors": {
+								"Tween": {
+									"properties": {
+										"enabled": false
+									}
+								},
+								"Bullet": {
+									"properties": {
+										"speed": 400,
+										"acceleration": 0,
+										"gravity": 0,
+										"bounce-off-solids": true,
+										"set-angle": false,
+										"step": false,
+										"enabled": false
+									}
+								}
+							},
+							"world": {
+								"x": 7452,
+								"y": 4805,
+								"width": 32.23396507273697,
+								"height": 99.68652161383471,
+								"originX": 0.5648148148148147,
+								"originY": 0.5089820359281438,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.4505895925855405,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "gun",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "default",
+								"initial-frame": 2,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1089,
+							"instanceVariables": {
+								"ammo": -1
+							},
+							"behaviors": {
+								"Tween": {
+									"properties": {
+										"enabled": false
+									}
+								},
+								"Bullet": {
+									"properties": {
+										"speed": 400,
+										"acceleration": 0,
+										"gravity": 0,
+										"bounce-off-solids": true,
+										"set-angle": false,
+										"step": false,
+										"enabled": false
+									}
+								}
+							},
+							"world": {
+								"x": 8823,
+								"y": 4183,
+								"width": 32.23396507273697,
+								"height": 99.68652161383471,
+								"originX": 0.5648148148148147,
+								"originY": 0.5089820359281438,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.4505895925855405,
+								"zElevation": 0
+							}
 						}
 					],
 					"sid": 863907084365276,
@@ -2034,99 +2178,6 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1086,
-							"instanceVariables": {
-								"state": "idle",
-								"hp": 2,
-								"orig_X": 0,
-								"orig_Y": 0,
-								"alert_nth": 0,
-								"torch_amount": 0,
-								"weapon": ""
-							},
-							"behaviors": {
-								"Bullet": {
-									"properties": {
-										"speed": 0,
-										"acceleration": 0,
-										"gravity": 0,
-										"bounce-off-solids": true,
-										"set-angle": true,
-										"step": true,
-										"enabled": false
-									}
-								},
-								"LineOfSight": {
-									"properties": {
-										"obstacles": "solids",
-										"range": 1600,
-										"cone-of-view": 180,
-										"use-collision-cells": true
-									}
-								},
-								"Pathfinding": {
-									"properties": {
-										"cell-size": 53,
-										"cell-border": 4,
-										"obstacles": "solids",
-										"max-speed": 200,
-										"acceleration": 1000,
-										"deceleration": 2000,
-										"rotate-speed": 1500,
-										"rotate-object": true,
-										"diagonals": true,
-										"enabled": false
-									}
-								},
-								"Timer": {
-									"properties": {}
-								},
-								"Solid": {
-									"properties": {
-										"enabled": false,
-										"tags": ""
-									}
-								},
-								"Turret": {
-									"properties": {
-										"range": 300,
-										"rate-of-fire": 1,
-										"rotate": true,
-										"rotate-speed": 180,
-										"target-mode": "first-in-range",
-										"predictive-aim": false,
-										"projectile-speed": 500,
-										"use-collision-cells": true,
-										"enabled": false
-									}
-								}
-							},
-							"world": {
-								"x": 9012,
-								"y": 4564,
-								"width": 37.800000000000004,
-								"height": 53.1,
-								"originX": 0.7619047619047619,
-								"originY": 0.4576271186440678,
-								"color": [
-									0.796078431372549,
-									0.8901960784313725,
-									0.7529411764705882,
-									1
-								],
-								"angle": 4.71238898038469,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "runner",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "idle",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
 							"uid": 1087,
 							"instanceVariables": {
 								"state": "idle",
@@ -2196,7 +2247,7 @@
 							},
 							"world": {
 								"x": 8803,
-								"y": 3280,
+								"y": 3371,
 								"width": 37.800000000000004,
 								"height": 53.1,
 								"originX": 0.7619047619047619,
@@ -2288,8 +2339,8 @@
 								}
 							},
 							"world": {
-								"x": 9202,
-								"y": 3280,
+								"x": 9207,
+								"y": 3358,
 								"width": 37.800000000000004,
 								"height": 53.1,
 								"originX": 0.7619047619047619,
@@ -2301,192 +2352,6 @@
 									1
 								],
 								"angle": 2.954639369227211,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "runner",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "idle",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1089,
-							"instanceVariables": {
-								"state": "idle",
-								"hp": 2,
-								"orig_X": 0,
-								"orig_Y": 0,
-								"alert_nth": 0,
-								"torch_amount": 0,
-								"weapon": ""
-							},
-							"behaviors": {
-								"Bullet": {
-									"properties": {
-										"speed": 0,
-										"acceleration": 0,
-										"gravity": 0,
-										"bounce-off-solids": true,
-										"set-angle": true,
-										"step": true,
-										"enabled": false
-									}
-								},
-								"LineOfSight": {
-									"properties": {
-										"obstacles": "solids",
-										"range": 1600,
-										"cone-of-view": 180,
-										"use-collision-cells": true
-									}
-								},
-								"Pathfinding": {
-									"properties": {
-										"cell-size": 53,
-										"cell-border": 4,
-										"obstacles": "solids",
-										"max-speed": 200,
-										"acceleration": 1000,
-										"deceleration": 2000,
-										"rotate-speed": 1500,
-										"rotate-object": true,
-										"diagonals": true,
-										"enabled": false
-									}
-								},
-								"Timer": {
-									"properties": {}
-								},
-								"Solid": {
-									"properties": {
-										"enabled": false,
-										"tags": ""
-									}
-								},
-								"Turret": {
-									"properties": {
-										"range": 300,
-										"rate-of-fire": 1,
-										"rotate": true,
-										"rotate-speed": 180,
-										"target-mode": "first-in-range",
-										"predictive-aim": false,
-										"projectile-speed": 500,
-										"use-collision-cells": true,
-										"enabled": false
-									}
-								}
-							},
-							"world": {
-								"x": 8198,
-								"y": 3961,
-								"width": 37.800000000000004,
-								"height": 53.1,
-								"originX": 0.7619047619047619,
-								"originY": 0.4576271186440678,
-								"color": [
-									0.796078431372549,
-									0.8901960784313725,
-									0.7529411764705882,
-									1
-								],
-								"angle": 4.71238898038469,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "runner",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "idle",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1090,
-							"instanceVariables": {
-								"state": "idle",
-								"hp": 2,
-								"orig_X": 0,
-								"orig_Y": 0,
-								"alert_nth": 0,
-								"torch_amount": 0,
-								"weapon": ""
-							},
-							"behaviors": {
-								"Bullet": {
-									"properties": {
-										"speed": 0,
-										"acceleration": 0,
-										"gravity": 0,
-										"bounce-off-solids": true,
-										"set-angle": true,
-										"step": true,
-										"enabled": false
-									}
-								},
-								"LineOfSight": {
-									"properties": {
-										"obstacles": "solids",
-										"range": 1600,
-										"cone-of-view": 180,
-										"use-collision-cells": true
-									}
-								},
-								"Pathfinding": {
-									"properties": {
-										"cell-size": 53,
-										"cell-border": 4,
-										"obstacles": "solids",
-										"max-speed": 200,
-										"acceleration": 1000,
-										"deceleration": 2000,
-										"rotate-speed": 1500,
-										"rotate-object": true,
-										"diagonals": true,
-										"enabled": false
-									}
-								},
-								"Timer": {
-									"properties": {}
-								},
-								"Solid": {
-									"properties": {
-										"enabled": false,
-										"tags": ""
-									}
-								},
-								"Turret": {
-									"properties": {
-										"range": 300,
-										"rate-of-fire": 1,
-										"rotate": true,
-										"rotate-speed": 180,
-										"target-mode": "first-in-range",
-										"predictive-aim": false,
-										"projectile-speed": 500,
-										"use-collision-cells": true,
-										"enabled": false
-									}
-								}
-							},
-							"world": {
-								"x": 8563,
-								"y": 2827,
-								"width": 37.800000000000004,
-								"height": 53.1,
-								"originX": 0.7619047619047619,
-								"originY": 0.4576271186440678,
-								"color": [
-									0.796078431372549,
-									0.8901960784313725,
-									0.7529411764705882,
-									1
-								],
-								"angle": 4.71238898038469,
 								"zElevation": 0
 							}
 						},
@@ -2766,99 +2631,6 @@
 									1
 								],
 								"angle": 4.71238898038469,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "runner",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "idle",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1095,
-							"instanceVariables": {
-								"state": "idle",
-								"hp": 2,
-								"orig_X": 0,
-								"orig_Y": 0,
-								"alert_nth": 0,
-								"torch_amount": 0,
-								"weapon": ""
-							},
-							"behaviors": {
-								"Bullet": {
-									"properties": {
-										"speed": 0,
-										"acceleration": 0,
-										"gravity": 0,
-										"bounce-off-solids": true,
-										"set-angle": true,
-										"step": true,
-										"enabled": false
-									}
-								},
-								"LineOfSight": {
-									"properties": {
-										"obstacles": "solids",
-										"range": 1600,
-										"cone-of-view": 180,
-										"use-collision-cells": true
-									}
-								},
-								"Pathfinding": {
-									"properties": {
-										"cell-size": 53,
-										"cell-border": 4,
-										"obstacles": "solids",
-										"max-speed": 200,
-										"acceleration": 1000,
-										"deceleration": 2000,
-										"rotate-speed": 1500,
-										"rotate-object": true,
-										"diagonals": true,
-										"enabled": false
-									}
-								},
-								"Timer": {
-									"properties": {}
-								},
-								"Solid": {
-									"properties": {
-										"enabled": false,
-										"tags": ""
-									}
-								},
-								"Turret": {
-									"properties": {
-										"range": 300,
-										"rate-of-fire": 1,
-										"rotate": true,
-										"rotate-speed": 180,
-										"target-mode": "first-in-range",
-										"predictive-aim": false,
-										"projectile-speed": 500,
-										"use-collision-cells": true,
-										"enabled": false
-									}
-								}
-							},
-							"world": {
-								"x": 12214.891745862424,
-								"y": 2933.5797179118435,
-								"width": 37.800000000000004,
-								"height": 53.1,
-								"originX": 0.7619047619047619,
-								"originY": 0.4576271186440678,
-								"color": [
-									0.796078431372549,
-									0.8901960784313725,
-									0.7529411764705882,
-									1
-								],
-								"angle": 5.313937087124842,
 								"zElevation": 0
 							}
 						}
@@ -7386,17 +7158,17 @@
 						}
 					},
 					"world": {
-						"x": 9021,
+						"x": 7646.304,
 						"y": 3406,
-						"width": 5858,
-						"height": 3601,
+						"width": 8675,
+						"height": 8213,
 						"originX": 0.512,
 						"originY": 0.486,
 						"color": [
 							1,
 							1,
 							1,
-							0.25
+							0.22
 						],
 						"angle": 0,
 						"zElevation": 0,
