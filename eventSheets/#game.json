@@ -1234,6 +1234,17 @@
 											"conditions": [],
 											"actions": [
 												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 245676388896965,
+													"parameters": {
+														"audio-file": "Chemfood",
+														"loop": "looping",
+														"volume": "-24",
+														"tag-optional": "\"music\""
+													}
+												},
+												{
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 707871928132572,
@@ -15046,33 +15057,37 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 784333762373903
+											"sid": 369285476638376
 										},
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 376119163356786,
+											"sid": 746777749880226,
 											"parameters": {
 												"variable": "eventName",
 												"comparison": 0,
-												"value": "\"spawnOutsiders\""
+												"value": "\"opencar3\""
 											}
 										}
 									],
 									"actions": [],
-									"sid": 957540233127373,
+									"sid": 731977997294622,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [],
-											"actions": [],
-											"sid": 176088645868233
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [],
-											"sid": 635993995467919
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "triggers_move2Layout",
+													"sid": 538109454566476,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 458296160187300
 										}
 									]
 								}

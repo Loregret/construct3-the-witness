@@ -1,0 +1,93 @@
+{
+	"name": "#TheEnd",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 266444106777010
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "sprfont_ammo",
+					"sid": 286200643667377,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "sprfont_ammo",
+					"sid": 404395130251328,
+					"parameters": {
+						"text": "\"The End\"",
+						"duration": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 900211760525023,
+					"parameters": {
+						"seconds": "8"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 576732127250921,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 363953520358803
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-running-typewriter-text",
+					"objectClass": "sprfont_ammo",
+					"sid": 360464712948682
+				}
+			],
+			"actions": [],
+			"sid": 264890511274047,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 318784386734340,
+							"parameters": {
+								"interval-seconds": "0.12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 901786155352161,
+							"parameters": {
+								"audio-file": "soft-switch",
+								"loop": "not-looping",
+								"volume": "random(-20,-27)",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 146405524189936
+				}
+			]
+		}
+	],
+	"sid": 914600649743056
+}

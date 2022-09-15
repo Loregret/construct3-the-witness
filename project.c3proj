@@ -578,7 +578,8 @@
 					"Dialogic",
 					"loading",
 					"pause",
-					"SkipIntro"
+					"SkipIntro",
+					"Ending"
 				],
 				"subfolders": [],
 				"name": "sub"
@@ -627,7 +628,8 @@
 					"#Debug",
 					"#Enemy",
 					"#Player",
-					"#Loading"
+					"#Loading",
+					"#TheEnd"
 				],
 				"subfolders": [],
 				"name": "sub events"
@@ -1590,14 +1592,6 @@
 					}
 				},
 				{
-					"name": "Forest ambient.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 335110034344435,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "The Shoulder Tap - Tamuz Dekel.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 495351990725970,
@@ -1620,9 +1614,32 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Chemfood.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 220751000189971,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "Forest ambient.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 335110034344435,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Ambient"
+				}
+			]
 		},
 		"video": {
 			"items": [],
