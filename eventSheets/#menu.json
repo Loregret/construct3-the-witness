@@ -20,19 +20,29 @@
 			"sid": 667074784612276
 		},
 		{
+			"eventType": "variable",
+			"name": "contains_save",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 676881531167282
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 332982964358612
+					"sid": 662369630044168
 				}
 			],
 			"actions": [
 				{
 					"id": "set-opacity",
 					"objectClass": "menu_text",
-					"sid": 343724296897068,
+					"sid": 974808802741606,
 					"parameters": {
 						"opacity": "80"
 					}
@@ -40,7 +50,7 @@
 				{
 					"id": "scroll-to-position",
 					"objectClass": "System",
-					"sid": 965467958321431,
+					"sid": 353468957914176,
 					"parameters": {
 						"x": "150",
 						"y": "1000"
@@ -49,12 +59,12 @@
 				{
 					"id": "stop-all",
 					"objectClass": "Audio",
-					"sid": 843378499800012
+					"sid": 970680997675887
 				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 804181157735487,
+					"sid": 587687999807956,
 					"parameters": {
 						"audio-file": "boom",
 						"loop": "not-looping",
@@ -63,7 +73,7 @@
 					}
 				}
 			],
-			"sid": 598555955856444,
+			"sid": 521541638609346,
 			"children": [
 				{
 					"eventType": "block",
@@ -72,7 +82,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 676291746617833,
+							"sid": 622341393264648,
 							"parameters": {
 								"seconds": "0.25"
 							}
@@ -80,7 +90,7 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 132011397703028,
+							"sid": 389256671185338,
 							"parameters": {
 								"audio-file": "The Darkest Day",
 								"loop": "not-looping",
@@ -89,7 +99,7 @@
 							}
 						}
 					],
-					"sid": 231523365027824
+					"sid": 569405899646555
 				},
 				{
 					"eventType": "block",
@@ -98,7 +108,7 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 208459506188497,
+							"sid": 202955688327173,
 							"parameters": {
 								"group-name": "\"Menu - button\"",
 								"state": "deactivated"
@@ -107,7 +117,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 340239114275502,
+							"sid": 240610163515959,
 							"parameters": {
 								"seconds": "0.5"
 							}
@@ -115,16 +125,49 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 446003748002694,
+							"sid": 950761781125650,
 							"parameters": {
 								"group-name": "\"Menu - button\"",
 								"state": "activated"
 							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 842906400556201,
+							"parameters": {
+								"key": "\"save\""
+							}
 						}
 					],
-					"sid": 945240289341363
+					"sid": 689047257793729
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 423415089715020,
+					"parameters": {
+						"key": "\"save\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 528337049049285,
+					"parameters": {
+						"variable": "contains_save",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 903953716200928
 		},
 		{
 			"eventType": "group",
@@ -2294,7 +2337,17 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 520935994232703,
+											"parameters": {
+												"variable": "contains_save"
+											},
+											"isInverted": true
+										}
+									],
 									"actions": [
 										{
 											"id": "stop",
@@ -2333,6 +2386,54 @@
 										}
 									],
 									"sid": 225550982803446
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 665351479388786
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 633515975716488,
+											"parameters": {
+												"tag": "\"music_menu\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 347571584928964,
+											"parameters": {
+												"audio-file": "switch-selector",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"switch1\""
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 795877103575694,
+											"parameters": {
+												"seconds": "0.15"
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 682706861908163,
+											"parameters": {
+												"layout": "SkipIntro"
+											}
+										}
+									],
+									"sid": 766777038652700
 								}
 							]
 						},

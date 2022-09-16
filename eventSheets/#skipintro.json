@@ -84,14 +84,6 @@
 					],
 					"actions": [
 						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 104885855088238,
-							"parameters": {
-								"layout": "forest2"
-							}
-						},
-						{
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 501287735069897,
@@ -100,6 +92,14 @@
 								"loop": "not-looping",
 								"volume": "0",
 								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "load",
+							"objectClass": "System",
+							"sid": 431971984131300,
+							"parameters": {
+								"slot": "\"autosave\""
 							}
 						}
 					],
