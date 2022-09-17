@@ -1138,6 +1138,34 @@
 											"conditions": [],
 											"actions": [
 												{
+													"id": "delete-key",
+													"objectClass": "weapon",
+													"sid": 161996810013318,
+													"parameters": {
+														"key": "\"pistol\""
+													}
+												},
+												{
+													"id": "delete-key",
+													"objectClass": "weapon",
+													"sid": 283895479531381,
+													"parameters": {
+														"key": "\"ak\""
+													}
+												},
+												{
+													"id": "delete-key",
+													"objectClass": "weapon",
+													"sid": 648709199692123,
+													"parameters": {
+														"key": "\"shotgun\""
+													}
+												},
+												{
+													"callFunction": "interface_update_ammo_ui",
+													"sid": 939227521385133
+												},
+												{
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 877765831351468,
@@ -15323,6 +15351,14 @@
 										}
 									],
 									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 733973972492564,
+											"parameters": {
+												"seconds": "0.75"
+											}
+										},
 										{
 											"id": "set-boolean-instvar",
 											"objectClass": "triggers_move2Layout",

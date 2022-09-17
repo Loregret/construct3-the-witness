@@ -1757,6 +1757,24 @@
 					"wait": 1.55,
 					"speed": 1.25,
 					"event": "opencar3"
+				},
+				{
+					"char": "player",
+					"line": "What was that noise?",
+					"wait": 1.55,
+					"speed": 1.25
+				},
+				{
+					"char": "npc",
+					"line": "Someone outside.",
+					"wait": 1.55,
+					"speed": 1.25
+				},
+				{
+					"char": "player",
+					"line": "Stay here.",
+					"wait": 1.75,
+					"speed": 0.6
 				}
 			]
 		},
@@ -1769,15 +1787,21 @@
 				},
 				{
 					"char": "player",
-					"line": "Oh, I had no idea you would capture me so late.",
+					"line": "Oh, I had no idea you would catch me so late.",
 					"wait": 2.45,
 					"speed": 1.9
 				},
 				{
 					"char": "player",
-					"line": "I've been doing stuff for so long and you couldn't even stop me.",
+					"line": "I've been doing stuff for so long and you couldn't stop me.",
 					"wait": 3,
 					"speed": 2.2
+				},
+				{
+					"char": "player",
+					"line": "Until this moment.",
+					"wait": 2.45,
+					"speed": 1.9
 				},
 				{
 					"char": "npc",
@@ -1787,25 +1811,25 @@
 				},
 				{
 					"char": "player",
-					"line": "So am I no more than a prey?",
+					"line": "Am I just a prey to you?",
 					"wait": 2.45,
 					"speed": 1.25
 				},
 				{
 					"char": "npc",
-					"line": "Those who are incapable of killing are no more than a sheep to us.",
+					"line": "Those who are incapable of fighting are no more than a sheep to us.",
 					"wait": 2.75,
 					"speed": 1.9
 				},
 				{
 					"char": "player",
-					"line": "Then, you guys should be aware that I'm no stranger to taking away lives...",
+					"line": "Then, you guys should be aware that I'm no stranger to fighting...",
 					"wait": 2.9,
 					"speed": 2.35
 				},
 				{
 					"char": "player",
-					"line": "So, does that mean I'm a predator to you?",
+					"line": "Does it make me a predator or something?",
 					"wait": 2.45,
 					"speed": 1.75
 				},
@@ -1840,51 +1864,59 @@
 			"id": "righteousness",
 			"dialogs": [
 				{
-					"char": "player",
 					"line": "It's too late to save the planet.",
-					"speed": 0.45,
-					"wait": 1.35
+					"speed": 2.73,
+					"wait": 1.65
 				},
 				{
-					"char": "player",
-					"line": "We were doomed long before droughts happened.",
-					"speed": 0.5,
-					"wait": 1.25
+					"line": "We were doomed long before drought happened.",
+					"speed": 2.73,
+					"wait": 1.65
 				},
 				{
-					"char": "player",
-					"line": "I just hope humanity survives long enough...",
-					"speed": 0.45
+					"line": "I hope humanity survives long enough...",
+					"speed": 2.7,
+					"wait": 1.65
 				},
 				{
-					"char": "player",
-					"line": "You know, to leave this dead atmosphere.",
-					"speed": 0.45
+					"line": "You know, to leave this dead planet.",
+					"speed": 2.7,
+					"wait": 1.65
 				},
 				{
-					"char": "player",
-					"line": "And find a new home... to shatter it as previous one.",
-					"speed": 0.45
+					"line": "Find a new home... to shatter it as previous one.",
+					"speed": 2.7,
+					"wait": 1.65
 				},
 				{
-					"char": "player",
 					"line": "We are the destroyers of the world.",
-					"speed": 0.45
+					"speed": 2.35,
+					"wait": 1.65
 				},
 				{
-					"char": "player",
 					"line": "No one is coming to save us.",
-					"speed": 0.45
+					"speed": 2.35,
+					"wait": 1.65
 				},
 				{
-					"char": "player",
-					"line": "We are left alone here.",
-					"speed": 0.45
+					"line": "We are left alone.",
+					"speed": 2.35,
+					"wait": 1.65
 				},
 				{
-					"char": "player",
 					"line": "Orphans of the Earth.",
-					"speed": 0.45
+					"speed": 2.35,
+					"wait": 1.65
+				},
+				{
+					"line": "...",
+					"speed": 0.5,
+					"wait": 1.0
+				},
+				{
+					"line": "THE END.",
+					"speed": 0.5,
+					"wait": 2
 				}
 			]
 		}

@@ -24,15 +24,6 @@
 			],
 			"actions": [
 				{
-					"id": "set-size",
-					"objectClass": "cutscene_background",
-					"sid": 671164750562112,
-					"parameters": {
-						"width": "ViewportWidth(0) * 2",
-						"height": "ViewportHeight(0) * 2"
-					}
-				},
-				{
 					"id": "set-text",
 					"objectClass": "dialog",
 					"sid": 376579068451418,
@@ -52,30 +43,7 @@
 					"sid": 430858313673979
 				}
 			],
-			"actions": [
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 352388221837365
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 941430326381536,
-					"parameters": {
-						"seconds": "1.85"
-					}
-				},
-				{
-					"callFunction": "dialogic_play_dialog",
-					"sid": 609189761999740,
-					"parameters": [
-						"\"intro1\"",
-						"\"cut1\"",
-						"0"
-					]
-				}
-			],
+			"actions": [],
 			"sid": 579385878280228,
 			"children": [
 				{
@@ -93,6 +61,28 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 949285899016234
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 418901918257763,
+							"parameters": {
+								"seconds": "1.85"
+							}
+						},
+						{
+							"callFunction": "dialogic_play_dialog",
+							"sid": 116676900239124,
+							"parameters": [
+								"\"intro1\"",
+								"\"cut1\"",
+								"0"
+							]
+						},
 						{
 							"id": "play",
 							"objectClass": "Audio",
@@ -149,6 +139,99 @@
 						}
 					],
 					"sid": 599120478744052
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 421776952889475
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 457082335174515,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"ending\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 763037543707933
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 162794943969139,
+							"parameters": {
+								"seconds": "1.85"
+							}
+						},
+						{
+							"callFunction": "dialogic_play_dialog",
+							"sid": 256830039496812,
+							"parameters": [
+								"\"isaac_home\"",
+								"\"righteousness\"",
+								"0"
+							]
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 182371007907361,
+							"parameters": {
+								"tag": "\"dialog_end\""
+							}
+						},
+						{
+							"id": "fade-volume",
+							"objectClass": "Audio",
+							"sid": 186982979583109,
+							"parameters": {
+								"tag": "\"music\"",
+								"db": "-100",
+								"duration": "1",
+								"ending": "stop"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 106051504679131,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 840883760072395,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "clear-storage",
+							"objectClass": "LocalStorage",
+							"sid": 429644650241910
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 350595077210277,
+							"parameters": {
+								"layout": "menu"
+							}
+						}
+					],
+					"sid": 707919183040800
 				}
 			]
 		},

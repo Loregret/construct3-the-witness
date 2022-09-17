@@ -162,6 +162,37 @@
 				}
 			],
 			"sid": 593279762247417
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 330614522372920
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 986849249199752,
+					"parameters": {
+						"variable": "settings_language",
+						"comparison": 0,
+						"value": "\"ru\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "sprfont_dialog",
+					"sid": 855632798434621,
+					"parameters": {
+						"text": "\"Вы хотите начать новую игру?\""
+					}
+				}
+			],
+			"sid": 666913303497661
 		}
 	],
 	"sid": 631530038904557
