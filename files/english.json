@@ -1937,11 +1937,24 @@
 		]
 	},
 	{
-		"id": "car-to-forest1",
-		"name": "My Car",
+		"id": "hint_weapon",
 		"dialogs": [
 			{
-				"line": "Hint: <color=lightgreen>You can change weapon by 1,2,3,4 keys or mouse wheel.</color>",
+				"line": "Hint: You can change a <color=lightgreen>weapon</color> by<b><color=blue> 1 2 3 4.</color>",
+				"wait": 2.5,
+				"no-sound": true,
+				"sound": "notification1",
+				"typewriter": "none"
+			},
+			{
+				"line": "Hint: You can use <color=lightgreen>mouse wheel</color> also.",
+				"wait": 2.5,
+				"no-sound": true,
+				"sound": "notification1",
+				"typewriter": "none"
+			},
+			{
+				"line": "Hint: You can <color=lightgreen>interact</color> with objects only when you're <color=red>unarmed.",
 				"wait": 2.5,
 				"no-sound": true,
 				"sound": "notification1",

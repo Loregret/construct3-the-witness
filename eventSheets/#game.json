@@ -2270,6 +2270,16 @@
 													"sid": 674010674708550,
 													"children": [
 														{
+															"eventType": "variable",
+															"name": "has_seen_gun",
+															"type": "boolean",
+															"initialValue": "false",
+															"comment": "",
+															"isStatic": true,
+															"isConstant": false,
+															"sid": 659861244725786
+														},
+														{
 															"eventType": "block",
 															"conditions": [
 																{
@@ -2360,59 +2370,6 @@
 																			"children": [
 																				{
 																					"eventType": "block",
-																					"conditions": [],
-																					"actions": [],
-																					"sid": 856417845012794,
-																					"children": [
-																						{
-																							"eventType": "variable",
-																							"name": "has_seen_gun",
-																							"type": "boolean",
-																							"initialValue": "false",
-																							"comment": "",
-																							"isStatic": true,
-																							"isConstant": false,
-																							"sid": 556102872604180
-																						},
-																						{
-																							"eventType": "block",
-																							"conditions": [
-																								{
-																									"id": "compare-boolean-eventvar",
-																									"objectClass": "System",
-																									"sid": 512431906690394,
-																									"parameters": {
-																										"variable": "has_seen_gun"
-																									},
-																									"isInverted": true
-																								}
-																							],
-																							"actions": [
-																								{
-																									"id": "set-boolean-eventvar",
-																									"objectClass": "System",
-																									"sid": 749033087750834,
-																									"parameters": {
-																										"variable": "has_seen_gun",
-																										"value": "true"
-																									}
-																								},
-																								{
-																									"callFunction": "dialogic_play_dialog",
-																									"sid": 108219013691490,
-																									"parameters": [
-																										"\"misc\"",
-																										"\"hint_weapon\"",
-																										"0"
-																									]
-																								}
-																							],
-																							"sid": 924950996801222
-																						}
-																					]
-																				},
-																				{
-																					"eventType": "block",
 																					"conditions": [
 																						{
 																							"id": "compare-boolean-eventvar",
@@ -2487,6 +2444,49 @@
 																						}
 																					],
 																					"sid": 207786530385154
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [],
+																					"actions": [],
+																					"sid": 454260189838448,
+																					"children": [
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "compare-boolean-eventvar",
+																									"objectClass": "System",
+																									"sid": 645702124987483,
+																									"parameters": {
+																										"variable": "has_seen_gun"
+																									},
+																									"isInverted": true
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "set-boolean-eventvar",
+																									"objectClass": "System",
+																									"sid": 590787288003066,
+																									"parameters": {
+																										"variable": "has_seen_gun",
+																										"value": "true"
+																									}
+																								},
+																								{
+																									"callFunction": "dialogic_play_dialog",
+																									"sid": 244969159085006,
+																									"parameters": [
+																										"\"misc\"",
+																										"\"hint_weapon\"",
+																										"0"
+																									]
+																								}
+																							],
+																							"sid": 144037136518492
+																						}
+																					]
 																				}
 																			]
 																		},
@@ -2771,16 +2771,6 @@
 																					"actions": [],
 																					"sid": 524851093913508,
 																					"children": [
-																						{
-																							"eventType": "variable",
-																							"name": "has_seen_gun",
-																							"type": "boolean",
-																							"initialValue": "false",
-																							"comment": "",
-																							"isStatic": true,
-																							"isConstant": false,
-																							"sid": 175164143139382
-																						},
 																						{
 																							"eventType": "block",
 																							"conditions": [
@@ -3101,16 +3091,6 @@
 																					"actions": [],
 																					"sid": 524851093913508,
 																					"children": [
-																						{
-																							"eventType": "variable",
-																							"name": "has_seen_gun",
-																							"type": "boolean",
-																							"initialValue": "false",
-																							"comment": "",
-																							"isStatic": true,
-																							"isConstant": false,
-																							"sid": 175164143139382
-																						},
 																						{
 																							"eventType": "block",
 																							"conditions": [
@@ -15282,6 +15262,24 @@
 													"parameters": {
 														"instance-variable": "active",
 														"value": "true"
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 703557824297858,
+													"parameters": {
+														"layer": "\"event\"",
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "npc",
+													"sid": 303407971166707,
+													"behaviorType": "Solid",
+													"parameters": {
+														"state": "enabled"
 													}
 												}
 											],
