@@ -305,9 +305,7 @@
 	],
 	"uniqueId": "bmm21df34rr",
 	"objectTypes": {
-		"items": [
-			"TiledBackground"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -377,7 +375,8 @@
 					"Player",
 					"runner",
 					"Player_dead",
-					"npc"
+					"npc",
+					"TiledBackground"
 				],
 				"subfolders": [],
 				"name": "characters"
@@ -1603,6 +1602,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Infinite Emptiness - Matooma.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 746061953717607,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
@@ -1741,7 +1748,7 @@
 		"renderingMode": "auto",
 		"anisotropicFiltering": "off",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "progress",
+		"loaderStyle": "percent",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "file",

@@ -1098,6 +1098,17 @@
 													}
 												},
 												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 931396149370189,
+													"parameters": {
+														"audio-file": "Infinite Emptiness - Matooma",
+														"loop": "looping",
+														"volume": "-18",
+														"tag-optional": "\"music\""
+													}
+												},
+												{
 													"callFunction": "dialogic_play_dialog",
 													"sid": 224016718928675,
 													"parameters": [
@@ -1521,16 +1532,55 @@
 								{
 									"id": "else",
 									"objectClass": "System",
+									"sid": 182881139085650
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 807103504635511,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"lab1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 599438381706605,
+									"parameters": {
+										"tag": "\"ambience\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 137575953674939,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								}
+							],
+							"sid": 608005532384710
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
 									"sid": 938453582870379
 								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 907656605453987,
+									"sid": 593572692666346,
 									"parameters": {
 										"first-value": "LayoutName",
 										"comparison": 0,
-										"second-value": "\"lab1\""
+										"second-value": "\"police_station2\""
 									}
 								}
 							],
