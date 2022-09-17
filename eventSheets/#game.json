@@ -123,7 +123,7 @@
 			"eventType": "variable",
 			"name": "settings_low_graphics",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -8907,7 +8907,17 @@
 															"children": [
 																{
 																	"eventType": "block",
-																	"conditions": [],
+																	"conditions": [
+																		{
+																			"id": "compare-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 537142571257569,
+																			"parameters": {
+																				"variable": "settings_low_graphics"
+																			},
+																			"isInverted": true
+																		}
+																	],
 																	"actions": [
 																		{
 																			"id": "create-object",
@@ -9375,7 +9385,17 @@
 															"children": [
 																{
 																	"eventType": "block",
-																	"conditions": [],
+																	"conditions": [
+																		{
+																			"id": "compare-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 574840645497232,
+																			"parameters": {
+																				"variable": "settings_low_graphics"
+																			},
+																			"isInverted": true
+																		}
+																	],
 																	"actions": [
 																		{
 																			"id": "create-object",
@@ -9877,7 +9897,17 @@
 													"children": [
 														{
 															"eventType": "block",
-															"conditions": [],
+															"conditions": [
+																{
+																	"id": "compare-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 821790647788881,
+																	"parameters": {
+																		"variable": "settings_low_graphics"
+																	},
+																	"isInverted": true
+																}
+															],
 															"actions": [
 																{
 																	"id": "create-object",

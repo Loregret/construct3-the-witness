@@ -42,22 +42,30 @@
 					],
 					"actions": [
 						{
-							"id": "go-to-layout",
+							"id": "save",
 							"objectClass": "System",
-							"sid": 948760639390614,
+							"sid": 463695723082586,
 							"parameters": {
-								"layout": "intro"
+								"slot": "\"autosave\""
 							}
 						},
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 897224000477093,
+							"sid": 741086860913546,
 							"parameters": {
 								"audio-file": "switch4",
 								"loop": "not-looping",
 								"volume": "0",
 								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 160444403773009,
+							"parameters": {
+								"layout": "intro"
 							}
 						}
 					],
