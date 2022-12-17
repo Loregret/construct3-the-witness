@@ -1,0 +1,795 @@
+{
+	"name": "runner",
+	"plugin-id": "Sprite",
+	"sid": 437030188472261,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "state",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 797084279526997
+		},
+		{
+			"name": "hp",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 782415329902623
+		},
+		{
+			"name": "orig_X",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 769864802853427
+		},
+		{
+			"name": "orig_Y",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 896238418602328
+		},
+		{
+			"name": "alert_nth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 832709011964158
+		},
+		{
+			"name": "torch_amount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 152063545766155
+		},
+		{
+			"name": "weapon",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 285181229611443
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 589140512478598
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 916482876773855
+		},
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 879348268498042
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 555540740206609
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 170508024594506
+		},
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 206192713092075
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 63,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 217206,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0.16468253968253982,
+								1,
+								0.8353174603174605,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 64,
+						"height": 62,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5266113,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0.16468253968253982,
+								1,
+								0.8353174603174605,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 64,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1915518,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0.16468253968253982,
+								1,
+								0.8353174603174605,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 63,
+						"height": 61,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6409124,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0.16468253968253982,
+								1,
+								0.8353174603174605,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 63,
+						"height": 62,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2832679,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0.16468253968253982,
+								1,
+								0.8353174603174605,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 63,
+						"height": 59,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7458538,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0.16468253968253982,
+								1,
+								0.8353174603174605,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 225734504881640,
+				"name": "run",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 16
+			},
+			{
+				"frames": [
+					{
+						"width": 132,
+						"height": 63,
+						"originX": 0.5227272727272727,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7487312,
+						"collisionPoly": {
+							"points": [
+								0.875,
+								0.12698412698412698,
+								0.625,
+								0.5,
+								0.875,
+								0.8571428571428571,
+								0.5,
+								0.9523809523809523,
+								0.21875,
+								0.7777777777777778,
+								0.03125,
+								0.5,
+								0.21875,
+								0.20634920634920634,
+								0.5,
+								0.031746031746031744
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 794580340023955,
+				"name": "dead",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 25
+			},
+			{
+				"frames": [
+					{
+						"width": 42,
+						"height": 59,
+						"originX": 0.7619047619047619,
+						"originY": 0.4576271186440678,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7470890,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 985806281505264,
+				"name": "idle",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 25
+			},
+			{
+				"frames": [
+					{
+						"width": 132,
+						"height": 63,
+						"originX": 0.5227272727272727,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3274775,
+						"collisionPoly": {
+							"points": [
+								0.875,
+								0.12698412698412698,
+								0.625,
+								0.5,
+								0.875,
+								0.8571428571428571,
+								0.5,
+								0.9523809523809523,
+								0.21875,
+								0.7777777777777778,
+								0.03125,
+								0.5,
+								0.21875,
+								0.20634920634920634,
+								0.5,
+								0.031746031746031744
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 132,
+						"height": 63,
+						"originX": 0.5227272727272727,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1006220,
+						"collisionPoly": {
+							"points": [
+								0.875,
+								0.12698412698412698,
+								0.625,
+								0.5,
+								0.875,
+								0.8571428571428571,
+								0.5,
+								0.9523809523809523,
+								0.21875,
+								0.7777777777777778,
+								0.03125,
+								0.5,
+								0.21875,
+								0.20634920634920634,
+								0.5,
+								0.031746031746031744
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 132,
+						"height": 63,
+						"originX": 0.5227272727272727,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7070090,
+						"collisionPoly": {
+							"points": [
+								0.875,
+								0.12698412698412698,
+								0.625,
+								0.5,
+								0.875,
+								0.8571428571428571,
+								0.5,
+								0.9523809523809523,
+								0.21875,
+								0.7777777777777778,
+								0.03125,
+								0.5,
+								0.21875,
+								0.20634920634920634,
+								0.5,
+								0.031746031746031744
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 132,
+						"height": 63,
+						"originX": 0.5227272727272727,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 241494,
+						"collisionPoly": {
+							"points": [
+								0.875,
+								0.12698412698412698,
+								0.625,
+								0.5,
+								0.875,
+								0.8571428571428571,
+								0.5,
+								0.9523809523809523,
+								0.21875,
+								0.7777777777777778,
+								0.03125,
+								0.5,
+								0.21875,
+								0.20634920634920634,
+								0.5,
+								0.031746031746031744
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 285826808646464,
+				"name": "dead_gore",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 76,
+						"height": 59,
+						"originX": 0.42105263157894735,
+						"originY": 0.4576271186440678,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3291121,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.6381580649412122,
+								0,
+								0.6513159994841967,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 239460133899972,
+				"name": "gun",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 25
+			},
+			{
+				"frames": [
+					{
+						"width": 141,
+						"height": 69,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1875395,
+						"collisionPoly": {
+							"points": [
+								0.01773049645390067,
+								0.33333333333333326,
+								0.6099290780141844,
+								0.10869565217391304,
+								0.8723404255319145,
+								0.10144927536231883,
+								0.936170212765957,
+								0.8333333333333333,
+								0.46099290780141844,
+								0.9637681159420289
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 709718668564969,
+				"name": "pose1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 42,
+						"height": 55,
+						"originX": 0.5,
+						"originY": 0.5363636363636364,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3409150,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.00909090909090909,
+								1,
+								0.00909090909090909,
+								1,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 866814714778069,
+				"name": "pose2",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 78,
+						"height": 59,
+						"originX": 0.41025641025641024,
+						"originY": 0.5338983050847458,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 609807,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5384615384615384,
+								0.00847457627118644,
+								0.8653846153846152,
+								0.4576271186440673,
+								0.8461538461538457,
+								0.9152542372881347,
+								0,
+								0.9915254237288126
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 154813589288058,
+				"name": "pose3",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 25
+			},
+			{
+				"frames": [
+					{
+						"width": 76,
+						"height": 59,
+						"originX": 0.42105263157894735,
+						"originY": 0.4576271186440678,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8826363,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0,
+								0,
+								0,
+								0,
+								0,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 939182712438410,
+				"name": "shotgun",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 25
+			},
+			{
+				"frames": [
+					{
+						"width": 76,
+						"height": 59,
+						"originX": 0.42105263157894735,
+						"originY": 0.4576271186440678,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9800145,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0,
+								0,
+								0,
+								0,
+								0,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hands",
+								"x": 1.015625,
+								"y": 0.49206349206349204
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 678293780603831,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 25
+			}
+		],
+		"subfolders": []
+	}
+}

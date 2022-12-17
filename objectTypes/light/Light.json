@@ -1,0 +1,81 @@
+{
+	"name": "Light",
+	"plugin-id": "Sprite",
+	"sid": 811062950637720,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "pinUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 696321380563560
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 510167610193730
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 229487504777667
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 781753840180470
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 500,
+						"height": 500,
+						"originX": 0.512,
+						"originY": 0.486,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7065531,
+						"collisionPoly": {
+							"points": [
+								0.23466668577547373,
+								0.2324444568304364,
+								0.4955555421099255,
+								0.13111111261815195,
+								0.7668887950343878,
+								0.2488888839380242,
+								0.8404444605391698,
+								0.5099999997350906,
+								0.7680000010596385,
+								0.7402222002818265,
+								0.49222222920994685,
+								0.8535555442292013,
+								0.22800005997551662,
+								0.7555555129168955,
+								0.17688891286614425,
+								0.4977777710549626
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 493100707037836,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

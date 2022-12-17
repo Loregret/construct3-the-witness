@@ -1,0 +1,201 @@
+{
+	"name": "#SkipIntro",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "#Cursor"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "#Debug"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 461362990797508,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "menu_text"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 927806345694967,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "menu_text",
+							"sid": 878759662907612,
+							"parameters": {
+								"instance-variable": "param",
+								"comparison": 0,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 463695723082586,
+							"parameters": {
+								"slot": "\"autosave\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 741086860913546,
+							"parameters": {
+								"audio-file": "switch4",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 160444403773009,
+							"parameters": {
+								"layout": "intro"
+							}
+						}
+					],
+					"sid": 188625319605213
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 615322372469329
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "menu_text",
+							"sid": 736428370089375,
+							"parameters": {
+								"instance-variable": "param",
+								"comparison": 0,
+								"value": "\"skip\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 501287735069897,
+							"parameters": {
+								"audio-file": "switch4",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "load",
+							"objectClass": "System",
+							"sid": 431971984131300,
+							"parameters": {
+								"slot": "\"autosave\""
+							}
+						}
+					],
+					"sid": 866141988995038
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 919678344909884,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 474591124480637,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 196488156179956
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 947160140817496,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 230708732579568,
+					"parameters": {
+						"layout": "intro"
+					}
+				}
+			],
+			"sid": 593279762247417
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 330614522372920
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 986849249199752,
+					"parameters": {
+						"variable": "settings_language",
+						"comparison": 0,
+						"value": "\"ru\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "sprfont_dialog",
+					"sid": 855632798434621,
+					"parameters": {
+						"text": "\"Вы хотите начать новую игру?\""
+					}
+				}
+			],
+			"sid": 666913303497661
+		}
+	],
+	"sid": 631530038904557
+}

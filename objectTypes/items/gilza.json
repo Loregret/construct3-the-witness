@@ -1,0 +1,73 @@
+{
+	"name": "gilza",
+	"plugin-id": "Sprite",
+	"sid": 260341637795275,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "no_sound",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 285065858238569
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 830530246193464
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 873200768804616
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 360328739892691
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 4,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 266049,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 4,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8056297,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 206891078411400,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
