@@ -159,10 +159,6 @@
 					"sid": 666934304241352
 				},
 				{
-					"eventType": "comment",
-					"text": "1. Добавить диалоги по нажатию курсора на нпс\n3. Разрыв диалога на дистанции\n4. Не начинать новый диалог когда играет старый либо останавливать старый при начале нового."
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -199,6 +195,159 @@
 								}
 							],
 							"sid": 222529097672646
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 852926389047218,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [],
+					"sid": 374953450617309,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "sprfont_dialog",
+									"sid": 478468373069899,
+									"parameters": {
+										"unique-id": "npc_sprfont_uid"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 789671140637324,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-running-typewriter-text",
+											"objectClass": "sprfont_dialog",
+											"sid": 681505643940576
+										}
+									],
+									"actions": [
+										{
+											"id": "typewriter-finish",
+											"objectClass": "sprfont_dialog",
+											"sid": 583044653157563
+										}
+									],
+									"sid": 465948944814382
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 116268611108382
+										},
+										{
+											"id": "is-timer-running",
+											"objectClass": "sprfont_dialog",
+											"sid": 313521976964115,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"line_over\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "sprfont_dialog",
+											"sid": 369174445961281,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.1",
+												"type": "once",
+												"tag": "\"line_over\""
+											}
+										}
+									],
+									"sid": 443086858926500
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "sprfont_dialog",
+									"sid": 728047254730052,
+									"parameters": {
+										"unique-id": "player_sprfont_uid"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 659443319999661,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-running-typewriter-text",
+											"objectClass": "sprfont_dialog",
+											"sid": 920640400099002
+										}
+									],
+									"actions": [
+										{
+											"id": "typewriter-finish",
+											"objectClass": "sprfont_dialog",
+											"sid": 582854018567228
+										}
+									],
+									"sid": 508211880224192
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 424103569060437
+										},
+										{
+											"id": "is-timer-running",
+											"objectClass": "sprfont_dialog",
+											"sid": 587328367989980,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"line_over\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "sprfont_dialog",
+											"sid": 795938809911087,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.1",
+												"type": "once",
+												"tag": "\"line_over\""
+											}
+										}
+									],
+									"sid": 394716912209857
+								}
+							]
 						}
 					]
 				},

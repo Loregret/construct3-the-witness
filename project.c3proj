@@ -4,12 +4,12 @@
 	"name": "The Witness",
 	"runtime": "c3",
 	"useWorker": "worker",
-	"bundleAddons": false,
+	"bundleAddons": true,
 	"usedAddons": [
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Аудио",
+			"name": "Audio",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -17,7 +17,7 @@
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Клавиатура",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -25,7 +25,7 @@
 		{
 			"type": "plugin",
 			"id": "Mouse",
-			"name": "Мышь",
+			"name": "Mouse",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -33,7 +33,7 @@
 		{
 			"type": "plugin",
 			"id": "Browser",
-			"name": "Браузер",
+			"name": "Browser",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -57,7 +57,7 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Текст",
+			"name": "Text",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -65,7 +65,7 @@
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Локальное хранилище",
+			"name": "Local storage",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -73,7 +73,7 @@
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Тайловый фон",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -81,7 +81,7 @@
 		{
 			"type": "plugin",
 			"id": "Shape3D",
-			"name": "3D фигуры",
+			"name": "3D shape",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -89,7 +89,7 @@
 		{
 			"type": "plugin",
 			"id": "Sprite",
-			"name": "Спрайт",
+			"name": "Sprite",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -97,7 +97,7 @@
 		{
 			"type": "plugin",
 			"id": "shadowlight",
-			"name": "Теневой свет",
+			"name": "Shadow light",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -105,7 +105,7 @@
 		{
 			"type": "plugin",
 			"id": "Particles",
-			"name": "Частицы",
+			"name": "Particles",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -113,7 +113,7 @@
 		{
 			"type": "plugin",
 			"id": "Dictionary",
-			"name": "Словарь",
+			"name": "Dictionary",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -121,7 +121,7 @@
 		{
 			"type": "plugin",
 			"id": "Spritefont2",
-			"name": "Текстурный шрифт",
+			"name": "Sprite font",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -129,7 +129,7 @@
 		{
 			"type": "behavior",
 			"id": "shadowcaster",
-			"name": "Тень",
+			"name": "Shadow caster",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -137,7 +137,7 @@
 		{
 			"type": "behavior",
 			"id": "Rotate",
-			"name": "Поворот",
+			"name": "Rotate",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -145,7 +145,7 @@
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Синусоид",
+			"name": "Sine",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -153,7 +153,7 @@
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Направлений",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -161,7 +161,7 @@
 		{
 			"type": "behavior",
 			"id": "LOS",
-			"name": "Поле зрения",
+			"name": "Line of sight",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -169,7 +169,7 @@
 		{
 			"type": "behavior",
 			"id": "Timer",
-			"name": "Таймер",
+			"name": "Timer",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -177,7 +177,7 @@
 		{
 			"type": "behavior",
 			"id": "Bullet",
-			"name": "Пуля",
+			"name": "Bullet",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -185,7 +185,7 @@
 		{
 			"type": "behavior",
 			"id": "Pathfinding",
-			"name": "Поиск пути",
+			"name": "Pathfinding",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -193,7 +193,7 @@
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Твердый",
+			"name": "Solid",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -201,7 +201,7 @@
 		{
 			"type": "behavior",
 			"id": "Turret",
-			"name": "Турель",
+			"name": "Turret",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -209,7 +209,7 @@
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Угасание",
+			"name": "Fade",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -217,7 +217,7 @@
 		{
 			"type": "behavior",
 			"id": "Pin",
-			"name": "Прикрепить",
+			"name": "Pin",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -225,7 +225,7 @@
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Твин-анимация",
+			"name": "Tween",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -233,7 +233,7 @@
 		{
 			"type": "behavior",
 			"id": "Anchor",
-			"name": "Якорь",
+			"name": "Anchor",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -241,7 +241,7 @@
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Следить за",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -249,7 +249,7 @@
 		{
 			"type": "effect",
 			"id": "warpripple",
-			"name": "Волна деформации",
+			"name": "Warp ripple",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -257,7 +257,7 @@
 		{
 			"type": "effect",
 			"id": "water",
-			"name": "Вода",
+			"name": "Water",
 			"author": "Viktor Korsun",
 			"version": "r317.2",
 			"bundled": false
@@ -265,7 +265,7 @@
 		{
 			"type": "effect",
 			"id": "blurhorizontal",
-			"name": "Размытие по горизонтали",
+			"name": "Blur horizontal",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -273,7 +273,7 @@
 		{
 			"type": "effect",
 			"id": "grayscale",
-			"name": "Оттенки серого",
+			"name": "Grayscale",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -281,7 +281,7 @@
 		{
 			"type": "effect",
 			"id": "glowvertical",
-			"name": "Свечение вертикальное",
+			"name": "Glow vertical",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -289,7 +289,7 @@
 		{
 			"type": "effect",
 			"id": "glowhorizontal",
-			"name": "Свечение горизонтальное",
+			"name": "Glow horizontal",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -297,7 +297,7 @@
 		{
 			"type": "effect",
 			"id": "vignette",
-			"name": "Виньетка",
+			"name": "Vignette",
 			"author": "Brad Larson",
 			"version": "r317.2",
 			"bundled": false
@@ -1562,7 +1562,56 @@
 			]
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "The Darkest Day.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 321265032473897,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "The Shoulder Tap - Tamuz Dekel.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 495351990725970,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Assault - Max H..webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 402434307497297,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Outlaws - Max H..webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 927490843143473,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Chemfood.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 220751000189971,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Infinite Emptiness - Matooma.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 746061953717607,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": [
 				{
 					"items": [

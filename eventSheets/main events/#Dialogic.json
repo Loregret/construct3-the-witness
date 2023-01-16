@@ -119,14 +119,6 @@
 					"sid": 517129182991279
 				},
 				{
-					"eventType": "comment",
-					"text": "В игре существует два типа диалогов:\n1. Главный, который показывается снизу. Используется для мыслей персонажа и изучения предметов. Dialog\n\n2. Диалог между персонажами, где текст отображается над головами персонажей. Talk"
-				},
-				{
-					"eventType": "comment",
-					"text": "                                                        [h2] Задачи: [/h2]\n[item] Флаг: Важные диалоги чтобы перекрывать минорные в случаи необходимости.\n[item] Флаг: Проверка на опасность - не сражается ли герой в данный момент."
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -233,6 +225,74 @@
 					]
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 504027365415417,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [],
+					"sid": 487429035187084,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-running-typewriter-text",
+									"objectClass": "dialog",
+									"sid": 833152915672374
+								}
+							],
+							"actions": [
+								{
+									"id": "typewriter-finish",
+									"objectClass": "dialog",
+									"sid": 487415121655988
+								}
+							],
+							"sid": 876538916216285
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 838588870859957
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "dialog",
+									"sid": 785580876616428,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"line_over\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "dialog",
+									"sid": 515867058850207,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.1",
+										"type": "once",
+										"tag": "\"line_over\""
+									}
+								}
+							],
+							"sid": 277236384243011
+						}
+					]
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "Dialogic - typewriter",
@@ -265,101 +325,9 @@
 									"isInverted": true
 								}
 							],
-							"actions": [
-								{
-									"type": "comment",
-									"text": "sound"
-								}
-							],
+							"actions": [],
 							"sid": 711760996636994,
 							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-x-seconds",
-											"objectClass": "System",
-											"sid": 766551162375767,
-											"parameters": {
-												"interval-seconds": "choose(0.05,0.1)"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 297627808438577,
-											"parameters": {
-												"audio-file": "tap",
-												"loop": "not-looping",
-												"volume": "random(-10,-20)",
-												"stereo-pan": "0",
-												"tag-optional": "\"type\""
-											}
-										}
-									],
-									"sid": 855180167965648,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-x-seconds",
-											"objectClass": "System",
-											"sid": 658042175615962,
-											"parameters": {
-												"interval-seconds": "0.08"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 407554307344233,
-											"parameters": {
-												"audio-file": "soft-switch",
-												"loop": "not-looping",
-												"volume": "random(-10,-20)",
-												"stereo-pan": "0",
-												"tag-optional": "\"type\""
-											}
-										}
-									],
-									"sid": 277402047830615,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-x-seconds",
-											"objectClass": "System",
-											"sid": 612877967823753,
-											"parameters": {
-												"interval-seconds": "0.08"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 497211493570020,
-											"parameters": {
-												"audio-file": "switch2",
-												"loop": "not-looping",
-												"volume": "random(-10,-20)",
-												"stereo-pan": "0",
-												"tag-optional": "\"type\""
-											}
-										}
-									],
-									"sid": 290362284179347,
-									"disabled": true
-								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -387,66 +355,6 @@
 										}
 									],
 									"sid": 940556813388533
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-x-seconds",
-											"objectClass": "System",
-											"sid": 187266650205716,
-											"parameters": {
-												"interval-seconds": "0.05"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 701284407101125,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "choose(\"soft-switch\", \"switch-selector\")",
-												"loop": "not-looping",
-												"volume": "random(-10,-20)",
-												"stereo-pan": "0",
-												"tag-optional": "\"writer\""
-											}
-										}
-									],
-									"sid": 100511576538003,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-x-seconds",
-											"objectClass": "System",
-											"sid": 112562979747833,
-											"parameters": {
-												"interval-seconds": "0.05"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 116622656984025,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "choose(\"soft-switch\", \"switch-selector\",\"switch4\")",
-												"loop": "not-looping",
-												"volume": "random(-10,-20)",
-												"stereo-pan": "0",
-												"tag-optional": "\"writer\""
-											}
-										}
-									],
-									"sid": 316180426780313,
-									"disabled": true
 								}
 							]
 						},
